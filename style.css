@@ -78,3 +78,11 @@ h1 { color: #fff; text-align: center; margin: 8px 0 4px; font-size: 2rem; }
 .result p { font-size: 1.15rem; margin: 6px 0; }
 
 .back { background: none; border: 0; color: #fff; font-size: 1rem; cursor: pointer; padding: 4px 0 10px; }
+
+#topbar { align-items: center; }
+#lang { background: rgba(255,255,255,.18); color: #fff; border: 0; border-radius: 12px; padding: 6px 10px; font-weight: 700; font-size: .95rem; cursor: pointer; }
+.hint { text-align: center; color: #5b6190; margin: 0 0 12px; font-size: 1rem; }
+.langs { margin-bottom: 14px; }
+.opt.selected { background: #d9e3ff; border-color: #54a0ff; }
+.opt:disabled:not(.correct):not(.wrong) { opacity: .4; }
+[hidden] { display: none !important; }

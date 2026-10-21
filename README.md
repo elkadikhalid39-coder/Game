@@ -1,14 +1,15 @@
-# Hola, Español 🇪🇸
+# Hola, Español 🌍
 
-Juego sencillo para aprender español, pensado para personas inmigrantes.
+Juego sencillo para aprender idiomas, pensado para personas inmigrantes.
 
-- Sin texto en otro idioma: dibujos (emoji) + audio + español simple.
+- Al empezar, la persona elige el idioma que habla y el que quiere aprender
+  (español, English, Français, العربية, Português).
+- Ve la palabra en su idioma y elige cómo se dice en el idioma que aprende; también escucha y elige el significado, y practica frases útiles.
 - 6 mundos: Saludos, Números, Comida, Familia, En la ciudad, Salud.
-- Ejercicios: ver y elegir, escuchar y elegir, frases útiles.
 - Vidas, estrellas, XP y racha diaria (se guarda en el móvil).
 
 ## Probar
-Abre `index.html` en el navegador, o: `python3 -m http.server` y visita http://localhost:8000
+Abre `index.html` en el navegador.
 
-## Añadir contenido
-Edita `data.js`: cada mundo tiene `words` (emoji + español) y `phrases`.
+## Añadir contenido o idiomas
+Edita `data.js`: `LANGS` (idiomas), `UI` (textos de interfaz) y `WORLDS` (palabras y frases con `T(es, en, fr, ar, pt)`).

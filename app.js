@@ -7,7 +7,8 @@ const app = document.getElementById("app");
 function loadSave() {
   try { return JSON.parse(localStorage.getItem("hola-espanol")) || {}; } catch { return {}; }
 }
-let save = Object.assign({ xp: 0, streak: 0, lastDay: "", stars: {} }, loadSave());
+let save = Object.assign({ xp: 0, streak: 0, lastDay: "", stars: {}, native: "", target: "" }, loadSave());
+const ui = (k) => UI[k][save.native] || UI[k].en;
 function persist() {
   try { localStorage.setItem("hola-espanol", JSON.stringify(save)); } catch { /* sin almacenamiento */ }
 }
@@ -19,7 +20,11 @@ function touchStreak() {
   save.streak = save.lastDay === y ? save.streak + 1 : 1;
   save.lastDay = t;
 }
+document.getElementById("lang").onclick = showSetup;
 function renderTopbar() {
+  const l = document.getElementById("lang");
+  l.textContent = save.native && save.target ? "🌐 " + save.native.toUpperCase() + "→" + save.target.toUpperCase() : "🌐";
+  l.title = save.native ? ui("changeLang") : "Language";
   document.getElementById("streak").textContent = "🔥 " + save.streak;
   document.getElementById("xp").textContent = "⭐ " + save.xp;
 }
@@ -33,18 +38,20 @@ const el = (tag, cls, text) => {
   return e;
 };
 
-let esVoice = null;
-function pickVoice() {
-  const voices = window.speechSynthesis ? speechSynthesis.getVoices() : [];
-  esVoice = voices.find((v) => v.lang.toLowerCase().startsWith("es")) || null;
+// Texto en un idioma concreto: fija lang y dirección (árabe de derecha a izquierda).
+function txt(tag, cls, text, lang) {
+  const e = el(tag, cls, text);
+  e.lang = lang;
+  e.dir = LANGS[lang].dir || "ltr";
+  return e;
 }
-if (window.speechSynthesis) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
-function speak(text) {
+function speak(text, lang) {
   if (!window.speechSynthesis) return;
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
-  u.lang = "es-ES";
-  if (esVoice) u.voice = esVoice;
+  u.lang = LANGS[lang].voice;
+  const v = speechSynthesis.getVoices().find((x) => x.lang.toLowerCase().startsWith(lang));
+  if (v) u.voice = v;
   u.rate = 0.85;
   speechSynthesis.speak(u);
 }
@@ -61,17 +68,67 @@ function beep(ok) {
   } catch { /* sin audio */ }
 }
 
+// ---------- Pantalla: elegir idiomas ----------
+function showSetup() {
+  renderTopbar();
+  app.dir = "ltr";
+  app.replaceChildren();
+  const sel = { native: save.native, target: save.target };
+  app.append(el("h1", "", "Hola 👋 Hello"));
+  app.append(el("p", "sub", "Elige tu idioma · Choose your language · اختر لغتك"));
+
+  const go = el("button", "btn", "Empezar · Start");
+  const group = (key, other, labelKey) => {
+    const box = el("div", "card langs");
+    const label = el("p", "prompt", Object.values(UI[labelKey]).join(" · "));
+    label.dir = "ltr";
+    box.append(label);
+    const grid = el("div", "options two");
+    box.append(grid);
+    return { box, grid, key, other };
+  };
+  const g1 = group("native", "target", "iSpeak");
+  const g2 = group("target", "native", "iLearn");
+  const refresh = () => {
+    for (const g of [g1, g2]) {
+      for (const b of g.grid.children) {
+        b.classList.toggle("selected", sel[g.key] === b.dataset.lang);
+        b.disabled = sel[g.other] === b.dataset.lang;
+      }
+    }
+    go.disabled = !(sel.native && sel.target);
+    if (sel.native) go.textContent = UI.start[sel.native];
+  };
+  for (const g of [g1, g2]) {
+    for (const code of Object.keys(LANGS)) {
+      const b = txt("button", "opt", LANGS[code].name, code);
+      b.dataset.lang = code;
+      b.onclick = () => { sel[g.key] = code; refresh(); };
+      g.grid.append(b);
+    }
+    app.append(g.box);
+  }
+  go.onclick = () => {
+    save.native = sel.native; save.target = sel.target;
+    persist(); showMap();
+  };
+  app.append(go);
+  refresh();
+}
+
 // ---------- Pantalla: mapa de mundos ----------
 function showMap() {
+  if (!save.native || !save.target) return showSetup();
   renderTopbar();
+  app.dir = LANGS[save.native].dir || "ltr";
   app.replaceChildren();
-  app.append(el("h1", "", "Hola, Español 🇪🇸"), el("p", "sub", "Elige un mundo y aprende jugando"));
+  app.append(el("h1", "", "Hola 👋 " + LANGS[save.target].name), el("p", "sub", ui("chooseWorld")));
   const map = el("div", "map");
   for (const w of WORLDS) {
     const b = el("button", "world");
     b.style.background = w.color;
-    const stars = save.stars[w.id] || 0;
-    b.append(el("span", "big", w.emoji), el("span", "", w.name),
+    const stars = save.stars[save.target + ":" + w.id] || 0;
+    b.append(el("span", "big", w.emoji), el("span", "", w.name[save.native]),
       el("span", "stars", "★".repeat(stars) + "☆".repeat(3 - stars)));
     b.onclick = () => startLesson(w);
     map.append(b);
@@ -108,9 +165,11 @@ function showExercise(s) {
   renderTopbar();
   if (s.lives <= 0 || s.i >= s.list.length) return showResult(s);
   const ex = s.list[s.i];
+  app.dir = LANGS[save.native].dir || "ltr";
   app.replaceChildren();
 
-  const back = el("button", "back", "← Salir");
+  const N = save.native, G = save.target;
+  const back = el("button", "back", ui("exit"));
   back.onclick = showMap;
   const lives = el("div", "lives", "❤️".repeat(s.lives) + "🖤".repeat(MAX_LIVES - s.lives));
   const prog = el("div", "progress");
@@ -118,12 +177,12 @@ function showExercise(s) {
   prog.append(bar);
   const card = el("div", "card");
   const feedback = el("div", "feedback");
-  const next = el("button", "btn", "Seguir ➜");
+  const next = el("button", "btn", ui("next"));
   next.hidden = true;
   next.onclick = () => { s.i++; showExercise(s); };
 
   let answered = false;
-  const answer = (btn, ok, correctText) => {
+  const answer = (btn, ok, correctText, correctLang, spoken) => {
     if (answered) return;
     answered = true;
     beep(ok);
@@ -131,42 +190,50 @@ function showExercise(s) {
       b.disabled = true;
       if (b.dataset.ok === "1") b.classList.add("correct");
     }
-    if (ok) { s.correct++; save.xp += 10; feedback.textContent = "¡Muy bien! 🎉"; feedback.className = "feedback ok"; }
-    else { s.lives--; btn.classList.add("wrong"); feedback.textContent = "Respuesta: " + correctText; feedback.className = "feedback bad"; }
+    if (ok) { s.correct++; save.xp += 10; feedback.textContent = ui("great"); feedback.className = "feedback ok"; }
+    else {
+      s.lives--; btn.classList.add("wrong");
+      feedback.textContent = ui("answer") + ": " + correctText; feedback.className = "feedback bad";
+      feedback.lang = correctLang;
+    }
+    setTimeout(() => speak(spoken, G), 350);
     persist(); renderTopbar();
     next.hidden = false; next.focus();
   };
 
-  const addOption = (parent, label, isOk, cls, correctText) => {
-    const b = el("button", "opt " + (cls || ""), label);
+  // Una opción: label en el idioma `lang`.
+  const addOption = (parent, label, lang, isOk, correctText, correctLang, spoken) => {
+    const b = txt("button", "opt", label, lang);
     b.dataset.ok = isOk ? "1" : "0";
-    b.onclick = () => answer(b, isOk, correctText);
+    b.onclick = () => answer(b, isOk, correctText, correctLang, spoken);
     parent.append(b);
   };
 
   if (ex.type === "see") {
-    card.append(el("p", "prompt", "¿Cómo se dice?"), el("div", "bigemoji", ex.item.emoji));
+    // La persona ve la palabra en SU idioma y elige cómo se dice en el idioma que aprende.
+    card.append(el("p", "prompt", ui("howSay")), txt("div", "bigword", ex.item.t[N], N));
     const opts = el("div", "options two");
-    for (const o of ex.options) addOption(opts, o.es, o === ex.item, "", ex.item.es);
+    for (const o of ex.options) addOption(opts, o.t[G], G, o === ex.item, ex.item.t[G], G, ex.item.t[G]);
     card.append(opts);
-    speak(ex.item.es);
   } else if (ex.type === "hear") {
-    card.append(el("p", "prompt", "Escucha y toca el dibujo"));
+    // Escucha la palabra en el idioma que aprende y elige el significado en el suyo.
+    card.append(el("p", "prompt", ui("listen")));
     const l = el("button", "listen", "🔊");
-    l.onclick = () => speak(ex.item.es);
+    l.onclick = () => speak(ex.item.t[G], G);
     card.append(l);
     const opts = el("div", "options two");
-    for (const o of ex.options) addOption(opts, o.emoji, o === ex.item, "emoji", ex.item.es);
+    for (const o of ex.options) addOption(opts, o.t[N], N, o === ex.item, ex.item.t[G], G, ex.item.t[G]);
     card.append(opts);
-    speak(ex.item.es);
+    speak(ex.item.t[G], G);
   } else {
     const l = el("button", "listen small", "🔊");
-    l.onclick = () => speak(ex.p.q);
-    card.append(el("p", "prompt", "Elige la respuesta"), el("div", "bigword", ex.p.q), l);
+    l.onclick = () => speak(ex.p.q[G], G);
+    card.append(el("p", "prompt", ui("chooseAnswer")), txt("div", "bigword", ex.p.q[G], G), l,
+      txt("p", "hint", ex.p.q[N], N));
     const opts = el("div", "options");
-    for (const t of shuffle([ex.p.a, ...ex.p.wrong])) addOption(opts, t, t === ex.p.a, "", ex.p.a);
+    for (const t of shuffle([ex.p.a, ...ex.p.wrong])) addOption(opts, t[G], G, t === ex.p.a, ex.p.a[G], G, ex.p.a[G]);
     card.append(opts);
-    speak(ex.p.q);
+    speak(ex.p.q[G], G);
   }
 
   card.append(feedback, next);
@@ -180,22 +247,24 @@ function showResult(s) {
   const stars = !won ? 0 : ratio >= 0.9 ? 3 : ratio >= 0.7 ? 2 : 1;
   if (won) {
     touchStreak();
-    save.stars[s.world.id] = Math.max(save.stars[s.world.id] || 0, stars);
+    const key = save.target + ":" + s.world.id;
+    save.stars[key] = Math.max(save.stars[key] || 0, stars);
     save.xp += 20;
   }
   persist(); renderTopbar();
 
   app.replaceChildren();
+  app.dir = LANGS[save.native].dir || "ltr";
   const card = el("div", "card result");
   card.append(
     el("div", "bigemoji", won ? "🏆" : "💪"),
-    el("p", "prompt", won ? "¡Lección completada!" : "¡Casi! Inténtalo otra vez"),
+    el("p", "prompt", won ? ui("done") : ui("retry")),
     el("p", "", "★".repeat(stars) + "☆".repeat(3 - stars)),
-    el("p", "", `Aciertos: ${s.correct} de ${s.list.length}`),
+    el("p", "", `${ui("score")}: ${s.correct} / ${s.list.length}`),
   );
-  const again = el("button", "btn", "Jugar otra vez");
+  const again = el("button", "btn", ui("again"));
   again.onclick = () => startLesson(s.world);
-  const home = el("button", "btn ghost", "Volver al mapa");
+  const home = el("button", "btn ghost", ui("toMap"));
   home.onclick = showMap;
   app.append(card, again, home);
 }
