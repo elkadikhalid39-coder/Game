@@ -3,7 +3,7 @@
 Juego para aprender idiomas pensado para personas inmigrantes y sus hijos.
 
 - **12 idiomas** (español, inglés, francés, árabe, rumano, ucraniano, ruso, portugués, chino, urdu, alemán, italiano): la persona elige el que habla y el que quiere aprender.
-- **Modo adultos**: 6 mundos de vocabulario y frases útiles, vidas, estrellas y racha.
+- **Modo adultos**: camino de lecciones por unidades (palabras → escuchar → frases) que se desbloquean en orden; pestañas Aprender, Repasar (practica lo que fallaste) y Perfil (racha, puntos, palabras aprendidas, ajustes).
 - **Modo niños (1–3, 3–5, 5–7 años)**: lenguaje, números y "mi mundo"; tarjetas para aprender y luego jugar; trazado de letras, sílabas, contar y sumas. Sin vidas ni tiempo, pensado para niños con dificultades de aprendizaje. Control parental y modo calma.
 
 El plan del producto (competencia, edades, negocio, hoja de ruta) está en [docs/PLAN.md](docs/PLAN.md) y la guía de auditorías en [docs/AUDITORIA.md](docs/AUDITORIA.md).
@@ -18,5 +18,8 @@ Abre `index.html` en el navegador, o genera un único archivo con `tools/build.s
 ## Estructura
 - `js/i18n/<idioma>.js`: textos de cada idioma (`es.js` es la referencia).
 - `js/content.js`: mundos de adultos, unidades de niños, letras y sílabas.
-- `js/core.js`: guardado, voz, navegación, ajustes y control parental.
+- `js/core.js`: guardado, idiomas, voz, sonidos y navegación.
+- `js/ui.js`: piezas de interfaz (mascota, globo de diálogo, barras, panel de respuesta).
+- `js/onboarding.js`: bienvenida, elección de idiomas, modo y edad, ajustes y control parental.
 - `js/adult.js` y `js/kids.js`: cada modo de juego.
+- `css/style.css`: identidad visual (colores, tipografías Fredoka y Lexend, componentes).

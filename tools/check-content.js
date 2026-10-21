@@ -6,7 +6,7 @@ const vm = require("vm");
 
 const root = path.join(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
-const scripts = [...html.matchAll(/<script src="([^"]+)"/g)].map((m) => m[1]).filter((s) => !/(core|adult|kids|main)\.js$/.test(s));
+const scripts = [...html.matchAll(/<script src="([^"]+)"/g)].map((m) => m[1]).filter((s) => !/(core|ui|onboarding|adult|kids|main)\.js$/.test(s));
 const ctx = {};
 vm.createContext(ctx);
 for (const s of scripts) vm.runInContext(fs.readFileSync(path.join(root, s), "utf8") + "\n;globalThis.__x = { I18N, ...(typeof WORLDS !== 'undefined' ? { WORLDS, KID_WORDS, KID_UNITS } : {}) };", ctx);

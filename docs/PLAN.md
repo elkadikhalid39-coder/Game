@@ -124,6 +124,7 @@ Costes de publicación: Apple Developer cuesta 99 USD al año y Google Play 25 U
 Las semanas son orientativas; ajustamos al final de cada sesión.
 
 - **Fase 0 (hecho)**: prototipo, 12 idiomas, modo adultos, modo niños con 3 edades y 11 unidades, control parental, modo calma y prueba automática.
+- **Fase 0.5 (hecho)**: identidad visual (mascota-bocadillo, tipografías, colores, botones con volumen); en adultos, camino de lecciones con desbloqueo, palabras nuevas presentadas antes de preguntarlas, panel de respuesta, pestañas Aprender / Repasar / Perfil y repaso de errores; en niños, la mascota guía y reacciona, asignaturas por colores y álbum de pegatinas.
 - **Fase 1 (semanas 1–2)**: PWA sin conexión; varios perfiles de niño; área de padres con progreso y límite de tiempo; nuevos mundos de adultos (trabajo, vivienda, trámites, transporte, colegio); repaso de errores.
 - **Fase 2 (semanas 3–4)**: niños: orden de trazos animado, formas, emociones, cuentos con audio, restas; dificultad adaptativa; perfiles por necesidad.
 - **Fase 3 (semanas 5–6)**: identidad visual propia (nombre, mascota, ilustraciones), voces, primera experiencia guiada; **pruebas con usuarios reales** (una ONG, una escuela de adultos, un colegio).
@@ -132,7 +133,7 @@ Las semanas son orientativas; ajustamos al final de cada sesión.
 
 ## 11. Decisiones pendientes
 
-- [ ] **Nombre de la app** ("Hola, Español" ya no encaja con 12 idiomas).
+- [ ] **Nombre de la app**: provisionalmente "hola!" (el logotipo de la bienvenida). Falta decidir el definitivo y comprobar que esté libre.
 - [ ] Mercado inicial (¿España?) e idiomas que se revisan primero.
 - [ ] ¿Contamos con un/a logopeda, maestro/a de infantil o psicopedagogo/a para revisar el modo niños?
 - [ ] Presupuesto para ilustraciones y voces.

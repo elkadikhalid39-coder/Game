@@ -9,25 +9,43 @@ function unitAvailable(u) {
   return true;
 }
 
+const SUBJECTS = [["lang", "🔤", "subjLang"], ["num", "🔢", "subjNum"], ["world", "🌍", "subjWorld"]];
+
 function showKidsHome() {
-  renderTopbar();
-  screen();
-  app.append(el("h1", "", ageInfo().emoji + " " + I18N[save.target].name));
-  for (const [subj, icon, key] of [["lang", "🔤", "subjLang"], ["num", "🔢", "subjNum"], ["world", "🌍", "subjWorld"]]) {
+  screen("main");
+  const hello = el("span", "");
+  hello.append(el("span", "", ui("kidsHello")), el("span", "age-chip", ageInfo().emoji + " " + save.age.replace("-", "–") + " " + ui("years")));
+  app.append(speech(hello, "happy"));
+  for (const [subj, icon, key] of SUBJECTS) {
     const units = KID_UNITS.filter((u) => u.subj === subj && unitAvailable(u));
     if (!units.length) continue;
-    app.append(el("h2", "section", icon + " " + ui(key)));
+    const section = el("section", "subject " + subj);
+    section.append(el("h2", "", icon + " " + ui(key)));
     const grid = el("div", "tiles");
     for (const u of units) {
       const b = el("button", "tile");
+      b.type = "button";
       b.append(el("span", "big", u.icon), el("span", "", ui("u_" + u.id)));
       b.onclick = () => startUnit(u);
       grid.append(b);
     }
-    app.append(grid);
+    section.append(grid);
+    app.append(section);
   }
-  app.append(el("h2", "section", "🌟 " + ui("stickers")),
-    el("div", "album", save.stickers.length ? save.stickers.join(" ") : "❔ ❔ ❔"));
+  const album = button("album-card", "", showAlbum);
+  album.append(el("span", "big", "📒"), el("strong", "", ui("stickers")),
+    el("span", "album-preview", save.stickers.slice(-5).join(" ") || "❔ ❔ ❔"));
+  app.append(album);
+}
+
+// Álbum: cada pegatina distinta conseguida; las que faltan, en silueta.
+function showAlbum() {
+  screen("main");
+  const have = new Set(save.stickers);
+  app.append(speech(ui("stickers") + " · " + have.size + " / " + STICKERS.length, "cheer"));
+  const grid = el("div", "album-grid");
+  for (const s of STICKERS) grid.append(el("span", have.has(s) ? "slot-sticker" : "slot-sticker empty", have.has(s) ? s : "?"));
+  app.append(grid, button("btn ghost", "🏠 " + ui("back"), showKidsHome));
 }
 
 // ---------- Construcción de una sesión ----------
@@ -118,45 +136,44 @@ function learnCard(u, item) {
 }
 
 function showLearn(st, k) {
-  renderTopbar();
-  screen();
+  screen("main");
   const { nodes, say } = learnCard(st.u, st.items[k]);
   const card = el("div", "card kid learn");
   const visual = el("button", "visual");
   visual.append(...nodes);
   visual.onclick = () => speak(say);
   const nav = el("div", "nav");
-  nav.append(k > 0 ? button("btn ghost-dark", "◀", () => showLearn(st, k - 1)) : el("span"));
+  if (k > 0) nav.append(button("btn ghost-dark", "◀", () => showLearn(st, k - 1))); else nav.classList.add("single");
   nav.append(k < st.items.length - 1
     ? button("btn", "▶", () => showLearn(st, k + 1))
     : button("btn", "▶ " + ui("play"), () => showKidExercise(st)));
-  card.append(el("p", "prompt", "👀 " + ui("learn") + " · " + (k + 1) + "/" + st.items.length), visual, nav);
-  app.append(card);
+  card.append(visual, nav);
+  app.append(speech("👀 " + ui("learn") + " · " + (k + 1) + "/" + st.items.length, "talk"), card);
   speak(say);
 }
 
 // ---------- Juega ----------
 function showKidExercise(st) {
-  renderTopbar();
   if (st.i >= st.ex.length) return showKidReward(st);
   const ex = st.ex[st.i], item = ex.item, G = save.target;
-  screen();
+  screen("main");
 
   const dots = el("div", "dots");
   st.ex.forEach((_, k) => dots.append(el("span", k < st.i ? "done" : k === st.i ? "now" : "")));
   const card = el("div", "card kid");
-  const head = el("div", "kid-head");
-  const prompt = el("p", "prompt");
+  const prompt = el("span", "");
   let say = [];
   const repeat = button("listen small", "🔊", () => speak(say));
-  head.append(prompt, repeat);
-  card.append(head);
+  const talk = speech(prompt, "talk", repeat);
+  // La mascota reacciona: celebra al acertar y pone cara de sorpresa al fallar.
+  const react = (mood) => talk.querySelector(".mascot").replaceWith(mascot(mood, 76));
 
   let tries = 0, finished = false;
   const success = (spoken) => {
     if (finished) return;
     finished = true;
     beep(true);
+    react("cheer");
     celebrate();
     st.i++;
     const id = screenId;
@@ -165,6 +182,7 @@ function showKidExercise(st) {
   const miss = (btn, hintBtn) => {
     tries++;
     beep(false);
+    react("oops");
     btn.classList.remove("shake");
     void btn.offsetWidth;
     btn.classList.add("shake");
@@ -230,7 +248,7 @@ function showKidExercise(st) {
     say = [[uiT("trace"), G], [item.letter, G]];
   }
 
-  app.append(dots, card);
+  app.append(dots, talk, card);
   speak(say);
 }
 
@@ -318,11 +336,10 @@ function showKidReward(st) {
   save.stickers.push(sticker);
   touchStreak();
   persist();
-  renderTopbar();
-  screen();
+  screen("main");
   celebrate();
   const card = el("div", "card result kid");
-  card.append(el("div", "sticker", sticker), el("p", "prompt", ui("newSticker")));
+  card.append(mascot("cheer", 110), el("div", "sticker", sticker), el("p", "prompt", ui("newSticker")));
   app.append(card,
     button("btn", "🔁 " + ui("again"), () => startUnit(st.u)),
     button("btn ghost", "🏠 " + ui("back"), showKidsHome));

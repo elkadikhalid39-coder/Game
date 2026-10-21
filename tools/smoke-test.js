@@ -57,24 +57,52 @@ async function playKidUnit(page) {
   const browser = await chromium.launch(process.env.PW_CHROMIUM ? { executablePath: process.env.PW_CHROMIUM } : {});
   const fails = [];
 
-  // Adultos: árabe → español, y chino → inglés.
+  // Adultos: la primera lección del camino en varias combinaciones de idiomas.
   for (const [native, target] of [["ar", "es"], ["zh", "en"], ["es", "es"]]) {
     const { page, errors } = await newPage(browser, { native, target, mode: "adult" });
-    await page.click(".world");
-    for (let i = 0; i < 8; i++) { await page.click('.opt[data-ok="1"]'); await page.click(".btn"); }
-    const ok = await page.$(".result") && (await page.innerText(".result")).includes("8 / 8");
-    console.log(`adultos ${native}→${target}: ${ok ? "OK" : "FALLO"}`);
-    if (!ok || errors.length) fails.push(`adultos ${native}→${target} ${errors}`);
+    await page.click(".node-wrap.current .node");
+    for (let g = 0; g < 30 && !(await page.$(".result-stats")); g++) {
+      if (await page.$(".sheet .btn")) await page.click(".sheet .btn");
+      else if (await page.$(".footer .btn")) await page.click(".footer .btn");
+      else await page.click('.opt[data-ok="1"]');
+    }
+    const ok = (await page.$(".result-stats")) && (await page.innerText(".result-stats")).includes("100%");
+    await page.click(".btn");
+    const unlocked = (await page.$$(".node-wrap.done")).length === 1;
+    console.log(`adultos ${native}→${target}: ${ok && unlocked ? "OK" : "FALLO"}`);
+    if (!ok || !unlocked || errors.length) fails.push(`adultos ${native}→${target} ${errors}`);
     await page.close();
   }
 
-  // Primera vez: elegir idiomas, modo y edad desde cero.
+  // Repaso: un fallo aparece en Repasar y desaparece al acertarlo.
+  {
+    const { page, errors } = await newPage(browser, { native: "fr", target: "es", mode: "adult" });
+    await page.click(".node-wrap.current .node");
+    await page.click(".footer .btn");
+    await page.click('.opt[data-ok="0"]');
+    await page.click(".sheet .btn");
+    await page.click(".icon-btn");
+    await page.click(".tab:nth-child(2)");
+    const listed = (await page.$$(".chip-item")).length === 1;
+    await page.click(".btn.big");
+    for (let g = 0; g < 10 && !(await page.$(".result-stats")); g++) {
+      if (await page.$(".sheet .btn")) await page.click(".sheet .btn"); else await page.click('.opt[data-ok="1"]');
+    }
+    await page.click(".btn");
+    const cleared = !(await page.$(".chip-item"));
+    console.log(`repaso de errores: ${listed && cleared ? "OK" : "FALLO"}`);
+    if (!listed || !cleared || errors.length) fails.push("repaso " + errors);
+    await page.close();
+  }
+
+  // Primera vez: bienvenida, idiomas, modo y edad desde cero.
   {
     const { page, errors } = await newPage(browser, null);
-    await page.click('.opt[lang="fr"]');
-    await page.click('.opt[lang="es"]');
-    await page.click(".mode:nth-child(2)");
-    await page.click(".mode:nth-child(2)");
+    await page.click(".welcome ~ .btn");
+    await page.click('.lang-row:has(.name[lang="fr"])');
+    await page.click('.lang-row:has(.name[lang="es"])');
+    await page.click(".mode.kid");
+    await page.click(".age:nth-child(2)");
     const ok = (await page.innerText("#app")).includes("Voyelles");
     console.log(`primera vez fr→es niños 3–5: ${ok ? "OK" : "FALLO"}`);
     if (shots) await page.screenshot({ path: path.join(shots, "kids-home.png"), fullPage: true });
