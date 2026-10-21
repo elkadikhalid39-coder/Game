@@ -44,8 +44,9 @@ async function playKidUnit(page) {
     if (await page.$(".trace-canvas")) { await trace(page); }
     else if (await page.$(".opt.syl")) {
       // Como un niño: toca una sílaba cada vez; si no era la siguiente, prueba otra.
+      // force: la sílaba correcta «late» como pista y Playwright no pulsa elementos en movimiento.
       const tiles = await page.$$(".opt.syl:not([disabled])");
-      if (tiles.length) await tiles[guard % tiles.length].click({ timeout: 2000 }).catch(() => {});
+      if (tiles.length) await tiles[guard % tiles.length].click({ timeout: 2000, force: true }).catch(() => {});
     } else if (await page.$('.opt[data-ok="1"]:not(.correct)')) { await page.click('.opt[data-ok="1"]:not(.correct)'); }
     await page.waitForTimeout(700);
   }
