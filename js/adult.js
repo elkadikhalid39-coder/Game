@@ -81,7 +81,8 @@ function showExercise(s) {
 
   if (ex.type === "see") {
     // La palabra en el idioma de la persona; elige cómo se dice en el idioma que aprende.
-    card.append(el("p", "prompt", ui("howSay")), txt("div", "bigword", tr(ex.item.id, N), N));
+    // Si habla el mismo idioma que aprende, se muestra el dibujo en lugar de la palabra.
+    card.append(el("p", "prompt", ui("howSay")), N === G ? el("div", "bigemoji", ex.item.emoji) : txt("div", "bigword", tr(ex.item.id, N), N));
     const opts = el("div", "options two");
     for (const o of ex.options) addOption(opts, tr(o.id, G), G, o === ex.item, tr(ex.item.id, G), tr(ex.item.id, G));
     card.append(opts);
@@ -95,7 +96,8 @@ function showExercise(s) {
   } else {
     const q = "q_" + ex.id, a = "a_" + ex.id;
     card.append(el("p", "prompt", ui("chooseAnswer")), txt("div", "bigword", tr(q, G), G),
-      button("listen small", "🔊", () => speak(tr(q, G), G)), txt("p", "hint", tr(q, N), N));
+      button("listen small", "🔊", () => speak(tr(q, G), G)));
+    if (N !== G) card.append(txt("p", "hint", tr(q, N), N));
     const opts = el("div", "options");
     for (const id of shuffle([a, ...ex.wrong.map((w) => "a_" + w)])) addOption(opts, tr(id, G), G, id === a, tr(a, G), tr(a, G));
     card.append(opts);

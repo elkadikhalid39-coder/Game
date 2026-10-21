@@ -151,7 +151,7 @@ function showNativePicker() {
   const grid = el("div", "options two");
   for (const code of Object.keys(I18N)) {
     const b = txt("button", "opt", I18N[code].name, code);
-    b.onclick = () => { save.native = code; if (save.target === code) save.target = ""; showTargetPicker(); };
+    b.onclick = () => { save.native = code; showTargetPicker(); };
     grid.append(b);
   }
   app.append(grid);
@@ -164,8 +164,8 @@ function showTargetPicker() {
   app.append(button("back", "← " + ui("back"), showNativePicker));
   app.append(el("h1", "", "🎯 " + ui("iLearn")));
   const grid = el("div", "options two");
+  // Puede ser el mismo idioma que habla: para reforzarlo, aprender a leerlo o practicar.
   for (const code of Object.keys(I18N)) {
-    if (code === save.native) continue;
     const b = txt("button", "opt" + (code === "es" ? " featured" : ""), I18N[code].name, code);
     b.onclick = () => { save.target = code; persist(); go(); };
     grid.append(b);

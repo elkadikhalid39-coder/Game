@@ -55,7 +55,7 @@ async function playKidUnit(page) {
   const fails = [];
 
   // Adultos: árabe → español, y chino → inglés.
-  for (const [native, target] of [["ar", "es"], ["zh", "en"]]) {
+  for (const [native, target] of [["ar", "es"], ["zh", "en"], ["es", "es"]]) {
     const { page, errors } = await newPage(browser, { native, target, mode: "adult" });
     await page.click(".world");
     for (let i = 0; i < 8; i++) { await page.click('.opt[data-ok="1"]'); await page.click(".btn"); }
