@@ -39,11 +39,13 @@ async function trace(page) {
 
 async function playKidUnit(page) {
   while (await page.$(".learn")) await page.click(".nav .btn:last-child");
-  for (let guard = 0; guard < 40; guard++) {
+  for (let guard = 0; guard < 60; guard++) {
     if (await page.$(".sticker")) return true;
     if (await page.$(".trace-canvas")) { await trace(page); }
     else if (await page.$(".opt.syl")) {
-      for (const b of await page.$$(".opt.syl:not([disabled])")) { await b.click().catch(() => {}); }
+      // Como un niño: toca una sílaba cada vez; si no era la siguiente, prueba otra.
+      const tiles = await page.$$(".opt.syl:not([disabled])");
+      if (tiles.length) await tiles[guard % tiles.length].click({ timeout: 2000 }).catch(() => {});
     } else if (await page.$('.opt[data-ok="1"]:not(.correct)')) { await page.click('.opt[data-ok="1"]:not(.correct)'); }
     await page.waitForTimeout(700);
   }
