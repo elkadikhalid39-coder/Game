@@ -62,8 +62,11 @@ function showSubjects() {
   for (const s of SUBJECTS.filter((x) => x.id)) {
     menu.append(menuRow("📘", s.name, s.modality, () => go("pce-subject", s.id), { badge: ui("verifiedSubject") }));
   }
-  app.append(menu, el("h2", "section", "📂 " + ui("otherSubjects")), el("p", "lead", ui("otherSubjectsHelp")));
-  for (const s of SUBJECTS.filter((x) => !x.id)) {
+  app.append(menu);
+  // Materias sin ficha propia todavía (hoy todas la tienen): solo el enlace a su guía oficial.
+  const others = SUBJECTS.filter((x) => !x.id);
+  if (others.length) app.append(el("h2", "section", "📂 " + ui("otherSubjects")), el("p", "lead", ui("otherSubjectsHelp")));
+  for (const s of others) {
     const row = el("div", "subject-row");
     const head = el("div", "subject-head");
     head.lang = "es";

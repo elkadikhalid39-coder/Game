@@ -7,7 +7,8 @@
       "type": "desarrollo",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaaleman20252026defv217diciembre.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/pcealemanmodeloexamen2026defv217diciembre.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "aleman"
     },
     {
       "name": "Biología",
@@ -15,7 +16,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526biologia.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenpce202526biologia.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "biologia"
     },
     {
       "name": "Ciencias Generales",
@@ -23,7 +25,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/modeloguiapcecienciasgenerales2025262.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodeexamencienciasgeneralesn20252026.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "ciencias"
     },
     {
       "name": "Dibujo Artístico",
@@ -31,7 +34,8 @@
       "type": "desarrollo",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiadibujoartistico20252026def.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodibujoartistico2026.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "dibujo_artistico"
     },
     {
       "name": "Dibujo Técnico",
@@ -39,7 +43,8 @@
       "type": "desarrollo",
       "guide": "https://unedasiss.uned.es/archivos_publicos/AccesoExtAsignaturasExamen/100713/guiapcedibujotecnico202526v23396.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/examenmodelodibujotecnicopce2526v2.pdf",
-      "guideDate": "2026-04-15"
+      "guideDate": "2026-04-15",
+      "id": "dibujo_tecnico"
     },
     {
       "name": "Diseño",
@@ -47,7 +52,8 @@
       "type": "desarrollo",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526diseno.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodiseno2026.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "diseno"
     },
     {
       "name": "Empresas y Diseño de Modelos de Negocio",
@@ -55,7 +61,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaempresaydisenodemodelosdenegocio20252026.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/16730/modeloempresa20252026.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "empresa"
     },
     {
       "name": "Física",
@@ -63,7 +70,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcefisica202526.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/examenfisicapcemodelo202526.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "fisica"
     },
     {
       "name": "Francés",
@@ -71,7 +79,8 @@
       "type": "desarrollo",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcefrances202526.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelopcefrances202526def.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "frances"
     },
     {
       "name": "Fundamentos Artísticos",
@@ -79,7 +88,8 @@
       "type": "desarrollo",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiafundamentosartisticos20252026.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenfundamentosartisticos20252026.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "fundamentos"
     },
     {
       "name": "Geografía",
@@ -87,7 +97,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526geografia.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamengeografia.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "geografia"
     },
     {
       "name": "Geología y Ciencias Ambientales",
@@ -95,7 +106,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcegeologiayccamb202526final.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexgeologiayccamb202526final.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "geologia"
     },
     {
       "name": "Historia de España",
@@ -112,7 +124,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/modeloguiafilosofiapce20252026.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenpcefilosofia.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "filosofia"
     },
     {
       "name": "Historia del Arte",
@@ -120,7 +133,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiahistoriadelartepce202526.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenhistoriadelarte202526.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "arte"
     },
     {
       "name": "Inglés",
@@ -137,7 +151,8 @@
       "type": "desarrollo",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaitaliano2526def.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloitaliano2026def.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "italiano"
     },
     {
       "name": "Latín",
@@ -145,7 +160,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guialatin2526.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelolatinpublicable26.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "latin"
     },
     {
       "name": "Lengua Castellana y Literatura",
@@ -180,7 +196,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiamovimientosculturalesyartisticospce202526.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamen20252026movimientosculturales.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "movimientos"
     },
     {
       "name": "Portugués",
@@ -188,7 +205,8 @@
       "type": "desarrollo",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaportuguespce2526.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenportugues2526.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "portugues"
     },
     {
       "name": "Química",
@@ -196,7 +214,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcequimica20252026publicada.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodeexamenpcequimica20252026publicado.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "quimica"
     },
     {
       "name": "Tecnología e Ingeniería",
@@ -204,7 +223,8 @@
       "type": "test",
       "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcetecnologiaeingenieria202526v4.pdf",
       "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/tecnologiaeingenieriamodeloexamenguiacurso20252026v4.pdf",
-      "guideDate": "2025-12-23"
+      "guideDate": "2025-12-23",
+      "id": "tecnologia"
     }
   ],
   "details": {
@@ -278,6 +298,221 @@
       "tools": [
         "macs"
       ]
+    },
+    "fisica": {
+      "fact": "pce.fisica",
+      "program": [
+        "Bloque I. La actividad científica",
+        "Bloque II. Interacción gravitatoria",
+        "Bloque III. Interacción electromagnética",
+        "Bloque IV. Ondas",
+        "Bloque V. Óptica geométrica",
+        "Bloque VI. Física del siglo XX (relatividad, física cuántica y nuclear)"
+      ],
+      "tools": []
+    },
+    "quimica": {
+      "fact": "pce.quimica",
+      "program": [
+        "Bloque I. Actividad científica",
+        "Bloque II. Origen y evolución de los componentes del universo (estructura atómica, sistema periódico, enlace)",
+        "Bloque III. Reacciones químicas",
+        "Bloque IV. Síntesis orgánica y nuevos materiales"
+      ],
+      "tools": []
+    },
+    "biologia": {
+      "fact": "pce.biologia",
+      "program": [
+        "Bloque A. Las biomoléculas",
+        "Bloque B. Genética molecular",
+        "Bloque C. Biología celular",
+        "Bloque D. Metabolismo",
+        "Bloque E. Biotecnología",
+        "Bloque F. Inmunología"
+      ],
+      "tools": []
+    },
+    "geografia": {
+      "fact": "pce.geografia",
+      "program": [
+        "Bloque I. España, Europa y la globalización",
+        "Bloque II. La sostenibilidad del medio físico de España",
+        "Bloque III. La ordenación del territorio en el enfoque ecosocial"
+      ],
+      "tools": []
+    },
+    "arte": {
+      "fact": "pce.arte",
+      "program": [
+        "Saber A. Aproximación a la Historia del Arte (glosario esencial)",
+        "Saber B. El arte y sus funciones a lo largo de la historia",
+        "Saber C. Dimensión individual y social del arte",
+        "Saber D. Realidad, espacio y territorio en el arte"
+      ],
+      "tools": []
+    },
+    "filosofia": {
+      "fact": "pce.filosofia",
+      "program": [
+        "Bloque I. El origen de la filosofía. La filosofía antigua (Platón, Aristóteles, helenismo)",
+        "Bloque II. La filosofía medieval",
+        "Bloque III. La filosofía moderna",
+        "Bloque IV. La filosofía contemporánea"
+      ],
+      "tools": []
+    },
+    "geologia": {
+      "fact": "pce.geologia",
+      "program": [
+        "Bloque A. Experimentación en Geología y Ciencias Ambientales",
+        "Bloque B. La tectónica de placas y geodinámica interna",
+        "Bloque C. Procesos geológicos externos",
+        "Bloque D. Minerales",
+        "Bloque E. Rocas ígneas, sedimentarias y metamórficas",
+        "Bloque F. Las capas fluidas de la Tierra",
+        "Bloque G. Recursos y su gestión sostenible"
+      ],
+      "tools": []
+    },
+    "tecnologia": {
+      "fact": "pce.tecnologia",
+      "program": [
+        "Bloque A. Proyectos de investigación y desarrollo",
+        "Bloque B. Materiales y fabricación",
+        "Bloque C. Sistemas mecánicos",
+        "Bloque D. Sistemas eléctricos y electrónicos",
+        "Bloque E. Sistemas informáticos",
+        "Bloque F. Sistemas automáticos",
+        "Bloque G. Tecnología sostenible"
+      ],
+      "tools": []
+    },
+    "empresa": {
+      "fact": "pce.empresa",
+      "program": [
+        "A. La empresa y su entorno",
+        "B. El modelo de negocio y de gestión (marketing, producción, recursos humanos, finanzas)",
+        "C. Herramientas para innovar en modelos de negocio y de gestión",
+        "D. Estrategia empresarial y métodos de análisis de la realidad"
+      ],
+      "tools": []
+    },
+    "latin": {
+      "fact": "pce.latin",
+      "program": [
+        "Bloque I. El latín, origen de las lenguas romances",
+        "Bloque II. Morfología",
+        "Bloque III. Sintaxis",
+        "Bloque IV. Literatura romana",
+        "Bloque V. Textos",
+        "Bloque VI. Léxico"
+      ],
+      "tools": []
+    },
+    "dibujo_tecnico": {
+      "fact": "pce.dibujo_tecnico",
+      "program": [
+        "Fundamentos geométricos",
+        "Sistema diédrico",
+        "Sistemas axonométrico y caballera",
+        "Perspectiva cónica",
+        "Normalización y acotación"
+      ],
+      "tools": []
+    },
+    "dibujo_artistico": {
+      "fact": "pce.dibujo_artistico",
+      "program": [
+        "Bloque I. Concepto e historia del dibujo",
+        "Bloque II. La expresión gráfica y sus recursos elementales",
+        "Bloque III. Dibujo y espacio",
+        "Bloque IV. La luz, el claroscuro y el color",
+        "Bloque V. La figura humana",
+        "Bloque VI. Proyectos gráficos colaborativos"
+      ],
+      "tools": []
+    },
+    "diseno": {
+      "fact": "pce.diseno",
+      "program": [
+        "Bloque I. Concepto, historia y campos del diseño",
+        "Bloque II. El diseño: configuración formal y metodología",
+        "Bloque III. Diseño gráfico",
+        "Bloque IV. Diseño tridimensional"
+      ],
+      "tools": []
+    },
+    "fundamentos": {
+      "fact": "pce.fundamentos",
+      "program": [
+        "Bloque 2. Visión, realidad y representación",
+        "Bloque 3. El arte clásico y sus proyecciones",
+        "Bloque 4. Arte y expresión",
+        "Bloque 5. Naturaleza, sociedad y comunicación"
+      ],
+      "tools": []
+    },
+    "ciencias": {
+      "fact": "pce.ciencias",
+      "program": [
+        "Bloque I. Construyendo ciencia",
+        "Bloque II. Un universo de materia y energía",
+        "Bloque III. El sistema Tierra",
+        "Bloque IV. Biología para el siglo XXI",
+        "Bloque V. Las fuerzas que nos mueven"
+      ],
+      "tools": []
+    },
+    "movimientos": {
+      "fact": "pce.movimientos",
+      "program": [
+        "Bloque 1. Aspectos generales",
+        "Bloque 2. Naturaleza, arte y cultura",
+        "Bloque 3. El arte dentro del arte",
+        "Bloque 4. El arte en los espacios urbanos",
+        "Bloque 5. Lenguajes artísticos contemporáneos"
+      ],
+      "tools": []
+    },
+    "frances": {
+      "fact": "pce.frances",
+      "program": [
+        "Comprensión de un texto escrito (prensa, revistas, literatura, webs)",
+        "Gramática y uso de la lengua en contexto",
+        "Léxico: sinónimos y antónimos",
+        "Expresión escrita: redacción de 150 a 180 palabras"
+      ],
+      "tools": []
+    },
+    "aleman": {
+      "fact": "pce.aleman",
+      "program": [
+        "Comprensión e interpretación de textos en lengua estándar",
+        "Uso de estructuras gramaticales y léxico",
+        "Redacción de textos personales, actuales y académicos",
+        "Aspectos culturales de los países de lengua alemana"
+      ],
+      "tools": []
+    },
+    "italiano": {
+      "fact": "pce.italiano",
+      "program": [
+        "Bloque A. Comunicación",
+        "Bloque B. Plurilingüismo",
+        "Bloque C. Interculturalidad"
+      ],
+      "tools": []
+    },
+    "portugues": {
+      "fact": "pce.portugues",
+      "program": [
+        "Bloque I. Comprensión de textos orales y escritos",
+        "Bloque II. Producción de textos orales y escritos",
+        "Bloque III. Comprensión de textos escritos",
+        "Bloque IV. Producción de textos escritos: expresión e interacción"
+      ],
+      "tools": []
     }
   },
   "tests": {

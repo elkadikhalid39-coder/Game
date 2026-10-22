@@ -219,7 +219,7 @@
   },
   {
     "id": "pce.duracion",
-    "text": "Cada examen dura 90 minutos y no hay nota mínima por bloque. Confirmado en las guías de Lengua, Historia de España, Inglés, Matemáticas y Matemáticas Aplicadas a las CC. SS.; en las demás materias, consulta su guía.",
+    "text": "Cada examen dura 90 minutos: así lo dicen las guías 2025-26 de las 25 materias. La nota es la suma de los bloques y, en las guías que lo precisan, no hay nota mínima por bloque. El material permitido cambia según la materia: míralo en su ficha.",
     "status": "confirmado",
     "sources": [
       {
@@ -378,5 +378,286 @@
     "checked": "2026-10-22",
     "reviewDays": 120,
     "note": "Cada universidad publica sus tablas de ponderación. Comprueba el cálculo en la normativa y en la universidad de destino."
+  },
+  {
+    "id": "pce.fisica",
+    "text": "Física: 90 minutos, 4 bloques de 2,5 puntos. Bloques 1 y 2: un problema a elegir entre dos. Bloque 3: 8 cuestiones de tres opciones, se contestan como máximo 5 (acierto +0,5, error −0,15, en blanco 0; el bloque no baja de 0; si se contestan más, cuentan las 5 primeras). Bloque 4: un problema sin opciones con planteamiento competencial. Calculadora no programable, sin pantalla gráfica ni almacenamiento de texto; se permiten regla, escuadra y cartabón.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Física 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcefisica202526.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.quimica",
+    "text": "Química: 90 minutos, 4 partes. Partes 1 y 2 (2,5 puntos cada una): un enunciado a elegir entre dos. Parte 3 (3 puntos): 8 preguntas tipo test con cuatro opciones, se contestan como máximo 6 (acierto +0,5, error −0,1, en blanco 0). Parte 4 (2 puntos): dos enunciados abiertos obligatorios. Calculadora científica no programable, sin memoria de texto ni gráficos; no se permite tabla periódica.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Química 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcequimica20252026publicada.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.biologia",
+    "text": "Biología: 90 minutos, sin material, 4 bloques de 2,5 puntos. Bloque I: una pregunta de desarrollo a elegir entre dos (sobre todo biomoléculas y genética molecular). Bloque II: una a elegir entre dos (sobre todo biología celular y metabolismo). Bloque III: 8 preguntas de tres opciones, se contestan 5 (acierto +0,5, error −0,15, en blanco 0). Bloque IV: texto o caso práctico obligatorio (sobre todo biotecnología e inmunología).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Biología 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526biologia.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.geografia",
+    "text": "Geografía: 90 minutos, sin material. Dos preguntas cortas de desarrollo, cada una a elegir entre dos (2,5 puntos cada una). Test de 10 preguntas de tres opciones, se contestan 8 (acierto +0,25, error −0,1; máximo 2 puntos). Práctica a elegir entre dos (3 puntos): mapas, climogramas, pirámides de población, gráficos o textos geográficos. Las faltas de ortografía graves y repetidas bajan la nota.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Geografía 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526geografia.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.arte",
+    "text": "Historia del Arte: 90 minutos, sin material. Dos temas de desarrollo, cada uno a elegir entre dos (2,5 puntos cada uno; el segundo, competencial). Test: 5 preguntas de tres opciones a elegir entre 8 (acierto +0,5, error −0,1; máximo 2,5), sobre todo del glosario esencial. Comentario de una obra a elegir entre dos de la lista de obras de obligado conocimiento (2,5 puntos): se da el título, pero no el autor ni la fecha.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Historia del Arte 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiahistoriadelartepce202526.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.filosofia",
+    "text": "Historia de la Filosofía: 90 minutos, sin material, respuestas en el espacio tasado. Parte 1 (2 puntos): 4 preguntas breves a elegir entre 6 (0,5 cada una, unas 3 o 4 líneas). Parte 2 (2 puntos): 5 preguntas de test de tres opciones (0,4 cada una; cada error resta 0,05). Parte 3 (6 puntos): comentario de un texto a elegir entre dos, con dos preguntas de 3 puntos (relacionar las ideas del texto con la filosofía del autor y compararlo con otro filósofo).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Historia de la Filosofía 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/modeloguiafilosofiapce20252026.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.geologia",
+    "text": "Geología y Ciencias Ambientales: 90 minutos, sin material, 5 partes de 2 puntos. Parte 1: obligatoria, sobre un corte geológico, figura o esquema. Partes 2 a 5: dos preguntas (1 punto cada una), cada una con dos opciones a elegir. La redacción (coherencia, gramática, ortografía) cuenta un 10 % de cada pregunta.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Geología y Ciencias Ambientales 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcegeologiayccamb202526final.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.tecnologia",
+    "text": "Tecnología e Ingeniería: 90 minutos, 4 problemas (sin test). Bloque 1 (3 puntos): un problema competencial obligatorio. Bloque 2 (3 puntos), 3 (2 puntos) y 4 (2 puntos): un problema a elegir entre dos. Se responde en el espacio del enunciado. Calculadora elemental: no programable ni con capacidad de almacenar texto.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Tecnología e Ingeniería 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcetecnologiaeingenieria202526v4.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.empresa",
+    "text": "Empresa y Diseño de Modelos de Negocio: 90 minutos, calculadora no programable. Bloques 1 y 2 (2,5 puntos cada uno): una pregunta a elegir entre dos. Bloque 3 (3 puntos): test de 8 preguntas, se contestan 6 (acierto +0,5, error −0,15). Bloque 4 (2 puntos): una pregunta obligatoria. Un resultado sin cálculos ni explicación no puntúa.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Empresas y Diseño de Modelos de Negocio 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaempresaydisenodemodelosdenegocio20252026.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.latin",
+    "text": "Latín: 90 minutos, con diccionario latín-español básico (tipo Vox) y su apéndice gramatical sin anotaciones. Bloque 1 (5 puntos): traducción de un texto latino (César, Salustio, Cicerón…). Bloque 2 (2 puntos): test de 6 preguntas, se contestan 4 (acierto +0,5, error −0,1) sobre cultura, literatura y evolución al castellano. Bloque 3 (3 puntos): una opción a elegir con una pregunta de morfología y otra de sintaxis del texto.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Latín 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guialatin2526.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.dibujo_tecnico",
+    "text": "Dibujo Técnico: 90 minutos, con instrumentos de dibujo (escuadras, compás…) y calculadora no programable, que lleva el estudiante. Un ejercicio con una parte teórico-conceptual (30 % de la nota) y una parte práctica (70 %): pasar una pieza de un sistema tridimensional (axonométrico, cónico o caballera) al sistema diédrico, o al revés. Dejar la parte práctica en blanco lleva a una nota negativa del conjunto.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Dibujo Técnico 2025-26 (UNED)",
+        "url": "https://unedasiss.uned.es/archivos_publicos/AccesoExtAsignaturasExamen/100713/guiapcedibujotecnico202526v23396.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.dibujo_artistico",
+    "text": "Dibujo Artístico: 90 minutos, sobre 10 puntos. Un ejercicio de producción plástica con dos opciones (A o B): se entregan los bocetos y el dibujo final. El estudiante lleva papel DIN A3, lápiz HB, rotuladores, ceras, témperas, pinceles, papeles de colores, tijeras y pegamento. No se pueden usar dispositivos electrónicos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Dibujo Artístico 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiadibujoartistico20252026def.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.diseno",
+    "text": "Diseño: 90 minutos, 4 bloques. Bloque 1 (1,5 puntos): pregunta teórica a elegir entre dos, en una cara de folio. Bloque 2 (5 puntos): ejercicio práctico de diseño a elegir entre dos. Bloque 3 (2 puntos): memoria razonada del diseño. Bloque 4 (1,5 puntos): comentario crítico del diseño. Material: lápices o rotuladores, escuadra, cartabón y regla (mejor sin ceras ni témperas).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Diseño 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526diseno.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.fundamentos",
+    "text": "Fundamentos Artísticos: 90 minutos, sin material y sin test. Dos preguntas competenciales de desarrollo de 5 puntos cada una: una a elegir entre dos (bloque 1 del examen) y otra a elegir entre tres (bloque 2). Solo entran los bloques de contenido 2 a 5. Hay que situar siempre la cronología y el contexto histórico.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Fundamentos Artísticos 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiafundamentosartisticos20252026.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.ciencias",
+    "text": "Ciencias Generales: 90 minutos, calculadora científica no programable. Bloque I (2,5 puntos): preguntas abiertas competenciales, opción A o B. Bloque II (2,5 puntos): problemas, opción A o B. Bloque III (3 puntos): test de 8 preguntas, se contestan como máximo 5 (acierto +0,6, error −0,2). Bloque IV (2 puntos): lectura de un texto con preguntas de 0,5 puntos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Ciencias Generales 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/modeloguiapcecienciasgenerales2025262.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.movimientos",
+    "text": "Movimientos Culturales y Artísticos: 90 minutos, solo papel borrador. Dos preguntas breves a elegir entre cuatro (1 punto cada una). Un tema de desarrollo a elegir entre dos (6 puntos). Test de 10 preguntas de tres opciones, se contestan 8 (acierto +0,25, error −0,05; máximo 2 puntos).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Movimientos Culturales y Artísticos 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiamovimientosculturalesyartisticospce202526.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120,
+    "note": "La guía dice también que «cuatro respuestas erróneas restan un acierto», que no coincide con −0,05 por error; consulta el modelo oficial."
+  },
+  {
+    "id": "pce.frances",
+    "text": "Francés (nivel A2 consolidado o B1): 90 minutos, sin diccionario. Bloque I (2 puntos): explicar con tus palabras las ideas del texto en 100 a 150 palabras. Bloque II (3 puntos): tres preguntas de 1 punto sobre el texto (gramática, reformulación y léxico). Bloque III (5 puntos): redacción de 150 a 180 palabras, a elegir entre dos temas.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Francés 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcefrances202526.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.aleman",
+    "text": "Alemán: 90 minutos, examen solo escrito y en alemán, sin diccionario. Cuatro preguntas abiertas de 2,5 puntos: una a elegir entre las dos del bloque A, una entre las dos del bloque B y dos entre las tres del bloque C, a partir de un texto de actualidad, cultura o sociedad. Se responde en el espacio tasado.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Alemán 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaaleman20252026defv217diciembre.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.italiano",
+    "text": "Italiano: 90 minutos, sin material, todo en italiano. Primera parte (2,5 puntos): comprensión de un texto original. Segunda parte (2,5 puntos): uso de la lengua, opción A o B. Tercera parte (5 puntos): producción escrita libre.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Italiano 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaitaliano2526def.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.portugues",
+    "text": "Portugués: 90 minutos, sin material. Bloque 1 (2 puntos): resumen del texto en hasta 10 líneas, sin copiar fragmentos. Bloque 2 (3 puntos): definir 4 palabras del texto a elegir entre 6. Bloque 3 (5 puntos): redacción de hasta 15 líneas a elegir entre dos temas. Se penalizan las faltas de ortografía (también los acentos) y pasarse del número de líneas.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Portugués 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaportuguespce2526.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
   }
 ]
