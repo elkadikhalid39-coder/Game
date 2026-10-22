@@ -1,25 +1,27 @@
-# Hola, Español 🌍
+# Hola, Español
 
-Juego para aprender idiomas pensado para personas inmigrantes y sus hijos.
+Aplicación para aprender el español que se necesita para vivir en España y preparar los exámenes oficiales (nacionalidad y universidad). La interfaz y las explicaciones están en 12 idiomas.
 
-- **12 idiomas** (español, inglés, francés, árabe, rumano, ucraniano, ruso, portugués, chino, urdu, alemán, italiano): la persona elige el que habla y el que quiere aprender.
-- **Modo adultos**: camino de lecciones por unidades (palabras → escuchar → frases) que se desbloquean en orden; pestañas Aprender, Repasar (practica lo que fallaste) y Perfil (racha, puntos, palabras aprendidas, ajustes).
-- **Modo niños (1–3, 3–5, 5–7 años)**: lenguaje, números y "mi mundo"; tarjetas para aprender y luego jugar; trazado de letras, sílabas, contar y sumas. Sin vidas ni tiempo, pensado para niños con dificultades de aprendizaje. Control parental y modo calma.
+- **Bases del producto** (qué es, para quién, estructura, reglas de contenido y fuentes, decisiones): [docs/PRODUCTO.md](docs/PRODUCTO.md)
+- **Hoja de ruta** y datos pendientes de verificar: [docs/HOJA_DE_RUTA.md](docs/HOJA_DE_RUTA.md)
+- **Auditorías**: [docs/AUDITORIA.md](docs/AUDITORIA.md)
 
-El plan del producto (competencia, edades, negocio, hoja de ruta) está en [docs/PLAN.md](docs/PLAN.md) y la guía de auditorías en [docs/AUDITORIA.md](docs/AUDITORIA.md).
+## Estado
+
+Fase 0 terminada: curso con 6 unidades (camino de lecciones, repaso de errores, perfil). Los pases de examen empiezan en la fase 3.
 
 ## Probar
 Abre `index.html` en el navegador, o genera un único archivo con `tools/build.sh` (sale en `dist/hola.html`).
 
 ## Comprobaciones
-- `node tools/check-content.js`: todos los idiomas tienen todos los textos.
-- `node tools/smoke-test.js`: juega en un navegador real todas las unidades (necesita Playwright; `PW_CHROMIUM=/ruta/a/chromium` si hace falta).
+- `node tools/check-content.js`: todos los idiomas tienen todos los textos y el contenido no usa ids inexistentes.
+- `node tools/smoke-test.js`: recorre la app en un navegador real (necesita Playwright; `PW_CHROMIUM=/ruta/a/chromium` si hace falta).
 
 ## Estructura
-- `js/i18n/<idioma>.js`: textos de cada idioma (`es.js` es la referencia).
-- `js/content.js`: mundos de adultos, unidades de niños, letras y sílabas.
-- `js/core.js`: guardado, idiomas, voz, sonidos y navegación.
-- `js/ui.js`: piezas de interfaz (mascota, globo de diálogo, barras, panel de respuesta).
-- `js/onboarding.js`: bienvenida, elección de idiomas, modo y edad, ajustes y control parental.
-- `js/adult.js` y `js/kids.js`: cada modo de juego.
-- `css/style.css`: identidad visual (colores, tipografías Fredoka y Lexend, componentes).
+- `js/i18n/<idioma>.js`: textos de cada idioma de apoyo (`es.js` es la referencia).
+- `js/content.js`: unidades del curso.
+- `js/core.js`: progreso guardado (con migración), idiomas, voz y navegación.
+- `js/ui.js`: piezas de interfaz (mascota, globo, barras, panel de respuesta).
+- `js/onboarding.js`: bienvenida, idioma y ajustes.
+- `js/learn.js`: camino de lecciones, lección, repaso y perfil.
+- `css/style.css`: identidad visual.

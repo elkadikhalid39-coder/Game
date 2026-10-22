@@ -1,5 +1,5 @@
-// Modo adultos: camino de lecciones por unidades, repaso de errores y perfil.
-const MAX_LIVES = 3;
+// Aprender: camino de lecciones por unidades, repaso de errores y perfil.
+// No hay vidas: lo que se falla se repite al final de la misma lección y queda en Repasar.
 // Cada unidad (mundo) tiene tres lecciones que se desbloquean en orden.
 const LESSON_TYPES = [
   { type: "words", icon: "🔤", key: "lessonWords" },
@@ -83,11 +83,11 @@ function makeReview() {
 }
 
 function startLesson(world, li) {
-  runLesson({ world, li, list: makeLesson(world, li), i: 0, lives: MAX_LIVES, correct: 0, graded: 0 });
+  runLesson({ world, li, list: makeLesson(world, li), i: 0, correct: 0, graded: 0 });
 }
 function startReview() {
   const list = makeReview();
-  if (list.length) runLesson({ review: true, list, i: 0, lives: MAX_LIVES, correct: 0, graded: 0 });
+  if (list.length) runLesson({ review: true, list, i: 0, correct: 0, graded: 0 });
 }
 
 function noteResult(ex, ok) {
@@ -95,13 +95,14 @@ function noteResult(ex, ok) {
   const list = forTarget("mistakes");
   const at = list.findIndex((m) => m.k === key.k && m.id === key.id);
   if (!ok && at < 0) list.push(key);
-  if (ok && at >= 0) list.splice(at, 1);
+  // Acertar en la segunda oportunidad de la misma lección no basta para sacarlo de Repasar.
+  if (ok && at >= 0 && !ex.again) list.splice(at, 1);
   if (ok && key.k === "w") { const l = forTarget("learned"); if (!l.includes(key.id)) l.push(key.id); }
 }
 
 // ---------- Lección ----------
 function runLesson(s) {
-  if (s.lives <= 0 || s.i >= s.list.length) return showResult(s);
+  if (s.i >= s.list.length) return showResult(s);
   const ex = s.list[s.i];
   const N = save.native, G = save.target;
   screen("lesson");
@@ -111,7 +112,7 @@ function runLesson(s) {
   const fillBar = el("div");
   fillBar.style.width = (s.i / s.list.length) * 100 + "%";
   bar.append(fillBar);
-  head.append(button("icon-btn", "✕", s.review ? showReview : showPath), bar, el("span", "hearts", "❤️ " + s.lives));
+  head.append(button("icon-btn", "✕", s.review ? showReview : showPath), bar);
   app.append(head);
   const next = () => { s.i++; runLesson(s); };
 
@@ -139,7 +140,12 @@ function runLesson(s) {
       b.disabled = true;
       if (b.dataset.ok === "1") b.classList.add("correct");
     }
-    if (ok) { s.correct++; save.xp += 10; } else { s.lives--; btn.classList.add("wrong"); }
+    if (ok) s.correct++;
+    else {
+      btn.classList.add("wrong");
+      // Una segunda oportunidad al final de la lección, con las opciones en otro orden.
+      if (!ex.again) s.list.push({ ...ex, again: true, options: ex.options && shuffle(ex.options) });
+    }
     noteResult(ex, ok);
     persist();
     speak(spoken, G);
@@ -184,32 +190,24 @@ function runLesson(s) {
 }
 
 function showResult(s) {
-  const won = s.lives > 0;
-  const accuracy = s.graded ? Math.round((s.correct / s.graded) * 100) : 100;
-  if (won) {
-    touchStreak();
-    save.xp += 20;
-    if (!s.review) {
-      const p = forTarget("progress");
-      p[s.world.id] = Math.max(p[s.world.id] || 0, s.li + 1);
-    }
-    celebrate();
+  if (!s.review) {
+    const p = forTarget("progress");
+    p[s.world.id] = Math.max(p[s.world.id] || 0, s.li + 1);
   }
   persist();
+  celebrate();
   screen("plain");
+  const accuracy = s.graded ? Math.round((s.correct / s.graded) * 100) : 100;
   const stats = el("div", "result-stats");
   const stat = (label, value, cls) => {
     const d = el("div", "result-stat " + cls);
     d.append(el("span", "", label), el("strong", "", value));
     return d;
   };
-  stats.append(stat("⭐ " + ui("points"), "+" + (s.correct * 10 + (won ? 20 : 0)), "sun"),
-    stat("🎯 " + ui("score"), accuracy + "%", "mint"),
-    stat("🔥 " + ui("streak"), String(save.streak), "coral"));
-  app.append(mascot(won ? "cheer" : "oops", 140),
-    el("h1", "", won ? ui("done") : ui("retry")), stats,
-    button("btn big", ui("next"), s.review ? showReview : showPath),
-    ...(won ? [] : [button("btn ghost", ui("again"), () => (s.review ? startReview() : startLesson(s.world, s.li)))]));
+  stats.append(stat("🎯 " + ui("score"), accuracy + "%", "mint"),
+    stat("📚 " + ui("wordsLearned"), String(forTarget("learned").length), "sun"));
+  app.append(mascot("cheer", 140), el("h1", "", ui("done")), stats,
+    button("btn big", ui("next"), s.review ? showReview : showPath));
 }
 
 // ---------- Repasar ----------
@@ -237,7 +235,7 @@ function showProfile() {
   screen("main");
   const head = el("div", "profile-head");
   const names = el("div", "");
-  names.append(txt("strong", "", I18N[save.native].name + " → " + I18N[save.target].name, save.native), el("span", "", ui("tagline")));
+  names.append(el("strong", "", "Hola, Español"), el("span", "", ui("tagline")));
   head.append(mascot("happy", 84), names);
   const grid = el("div", "stats");
   const lessons = Object.values(forTarget("progress")).reduce((a, b) => a + b, 0);
@@ -246,7 +244,8 @@ function showProfile() {
     d.append(el("span", "icon", icon), el("strong", "", String(value)), el("span", "", label));
     return d;
   };
-  grid.append(tile("🔥", save.streak, ui("streak"), "coral"), tile("⭐", save.xp, ui("points"), "sun"),
-    tile("📚", forTarget("learned").length, ui("wordsLearned"), "mint"), tile("✅", lessons + " / " + WORLDS.length * LESSON_TYPES.length, ui("lessonsDone"), "grape"));
+  grid.append(tile("📚", forTarget("learned").length, ui("wordsLearned"), "mint"),
+    tile("✅", lessons + " / " + WORLDS.length * LESSON_TYPES.length, ui("lessonsDone"), "grape"),
+    tile("🔁", mistakesFor().length, ui("tabReview"), "coral"));
   app.append(head, grid, el("h2", "section", "⚙️ " + ui("settings")), settingsCard());
 }

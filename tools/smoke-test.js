@@ -1,147 +1,99 @@
-// Prueba de humo: juega una lección de adultos y todas las unidades de niños en un navegador real.
-// Uso: tools/build.sh && node tools/smoke-test.js   (necesita Playwright y Chromium)
+// Prueba de humo: recorre la app en un navegador real (primera vez, lecciones, repaso, perfil).
+// Uso: node tools/smoke-test.js   (necesita Playwright; PW_CHROMIUM=/ruta/a/chromium si hace falta)
 const path = require("path");
 let chromium;
 try { ({ chromium } = require("playwright")); } catch { ({ chromium } = require("/opt/node22/lib/node_modules/playwright")); }
 
 const file = "file://" + path.join(__dirname, "..", "index.html");
-const shots = process.env.SHOTS; // carpeta opcional para capturas
 
 async function newPage(browser, saveData) {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  // Sin voz en el navegador de pruebas: el juego usa una pausa corta en su lugar.
+  // Sin voz en el navegador de pruebas: la app usa una pausa corta en su lugar.
   await page.addInitScript((s) => { delete window.speechSynthesis; if (s) localStorage.setItem("hola-espanol", JSON.stringify(s)); }, saveData);
   await page.goto(file);
   return { page, errors };
 }
 
-async function trace(page) {
-  // Recorre la letra guía fila a fila, como haría un dedo sobre ella.
-  await page.evaluate(() => {
-    const cv = document.querySelector(".trace-canvas");
-    const r = cv.getBoundingClientRect();
-    const S = r.width, k = cv.width / S;
-    const d = cv.getContext("2d").getImageData(0, 0, cv.width, cv.height).data;
-    const on = (x, y) => d[(Math.round(y * k) * cv.width + Math.round(x * k)) * 4 + 3] > 0;
-    const fire = (type, x, y) => cv.dispatchEvent(new PointerEvent(type, { clientX: r.left + x, clientY: r.top + y, pointerId: 1, bubbles: true }));
-    for (let y = 2; y < S; y += 8) {
-      let start = null;
-      for (let x = 0; x <= S; x += 2) {
-        const inside = x < S && on(x, y);
-        if (inside && start === null) start = x;
-        if (!inside && start !== null) { fire("pointerdown", start, y); fire("pointermove", x - 2, y); fire("pointerup", x - 2, y); start = null; }
-      }
-    }
-  });
-}
-
-async function playKidUnit(page) {
-  while (await page.$(".learn")) await page.click(".nav .btn:last-child");
-  for (let guard = 0; guard < 60; guard++) {
-    if (await page.$(".sticker")) return true;
-    if (await page.$(".trace-canvas")) { await trace(page); }
-    else if (await page.$(".opt.syl")) {
-      // Como un niño: toca una sílaba cada vez; si no era la siguiente, prueba otra.
-      // force: la sílaba correcta «late» como pista y Playwright no pulsa elementos en movimiento.
-      const tiles = await page.$$(".opt.syl:not([disabled])");
-      if (tiles.length) await tiles[guard % tiles.length].click({ timeout: 2000, force: true }).catch(() => {});
-    } else if (await page.$('.opt[data-ok="1"]:not(.correct)')) { await page.click('.opt[data-ok="1"]:not(.correct)'); }
-    await page.waitForTimeout(700);
+// Responde la lección: bien siempre, o mal la primera vez que aparece el ejercicio número `wrongAt`.
+async function playLesson(page, wrongAt = -1) {
+  let seen = 0;
+  for (let g = 0; g < 40 && !(await page.$(".result-stats")); g++) {
+    if (await page.$(".sheet .btn")) { await page.click(".sheet .btn"); continue; }
+    if (await page.$(".footer .btn")) { await page.click(".footer .btn"); continue; }
+    await page.click(seen++ === wrongAt ? '.opt[data-ok="0"]' : '.opt[data-ok="1"]');
   }
-  return false;
+  return !!(await page.$(".result-stats"));
 }
 
 (async () => {
   const browser = await chromium.launch(process.env.PW_CHROMIUM ? { executablePath: process.env.PW_CHROMIUM } : {});
   const fails = [];
+  const check = (name, ok, errors = []) => {
+    console.log(`${name}: ${ok && !errors.length ? "OK" : "FALLO"}`);
+    if (!ok || errors.length) fails.push(`${name} ${errors.join(" | ")}`);
+  };
 
-  // Adultos: la primera lección del camino en varias combinaciones de idiomas.
-  for (const [native, target] of [["ar", "es"], ["zh", "en"], ["es", "es"]]) {
-    const { page, errors } = await newPage(browser, { native, target, mode: "adult" });
-    await page.click(".node-wrap.current .node");
-    for (let g = 0; g < 30 && !(await page.$(".result-stats")); g++) {
-      if (await page.$(".sheet .btn")) await page.click(".sheet .btn");
-      else if (await page.$(".footer .btn")) await page.click(".footer .btn");
-      else await page.click('.opt[data-ok="1"]');
-    }
-    const ok = (await page.$(".result-stats")) && (await page.innerText(".result-stats")).includes("100%");
-    await page.click(".btn");
-    const unlocked = (await page.$$(".node-wrap.done")).length === 1;
-    console.log(`adultos ${native}→${target}: ${ok && unlocked ? "OK" : "FALLO"}`);
-    if (!ok || !unlocked || errors.length) fails.push(`adultos ${native}→${target} ${errors}`);
-    await page.close();
-  }
-
-  // Repaso: un fallo aparece en Repasar y desaparece al acertarlo.
-  {
-    const { page, errors } = await newPage(browser, { native: "fr", target: "es", mode: "adult" });
-    await page.click(".node-wrap.current .node");
-    await page.click(".footer .btn");
-    await page.click('.opt[data-ok="0"]');
-    await page.click(".sheet .btn");
-    await page.click(".icon-btn");
-    await page.click(".tab:nth-child(2)");
-    const listed = (await page.$$(".chip-item")).length === 1;
-    await page.click(".btn.big");
-    for (let g = 0; g < 10 && !(await page.$(".result-stats")); g++) {
-      if (await page.$(".sheet .btn")) await page.click(".sheet .btn"); else await page.click('.opt[data-ok="1"]');
-    }
-    await page.click(".btn");
-    const cleared = !(await page.$(".chip-item"));
-    console.log(`repaso de errores: ${listed && cleared ? "OK" : "FALLO"}`);
-    if (!listed || !cleared || errors.length) fails.push("repaso " + errors);
-    await page.close();
-  }
-
-  // Primera vez: bienvenida, idiomas, modo y edad desde cero.
+  // Primera vez: bienvenida → idioma → camino.
   {
     const { page, errors } = await newPage(browser, null);
     await page.click(".welcome ~ .btn");
-    await page.click('.lang-row:has(.name[lang="fr"])');
-    await page.click('.lang-row:has(.name[lang="es"])');
-    await page.click(".mode.kid");
-    await page.click(".age:nth-child(2)");
-    const ok = (await page.innerText("#app")).includes("Voyelles");
-    console.log(`primera vez fr→es niños 3–5: ${ok ? "OK" : "FALLO"}`);
-    if (shots) await page.screenshot({ path: path.join(shots, "kids-home.png"), fullPage: true });
-    if (!ok || errors.length) fails.push("primera vez " + errors);
+    await page.click('.lang-row:has(.name[lang="ar"])');
+    const ok = (await page.$(".node-wrap.current")) && (await page.innerText("#tabbar")).includes("مراجعة");
+    check("primera vez (árabe)", ok, errors);
     await page.close();
   }
 
-  // Niños: todas las unidades de cada edad (aprendiendo español), y una edad aprendiendo chino.
-  for (const [target, age] of [["es", "1-3"], ["es", "3-5"], ["es", "5-7"], ["zh", "5-7"]]) {
-    const { page, errors } = await newPage(browser, { native: "en", target, mode: "kids", age });
-    const count = (await page.$$(".tile")).length;
-    for (let i = 0; i < count; i++) {
-      const tile = (await page.$$(".tile"))[i];
-      const name = await tile.innerText();
-      await tile.click();
-      if (shots && i === 0) await page.screenshot({ path: path.join(shots, `kids-${target}-${age}-learn.png`) });
-      const ok = await playKidUnit(page);
-      console.log(`niños ${target} ${age} ${name.replace(/\s+/g, " ")}: ${ok ? "OK" : "FALLO"}`);
-      if (!ok) fails.push(`niños ${target} ${age} ${name}`);
-      await page.click("#topbar .chip");
-    }
-    if (errors.length) fails.push(`niños ${target} ${age}: ${errors}`);
+  // Primera lección del camino con varios idiomas de apoyo (también español → español).
+  for (const native of ["ar", "zh", "es"]) {
+    const { page, errors } = await newPage(browser, { native });
+    await page.click(".node-wrap.current .node");
+    const done = await playLesson(page);
+    const perfect = done && (await page.innerText(".result-stats")).includes("100%");
+    await page.click(".btn");
+    const unlocked = (await page.$$(".node-wrap.done")).length === 1;
+    check(`lección completa (${native})`, perfect && unlocked, errors);
     await page.close();
   }
 
-  // Control parental: respuesta incorrecta no entra, correcta sí.
+  // Un error: se repite al final, la lección se termina igual y el error queda en Repasar hasta acertarlo allí.
   {
-    const { page } = await newPage(browser, { native: "es", target: "en", mode: "kids", age: "3-5" });
-    await page.click("#topbar .chip:last-child");
-    await page.fill("#gate-answer", "1");
-    await page.click(".gate .btn");
-    const blocked = !(await page.$("#calm-mode"));
-    const q = await page.innerText(".gate .prompt");
-    const [a, b] = q.match(/(\d+) × (\d+)/).slice(1).map(Number);
-    await page.fill("#gate-answer", String(a * b));
-    await page.click(".gate .btn");
-    const ok = blocked && !!(await page.$("#calm-mode"));
-    console.log(`control parental: ${ok ? "OK" : "FALLO"}`);
-    if (!ok) fails.push("control parental");
+    const { page, errors } = await newPage(browser, { native: "fr" });
+    await page.click(".node-wrap.current .node");
+    // El 2.º ejercicio es una palabra que no vuelve a salir en la lección (salvo su segunda oportunidad).
+    const done = await playLesson(page, 1);
+    const notPerfect = done && !(await page.innerText(".result-stats")).includes("100%");
+    await page.click(".btn");
+    await page.click(".tab:nth-child(2)");
+    const listed = (await page.$$(".chip-item")).length === 1;
+    await page.click(".btn.big");
+    await playLesson(page);
+    await page.click(".btn");
+    const cleared = !(await page.$(".chip-item"));
+    check("error repetido y repaso", notPerfect && listed && cleared, errors);
+    await page.close();
+  }
+
+  // Progreso antiguo (con modo niños y otros idiomas): se conserva lo aprendido en español.
+  {
+    const old = { native: "ro", target: "en", mode: "kids", age: "3-5", stickers: ["🦄"], xp: 90,
+      progress: { es: { saludos: 3 }, en: { saludos: 1 } }, learned: { es: ["hola", "adios"] } };
+    const { page, errors } = await newPage(browser, old);
+    const doneNodes = (await page.$$(".node-wrap.done")).length;
+    const words = await page.innerText("#topbar");
+    check("migración del progreso", doneNodes === 3 && words.includes("📚 2"), errors);
+    await page.close();
+  }
+
+  // Perfil y cambio de idioma.
+  {
+    const { page, errors } = await newPage(browser, { native: "es" });
+    await page.click(".tab:nth-child(3)");
+    await page.click(".setting:first-child");
+    await page.click('.lang-row:has(.name[lang="uk"])');
+    const ok = (await page.innerText("#tabbar")).includes("Повторення");
+    check("perfil y cambio de idioma", ok, errors);
     await page.close();
   }
 

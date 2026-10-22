@@ -5,25 +5,25 @@ const SAVE_KEY = "hola-espanol";
 function loadSave() {
   try { return JSON.parse(localStorage.getItem(SAVE_KEY)) || {}; } catch { return {}; }
 }
-let save = Object.assign({
-  xp: 0, streak: 0, lastDay: "", native: "", target: "", mode: "", age: "",
-  stickers: [], calm: false,
-  progress: {}, // { [idioma]: { [mundo]: lecciones completadas } }
-  mistakes: {}, // { [idioma]: [{ k: "w" | "p", id }] }
-  learned: {}, // { [idioma]: [ids de palabras acertadas] }
-}, loadSave());
-if (!I18N[save.native] || !I18N[save.target]) { save.native = ""; save.target = ""; }
+// Solo se aprende español; el idioma de la persona es el de la interfaz y las explicaciones.
+const TARGET = "es";
+const SAVE_VERSION = 2;
+let save = migrate(loadSave());
+
+// Versión 1 (con modo niños y varios idiomas de aprendizaje) → versión 2: se conserva lo aprendido en español.
+function migrate(old) {
+  const s = {
+    v: SAVE_VERSION, native: I18N[old.native] ? old.native : "", target: TARGET, calm: !!old.calm,
+    progress: {}, // { es: { [unidad]: lecciones completadas } }
+    mistakes: {}, // { es: [{ k: "w" | "p", id }] }
+    learned: {}, // { es: [ids de palabras acertadas] }
+  };
+  for (const key of ["progress", "mistakes", "learned"]) if (old[key]?.[TARGET]) s[key][TARGET] = old[key][TARGET];
+  return s;
+}
 
 function persist() {
   try { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); } catch { /* sin almacenamiento */ }
-}
-function today() { return new Date().toISOString().slice(0, 10); }
-function touchStreak() {
-  const t = today();
-  if (save.lastDay === t) return;
-  const y = new Date(Date.now() - 864e5).toISOString().slice(0, 10);
-  save.streak = save.lastDay === y ? save.streak + 1 : 1;
-  save.lastDay = t;
 }
 const forTarget = (key) => (save[key][save.target] ??= key === "progress" ? {} : []);
 const mistakesFor = () => (save.target ? forTarget("mistakes") : []);
@@ -33,8 +33,6 @@ const dirOf = (lang) => I18N[lang].dir || "ltr";
 const fill = (s, x) => (x === undefined ? s : s.replace("{x}", x));
 // Texto de interfaz en el idioma de la persona.
 const ui = (k, x) => fill((I18N[save.native] || I18N.es).ui[k] ?? I18N.es.ui[k], x);
-// Texto de interfaz en el idioma que se aprende (instrucciones habladas a los niños).
-const uiT = (k, x) => fill(I18N[save.target].ui[k], x);
 const tr = (id, lang) => I18N[lang].t[id];
 
 // ---------- Utilidades ----------
@@ -56,9 +54,11 @@ function speak(parts, lang) {
   for (const [text, l] of parts) {
     last = new SpeechSynthesisUtterance(text);
     last.lang = I18N[l].voice;
-    const v = voices.find((x) => x.lang.replace("_", "-").toLowerCase().startsWith(l));
+    // Primero la variante exacta (es-ES: español de España); si no está, cualquiera del idioma.
+    const norm = (x) => x.lang.replace("_", "-").toLowerCase();
+    const v = voices.find((x) => norm(x) === I18N[l].voice.toLowerCase()) || voices.find((x) => norm(x).startsWith(l));
     if (v) last.voice = v;
-    last.rate = save.mode === "kids" ? 0.8 : 0.9;
+    last.rate = 0.9;
     speechSynthesis.speak(last);
   }
   const ended = new Promise((r) => { last.onend = r; last.onerror = r; });
@@ -84,9 +84,5 @@ function beep(ok) {
 
 // ---------- Navegación ----------
 function go() {
-  if (!save.native) return showWelcome();
-  if (!save.target) return showTargetPicker();
-  if (!save.mode) return showModePicker();
-  if (save.mode === "kids" && !save.age) return showAgePicker();
-  return save.mode === "kids" ? showKidsHome() : showPath();
+  return save.native ? showPath() : showWelcome();
 }

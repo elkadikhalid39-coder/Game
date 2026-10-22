@@ -1,60 +1,50 @@
 # Auditorías
 
-Cada dos semanas (o antes de una publicación) repasamos esta lista y anotamos lo encontrado en el registro de abajo.
+Al cerrar cada fase, y siempre antes de publicar, se repasa esta lista y se anota el resultado en el registro de abajo.
 
 ## Lista de comprobación
 
-### Aprendizaje
-- [ ] Cada unidad enseña antes de preguntar (tarjetas "Aprende").
-- [ ] La dificultad sube poco a poco y encaja con la edad (ver PLAN, apartado 5).
-- [ ] En niños: sin castigos, pista tras dos intentos, todo con audio.
-- [ ] Lo que se falla se vuelve a practicar.
+### Producto
+- [ ] Todo lo desarrollado encaja en [PRODUCTO.md](PRODUCTO.md). Lo que no encaja, se quita o se apunta como «fuera de esta app».
+- [ ] Ninguna pantalla depende de saber leer español para entender cómo se usa.
 
-### Contenido e idiomas
-- [ ] `node tools/check-content.js` pasa sin errores.
-- [ ] Un hablante nativo ha revisado cada idioma (anotar quién y cuándo).
-- [ ] Las frases no asumen un género cuando no hace falta.
-- [ ] Los dibujos representan bien cada palabra en todos los móviles.
-- [ ] No hay contenido culturalmente delicado sin necesidad.
+### Aprendizaje
+- [ ] Cada unidad tiene su objetivo «Ya sé…» y enseña antes de preguntar.
+- [ ] Las lecciones duran entre 3 y 5 minutos.
+- [ ] Los errores vuelven en la misma lección y en Repasar.
+
+### Contenido y fuentes (obligatorio en los pases de pago)
+- [ ] La comprobación automática de contenido y de datos pasa sin errores.
+- [ ] Cada dato legal o de examen tiene fuente, estado y fecha de comprobación, y ninguno ha superado su fecha de revisión.
+- [ ] No hay precios, tasas ni fechas de convocatoria escritos en el contenido.
+- [ ] El contenido de examen es original y está revisado por especialistas antes de pasar a *publicado*.
+- [ ] Un hablante nativo ha revisado las traducciones (anotar quién y cuándo).
 
 ### Accesibilidad
-- [ ] Los botones miden al menos 48 px, y más en niños.
-- [ ] El texto tiene contraste suficiente sobre su fondo.
-- [ ] El modo calma quita animaciones y efectos de sonido.
-- [ ] Se puede usar con teclado y se ve el foco.
+- [ ] Los botones miden al menos 48 px y el texto tiene contraste suficiente.
 - [ ] Árabe y urdu se muestran de derecha a izquierda.
+- [ ] El modo calma quita animaciones y efectos de sonido.
 
 ### Técnica
-- [ ] `node tools/smoke-test.js` pasa (todas las unidades, todas las edades).
+- [ ] `node tools/smoke-test.js` pasa.
 - [ ] No hay errores en la consola.
-- [ ] Funciona en un móvil Android barato y en un iPhone.
-- [ ] Hay voz disponible para cada idioma en los móviles de prueba (anotar cuáles faltan).
+- [ ] Funciona en un Android barato y en un iPhone, también sin conexión.
 
-### Privacidad y legal
-- [ ] No se envían datos fuera del dispositivo sin consentimiento.
-- [ ] El control parental protege ajustes, compras y enlaces externos.
-- [ ] No hay anuncios en el modo niños.
-- [ ] Las licencias de imágenes, voces y fuentes permiten el uso previsto.
-
-### Negocio
-- [ ] Lo gratuito sigue siendo útil por sí solo.
-- [ ] Los precios y lo que incluye cada plan están claros.
+### Privacidad
+- [ ] No sale ningún dato personal del móvil sin consentimiento.
+- [ ] No hay anuncios ni analítica con datos personales.
 
 ## Registro
 
-### 2026-10-21: versión 0.3 (primera auditoría)
+### 2026-10-22: fase 0, depuración y bases
 
-**Estado:** 12 idiomas; modo adultos con 6 mundos; modo niños con 3 edades y 11 unidades; control parental; modo calma; prueba automática completa.
+**Cambios:**
+- Se fijan las bases del producto: aprender español para vivir en España (gratis) y pases de pago para los exámenes oficiales.
+- Se retiran el modo niños, el aprendizaje de otros idiomas, las vidas, las rachas y los puntos.
+- Los errores se repiten al final de la lección.
 
-**Hallazgos:**
-1. Las traducciones no las ha revisado ningún nativo; en árabe, ruso, ucraniano y urdu hay formas en masculino ("¿tienes hambre?").
-2. Los emojis cambian según el móvil, y algunos dibujos son flojos (Ñ de ñu 🐃, W de wifi 📶).
-3. La voz depende del móvil: puede faltar en urdu, árabe o rumano, y entonces no suena nada.
-4. Letras, vocales y sílabas solo existen para aprender español.
-5. El progreso se guarda solo en el navegador y hay un único perfil de niño.
-6. No funciona sin conexión (todavía no es PWA).
-7. El trazado no enseña el orden de los trazos.
-8. Contenido para 1–3 años escaso: 3 unidades.
-9. Faltan pruebas con usuarios reales y la revisión de un especialista.
+**Pendiente:** los datos de la tabla «Datos pendientes» de [HOJA_DE_RUTA.md](HOJA_DE_RUTA.md). Las traducciones siguen sin revisar por nativos.
 
-**Acciones:** pasan a las fases 1–3 del plan.
+### 2026-10-21: versión 0.3
+
+Primera auditoría (modo niños incluido, hoy retirado). Sus hallazgos sobre traducciones, voces, emojis, falta de funcionamiento sin conexión y falta de pruebas con usuarios siguen vigentes y están en la hoja de ruta.

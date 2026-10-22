@@ -73,20 +73,11 @@ function screen(layout = "main", lang = save.native) {
 function renderBars() {
   topbar.replaceChildren();
   tabbar.replaceChildren();
-  document.body.classList.toggle("kids", save.mode === "kids");
   document.body.classList.toggle("calm", save.calm);
-  if (document.body.dataset.layout !== "main" || !save.mode) return;
-  if (save.mode === "kids") {
-    topbar.append(
-      button("chip", "🏠", showKidsHome),
-      el("span", "stat", "🌟 " + save.stickers.length),
-      button("chip", "🔒 " + ui("parents"), () => showGate(showSettings)),
-    );
-    return;
-  }
+  if (document.body.dataset.layout !== "main" || !save.native) return;
   const lang = button("chip lang", "", showProfile);
-  lang.append(el("span", "code", save.target.toUpperCase()), txt("span", "", I18N[save.target].name, save.target));
-  topbar.append(lang, el("span", "stat streak", "🔥 " + save.streak), el("span", "stat", "⭐ " + save.xp));
+  lang.append(el("span", "code", save.native.toUpperCase()), txt("span", "", I18N[save.native].name, save.native));
+  topbar.append(lang, el("span", "stat", "📚 " + forTarget("learned").length));
   const tab = (icon, key, fn, name) => {
     const b = button("tab" + (currentTab === name ? " active" : ""), "", fn);
     b.append(el("span", "icon", icon), el("span", "", ui(key)));
