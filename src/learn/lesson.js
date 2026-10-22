@@ -7,6 +7,9 @@
 //   write     la palabra en su idioma → escribirla en español
 //   phrase    pregunta en español → elegir la respuesta
 //   order     escuchar y leer la traducción → ordenar las palabras de la respuesta
+//   sentence  escuchar una frase entera (ejemplo de una palabra o de un diálogo) → escribirla
+// Lo que se pide depende del nivel que dice tener (ver makeLesson): de cero, palabras paso a paso;
+// con más nivel, menos presentaciones y repeticiones y más frases completas.
 // Quien tiene el español como idioma no tiene traducción que ver: sus ejercicios de palabras son dictados.
 import { ui, tr } from "../core/i18n.js";
 import { save, persist, TARGET as G } from "../core/state.js";
@@ -19,7 +22,7 @@ import { audioControls } from "../ui/audio-buttons.js";
 import { mascot, speech } from "../ui/mascot.js";
 import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { LESSON_TYPES, wordsOf, unitOfWord, unitOfPhrase, unitComplete } from "./course.js";
-import { checkWritten, sameSentence } from "./answers.js";
+import { checkWritten, sameSentence, wordErrors } from "./answers.js";
 
 const AUDIO_PAUSE_MS = 15 * 60 * 1000;
 const audioPaused = () => Date.now() < save.noAudioUntil;
@@ -34,28 +37,51 @@ function phraseExercise(id, type = "phrase") {
   return { type, id, wrong };
 }
 
-// Las palabras de la unidad se reparten entre las dos primeras lecciones, en orden:
-// cada palabra se presenta antes de preguntarla.
+// Frase entera al dictado: el ejemplo de una palabra (e_) o una pregunta o respuesta de un diálogo (q_, a_).
+const wordSentence = (w) => ({ type: "sentence", key: "e_" + w.id, item: w });
+const phraseSentence = (id, side = "a") => ({ type: "sentence", key: side + "_" + id, id });
+// Escribir cada palabra una sola vez, alternando dictado y desde su idioma.
+const produce = (words) => words.map((w, k) => wordExercise(w, k % 2 ? "write" : "dictation"));
+export const level = () => save.level ?? 0;
+
+// Las palabras de la unidad se reparten entre las dos primeras lecciones, en orden.
+// Cuánto se presenta y se repite depende del nivel:
+//   0 de cero      presentar, reconocer y escribir cada palabra una vez
+//   1 un poco      presentar y escribir; algunas frases de ejemplo al dictado
+//   2 me defiendo  sin presentaciones: escribir cada palabra y su frase de ejemplo; diálogos al dictado
+//   3 bastante bien solo frases al dictado, sin pistas y con las tildes contando
 function makeLesson(unit, li) {
+  const L = level();
   const all = wordsOf(unit);
   const half = Math.ceil(all.length / 2);
   const phrases = shuffle(unit.phrases.map((p) => p.id));
   const type = LESSON_TYPES[li].type;
   if (type === "words" || type === "listen") {
     const fresh = type === "words" ? all.slice(0, half) : all.slice(half);
-    // Presentar y reconocer cada palabra; después, escribirlas al dictado y desde su idioma.
-    const first = type === "words" ? "pick" : "hear";
-    return [...fresh.flatMap((w) => [{ type: "intro", item: w }, wordExercise(w, first)]),
-      ...shuffle(fresh).map((w) => wordExercise(w, "dictation")), ...pick(fresh, 2).map((w) => wordExercise(w, "write"))];
+    const intro = (w) => ({ type: "intro", item: w });
+    if (L === 0) {
+      const first = type === "words" ? "pick" : "hear";
+      return [...fresh.flatMap((w) => [intro(w), wordExercise(w, first)]), ...produce(shuffle(fresh))];
+    }
+    if (L === 1) return [...fresh.flatMap((w, k) => [intro(w), wordExercise(w, k % 2 ? "write" : "dictation")]), ...pick(fresh, 2).map(wordSentence)];
+    if (L === 2) return [...shuffle(fresh).map((w) => wordExercise(w, "write")), ...shuffle(fresh).map(wordSentence)];
+    return [...shuffle(fresh).map(wordSentence), ...pick(fresh, 2).map((w) => wordExercise(w, "write"))];
   }
   const words = shuffle(all);
   if (type === "phrases") {
-    return [...phrases.map((id) => phraseExercise(id)), ...phrases.slice(0, 2).map((id) => phraseExercise(id, "order")),
-      wordExercise(words[0], "dictation"), wordExercise(words[1], "dictation")];
+    if (L === 0) return [...phrases.map((id) => phraseExercise(id)), ...phrases.slice(0, 2).map((id) => phraseExercise(id, "order")), ...produce(words.slice(0, 2))];
+    if (L === 1) return [...phrases.map((id) => phraseExercise(id)), ...phrases.slice(0, 2).map((id) => phraseExercise(id, "order")), phraseSentence(phrases[0])];
+    if (L === 2) return [...phrases.map((id) => phraseExercise(id, "order")), ...phrases.map((id) => phraseSentence(id)), phraseSentence(phrases[0], "q")];
+    return phrases.flatMap((id) => [phraseSentence(id, "q"), phraseSentence(id)]);
   }
   // Práctica final: sobre todo escribir.
-  return shuffle([...words.slice(0, 4).map((w) => wordExercise(w, "dictation")), ...words.slice(4, 6).map((w) => wordExercise(w, "write")),
-    wordExercise(words[6], "hear"), ...phrases.map((id) => phraseExercise(id)), phraseExercise(phrases[0], "order"), phraseExercise(phrases[1], "order")]);
+  if (L === 0) {
+    return shuffle([...produce(words.slice(0, 6)), wordExercise(words[6], "hear"), ...phrases.map((id) => phraseExercise(id)),
+      phraseExercise(phrases[0], "order"), phraseExercise(phrases[1], "order")]);
+  }
+  if (L === 1) return shuffle([...produce(words.slice(0, 4)), ...words.slice(4, 6).map(wordSentence), ...phrases.map((id) => phraseExercise(id)), phraseExercise(phrases[0], "order")]);
+  return shuffle([...words.slice(0, 3).map((w) => wordExercise(w, "write")), ...words.slice(3, 7).map(wordSentence), ...phrases.map((id) => phraseSentence(id)),
+    L === 2 ? phraseExercise(phrases[0], "order") : phraseSentence(phrases[0], "q")]);
 }
 
 // Ajusta un ejercicio a la persona: sin traducción (idioma español) o con el audio en pausa.
@@ -141,7 +167,7 @@ function runLesson(s) {
   // ok: acierto; solution: texto correcto en español; note: aviso (tilde o errata) cuando se acepta con un matiz.
   // written: lo que escribió la persona, para marcar en qué letras está el fallo.
   // hinted: se usó una pista; cuenta como acierto, pero la palabra se queda en Repasar.
-  const answer = (ok, solution, { btn, note, written, hinted } = {}) => {
+  const answer = (ok, solution, { btn, note, written, hinted, strictCase = false } = {}) => {
     if (answered) return;
     answered = true;
     beep(ok);
@@ -163,9 +189,9 @@ function runLesson(s) {
     const detail = ok ? (note ? ui(note === "accent" ? "noteAccent" : "noteTypo", solution) : "") : solution;
     const extra = el("div", "sheet-extra");
     const showDiff = written !== undefined && (!ok || note);
-    if (showDiff) extra.append(diffView(written, solution, { ignoreCase: true }));
-    // Al corregir una palabra se ve su significado en el idioma de la persona.
-    if (ex.item && N !== G) extra.append(txt("p", "sheet-meaning", tr(ex.item.id, N), N));
+    if (showDiff) extra.append(diffView(written, solution, { ignoreCase: !strictCase }));
+    // Al corregir se ve el significado en el idioma de la persona (de la frase entera, si era una frase).
+    if (N !== G && (ex.key || ex.item)) extra.append(txt("p", "sheet-meaning", tr(ex.key || ex.item.id, N), N));
     extra.append(audioControls(solution));
     // Si se ve la comparación letra a letra, la solución ya está en ella: no se repite.
     sheet(ok, title, showDiff && !ok ? "" : detail, note ? N : G, next, extra);
@@ -230,6 +256,31 @@ function runLesson(s) {
       area.append(prompt);
     }
     area.append(box.el);
+    box.focus();
+  } else if (ex.type === "sentence") {
+    // Frase entera al dictado. Con nivel «bastante bien» no hay pistas y las tildes cuentan.
+    const text = tr(ex.key, G);
+    const strict = level() >= 3;
+    const box = writeBox({
+      hint: strict ? null : text,
+      onCheck: (value, { hinted }) => {
+        const errors = wordErrors(value, text, { accents: strict });
+        const note = errors === 0 && !strict && wordErrors(value, text) > 0 ? "accent" : null;
+        box.input.classList.add(errors === 0 ? "right" : "wrong");
+        answer(errors === 0, text, { note, written: value, hinted, strictCase: strict });
+      },
+    });
+    box.el.dataset.text = text; // para las pruebas automáticas
+    app.append(speech(ui("dictationPrompt"), "talk"));
+    if (audioPaused()) {
+      const paused = el("div", "notice draft");
+      paused.append(el("span", "", ui("dictNeedsAudio")), button("btn", ui("resumeAudio"), () => { save.noAudioUntil = 0; persist(); runLesson(s); }));
+      area.append(paused);
+    }
+    area.append(audioControls(text, { size: "big" }));
+    if (strict) area.append(txt("p", "hint center", ui("accentsCount"), N));
+    area.append(box.el);
+    say(text);
     box.focus();
   } else if (ex.type === "order") {
     // Ordenar las palabras de la respuesta (en español) viendo su traducción.

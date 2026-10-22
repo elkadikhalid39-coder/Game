@@ -29,7 +29,7 @@ async function newPage(native, extra = {}) {
   await page.addInitScript((s) => {
     delete window.speechSynthesis;
     if (!sessionStorage.getItem("seeded")) { localStorage.setItem("hola-espanol", JSON.stringify(s)); sessionStorage.setItem("seeded", "1"); }
-  }, { v: 3, native, demo: true, ...extra });
+  }, { v: 3, native, level: 0, demo: true, ...extra });
   await page.goto(URL_DEMO);
   return page;
 }

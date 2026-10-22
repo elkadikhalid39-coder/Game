@@ -38,6 +38,8 @@ export function writeBox({ onCheck, hint, multiline = false }) {
     shown.hidden = true;
     const chars = [...hint];
     const letterIdx = chars.map((c, i) => (/\p{L}|\p{N}/u.test(c) ? i : -1)).filter((i) => i >= 0);
+    // En las frases, casillas más pequeñas para que quepan en la pantalla del móvil.
+    if (letterIdx.length > 12) shown.classList.add("small");
     const firsts = letterIdx.filter((i) => i === 0 || !/\p{L}|\p{N}/u.test(chars[i - 1]));
     const rest = letterIdx.filter((i) => !firsts.includes(i));
     // Las demás, repartidas por toda la palabra o frase (no seguidas).
@@ -48,10 +50,12 @@ export function writeBox({ onCheck, hint, multiline = false }) {
       level = Math.min(level + 1, LEVELS.length);
       const reveal = new Set(order.slice(0, Math.ceil(letterIdx.length * LEVELS[level - 1])));
       shown.replaceChildren();
+      // Cada palabra en un bloque que no se parte al cambiar de línea (frases largas en el móvil).
+      let word = null;
       chars.forEach((c, i) => {
-        if (/\p{L}|\p{N}/u.test(c)) shown.append(el("span", "hint-box", reveal.has(i) ? c : ""));
-        else if (c === " ") shown.append(el("span", "hint-gap"));
-        else shown.append(el("span", "hint-sign", c));
+        if (c === " ") { word = null; return shown.append(el("span", "hint-gap")); }
+        if (!word) shown.append((word = el("span", "hint-word")));
+        word.append(/\p{L}|\p{N}/u.test(c) ? el("span", "hint-box", reveal.has(i) ? c : "") : el("span", "hint-sign", c));
       });
       shown.append(txt("span", "hint-count", ui("hintLetters", letterIdx.length), save.native));
       shown.hidden = false;

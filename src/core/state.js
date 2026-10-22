@@ -19,6 +19,8 @@ export function migrate(old, known = () => true) {
     v: SAVE_VERSION,
     native: old.native && known(old.native) ? old.native : "",
     calm: !!old.calm,
+    // Nivel de español que dice tener (0 de cero · 1 un poco · 2 me defiendo · 3 bastante bien); null: aún no se ha preguntado.
+    level: [0, 1, 2, 3].includes(old.level) ? old.level : null,
     progress: pick("progress", {}), // { [unidad]: lecciones completadas }
     mistakes: pick("mistakes", []), // [{ k: "w" | "p", id }]
     learned: pick("learned", []), // [ids de palabras acertadas]

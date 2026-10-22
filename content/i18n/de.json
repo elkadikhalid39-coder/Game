@@ -306,7 +306,19 @@
     "err_extraSpace": "Leerzeichen zu viel: {x}",
     "err_missingSpace": "Fehlendes Leerzeichen: {x}",
     "err_case": "Groß- oder Kleinschreibung: {x}",
-    "err_punct": "Satzzeichen: {x}"
+    "err_punct": "Satzzeichen: {x}",
+    "levelTitle": "Wie gut ist dein Spanisch?",
+    "levelSub": "Die Lektionen passen sich deinem Niveau an. Du kannst es jederzeit in deinem Profil ändern.",
+    "lvl0": "Ich fange bei null an",
+    "lvl0d": "Einzelne Wörter mit Übersetzung, Audio und Beispiel. Schritt für Schritt.",
+    "lvl1": "Ich kann ein bisschen",
+    "lvl1d": "Ich kann grüßen und verstehe einfache Wörter. Weniger Wiederholung, mehr Schreiben, auch Sätze.",
+    "lvl2": "Ich komme zurecht",
+    "lvl2d": "Ich bilde einfache Sätze. Ohne Einführung: ganze Sätze als Diktat und alle Einheiten offen.",
+    "lvl3": "Ich spreche ziemlich gut",
+    "lvl3d": "Nur Satzdiktate, keine Hinweise, und fehlende Akzente zählen als Fehler.",
+    "myLevel": "Mein Niveau",
+    "accentsCount": "Auf deinem Niveau zählen Akzente und ñ."
   },
   "t": {
     "hola": "Hallo",

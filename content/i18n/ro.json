@@ -306,7 +306,19 @@
     "err_extraSpace": "Spațiu în plus: {x}",
     "err_missingSpace": "Spațiu lipsă: {x}",
     "err_case": "Majusculă sau minusculă: {x}",
-    "err_punct": "Semn de punctuație: {x}"
+    "err_punct": "Semn de punctuație: {x}",
+    "levelTitle": "Ce nivel de spaniolă ai?",
+    "levelSub": "Lecțiile se adaptează nivelului tău. Îl poți schimba oricând în Profil.",
+    "lvl0": "Încep de la zero",
+    "lvl0d": "Cuvinte separate cu traducere, audio și exemplu. Pas cu pas.",
+    "lvl1": "Știu puțin",
+    "lvl1d": "Știu să salut și înțeleg cuvinte simple. Mai puțină repetiție, mai mult scris, și propoziții.",
+    "lvl2": "Mă descurc",
+    "lvl2d": "Fac propoziții simple. Fără prezentări: propoziții întregi la dictare și toate unitățile deschise.",
+    "lvl3": "Vorbesc destul de bine",
+    "lvl3d": "Doar propoziții la dictare, fără indicii, iar accentele lipsă contează ca greșeli.",
+    "myLevel": "Nivelul meu",
+    "accentsCount": "La nivelul tău, accentele și ñ contează."
   },
   "t": {
     "hola": "Bună",

@@ -306,7 +306,19 @@
     "err_extraSpace": "Espacio de más: {x}",
     "err_missingSpace": "Falta un espacio: {x}",
     "err_case": "Mayúscula o minúscula: {x}",
-    "err_punct": "Signo de puntuación: {x}"
+    "err_punct": "Signo de puntuación: {x}",
+    "levelTitle": "¿Qué nivel de español tienes?",
+    "levelSub": "Las lecciones se adaptan a tu nivel. Puedes cambiarlo cuando quieras en tu Perfil.",
+    "lvl0": "Empiezo de cero",
+    "lvl0d": "Palabras sueltas con traducción, audio y ejemplo. Paso a paso.",
+    "lvl1": "Sé un poco",
+    "lvl1d": "Saludo y entiendo palabras sencillas. Menos repetición y más escribir, también frases.",
+    "lvl2": "Me defiendo",
+    "lvl2d": "Hago frases sencillas. Sin presentaciones: frases completas al dictado y todas las unidades abiertas.",
+    "lvl3": "Hablo bastante bien",
+    "lvl3d": "Solo frases al dictado, sin pistas, y las tildes cuentan como fallo.",
+    "myLevel": "Mi nivel",
+    "accentsCount": "En tu nivel, las tildes y la ñ cuentan."
   },
   "t": {
     "hola": "Hola",

@@ -306,7 +306,19 @@
     "err_extraSpace": "Espaço a mais: {x}",
     "err_missingSpace": "Falta um espaço: {x}",
     "err_case": "Maiúscula ou minúscula: {x}",
-    "err_punct": "Pontuação: {x}"
+    "err_punct": "Pontuação: {x}",
+    "levelTitle": "Qual é o seu nível de espanhol?",
+    "levelSub": "As lições se adaptam ao seu nível. Você pode mudar quando quiser no seu Perfil.",
+    "lvl0": "Estou começando do zero",
+    "lvl0d": "Palavras soltas com tradução, áudio e exemplo. Passo a passo.",
+    "lvl1": "Sei um pouco",
+    "lvl1d": "Sei cumprimentar e entendo palavras simples. Menos repetição e mais escrita, também frases.",
+    "lvl2": "Eu me viro",
+    "lvl2d": "Faço frases simples. Sem apresentações: frases completas em ditado e todas as unidades abertas.",
+    "lvl3": "Falo bastante bem",
+    "lvl3d": "Só frases em ditado, sem dicas, e os acentos que faltarem contam como erro.",
+    "myLevel": "Meu nível",
+    "accentsCount": "No seu nível, os acentos e o ñ contam."
   },
   "t": {
     "hola": "Olá",

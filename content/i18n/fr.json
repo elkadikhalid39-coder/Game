@@ -306,7 +306,19 @@
     "err_extraSpace": "Espace en trop : {x}",
     "err_missingSpace": "Espace manquant : {x}",
     "err_case": "Majuscule ou minuscule : {x}",
-    "err_punct": "Ponctuation : {x}"
+    "err_punct": "Ponctuation : {x}",
+    "levelTitle": "Quel est ton niveau d'espagnol ?",
+    "levelSub": "Les leçons s'adaptent à ton niveau. Tu peux le changer quand tu veux dans ton Profil.",
+    "lvl0": "Je pars de zéro",
+    "lvl0d": "Des mots isolés avec traduction, audio et exemple. Pas à pas.",
+    "lvl1": "J'en connais un peu",
+    "lvl1d": "Je sais saluer et je comprends des mots simples. Moins de répétition, plus d'écriture, aussi des phrases.",
+    "lvl2": "Je me débrouille",
+    "lvl2d": "Je fais des phrases simples. Sans présentations : des phrases entières en dictée et toutes les unités ouvertes.",
+    "lvl3": "Je parle assez bien",
+    "lvl3d": "Uniquement des phrases en dictée, sans indices, et les accents comptent comme des fautes.",
+    "myLevel": "Mon niveau",
+    "accentsCount": "À ton niveau, les accents et le ñ comptent."
   },
   "t": {
     "hola": "Bonjour",

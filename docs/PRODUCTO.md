@@ -41,7 +41,18 @@ Un curso de español de A1 a A2, organizado por situaciones de la vida en Españ
 - **Solo se usa un dibujo si representa la palabra sin dudas** (🍞 pan, 🚑 ambulancia). Las palabras abstractas o dudosas (adiós, por favor, perdón, alquiler…) no llevan dibujo, y los botones usan iconos con texto, no emojis.
 - **Nunca se pregunta solo con un dibujo**: un emoji se interpreta de muchas maneras (🥺 puede ser «por favor», «perdón» o «lo siento»). El dibujo acompaña a la palabra o a la traducción, nunca las sustituye. Quien tiene el español como idioma hace dictados en lugar de ejercicios de traducción.
 - La corrección marca **en qué letra está el fallo** (también las tildes), no solo si está bien o mal.
-- Las pistas nunca resuelven la palabra: primero dicen cuántas letras tiene y después la primera letra. Una palabra acertada con pista vuelve a Repasar.
+- **Nivel de partida**: después de elegir el idioma se pregunta qué nivel de español tiene la persona (se cambia en el Perfil). El curso cambia según la respuesta:
+
+  | Nivel | Qué cambia |
+  |---|---|
+  | Empiezo de cero | Cada palabra se presenta (traducción, audio y frase de ejemplo), se reconoce y se escribe una vez. Las lecciones se abren en orden. |
+  | Sé un poco | Se presenta y se escribe cada palabra (sin el paso de reconocer); algunas frases de ejemplo al dictado. |
+  | Me defiendo | Sin presentaciones: se escribe cada palabra y su frase de ejemplo; los diálogos, al dictado. Todas las lecciones abiertas. |
+  | Hablo bastante bien | Solo frases al dictado, sin pistas, y las tildes y la ñ cuentan como fallo. |
+
+- Una frase de ejemplo por palabra (con audio y traducción) en la presentación; en los niveles altos se escribe al dictado.
+- Las pistas nunca resuelven la palabra: primero dicen cuántas letras tiene, luego enseñan un 25 % de las letras y después un 50 % (la inicial de cada palabra y el resto repartidas). Una palabra acertada con pista vuelve a Repasar.
+- La corrección dice qué tipo de fallo hay: letra cambiada, letra que falta o sobra, espacio que falta o sobra («por fa vor»), tilde o ñ, mayúscula y signos.
 - Los errores vuelven al final de la lección y en la pestaña Practicar.
 
 ### Practicar (gratis)

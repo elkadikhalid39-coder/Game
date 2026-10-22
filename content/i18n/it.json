@@ -306,7 +306,19 @@
     "err_extraSpace": "Spazio in più: {x}",
     "err_missingSpace": "Spazio mancante: {x}",
     "err_case": "Maiuscola o minuscola: {x}",
-    "err_punct": "Punteggiatura: {x}"
+    "err_punct": "Punteggiatura: {x}",
+    "levelTitle": "Qual è il tuo livello di spagnolo?",
+    "levelSub": "Le lezioni si adattano al tuo livello. Puoi cambiarlo quando vuoi nel tuo Profilo.",
+    "lvl0": "Parto da zero",
+    "lvl0d": "Parole singole con traduzione, audio ed esempio. Passo dopo passo.",
+    "lvl1": "So un po'",
+    "lvl1d": "So salutare e capisco parole semplici. Meno ripetizioni e più scrittura, anche frasi.",
+    "lvl2": "Me la cavo",
+    "lvl2d": "Faccio frasi semplici. Senza presentazioni: frasi intere sotto dettatura e tutte le unità aperte.",
+    "lvl3": "Parlo abbastanza bene",
+    "lvl3d": "Solo frasi sotto dettatura, senza suggerimenti, e gli accenti mancanti contano come errore.",
+    "myLevel": "Il mio livello",
+    "accentsCount": "Al tuo livello, gli accenti e la ñ contano."
   },
   "t": {
     "hola": "Ciao",

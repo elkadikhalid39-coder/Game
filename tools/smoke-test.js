@@ -31,7 +31,8 @@ async function open(saveData, { url = URL_APP, context } = {}) {
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   // Los datos de prueba usan el formato actual (v3), salvo los de la prueba de migración (llevan «target»).
-  if (saveData && !saveData.v && !saveData.target) saveData = { v: 3, ...saveData };
+  // Si la prueba no dice otro nivel, el de «empiezo de cero».
+  if (saveData && !saveData.v && !saveData.target) saveData = { v: 3, level: 0, ...saveData };
   // Sin voz en el navegador de pruebas: la app usa una pausa corta en su lugar.
   await page.addInitScript((s) => {
     delete window.speechSynthesis;
@@ -57,7 +58,8 @@ const progressAt = (unitId, lessons) => {
 async function answerCurrent(page, wrong = false) {
   if (await page.$("#write-answer")) {
     const id = await page.getAttribute(".write-box", "data-word");
-    await page.fill("#write-answer", wrong ? "xxxxx" : ES[id]);
+    const text = id ? ES[id] : await page.getAttribute(".write-box", "data-text");
+    await page.fill("#write-answer", wrong ? "xxxxx" : text);
     return page.click(".write-box .btn");
   }
   if (await page.$(".tray")) {
@@ -85,6 +87,7 @@ test("primera vez (árabe)", async () => {
   const { page, errors } = await open(null);
   await page.click(".welcome ~ .btn");
   await page.click('.lang-row:has(.name[lang="ar"])');
+  await page.click('.level-row[data-level="0"]');
   return [(await page.$(".node-wrap.current")) && (await page.innerText("#tabbar")).includes("تدرّب"), errors];
 });
 
@@ -101,8 +104,8 @@ for (const native of ["ar", "zh", "es"]) {
 test("error repetido y repaso", async () => {
   const { page, errors } = await open({ native: "fr" });
   await page.click(".node-wrap.current .node");
-  // Se falla el último ejercicio (el 10.º): solo vuelve como segunda oportunidad, que no lo saca de Repasar.
-  const notPerfect = (await playLesson(page, 9)) && !(await page.innerText(".result-stats")).includes("100%");
+  // Se falla el último ejercicio (el 8.º): solo vuelve como segunda oportunidad, que no lo saca de Repasar.
+  const notPerfect = (await playLesson(page, 7)) && !(await page.innerText(".result-stats")).includes("100%");
   await page.click(".btn");
   await page.click('.tab[data-tab="review"]');
   const mine = ".menu-row:first-child";
@@ -117,6 +120,8 @@ test("migración del progreso antiguo", async () => {
   const old = { native: "ro", target: "en", mode: "kids", age: "3-5", stickers: ["🦄"], xp: 90,
     progress: { es: { saludos: 3 }, en: { saludos: 1 } }, learned: { es: ["hola", "adios"] } };
   const { page, errors } = await open(old);
+  // A quien ya usaba la app se le pregunta una vez su nivel.
+  await page.click('.level-row[data-level="1"]');
   return [(await page.$$(".node-wrap.done")).length === 3 && (await page.innerText("#topbar")).includes("📚 2"), errors];
 });
 
@@ -126,6 +131,52 @@ test("perfil y cambio de idioma", async () => {
   await page.click(".setting:first-child");
   await page.click('.lang-row:has(.name[lang="uk"])');
   return [(await page.innerText("#tabbar")).includes("Практика"), errors];
+});
+
+test("el nivel cambia la lección: «me defiendo» sin presentaciones y con frases", async () => {
+  const { page, errors } = await open({ native: "en", level: 2 });
+  const allOpen = !(await page.$(".node-wrap.locked"));
+  await page.click(".node-wrap.current .node");
+  let intros = 0, sentences = 0;
+  for (let g = 0; g < 60 && !(await page.$(".result-stats")); g++) {
+    if (await page.$(".sheet .btn")) { await page.click(".sheet .btn"); continue; }
+    if (await page.$(".card.intro")) intros++;
+    if (await page.$(".write-box[data-text]")) sentences++;
+    if (await page.$(".footer .btn")) { await page.click(".footer .btn"); continue; }
+    await answerCurrent(page);
+  }
+  const perfect = (await page.innerText(".result-stats")).includes("100%");
+  return [allOpen && intros === 0 && sentences >= 4 && perfect, errors];
+});
+
+test("nivel «bastante bien»: frases sin pistas y la tilde cuenta", async () => {
+  const { page, errors } = await open({ native: "en", level: 3, progress: progressAt("salud", 0) });
+  await page.click(".node-wrap.current .node");
+  while (!(await page.$(".write-box[data-text]"))) {
+    if (await page.$(".sheet .btn")) await page.click(".sheet .btn"); else await answerCurrent(page);
+  }
+  const noHint = !(await page.$('.write-box .link:has-text("Hint")'));
+  // Sin ninguna tilde: es un fallo (si la frase tiene alguna).
+  const text = await page.getAttribute(".write-box", "data-text");
+  const plain = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  await page.fill("#write-answer", plain);
+  await page.click(".write-box .btn");
+  const bad = await page.$(".sheet.bad");
+  return [noHint && (plain === text || !!bad), errors];
+});
+
+test("la pregunta del nivel aparece tras el idioma y se cambia en el perfil", async () => {
+  const { page, errors } = await open(null);
+  await page.click(".welcome ~ .btn");
+  await page.click('.lang-row:has(.name[lang="es"])');
+  const asked = (await page.$$(".level-row")).length === 4;
+  await page.click('.level-row[data-level="2"]');
+  await page.click('.tab[data-tab="profile"]');
+  const label = await page.innerText(".settings");
+  await page.click('.setting:has-text("Mi nivel")');
+  await page.click('.level-row[data-level="0"]');
+  const locked = (await page.$$(".node-wrap.locked")).length > 0;
+  return [asked && label.includes("Me defiendo") && locked, errors];
 });
 
 test("funciona sin conexión", async () => {
@@ -144,6 +195,7 @@ test("vista previa de un solo archivo", async () => {
   const { page, errors } = await open(null, { url: "file://" + root + "dist-single/hola.html" });
   await page.click(".welcome ~ .btn");
   await page.click('.lang-row:has(.name[lang="pt"])');
+  await page.click('.level-row[data-level="0"]');
   return [!!(await page.$(".node-wrap.current")), errors];
 });
 

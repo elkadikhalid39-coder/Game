@@ -30,8 +30,8 @@ function showPath() {
       const done = doneIn(u) > li;
       const current = !done && !foundCurrent;
       if (current) foundCurrent = true;
-      // En modo demo se puede abrir cualquier lección sin haber hecho las anteriores.
-      const state = done ? "done" : current ? "current" : save.demo ? "open" : "locked";
+      // En modo demo, o con nivel «me defiendo» o más, se puede abrir cualquier lección sin haber hecho las anteriores.
+      const state = done ? "done" : current ? "current" : save.demo || save.level >= 2 ? "open" : "locked";
       const node = el("div", "node-wrap " + state + (lt.type === "practice" ? " reward" : ""));
       node.style.setProperty("--x", ZIGZAG[li] * (n % 2 ? -1 : 1));
       const b = el("button", "node");

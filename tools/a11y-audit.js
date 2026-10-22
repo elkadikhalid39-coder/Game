@@ -21,6 +21,7 @@ const TOURS = [
   ["lección", { native: "ar" }, [".current .node"]],
   ["respuesta incorrecta", { native: "fr" }, [".current .node", "?.footer .btn", "?.footer .btn", "?.footer .btn", '.opt[data-ok="0"]']],
   ["perfil", { native: "es" }, ['.tab[data-tab="profile"]']],
+  ["nivel", { native: "ar", level: null }, []],
   ["dictado", { native: "ar" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(2)", "?#write-answer", ".write-box .btn"]],
   ["diccionario", { native: "zh" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(4)"]],
   // Con errores guardados aparece el contador rojo de la pestaña Repasar.
@@ -39,7 +40,7 @@ for (const [name, data, clicks] of TOURS) {
   const page = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
   await page.addInitScript((s) => {
     delete window.speechSynthesis;
-    if (s && !sessionStorage.getItem("seeded")) { localStorage.setItem("hola-espanol", JSON.stringify({ v: 3, ...s })); sessionStorage.setItem("seeded", "1"); }
+    if (s && !sessionStorage.getItem("seeded")) { localStorage.setItem("hola-espanol", JSON.stringify({ v: 3, level: 0, ...s })); sessionStorage.setItem("seeded", "1"); }
   }, data);
   await page.goto(`http://localhost:${PORT}/`);
   // Un selector con «?» delante es opcional: se pulsa solo si está en pantalla.

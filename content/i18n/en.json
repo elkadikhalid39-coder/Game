@@ -306,7 +306,19 @@
     "err_extraSpace": "Extra space: {x}",
     "err_missingSpace": "Missing space: {x}",
     "err_case": "Capital or small letter: {x}",
-    "err_punct": "Punctuation: {x}"
+    "err_punct": "Punctuation: {x}",
+    "levelTitle": "What is your Spanish level?",
+    "levelSub": "Lessons adapt to your level. You can change it any time in your Profile.",
+    "lvl0": "I'm starting from zero",
+    "lvl0d": "Single words with translation, audio and an example. Step by step.",
+    "lvl1": "I know a little",
+    "lvl1d": "I can greet and understand simple words. Less repetition, more writing, including sentences.",
+    "lvl2": "I can get by",
+    "lvl2d": "I can make simple sentences. No introductions: full sentences as dictation and all units open.",
+    "lvl3": "I speak quite well",
+    "lvl3d": "Only sentence dictation, no hints, and missing accents count as mistakes.",
+    "myLevel": "My level",
+    "accentsCount": "At your level, accents and ñ count."
   },
   "t": {
     "hola": "Hello",

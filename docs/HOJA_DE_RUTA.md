@@ -79,7 +79,12 @@ Hecho el 22/10/2026: auditoría automática de accesibilidad (`tools/a11y-audit.
 - [x] Corrección letra a letra (también las tildes) en lecciones y dictados.
 - [x] Pestaña Practicar: mis errores, dictado de palabras y de frases, y diccionario con búsqueda y audio.
 - [ ] Revisar cada apartado de la app con el mismo criterio (lo pidió el usuario el 22/10/2026).
-- [ ] Más frases de dictado por unidad (ahora son las preguntas y respuestas del curso).
+- [x] Pregunta del nivel de partida (4 niveles) y lecciones con menos repetición: cada palabra se escribe una vez por lección (22/10/2026).
+- [x] Frase de ejemplo por palabra (76, en los 12 idiomas); en los niveles altos, frases enteras al dictado.
+- [x] Pistas en proporción (25 % y 50 %) y corrección que nombra el tipo de fallo.
+- [ ] Contenido A2 y B1 propio para los niveles altos (ahora usan el vocabulario A1 en frases): necesita el Plan Curricular del Instituto Cervantes.
+- [ ] Prueba de nivel opcional (unas preguntas) en lugar de que cada persona lo diga.
+- [ ] Más frases de dictado por unidad.
 - [ ] Funciones con IA (corrección de textos de 10 líneas, cámara, tutor): ver las decisiones pendientes en [PRODUCTO.md](PRODUCTO.md).
 
 ## Fase 7: pase de Conducir (hecha, en estado «borrador»)

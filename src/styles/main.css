@@ -137,6 +137,15 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 }
 .lang-row.selected { border-color: var(--sky); box-shadow: 0 4px 0 var(--sky); }
 .lang-row .name { min-width: 0; }
+.levels { display: grid; gap: 10px; }
+.level-row {
+  display: grid; gap: 2px; background: var(--paper); border: 2px solid var(--line); border-radius: 16px;
+  padding: 12px 14px; cursor: pointer; box-shadow: 0 4px 0 var(--line); text-align: start; font: inherit; color: var(--ink);
+}
+.level-row strong { font-size: 1.1rem; }
+.level-row span:last-child { color: var(--ink-soft); font-size: .95rem; }
+.level-row.selected { border-color: var(--sky); box-shadow: 0 4px 0 var(--sky); }
+.level-bars { color: var(--sky-dark); letter-spacing: 2px; font-size: .8rem; }
 
 /* ---------- Camino de lecciones ---------- */
 .path { display: grid; gap: 26px; padding-top: 4px; }
@@ -450,6 +459,10 @@ h2.section { margin: 18px 0 10px; }
 .write-box .btn { margin-top: 4px; }
 .write-box .link { justify-self: center; }
 .hint-mask { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; }
+.hint-word { display: inline-flex; align-items: center; gap: 6px; }
+.hint-mask.small, .hint-mask.small .hint-word { gap: 3px; }
+.hint-mask.small .hint-box { width: 22px; height: 30px; font-size: 1rem; border-radius: 6px; }
+.hint-mask.small .hint-gap { width: 10px; }
 .hint-box { width: 30px; height: 38px; border: 2px dashed var(--sky); border-radius: 8px; display: grid; place-items: center; font-family: var(--display); font-size: 1.3rem; font-weight: 700; color: var(--sky-dark); background: var(--paper); }
 .hint-gap { width: 14px; }
 .hint-count { flex-basis: 100%; text-align: center; color: var(--ink-soft); font-size: .9rem; font-weight: 600; }
