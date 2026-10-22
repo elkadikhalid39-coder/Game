@@ -1,0 +1,74 @@
+// Marco de la app: cambio de pantalla, barras superior e inferior, panel de respuesta y celebración.
+import { I18N, ui, dirOf } from "../core/i18n.js";
+import { save } from "../core/state.js";
+import { go } from "../core/router.js";
+import { pick, rand } from "../core/util.js";
+import { el, txt, button } from "./dom.js";
+
+export const app = document.getElementById("app");
+const topbar = document.getElementById("topbar");
+const tabbar = document.getElementById("tabbar");
+
+// Pestañas de la barra inferior: [nombre de ruta, icono, texto].
+const TABS = [["path", "🗺️", "tabLearn"], ["review", "🔁", "tabReview"], ["profile", "👤", "tabProfile"]];
+let currentTab = "path";
+export const setTab = (name) => { currentTab = name; };
+
+// Cada cambio de pantalla incrementa screenId; así una acción con retraso sabe si sigue en la misma pantalla.
+export let screenId = 0;
+// layout: "plain" (sin barras), "main" (barras superior e inferior), "lesson" (cabecera propia)
+export function screen(layout = "main", lang = save.native) {
+  screenId++;
+  document.querySelector(".sheet")?.remove();
+  app.replaceChildren();
+  app.dir = lang ? dirOf(lang) : "ltr";
+  document.body.dataset.layout = layout;
+  renderBars();
+  window.scrollTo(0, 0);
+}
+
+export function renderBars() {
+  topbar.replaceChildren();
+  tabbar.replaceChildren();
+  document.body.classList.toggle("calm", save.calm);
+  if (document.body.dataset.layout !== "main" || !save.native) return;
+  const lang = button("chip lang", "", () => go("profile"));
+  lang.append(el("span", "code", save.native.toUpperCase()), txt("span", "", I18N[save.native].name, save.native));
+  topbar.append(lang, el("span", "stat", "📚 " + save.learned.length));
+  for (const [name, icon, key] of TABS) {
+    const b = button("tab" + (currentTab === name ? " active" : ""), "", () => go(name));
+    b.dataset.tab = name;
+    b.append(el("span", "icon", icon), el("span", "", ui(key)));
+    if (name === "review" && save.mistakes.length) b.append(el("span", "badge", String(save.mistakes.length)));
+    tabbar.append(b);
+  }
+}
+
+// Panel inferior con el resultado de una respuesta.
+export function sheet(ok, title, detail, detailLang, onContinue, extra) {
+  const s = el("div", "sheet " + (ok ? "ok" : "bad"));
+  const inner = el("div", "sheet-inner");
+  const head = el("div", "sheet-head");
+  head.append(el("span", "sheet-icon", ok ? "✓" : "✕"), el("strong", "", title));
+  inner.append(head);
+  if (detail) inner.append(txt("p", "sheet-detail", detail, detailLang));
+  if (extra) inner.append(extra);
+  const next = button("btn " + (ok ? "" : "danger"), ui("next"), () => { s.remove(); onContinue(); });
+  inner.append(next);
+  s.append(inner);
+  s.dir = dirOf(save.native);
+  document.body.append(s);
+  next.focus();
+}
+
+// Lluvia de emojis al terminar (se omite en modo calma o con movimiento reducido).
+export function celebrate() {
+  if (save.calm || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  for (let i = 0; i < 14; i++) {
+    const c = el("span", "confetti", pick(["⭐", "🎉", "✨", "🌟", "🎈"], 1)[0]);
+    c.style.left = rand(5, 95) + "vw";
+    c.style.animationDelay = Math.random() * 0.3 + "s";
+    document.body.append(c);
+    setTimeout(() => c.remove(), 1600);
+  }
+}

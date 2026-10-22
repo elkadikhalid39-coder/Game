@@ -1,27 +1,31 @@
 # Hola, Español
 
-Aplicación para aprender el español que se necesita para vivir en España y preparar los exámenes oficiales (nacionalidad y universidad). La interfaz y las explicaciones están en 12 idiomas.
+Aplicación para aprender el español que se necesita para vivir en España y preparar los exámenes oficiales (nacionalidad y universidad). La interfaz y las explicaciones están en 12 idiomas. Funciona sin conexión y se puede instalar en el móvil.
 
-- **Bases del producto** (qué es, para quién, estructura, reglas de contenido y fuentes, decisiones): [docs/PRODUCTO.md](docs/PRODUCTO.md)
+- **Bases del producto**: [docs/PRODUCTO.md](docs/PRODUCTO.md)
 - **Hoja de ruta** y datos pendientes de verificar: [docs/HOJA_DE_RUTA.md](docs/HOJA_DE_RUTA.md)
+- **Contenido y datos oficiales** (formato y reglas): [docs/CONTENIDO.md](docs/CONTENIDO.md)
 - **Auditorías**: [docs/AUDITORIA.md](docs/AUDITORIA.md)
 
-## Estado
+## Desarrollo
 
-Fase 0 terminada: curso con 6 unidades (camino de lecciones, repaso de errores, perfil). Los pases de examen empiezan en la fase 3.
+```
+npm install
+npm run dev        # servidor de desarrollo
+npm run build      # dist/ (app instalable, sin conexión) y dist-single/hola.html (vista previa en un archivo)
+npm test           # comprobaciones de contenido + compilación + prueba de humo en navegador
+```
 
-## Probar
-Abre `index.html` en el navegador, o genera un único archivo con `tools/build.sh` (sale en `dist/hola.html`).
-
-## Comprobaciones
-- `node tools/check-content.js`: todos los idiomas tienen todos los textos y el contenido no usa ids inexistentes.
-- `node tools/smoke-test.js`: recorre la app en un navegador real (necesita Playwright; `PW_CHROMIUM=/ruta/a/chromium` si hace falta).
+La prueba de humo necesita Playwright y Chromium (`PW_CHROMIUM=/ruta/a/chromium` si no están en la ruta por defecto).
 
 ## Estructura
-- `js/i18n/<idioma>.js`: textos de cada idioma de apoyo (`es.js` es la referencia).
-- `js/content.js`: unidades del curso.
-- `js/core.js`: progreso guardado (con migración), idiomas, voz y navegación.
-- `js/ui.js`: piezas de interfaz (mascota, globo, barras, panel de respuesta).
-- `js/onboarding.js`: bienvenida, idioma y ajustes.
-- `js/learn.js`: camino de lecciones, lección, repaso y perfil.
-- `css/style.css`: identidad visual.
+
+```
+content/      datos: idiomas, curso, datos oficiales, exámenes
+src/core/     estado guardado (con migraciones), idiomas, voz, navegación, registro de datos oficiales
+src/ui/       piezas de interfaz: mascota, marco, panel de respuesta, nota de fuente
+src/screens/  bienvenida, idioma y ajustes
+src/learn/    curso: camino, lección, repaso y perfil
+src/styles/   identidad visual
+tools/        comprobaciones, prueba de humo, iconos y empaquetado
+```

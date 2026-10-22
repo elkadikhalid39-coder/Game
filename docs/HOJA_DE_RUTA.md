@@ -9,13 +9,13 @@ Cada fase termina con la prueba automática en verde, un enlace para probar y un
 - [x] Los errores de una lección vuelven al final de esa misma lección.
 - [x] Código, pruebas y documentación limpios.
 
-## Fase 1: estructura técnica (semana 1)
+## Fase 1: estructura técnica (hecha)
 
-- [ ] Proyecto con módulos y Vite, sin framework.
-- [ ] Datos de contenido en archivos separados del código.
-- [ ] Funciona sin internet (PWA), con las fuentes tipográficas incluidas.
-- [ ] Registro de datos legales con fuente, estado y fecha de comprobación, más una comprobación automática que falla si falta algo.
-- [ ] Migración del progreso guardado.
+- [x] Proyecto con módulos y Vite, sin framework.
+- [x] Datos de contenido en archivos separados del código (`content/`).
+- [x] Funciona sin internet (PWA) e instalable, con las fuentes tipográficas incluidas.
+- [x] Registro de datos legales con fuente, estado y fecha de comprobación ([CONTENIDO.md](CONTENIDO.md)), más una comprobación automática que falla si falta algo.
+- [x] Migración del progreso guardado.
 
 ## Fase 2: curso A1 (semanas 2 y 3)
 

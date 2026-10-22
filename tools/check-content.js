@@ -1,16 +1,11 @@
-// Comprueba que todos los idiomas tienen todas las claves y que el contenido no usa ids inexistentes.
+// Comprueba que todos los idiomas tienen todos los textos y que el curso no usa ids inexistentes.
 // Uso: node tools/check-content.js
-const fs = require("fs");
-const path = require("path");
-const vm = require("vm");
+import { readFileSync } from "node:fs";
 
-const root = path.join(__dirname, "..");
-const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
-const scripts = [...html.matchAll(/<script src="([^"]+)"/g)].map((m) => m[1]).filter((s) => !/(core|ui|onboarding|learn|main)\.js$/.test(s));
-const ctx = {};
-vm.createContext(ctx);
-for (const s of scripts) vm.runInContext(fs.readFileSync(path.join(root, s), "utf8") + "\n;globalThis.__x = { I18N, ...(typeof WORLDS !== 'undefined' ? { WORLDS } : {}) };", ctx);
-const { I18N, WORLDS } = ctx.__x;
+const load = (p) => JSON.parse(readFileSync(new URL("../content/" + p, import.meta.url), "utf8"));
+const order = load("i18n/_order.json");
+const I18N = Object.fromEntries(order.map((c) => [c, load(`i18n/${c}.json`)]));
+const UNITS = load("course/units.json");
 
 const errors = [];
 const ref = I18N.es;
@@ -19,28 +14,27 @@ for (const [code, lang] of Object.entries(I18N)) {
   for (const part of ["ui", "t"]) {
     for (const k of Object.keys(ref[part])) if (!lang[part][k]) errors.push(`${code}.${part}: falta "${k}"`);
     for (const k of Object.keys(lang[part])) if (!(k in ref[part])) errors.push(`${code}.${part}: sobra "${k}"`);
+    // Los marcadores {x} deben estar en todas las traducciones donde los tiene el español.
+    for (const [k, v] of Object.entries(ref[part])) if (String(v).includes("{x}") && lang[part][k] && !String(lang[part][k]).includes("{x}")) errors.push(`${code}.${part}.${k}: falta {x}`);
   }
-  if (!lang.ui.reviewCount.includes("{x}")) errors.push(`${code}: falta {x} en reviewCount`);
   // Dos opciones iguales en la misma lección serían imposibles de distinguir.
-  const groups = WORLDS.map((w) => [w.id, w.words.map((x) => x[0])]);
-  for (const [g, ids] of groups) {
+  for (const u of UNITS) {
     const seen = new Map();
-    for (const id of ids) {
+    for (const { id } of u.words) {
       const t = (lang.t[id] || "").toLowerCase();
-      if (seen.has(t)) errors.push(`${code}: "${t}" repetido en ${g} (${seen.get(t)}, ${id})`);
+      if (seen.has(t)) errors.push(`${code}: "${t}" repetido en ${u.id} (${seen.get(t)}, ${id})`);
       seen.set(t, id);
     }
   }
 }
 const ids = new Set(Object.keys(ref.t));
-for (const w of WORLDS) {
-  if (!ids.has("w_" + w.id)) errors.push(`mundo sin nombre: w_${w.id}`);
-  for (const [id] of w.words) if (!ids.has(id)) errors.push(`${w.id}: palabra sin traducir "${id}"`);
-  for (const [id, wrong] of w.phrases) for (const p of [id, ...wrong]) {
-    if (!ids.has("q_" + p) && p === id) errors.push(`${w.id}: falta q_${p}`);
-    if (!ids.has("a_" + p)) errors.push(`${w.id}: falta a_${p}`);
-  }
+const need = (id, where) => { if (!ids.has(id)) errors.push(`${where}: falta la traducción "${id}"`); };
+for (const u of UNITS) {
+  need("w_" + u.id, u.id);
+  for (const k of u.extraKeys || []) need(k, u.id);
+  for (const { id } of u.words) need(id, u.id);
+  for (const p of u.phrases) { need("q_" + p.id, u.id); need("a_" + p.id, u.id); for (const w of p.wrong) need("a_" + w, u.id); }
 }
 
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
-console.log(`OK: ${Object.keys(I18N).length} idiomas, ${Object.keys(ref.ui).length} textos de interfaz y ${ids.size} de contenido cada uno.`);
+console.log(`OK contenido: ${order.length} idiomas, ${Object.keys(ref.ui).length} textos de interfaz y ${ids.size} de contenido cada uno; ${UNITS.length} unidades.`);
