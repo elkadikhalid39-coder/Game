@@ -45,7 +45,7 @@ drive_texts = {w["es"] for w in drive["words"]} | {
     ". ".join([q["q"], *[f"{'abc'[i]}. {o}" for i, o in enumerate(q["options"])]]) for q in drive["questions"]
 }
 
-dele = load("content/exams/dele-a2.json")
+deles = [load("content/exams/dele-a2.json"), load("content/exams/dele-a2-2.json")]
 dialog = {"M": set(), "H": set()}
 
 
@@ -61,8 +61,9 @@ def walk(o):
             walk(v)
 
 
-walk(dele)
-examiner = {line for t in dele["speaking"]["tasks"] for line in t.get("examiner", [])}
+for dele in deles:
+    walk(dele)
+examiner = {line for dele in deles for t in dele["speaking"]["tasks"] for line in t.get("examiner", [])}
 
 # Qué lleva cada voz: todas, el curso; la neutra, además, lo de los exámenes;
 # las dos voces de España, los diálogos de la comprensión auditiva (M: mujer, H: hombre).

@@ -37,8 +37,9 @@ Cada fase termina con la prueba automática en verde, un enlace para probar y un
 - [x] CCSE: 60 preguntas originales con la proporción del manual (24, 7, 5, 7, 17), práctica por tareas con explicación y fuente, simulacro de 25 preguntas en 45 minutos, apto con 15 y aciertos por tarea.
 - [x] DELE A2: simulacro original de las cuatro pruebas con el formato de la guía oficial (lectura y auditiva de 25 preguntas, audio dos veces con dos voces; escritura con contador de palabras; oral con 12 minutos de preparación y examinador), autoevaluación con rúbrica y estimación por grupos.
 - [x] Muestra gratuita (Mi trámite y 5 preguntas del CCSE) y desbloqueo del pase simulado (sin pago).
-- [ ] Ampliar el banco CCSE a 300 preguntas.
-- [ ] Más simulacros del DELE A2 y voces grabadas para la auditiva.
+- [x] Banco CCSE ampliado a 300 preguntas originales (120, 36, 24, 36 y 84, como el manual), cada una con su fuente oficial (22/10/2026).
+- [x] Segundo simulacro completo del DELE A2 (modelo 2) y audio pregrabado con dos voces de España para la auditiva (22/10/2026).
+- [ ] Un tercer modelo del DELE y locutores reales para la auditiva.
 - [ ] Volver a comprobar los datos del Instituto Cervantes (su web estaba en mantenimiento el 22/10/2026).
 
 **Correcciones a la investigación encontradas al verificar:**
@@ -51,7 +52,7 @@ Cada fase termina con la prueba automática en verde, un enlace para probar y un
 
 - [x] 23 datos verificados el 22/10/2026 en fuentes oficiales (UNEDasiss, guías PCE 2025-26 de la UNED, RD 534/2024 y RD 482/2025, Ministerio de Educación) en `content/facts/universidad.json`.
 - [x] «Mi ruta a la universidad»: 3 preguntas como máximo (dónde terminó el bachillerato, si necesita visado, universidad pública o privada) → pasos con su fuente: homologación, acreditación UNEDasiss, materias, plazos, día del examen, inscripción, nota, visado (trámite aparte) y aviso del proyecto de reforma. Gratis.
-- [x] Materias PCE: las 25 materias oficiales con su tipo de prueba, guía, modelo de examen y fecha de la guía. Ficha completa (formato, puntuación, programa) de las 5 guías leídas: Lengua, Historia de España, Inglés, Matemáticas y Matemáticas Aplicadas a las CC. SS.
+- [x] Materias PCE: las 25 materias oficiales con su tipo de prueba, guía, modelo de examen y fecha de la guía. Ficha completa (formato, puntuación, material y programa) de las 25 materias, leída de su guía oficial 2025-26 (22/10/2026).
 - [x] Simulacros de la parte de test con la puntuación de cada guía (aciertos, errores que restan, máximo de respuestas que cuentan y aviso si se responde de más): Historia (18 preguntas originales), Inglés (12, muestra gratis), Matemáticas (16) y MACS (16).
 - [x] Redacción académica (bloque 1 de Lengua): 2 textos originales con resumen, tema e ideas, y texto argumentativo; contador de líneas aproximado, lista de comprobación, modelos, conectores y práctica de los errores que restan.
 - [x] Calculadora de nota de acceso y de admisión, marcada como estimación (la fórmula 60/40 es de fuente secundaria).
@@ -93,7 +94,9 @@ Hecho el 22/10/2026: auditoría automática de accesibilidad (`tools/a11y-audit.
 - [x] «Mi caso»: ¿canje o examen? Permiso de la UE (canje voluntario), de un país con convenio (canje sin examen para coche o moto, con el aviso de los 6 meses) o de otro país / sin permiso (requisitos, teórico, práctico).
 - [x] 8 temas con ficha de datos oficiales y test con explicación y fuente (64 preguntas originales), botón para escuchar cada pregunta, «Mis fallos» y simulacro de 30 preguntas en 30 minutos (apto con 3 fallos).
 - [x] Vocabulario del examen (16 palabras) con definición y traducción orientativa a los 12 idiomas.
-- [ ] Señales de tráfico con dibujos (el examen real usa imágenes y vídeos).
+- [x] Banco reorganizado en los 17 temas del manual de la DGT más el anexo de puntos: 162 preguntas y 24 datos nuevos del Reglamento General de Circulación vigente (con las reformas de 2025 y del RD 518/2026, en vigor desde el 01/10/2026), la Ley de Tráfico, el Reglamento de Vehículos y el RD 920/2017 de la ITV (22/10/2026).
+- [x] Señales dibujadas por la app (STOP, ceda el paso, entrada prohibida, velocidad máxima y mínima, peligro).
+- [ ] Más señales dibujadas (el examen real usa imágenes y vídeos).
 - [ ] Ampliar el banco de preguntas y revisar con un profesor de autoescuela.
 - [ ] Confirmar en fuente oficial los idiomas del examen y el formato exacto (tres opciones).
 
@@ -113,6 +116,5 @@ Hecho el 22/10/2026: auditoría automática de accesibilidad (`tools/a11y-audit.
 | Dispensa por edad (70 años o más) o discapacidad (65 % o más) | Sede del Ministerio de Justicia |
 | Caso de la ESO cursada en España (exención del DELE, del CCSE o solo de la dispensa previa) | Orden JUS/1018/2022 y sede del Ministerio de Justicia |
 | Reparto de preguntas por tarea en el examen CCSE (10, 3, 2, 3 y 7) y que los errores no restan | Especificaciones de la prueba CCSE (web del Cervantes en mantenimiento el 22/10/2026) |
-| Duración y reglas de cada PCE (confirmadas solo en 5 materias) | Guía de cada materia en UNEDasiss |
 | Fórmula de la nota de acceso con PCE (60 % + 40 %) | Normativa de la UNED o del Ministerio de Universidades |
 | Plan Curricular A1–A2, manual CCSE 2026 completo y capítulo 4 de LASLLIAM | Instituto Cervantes y Consejo de Europa |

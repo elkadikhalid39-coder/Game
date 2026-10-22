@@ -347,7 +347,8 @@
     "topic_mecanica": "Mecánica y mantenimiento",
     "topic_preventiva": "Conducción preventiva",
     "topic_puntos": "El permiso por puntos",
-    "roadSign": "Señal de tráfico"
+    "roadSign": "Señal de tráfico",
+    "modelN": "Modelo {x}"
   },
   "t": {
     "hola": "Hola",

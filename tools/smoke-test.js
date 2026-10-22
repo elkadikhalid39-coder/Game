@@ -413,6 +413,7 @@ test("dictado de frases y diccionario", async () => {
 
 // ---------- Pase de Nacionalidad ----------
 const DELE = JSON.parse(readFileSync(new URL("../content/exams/dele-a2.json", import.meta.url), "utf8"));
+const DELE2 = JSON.parse(readFileSync(new URL("../content/exams/dele-a2-2.json", import.meta.url), "utf8"));
 const clickText = (page, text) => page.click(`button:has-text("${text}")`);
 
 test("Mi trámite: adulto que necesita dispensa", async () => {
@@ -490,12 +491,13 @@ async function answerComprehension(page, data) {
   }
 }
 
-for (const [part, data] of [["reading", DELE.reading], ["listening", DELE.listening]]) {
-  test(`DELE: ${part === "reading" ? "lectura" : "auditiva"} 25/25`, async () => {
+for (const [part, data, model] of [["reading", DELE.reading, 0], ["listening", DELE.listening, 0], ["reading", DELE2.reading, 1], ["listening", DELE2.listening, 1]]) {
+  test(`DELE modelo ${model + 1}: ${part === "reading" ? "lectura" : "auditiva"} 25/25`, async () => {
     const { page, errors } = await open({ native: "es", passes: { nacionalidad: true } });
     await page.click('.tab[data-tab="exams"]');
     await page.click(".menu-row:nth-child(1)");
     await page.click(".menu-row:nth-child(3)"); // DELE
+    await page.click(`[data-model="${model}"]`);
     await page.click(`.menu-row:nth-child(${part === "reading" ? 1 : 2})`);
     await answerComprehension(page, data);
     return [(await page.innerText("h1")).includes("25 de 25"), errors];

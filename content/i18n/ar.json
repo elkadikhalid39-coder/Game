@@ -348,7 +348,8 @@
     "topic_mecanica": "الميكانيكا والصيانة",
     "topic_preventiva": "القيادة الوقائية",
     "topic_puntos": "رخصة القيادة بالنقاط",
-    "roadSign": "إشارة مرور"
+    "roadSign": "إشارة مرور",
+    "modelN": "النموذج {x}"
   },
   "t": {
     "hola": "مرحبا",

@@ -347,7 +347,8 @@
     "topic_mecanica": "Mecanică și întreținere",
     "topic_preventiva": "Condus preventiv",
     "topic_puntos": "Permisul cu puncte",
-    "roadSign": "Semn de circulație"
+    "roadSign": "Semn de circulație",
+    "modelN": "Modelul {x}"
   },
   "t": {
     "hola": "Bună",

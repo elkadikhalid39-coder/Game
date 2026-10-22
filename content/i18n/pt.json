@@ -347,7 +347,8 @@
     "topic_mecanica": "Mecânica e manutenção",
     "topic_preventiva": "Direção preventiva",
     "topic_puntos": "A habilitação por pontos",
-    "roadSign": "Placa de trânsito"
+    "roadSign": "Placa de trânsito",
+    "modelN": "Modelo {x}"
   },
   "t": {
     "hola": "Olá",

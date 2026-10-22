@@ -347,7 +347,8 @@
     "topic_mecanica": "Mechanik und Wartung",
     "topic_preventiva": "Vorausschauendes Fahren",
     "topic_puntos": "Der Punkteführerschein",
-    "roadSign": "Verkehrszeichen"
+    "roadSign": "Verkehrszeichen",
+    "modelN": "Modell {x}"
   },
   "t": {
     "hola": "Hallo",

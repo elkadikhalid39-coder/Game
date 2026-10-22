@@ -347,7 +347,8 @@
     "topic_mecanica": "Mécanique et entretien",
     "topic_preventiva": "Conduite préventive",
     "topic_puntos": "Le permis à points",
-    "roadSign": "Panneau de signalisation"
+    "roadSign": "Panneau de signalisation",
+    "modelN": "Modèle {x}"
   },
   "t": {
     "hola": "Bonjour",

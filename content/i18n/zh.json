@@ -347,7 +347,8 @@
     "topic_mecanica": "机械与保养",
     "topic_preventiva": "预防性驾驶",
     "topic_puntos": "驾照积分制",
-    "roadSign": "交通标志"
+    "roadSign": "交通标志",
+    "modelN": "模拟题 {x}"
   },
   "t": {
     "hola": "你好",

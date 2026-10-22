@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
         // las demás voces se guardan la primera vez que se usan.
         workbox: {
           globPatterns: ["**/*.{js,css,html,woff2,png,svg}", "audio/neutra.*", "audio/es-f.*", "audio/es-m.*"],
-          maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
+          maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
           runtimeCaching: [{ urlPattern: /\/audio\/.*\.(bin|json)$/, handler: "CacheFirst", options: { cacheName: "voces" } }],
         },
         manifest: {

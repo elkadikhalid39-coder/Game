@@ -1,8 +1,10 @@
 // DELE A2: estructura oficial y simulacro de las cuatro pruebas.
 // Lectura y auditiva se corrigen solas (1 punto por acierto, sobre 25).
 // Escritura y oral: la persona se autoevalúa con una rúbrica y un ejemplo, y obtiene una puntuación orientativa.
-import exam from "../../content/exams/dele-a2.json";
+import model1 from "../../content/exams/dele-a2.json";
+import model2 from "../../content/exams/dele-a2-2.json";
 import { ui } from "../core/i18n.js";
+import { save, persist } from "../core/state.js";
 import { register, go } from "../core/router.js";
 import { speak, speakDialog } from "../core/audio.js";
 import { el, button, closeButton } from "../ui/dom.js";
@@ -20,7 +22,11 @@ const PARTS = [
   ["writing", "✍️", "writing", 45],
   ["speaking", "🗣️", "speaking", 24],
 ];
-const key = (part) => "dele-" + part;
+// Dos simulacros completos y distintos. Los resultados se guardan por modelo (el 1 conserva la clave de siempre).
+const MODELS = [model1, model2];
+const model = () => (MODELS[save.deleModel] ? save.deleModel : 0);
+const exam = new Proxy({}, { get: (_, k) => MODELS[model()][k] });
+const key = (part) => (model() ? `dele${model() + 1}-` : "dele-") + part;
 const GROUP_PASS = 30; // de 50 en cada grupo (dato «dele.a2_calificacion»)
 
 function showDele() {
@@ -30,6 +36,15 @@ function showDele() {
     app.append(factNote("dele.a2_estructura"), passCard(PASS, showDele));
     return;
   }
+  // Elegir el simulacro (modelo 1 o 2).
+  const models = el("div", "chips");
+  MODELS.forEach((_, i) => {
+    const b = button("rhythm-chip" + (i === model() ? " selected" : ""), ui("modelN", i + 1), () => { save.deleModel = i; persist(); showDele(); });
+    b.dataset.model = i;
+    b.setAttribute("aria-pressed", String(i === model()));
+    models.append(b);
+  });
+  app.append(models);
   const menu = el("div", "menu");
   for (const [part, icon, k, min] of PARTS) {
     const r = lastResult(key(part));
@@ -342,7 +357,8 @@ function oralTask(t, live) {
       box.append(opt);
     }
   }
-  if (t.scene) box.append(el("div", "scene", t.scene), el("p", "instructions", t.sceneText), list(t.guide));
+  // La escena se describe con palabras (un dibujo con emojis no se parecía a una foto de examen).
+  if (t.sceneText) box.append(el("p", "instructions scene-text", t.sceneText), list(t.guide));
   if (t.situation) {
     box.append(el("p", "instructions", t.situation));
     if (live) {

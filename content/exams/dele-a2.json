@@ -1,862 +1,861 @@
 {
- "exam": "dele-a2",
- "version": "2026-10-22",
- "status": "borrador",
- "note": "Simulacro original de Hola, Español con la estructura de la guía oficial del DELE A2. No es un examen del Instituto Cervantes.",
- "reading": {
-  "minutes": 60,
-  "tasks": [
-   {
-    "id": "L1",
-    "title": "Tarea 1",
-    "instructions": "Lee el correo electrónico y responde a las preguntas. Elige la opción correcta (a, b o c).",
-    "texts": [
-     {
-      "title": "",
-      "body": "Hola, Samir:\n\n¿Qué tal estás? Perdona que no te haya escrito antes, pero estas semanas han sido muy intensas. Como sabes, en septiembre empecé a trabajar en una panadería del barrio. Al principio fue difícil, porque tenía que levantarme a las cinco de la mañana y no estaba acostumbrada. Ahora ya me he adaptado y estoy muy contenta: mis compañeros son simpáticos y la jefa me está enseñando a hacer pasteles.\n\nAdemás, por fin he encontrado un piso. Es pequeño, pero tiene mucha luz y está muy cerca del trabajo, así que voy andando y no tengo que coger el autobús. Lo comparto con Marta, una chica de Valencia que estudia Enfermería. Nos llevamos muy bien y los domingos cocinamos juntas.\n\nTe escribo también porque el sábado 14 hago una pequeña fiesta para celebrar el piso nuevo. Vendrán algunos compañeros de la panadería y mis amigos de la clase de español. Empezaremos a las ocho de la tarde. No hace falta que traigas nada de comer, porque yo voy a preparar comida de mi país, pero si quieres puedes traer algo de beber.\n\nPara llegar, lo más fácil es coger el metro hasta la parada de Ópera. Desde allí son cinco minutos andando. Mi dirección es calle del Carmen, 12, tercer piso. Si te pierdes, llámame al móvil.\n\nAh, y si tienes tiempo antes de la fiesta, podemos tomar un café por la tarde y me cuentas qué tal te va en el nuevo trabajo.\n\nEspero verte pronto.\n\nUn abrazo,\nLucía"
-     }
-    ],
-    "questions": [
-     {
-      "q": "En su nuevo trabajo, Lucía…",
-      "options": [
-       "empieza a trabajar por la tarde.",
-       "está aprendiendo a hacer pasteles.",
-       "no se lleva bien con sus compañeros."
-      ],
-      "answer": 1
-     },
-     {
-      "q": "El piso de Lucía…",
-      "options": [
-       "está lejos de la panadería.",
-       "es grande y tiene mucha luz.",
-       "está cerca de su trabajo."
-      ],
-      "answer": 2
-     },
-     {
-      "q": "Marta…",
-      "options": [
-       "es estudiante.",
-       "trabaja en la panadería.",
-       "es la jefa de Lucía."
-      ],
-      "answer": 0
-     },
-     {
-      "q": "Para la fiesta, Lucía le pide a Samir que…",
-      "options": [
-       "lleve comida de su país.",
-       "lleve bebida si quiere.",
-       "llegue antes de las ocho."
-      ],
-      "answer": 1
-     },
-     {
-      "q": "Para llegar a casa de Lucía, Samir puede…",
-      "options": [
-       "ir en metro y luego andar.",
-       "coger el autobús en Ópera.",
-       "llamarla para que vaya a buscarlo."
-      ],
-      "answer": 0
-     }
+  "exam": "dele-a2",
+  "version": "2026-10-22",
+  "status": "borrador",
+  "note": "Simulacro original de Hola, Español con la estructura de la guía oficial del DELE A2. No es un examen del Instituto Cervantes.",
+  "reading": {
+    "minutes": 60,
+    "tasks": [
+      {
+        "id": "L1",
+        "title": "Tarea 1",
+        "instructions": "Lee el correo electrónico y responde a las preguntas. Elige la opción correcta (a, b o c).",
+        "texts": [
+          {
+            "title": "",
+            "body": "Hola, Samir:\n\n¿Qué tal estás? Perdona que no te haya escrito antes, pero estas semanas han sido muy intensas. Como sabes, en septiembre empecé a trabajar en una panadería del barrio. Al principio fue difícil, porque tenía que levantarme a las cinco de la mañana y no estaba acostumbrada. Ahora ya me he adaptado y estoy muy contenta: mis compañeros son simpáticos y la jefa me está enseñando a hacer pasteles.\n\nAdemás, por fin he encontrado un piso. Es pequeño, pero tiene mucha luz y está muy cerca del trabajo, así que voy andando y no tengo que coger el autobús. Lo comparto con Marta, una chica de Valencia que estudia Enfermería. Nos llevamos muy bien y los domingos cocinamos juntas.\n\nTe escribo también porque el sábado 14 hago una pequeña fiesta para celebrar el piso nuevo. Vendrán algunos compañeros de la panadería y mis amigos de la clase de español. Empezaremos a las ocho de la tarde. No hace falta que traigas nada de comer, porque yo voy a preparar comida de mi país, pero si quieres puedes traer algo de beber.\n\nPara llegar, lo más fácil es coger el metro hasta la parada de Ópera. Desde allí son cinco minutos andando. Mi dirección es calle del Carmen, 12, tercer piso. Si te pierdes, llámame al móvil.\n\nAh, y si tienes tiempo antes de la fiesta, podemos tomar un café por la tarde y me cuentas qué tal te va en el nuevo trabajo.\n\nEspero verte pronto.\n\nUn abrazo,\nLucía"
+          }
+        ],
+        "questions": [
+          {
+            "q": "En su nuevo trabajo, Lucía…",
+            "options": [
+              "empieza a trabajar por la tarde.",
+              "está aprendiendo a hacer pasteles.",
+              "no se lleva bien con sus compañeros."
+            ],
+            "answer": 1
+          },
+          {
+            "q": "El piso de Lucía…",
+            "options": [
+              "está lejos de la panadería.",
+              "es grande y tiene mucha luz.",
+              "está cerca de su trabajo."
+            ],
+            "answer": 2
+          },
+          {
+            "q": "Marta…",
+            "options": [
+              "es estudiante.",
+              "trabaja en la panadería.",
+              "es la jefa de Lucía."
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Para la fiesta, Lucía le pide a Samir que…",
+            "options": [
+              "lleve comida de su país.",
+              "lleve bebida si quiere.",
+              "llegue antes de las ocho."
+            ],
+            "answer": 1
+          },
+          {
+            "q": "Para llegar a casa de Lucía, Samir puede…",
+            "options": [
+              "ir en metro y luego andar.",
+              "coger el autobús en Ópera.",
+              "llamarla para que vaya a buscarlo."
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      {
+        "id": "L2",
+        "title": "Tarea 2",
+        "instructions": "Lee estos textos breves y responde a las preguntas. Elige la opción correcta (a, b o c).",
+        "texts": [
+          {
+            "title": "Texto 1. Cartel en un centro de salud",
+            "body": "Para pedir cita con su médico de familia puede llamar al teléfono del centro de 8:00 a 15:00 o usar la aplicación de salud de la comunidad. Si tiene fiebre alta o un problema urgente, venga directamente al centro sin cita. Por favor, traiga siempre su tarjeta sanitaria y llegue cinco minutos antes de la hora de su cita."
+          },
+          {
+            "title": "Texto 2. Anuncio en un supermercado",
+            "body": "Este fin de semana, todas las frutas y verduras tienen un 20 % de descuento. Además, si compra más de 50 euros, le llevamos la compra a casa gratis. Oferta válida el sábado y el domingo en todas nuestras tiendas del centro de la ciudad. El servicio a domicilio funciona de diez de la mañana a ocho de la tarde."
+          },
+          {
+            "title": "Texto 3. Aviso del ayuntamiento",
+            "body": "Debido a las obras de la plaza Mayor, el autobús número 5 no para en la calle Real desde el lunes 3 hasta el viernes 14. La parada provisional está en la calle del Sol, a cien metros. Los demás autobuses mantienen sus paradas y horarios habituales. Disculpen las molestias."
+          },
+          {
+            "title": "Texto 4. Mensaje en la puerta de un portal",
+            "body": "Vecinos: el martes por la mañana vienen a revisar el ascensor. Estará parado de 9:00 a 13:00. Si alguna persona mayor necesita ayuda para subir la compra ese día, puede avisar al portero, que estará en el portal toda la mañana. Si tienen preguntas, pueden escribir al presidente. Gracias. La comunidad."
+          },
+          {
+            "title": "Texto 5. Blog de viajes",
+            "body": "Si visitas Granada, no te pierdas la Alhambra. Te recomiendo comprar la entrada por internet con varias semanas de antelación, porque en verano se agotan pronto. Lleva agua y zapatos cómodos: la visita completa dura unas tres horas. Por la tarde, sube al mirador de San Nicolás para ver la puesta de sol."
+          },
+          {
+            "title": "Texto 6. Anuncio de una escuela",
+            "body": "Clases gratuitas de español para personas adultas. Nivel inicial: lunes y miércoles de 18:00 a 20:00. Nivel intermedio: martes y jueves en el mismo horario. Inscripción en la secretaría de la escuela con el pasaporte o la tarjeta de residencia. Las plazas son limitadas y las clases empiezan en octubre."
+          },
+          {
+            "title": "Texto 7. Nota de un compañero de piso",
+            "body": "Hola, Ana: hoy llego tarde porque tengo una reunión en el trabajo. He comprado pan, leche y fruta; está todo en la cocina. ¿Puedes sacar la basura esta noche? Mañana me toca a mí limpiar el baño y el jueves hacemos la compra juntos en el mercado, ¿vale? Hasta luego. Pablo."
+          },
+          {
+            "title": "Texto 8. Anuncio de una biblioteca",
+            "body": "La biblioteca municipal amplía su horario durante la época de exámenes. Del 15 de mayo al 30 de junio abrirá también los sábados y domingos de 10:00 a 21:00. Para usar los ordenadores es necesario tener el carné de la biblioteca, que es gratuito y se hace en el mostrador de la entrada en cinco minutos."
+          }
+        ],
+        "questions": [
+          {
+            "text": 0,
+            "q": "Según el cartel, si tienes un problema urgente…",
+            "options": [
+              "tienes que llamar por teléfono.",
+              "puedes ir al centro sin cita.",
+              "debes usar la aplicación."
+            ],
+            "answer": 1
+          },
+          {
+            "text": 1,
+            "q": "El supermercado lleva la compra a casa gratis…",
+            "options": [
+              "todos los días.",
+              "si compras frutas y verduras.",
+              "si gastas más de 50 euros."
+            ],
+            "answer": 2
+          },
+          {
+            "text": 2,
+            "q": "Durante las obras, el autobús número 5…",
+            "options": [
+              "para en otra calle.",
+              "no funciona.",
+              "cambia de horario."
+            ],
+            "answer": 0
+          },
+          {
+            "text": 3,
+            "q": "El martes por la mañana…",
+            "options": [
+              "el portero no trabaja.",
+              "no se puede usar el ascensor.",
+              "hay una reunión de vecinos."
+            ],
+            "answer": 1
+          },
+          {
+            "text": 4,
+            "q": "Para visitar la Alhambra en verano, el autor recomienda…",
+            "options": [
+              "ir por la mañana temprano.",
+              "comprar la entrada con tiempo.",
+              "hacer una visita corta."
+            ],
+            "answer": 1
+          },
+          {
+            "text": 5,
+            "q": "Las clases de nivel intermedio son…",
+            "options": [
+              "los martes y jueves.",
+              "los lunes y miércoles.",
+              "de pago."
+            ],
+            "answer": 0
+          },
+          {
+            "text": 6,
+            "q": "Pablo le pide a Ana que…",
+            "options": [
+              "compre pan y leche.",
+              "limpie el baño.",
+              "saque la basura."
+            ],
+            "answer": 2
+          },
+          {
+            "text": 7,
+            "q": "Para usar los ordenadores de la biblioteca…",
+            "options": [
+              "hay que pagar.",
+              "se necesita el carné.",
+              "hay que ir el fin de semana."
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "id": "L3",
+        "title": "Tarea 3",
+        "instructions": "Lee estos tres anuncios de trabajo y relaciona cada frase con el anuncio correspondiente (A, B o C).",
+        "match": [
+          "A",
+          "B",
+          "C"
+        ],
+        "texts": [
+          {
+            "title": "A. Restaurante La Huerta",
+            "body": "Buscamos camarero o camarera para el turno de noche, de jueves a domingo. No es necesario tener experiencia, porque damos formación durante las dos primeras semanas. Ofrecemos contrato de seis meses con posibilidad de continuar y comida gratis durante el turno. Es importante saber trabajar en equipo y tener buen trato con los clientes. Valoramos que hables inglés, porque tenemos muchos clientes extranjeros. Envía tu currículum con foto a nuestro correo o tráelo en persona por las mañanas, de diez a doce. Las entrevistas serán la semana que viene en el mismo restaurante. Si nos gusta tu perfil, te llamaremos para hacer una prueba de un día."
+          },
+          {
+            "title": "B. Tienda de electrodomésticos Hogar Plus",
+            "body": "Necesitamos un repartidor con carné de conducir y al menos un año de experiencia. El horario es de lunes a viernes, de ocho de la mañana a cuatro de la tarde, y los fines de semana son libres. La persona seleccionada repartirá y montará electrodomésticos en casa de los clientes, por eso tiene que ser una persona fuerte y organizada. La empresa da el uniforme y el teléfono móvil de trabajo. Contrato indefinido desde el primer día. Si te interesa, llama por teléfono a la tienda y pregunta por Luis, el encargado. Haremos las entrevistas a finales de este mes."
+          },
+          {
+            "title": "C. Residencia de mayores Los Olivos",
+            "body": "Buscamos auxiliar para acompañar a personas mayores en sus paseos y actividades. El trabajo es de media jornada, por las tardes, y puedes elegir los días. Es necesario tener un título de formación profesional en atención a personas y paciencia para tratar con los residentes. Si no tienes coche, no hay problema: la residencia está al lado de la estación de tren. Ofrecemos un buen ambiente de trabajo y cursos de formación gratuitos durante todo el año. Para presentar tu solicitud, rellena el formulario de nuestra página web o ven a conocernos cualquier mañana de lunes a viernes. Te enseñaremos las instalaciones."
+          }
+        ],
+        "questions": [
+          {
+            "q": "En este trabajo se libra los sábados y domingos.",
+            "answer": 1
+          },
+          {
+            "q": "Aquí puedes empezar a trabajar sin experiencia.",
+            "answer": 0
+          },
+          {
+            "q": "Para este trabajo hay que tener un título.",
+            "answer": 2
+          },
+          {
+            "q": "La empresa te da un teléfono para trabajar.",
+            "answer": 1
+          },
+          {
+            "q": "Es un trabajo de pocas horas al día.",
+            "answer": 2
+          },
+          {
+            "q": "Hablar otro idioma es una ventaja.",
+            "answer": 0
+          }
+        ]
+      },
+      {
+        "id": "L4",
+        "title": "Tarea 4",
+        "instructions": "Lee el texto y responde a las preguntas. Elige la opción correcta (a, b o c).",
+        "texts": [
+          {
+            "title": "Una nueva vida en Almería",
+            "body": "Fatima nació en un pueblo pequeño cerca de Agadir, en Marruecos. Su familia vivía del campo: cultivaban tomates y tenían algunas cabras. Desde niña, a Fatima le gustaba ayudar a su abuela en la cocina, y a los quince años ya preparaba los platos más difíciles para toda la familia.\n\nCuando tenía veintidós años, decidió viajar a España para buscar trabajo. Su primo vivía en Almería y le dijo que en los invernaderos siempre necesitaban gente. Los primeros meses fueron muy duros. Trabajaba muchas horas, hacía mucho calor dentro de los invernaderos y casi no hablaba español. Por las noches, después del trabajo, iba a una asociación del barrio donde unos voluntarios daban clases de español gratis. Allí conoció a Carmen, una profesora jubilada que se convirtió en su mejor amiga.\n\nCarmen probó un día el cuscús que Fatima había llevado a clase y le dijo: «Tienes que abrir un restaurante». Al principio, Fatima pensó que era una broma. No tenía dinero ni sabía cómo funcionaban los papeles en España. Sin embargo, la idea se quedó en su cabeza. Durante tres años ahorró todo lo que pudo y, con la ayuda de Carmen, aprendió a hacer los trámites: pidió cita en el ayuntamiento, preparó los documentos y se informó sobre las licencias.\n\nMientras tanto, empezó a cocinar los fines de semana para fiestas y celebraciones de sus vecinos. Así se dio a conocer en el barrio y consiguió sus primeros clientes. También hizo un curso de cocina en una escuela de hostelería, donde aprendió a preparar platos españoles.\n\nEn 2019 abrió un pequeño restaurante con solo seis mesas. En la carta mezcla recetas de su abuela con productos de Almería: tajín con verduras de los invernaderos, pescado del Mediterráneo con especias marroquíes y pasteles de almendra. Al principio trabajaba sola, pero ahora tiene tres empleados, dos de ellos también llegados de otros países.\n\nHoy, Fatima habla español con fluidez y ha conseguido la nacionalidad española. Dice que lo más importante fue no rendirse y pedir ayuda cuando la necesitaba. Los martes por la tarde, cuando el restaurante cierra, vuelve a la asociación del barrio, pero ahora como voluntaria: enseña a cocinar a mujeres que acaban de llegar y les explica cómo empezar su propio negocio. «Si yo pude, vosotras también podéis», les dice siempre."
+          }
+        ],
+        "questions": [
+          {
+            "q": "Cuando era niña, Fatima…",
+            "options": [
+              "trabajaba en los invernaderos.",
+              "cocinaba con su abuela.",
+              "vivía en una ciudad grande."
+            ],
+            "answer": 1
+          },
+          {
+            "q": "Fatima fue a Almería porque…",
+            "options": [
+              "su primo le habló del trabajo allí.",
+              "quería estudiar cocina.",
+              "tenía un restaurante allí."
+            ],
+            "answer": 0
+          },
+          {
+            "q": "Carmen…",
+            "options": [
+              "trabajaba con Fatima en el campo.",
+              "era la dueña de la asociación.",
+              "fue su profesora de español."
+            ],
+            "answer": 2
+          },
+          {
+            "q": "Antes de abrir el restaurante, Fatima…",
+            "options": [
+              "cocinaba para las fiestas de sus vecinos.",
+              "trabajaba en una escuela de hostelería.",
+              "pidió dinero al ayuntamiento."
+            ],
+            "answer": 0
+          },
+          {
+            "q": "En el restaurante de Fatima…",
+            "options": [
+              "solo se sirve comida marroquí.",
+              "hay platos que mezclan dos cocinas.",
+              "trabaja ella sola."
+            ],
+            "answer": 1
+          },
+          {
+            "q": "Ahora, los martes Fatima…",
+            "options": [
+              "da clases de español.",
+              "abre el restaurante por la tarde.",
+              "ayuda a otras mujeres en la asociación."
+            ],
+            "answer": 2
+          }
+        ]
+      }
     ]
-   },
-   {
-    "id": "L2",
-    "title": "Tarea 2",
-    "instructions": "Lee estos textos breves y responde a las preguntas. Elige la opción correcta (a, b o c).",
-    "texts": [
-     {
-      "title": "Texto 1. Cartel en un centro de salud",
-      "body": "Para pedir cita con su médico de familia puede llamar al teléfono del centro de 8:00 a 15:00 o usar la aplicación de salud de la comunidad. Si tiene fiebre alta o un problema urgente, venga directamente al centro sin cita. Por favor, traiga siempre su tarjeta sanitaria y llegue cinco minutos antes de la hora de su cita."
-     },
-     {
-      "title": "Texto 2. Anuncio en un supermercado",
-      "body": "Este fin de semana, todas las frutas y verduras tienen un 20 % de descuento. Además, si compra más de 50 euros, le llevamos la compra a casa gratis. Oferta válida el sábado y el domingo en todas nuestras tiendas del centro de la ciudad. El servicio a domicilio funciona de diez de la mañana a ocho de la tarde."
-     },
-     {
-      "title": "Texto 3. Aviso del ayuntamiento",
-      "body": "Debido a las obras de la plaza Mayor, el autobús número 5 no para en la calle Real desde el lunes 3 hasta el viernes 14. La parada provisional está en la calle del Sol, a cien metros. Los demás autobuses mantienen sus paradas y horarios habituales. Disculpen las molestias."
-     },
-     {
-      "title": "Texto 4. Mensaje en la puerta de un portal",
-      "body": "Vecinos: el martes por la mañana vienen a revisar el ascensor. Estará parado de 9:00 a 13:00. Si alguna persona mayor necesita ayuda para subir la compra ese día, puede avisar al portero, que estará en el portal toda la mañana. Si tienen preguntas, pueden escribir al presidente. Gracias. La comunidad."
-     },
-     {
-      "title": "Texto 5. Blog de viajes",
-      "body": "Si visitas Granada, no te pierdas la Alhambra. Te recomiendo comprar la entrada por internet con varias semanas de antelación, porque en verano se agotan pronto. Lleva agua y zapatos cómodos: la visita completa dura unas tres horas. Por la tarde, sube al mirador de San Nicolás para ver la puesta de sol."
-     },
-     {
-      "title": "Texto 6. Anuncio de una escuela",
-      "body": "Clases gratuitas de español para personas adultas. Nivel inicial: lunes y miércoles de 18:00 a 20:00. Nivel intermedio: martes y jueves en el mismo horario. Inscripción en la secretaría de la escuela con el pasaporte o la tarjeta de residencia. Las plazas son limitadas y las clases empiezan en octubre."
-     },
-     {
-      "title": "Texto 7. Nota de un compañero de piso",
-      "body": "Hola, Ana: hoy llego tarde porque tengo una reunión en el trabajo. He comprado pan, leche y fruta; está todo en la cocina. ¿Puedes sacar la basura esta noche? Mañana me toca a mí limpiar el baño y el jueves hacemos la compra juntos en el mercado, ¿vale? Hasta luego. Pablo."
-     },
-     {
-      "title": "Texto 8. Anuncio de una biblioteca",
-      "body": "La biblioteca municipal amplía su horario durante la época de exámenes. Del 15 de mayo al 30 de junio abrirá también los sábados y domingos de 10:00 a 21:00. Para usar los ordenadores es necesario tener el carné de la biblioteca, que es gratuito y se hace en el mostrador de la entrada en cinco minutos."
-     }
-    ],
-    "questions": [
-     {
-      "text": 0,
-      "q": "Según el cartel, si tienes un problema urgente…",
-      "options": [
-       "tienes que llamar por teléfono.",
-       "puedes ir al centro sin cita.",
-       "debes usar la aplicación."
-      ],
-      "answer": 1
-     },
-     {
-      "text": 1,
-      "q": "El supermercado lleva la compra a casa gratis…",
-      "options": [
-       "todos los días.",
-       "si compras frutas y verduras.",
-       "si gastas más de 50 euros."
-      ],
-      "answer": 2
-     },
-     {
-      "text": 2,
-      "q": "Durante las obras, el autobús número 5…",
-      "options": [
-       "para en otra calle.",
-       "no funciona.",
-       "cambia de horario."
-      ],
-      "answer": 0
-     },
-     {
-      "text": 3,
-      "q": "El martes por la mañana…",
-      "options": [
-       "el portero no trabaja.",
-       "no se puede usar el ascensor.",
-       "hay una reunión de vecinos."
-      ],
-      "answer": 1
-     },
-     {
-      "text": 4,
-      "q": "Para visitar la Alhambra en verano, el autor recomienda…",
-      "options": [
-       "ir por la mañana temprano.",
-       "comprar la entrada con tiempo.",
-       "hacer una visita corta."
-      ],
-      "answer": 1
-     },
-     {
-      "text": 5,
-      "q": "Las clases de nivel intermedio son…",
-      "options": [
-       "los martes y jueves.",
-       "los lunes y miércoles.",
-       "de pago."
-      ],
-      "answer": 0
-     },
-     {
-      "text": 6,
-      "q": "Pablo le pide a Ana que…",
-      "options": [
-       "compre pan y leche.",
-       "limpie el baño.",
-       "saque la basura."
-      ],
-      "answer": 2
-     },
-     {
-      "text": 7,
-      "q": "Para usar los ordenadores de la biblioteca…",
-      "options": [
-       "hay que pagar.",
-       "se necesita el carné.",
-       "hay que ir el fin de semana."
-      ],
-      "answer": 1
-     }
+  },
+  "listening": {
+    "minutes": 40,
+    "tasks": [
+      {
+        "id": "A1",
+        "title": "Tarea 1",
+        "instructions": "Vas a escuchar seis conversaciones breves. Cada conversación se escucha dos veces. Elige la imagen correcta (a, b o c).",
+        "items": [
+          {
+            "dialog": [
+              [
+                "M",
+                "Perdone, ¿tienen pan integral?"
+              ],
+              [
+                "H",
+                "Lo siento, se ha terminado. Pero tenemos pan de centeno y barras normales."
+              ],
+              [
+                "M",
+                "Pues entonces me llevo dos barras, por favor."
+              ]
+            ],
+            "q": "¿Qué compra la mujer?",
+            "options": [
+              "🥖 Barras de pan",
+              "🍞 Pan integral",
+              "🥐 Cruasanes"
+            ],
+            "answer": 0
+          },
+          {
+            "dialog": [
+              [
+                "H",
+                "¿A qué hora sale el próximo tren para Sevilla?"
+              ],
+              [
+                "M",
+                "Hay uno a las diez y cuarto, pero va lleno. El siguiente sale a las once y media."
+              ],
+              [
+                "H",
+                "Vale, deme un billete para el de las once y media."
+              ]
+            ],
+            "q": "¿A qué hora sale el tren del hombre?",
+            "options": [
+              "🕙 10:15",
+              "🕚 11:30",
+              "🕛 12:30"
+            ],
+            "answer": 1
+          },
+          {
+            "dialog": [
+              [
+                "M",
+                "¿Qué te pasa? Tienes mala cara."
+              ],
+              [
+                "H",
+                "Me duele mucho la espalda. Ayer estuve todo el día moviendo muebles."
+              ],
+              [
+                "M",
+                "Pues descansa y, si mañana sigue igual, vete al médico."
+              ]
+            ],
+            "q": "¿Qué le duele al hombre?",
+            "options": [
+              "🦷 Las muelas",
+              "🤕 La cabeza",
+              "🧍 La espalda"
+            ],
+            "answer": 2
+          },
+          {
+            "dialog": [
+              [
+                "H",
+                "¿Qué tiempo va a hacer el fin de semana?"
+              ],
+              [
+                "M",
+                "El sábado, sol y mucho calor, pero el domingo dicen que va a llover."
+              ],
+              [
+                "H",
+                "Entonces vamos a la playa el sábado."
+              ]
+            ],
+            "q": "¿Qué tiempo va a hacer el domingo?",
+            "options": [
+              "☀️ Sol",
+              "🌧️ Lluvia",
+              "❄️ Nieve"
+            ],
+            "answer": 1
+          },
+          {
+            "dialog": [
+              [
+                "M",
+                "Buenos días, quería un regalo para mi hermano. Le gusta mucho leer."
+              ],
+              [
+                "H",
+                "Tenemos esta novela, que se vende muy bien, o este libro de fotos de viajes."
+              ],
+              [
+                "M",
+                "Mejor la novela, gracias."
+              ]
+            ],
+            "q": "¿Qué regalo compra la mujer?",
+            "options": [
+              "📖 Una novela",
+              "📷 Un libro de fotos",
+              "🎧 Unos auriculares"
+            ],
+            "answer": 0
+          },
+          {
+            "dialog": [
+              [
+                "H",
+                "¿Dónde quedamos esta tarde?"
+              ],
+              [
+                "M",
+                "Delante del cine, que está al lado de la farmacia."
+              ],
+              [
+                "H",
+                "Perfecto, a las seis delante del cine."
+              ]
+            ],
+            "q": "¿Dónde quedan?",
+            "options": [
+              "💊 En la farmacia",
+              "🎬 Delante del cine",
+              "☕ En una cafetería"
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "id": "A2",
+        "title": "Tarea 2",
+        "instructions": "Vas a escuchar seis anuncios y noticias breves. Cada audio se escucha dos veces. Elige la opción correcta (a, b o c).",
+        "items": [
+          {
+            "dialog": [
+              [
+                "M",
+                "Atención, señores pasajeros: el tren con destino Valencia, que tenía prevista su salida a las nueve y veinte, saldrá con un retraso de quince minutos. Disculpen las molestias."
+              ]
+            ],
+            "q": "El tren a Valencia…",
+            "options": [
+              "sale a las nueve y veinte.",
+              "sale con retraso.",
+              "no va a salir hoy."
+            ],
+            "answer": 1
+          },
+          {
+            "dialog": [
+              [
+                "H",
+                "Mañana jueves, el ayuntamiento organiza una jornada de puertas abiertas en el centro de empleo. Habrá talleres para preparar el currículum y entrevistas con empresas del barrio. La entrada es libre y no hace falta inscribirse."
+              ]
+            ],
+            "q": "Para ir a la jornada del centro de empleo…",
+            "options": [
+              "hay que inscribirse antes.",
+              "hay que pagar una entrada.",
+              "no hace falta inscribirse."
+            ],
+            "answer": 2
+          },
+          {
+            "dialog": [
+              [
+                "M",
+                "Supermercados Ahorramás informa: hoy, las tiendas cierran a las siete de la tarde por la final del campeonato. Mañana abriremos en nuestro horario habitual, de nueve a nueve."
+              ]
+            ],
+            "q": "Hoy los supermercados…",
+            "options": [
+              "cierran antes de lo normal.",
+              "abren más tarde.",
+              "no abren."
+            ],
+            "answer": 0
+          },
+          {
+            "dialog": [
+              [
+                "H",
+                "La biblioteca del barrio recuerda que los libros se pueden tener en casa durante quince días. Si necesitas más tiempo, puedes renovarlos por teléfono o en nuestra página web."
+              ]
+            ],
+            "q": "Para tener un libro más de quince días…",
+            "options": [
+              "hay que ir a la biblioteca.",
+              "se puede renovar por teléfono.",
+              "hay que pagar."
+            ],
+            "answer": 1
+          },
+          {
+            "dialog": [
+              [
+                "M",
+                "Mañana empieza la campaña de vacunación contra la gripe para las personas mayores de sesenta años. Pueden pedir cita en su centro de salud a partir de hoy."
+              ]
+            ],
+            "q": "La campaña de vacunación es para…",
+            "options": [
+              "todas las personas.",
+              "los niños.",
+              "las personas mayores de sesenta años."
+            ],
+            "answer": 2
+          },
+          {
+            "dialog": [
+              [
+                "H",
+                "Este domingo, las calles del centro estarán cortadas al tráfico por la carrera popular. Se recomienda usar el metro, que funcionará con más trenes de lo habitual."
+              ]
+            ],
+            "q": "El domingo se recomienda…",
+            "options": [
+              "usar el metro.",
+              "ir en coche al centro.",
+              "no salir de casa."
+            ],
+            "answer": 0
+          }
+        ]
+      },
+      {
+        "id": "A3",
+        "title": "Tarea 3",
+        "instructions": "Vas a escuchar una conversación entre Javier y Nadia. La conversación se escucha dos veces. Indica si cada frase se refiere a Javier, a Nadia o a ninguno de los dos.",
+        "match": [
+          "Javier",
+          "Nadia",
+          "Ninguno"
+        ],
+        "dialog": [
+          [
+            "H",
+            "Hola, Nadia. ¡Cuánto tiempo! ¿Qué tal el verano?"
+          ],
+          [
+            "M",
+            "¡Hola, Javier! Muy bien, aunque he trabajado casi todo el verano en la tienda de mi tía. Solo tuve una semana de vacaciones y fui a ver a mis padres a Casablanca."
+          ],
+          [
+            "H",
+            "Yo este año no he viajado. Me he quedado en Madrid porque estaba preparando el examen del carné de conducir."
+          ],
+          [
+            "M",
+            "¿Y qué tal? ¿Lo has aprobado?"
+          ],
+          [
+            "H",
+            "El teórico sí, a la primera. El práctico lo hago la semana que viene y estoy un poco nervioso."
+          ],
+          [
+            "M",
+            "Seguro que te sale bien. Yo también quiero sacarme el carné, pero ahora no tengo tiempo. En octubre empiezo un curso de informática por las tardes."
+          ],
+          [
+            "H",
+            "¡Qué bien! ¿Es para el trabajo?"
+          ],
+          [
+            "M",
+            "Sí, en la tienda queremos vender también por internet y yo voy a ocuparme de la página web. ¿Y tú sigues en el hotel?"
+          ],
+          [
+            "H",
+            "No, lo dejé en junio. Ahora trabajo en una empresa de mudanzas. Es más cansado, pero el horario es mejor y los fines de semana los tengo libres."
+          ],
+          [
+            "M",
+            "Pues entonces podemos quedar un sábado para cenar con los compañeros de la clase de español."
+          ],
+          [
+            "H",
+            "Me parece genial. Yo me encargo de buscar el restaurante, que conozco uno muy bueno de comida peruana."
+          ],
+          [
+            "M",
+            "Perfecto. Yo escribo a los demás para ver qué día les va bien. ¿Te parece bien el sábado que viene?"
+          ],
+          [
+            "H",
+            "Mejor el otro, porque el sábado que viene tengo el examen práctico. Así, si apruebo, lo celebramos."
+          ]
+        ],
+        "questions": [
+          {
+            "q": "Trabajó durante el verano.",
+            "answer": 1
+          },
+          {
+            "q": "Ya ha aprobado el examen teórico de conducir.",
+            "answer": 0
+          },
+          {
+            "q": "Va a estudiar informática.",
+            "answer": 1
+          },
+          {
+            "q": "Ha cambiado de trabajo.",
+            "answer": 0
+          },
+          {
+            "q": "Ha viajado a Perú.",
+            "answer": 2
+          },
+          {
+            "q": "Va a buscar un restaurante.",
+            "answer": 0
+          }
+        ]
+      },
+      {
+        "id": "A4",
+        "title": "Tarea 4",
+        "instructions": "Vas a escuchar siete mensajes. Cada mensaje se escucha dos veces. Relaciona cada mensaje con la frase correcta. Hay diez frases: sobran tres.",
+        "statements": [
+          "Cambian la hora de una cita médica.",
+          "Hay que recoger un paquete.",
+          "Invitan a una fiesta de cumpleaños.",
+          "Informan de una avería en la casa.",
+          "Ofrecen un trabajo.",
+          "Piden devolver un libro.",
+          "Anuncian que un tren llega tarde.",
+          "Recuerdan una reunión de vecinos.",
+          "Avisan de que la clase se suspende.",
+          "Venden un coche."
+        ],
+        "items": [
+          {
+            "dialog": [
+              [
+                "M",
+                "Hola, buenos días. Llamo del centro de salud. Su cita con la doctora Ruiz del jueves pasa del jueves a las diez al viernes a las doce. Si no le viene bien, llame a este número."
+              ]
+            ],
+            "answer": 0
+          },
+          {
+            "dialog": [
+              [
+                "H",
+                "Buenas tardes, le habla Correos. Tenemos un paquete a su nombre en la oficina de la calle Mayor. Puede recogerlo hasta el día veinte con su documento de identidad."
+              ]
+            ],
+            "answer": 1
+          },
+          {
+            "dialog": [
+              [
+                "M",
+                "Hola, Sara, soy Elena. El sábado cumplo treinta años y lo celebro en mi casa a las nueve. ¡No faltes! Trae a tu hermano si quieres."
+              ]
+            ],
+            "answer": 2
+          },
+          {
+            "dialog": [
+              [
+                "H",
+                "Hola, soy el fontanero. Ya he mirado la tubería del baño. Está rota y mañana tengo que volver con una pieza nueva. Llegaré a las nueve."
+              ]
+            ],
+            "answer": 3
+          },
+          {
+            "dialog": [
+              [
+                "M",
+                "Buenos días, llamo de la empresa Limpiezas Sol. Hemos visto su currículum y nos interesa. Tenemos un puesto de media jornada. Llámenos para hacer una entrevista."
+              ]
+            ],
+            "answer": 4
+          },
+          {
+            "dialog": [
+              [
+                "H",
+                "Hola, le llamamos de la biblioteca municipal. El libro que se llevó tenía que devolverlo hace una semana. Por favor, tráigalo lo antes posible."
+              ]
+            ],
+            "answer": 5
+          },
+          {
+            "dialog": [
+              [
+                "M",
+                "Hola a todos. Soy Clara, la profesora de español. Mañana no hay clase porque estoy enferma. La recuperamos el lunes a la misma hora."
+              ]
+            ],
+            "answer": 8
+          }
+        ]
+      }
     ]
-   },
-   {
-    "id": "L3",
-    "title": "Tarea 3",
-    "instructions": "Lee estos tres anuncios de trabajo y relaciona cada frase con el anuncio correspondiente (A, B o C).",
-    "match": [
-     "A",
-     "B",
-     "C"
+  },
+  "writing": {
+    "minutes": 45,
+    "tasks": [
+      {
+        "id": "E1",
+        "title": "Tarea 1",
+        "words": [
+          60,
+          70
+        ],
+        "instructions": "Has recibido este mensaje de una amiga. Respóndele. En tu mensaje debes: saludar; aceptar o rechazar la invitación y explicar por qué; proponer otro plan; despedirte.",
+        "prompt": "Hola: ¿qué tal? El domingo que viene vamos de excursión a la sierra con unos amigos. Saldremos a las ocho de la mañana en tren y volveremos por la tarde. ¿Quieres venir? Contéstame pronto. Besos, Irene.",
+        "model": "Hola, Irene:\n\nMuchas gracias por la invitación. Me encanta la sierra, pero este domingo no puedo ir porque trabajo por la mañana en el restaurante. ¡Qué pena! ¿Por qué no hacemos algo el sábado por la tarde? Podemos dar un paseo por el parque y después tomar algo en la terraza de la plaza. Dime si te viene bien y a qué hora quedamos.\n\nUn beso,\nAmina"
+      },
+      {
+        "id": "E2",
+        "title": "Tarea 2",
+        "words": [
+          70,
+          80
+        ],
+        "choose": true,
+        "options": [
+          {
+            "label": "Opción A",
+            "instructions": "Escribe un texto sobre tu barrio para el blog de tu escuela de español. Habla de: cómo es tu barrio; qué hay (tiendas, parques, transporte); qué te gusta más y qué cambiarías.",
+            "model": "Vivo en el barrio de Lavapiés, en el centro de Madrid. Es un barrio antiguo, con calles estrechas y mucha vida. Hay tiendas de todo el mundo, un mercado, varias bibliotecas y dos parques pequeños. Además, está muy bien comunicado: tengo el metro a cinco minutos de casa. Lo que más me gusta es la gente, porque hay vecinos de muchos países. Yo cambiaría el ruido de los fines de semana, porque a veces no puedo dormir."
+          },
+          {
+            "label": "Opción B",
+            "instructions": "Mira estos datos y escribe un texto sobre el primer día de trabajo de Omar. Datos: lunes, 8:00; restaurante; nervioso; compañeros simpáticos; aprendió a hacer tortilla; terminó cansado pero contento.",
+            "model": "El lunes pasado Omar empezó a trabajar en un restaurante del centro. Llegó a las ocho de la mañana y estaba un poco nervioso, porque era su primer trabajo en España. Sus compañeros fueron muy simpáticos con él y le explicaron todo con paciencia. Por la mañana, el cocinero le enseñó a hacer tortilla de patatas. Por la tarde, cuando terminó su turno, estaba muy cansado, pero también contento porque había aprendido mucho."
+          }
+        ]
+      }
     ],
-    "texts": [
-     {
-      "title": "A. Restaurante La Huerta",
-      "body": "Buscamos camarero o camarera para el turno de noche, de jueves a domingo. No es necesario tener experiencia, porque damos formación durante las dos primeras semanas. Ofrecemos contrato de seis meses con posibilidad de continuar y comida gratis durante el turno. Es importante saber trabajar en equipo y tener buen trato con los clientes. Valoramos que hables inglés, porque tenemos muchos clientes extranjeros. Envía tu currículum con foto a nuestro correo o tráelo en persona por las mañanas, de diez a doce. Las entrevistas serán la semana que viene en el mismo restaurante. Si nos gusta tu perfil, te llamaremos para hacer una prueba de un día."
-     },
-     {
-      "title": "B. Tienda de electrodomésticos Hogar Plus",
-      "body": "Necesitamos un repartidor con carné de conducir y al menos un año de experiencia. El horario es de lunes a viernes, de ocho de la mañana a cuatro de la tarde, y los fines de semana son libres. La persona seleccionada repartirá y montará electrodomésticos en casa de los clientes, por eso tiene que ser una persona fuerte y organizada. La empresa da el uniforme y el teléfono móvil de trabajo. Contrato indefinido desde el primer día. Si te interesa, llama por teléfono a la tienda y pregunta por Luis, el encargado. Haremos las entrevistas a finales de este mes."
-     },
-     {
-      "title": "C. Residencia de mayores Los Olivos",
-      "body": "Buscamos auxiliar para acompañar a personas mayores en sus paseos y actividades. El trabajo es de media jornada, por las tardes, y puedes elegir los días. Es necesario tener un título de formación profesional en atención a personas y paciencia para tratar con los residentes. Si no tienes coche, no hay problema: la residencia está al lado de la estación de tren. Ofrecemos un buen ambiente de trabajo y cursos de formación gratuitos durante todo el año. Para presentar tu solicitud, rellena el formulario de nuestra página web o ven a conocernos cualquier mañana de lunes a viernes. Te enseñaremos las instalaciones."
-     }
-    ],
-    "questions": [
-     {
-      "q": "En este trabajo se libra los sábados y domingos.",
-      "answer": 1
-     },
-     {
-      "q": "Aquí puedes empezar a trabajar sin experiencia.",
-      "answer": 0
-     },
-     {
-      "q": "Para este trabajo hay que tener un título.",
-      "answer": 2
-     },
-     {
-      "q": "La empresa te da un teléfono para trabajar.",
-      "answer": 1
-     },
-     {
-      "q": "Es un trabajo de pocas horas al día.",
-      "answer": 2
-     },
-     {
-      "q": "Hablar otro idioma es una ventaja.",
-      "answer": 0
-     }
-    ]
-   },
-   {
-    "id": "L4",
-    "title": "Tarea 4",
-    "instructions": "Lee el texto y responde a las preguntas. Elige la opción correcta (a, b o c).",
-    "texts": [
-     {
-      "title": "Una nueva vida en Almería",
-      "body": "Fatima nació en un pueblo pequeño cerca de Agadir, en Marruecos. Su familia vivía del campo: cultivaban tomates y tenían algunas cabras. Desde niña, a Fatima le gustaba ayudar a su abuela en la cocina, y a los quince años ya preparaba los platos más difíciles para toda la familia.\n\nCuando tenía veintidós años, decidió viajar a España para buscar trabajo. Su primo vivía en Almería y le dijo que en los invernaderos siempre necesitaban gente. Los primeros meses fueron muy duros. Trabajaba muchas horas, hacía mucho calor dentro de los invernaderos y casi no hablaba español. Por las noches, después del trabajo, iba a una asociación del barrio donde unos voluntarios daban clases de español gratis. Allí conoció a Carmen, una profesora jubilada que se convirtió en su mejor amiga.\n\nCarmen probó un día el cuscús que Fatima había llevado a clase y le dijo: «Tienes que abrir un restaurante». Al principio, Fatima pensó que era una broma. No tenía dinero ni sabía cómo funcionaban los papeles en España. Sin embargo, la idea se quedó en su cabeza. Durante tres años ahorró todo lo que pudo y, con la ayuda de Carmen, aprendió a hacer los trámites: pidió cita en el ayuntamiento, preparó los documentos y se informó sobre las licencias.\n\nMientras tanto, empezó a cocinar los fines de semana para fiestas y celebraciones de sus vecinos. Así se dio a conocer en el barrio y consiguió sus primeros clientes. También hizo un curso de cocina en una escuela de hostelería, donde aprendió a preparar platos españoles.\n\nEn 2019 abrió un pequeño restaurante con solo seis mesas. En la carta mezcla recetas de su abuela con productos de Almería: tajín con verduras de los invernaderos, pescado del Mediterráneo con especias marroquíes y pasteles de almendra. Al principio trabajaba sola, pero ahora tiene tres empleados, dos de ellos también llegados de otros países.\n\nHoy, Fatima habla español con fluidez y ha conseguido la nacionalidad española. Dice que lo más importante fue no rendirse y pedir ayuda cuando la necesitaba. Los martes por la tarde, cuando el restaurante cierra, vuelve a la asociación del barrio, pero ahora como voluntaria: enseña a cocinar a mujeres que acaban de llegar y les explica cómo empezar su propio negocio. «Si yo pude, vosotras también podéis», les dice siempre."
-     }
-    ],
-    "questions": [
-     {
-      "q": "Cuando era niña, Fatima…",
-      "options": [
-       "trabajaba en los invernaderos.",
-       "cocinaba con su abuela.",
-       "vivía en una ciudad grande."
+    "rubric": {
+      "task": [
+        "No responde a lo que se pide.",
+        "Responde solo a una parte de lo que se pide.",
+        "Responde a casi todo lo que se pide, con alguna información poco clara.",
+        "Responde a todo lo que se pide, con la extensión adecuada."
       ],
-      "answer": 1
-     },
-     {
-      "q": "Fatima fue a Almería porque…",
-      "options": [
-       "su primo le habló del trabajo allí.",
-       "quería estudiar cocina.",
-       "tenía un restaurante allí."
-      ],
-      "answer": 0
-     },
-     {
-      "q": "Carmen…",
-      "options": [
-       "trabajaba con Fatima en el campo.",
-       "era la dueña de la asociación.",
-       "fue su profesora de español."
-      ],
-      "answer": 2
-     },
-     {
-      "q": "Antes de abrir el restaurante, Fatima…",
-      "options": [
-       "cocinaba para las fiestas de sus vecinos.",
-       "trabajaba en una escuela de hostelería.",
-       "pidió dinero al ayuntamiento."
-      ],
-      "answer": 0
-     },
-     {
-      "q": "En el restaurante de Fatima…",
-      "options": [
-       "solo se sirve comida marroquí.",
-       "hay platos que mezclan dos cocinas.",
-       "trabaja ella sola."
-      ],
-      "answer": 1
-     },
-     {
-      "q": "Ahora, los martes Fatima…",
-      "options": [
-       "da clases de español.",
-       "abre el restaurante por la tarde.",
-       "ayuda a otras mujeres en la asociación."
-      ],
-      "answer": 2
-     }
-    ]
-   }
-  ]
- },
- "listening": {
-  "minutes": 40,
-  "tasks": [
-   {
-    "id": "A1",
-    "title": "Tarea 1",
-    "instructions": "Vas a escuchar seis conversaciones breves. Cada conversación se escucha dos veces. Elige la imagen correcta (a, b o c).",
-    "items": [
-     {
-      "dialog": [
-       [
-        "M",
-        "Perdone, ¿tienen pan integral?"
-       ],
-       [
-        "H",
-        "Lo siento, se ha terminado. Pero tenemos pan de centeno y barras normales."
-       ],
-       [
-        "M",
-        "Pues entonces me llevo dos barras, por favor."
-       ]
-      ],
-      "q": "¿Qué compra la mujer?",
-      "options": [
-       "🥖 Barras de pan",
-       "🍞 Pan integral",
-       "🥐 Cruasanes"
-      ],
-      "answer": 0
-     },
-     {
-      "dialog": [
-       [
-        "H",
-        "¿A qué hora sale el próximo tren para Sevilla?"
-       ],
-       [
-        "M",
-        "Hay uno a las diez y cuarto, pero va lleno. El siguiente sale a las once y media."
-       ],
-       [
-        "H",
-        "Vale, deme un billete para el de las once y media."
-       ]
-      ],
-      "q": "¿A qué hora sale el tren del hombre?",
-      "options": [
-       "🕙 10:15",
-       "🕚 11:30",
-       "🕛 12:30"
-      ],
-      "answer": 1
-     },
-     {
-      "dialog": [
-       [
-        "M",
-        "¿Qué te pasa? Tienes mala cara."
-       ],
-       [
-        "H",
-        "Me duele mucho la espalda. Ayer estuve todo el día moviendo muebles."
-       ],
-       [
-        "M",
-        "Pues descansa y, si mañana sigue igual, vete al médico."
-       ]
-      ],
-      "q": "¿Qué le duele al hombre?",
-      "options": [
-       "🦷 Las muelas",
-       "🤕 La cabeza",
-       "🧍 La espalda"
-      ],
-      "answer": 2
-     },
-     {
-      "dialog": [
-       [
-        "H",
-        "¿Qué tiempo va a hacer el fin de semana?"
-       ],
-       [
-        "M",
-        "El sábado, sol y mucho calor, pero el domingo dicen que va a llover."
-       ],
-       [
-        "H",
-        "Entonces vamos a la playa el sábado."
-       ]
-      ],
-      "q": "¿Qué tiempo va a hacer el domingo?",
-      "options": [
-       "☀️ Sol",
-       "🌧️ Lluvia",
-       "❄️ Nieve"
-      ],
-      "answer": 1
-     },
-     {
-      "dialog": [
-       [
-        "M",
-        "Buenos días, quería un regalo para mi hermano. Le gusta mucho leer."
-       ],
-       [
-        "H",
-        "Tenemos esta novela, que se vende muy bien, o este libro de fotos de viajes."
-       ],
-       [
-        "M",
-        "Mejor la novela, gracias."
-       ]
-      ],
-      "q": "¿Qué regalo compra la mujer?",
-      "options": [
-       "📖 Una novela",
-       "📷 Un libro de fotos",
-       "🎧 Unos auriculares"
-      ],
-      "answer": 0
-     },
-     {
-      "dialog": [
-       [
-        "H",
-        "¿Dónde quedamos esta tarde?"
-       ],
-       [
-        "M",
-        "Delante del cine, que está al lado de la farmacia."
-       ],
-       [
-        "H",
-        "Perfecto, a las seis delante del cine."
-       ]
-      ],
-      "q": "¿Dónde quedan?",
-      "options": [
-       "💊 En la farmacia",
-       "🎬 Delante del cine",
-       "☕ En una cafetería"
-      ],
-      "answer": 1
-     }
-    ]
-   },
-   {
-    "id": "A2",
-    "title": "Tarea 2",
-    "instructions": "Vas a escuchar seis anuncios y noticias breves. Cada audio se escucha dos veces. Elige la opción correcta (a, b o c).",
-    "items": [
-     {
-      "dialog": [
-       [
-        "M",
-        "Atención, señores pasajeros: el tren con destino Valencia, que tenía prevista su salida a las nueve y veinte, saldrá con un retraso de quince minutos. Disculpen las molestias."
-       ]
-      ],
-      "q": "El tren a Valencia…",
-      "options": [
-       "sale a las nueve y veinte.",
-       "sale con retraso.",
-       "no va a salir hoy."
-      ],
-      "answer": 1
-     },
-     {
-      "dialog": [
-       [
-        "H",
-        "Mañana jueves, el ayuntamiento organiza una jornada de puertas abiertas en el centro de empleo. Habrá talleres para preparar el currículum y entrevistas con empresas del barrio. La entrada es libre y no hace falta inscribirse."
-       ]
-      ],
-      "q": "Para ir a la jornada del centro de empleo…",
-      "options": [
-       "hay que inscribirse antes.",
-       "hay que pagar una entrada.",
-       "no hace falta inscribirse."
-      ],
-      "answer": 2
-     },
-     {
-      "dialog": [
-       [
-        "M",
-        "Supermercados Ahorramás informa: hoy, las tiendas cierran a las siete de la tarde por la final del campeonato. Mañana abriremos en nuestro horario habitual, de nueve a nueve."
-       ]
-      ],
-      "q": "Hoy los supermercados…",
-      "options": [
-       "cierran antes de lo normal.",
-       "abren más tarde.",
-       "no abren."
-      ],
-      "answer": 0
-     },
-     {
-      "dialog": [
-       [
-        "H",
-        "La biblioteca del barrio recuerda que los libros se pueden tener en casa durante quince días. Si necesitas más tiempo, puedes renovarlos por teléfono o en nuestra página web."
-       ]
-      ],
-      "q": "Para tener un libro más de quince días…",
-      "options": [
-       "hay que ir a la biblioteca.",
-       "se puede renovar por teléfono.",
-       "hay que pagar."
-      ],
-      "answer": 1
-     },
-     {
-      "dialog": [
-       [
-        "M",
-        "Mañana empieza la campaña de vacunación contra la gripe para las personas mayores de sesenta años. Pueden pedir cita en su centro de salud a partir de hoy."
-       ]
-      ],
-      "q": "La campaña de vacunación es para…",
-      "options": [
-       "todas las personas.",
-       "los niños.",
-       "las personas mayores de sesenta años."
-      ],
-      "answer": 2
-     },
-     {
-      "dialog": [
-       [
-        "H",
-        "Este domingo, las calles del centro estarán cortadas al tráfico por la carrera popular. Se recomienda usar el metro, que funcionará con más trenes de lo habitual."
-       ]
-      ],
-      "q": "El domingo se recomienda…",
-      "options": [
-       "usar el metro.",
-       "ir en coche al centro.",
-       "no salir de casa."
-      ],
-      "answer": 0
-     }
-    ]
-   },
-   {
-    "id": "A3",
-    "title": "Tarea 3",
-    "instructions": "Vas a escuchar una conversación entre Javier y Nadia. La conversación se escucha dos veces. Indica si cada frase se refiere a Javier, a Nadia o a ninguno de los dos.",
-    "match": [
-     "Javier",
-     "Nadia",
-     "Ninguno"
-    ],
-    "dialog": [
-     [
-      "H",
-      "Hola, Nadia. ¡Cuánto tiempo! ¿Qué tal el verano?"
-     ],
-     [
-      "M",
-      "¡Hola, Javier! Muy bien, aunque he trabajado casi todo el verano en la tienda de mi tía. Solo tuve una semana de vacaciones y fui a ver a mis padres a Casablanca."
-     ],
-     [
-      "H",
-      "Yo este año no he viajado. Me he quedado en Madrid porque estaba preparando el examen del carné de conducir."
-     ],
-     [
-      "M",
-      "¿Y qué tal? ¿Lo has aprobado?"
-     ],
-     [
-      "H",
-      "El teórico sí, a la primera. El práctico lo hago la semana que viene y estoy un poco nervioso."
-     ],
-     [
-      "M",
-      "Seguro que te sale bien. Yo también quiero sacarme el carné, pero ahora no tengo tiempo. En octubre empiezo un curso de informática por las tardes."
-     ],
-     [
-      "H",
-      "¡Qué bien! ¿Es para el trabajo?"
-     ],
-     [
-      "M",
-      "Sí, en la tienda queremos vender también por internet y yo voy a ocuparme de la página web. ¿Y tú sigues en el hotel?"
-     ],
-     [
-      "H",
-      "No, lo dejé en junio. Ahora trabajo en una empresa de mudanzas. Es más cansado, pero el horario es mejor y los fines de semana los tengo libres."
-     ],
-     [
-      "M",
-      "Pues entonces podemos quedar un sábado para cenar con los compañeros de la clase de español."
-     ],
-     [
-      "H",
-      "Me parece genial. Yo me encargo de buscar el restaurante, que conozco uno muy bueno de comida peruana."
-     ],
-     [
-      "M",
-      "Perfecto. Yo escribo a los demás para ver qué día les va bien. ¿Te parece bien el sábado que viene?"
-     ],
-     [
-      "H",
-      "Mejor el otro, porque el sábado que viene tengo el examen práctico. Así, si apruebo, lo celebramos."
-     ]
-    ],
-    "questions": [
-     {
-      "q": "Trabajó durante el verano.",
-      "answer": 1
-     },
-     {
-      "q": "Ya ha aprobado el examen teórico de conducir.",
-      "answer": 0
-     },
-     {
-      "q": "Va a estudiar informática.",
-      "answer": 1
-     },
-     {
-      "q": "Ha cambiado de trabajo.",
-      "answer": 0
-     },
-     {
-      "q": "Ha viajado a Perú.",
-      "answer": 2
-     },
-     {
-      "q": "Va a buscar un restaurante.",
-      "answer": 0
-     }
-    ]
-   },
-   {
-    "id": "A4",
-    "title": "Tarea 4",
-    "instructions": "Vas a escuchar siete mensajes. Cada mensaje se escucha dos veces. Relaciona cada mensaje con la frase correcta. Hay diez frases: sobran tres.",
-    "statements": [
-     "Cambian la hora de una cita médica.",
-     "Hay que recoger un paquete.",
-     "Invitan a una fiesta de cumpleaños.",
-     "Informan de una avería en la casa.",
-     "Ofrecen un trabajo.",
-     "Piden devolver un libro.",
-     "Anuncian que un tren llega tarde.",
-     "Recuerdan una reunión de vecinos.",
-     "Avisan de que la clase se suspende.",
-     "Venden un coche."
-    ],
-    "items": [
-     {
-      "dialog": [
-       [
-        "M",
-        "Hola, buenos días. Llamo del centro de salud. Su cita con la doctora Ruiz del jueves pasa del jueves a las diez al viernes a las doce. Si no le viene bien, llame a este número."
-       ]
-      ],
-      "answer": 0
-     },
-     {
-      "dialog": [
-       [
-        "H",
-        "Buenas tardes, le habla Correos. Tenemos un paquete a su nombre en la oficina de la calle Mayor. Puede recogerlo hasta el día veinte con su documento de identidad."
-       ]
-      ],
-      "answer": 1
-     },
-     {
-      "dialog": [
-       [
-        "M",
-        "Hola, Sara, soy Elena. El sábado cumplo treinta años y lo celebro en mi casa a las nueve. ¡No faltes! Trae a tu hermano si quieres."
-       ]
-      ],
-      "answer": 2
-     },
-     {
-      "dialog": [
-       [
-        "H",
-        "Hola, soy el fontanero. Ya he mirado la tubería del baño. Está rota y mañana tengo que volver con una pieza nueva. Llegaré a las nueve."
-       ]
-      ],
-      "answer": 3
-     },
-     {
-      "dialog": [
-       [
-        "M",
-        "Buenos días, llamo de la empresa Limpiezas Sol. Hemos visto su currículum y nos interesa. Tenemos un puesto de media jornada. Llámenos para hacer una entrevista."
-       ]
-      ],
-      "answer": 4
-     },
-     {
-      "dialog": [
-       [
-        "H",
-        "Hola, le llamamos de la biblioteca municipal. El libro que se llevó tenía que devolverlo hace una semana. Por favor, tráigalo lo antes posible."
-       ]
-      ],
-      "answer": 5
-     },
-     {
-      "dialog": [
-       [
-        "M",
-        "Hola a todos. Soy Clara, la profesora de español. Mañana no hay clase porque estoy enferma. La recuperamos el lunes a la misma hora."
-       ]
-      ],
-      "answer": 8
-     }
-    ]
-   }
-  ]
- },
- "writing": {
-  "minutes": 45,
-  "tasks": [
-   {
-    "id": "E1",
-    "title": "Tarea 1",
-    "words": [
-     60,
-     70
-    ],
-    "instructions": "Has recibido este mensaje de una amiga. Respóndele. En tu mensaje debes: saludar; aceptar o rechazar la invitación y explicar por qué; proponer otro plan; despedirte.",
-    "prompt": "Hola: ¿qué tal? El domingo que viene vamos de excursión a la sierra con unos amigos. Saldremos a las ocho de la mañana en tren y volveremos por la tarde. ¿Quieres venir? Contéstame pronto. Besos, Irene.",
-    "model": "Hola, Irene:\n\nMuchas gracias por la invitación. Me encanta la sierra, pero este domingo no puedo ir porque trabajo por la mañana en el restaurante. ¡Qué pena! ¿Por qué no hacemos algo el sábado por la tarde? Podemos dar un paseo por el parque y después tomar algo en la terraza de la plaza. Dime si te viene bien y a qué hora quedamos.\n\nUn beso,\nAmina"
-   },
-   {
-    "id": "E2",
-    "title": "Tarea 2",
-    "words": [
-     70,
-     80
-    ],
-    "choose": true,
-    "options": [
-     {
-      "label": "Opción A",
-      "instructions": "Escribe un texto sobre tu barrio para el blog de tu escuela de español. Habla de: cómo es tu barrio; qué hay (tiendas, parques, transporte); qué te gusta más y qué cambiarías.",
-      "model": "Vivo en el barrio de Lavapiés, en el centro de Madrid. Es un barrio antiguo, con calles estrechas y mucha vida. Hay tiendas de todo el mundo, un mercado, varias bibliotecas y dos parques pequeños. Además, está muy bien comunicado: tengo el metro a cinco minutos de casa. Lo que más me gusta es la gente, porque hay vecinos de muchos países. Yo cambiaría el ruido de los fines de semana, porque a veces no puedo dormir."
-     },
-     {
-      "label": "Opción B",
-      "instructions": "Mira estos datos y escribe un texto sobre el primer día de trabajo de Omar. Datos: lunes, 8:00; restaurante; nervioso; compañeros simpáticos; aprendió a hacer tortilla; terminó cansado pero contento.",
-      "model": "El lunes pasado Omar empezó a trabajar en un restaurante del centro. Llegó a las ocho de la mañana y estaba un poco nervioso, porque era su primer trabajo en España. Sus compañeros fueron muy simpáticos con él y le explicaron todo con paciencia. Por la mañana, el cocinero le enseñó a hacer tortilla de patatas. Por la tarde, cuando terminó su turno, estaba muy cansado, pero también contento porque había aprendido mucho."
-     }
-    ]
-   }
-  ],
-  "rubric": {
-   "task": [
-    "No responde a lo que se pide.",
-    "Responde solo a una parte de lo que se pide.",
-    "Responde a casi todo lo que se pide, con alguna información poco clara.",
-    "Responde a todo lo que se pide, con la extensión adecuada."
-   ],
-   "language": [
-    "El texto no se entiende.",
-    "Se entiende con esfuerzo: errores frecuentes y vocabulario muy limitado.",
-    "Se entiende bien aunque hay errores; usa conectores sencillos (y, pero, porque).",
-    "Se entiende sin esfuerzo; pocos errores y vocabulario variado para el nivel."
-   ]
-  }
- },
- "speaking": {
-  "prepMinutes": 12,
-  "tasks": [
-   {
-    "id": "O1",
-    "title": "Tarea 1: monólogo",
-    "minutes": [
-     2,
-     3
-    ],
-    "choose": true,
-    "options": [
-     {
-      "label": "Tema A: Mi casa",
-      "guide": [
-       "¿Dónde vives y con quién?",
-       "¿Cómo es tu casa? ¿Cuántas habitaciones tiene?",
-       "¿Qué parte de la casa te gusta más y por qué?",
-       "¿Cómo era tu casa en tu país?"
+      "language": [
+        "El texto no se entiende.",
+        "Se entiende con esfuerzo: errores frecuentes y vocabulario muy limitado.",
+        "Se entiende bien aunque hay errores; usa conectores sencillos (y, pero, porque).",
+        "Se entiende sin esfuerzo; pocos errores y vocabulario variado para el nivel."
       ]
-     },
-     {
-      "label": "Tema B: Mi tiempo libre",
-      "guide": [
-       "¿Qué haces normalmente en tu tiempo libre?",
-       "¿Con quién lo haces?",
-       "¿Qué hiciste el último fin de semana?",
-       "¿Qué te gustaría aprender a hacer?"
+    }
+  },
+  "speaking": {
+    "prepMinutes": 12,
+    "tasks": [
+      {
+        "id": "O1",
+        "title": "Tarea 1: monólogo",
+        "minutes": [
+          2,
+          3
+        ],
+        "choose": true,
+        "options": [
+          {
+            "label": "Tema A: Mi casa",
+            "guide": [
+              "¿Dónde vives y con quién?",
+              "¿Cómo es tu casa? ¿Cuántas habitaciones tiene?",
+              "¿Qué parte de la casa te gusta más y por qué?",
+              "¿Cómo era tu casa en tu país?"
+            ]
+          },
+          {
+            "label": "Tema B: Mi tiempo libre",
+            "guide": [
+              "¿Qué haces normalmente en tu tiempo libre?",
+              "¿Con quién lo haces?",
+              "¿Qué hiciste el último fin de semana?",
+              "¿Qué te gustaría aprender a hacer?"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "O2",
+        "title": "Tarea 2: describir una fotografía",
+        "minutes": [
+          2,
+          3
+        ],
+        "sceneText": "Escena: un supermercado. Una mujer joven paga en la caja; detrás de ella, un hombre mayor espera con un carro lleno de comida.",
+        "guide": [
+          "¿Dónde están estas personas?",
+          "¿Cómo son? ¿Qué ropa llevan?",
+          "¿Qué están haciendo?",
+          "¿Qué crees que van a hacer después?"
+        ]
+      },
+      {
+        "id": "O3",
+        "title": "Tarea 3: conversación",
+        "minutes": [
+          3,
+          4
+        ],
+        "situation": "Estás en el supermercado de la foto. Has comprado leche, pero al llegar a casa ves que está caducada. Vuelves a la tienda. El examinador es el dependiente.",
+        "examiner": [
+          "Buenos días, ¿en qué puedo ayudarle?",
+          "¿Cuándo la compró? ¿Tiene el tique de compra?",
+          "Vaya, lo siento mucho. ¿Quiere que le devuelva el dinero o prefiere otra?",
+          "Muy bien. ¿Necesita algo más?"
+        ],
+        "phrases": [
+          "Compré esta leche ayer y está caducada.",
+          "Aquí tiene el tique.",
+          "Prefiero otra, por favor.",
+          "No, nada más, gracias."
+        ]
+      }
+    ],
+    "rubric": {
+      "task": [
+        "No hace lo que se pide.",
+        "Hace solo una parte de lo que se pide o habla muy poco tiempo.",
+        "Hace casi todo lo que se pide, aunque se queda corto en algún punto.",
+        "Hace todo lo que se pide durante el tiempo indicado."
+      ],
+      "language": [
+        "No se entiende lo que dice.",
+        "Se entiende con esfuerzo: pausas largas, errores frecuentes y vocabulario muy limitado.",
+        "Se entiende bien aunque hay errores y algunas pausas.",
+        "Se entiende sin esfuerzo; habla con cierta fluidez y comete pocos errores."
       ]
-     }
-    ]
-   },
-   {
-    "id": "O2",
-    "title": "Tarea 2: describir una fotografía",
-    "minutes": [
-     2,
-     3
-    ],
-    "scene": "🏪 🛒 👩🏽‍🦱 👨🏻‍🦳 🍎 🥖 🧀 💶",
-    "sceneText": "Escena: un supermercado. Una mujer joven paga en la caja; detrás de ella, un hombre mayor espera con un carro lleno de comida.",
-    "guide": [
-     "¿Dónde están estas personas?",
-     "¿Cómo son? ¿Qué ropa llevan?",
-     "¿Qué están haciendo?",
-     "¿Qué crees que van a hacer después?"
-    ]
-   },
-   {
-    "id": "O3",
-    "title": "Tarea 3: conversación",
-    "minutes": [
-     3,
-     4
-    ],
-    "situation": "Estás en el supermercado de la foto. Has comprado leche, pero al llegar a casa ves que está caducada. Vuelves a la tienda. El examinador es el dependiente.",
-    "examiner": [
-     "Buenos días, ¿en qué puedo ayudarle?",
-     "¿Cuándo la compró? ¿Tiene el tique de compra?",
-     "Vaya, lo siento mucho. ¿Quiere que le devuelva el dinero o prefiere otra?",
-     "Muy bien. ¿Necesita algo más?"
-    ],
-    "phrases": [
-     "Compré esta leche ayer y está caducada.",
-     "Aquí tiene el tique.",
-     "Prefiero otra, por favor.",
-     "No, nada más, gracias."
-    ]
-   }
-  ],
-  "rubric": {
-   "task": [
-    "No hace lo que se pide.",
-    "Hace solo una parte de lo que se pide o habla muy poco tiempo.",
-    "Hace casi todo lo que se pide, aunque se queda corto en algún punto.",
-    "Hace todo lo que se pide durante el tiempo indicado."
-   ],
-   "language": [
-    "No se entiende lo que dice.",
-    "Se entiende con esfuerzo: pausas largas, errores frecuentes y vocabulario muy limitado.",
-    "Se entiende bien aunque hay errores y algunas pausas.",
-    "Se entiende sin esfuerzo; habla con cierta fluidez y comete pocos errores."
-   ]
+    }
   }
- }
 }

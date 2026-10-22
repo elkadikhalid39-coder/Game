@@ -46,5 +46,21 @@ for (const u of UNITS) {
   for (const t of texts) if (t && !neutral[fnv(t)]) errors.push(`${u.id}: sin audio grabado «${t}» (regenerar con tools/audio/generate.py)`);
 }
 
+// Lo que se lee en los exámenes también va grabado: las preguntas de conducir (voz neutra)
+// y los diálogos de la auditiva del DELE (las dos voces de España).
+const pack = (id) => JSON.parse(readFileSync(new URL(`../public/audio/${id}.json`, import.meta.url), "utf8"));
+const exam = (f) => JSON.parse(readFileSync(new URL("../content/exams/" + f, import.meta.url), "utf8"));
+for (const q of exam("conducir.json").questions) {
+  const t = [q.q, ...q.options.map((o, i) => "abc"[i] + ". " + o)].join(". ");
+  if (!neutral[fnv(t)]) errors.push(`conducir ${q.id}: sin audio grabado (regenerar con tools/audio/generate.py)`);
+}
+const voices = { M: pack("es-f"), H: pack("es-m") };
+const dialogs = (o, out = []) => {
+  if (Array.isArray(o)) o.forEach((x) => dialogs(x, out));
+  else if (o && typeof o === "object") for (const [k, v] of Object.entries(o)) k === "dialog" ? out.push(...v) : dialogs(v, out);
+  return out;
+};
+for (const f of ["dele-a2.json", "dele-a2-2.json"]) for (const [who, t] of dialogs(exam(f))) if (!voices[who][fnv(t)]) errors.push(`${f}: diálogo sin audio grabado «${t.slice(0, 40)}…»`);
+
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 console.log(`OK contenido: ${order.length} idiomas, ${Object.keys(ref.ui).length} textos de interfaz y ${ids.size} de contenido cada uno; ${UNITS.length} unidades.`);

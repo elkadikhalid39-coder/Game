@@ -347,7 +347,8 @@
     "topic_mecanica": "Mechanics and maintenance",
     "topic_preventiva": "Defensive driving",
     "topic_puntos": "The points licence",
-    "roadSign": "Traffic sign"
+    "roadSign": "Traffic sign",
+    "modelN": "Mock exam {x}"
   },
   "t": {
     "hola": "Hello",

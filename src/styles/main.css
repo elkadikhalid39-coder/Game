@@ -415,7 +415,7 @@ h2.section { margin: 18px 0 10px; }
 .model summary { cursor: pointer; font-weight: 700; color: var(--sky-dark); margin: 8px 0; }
 .rubric { display: grid; gap: 6px; margin-top: 12px; }
 .rubric .opt { min-height: 0; padding: 8px 10px; font-size: .95rem; font-weight: 500; }
-.scene { font-size: 2.6rem; text-align: center; background: var(--paper); border-radius: 16px; padding: 12px; letter-spacing: .1em; }
+.scene-text { background: var(--paper); border: 2px dashed var(--line); border-radius: 14px; padding: 12px 14px; }
 .guide { margin: 6px 0; padding-inline-start: 20px; }
 .oral-option { margin: 8px 0; }
 

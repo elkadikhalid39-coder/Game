@@ -32,23 +32,32 @@ const letters = ccse.questions.filter((q) => q.type === "mc3").map((q) => q.answ
 for (const l of [0, 1, 2]) if (letters.filter((x) => x === l).length / letters.length > 0.5) errors.push(`ccse: más de la mitad de las respuestas son la opción ${"abc"[l]}`);
 
 // ---------- DELE A2 (formato de la guía oficial) ----------
-const dele = load("dele-a2.json");
+const deleModels = [load("dele-a2.json"), load("dele-a2-2.json")];
+const dele = deleModels[0];
 const words = (s) => (s.match(/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9]+/g) || []).length;
 const between = (n, [a, b], w) => { if (n < a || n > b) errors.push(`${w}: ${n} palabras (debe tener ${a}-${b})`); };
-const R = dele.reading.tasks, A = dele.listening.tasks;
-if (R.reduce((n, t) => n + t.questions.length, 0) !== 25) errors.push("dele lectura: debe tener 25 preguntas");
-if (A[0].items.length + A[1].items.length + A[2].questions.length + A[3].items.length !== 25) errors.push("dele auditiva: debe tener 25 preguntas");
-between(words(R[0].texts[0].body), [250, 300], "dele lectura T1");
-R[1].texts.forEach((t, i) => between(words(t.body), [50, 80], `dele lectura T2 texto ${i + 1}`));
-R[2].texts.forEach((t, i) => between(words(t.body), [100, 120], `dele lectura T3 texto ${i + 1}`));
-between(words(R[3].texts[0].body), [375, 425], "dele lectura T4");
-between(A[2].dialog.reduce((n, [, x]) => n + words(x), 0), [225, 275], "dele auditiva T3");
-for (const t of [...R, ...A]) for (const q of t.questions || t.items) {
-  const max = (q.options || t.match || t.statements).length;
-  if (!(q.answer >= 0 && q.answer < max)) errors.push(`dele ${t.id}: respuesta fuera de rango`);
-}
-if (new Set(A[3].items.map((i) => i.answer)).size !== A[3].items.length) errors.push("dele auditiva T4: dos mensajes con la misma frase");
-for (const k of ["writing", "speaking"]) if (dele[k].rubric.task.length !== 4 || dele[k].rubric.language.length !== 4) errors.push(`dele ${k}: la rúbrica va de 0 a 3`);
+deleModels.forEach((dele, n) => {
+  const errorsBefore = errors.length;
+  const R = dele.reading.tasks, A = dele.listening.tasks;
+  if (R.reduce((n, t) => n + t.questions.length, 0) !== 25) errors.push("dele lectura: debe tener 25 preguntas");
+  if (A[0].items.length + A[1].items.length + A[2].questions.length + A[3].items.length !== 25) errors.push("dele auditiva: debe tener 25 preguntas");
+  between(words(R[0].texts[0].body), [250, 300], "dele lectura T1");
+  R[1].texts.forEach((t, i) => between(words(t.body), [50, 80], `dele lectura T2 texto ${i + 1}`));
+  R[2].texts.forEach((t, i) => between(words(t.body), [100, 120], `dele lectura T3 texto ${i + 1}`));
+  between(words(R[3].texts[0].body), [375, 425], "dele lectura T4");
+  between(A[2].dialog.reduce((n, [, x]) => n + words(x), 0), [225, 275], "dele auditiva T3");
+  for (const t of [...R, ...A]) for (const q of t.questions || t.items) {
+    const max = (q.options || t.match || t.statements).length;
+    if (!(q.answer >= 0 && q.answer < max)) errors.push(`dele ${t.id}: respuesta fuera de rango`);
+  }
+  if (new Set(A[3].items.map((i) => i.answer)).size !== A[3].items.length) errors.push("dele auditiva T4: dos mensajes con la misma frase");
+  for (const k of ["writing", "speaking"]) if (dele[k].rubric.task.length !== 4 || dele[k].rubric.language.length !== 4) errors.push(`dele ${k}: la rúbrica va de 0 a 3`);
+  // Los textos modelo de la expresión escrita respetan las palabras que pide cada tarea.
+  const [e1, e2] = dele.writing.tasks;
+  between(words(e1.model), e1.words, "dele escritura T1 (modelo)");
+  for (const o of e2.options) between(words(o.model), e2.words, `dele escritura T2 ${o.label} (modelo)`);
+  for (let k = errorsBefore; k < errors.length; k++) errors[k] = `(modelo ${n + 1}) ` + errors[k];
+});
 
 // ---------- PCE (UNEDasiss) ----------
 const pce = load("pce.json");
@@ -116,7 +125,7 @@ const reviewed = (node, where) => {
     errors.push(`${where}: «${node.status}» sin review.by y review.date`);
   for (const [k, v] of Object.entries(node)) if (v && typeof v === "object") reviewed(v, `${where}/${k}`);
 };
-for (const [name, data] of Object.entries({ ccse, dele, pce, conducir: dgt })) reviewed(data, name);
+for (const [name, data] of Object.entries({ ccse, dele, dele2: deleModels[1], pce, conducir: dgt })) reviewed(data, name);
 
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
-console.log(`OK exámenes: CCSE ${ccse.questions.length} preguntas; DELE A2 lectura y auditiva de 25 preguntas con el formato oficial; PCE ${pce.subjects.length} materias y ${Object.values(pce.tests).reduce((n, t) => n + t.bank.length, 0)} preguntas de test; conducir ${dgt.questions.length} preguntas y ${dgt.words.length} palabras.`);
+console.log(`OK exámenes: CCSE ${ccse.questions.length} preguntas; DELE A2: ${deleModels.length} simulacros con lectura y auditiva de 25 preguntas y el formato oficial; PCE ${pce.subjects.length} materias y ${Object.values(pce.tests).reduce((n, t) => n + t.bank.length, 0)} preguntas de test; conducir ${dgt.questions.length} preguntas y ${dgt.words.length} palabras.`);

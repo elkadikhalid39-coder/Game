@@ -348,7 +348,8 @@
     "topic_mecanica": "میکینکس اور دیکھ بھال",
     "topic_preventiva": "احتیاطی ڈرائیونگ",
     "topic_puntos": "پوائنٹس والا لائسنس",
-    "roadSign": "ٹریفک کا نشان"
+    "roadSign": "ٹریفک کا نشان",
+    "modelN": "نمونہ {x}"
   },
   "t": {
     "hola": "سلام",

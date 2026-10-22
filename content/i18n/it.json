@@ -347,7 +347,8 @@
     "topic_mecanica": "Meccanica e manutenzione",
     "topic_preventiva": "Guida preventiva",
     "topic_puntos": "La patente a punti",
-    "roadSign": "Segnale stradale"
+    "roadSign": "Segnale stradale",
+    "modelN": "Modello {x}"
   },
   "t": {
     "hola": "Ciao",
