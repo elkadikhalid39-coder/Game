@@ -376,6 +376,8 @@ h2.section { margin: 18px 0 10px; }
 .q-meta.ok { color: var(--mint-text); }
 .q-text { font-size: 1.12rem; font-weight: 600; margin: 0; }
 .explain { font-size: .95rem; margin-top: 10px; }
+.link.report { font-size: .85rem; margin-top: 6px; color: var(--ink-soft); }
+.fact-stale { display: block; color: #9a3412; font-weight: 600; margin-top: 4px; }
 .exam-head { position: sticky; top: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 5; }
 .timer { font-family: var(--display); font-weight: 700; font-variant-numeric: tabular-nums; background: var(--paper); border: 2px solid var(--line); border-radius: 12px; padding: 4px 10px; flex: none; }
 .timer.low { color: var(--coral-text); border-color: var(--coral); }

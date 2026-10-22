@@ -28,6 +28,8 @@ export function sourceLine(id) {
     line.append(extLink(s.name, s.url));
   });
   line.append(" · " + ui("factChecked", shortDate(f.checked)));
+  // Pasado su plazo de revisión, el dato avisa de que puede haber cambiado (las normas cambian).
+  if (Date.now() > Date.parse(f.checked) + f.reviewDays * 864e5) line.append(el("span", "fact-stale", " ⚠️ " + ui("factStale", f.reviewDays)));
   return line;
 }
 

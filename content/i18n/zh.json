@@ -333,7 +333,10 @@
     "rhyNormal": "正常",
     "rhyFast": "较快，像街上说话",
     "myVoice": "声音",
-    "listenSample": "试听"
+    "listenSample": "试听",
+    "reportError": "报告错误",
+    "reportCopied": "已复制。请粘贴到发给应用团队的消息中。",
+    "factStale": "上次核对已超过 {x} 天：请查看官方来源，内容可能已变。"
   },
   "t": {
     "hola": "你好",

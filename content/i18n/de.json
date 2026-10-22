@@ -333,7 +333,10 @@
     "rhyNormal": "Normal",
     "rhyFast": "Zügig, wie auf der Straße",
     "myVoice": "Stimme",
-    "listenSample": "Hörprobe"
+    "listenSample": "Hörprobe",
+    "reportError": "Fehler melden",
+    "reportCopied": "Kopiert. Füge es in eine Nachricht an das App-Team ein.",
+    "factStale": "Vor mehr als {x} Tagen geprüft: Sieh in der offiziellen Quelle nach, ob es sich geändert hat."
   },
   "t": {
     "hola": "Hallo",

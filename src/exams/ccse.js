@@ -9,7 +9,7 @@ import { mascot } from "../ui/mascot.js";
 import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { factNote, extLink } from "../ui/fact.js";
 import { countdown } from "../ui/timer.js";
-import { hasPass, draftBanner, menuRow, saveResult, resultsList } from "./common.js";
+import { hasPass, draftBanner, menuRow, saveResult, resultsList, reportButton } from "./common.js";
 import { PASS, passCard } from "./nationality.js";
 
 const QUESTIONS = bank.questions;
@@ -58,6 +58,7 @@ function explanation(q) {
   box.lang = "es";
   box.dir = "ltr";
   box.append(el("strong", "", ui("explanation") + ": "), q.explain, " ", extLink("(" + q.source.name + ")", q.source.url));
+  box.append(reportButton("ccse " + q.id, q.q));
   return box;
 }
 

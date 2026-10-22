@@ -446,11 +446,14 @@ test("CCSE: muestra gratis sin pase", async () => {
   const lockedRows = (await page.$$(".menu-row.locked")).length; // tareas 2-5 y simulacro
   await page.click(".menu-row:nth-child(1)"); // práctica tarea 1
   let n = 0;
+  let report = false;
   for (; n < 10 && !(await page.$("h1")); n++) {
     await page.click('.opt[data-ok="1"]');
+    // Cada corrección permite avisar de un error en esa pregunta (con su identificador).
+    report ||= /^ccse ccse-t1-/.test((await page.getAttribute(".sheet .link.report", "data-ref")) || "");
     await page.click(".sheet .btn");
   }
-  return [lockedRows === 5 && n === 5 && (await page.innerText("h1")).includes("5 / 5"), errors];
+  return [report && lockedRows === 5 && n === 5 && (await page.innerText("h1")).includes("5 / 5"), errors];
 });
 
 test("CCSE: simulacro completo con el pase", async () => {

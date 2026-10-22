@@ -333,7 +333,10 @@
     "rhyNormal": "Normal",
     "rhyFast": "Brisk, like on the street",
     "myVoice": "Voice",
-    "listenSample": "Listen to a sample"
+    "listenSample": "Listen to a sample",
+    "reportError": "Report a mistake",
+    "reportCopied": "Copied. Paste it in a message to the app team.",
+    "factStale": "Checked more than {x} days ago: see the official source in case it has changed."
   },
   "t": {
     "hola": "Hello",

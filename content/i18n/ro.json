@@ -333,7 +333,10 @@
     "rhyNormal": "Normală",
     "rhyFast": "Alertă, ca pe stradă",
     "myVoice": "Voce",
-    "listenSample": "Ascultă o mostră"
+    "listenSample": "Ascultă o mostră",
+    "reportError": "Semnalează o greșeală",
+    "reportCopied": "Copiat. Lipește-l într-un mesaj către echipa aplicației.",
+    "factStale": "Verificat acum mai bine de {x} zile: consultă sursa oficială, poate s-a schimbat."
   },
   "t": {
     "hola": "Bună",

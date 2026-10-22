@@ -104,5 +104,15 @@ for (const l of [0, 1, 2]) if (dgt.questions.filter((q) => q.answer === l).lengt
 const langs = JSON.parse(readFileSync(new URL("../content/i18n/_order.json", import.meta.url), "utf8")).filter((l) => l !== "es");
 for (const w of dgt.words) for (const l of langs) if (!w.tr[l]) errors.push(`conducir vocabulario «${w.es}»: falta la traducción (${l})`);
 
+// Revisión: una pregunta solo deja de ser «borrador» con nombre y fecha de quien la revisó (tools/review.js).
+const reviewed = (node, where) => {
+  if (Array.isArray(node)) return node.forEach((v, i) => reviewed(v, `${where}/${v?.id ?? i}`));
+  if (!node || typeof node !== "object") return;
+  if (["revisado", "publicado"].includes(node.status) && !(node.review?.by && /^\d{4}-\d{2}-\d{2}$/.test(node.review?.date || "")))
+    errors.push(`${where}: «${node.status}» sin review.by y review.date`);
+  for (const [k, v] of Object.entries(node)) if (v && typeof v === "object") reviewed(v, `${where}/${k}`);
+};
+for (const [name, data] of Object.entries({ ccse, dele, pce, conducir: dgt })) reviewed(data, name);
+
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 console.log(`OK exámenes: CCSE ${ccse.questions.length} preguntas; DELE A2 lectura y auditiva de 25 preguntas con el formato oficial; PCE ${pce.subjects.length} materias y ${Object.values(pce.tests).reduce((n, t) => n + t.bank.length, 0)} preguntas de test; conducir ${dgt.questions.length} preguntas y ${dgt.words.length} palabras.`);

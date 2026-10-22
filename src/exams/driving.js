@@ -12,7 +12,7 @@ import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { factNote, sourceLine, extLink } from "../ui/fact.js";
 import { countdown } from "../ui/timer.js";
 import { playButton } from "../ui/audio-buttons.js";
-import { hasPass, draftBanner, menuRow, saveResult, resultsList } from "./common.js";
+import { hasPass, draftBanner, menuRow, saveResult, resultsList, reportButton } from "./common.js";
 import { passCard } from "./nationality.js";
 
 export const PASS = "conducir";
@@ -162,7 +162,7 @@ function explanation(q) {
   box.lang = "es";
   box.dir = "ltr";
   box.append(el("strong", "", ui("explanation") + ": "), q.explain);
-  box.append(sourceLine(q.fact));
+  box.append(sourceLine(q.fact), reportButton("conducir " + q.id, q.q));
   return box;
 }
 

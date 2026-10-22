@@ -1,0 +1,4 @@
+{
+  "note": "Datos de la app que decide el equipo. contactEmail: dirección a la que llegan los avisos de error (vacío: el aviso se copia para pegarlo donde la persona quiera).",
+  "contactEmail": ""
+}

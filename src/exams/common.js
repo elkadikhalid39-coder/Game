@@ -2,6 +2,7 @@
 import { ui } from "../core/i18n.js";
 import { save, persist } from "../core/state.js";
 import { el, button } from "../ui/dom.js";
+import APP from "../../content/app.json";
 
 // En modo demo todos los pases están abiertos (sin pago y sin guardarlo como comprado).
 export const ownsPass = (id) => !!save.passes[id];
@@ -12,6 +13,24 @@ export function unlockPass(id) { save.passes[id] = true; persist(); }
 export function draftBanner() {
   const b = el("div", "notice draft");
   b.append(el("strong", "", "🛠️ " + ui("draft")), el("span", "", ui("disclaimer")));
+  return b;
+}
+
+// «Avisar de un error» en una pregunta o un dato: prepara un mensaje con su identificador.
+// Va por correo si el equipo ha puesto una dirección (content/app.json); si no, se comparte o se copia.
+// No se envía nada solo: la persona decide si lo manda y a quién.
+export function reportButton(ref, text) {
+  const b = button("link report", "⚑ " + ui("reportError"), async () => {
+    const subject = `Hola, Español · ${ref}`;
+    const body = `${subject}\n${text}\n\n`;
+    if (APP.contactEmail) return void (location.href = `mailto:${APP.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+    try {
+      if (navigator.share) return void (await navigator.share({ title: subject, text: body }));
+      await navigator.clipboard.writeText(body);
+    } catch { /* cancelado o sin permiso */ }
+    b.textContent = "✓ " + ui("reportCopied");
+  });
+  b.dataset.ref = ref;
   return b;
 }
 

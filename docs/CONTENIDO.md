@@ -53,3 +53,23 @@ npm run check     # textos completos en los 12 idiomas y registro de datos váli
 npm test          # lo anterior + compilar + prueba de humo en navegador (incluye sin conexión) + accesibilidad
 npm run audit     # antes de publicar: accesibilidad y datos caducados (falla si alguno ha superado su revisión)
 ```
+
+## Revisión por especialistas
+
+Todo el contenido de examen nace en estado `borrador` y se muestra así en la app. Para revisarlo:
+
+1. `npm run review:export` crea `docs/revision/<examen>.csv` con todas las preguntas (pregunta, opciones, respuesta correcta, explicación, fuente).
+2. El especialista abre el CSV en una hoja de cálculo y rellena `estado` (`revisado` o `publicado`), `revisado_por`, `fecha` (AAAA-MM-DD) y, si quiere, `comentarios`.
+3. `npm run review:import` copia esas marcas a `content/exams/*.json` (campo `review`) y pasa las comprobaciones. Una pregunta sin nombre y fecha de revisión no puede dejar de ser borrador.
+
+Los ejercicios de relacionar del DELE (sin opciones a, b, c) no salen en el CSV todavía: se revisan en el JSON.
+
+## Avisos de error
+
+Cada pregunta corregida tiene «Avisar de un error». Prepara un mensaje con el identificador de la pregunta. Si `content/app.json` tiene `contactEmail`, se abre el correo; si no, se comparte o se copia. La app no envía nada por su cuenta.
+
+## Normas que cambian
+
+- Cada dato tiene `reviewDays`. Pasado ese plazo, la app muestra «⚠️ Se comprobó hace más de N días» junto a la fuente.
+- `npm run facts:due` lista los datos que toca volver a comprobar en los próximos 30 días.
+- Cambios que hay que vigilar especialmente: el proyecto de real decreto que sustituiría las PCE (`pce.reforma`), el manual CCSE de cada año (versión en `content/exams/ccse.json`), el formato del test de la DGT (`dgt.examen_b`, aún de fuente secundaria) y las órdenes de nacionalidad (Orden JUS/1625/2016, consolidada a 28/10/2022).

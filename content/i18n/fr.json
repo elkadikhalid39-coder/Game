@@ -333,7 +333,10 @@
     "rhyNormal": "Normale",
     "rhyFast": "Rapide, comme dans la rue",
     "myVoice": "Voix",
-    "listenSample": "Écouter un extrait"
+    "listenSample": "Écouter un extrait",
+    "reportError": "Signaler une erreur",
+    "reportCopied": "Copié. Colle-le dans un message à l'équipe de l'appli.",
+    "factStale": "Vérifié il y a plus de {x} jours : consulte la source officielle au cas où cela aurait changé."
   },
   "t": {
     "hola": "Bonjour",

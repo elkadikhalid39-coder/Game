@@ -1,9 +1,12 @@
 // Comprueba el registro de datos oficiales (content/facts/*.json) según docs/CONTENIDO.md.
-// Uso: node tools/check-facts.js [--strict]   (--strict: también falla si un dato ha pasado su fecha de revisión)
+// Uso: node tools/check-facts.js [--strict | --due]
+//   --strict: también falla si un dato ha pasado su fecha de revisión
+//   --due:    lista los datos que toca volver a comprobar en los próximos 30 días (los más urgentes primero)
 import { readFileSync, readdirSync } from "node:fs";
 
 const dir = new URL("../content/facts/", import.meta.url);
 const strict = process.argv.includes("--strict");
+const dueList = [];
 const STATUS = ["confirmado", "fuente_secundaria", "sin_confirmar"];
 const today = new Date().toISOString().slice(0, 10);
 const errors = [], warnings = [];
@@ -35,9 +38,15 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
     else if (!(f.reviewDays > 0)) errors.push(`${where}: falta reviewDays`);
     else {
       const due = new Date(Date.parse(f.checked) + f.reviewDays * 864e5).toISOString().slice(0, 10);
+      dueList.push([due, f.id, f.sources[0]?.url]);
       if (due < today) (strict ? errors : warnings).push(`${where}: tocaba revisarlo el ${due}`);
     }
   }
+}
+if (process.argv.includes("--due")) {
+  const limit = new Date(Date.now() + 30 * 864e5).toISOString().slice(0, 10);
+  const soon = dueList.filter(([d]) => d <= limit).sort();
+  console.log(soon.length ? soon.map(([d, id, url]) => `${d}  ${id}  ${url}`).join("\n") : "Ningún dato que comprobar en los próximos 30 días.");
 }
 for (const w of warnings) console.warn("Aviso: " + w);
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }

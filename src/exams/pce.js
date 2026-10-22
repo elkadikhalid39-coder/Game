@@ -10,7 +10,7 @@ import { mascot } from "../ui/mascot.js";
 import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { factNote } from "../ui/fact.js";
 import { countdown } from "../ui/timer.js";
-import { hasPass, draftBanner, menuRow, saveResult, lastResult, resultsList } from "./common.js";
+import { hasPass, draftBanner, menuRow, saveResult, lastResult, resultsList, reportButton } from "./common.js";
 import { passCard } from "./nationality.js";
 import { PASS, FREE_TESTS, fmt } from "./university.js";
 import { scoreTest, grades } from "./pce-score.js";
@@ -134,7 +134,7 @@ function startTest(id) {
       const ex = el("p", "explain");
       ex.lang = "es";
       ex.append(el("strong", "", ui("explanation") + ": "), q.explain);
-      item.append(ex);
+      item.append(ex, reportButton("pce " + id + " " + (q.id || k + 1), q.q));
       app.append(item);
     });
     app.append(button("btn big", ui("next"), () => go("pce-mocks")));
