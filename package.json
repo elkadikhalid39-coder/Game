@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build && vite build --mode single && node tools/inline-single.js",
     "preview": "vite preview --port 4173",
-    "check": "node tools/check-content.js && node tools/check-facts.js && node tools/unit-tests.js",
+    "check": "node tools/check-content.js && node tools/check-facts.js && node tools/check-exams.js && node tools/unit-tests.js",
     "test": "npm run check && npm run build && node tools/smoke-test.js"
   },
   "devDependencies": {

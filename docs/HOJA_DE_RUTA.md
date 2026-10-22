@@ -30,12 +30,22 @@ Cada fase termina con la prueba automática en verde, un enlace para probar y un
 - [x] Unidades nuevas: Trabajo, Vivienda y Papeleo (9 unidades, 36 lecciones).
 - [ ] Revisión de las unidades con el Plan Curricular del Instituto Cervantes. Pendiente: no se ha podido leer todavía.
 
-## Fase 3: pase de Nacionalidad (semanas 3 a 5)
+## Fase 3: pase de Nacionalidad (hecha, en estado «borrador»)
 
-- [ ] «Mi trámite»: preguntas → lista de comprobación personalizada, con cada punto enlazado a su fuente.
-- [ ] CCSE: temario por tareas, banco de preguntas original (primero 60, después 300 con la proporción del manual), simulacro de 25 preguntas en 45 minutos, apto con 15.
-- [ ] DELE A2: lectura, auditiva, escrita y oral, con simulacros, rúbricas, cronómetro y el día del examen.
-- [ ] Pantalla de compra simulada y muestra gratuita (el pago real va en la fase 5).
+- [x] Datos verificados en el BOE el 22/10/2026 (Código Civil art. 22, RD 1004/2015, Orden JUS/1625/2016 consolidada, LO 3/2018 art. 7): 44 datos con fuente, estado y fecha en `content/facts/`.
+- [x] «Mi trámite»: 6 preguntas como máximo → lista personalizada (residencia, pruebas, dispensa, documentos, presentación, plazos, validez), cada punto con su fuente oficial. Gratis.
+- [x] CCSE: 60 preguntas originales con la proporción del manual (24, 7, 5, 7, 17), práctica por tareas con explicación y fuente, simulacro de 25 preguntas en 45 minutos, apto con 15 y aciertos por tarea.
+- [x] DELE A2: simulacro original de las cuatro pruebas con el formato de la guía oficial (lectura y auditiva de 25 preguntas, audio dos veces con dos voces; escritura con contador de palabras; oral con 12 minutos de preparación y examinador), autoevaluación con rúbrica y estimación por grupos.
+- [x] Muestra gratuita (Mi trámite y 5 preguntas del CCSE) y desbloqueo del pase simulado (sin pago).
+- [ ] Ampliar el banco CCSE a 300 preguntas.
+- [ ] Más simulacros del DELE A2 y voces grabadas para la auditiva.
+- [ ] Volver a comprobar los datos del Instituto Cervantes (su web estaba en mantenimiento el 22/10/2026).
+
+**Correcciones a la investigación encontradas al verificar:**
+- Los certificados oficiales de idiomas eximen solo del DELE, no del CCSE (RD 1004/2015, disposición adicional cuarta).
+- El Tribunal Supremo anuló en 2024 el inciso del art. 12.1 del RD 1004/2015 que dejaba sin efecto la concesión por perder la «buena conducta cívica» antes de jurar.
+- La vigencia de 4 años es del certificado CCSE (Orden JUS/1625/2016, art. 10.4).
+- La dispensa por edad (70 años o más) o discapacidad (65 % o más) no aparece en la normativa oficial leída: se muestra como «sin confirmar».
 
 ## Fase 4: pase de Universidad (semanas 5 a 7)
 
@@ -65,12 +75,9 @@ Cada fase termina con la prueba automática en verde, un enlace para probar y un
 
 | Dato | Dónde mirarlo |
 |---|---|
-| Si los certificados oficiales de español A2/B1/B2 eximen solo del DELE o también del CCSE | RD 1004/2015 y Orden JUS/1625/2016, versiones consolidadas (BOE) |
 | Dispensa por edad (70 años o más) o discapacidad (65 % o más) | Sede del Ministerio de Justicia |
 | Caso de la ESO cursada en España (exención del DELE, del CCSE o solo de la dispensa previa) | Orden JUS/1018/2022 y sede del Ministerio de Justicia |
-| Reparto de preguntas por tarea en el examen CCSE (10, 3, 2, 3 y 7) | Guía oficial de la prueba CCSE |
-| Vigencia de 4 años del certificado (si afecta solo al CCSE) | Orden JUS/1625/2016, versión consolidada |
+| Reparto de preguntas por tarea en el examen CCSE (10, 3, 2, 3 y 7) y que los errores no restan | Especificaciones de la prueba CCSE (web del Cervantes en mantenimiento el 22/10/2026) |
 | Duración y reglas de cada PCE (confirmadas solo en 5 materias) | Guía de cada materia en UNEDasiss |
-| Edad de consentimiento para datos personales | Ley Orgánica 3/2018 (BOE) |
 | Plan Curricular A1–A2, manual CCSE 2026 completo y capítulo 4 de LASLLIAM | Instituto Cervantes y Consejo de Europa |
 | Visado de estudios | Ministerio de Asuntos Exteriores |

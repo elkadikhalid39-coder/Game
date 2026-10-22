@@ -1,0 +1,1080 @@
+{
+ "exam": "ccse",
+ "version": "2026-10-22",
+ "note": "Preguntas originales de Hola, Español, redactadas con los temas del manual oficial. No son preguntas del Instituto Cervantes.",
+ "questions": [
+  {
+   "id": "ccse-t1-001",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿En qué año se aprobó la Constitución española que está en vigor?",
+   "options": [
+    "En 1931",
+    "En 1978",
+    "En 1975"
+   ],
+   "answer": 1,
+   "explain": "La Constitución vigente fue aprobada en referéndum el 6 de diciembre de 1978.",
+   "source": {
+    "name": "Constitución española, art. preámbulo y disposición final",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-002",
+   "task": 1,
+   "type": "mc3",
+   "q": "Según la Constitución, ¿cuál es la forma política del Estado español?",
+   "options": [
+    "La monarquía parlamentaria",
+    "La república federal",
+    "La monarquía absoluta"
+   ],
+   "answer": 0,
+   "explain": "El artículo 1.3 dice que la forma política del Estado español es la Monarquía parlamentaria.",
+   "source": {
+    "name": "Constitución española, art. 1.3",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-003",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿En quién reside la soberanía nacional?",
+   "options": [
+    "En el Gobierno",
+    "En el Rey",
+    "En el pueblo español"
+   ],
+   "answer": 2,
+   "explain": "La soberanía nacional reside en el pueblo español, del que emanan los poderes del Estado (art. 1.2).",
+   "source": {
+    "name": "Constitución española, art. 1.2",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-004",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Cuál es la lengua española oficial del Estado?",
+   "options": [
+    "El castellano",
+    "El catalán",
+    "El euskera"
+   ],
+   "answer": 0,
+   "explain": "El castellano es la lengua oficial del Estado. Las demás lenguas españolas son también oficiales en sus comunidades autónomas, según sus Estatutos (art. 3).",
+   "source": {
+    "name": "Constitución española, art. 3",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-005",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Quién es el Jefe del Estado en España?",
+   "options": [
+    "El presidente del Gobierno",
+    "El Rey",
+    "El presidente del Congreso"
+   ],
+   "answer": 1,
+   "explain": "El Rey es el Jefe del Estado, símbolo de su unidad y permanencia (art. 56.1).",
+   "source": {
+    "name": "Constitución española, art. 56.1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-006",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Qué dos cámaras forman las Cortes Generales?",
+   "options": [
+    "El Congreso de los Diputados y el Senado",
+    "El Congreso y el Tribunal Supremo",
+    "El Senado y el Consejo de Ministros"
+   ],
+   "answer": 0,
+   "explain": "Las Cortes Generales representan al pueblo español y están formadas por el Congreso de los Diputados y el Senado (art. 66.1).",
+   "source": {
+    "name": "Constitución española, art. 66.1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-007",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Quién ejerce el poder legislativo del Estado, es decir, quién aprueba las leyes?",
+   "options": [
+    "El Gobierno",
+    "Las Cortes Generales",
+    "Los ayuntamientos"
+   ],
+   "answer": 1,
+   "explain": "Las Cortes Generales ejercen la potestad legislativa del Estado (art. 66.2).",
+   "source": {
+    "name": "Constitución española, art. 66.2",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-008",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Quién dirige la política interior y exterior y la Administración del Estado?",
+   "options": [
+    "El Gobierno",
+    "El Senado",
+    "El Defensor del Pueblo"
+   ],
+   "answer": 0,
+   "explain": "El Gobierno dirige la política interior y exterior, la Administración civil y militar y la defensa del Estado (art. 97).",
+   "source": {
+    "name": "Constitución española, art. 97",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-009",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Quién propone al Congreso el candidato a presidente del Gobierno?",
+   "options": [
+    "El Senado",
+    "El Tribunal Constitucional",
+    "El Rey"
+   ],
+   "answer": 2,
+   "explain": "El Rey, tras consultar con los grupos políticos, propone un candidato a presidente del Gobierno, que necesita la confianza del Congreso (art. 99).",
+   "source": {
+    "name": "Constitución española, art. 99",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-010",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Cada cuántos años se elige, como regla general, el Congreso de los Diputados?",
+   "options": [
+    "Cada cuatro años",
+    "Cada cinco años",
+    "Cada seis años"
+   ],
+   "answer": 0,
+   "explain": "El Congreso se elige por cuatro años (art. 68.4). El Senado, también (art. 69.6).",
+   "source": {
+    "name": "Constitución española, art. 68.4",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-011",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Qué órgano interpreta la Constitución y decide si una ley va contra ella?",
+   "options": [
+    "El Tribunal Supremo",
+    "El Tribunal Constitucional",
+    "El Consejo de Estado"
+   ],
+   "answer": 1,
+   "explain": "El Tribunal Constitucional resuelve, entre otros, los recursos de inconstitucionalidad contra leyes (art. 161).",
+   "source": {
+    "name": "Constitución española, art. 161",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-012",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Cuál es el órgano de gobierno del Poder Judicial?",
+   "options": [
+    "El Ministerio de Justicia",
+    "El Congreso de los Diputados",
+    "El Consejo General del Poder Judicial"
+   ],
+   "answer": 2,
+   "explain": "El Consejo General del Poder Judicial es su órgano de gobierno (art. 122.2).",
+   "source": {
+    "name": "Constitución española, art. 122.2",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-013",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Qué tribunal es el superior en todos los órdenes, salvo en garantías constitucionales?",
+   "options": [
+    "El Tribunal Supremo",
+    "La Audiencia Nacional",
+    "El Tribunal Constitucional"
+   ],
+   "answer": 0,
+   "explain": "El Tribunal Supremo es el órgano jurisdiccional superior en todos los órdenes, salvo lo dispuesto en materia de garantías constitucionales (art. 123.1).",
+   "source": {
+    "name": "Constitución española, art. 123.1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-014",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Cómo se organiza territorialmente el Estado según la Constitución?",
+   "options": [
+    "En estados federados",
+    "En municipios, provincias y comunidades autónomas",
+    "En regiones y departamentos"
+   ],
+   "answer": 1,
+   "explain": "El Estado se organiza territorialmente en municipios, provincias y comunidades autónomas (art. 137).",
+   "source": {
+    "name": "Constitución española, art. 137",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-015",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Qué institución gobierna y administra un municipio?",
+   "options": [
+    "La diputación provincial",
+    "El Senado",
+    "El ayuntamiento"
+   ],
+   "answer": 2,
+   "explain": "El gobierno y la administración de los municipios corresponden a sus ayuntamientos, formados por el alcalde y los concejales (art. 140).",
+   "source": {
+    "name": "Constitución española, art. 140",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-016",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿A qué edad se alcanza la mayoría de edad en España?",
+   "options": [
+    "A los 16 años",
+    "A los 18 años",
+    "A los 21 años"
+   ],
+   "answer": 1,
+   "explain": "Los españoles son mayores de edad a los 18 años (art. 12).",
+   "source": {
+    "name": "Constitución española, art. 12",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-017",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Quién puede votar en las elecciones al Congreso de los Diputados?",
+   "options": [
+    "Las personas españolas mayores de edad",
+    "Cualquier persona que viva en España",
+    "Solo quienes pagan impuestos"
+   ],
+   "answer": 0,
+   "explain": "El derecho de sufragio en las elecciones generales corresponde a los ciudadanos españoles mayores de edad (arts. 23 y 13.2).",
+   "source": {
+    "name": "Constitución española, art. 13.2 y 23",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-018",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿En qué elecciones pueden votar algunas personas extranjeras, según los tratados y la ley?",
+   "options": [
+    "En las generales",
+    "En las municipales",
+    "En ninguna"
+   ],
+   "answer": 1,
+   "explain": "Las personas extranjeras pueden tener derecho de sufragio en las elecciones municipales, según tratado o ley y con reciprocidad (art. 13.2).",
+   "source": {
+    "name": "Constitución española, art. 13.2",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-019",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Qué institución, elegida por las Cortes, defiende los derechos fundamentales ante la Administración?",
+   "options": [
+    "El Fiscal General del Estado",
+    "El Defensor del Pueblo",
+    "El Consejo de Estado"
+   ],
+   "answer": 1,
+   "explain": "El Defensor del Pueblo es alto comisionado de las Cortes Generales para la defensa de los derechos fundamentales (art. 54).",
+   "source": {
+    "name": "Constitución española, art. 54",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-020",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Cómo es la bandera de España según la Constitución?",
+   "options": [
+    "Tres franjas horizontales: roja, amarilla y roja",
+    "Dos franjas verticales: roja y amarilla",
+    "Tres franjas verticales: roja, blanca y amarilla"
+   ],
+   "answer": 0,
+   "explain": "La bandera está formada por tres franjas horizontales, roja, amarilla y roja, y la amarilla es de doble anchura que cada una de las rojas (art. 4.1).",
+   "source": {
+    "name": "Constitución española, art. 4.1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-021",
+   "task": 1,
+   "type": "mc3",
+   "q": "Según la Constitución, ¿cuál es la capital del Estado?",
+   "options": [
+    "Toledo",
+    "Barcelona",
+    "La villa de Madrid"
+   ],
+   "answer": 2,
+   "explain": "La capital del Estado es la villa de Madrid (art. 5).",
+   "source": {
+    "name": "Constitución española, art. 5",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-022",
+   "task": 1,
+   "type": "mc3",
+   "q": "Según la Constitución, ¿qué expresan los partidos políticos?",
+   "options": [
+    "El pluralismo político",
+    "La opinión del Gobierno",
+    "La religión mayoritaria"
+   ],
+   "answer": 0,
+   "explain": "Los partidos políticos expresan el pluralismo político y son instrumento fundamental para la participación política (art. 6).",
+   "source": {
+    "name": "Constitución española, art. 6",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-023",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Qué organizaciones defienden, según la Constitución, los intereses de los trabajadores?",
+   "options": [
+    "Las diputaciones",
+    "Los sindicatos de trabajadores",
+    "Los ayuntamientos"
+   ],
+   "answer": 1,
+   "explain": "Los sindicatos de trabajadores y las asociaciones empresariales contribuyen a la defensa de sus intereses económicos y sociales (art. 7).",
+   "source": {
+    "name": "Constitución española, art. 7",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t1-024",
+   "task": 1,
+   "type": "mc3",
+   "q": "¿Bajo la dependencia de quién actúan las Fuerzas y Cuerpos de Seguridad?",
+   "options": [
+    "Del Gobierno",
+    "De los partidos políticos",
+    "Del Tribunal Supremo"
+   ],
+   "answer": 0,
+   "explain": "Las Fuerzas y Cuerpos de Seguridad, bajo la dependencia del Gobierno, protegen el libre ejercicio de los derechos y libertades y garantizan la seguridad ciudadana (art. 104.1).",
+   "source": {
+    "name": "Constitución española, art. 104.1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t2-001",
+   "task": 2,
+   "type": "vf",
+   "q": "Todos los españoles son iguales ante la ley, sin que pueda haber discriminación por nacimiento, raza, sexo, religión u opinión.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "answer": 0,
+   "explain": "Es el principio de igualdad del artículo 14.",
+   "source": {
+    "name": "Constitución española, art. 14",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t2-002",
+   "task": 2,
+   "type": "vf",
+   "q": "La Constitución establece una religión oficial del Estado.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "answer": 1,
+   "explain": "Ninguna confesión tiene carácter estatal; los poderes públicos tienen en cuenta las creencias de la sociedad (art. 16.3).",
+   "source": {
+    "name": "Constitución española, art. 16.3",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t2-003",
+   "task": 2,
+   "type": "vf",
+   "q": "La Constitución reconoce a los trabajadores el derecho a la huelga.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "answer": 0,
+   "explain": "El artículo 28.2 reconoce el derecho a la huelga de los trabajadores para defender sus intereses.",
+   "source": {
+    "name": "Constitución española, art. 28.2",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t2-004",
+   "task": 2,
+   "type": "vf",
+   "q": "La enseñanza básica es obligatoria y gratuita.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "answer": 0,
+   "explain": "El artículo 27.4 dice que la enseñanza básica es obligatoria y gratuita.",
+   "source": {
+    "name": "Constitución española, art. 27.4",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t2-005",
+   "task": 2,
+   "type": "vf",
+   "q": "Pagar impuestos es un derecho, pero no un deber de los ciudadanos.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "answer": 1,
+   "explain": "Todos contribuirán al sostenimiento de los gastos públicos según su capacidad económica (art. 31.1): es un deber.",
+   "source": {
+    "name": "Constitución española, art. 31.1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t2-006",
+   "task": 2,
+   "type": "vf",
+   "q": "Se reconoce el derecho de reunión pacífica y sin armas.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "answer": 0,
+   "explain": "El artículo 21.1 reconoce el derecho de reunión pacífica y sin armas, sin necesidad de autorización previa.",
+   "source": {
+    "name": "Constitución española, art. 21.1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t2-007",
+   "task": 2,
+   "type": "vf",
+   "q": "La policía puede entrar en un domicilio sin el consentimiento del titular ni orden judicial siempre que quiera.",
+   "options": [
+    "Verdadero",
+    "Falso"
+   ],
+   "answer": 1,
+   "explain": "El domicilio es inviolable: solo se puede entrar con consentimiento del titular, con resolución judicial o en caso de flagrante delito (art. 18.2).",
+   "source": {
+    "name": "Constitución española, art. 18.2",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t3-001",
+   "task": 3,
+   "type": "mc3",
+   "q": "¿Cuántas comunidades autónomas hay en España?",
+   "options": [
+    "15",
+    "17",
+    "19"
+   ],
+   "answer": 1,
+   "explain": "España tiene 17 comunidades autónomas y 2 ciudades autónomas, Ceuta y Melilla.",
+   "source": {
+    "name": "INE: relación de comunidades y ciudades autónomas",
+    "url": "https://www.ine.es/daco/daco42/codmun/cod_ccaa.htm"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t3-002",
+   "task": 3,
+   "type": "mc3",
+   "q": "¿Cuáles son las dos ciudades autónomas de España?",
+   "options": [
+    "Ceuta y Melilla",
+    "Cádiz y Málaga",
+    "Ibiza y Menorca"
+   ],
+   "answer": 0,
+   "explain": "Ceuta y Melilla son ciudades autónomas, en el norte de África.",
+   "source": {
+    "name": "INE: relación de comunidades y ciudades autónomas",
+    "url": "https://www.ine.es/daco/daco42/codmun/cod_ccaa.htm"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t3-003",
+   "task": 3,
+   "type": "mc3",
+   "q": "¿Cuántas provincias tiene España?",
+   "options": [
+    "40",
+    "52",
+    "50"
+   ],
+   "answer": 2,
+   "explain": "España se divide en 50 provincias. Ceuta y Melilla son ciudades autónomas y no forman parte de ninguna provincia.",
+   "source": {
+    "name": "INE: relación de provincias",
+    "url": "https://www.ine.es/daco/daco42/codmun/cod_provincia.htm"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t3-004",
+   "task": 3,
+   "type": "mc3",
+   "q": "¿Qué dos archipiélagos son comunidades autónomas de España?",
+   "options": [
+    "Las islas Canarias y las islas Baleares",
+    "Las Azores y Madeira",
+    "Córcega y Cerdeña"
+   ],
+   "answer": 0,
+   "explain": "Canarias e Illes Balears son comunidades autónomas formadas por islas.",
+   "source": {
+    "name": "INE: relación de comunidades y ciudades autónomas",
+    "url": "https://www.ine.es/daco/daco42/codmun/cod_ccaa.htm"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t3-005",
+   "task": 3,
+   "type": "mc3",
+   "q": "Además del castellano, ¿qué lengua es oficial en Galicia?",
+   "options": [
+    "El catalán",
+    "El gallego",
+    "El euskera"
+   ],
+   "answer": 1,
+   "explain": "El Estatuto de Autonomía de Galicia reconoce el gallego como lengua propia y oficial, junto al castellano.",
+   "source": {
+    "name": "Estatuto de Autonomía de Galicia, art. 5",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1981-9564"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t4-001",
+   "task": 4,
+   "type": "mc3",
+   "q": "¿Quién escribió la novela «Don Quijote de la Mancha»?",
+   "options": [
+    "Lope de Vega",
+    "Miguel de Cervantes",
+    "Federico García Lorca"
+   ],
+   "answer": 1,
+   "explain": "Miguel de Cervantes publicó la primera parte del Quijote en 1605 y la segunda en 1615.",
+   "source": {
+    "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+    "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t4-002",
+   "task": 4,
+   "type": "mc3",
+   "q": "¿Qué pintor es autor de «Las meninas»?",
+   "options": [
+    "Diego Velázquez",
+    "Francisco de Goya",
+    "Pablo Picasso"
+   ],
+   "answer": 0,
+   "explain": "«Las meninas» (1656) es una obra de Diego Velázquez; está en el Museo del Prado.",
+   "source": {
+    "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+    "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t4-003",
+   "task": 4,
+   "type": "mc3",
+   "q": "¿Qué cuadro pintó Pablo Picasso sobre el bombardeo de una villa vasca en 1937?",
+   "options": [
+    "«La maja desnuda»",
+    "«Las meninas»",
+    "«Guernica»"
+   ],
+   "answer": 2,
+   "explain": "«Guernica» (1937) muestra el bombardeo de Gernika durante la Guerra Civil; está en el Museo Reina Sofía.",
+   "source": {
+    "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+    "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t4-004",
+   "task": 4,
+   "type": "mc3",
+   "q": "¿Quién escribió «La casa de Bernarda Alba»?",
+   "options": [
+    "Antonio Machado",
+    "Federico García Lorca",
+    "Miguel de Unamuno"
+   ],
+   "answer": 1,
+   "explain": "Federico García Lorca, poeta y dramaturgo de la Generación del 27, escribió esta obra de teatro en 1936.",
+   "source": {
+    "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+    "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t4-005",
+   "task": 4,
+   "type": "mc3",
+   "q": "¿En qué año llegó Cristóbal Colón a América con la financiación de los Reyes Católicos?",
+   "options": [
+    "En 1492",
+    "En 1714",
+    "En 1808"
+   ],
+   "answer": 0,
+   "explain": "Colón llegó a América el 12 de octubre de 1492.",
+   "source": {
+    "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+    "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t4-006",
+   "task": 4,
+   "type": "mc3",
+   "q": "¿Qué día se celebra la Fiesta Nacional de España?",
+   "options": [
+    "El 6 de diciembre",
+    "El 1 de mayo",
+    "El 12 de octubre"
+   ],
+   "answer": 2,
+   "explain": "La Ley 18/1987 fija el 12 de octubre como Fiesta Nacional de España.",
+   "source": {
+    "name": "Ley 18/1987, Fiesta Nacional de España",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1987-24166"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t4-007",
+   "task": 4,
+   "type": "mc3",
+   "q": "¿Qué día de 1978 se votó en referéndum la Constitución, fecha que hoy es festivo nacional?",
+   "options": [
+    "El 6 de diciembre",
+    "El 12 de octubre",
+    "El 25 de julio"
+   ],
+   "answer": 0,
+   "explain": "La Constitución se aprobó en referéndum el 6 de diciembre de 1978; ese día se celebra el Día de la Constitución.",
+   "source": {
+    "name": "Constitución española, art. preámbulo",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-001",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Qué documento de identidad tienen en España las personas extranjeras con permiso de residencia?",
+   "options": [
+    "El DNI",
+    "La Tarjeta de Identidad de Extranjero (TIE)",
+    "El pasaporte español"
+   ],
+   "answer": 1,
+   "explain": "La TIE identifica a las personas extranjeras con autorización de estancia o residencia. El DNI es para las personas de nacionalidad española.",
+   "source": {
+    "name": "Orden JUS/1625/2016, art. 10.4",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-002",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Dónde se hace la inscripción en el padrón municipal?",
+   "options": [
+    "En el ayuntamiento del municipio donde vives",
+    "En la comisaría de policía",
+    "En el banco"
+   ],
+   "answer": 0,
+   "explain": "El padrón es el registro de los vecinos de un municipio y lo gestiona el ayuntamiento.",
+   "source": {
+    "name": "Ley 7/1985 de Bases del Régimen Local, art. 15",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-003",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Quién tiene la obligación de inscribirse en el padrón?",
+   "options": [
+    "Solo las personas españolas",
+    "Solo los propietarios de una vivienda",
+    "Toda persona que vive en España, en el municipio donde reside"
+   ],
+   "answer": 2,
+   "explain": "Toda persona que vive en España está obligada a inscribirse en el padrón del municipio en el que reside habitualmente.",
+   "source": {
+    "name": "Ley 7/1985 de Bases del Régimen Local, art. 15",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-004",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Cuál es el número de teléfono de emergencias en España y en toda la Unión Europea?",
+   "options": [
+    "El 112",
+    "El 010",
+    "El 091"
+   ],
+   "answer": 0,
+   "explain": "El 112 es gratuito y funciona en todos los países de la Unión Europea.",
+   "source": {
+    "name": "Comisión Europea: número de emergencias 112",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/112"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-005",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Qué tarjeta se usa para recibir asistencia en la sanidad pública?",
+   "options": [
+    "La tarjeta de crédito",
+    "La tarjeta sanitaria individual",
+    "El permiso de conducir"
+   ],
+   "answer": 1,
+   "explain": "La tarjeta sanitaria individual identifica a cada persona en el sistema público de salud.",
+   "source": {
+    "name": "Ley 16/2003 de cohesión y calidad del Sistema Nacional de Salud, art. 57",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-10715"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-006",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Cómo se llama el centro sanitario público de atención primaria de cada zona?",
+   "options": [
+    "El centro de salud",
+    "El ayuntamiento",
+    "La farmacia"
+   ],
+   "answer": 0,
+   "explain": "El centro de salud es la base de la atención primaria en cada zona básica de salud.",
+   "source": {
+    "name": "Ley 14/1986 General de Sanidad, art. 63",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1986-10499"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-007",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Entre qué edades es obligatoria la enseñanza en España?",
+   "options": [
+    "Entre los 3 y los 12 años",
+    "Entre los 6 y los 16 años",
+    "Entre los 8 y los 18 años"
+   ],
+   "answer": 1,
+   "explain": "La enseñanza básica es obligatoria y gratuita y comprende diez años de escolaridad, entre los 6 y los 16 años.",
+   "source": {
+    "name": "Ley Orgánica 2/2006 de Educación, art. 4",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-008",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Qué se celebra en España el 1 de mayo?",
+   "options": [
+    "El Día de la Constitución",
+    "La Navidad",
+    "La Fiesta del Trabajo"
+   ],
+   "answer": 2,
+   "explain": "El 1 de mayo es fiesta nacional como Fiesta del Trabajo.",
+   "source": {
+    "name": "Estatuto de los Trabajadores, art. 37.2",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-009",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Qué se celebra el 25 de diciembre, festivo en toda España?",
+   "options": [
+    "La Navidad",
+    "El Año Nuevo",
+    "La Fiesta Nacional"
+   ],
+   "answer": 0,
+   "explain": "El 25 de diciembre, Natividad del Señor (Navidad), es fiesta de ámbito nacional.",
+   "source": {
+    "name": "Estatuto de los Trabajadores, art. 37.2",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-010",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Cuántos días de vacaciones pagadas al año tiene como mínimo una persona trabajadora?",
+   "options": [
+    "15 días naturales",
+    "30 días naturales",
+    "60 días naturales"
+   ],
+   "answer": 1,
+   "explain": "Las vacaciones anuales retribuidas no pueden ser inferiores a 30 días naturales.",
+   "source": {
+    "name": "Estatuto de los Trabajadores, art. 38.1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-011",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿A partir de qué edad se puede trabajar en España, como regla general?",
+   "options": [
+    "14 años",
+    "16 años",
+    "18 años"
+   ],
+   "answer": 1,
+   "explain": "Está prohibido admitir al trabajo a menores de 16 años.",
+   "source": {
+    "name": "Estatuto de los Trabajadores, art. 6.1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-012",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Qué documento recoge las condiciones de trabajo acordadas entre la persona trabajadora y la empresa?",
+   "options": [
+    "El contrato de trabajo",
+    "El padrón",
+    "La tarjeta sanitaria"
+   ],
+   "answer": 0,
+   "explain": "El contrato de trabajo puede hacerse por escrito o de palabra, y en muchos casos debe ser por escrito.",
+   "source": {
+    "name": "Estatuto de los Trabajadores, art. 8",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-013",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Qué es el SEPE?",
+   "options": [
+    "Un impuesto",
+    "Un hospital público",
+    "El Servicio Público de Empleo Estatal"
+   ],
+   "answer": 2,
+   "explain": "El SEPE gestiona, entre otras cosas, las prestaciones por desempleo y colabora con los servicios de empleo autonómicos.",
+   "source": {
+    "name": "Servicio Público de Empleo Estatal (SEPE)",
+    "url": "https://www.sepe.es/"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-014",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Qué es el IRPF?",
+   "options": [
+    "El impuesto sobre la renta de las personas físicas",
+    "Un seguro médico privado",
+    "La tarjeta de residencia"
+   ],
+   "answer": 0,
+   "explain": "El IRPF es el impuesto que se paga por los ingresos de las personas, como el sueldo.",
+   "source": {
+    "name": "Ley 35/2006 del Impuesto sobre la Renta de las Personas Físicas",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-015",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Qué organismo gestiona los impuestos del Estado, como el IRPF?",
+   "options": [
+    "El ayuntamiento",
+    "La Agencia Tributaria",
+    "La Seguridad Social"
+   ],
+   "answer": 1,
+   "explain": "La Agencia Estatal de Administración Tributaria (Agencia Tributaria) gestiona los impuestos estatales.",
+   "source": {
+    "name": "Agencia Tributaria",
+    "url": "https://sede.agenciatributaria.gob.es/"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-016",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Qué número necesita una persona para trabajar y recibir prestaciones de la Seguridad Social?",
+   "options": [
+    "El número de la Seguridad Social",
+    "El número del padrón",
+    "El código postal"
+   ],
+   "answer": 0,
+   "explain": "El número de afiliación a la Seguridad Social identifica a cada persona en el sistema.",
+   "source": {
+    "name": "Seguridad Social: número de la Seguridad Social",
+    "url": "https://www.seg-social.es/"
+   },
+   "status": "borrador"
+  },
+  {
+   "id": "ccse-t5-017",
+   "task": 5,
+   "type": "mc3",
+   "q": "¿Cuál es la moneda de España?",
+   "options": [
+    "La peseta",
+    "El dólar",
+    "El euro"
+   ],
+   "answer": 2,
+   "explain": "España usa el euro; la peseta dejó de circular en 2002.",
+   "source": {
+    "name": "Ley 46/1998 sobre introducción del euro",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1998-29117"
+   },
+   "status": "borrador"
+  }
+ ]
+}

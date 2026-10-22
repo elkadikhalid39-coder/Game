@@ -26,6 +26,33 @@ export function speak(parts, lang, { slow = false } = {}) {
   return Promise.all([minWait, Promise.race([ended, delay(8000)])]);
 }
 
+// Diálogo con dos voces (H: hombre, M: mujer), para la comprensión auditiva.
+// Si el dispositivo solo tiene una voz en español, se distingue con el tono.
+export function speakDialog(lines, { times = 1 } = {}) {
+  const minWait = delay(1500);
+  if (!window.speechSynthesis) return minWait;
+  speechSynthesis.cancel();
+  const es = speechSynthesis.getVoices().filter((v) => v.lang.replace("_", "-").toLowerCase().startsWith("es"));
+  const spain = es.filter((v) => v.lang.replace("_", "-").toLowerCase() === "es-es");
+  const pool = spain.length >= 2 ? spain : es;
+  const voice = { M: pool[0], H: pool[1] || pool[0] };
+  let last;
+  for (let t = 0; t < times; t++) {
+    for (const [who, text] of lines) {
+      last = new SpeechSynthesisUtterance(text);
+      last.lang = "es-ES";
+      if (voice[who]) last.voice = voice[who];
+      if (voice.H === voice.M) last.pitch = who === "H" ? 0.8 : 1.2;
+      last.rate = 0.9;
+      speechSynthesis.speak(last);
+    }
+    // Pausa entre la primera y la segunda escucha.
+    if (t < times - 1) { const pause = new SpeechSynthesisUtterance(" "); pause.lang = "es-ES"; speechSynthesis.speak(pause); }
+  }
+  const ended = new Promise((r) => { last.onend = r; last.onerror = r; });
+  return Promise.all([minWait, Promise.race([ended, delay(120_000)])]);
+}
+
 let ctx;
 export function beep(ok) {
   if (save.calm) return;

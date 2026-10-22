@@ -1,0 +1,115 @@
+[
+  {
+    "id": "ccse.estructura",
+    "text": "La prueba CCSE tiene 25 preguntas repartidas en 5 tareas y dura 45 minutos. Para obtener «APTO» hacen falta 15 aciertos (60 %). Todas las preguntas son cerradas: de verdadero o falso, o de elegir entre tres opciones.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: especificaciones de la prueba CCSE",
+        "url": "https://agenda.cervantes.es/sites/default/files/especificaciones_prueba_ccse.pdf",
+        "official": true
+      },
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "ccse.pesos",
+    "text": "El 60 % de las preguntas tratan sobre la Constitución y la organización administrativa y territorial de España, y el 40 % sobre cultura, historia y sociedad españolas.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "ccse.reparto_tareas",
+    "text": "Reparto de las 25 preguntas por tareas: tarea 1, Gobierno, legislación y participación ciudadana (10 preguntas, tres opciones); tarea 2, Derechos y deberes fundamentales (3, verdadero o falso); tarea 3, Organización territorial y geografía (2, tres opciones); tarea 4, Cultura e historia (3, tres opciones); tarea 5, Sociedad española (7, tres opciones).",
+    "status": "fuente_secundaria",
+    "sources": [
+      {
+        "name": "nacionalidadespanola.com.es (no oficial)",
+        "url": "https://nacionalidadespanola.com.es/examen-ccse/300-preguntas.html",
+        "official": false
+      },
+      {
+        "name": "Instituto Cervantes: especificaciones de la prueba CCSE",
+        "url": "https://agenda.cervantes.es/sites/default/files/especificaciones_prueba_ccse.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60,
+    "note": "Coincide en varias fuentes no oficiales y con el fragmento oficial de la tarea 3 (2 preguntas de tres opciones). La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "ccse.errores",
+    "text": "Las respuestas incorrectas no restan puntos.",
+    "status": "fuente_secundaria",
+    "sources": [
+      {
+        "name": "Universitat de València: preguntas frecuentes del CCSE (no oficial)",
+        "url": "https://www.uv.es/centro-idiomas-uv/es/acreditaciones/ccse/preguntas-frecuentes.html",
+        "official": false
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "ccse.manual",
+    "text": "El Instituto Cervantes publica cada año un manual gratuito con 300 preguntas organizadas por tareas (120, 36, 24, 36 y 84) y sus soluciones. Las preguntas del examen salen de ese manual. Esta app no copia el manual: sus preguntas son propias y siguen los mismos temas.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: Manual de preparación CCSE 2026",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180,
+    "note": "El manual tiene derechos reservados del Instituto Cervantes; estúdialo en su web oficial."
+  },
+  {
+    "id": "ccse.convocatorias",
+    "text": "Las fechas de examen, los centros y el precio se consultan en la web del Instituto Cervantes.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: qué es el CCSE",
+        "url": "https://examenes.cervantes.es/es/ccse/que-es",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "ccse.identidad",
+    "text": "El día del examen hay que identificarse con el pasaporte del país de origen y la Tarjeta de Identidad de Extranjero (TIE). Los ciudadanos de la UE, con su documento de identidad y el certificado de registro.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  }
+]

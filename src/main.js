@@ -16,6 +16,11 @@ import { go } from "./core/router.js";
 import "./screens/onboarding.js";
 import "./learn/path.js";
 import "./learn/review.js";
+import "./exams/hub.js";
+import "./exams/nationality.js";
+import "./exams/tramite.js";
+import "./exams/ccse.js";
+import "./exams/dele.js";
 
 if (save.native && !I18N[save.native]) save.native = "";
 if (window.speechSynthesis) speechSynthesis.getVoices();

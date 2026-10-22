@@ -36,6 +36,7 @@ export function factNote(id) {
   const f = fact(id);
   const box = el("div", "fact " + STATUS[f.status][0]);
   box.lang = "es";
+  box.dir = "ltr";
   box.append(el("p", "fact-text", f.text));
   if (f.note) box.append(el("p", "fact-note", f.note));
   box.append(sourceLine(id));

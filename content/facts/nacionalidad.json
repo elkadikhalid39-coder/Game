@@ -1,1 +1,492 @@
-[]
+[
+  {
+    "id": "nac.residencia_general",
+    "text": "Como regla general, hacen falta 10 años de residencia en España.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Código Civil, artículo 22",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a22",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.residencia_refugiados",
+    "text": "Las personas con la condición de refugiado necesitan 5 años de residencia.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Código Civil, artículo 22",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a22",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.residencia_dos_anos",
+    "text": "Bastan 2 años de residencia para los nacionales de origen de países iberoamericanos, Andorra, Filipinas, Guinea Ecuatorial o Portugal, y para las personas sefardíes.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Código Civil, artículo 22",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a22",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.residencia_un_ano",
+    "text": "Basta 1 año de residencia para: quien nació en España; quien no ejerció a tiempo su derecho a optar; quien estuvo dos años seguidos bajo tutela, curatela con representación plena, guarda o acogimiento de una persona o institución españolas; quien lleva un año casado con una persona española sin estar separado; el viudo o la viuda de una persona española; y quien nació fuera de España de padre, madre, abuelo o abuela originariamente españoles.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Código Civil, artículo 22",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a22",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.residencia_requisitos",
+    "text": "La residencia tiene que ser legal, continuada e inmediatamente anterior a la solicitud. Además hay que demostrar buena conducta cívica y un grado suficiente de integración en la sociedad española.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Código Civil, artículo 22",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a22",
+        "official": true
+      },
+      {
+        "name": "Ministerio de Justicia: nacionalidad por residencia",
+        "url": "https://www.mjusticia.gob.es/es/ciudadania/tramites/nacionalidad-residencia",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.pruebas",
+    "text": "Para demostrar la integración hay que aprobar dos pruebas del Instituto Cervantes: el DELE de nivel A2 o superior (idioma) y la prueba CCSE (conocimientos constitucionales y socioculturales). Son presenciales. Los cursos de preparación no son obligatorios.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      },
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.exento_dele_paises",
+    "text": "No tienen que hacer el DELE los nacionales de Argentina, Bolivia, Chile, Colombia, Costa Rica, Cuba, Ecuador, El Salvador, Guatemala, Guinea Ecuatorial, Honduras, México, Nicaragua, Panamá, Paraguay, Perú, Puerto Rico, República Dominicana, Uruguay y Venezuela. Sí tienen que hacer el CCSE.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      },
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.exento_dele_previo",
+    "text": "Tampoco tiene que hacer el DELE quien ya tenga un DELE de nivel A2 o superior.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.certificados_idioma",
+    "text": "Los certificados oficiales de español de nivel A2, B1 o B2 (por ejemplo, de una Escuela Oficial de Idiomas), inscritos en el registro de títulos, sirven en lugar del DELE. No sustituyen al CCSE.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      },
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180,
+    "note": "Real Decreto 1004/2015, disposición adicional cuarta: exime de «las pruebas de validación del dominio del español»; la Orden JUS/1625/2016, art. 10.3, los admite para acreditar el conocimiento del idioma."
+  },
+  {
+    "id": "nac.menores_exentos",
+    "text": "Los menores de 18 años y las personas con capacidad modificada judicialmente no hacen el DELE ni el CCSE. En su lugar se aportan certificados del centro educativo o de formación.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      },
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.dispensa_quien",
+    "text": "Pueden pedir que les dispensen de las pruebas del Instituto Cervantes quienes no saben leer ni escribir o tienen dificultades de aprendizaje, y quienes estudiaron en España y aprobaron la ESO.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      },
+      {
+        "name": "Ministerio de Justicia: solicitud de dispensa de las pruebas",
+        "url": "https://repositorio.mjusticia.gob.es/es/Lists/RepoListFormalities/DispForm.aspx?ID=476",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.dispensa_antes",
+    "text": "La dispensa se pide antes de solicitar la nacionalidad (salvo quien estudió en España y aprobó la ESO). No se puede pedir la nacionalidad hasta que la dispensa esté resuelta. El Ministerio tiene 6 meses para resolverla; si no responde, se entiende denegada.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      },
+      {
+        "name": "Sede electrónica del Ministerio de Justicia",
+        "url": "https://sede.mjusticia.gob.es/tramites/nacionalidad-espanola",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180,
+    "note": "Cambio introducido por la Orden JUS/1018/2022 en el artículo 10.5 de la Orden JUS/1625/2016."
+  },
+  {
+    "id": "nac.dispensa_otros",
+    "text": "Algunas webs no oficiales dicen que también pueden pedir dispensa las personas mayores de 70 años o con una discapacidad del 65 % o más. No lo hemos encontrado en la normativa oficial.",
+    "status": "sin_confirmar",
+    "sources": [
+      {
+        "name": "Varias webs de asesoría (no oficiales)",
+        "url": "https://www.immigrationspain.es/examen-nacionalidad/",
+        "official": false
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60
+  },
+  {
+    "id": "nac.discapacidad_ajustes",
+    "text": "El Instituto Cervantes ofrece ajustes razonables para las personas con discapacidad que hacen las pruebas.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      },
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.documentos",
+    "text": "Documentos principales: solicitud, certificado de nacimiento, pasaporte completo y en vigor, certificado de antecedentes penales del país de origen (mayores de 18 años), justificantes de integración y justificante de pago de la tasa. Los documentos extranjeros van legalizados o apostillados y traducidos al español.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      },
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.antecedentes_vigencia",
+    "text": "Si el certificado de antecedentes penales no dice cuánto tiempo vale, se considera válido durante 6 meses desde que se expide.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.quien_solicita",
+    "text": "Presentan la solicitud: las personas mayores de 18 años o emancipadas, por sí mismas; las de 14 a 17 años, acompañadas de su representante legal; y las menores de 14 años, a través de su representante legal, con autorización previa del Registro Civil.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.presentacion",
+    "text": "La solicitud se presenta por internet en la sede electrónica del Ministerio de Justicia, con identificación y firma electrónicas (por ejemplo, con AutoFirma). Al presentarla se recibe un justificante con el número de expediente para consultar su estado. También existe una vía presencial.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      },
+      {
+        "name": "Sede electrónica del Ministerio de Justicia",
+        "url": "https://sede.mjusticia.gob.es/tramites/nacionalidad-espanola",
+        "official": true
+      },
+      {
+        "name": "Ministerio de Justicia: nacionalidad por residencia",
+        "url": "https://www.mjusticia.gob.es/es/ciudadania/tramites/nacionalidad-residencia",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.tasa",
+    "text": "Hay que pagar una tasa con el formulario oficial 790, código 026, que se descarga en la web del Ministerio de Justicia. El importe se consulta allí.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Ministerio de Justicia: nacionalidad por residencia",
+        "url": "https://www.mjusticia.gob.es/es/ciudadania/tramites/nacionalidad-residencia",
+        "official": true
+      },
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.tasa_examenes",
+    "text": "La tasa de la nacionalidad no incluye el precio del DELE ni del CCSE, que se pagan aparte al Instituto Cervantes.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.subsanacion",
+    "text": "Si falta algún documento, el Ministerio da 3 meses para aportarlo. Si no se aporta, el expediente se archiva.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.plazo_resolucion",
+    "text": "El Ministerio tiene un año para resolver. Si en ese plazo no responde, la solicitud se entiende denegada (y se puede recurrir).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.jura",
+    "text": "Tras la concesión hay 180 días, desde el día siguiente a la notificación, para jurar o prometer fidelidad al Rey y obediencia a la Constitución y a las leyes, renunciar a la nacionalidad anterior cuando corresponda y pedir la inscripción en el Registro Civil.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.renuncia",
+    "text": "No tienen que renunciar a su nacionalidad anterior los nacionales de países iberoamericanos, Andorra, Filipinas, Guinea Ecuatorial y Portugal, ni las personas sefardíes.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.inscripcion",
+    "text": "El Registro Civil inscribe la nacionalidad en los 5 días siguientes a la jura o promesa. Con la inscripción termina el trámite.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.sentencia_2024",
+    "text": "El Tribunal Supremo anuló el 15 de julio de 2024 la parte del artículo 12.1 del Real Decreto 1004/2015 que dejaba sin efecto la concesión si la persona perdía la «buena conducta cívica» antes de jurar.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1004/2015",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-12047",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180,
+    "note": "Nota del propio BOE en el texto consolidado (actualizado el 10/09/2024)."
+  },
+  {
+    "id": "nac.recursos",
+    "text": "Contra la resolución se puede presentar recurso de reposición (1 mes) o recurso contencioso-administrativo ante la Audiencia Nacional (2 meses).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "nac.ccse_vigencia",
+    "text": "El certificado de haber aprobado el CCSE vale 4 años desde su fecha.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Orden JUS/1625/2016 (modificada por la Orden JUS/1018/2022)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2016-9314",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180,
+    "note": "Orden JUS/1625/2016, art. 10.4 (redacción de la Orden JUS/1018/2022). La norma lo dice del certificado CCSE, no del DELE."
+  },
+  {
+    "id": "nac.dele_vigencia",
+    "text": "Los diplomas DELE no caducan.",
+    "status": "fuente_secundaria",
+    "sources": [
+      {
+        "name": "Universitat de València: preguntas frecuentes del CCSE (no oficial)",
+        "url": "https://www.uv.es/centro-idiomas-uv/es/acreditaciones/ccse/preguntas-frecuentes.html",
+        "official": false
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "nac.no_asesoria",
+    "text": "Esta información resume la normativa oficial para ayudarte a preparar el trámite. No es asesoramiento jurídico: ante cualquier duda, consulta la sede del Ministerio de Justicia o a un profesional.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Ministerio de Justicia: nacionalidad por residencia",
+        "url": "https://www.mjusticia.gob.es/es/ciudadania/tramites/nacionalidad-residencia",
+        "official": true
+      },
+      {
+        "name": "Sede electrónica del Ministerio de Justicia",
+        "url": "https://sede.mjusticia.gob.es/tramites/nacionalidad-espanola",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  }
+]

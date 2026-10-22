@@ -196,11 +196,125 @@ test("unidades nuevas (Papeleo, escrita en ruso)", async () => {
   return [done, errors];
 });
 
+// ---------- Pase de Nacionalidad ----------
+const DELE = JSON.parse(readFileSync(new URL("../content/exams/dele-a2.json", import.meta.url), "utf8"));
+const clickText = (page, text) => page.click(`button:has-text("${text}")`);
+
+test("Mi trámite: adulto que necesita dispensa", async () => {
+  const { page, errors } = await open({ native: "es" });
+  await page.click('.tab[data-tab="exams"]');
+  await page.click(".menu-row:nth-child(1)"); // Nacionalidad
+  await page.click(".menu-row:nth-child(1)"); // Mi trámite
+  for (const answer of ["18 o más", "Ninguna de estas", "No", "No", "No", "Sí"]) await clickText(page, answer);
+  const text = await page.innerText("#app");
+  const ok = text.includes("10 años") && text.includes("Necesitas aprobar el DELE A2") && !!(await page.$(".step.important"))
+    && (await page.$$(".fact-source a")).length > 10;
+  return [ok, errors];
+});
+
+test("Mi trámite: menor de 14 años", async () => {
+  const { page, errors } = await open({ native: "fr" });
+  await page.click('.tab[data-tab="exams"]');
+  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(1)");
+  await clickText(page, "Moins de 14 ans");
+  await clickText(page, "Aucune de ces situations");
+  const text = await page.innerText("#app");
+  return [text.includes("certificats de l'établissement") && !text.includes("DELE A2 ·"), errors];
+});
+
+test("CCSE: muestra gratis sin pase", async () => {
+  const { page, errors } = await open({ native: "en" });
+  await page.click('.tab[data-tab="exams"]');
+  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(2)"); // CCSE
+  const lockedRows = (await page.$$(".menu-row.locked")).length; // tareas 2-5 y simulacro
+  await page.click(".menu-row:nth-child(1)"); // práctica tarea 1
+  let n = 0;
+  for (; n < 10 && !(await page.$("h1")); n++) {
+    await page.click('.opt[data-ok="1"]');
+    await page.click(".sheet .btn");
+  }
+  return [lockedRows === 5 && n === 5 && (await page.innerText("h1")).includes("5 / 5"), errors];
+});
+
+test("CCSE: simulacro completo con el pase", async () => {
+  const { page, errors } = await open({ native: "es", passes: { nacionalidad: true } });
+  await page.click('.tab[data-tab="exams"]');
+  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(2)");
+  await page.click(".menu-row:nth-child(6)"); // simulacro
+  await page.click(".btn.big");
+  const timer = await page.innerText(".timer");
+  for (let k = 0; k < 25; k++) {
+    await page.click('.opt[data-ok="1"]');
+    if (k < 24) await page.click('.exam-nav .btn:has-text("→")');
+  }
+  await page.click('.exam-nav .btn:has-text("Terminar")');
+  const ok = (await page.innerText(".exam-result")).includes("APTO") && (await page.innerText(".exam-result")).includes("25 / 25");
+  return [ok && (timer.includes("45:00") || timer.includes("44:5")), errors];
+});
+
+// Responde una prueba de comprensión del DELE con las soluciones del contenido.
+async function answerComprehension(page, data) {
+  for (const t of data.tasks) {
+    const qs = t.questions || t.items;
+    for (let k = 0; k < qs.length; k++) {
+      const sel = await page.$(`#match-${t.id}-${k}`);
+      if (sel) await sel.selectOption(String(qs[k].answer));
+      else {
+        const card = (await page.$$(".exam-q"))[k];
+        await (await card.$$(".opt"))[qs[k].answer].click();
+      }
+    }
+    const next = await page.$('.exam-nav .btn:has-text("→")');
+    if (next) await next.click(); else await page.click('.exam-nav .btn:has-text("Terminar")');
+  }
+}
+
+for (const [part, data] of [["reading", DELE.reading], ["listening", DELE.listening]]) {
+  test(`DELE: ${part === "reading" ? "lectura" : "auditiva"} 25/25`, async () => {
+    const { page, errors } = await open({ native: "es", passes: { nacionalidad: true } });
+    await page.click('.tab[data-tab="exams"]');
+    await page.click(".menu-row:nth-child(1)");
+    await page.click(".menu-row:nth-child(3)"); // DELE
+    await page.click(`.menu-row:nth-child(${part === "reading" ? 1 : 2})`);
+    await answerComprehension(page, data);
+    return [(await page.innerText("h1")).includes("25 de 25"), errors];
+  });
+}
+
+test("DELE: escritura y oral con autoevaluación", async () => {
+  const { page, errors } = await open({ native: "es", passes: { nacionalidad: true } });
+  await page.click('.tab[data-tab="exams"]');
+  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(3)");
+  await page.click(".menu-row:nth-child(3)"); // escritura
+  await page.fill("#write-E1", "Hola, Irene: gracias por la invitación. ".repeat(7));
+  await page.fill("#write-E2", "Vivo en un barrio tranquilo con parques y tiendas. ".repeat(8));
+  const counted = (await page.innerText(".step .q-meta.ok")).length > 0;
+  await page.click('.btn.big:has-text("Terminar")');
+  for (const r of await page.$$(".rubric")) await (await r.$$(".opt"))[2].click();
+  await page.click('.btn.big:has-text("Puntuación estimada")');
+  const writingOk = (await page.innerText("h1")).includes("17 de 25");
+  await page.click(".btn.big");
+  await page.click(".menu-row:nth-child(4)"); // oral
+  await page.click('.btn.big:has-text("Terminar la preparación")');
+  for (let k = 0; k < 3; k++) await page.click(".btn.big");
+  for (const r of await page.$$(".rubric")) await (await r.$$(".opt"))[3].click();
+  await page.click('.btn.big:has-text("Puntuación estimada")');
+  const oralOk = (await page.innerText("h1")).includes("25 de 25");
+  await page.click(".btn.big");
+  const groups = await page.innerText(".per-task");
+  return [counted && writingOk && oralOk && groups.includes("/ 50") , errors];
+});
+
 // Los módulos de prueba de cada fase añaden sus casos aquí.
 for (const extra of process.argv.slice(2)) await import(new URL(extra, import.meta.url));
 
 // ONLY=texto ejecuta solo las pruebas cuyo nombre lo contiene; SHOTS=carpeta guarda una captura de cada fallo.
-for (const [name, fn] of tests.filter(([n]) => !process.env.ONLY || n.includes(process.env.ONLY))) {
+const selected = tests.filter(([n]) => !process.env.ONLY || n.includes(process.env.ONLY));
+for (const [name, fn] of selected) {
   let ok = false, errors = [];
   try { [ok, errors = []] = await fn(); } catch (e) { errors = [e.message.split("\n")[0]]; }
   if ((!ok || errors.length) && process.env.SHOTS && lastPage) await lastPage.screenshot({ path: `${process.env.SHOTS}/fallo-${name.replace(/\W+/g, "-")}.png` }).catch(() => {});
@@ -210,5 +324,5 @@ for (const [name, fn] of tests.filter(([n]) => !process.env.ONLY || n.includes(p
 await browser.close();
 stopServer();
 if (fails.length) { console.error(`\n${fails.length} pruebas fallidas`); process.exit(1); }
-console.log(`\nTodo OK (${tests.length} pruebas)`);
+console.log(`\nTodo OK (${selected.length} pruebas)`);
 process.exit(0);

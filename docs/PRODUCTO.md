@@ -84,7 +84,7 @@ Preparación profesional de los exámenes que se exigen en España. Cada examen 
 8. **Privacidad**:
    - Sin anuncios ni analítica con datos personales.
    - El progreso se guarda en el móvil.
-   - La edad mínima de uso y de consentimiento se fijará con la norma de protección de datos (dato pendiente de confirmar en el BOE).
+   - Edad de consentimiento para el tratamiento de datos: 14 años; por debajo hace falta el de los padres (Ley Orgánica 3/2018, art. 7, comprobado en el BOE el 22/10/2026). La app no pide datos personales.
 
 ## 7. Decisiones tomadas
 

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "dele.a2_estructura",
+    "text": "El DELE A2 tiene cuatro pruebas: comprensión de lectura (60 minutos, 4 tareas, 25 preguntas), comprensión auditiva (40 minutos, 4 tareas, 25 preguntas; cada audio se escucha dos veces), expresión e interacción escritas (45 minutos, 2 tareas) y expresión e interacción orales (12 minutos de preparación y 12 de examen, 3 tareas).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: Guía del examen DELE A2 (v2020)",
+        "url": "https://examenes.cervantes.es/sites/default/files/DELE_A2_v2020_Guia_de_examen.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 90,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "dele.a2_calificacion",
+    "text": "Cada prueba vale 25 puntos (100 en total). Se agrupan en dos: grupo 1, lectura y escritura; grupo 2, auditiva y oral. Para obtener «APTO» hacen falta al menos 30 puntos de 50 en cada grupo.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: Guía del examen DELE A2 (v2020)",
+        "url": "https://examenes.cervantes.es/sites/default/files/DELE_A2_v2020_Guia_de_examen.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 90,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "dele.a2_comprension",
+    "text": "En las pruebas de comprensión cada acierto vale un punto y los errores no restan.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: Guía del examen DELE A2 (v2020)",
+        "url": "https://examenes.cervantes.es/sites/default/files/DELE_A2_v2020_Guia_de_examen.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 90,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "dele.a2_expresion",
+    "text": "En las pruebas de expresión cada tarea se puntúa de 0 a 3 en el uso de la lengua y en el cumplimiento de la tarea. La banda 2 corresponde al nivel A2. Los textos escritos los corrigen dos calificadores.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: Guía del examen DELE A2 (v2020)",
+        "url": "https://examenes.cervantes.es/sites/default/files/DELE_A2_v2020_Guia_de_examen.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 90,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "dele.a2_escrita",
+    "text": "Expresión escrita: tarea 1, responder a un mensaje con una nota o carta de 60 a 70 palabras; tarea 2, a elegir entre un texto sobre un tema cotidiano o un texto narrativo o biográfico a partir de fotos o datos, de 70 a 80 palabras.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: Guía del examen DELE A2 (v2020)",
+        "url": "https://examenes.cervantes.es/sites/default/files/DELE_A2_v2020_Guia_de_examen.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 90,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "dele.a2_oral",
+    "text": "Expresión oral: tarea 1, monólogo de 2 a 3 minutos sobre un tema a elegir entre dos; tarea 2, descripción de una fotografía (2 a 3 minutos); tarea 3, conversación con el examinador sobre una situación (3 a 4 minutos). En los 12 minutos de preparación se pueden tomar notas, pero no leerlas durante el examen.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: Guía del examen DELE A2 (v2020)",
+        "url": "https://examenes.cervantes.es/sites/default/files/DELE_A2_v2020_Guia_de_examen.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 90,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  },
+  {
+    "id": "dele.inscripcion",
+    "text": "Las fechas de examen, los centros, los plazos de inscripción y los precios se consultan en la web del Instituto Cervantes.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Instituto Cervantes: qué es el DELE",
+        "url": "https://examenes.cervantes.es/es/dele/que-es",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60,
+    "note": "La web del Instituto Cervantes estaba en mantenimiento el 22/10/2026: hay que volver a comprobarlo en cuanto esté disponible."
+  }
+]
