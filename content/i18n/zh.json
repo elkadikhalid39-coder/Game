@@ -348,7 +348,12 @@
     "topic_preventiva": "预防性驾驶",
     "topic_puntos": "驾照积分制",
     "roadSign": "交通标志",
-    "modelN": "模拟题 {x}"
+    "modelN": "模拟题 {x}",
+    "qBranch": "你想学哪个方向？",
+    "branchScience": "理科、医学或工程",
+    "branchSocial": "社会科学或人文学科（法律、经济、教育……）",
+    "branchArts": "艺术、影像或设计",
+    "branchSubjects": "按官方科目表列出的你所选方向的 PCE 科目（另有通用科目）。每所大学决定各专业计入哪些科目：请查看其网站。"
   },
   "t": {
     "hola": "你好",

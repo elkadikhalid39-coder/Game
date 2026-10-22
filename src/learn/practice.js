@@ -44,7 +44,8 @@ function dictationItems(mode) {
   if (mode === "words") {
     return shuffle(units.flatMap((u) => u.words.map((w) => ({ id: w.id, text: tr(w.id, G), meaning: tr(w.id, save.native) })))).slice(0, SESSION.words);
   }
-  const ids = units.flatMap((u) => u.phrases.flatMap((p) => ["q_" + p.id, "a_" + p.id]));
+  // Frases de los diálogos y la frase de ejemplo de cada palabra.
+  const ids = units.flatMap((u) => [...u.phrases.flatMap((p) => ["q_" + p.id, "a_" + p.id]), ...u.words.map((w) => "e_" + w.id)]);
   return shuffle(ids).slice(0, SESSION.sentences).map((id) => ({ text: tr(id, G), meaning: tr(id, save.native) }));
 }
 
@@ -158,6 +159,10 @@ function dictionary() {
         const words = el("div", "dict-words");
         words.append(txt("strong", "", tr(w.id, G), G));
         if (N !== G) words.append(txt("span", "", tr(w.id, N), N));
+        // La frase de ejemplo, para ver cómo se usa la palabra (se escucha con el botón de al lado).
+        const example = el("span", "dict-example");
+        example.append(txt("span", "", tr("e_" + w.id, G), G), playButton(tr("e_" + w.id, G), ui("example") + ": " + tr("e_" + w.id, G)));
+        words.append(example);
         row.append(el("span", "dict-emoji", w.emoji || ""), words);
         if (save.learned.includes(w.id)) row.append(el("span", "pill free", "✓"));
         row.append(play);

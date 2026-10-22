@@ -444,7 +444,7 @@ test("CCSE: muestra gratis sin pase", async () => {
   await page.click('.tab[data-tab="exams"]');
   await page.click(".menu-row:nth-child(1)");
   await page.click(".menu-row:nth-child(2)"); // CCSE
-  const lockedRows = (await page.$$(".menu-row.locked")).length; // tareas 2-5 y simulacro
+  const lockedRows = (await page.$$(".menu-row.locked")).length; // tareas 2-5, simulacro y «Mis fallos» (vacío)
   await page.click(".menu-row:nth-child(1)"); // práctica tarea 1
   let n = 0;
   let report = false;
@@ -454,7 +454,7 @@ test("CCSE: muestra gratis sin pase", async () => {
     report ||= /^ccse ccse-t1-/.test((await page.getAttribute(".sheet .link.report", "data-ref")) || "");
     await page.click(".sheet .btn");
   }
-  return [report && lockedRows === 5 && n === 5 && (await page.innerText("h1")).includes("5 / 5"), errors];
+  return [report && lockedRows === 6 && n === 5 && (await page.innerText("h1")).includes("5 / 5"), errors];
 });
 
 test("CCSE: simulacro completo con el pase", async () => {
@@ -465,13 +465,16 @@ test("CCSE: simulacro completo con el pase", async () => {
   await page.click(".menu-row:nth-child(6)"); // simulacro
   await page.click(".btn.big");
   const timer = await page.innerText(".timer");
+  // Todas bien menos la primera: apto con 24 y esa pregunta pasa a «Mis fallos».
   for (let k = 0; k < 25; k++) {
-    await page.click('.opt[data-ok="1"]');
+    await page.click(k === 0 ? '.opt[data-ok="0"] >> nth=0' : '.opt[data-ok="1"]');
     if (k < 24) await page.click('.exam-nav .btn:has-text("→")');
   }
   await page.click('.exam-nav .btn:has-text("Terminar")');
-  const ok = (await page.innerText(".exam-result")).includes("APTO") && (await page.innerText(".exam-result")).includes("25 / 25");
-  return [ok && (timer.includes("45:00") || timer.includes("44:5")), errors];
+  const ok = (await page.innerText(".exam-result")).includes("APTO") && (await page.innerText(".exam-result")).includes("24 / 25");
+  await page.click(".btn.big");
+  const fails = await page.innerText(".menu-row:nth-child(7)");
+  return [ok && fails.includes("1") && (timer.includes("45:00") || timer.includes("44:5")), errors];
 });
 
 // Responde una prueba de comprensión del DELE con las soluciones del contenido.
@@ -543,10 +546,14 @@ test("Universidad: Mi ruta desde fuera de la UE (visado aparte)", async () => {
   await page.click(".menu-row:nth-child(1)");
   await page.click(".options .opt:nth-child(4)"); // fuera de la UE
   await page.click(".options .opt:nth-child(2)"); // sin residencia
+  await page.click(".options .opt:nth-child(1)"); // rama de ciencias
   await page.click(".options .opt:nth-child(3)"); // no sabe qué universidad
   const steps = await page.$$eval(".step", (s) => s.length);
   const visa = await page.innerText(".step.important");
-  return [steps === 10 && visa.includes("visado") && (await page.$(".step .fact")) !== null, errors];
+  // Las materias de su rama, con enlace a su ficha.
+  const branch = await page.$$eval(".step .rhythm-chip", (b) => b.map((x) => x.textContent));
+  const sciences = branch.some((t) => t.includes("Física")) && !branch.some((t) => t.includes("Latín"));
+  return [steps === 10 && sciences && visa.includes("visado") && (await page.$(".step .fact")) !== null, errors];
 });
 
 // Responde un test de las PCE según el plan: true = bien, false = mal, null = en blanco.

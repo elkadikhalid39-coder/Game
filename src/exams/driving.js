@@ -13,6 +13,7 @@ import { factNote, sourceLine, extLink } from "../ui/fact.js";
 import { countdown } from "../ui/timer.js";
 import { playButton } from "../ui/audio-buttons.js";
 import { signSvg } from "../ui/signs.js";
+import { preloadExamAudio } from "../core/audio.js";
 import { hasPass, draftBanner, menuRow, saveResult, resultsList, reportButton } from "./common.js";
 import { passCard } from "./nationality.js";
 
@@ -28,6 +29,7 @@ const canStudy = (t) => hasPass(PASS) || t === FREE_TOPIC;
 
 function showDriving() {
   screen("main");
+  preloadExamAudio();
   app.append(button("back", "← " + ui("back"), () => go("exams")), el("h1", "", "🚗 " + ui("passDrive")), draftBanner());
   const locked = !hasPass(PASS);
   const fails = save.drivingFails.length;

@@ -348,7 +348,12 @@
     "topic_preventiva": "Guida preventiva",
     "topic_puntos": "La patente a punti",
     "roadSign": "Segnale stradale",
-    "modelN": "Modello {x}"
+    "modelN": "Modello {x}",
+    "qBranch": "Quale ambito vuoi studiare?",
+    "branchScience": "Scienze, salute o ingegneria",
+    "branchSocial": "Scienze sociali o umanistiche (giurisprudenza, economia, educazione…)",
+    "branchArts": "Arti, immagine o design",
+    "branchSubjects": "Materie PCE del tuo ambito secondo l'offerta ufficiale (oltre a quelle comuni). Quali materie contano lo decide ogni università: consulta il suo sito."
   },
   "t": {
     "hola": "Ciao",

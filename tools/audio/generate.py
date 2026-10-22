@@ -65,19 +65,22 @@ for dele in deles:
     walk(dele)
 examiner = {line for dele in deles for t in dele["speaking"]["tasks"] for line in t.get("examiner", [])}
 
-# Qué lleva cada voz: todas, el curso; la neutra, además, lo de los exámenes;
-# las dos voces de España, los diálogos de la comprensión auditiva (M: mujer, H: hombre).
-extra = {"neutra": drive_texts | examiner, "es-f": dialog["M"], "es-m": dialog["H"]}
+# Qué lleva cada paquete: cada voz, el curso; las dos voces de España, además, los diálogos de la
+# comprensión auditiva del DELE (M: mujer, H: hombre). Lo que se lee en los exámenes (preguntas de
+# conducir y examinador del DELE) va en un paquete aparte con la voz neutra («neutra-ex»), que solo
+# se descarga al abrir un examen: así la app no baja megas de audio que quizá nunca se usen.
+extra = {"es-f": dialog["M"], "es-m": dialog["H"]}
+packs = [(v, course | extra.get(v["id"], set()), v["id"]) for v in CATALOG["voices"] if v.get("source") == "recorded"]
+neutral = next(v for v in CATALOG["voices"] if v["id"] == CATALOG["default"])
+packs.append((neutral, (drive_texts | examiner) - course, "neutra-ex"))
 
 OUT.mkdir(parents=True, exist_ok=True)
-for v in CATALOG["voices"]:
-    if v.get("source") != "recorded":
-        continue
-    model = PiperVoice.load(str(MODELS / (v["model"] + ".onnx")))
+models = {}
+for v, texts, name in packs:
+    model = models.get(v["model"]) or models.setdefault(v["model"], PiperVoice.load(str(MODELS / (v["model"] + ".onnx"))))
     config = SynthesisConfig(speaker_id=v.get("speaker"), length_scale=v.get("lengthScale", 1.0))
-    texts = sorted(course | extra.get(v["id"], set()))
     blob, index = bytearray(), {}
-    for text in texts:
+    for text in sorted(texts):
         wav = io.BytesIO()
         with wave.open(wav, "wb") as w:
             model.synthesize_wav(text, w, syn_config=config)
@@ -87,6 +90,6 @@ for v in CATALOG["voices"]:
         ).stdout
         index[fnv(text)] = [len(blob), len(mp3)]
         blob += mp3
-    (OUT / f"{v['id']}.bin").write_bytes(blob)
-    (OUT / f"{v['id']}.json").write_text(json.dumps(index, separators=(",", ":")))
-    print(f"{v['id']}: {len(texts)} audios, {len(blob) / 1e6:.1f} MB")
+    (OUT / f"{name}.bin").write_bytes(blob)
+    (OUT / f"{name}.json").write_text(json.dumps(index, separators=(",", ":")))
+    print(f"{name}: {len(texts)} audios, {len(blob) / 1e6:.1f} MB")

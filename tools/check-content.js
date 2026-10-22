@@ -50,9 +50,10 @@ for (const u of UNITS) {
 // y los diálogos de la auditiva del DELE (las dos voces de España).
 const pack = (id) => JSON.parse(readFileSync(new URL(`../public/audio/${id}.json`, import.meta.url), "utf8"));
 const exam = (f) => JSON.parse(readFileSync(new URL("../content/exams/" + f, import.meta.url), "utf8"));
+const examPack = pack("neutra-ex");
 for (const q of exam("conducir.json").questions) {
   const t = [q.q, ...q.options.map((o, i) => "abc"[i] + ". " + o)].join(". ");
-  if (!neutral[fnv(t)]) errors.push(`conducir ${q.id}: sin audio grabado (regenerar con tools/audio/generate.py)`);
+  if (!examPack[fnv(t)] && !neutral[fnv(t)]) errors.push(`conducir ${q.id}: sin audio grabado (regenerar con tools/audio/generate.py)`);
 }
 const voices = { M: pack("es-f"), H: pack("es-m") };
 const dialogs = (o, out = []) => {

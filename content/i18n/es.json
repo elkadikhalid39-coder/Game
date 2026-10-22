@@ -348,7 +348,12 @@
     "topic_preventiva": "Conducción preventiva",
     "topic_puntos": "El permiso por puntos",
     "roadSign": "Señal de tráfico",
-    "modelN": "Modelo {x}"
+    "modelN": "Modelo {x}",
+    "qBranch": "¿Qué rama quieres estudiar?",
+    "branchScience": "Ciencias, salud o ingeniería",
+    "branchSocial": "Ciencias sociales o humanidades (derecho, economía, educación…)",
+    "branchArts": "Artes, imagen o diseño",
+    "branchSubjects": "Materias PCE de tu rama según la oferta oficial (además de las comunes a todas). Qué materias pondera tu carrera lo decide cada universidad: consúltalo en su web."
   },
   "t": {
     "hola": "Hola",

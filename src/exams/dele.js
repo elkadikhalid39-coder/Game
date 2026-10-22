@@ -6,7 +6,7 @@ import model2 from "../../content/exams/dele-a2-2.json";
 import { ui } from "../core/i18n.js";
 import { save, persist } from "../core/state.js";
 import { register, go } from "../core/router.js";
-import { speak, speakDialog } from "../core/audio.js";
+import { speak, speakDialog, preloadExamAudio } from "../core/audio.js";
 import { el, button, closeButton } from "../ui/dom.js";
 import { mascot } from "../ui/mascot.js";
 import { app, screen, celebrate } from "../ui/shell.js";
@@ -31,6 +31,7 @@ const GROUP_PASS = 30; // de 50 en cada grupo (dato «dele.a2_calificacion»)
 
 function showDele() {
   screen("main");
+  preloadExamAudio({ dialogs: true });
   app.append(button("back", "← " + ui("back"), () => go("nationality")), el("h1", "", "🗣️ " + ui("deleTitle")), draftBanner());
   if (!hasPass(PASS)) {
     app.append(factNote("dele.a2_estructura"), passCard(PASS, showDele));

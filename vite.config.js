@@ -18,11 +18,10 @@ export default defineConfig(({ mode }) => {
       VitePWA({
         registerType: "autoUpdate",
         injectRegister: "auto",
-        // La voz neutra y las dos de España (diálogos del DELE) van en la caché desde el principio;
-        // las demás voces se guardan la primera vez que se usan.
+        // Al instalar solo se guarda la voz neutra del curso (poco más de 1 MB). El resto del audio
+        // (otras voces y el de los exámenes) se guarda la primera vez que se usa o que se abre el examen.
         workbox: {
-          globPatterns: ["**/*.{js,css,html,woff2,png,svg}", "audio/neutra.*", "audio/es-f.*", "audio/es-m.*"],
-          maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+          globPatterns: ["**/*.{js,css,html,woff2,png,svg}", "audio/neutra.{bin,json}"],
           runtimeCaching: [{ urlPattern: /\/audio\/.*\.(bin|json)$/, handler: "CacheFirst", options: { cacheName: "voces" } }],
         },
         manifest: {

@@ -348,7 +348,12 @@
     "topic_preventiva": "Defensive driving",
     "topic_puntos": "The points licence",
     "roadSign": "Traffic sign",
-    "modelN": "Mock exam {x}"
+    "modelN": "Mock exam {x}",
+    "qBranch": "Which field do you want to study?",
+    "branchScience": "Science, health or engineering",
+    "branchSocial": "Social sciences or humanities (law, economics, education…)",
+    "branchArts": "Arts, image or design",
+    "branchSubjects": "PCE subjects in your field according to the official list (plus the common ones). Each university decides which subjects count for each degree: check its website."
   },
   "t": {
     "hola": "Hello",

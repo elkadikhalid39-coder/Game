@@ -348,7 +348,12 @@
     "topic_preventiva": "Conduite préventive",
     "topic_puntos": "Le permis à points",
     "roadSign": "Panneau de signalisation",
-    "modelN": "Modèle {x}"
+    "modelN": "Modèle {x}",
+    "qBranch": "Quelle filière veux-tu étudier ?",
+    "branchScience": "Sciences, santé ou ingénierie",
+    "branchSocial": "Sciences sociales ou lettres (droit, économie, éducation…)",
+    "branchArts": "Arts, image ou design",
+    "branchSubjects": "Matières PCE de ta filière selon l'offre officielle (en plus des matières communes). Chaque université décide quelles matières comptent pour chaque diplôme : consulte son site."
   },
   "t": {
     "hola": "Bonjour",

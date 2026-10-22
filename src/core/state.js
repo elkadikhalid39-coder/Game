@@ -30,6 +30,7 @@ export function migrate(old, known = () => true) {
     passes: (v3 && old.passes) || {}, // pases desbloqueados: { nacionalidad: true }
     noAudioUntil: (v3 && old.noAudioUntil) || 0,
     deleModel: (v3 && old.deleModel) || 0, // simulacro DELE elegido (0: modelo 1, 1: modelo 2)
+    ccseFails: (v3 && old.ccseFails) || [], // preguntas falladas del CCSE, para repasarlas
     drivingFails: (v3 && old.drivingFails) || [], // preguntas falladas del test de conducir, para repasarlas
     demo: typeof old.demo === "boolean" ? old.demo : DEMO_DEFAULT, // modo demo: todas las lecciones y los pases abiertos
   };

@@ -2695,6 +2695,244 @@
         "de": "Kinderrückhaltesystem",
         "it": "seggiolino per bambini"
       }
+    },
+    {
+      "es": "semáforo",
+      "def": "Aparato con luces roja, amarilla y verde que regula el paso.",
+      "tr": {
+        "en": "traffic light",
+        "fr": "feu de signalisation",
+        "ar": "إشارة ضوئية",
+        "ro": "semafor",
+        "uk": "світлофор",
+        "ru": "светофор",
+        "pt": "semáforo",
+        "zh": "红绿灯",
+        "ur": "ٹریفک لائٹ",
+        "de": "Ampel",
+        "it": "semaforo"
+      }
+    },
+    {
+      "es": "línea continua",
+      "def": "Raya pintada en la calzada que no se puede pisar ni cruzar.",
+      "tr": {
+        "en": "solid line",
+        "fr": "ligne continue",
+        "ar": "خط متصل",
+        "ro": "linie continuă",
+        "uk": "суцільна лінія",
+        "ru": "сплошная линия",
+        "pt": "linha contínua",
+        "zh": "实线",
+        "ur": "مسلسل لکیر",
+        "de": "durchgezogene Linie",
+        "it": "linea continua"
+      }
+    },
+    {
+      "es": "cinturón de seguridad",
+      "def": "Cinta que sujeta a cada persona a su asiento; es obligatoria.",
+      "tr": {
+        "en": "seat belt",
+        "fr": "ceinture de sécurité",
+        "ar": "حزام الأمان",
+        "ro": "centură de siguranță",
+        "uk": "ремінь безпеки",
+        "ru": "ремень безопасности",
+        "pt": "cinto de segurança",
+        "zh": "安全带",
+        "ur": "سیٹ بیلٹ",
+        "de": "Sicherheitsgurt",
+        "it": "cintura di sicurezza"
+      }
+    },
+    {
+      "es": "permiso de circulación",
+      "def": "Documento del vehículo que hay que llevar siempre en el coche.",
+      "tr": {
+        "en": "vehicle registration certificate",
+        "fr": "certificat d'immatriculation",
+        "ar": "رخصة سير المركبة",
+        "ro": "certificat de înmatriculare",
+        "uk": "свідоцтво про реєстрацію авто",
+        "ru": "свидетельство о регистрации ТС",
+        "pt": "documento do veículo",
+        "zh": "车辆行驶证",
+        "ur": "گاڑی کا رجسٹریشن کارڈ",
+        "de": "Fahrzeugschein",
+        "it": "carta di circolazione"
+      }
+    },
+    {
+      "es": "ITV",
+      "def": "Inspección técnica obligatoria que comprueba que el coche está en buen estado.",
+      "tr": {
+        "en": "vehicle inspection (MOT)",
+        "fr": "contrôle technique",
+        "ar": "الفحص التقني للمركبة",
+        "ro": "inspecția tehnică periodică",
+        "uk": "техогляд",
+        "ru": "техосмотр",
+        "pt": "inspeção veicular",
+        "zh": "车辆年检",
+        "ur": "گاڑی کا تکنیکی معائنہ",
+        "de": "Hauptuntersuchung (TÜV)",
+        "it": "revisione del veicolo"
+      }
+    },
+    {
+      "es": "neumático",
+      "def": "La goma de la rueda; debe tener al menos 1,6 mm de dibujo.",
+      "tr": {
+        "en": "tyre",
+        "fr": "pneu",
+        "ar": "إطار العجلة",
+        "ro": "anvelopă",
+        "uk": "шина",
+        "ru": "шина",
+        "pt": "pneu",
+        "zh": "轮胎",
+        "ur": "ٹائر",
+        "de": "Reifen",
+        "it": "pneumatico"
+      }
+    },
+    {
+      "es": "luz de cruce",
+      "def": "La luz delantera corta que no deslumbra a los demás.",
+      "tr": {
+        "en": "dipped headlights",
+        "fr": "feux de croisement",
+        "ar": "الأضواء القصيرة",
+        "ro": "faza scurtă",
+        "uk": "ближнє світло",
+        "ru": "ближний свет",
+        "pt": "farol baixo",
+        "zh": "近光灯",
+        "ur": "لو بیم لائٹ",
+        "de": "Abblendlicht",
+        "it": "anabbaglianti"
+      }
+    },
+    {
+      "es": "intermitente",
+      "def": "Luz naranja que avisa de que vas a girar o cambiar de carril.",
+      "tr": {
+        "en": "indicator",
+        "fr": "clignotant",
+        "ar": "إشارة الانعطاف",
+        "ro": "semnalizator",
+        "uk": "поворотник",
+        "ru": "поворотник",
+        "pt": "seta (pisca-pisca)",
+        "zh": "转向灯",
+        "ur": "انڈیکیٹر",
+        "de": "Blinker",
+        "it": "freccia"
+      }
+    },
+    {
+      "es": "marcha atrás",
+      "def": "Mover el coche hacia atrás; está prohibido en autovía.",
+      "tr": {
+        "en": "reversing",
+        "fr": "marche arrière",
+        "ar": "الرجوع إلى الخلف",
+        "ro": "mers înapoi",
+        "uk": "задній хід",
+        "ru": "задний ход",
+        "pt": "marcha a ré",
+        "zh": "倒车",
+        "ur": "گاڑی پیچھے چلانا",
+        "de": "Rückwärtsfahren",
+        "it": "retromarcia"
+      }
+    },
+    {
+      "es": "cambio de sentido",
+      "def": "Maniobra para dar la vuelta y circular en dirección contraria.",
+      "tr": {
+        "en": "U-turn",
+        "fr": "demi-tour",
+        "ar": "الالتفاف للاتجاه المعاكس",
+        "ro": "întoarcere",
+        "uk": "розворот",
+        "ru": "разворот",
+        "pt": "retorno",
+        "zh": "掉头",
+        "ur": "یو ٹرن",
+        "de": "Wenden",
+        "it": "inversione di marcia"
+      }
+    },
+    {
+      "es": "autovía",
+      "def": "Carretera rápida con dos calzadas separadas y sin cruces a nivel.",
+      "tr": {
+        "en": "dual carriageway (motorway)",
+        "fr": "voie rapide (autoroute)",
+        "ar": "طريق سريع",
+        "ro": "drum expres",
+        "uk": "автомагістраль",
+        "ru": "автомагистраль",
+        "pt": "rodovia de pista dupla",
+        "zh": "快速公路",
+        "ur": "دو رویہ شاہراہ",
+        "de": "Schnellstraße",
+        "it": "superstrada"
+      }
+    },
+    {
+      "es": "peatón",
+      "def": "Persona que va a pie por la vía.",
+      "tr": {
+        "en": "pedestrian",
+        "fr": "piéton",
+        "ar": "المشاة (الراجل)",
+        "ro": "pieton",
+        "uk": "пішохід",
+        "ru": "пешеход",
+        "pt": "pedestre",
+        "zh": "行人",
+        "ur": "پیدل چلنے والا",
+        "de": "Fußgänger",
+        "it": "pedone"
+      }
+    },
+    {
+      "es": "tasa de alcohol",
+      "def": "Cantidad de alcohol en la sangre o en el aire que se expulsa al soplar.",
+      "tr": {
+        "en": "blood alcohol level",
+        "fr": "taux d'alcool",
+        "ar": "نسبة الكحول",
+        "ro": "alcoolemie",
+        "uk": "рівень алкоголю",
+        "ru": "уровень алкоголя",
+        "pt": "taxa de álcool",
+        "zh": "酒精含量",
+        "ur": "الکحل کی مقدار",
+        "de": "Alkoholwert",
+        "it": "tasso alcolemico"
+      }
+    },
+    {
+      "es": "señal de stop",
+      "def": "Señal roja de ocho lados: hay que pararse siempre y ceder el paso.",
+      "tr": {
+        "en": "stop sign",
+        "fr": "panneau stop",
+        "ar": "إشارة قف",
+        "ro": "indicator stop",
+        "uk": "знак «Стоп»",
+        "ru": "знак «Стоп»",
+        "pt": "placa de pare",
+        "zh": "停车让行标志",
+        "ur": "اسٹاپ کا نشان",
+        "de": "Stoppschild",
+        "it": "segnale di stop"
+      }
     }
   ]
 }

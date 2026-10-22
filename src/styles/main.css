@@ -149,6 +149,8 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 .voice-row.selected { border-color: var(--sky); box-shadow: 0 4px 0 var(--sky); }
 .voice-pick { flex: 1; display: grid; gap: 2px; text-align: start; background: none; border: 0; padding: 6px 10px; min-height: 48px; align-content: center; font: inherit; color: var(--ink); cursor: pointer; min-width: 0; }
 .voice-pick span { color: var(--ink-soft); font-size: .92rem; }
+.dict-example { display: flex; align-items: center; gap: 8px; color: var(--ink-soft); font-size: .92rem; margin-top: 4px; }
+.dict-example .audio-btn-play.icon { width: 44px; min-height: 44px; }
 .credits { color: var(--ink-soft); font-size: .8rem; margin-top: 18px; }
 .rhythm-chip { border: 2px solid var(--line); background: var(--paper); border-radius: 999px; padding: 8px 14px; min-height: 48px; font: inherit; font-weight: 600; color: var(--ink); cursor: pointer; }
 .rhythm-chip.selected { border-color: var(--sky); background: var(--sky-soft); color: var(--sky-dark); }

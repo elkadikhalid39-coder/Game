@@ -348,7 +348,12 @@
     "topic_preventiva": "Vorausschauendes Fahren",
     "topic_puntos": "Der Punkteführerschein",
     "roadSign": "Verkehrszeichen",
-    "modelN": "Modell {x}"
+    "modelN": "Modell {x}",
+    "qBranch": "Welche Fachrichtung möchtest du studieren?",
+    "branchScience": "Naturwissenschaften, Gesundheit oder Technik",
+    "branchSocial": "Sozial- oder Geisteswissenschaften (Jura, Wirtschaft, Pädagogik…)",
+    "branchArts": "Kunst, Bild oder Design",
+    "branchSubjects": "PCE-Fächer deiner Fachrichtung laut offiziellem Angebot (zusätzlich zu den gemeinsamen). Welche Fächer zählen, entscheidet jede Universität: sieh auf ihrer Website nach."
   },
   "t": {
     "hola": "Hallo",

@@ -7,10 +7,22 @@ import { app, screen } from "../ui/shell.js";
 import { factNote, extLink } from "../ui/fact.js";
 import { draftBanner } from "./common.js";
 import { UNEDASISS } from "./university.js";
+import pce from "../../content/exams/pce.json";
+
+// Modalidad de Bachillerato de cada rama, como la escribe la oferta oficial de materias PCE.
+const MODALITY = { science: "Ciencia y Tecnología", social: "Humanidades y Ciencias Sociales", arts: "Artes Plásticas, Imagen y Diseño" };
+function branchSubjects(branch) {
+  const list = el("div", "chips");
+  for (const s of pce.subjects.filter((x) => x.modality.split("; ").includes(MODALITY[branch]))) {
+    list.append(button("rhythm-chip", "📘 " + s.name, () => go("pce-subject", s.id)));
+  }
+  return [el("p", "lead", ui("branchSubjects")), list];
+}
 
 const QUESTIONS = [
   { id: "origin", key: "qOrigin", options: [["spain", "originSpain"], ["eu", "originEu"], ["ib", "originIb"], ["other", "originOther"]] },
   { id: "resident", key: "qResident", when: (a) => a.origin !== "spain", options: [["yes", "yes"], ["no", "no"]] },
+  { id: "branch", key: "qBranch", when: (a) => a.origin !== "spain", options: [["science", "branchScience"], ["social", "branchSocial"], ["arts", "branchArts"], ["unknown", "uniUnknown"]] },
   { id: "uni", key: "qUniType", options: [["public", "uniPublic"], ["private", "uniPrivate"], ["unknown", "uniUnknown"]] },
 ];
 
@@ -55,7 +67,7 @@ function showRoute(a) {
       app.append(step("✔️", ui("stepPceOptional"), ["pce.ue_sin_prueba"]));
     }
     app.append(step("🪪", ui("stepAccredit"), ["pce.que_es", "pce.fases"], link(ui("countryInfo"), UNEDASISS)));
-    app.append(step("📚", ui("stepChooseSubjects"), ["pce.materias_numero", "pce.tipos", "pce.idioma"], toSubjects));
+    app.append(step("📚", ui("stepChooseSubjects"), ["pce.materias_numero", "pce.tipos", "pce.idioma"], [...(MODALITY[a.branch] ? branchSubjects(a.branch) : []), toSubjects]));
     app.append(step("🗓️", ui("stepDates"), ["pce.fechas"]));
     app.append(step("📝", ui("stepExam"), ["pce.duracion", "pce.normas"]));
     app.append(step("🏫", ui("stepEnroll"), ["pce.admision"]));

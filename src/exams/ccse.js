@@ -1,6 +1,7 @@
 // CCSE: temario por tareas, práctica con corrección inmediata y simulacro con el formato del examen.
 import bank from "../../content/exams/ccse.json";
 import { ui } from "../core/i18n.js";
+import { save, persist } from "../core/state.js";
 import { register, go } from "../core/router.js";
 import { shuffle, pick } from "../core/util.js";
 import { beep } from "../core/audio.js";
@@ -31,6 +32,9 @@ function showCcse() {
     menu.append(menuRow(String(t), ui("task", t) + " · " + ui("ccseT" + t), ui("practice"), () => practice(t), { badge, locked: lockedTask }));
   }
   menu.append(menuRow("⏱", ui("mock"), ui("ccseDesc"), () => mockIntro(), { badge: locked ? ui("locked") : null, locked }));
+  // Las preguntas falladas (en la práctica o en el simulacro) vuelven aquí hasta acertarlas.
+  const fails = save.ccseFails.length;
+  menu.append(menuRow("❌", ui("driveFails"), fails ? ui("reviewCount", fails) : ui("driveFailsEmpty"), () => (fails ? practice(null) : null), { locked: !fails }));
   app.append(menu);
   const results = resultsList("ccse");
   if (results) app.append(results);
@@ -62,10 +66,18 @@ function explanation(q) {
   return box;
 }
 
-// ---------- Práctica: preguntas de una tarea con corrección inmediata ----------
+function noteFail(q, ok) {
+  const at = save.ccseFails.indexOf(q.id);
+  if (!ok && at < 0) save.ccseFails.push(q.id);
+  if (ok && at >= 0) save.ccseFails.splice(at, 1);
+  persist();
+}
+
+// ---------- Práctica: preguntas de una tarea (o las falladas, task = null) con corrección inmediata ----------
 function practice(task) {
   const sample = !hasPass(PASS);
-  const pool = sample ? byTask(1).slice(0, SAMPLE) : shuffle(byTask(task)).slice(0, 8);
+  const pool = task === null ? shuffle(QUESTIONS.filter((q) => save.ccseFails.includes(q.id))).slice(0, 10)
+    : sample ? byTask(1).slice(0, SAMPLE) : shuffle(byTask(task)).slice(0, 8);
   const s = { list: pool, i: 0, correct: 0 };
   const run = () => {
     if (s.i >= s.list.length) {
@@ -77,11 +89,12 @@ function practice(task) {
     const q = s.list[s.i];
     screen("lesson");
     const head = el("div", "lesson-head");
-    head.append(closeButton(() => go("ccse")), el("span", "q-meta", ui("ccseT" + task)));
+    head.append(closeButton(() => go("ccse")), el("span", "q-meta", task === null ? ui("driveFails") : ui("ccseT" + task)));
     app.append(head, questionCard(q, s.i + 1, s.list.length, null, (i, btn) => {
       const ok = i === q.answer;
       beep(ok);
       if (ok) s.correct++;
+      noteFail(q, ok);
       for (const b of app.querySelectorAll(".opt")) { b.disabled = true; if (b.dataset.ok === "1") b.classList.add("correct"); }
       if (!ok) btn.classList.add("wrong");
       sheet(ok, ok ? ui("great") : ui("answer") + ": " + q.options[q.answer], "", "es", () => { s.i++; run(); }, explanation(q));
@@ -126,6 +139,7 @@ function startMock() {
     const score = list.filter((q, k) => answers[k] === q.answer).length;
     const pass = score >= PASS_MARK;
     saveResult("ccse", score, list.length, pass);
+    list.forEach((q, k) => noteFail(q, answers[k] === q.answer));
     screen("main");
     if (pass) celebrate();
     const result = el("div", "exam-result " + (pass ? "pass" : "fail"));

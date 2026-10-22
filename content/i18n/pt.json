@@ -348,7 +348,12 @@
     "topic_preventiva": "Direção preventiva",
     "topic_puntos": "A habilitação por pontos",
     "roadSign": "Placa de trânsito",
-    "modelN": "Modelo {x}"
+    "modelN": "Modelo {x}",
+    "qBranch": "Que área você quer estudar?",
+    "branchScience": "Ciências, saúde ou engenharia",
+    "branchSocial": "Ciências sociais ou humanas (direito, economia, educação…)",
+    "branchArts": "Artes, imagem ou design",
+    "branchSubjects": "Matérias PCE da sua área segundo a oferta oficial (além das comuns). Cada universidade decide quais matérias contam para cada curso: consulte o site dela."
   },
   "t": {
     "hola": "Olá",

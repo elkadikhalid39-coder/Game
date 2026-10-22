@@ -348,7 +348,12 @@
     "topic_preventiva": "Condus preventiv",
     "topic_puntos": "Permisul cu puncte",
     "roadSign": "Semn de circulație",
-    "modelN": "Modelul {x}"
+    "modelN": "Modelul {x}",
+    "qBranch": "Ce domeniu vrei să studiezi?",
+    "branchScience": "Științe, sănătate sau inginerie",
+    "branchSocial": "Științe sociale sau umaniste (drept, economie, educație…)",
+    "branchArts": "Arte, imagine sau design",
+    "branchSubjects": "Materiile PCE din domeniul tău conform ofertei oficiale (pe lângă cele comune). Fiecare universitate decide ce materii contează pentru fiecare specializare: verifică pe site-ul ei."
   },
   "t": {
     "hola": "Bună",

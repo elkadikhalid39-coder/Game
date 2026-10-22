@@ -9,6 +9,7 @@ import { delay } from "./util.js";
 
 export const VOICE_LIST = VOICES.voices;
 const NEUTRAL = VOICES.default;
+const EXAMS = NEUTRAL + "-ex"; // lo que se lee en los exámenes, con la voz neutra (se descarga al abrir un examen)
 export const voiceOf = (id = save.voice) => VOICE_LIST.find((v) => v.id === id) || VOICE_LIST[0];
 const rhythm = () => VOICES.rhythms[save.rhythm] ?? 1;
 
@@ -34,6 +35,12 @@ function loadPack(id) {
 export function preloadVoice() {
   if (voiceOf().source === "recorded") loadPack(voiceOf().id);
   loadPack(NEUTRAL);
+}
+// Al abrir un examen se descarga (y queda guardado para usarlo sin conexión) el audio que necesita.
+// dialogs: también las dos voces de la comprensión auditiva del DELE.
+export function preloadExamAudio({ dialogs = false } = {}) {
+  loadPack(EXAMS);
+  if (dialogs) { loadPack("es-f"); loadPack("es-m"); }
 }
 
 const ready = new Map(); // id → paquete ya cargado (para buscar sin esperar)
@@ -103,7 +110,7 @@ export async function speak(parts, lang, { slow = false } = {}) {
   const v = voiceOf();
   // Solo con voz pregrabada si todas las partes son en español y están grabadas.
   if (v.source === "recorded" && parts.every(([, l]) => l === G)) {
-    const urls = await Promise.all(parts.map(([t]) => clip(t, [v.id, NEUTRAL])));
+    const urls = await Promise.all(parts.map(([t]) => clip(t, [v.id, NEUTRAL, EXAMS])));
     if (token !== run) return;
     if (urls.every(Boolean)) {
       for (const url of urls) if (!(await playUrl(url, rate, token))) return token === run ? deviceSpeak(parts, rate) : undefined;
