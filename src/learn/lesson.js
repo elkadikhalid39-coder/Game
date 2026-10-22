@@ -15,6 +15,7 @@ import { shuffle, pick } from "../core/util.js";
 import { speak, beep } from "../core/audio.js";
 import { el, txt, button, closeButton } from "../ui/dom.js";
 import { writeBox, diffView } from "./write-box.js";
+import { audioControls } from "../ui/audio-buttons.js";
 import { mascot, speech } from "../ui/mascot.js";
 import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { LESSON_TYPES, wordsOf, unitOfWord, unitOfPhrase, unitComplete } from "./course.js";
@@ -94,17 +95,6 @@ function noteResult(ex, ok) {
   if (ok && key.k === "w" && !save.learned.includes(key.id)) save.learned.push(key.id);
 }
 
-// Botones de audio: normal y lento.
-function audioButtons(text, cls = "") {
-  const row = el("span", "audio-row " + cls);
-  const slow = button("listen small slow", "🐢", () => speak(text, G, { slow: true }));
-  slow.setAttribute("aria-label", ui("slow"));
-  const normal = button("listen small", "🔊", () => speak(text, G));
-  normal.setAttribute("aria-label", ui("play"));
-  row.append(normal, slow);
-  return row;
-}
-
 // ---------- Lección ----------
 function runLesson(s) {
   if (s.i >= s.list.length) return showResult(s);
@@ -126,9 +116,11 @@ function runLesson(s) {
   if (ex.type === "intro") {
     const word = tr(ex.item.id, G);
     const card = el("div", "card intro");
-    card.append(el("div", "bigemoji", ex.item.emoji), txt("div", "bigword", word, G));
+    // El dibujo solo aparece si representa la palabra sin dudas (las palabras abstractas no llevan).
+    if (ex.item.emoji) card.append(el("div", "bigemoji", ex.item.emoji));
+    card.append(txt("div", "bigword", word, G));
     if (N !== G) card.append(txt("p", "hint", tr(ex.item.id, N), N));
-    card.append(audioButtons(word, "center"));
+    card.append(audioControls(word, { cls: "center" }));
     app.append(speech(ui("newWord"), "talk"), card, el("div", "footer-space"));
     const foot = el("div", "footer");
     foot.append(button("btn", ui("next"), next));
@@ -141,7 +133,8 @@ function runLesson(s) {
   const area = el("div", "exercise");
   // ok: acierto; solution: texto correcto en español; note: aviso (tilde o errata) cuando se acepta con un matiz.
   // written: lo que escribió la persona, para marcar en qué letras está el fallo.
-  const answer = (ok, solution, { btn, note, written } = {}) => {
+  // hinted: se usó una pista; cuenta como acierto, pero la palabra se queda en Repasar.
+  const answer = (ok, solution, { btn, note, written, hinted } = {}) => {
     if (answered) return;
     answered = true;
     beep(ok);
@@ -156,17 +149,19 @@ function runLesson(s) {
       // Una segunda oportunidad al final de la lección, con las opciones en otro orden.
       if (!ex.again) s.list.push({ ...s.list[s.i], again: true, options: ex.options && shuffle(ex.options) });
     }
-    noteResult(ex, ok);
+    noteResult(ex, ok && !hinted);
     persist();
     say(solution);
-    const title = ok ? ui("great") : ui("answer") + ":";
+    const title = ok ? (hinted ? ui("okWithHint") : ui("great")) : ui("answer") + ":";
     const detail = ok ? (note ? ui(note === "accent" ? "noteAccent" : "noteTypo", solution) : "") : solution;
     const extra = el("div", "sheet-extra");
-    if (written !== undefined && (!ok || note)) extra.append(diffView(written, solution));
-    // Al corregir una palabra se ve también su dibujo y su significado.
-    if (ex.item) extra.append(txt("p", "sheet-meaning", ex.item.emoji + (N !== G ? " " + tr(ex.item.id, N) : ""), N));
-    extra.append(audioButtons(solution));
-    sheet(ok, title, detail, note ? N : G, next, extra);
+    const showDiff = written !== undefined && (!ok || note);
+    if (showDiff) extra.append(diffView(written, solution));
+    // Al corregir una palabra se ve su significado en el idioma de la persona.
+    if (ex.item && N !== G) extra.append(txt("p", "sheet-meaning", "= " + tr(ex.item.id, N), N));
+    extra.append(audioControls(solution));
+    // Si se ve la comparación letra a letra, la solución ya está en ella: no se repite.
+    sheet(ok, title, showDiff && !ok ? "" : detail, note ? N : G, next, extra);
   };
   const addOption = (parent, label, lang, isOk, solution) => {
     const b = txt("button", "opt", label, lang);
@@ -180,7 +175,8 @@ function runLesson(s) {
     // La palabra en su idioma (con el dibujo de apoyo) → elegir en español.
     app.append(speech(ui("howSay"), "talk"));
     const prompt = el("div", "prompt-word");
-    prompt.append(el("span", "midemoji", ex.item.emoji), txt("span", "bigword", tr(ex.item.id, N), N));
+    if (ex.item.emoji) prompt.append(el("span", "midemoji", ex.item.emoji));
+    prompt.append(txt("span", "bigword", tr(ex.item.id, N), N));
     area.append(prompt);
     const opts = el("div", "options two");
     for (const o of ex.options) addOption(opts, tr(o.id, G), G, o === ex.item, tr(ex.item.id, G));
@@ -189,13 +185,7 @@ function runLesson(s) {
     // Escucha en español y elige el significado en su idioma.
     const word = tr(ex.item.id, G);
     app.append(speech(ui("listen"), "talk"));
-    const big = el("div", "listen-pair");
-    const slow = button("listen big slow", "🐢", () => speak(word, G, { slow: true }));
-    slow.setAttribute("aria-label", ui("slow"));
-    const normal = button("listen big", "🔊", () => speak(word, G));
-    normal.setAttribute("aria-label", ui("play"));
-    big.append(normal, slow);
-    area.append(big);
+    area.append(audioControls(word, { size: "big" }));
     const opts = el("div", "options two");
     for (const o of ex.options) addOption(opts, tr(o.id, N), N, o === ex.item, word);
     area.append(opts);
@@ -204,28 +194,23 @@ function runLesson(s) {
     const word = tr(ex.item.id, G);
     const box = writeBox({
       hint: word,
-      onCheck: (value) => {
+      onCheck: (value, { hinted }) => {
         const r = checkWritten(value, word);
         box.input.classList.add(r.ok ? "right" : "wrong");
-        answer(r.ok, word, { note: r.note, written: value });
+        answer(r.ok, word, { note: r.note, written: value, hinted });
       },
     });
     box.el.dataset.word = ex.item.id; // para las pruebas automáticas
     if (ex.type === "dictation") {
       // Dictado: solo se oye; el dibujo y el significado se ven al corregir.
       app.append(speech(ui("dictationPrompt"), "talk"));
-      const big = el("div", "listen-pair");
-      const slow = button("listen big slow", "🐢", () => speak(word, G, { slow: true }));
-      slow.setAttribute("aria-label", ui("slow"));
-      const normal = button("listen big", "🔊", () => speak(word, G));
-      normal.setAttribute("aria-label", ui("play"));
-      big.append(normal, slow);
-      area.append(big);
+      area.append(audioControls(word, { size: "big" }));
       say(word);
     } else {
       app.append(speech(ui("writeIt"), "talk"));
       const prompt = el("div", "prompt-word");
-      prompt.append(el("span", "midemoji", ex.item.emoji), txt("span", "bigword", tr(ex.item.id, N), N));
+      if (ex.item.emoji) prompt.append(el("span", "midemoji", ex.item.emoji));
+      prompt.append(txt("span", "bigword", tr(ex.item.id, N), N));
       area.append(prompt);
     }
     area.append(box.el);
@@ -236,7 +221,7 @@ function runLesson(s) {
     app.append(speech(ui("orderIt"), "talk"));
     // Se oye la frase (y se lee su traducción si la persona tiene otro idioma).
     const prompt = el("div", "quote plain");
-    prompt.append(audioButtons(sentence));
+    prompt.append(audioControls(sentence));
     if (N !== G) prompt.append(txt("span", "", tr("a_" + ex.id, N), N));
     area.append(prompt);
     say(sentence);
@@ -269,7 +254,7 @@ function runLesson(s) {
     const q = tr("q_" + ex.id, G), a = "a_" + ex.id;
     app.append(speech(ui("chooseAnswer"), "talk"));
     const quote = el("div", "quote");
-    quote.append(audioButtons(q), txt("span", "", q, G));
+    quote.append(audioControls(q), txt("span", "", q, G));
     area.append(quote);
     if (N !== G) area.append(txt("p", "hint", tr("q_" + ex.id, N), N));
     const opts = el("div", "options");

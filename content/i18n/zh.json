@@ -251,7 +251,9 @@
     "dictionaryTitle": "词典",
     "dictionaryDesc": "课程中的所有单词，带发音",
     "searchWords": "用西班牙语或你的语言搜索",
-    "noResults": "没有结果"
+    "noResults": "没有结果",
+    "hintLetters": "{x} 个字母",
+    "okWithHint": "答对了，但用了提示。稍后会再复习。"
   },
   "t": {
     "hola": "你好",

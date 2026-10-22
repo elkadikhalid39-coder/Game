@@ -5,44 +5,57 @@ import { save } from "../core/state.js";
 import { el, txt, button } from "../ui/dom.js";
 import { diffChars } from "./answers.js";
 
-// Campo de escritura. onCheck(texto) se llama al pulsar «Comprobar» o Intro con algo escrito.
-// hint: texto correcto para las pistas (primera letra y número de letras; después, la mitad de la palabra).
-export function writeBox({ onCheck, hint, multiline = false }) {
+// Campo de escritura. onCheck(texto, { hinted }) se llama al pulsar «Comprobar» o Intro con algo escrito.
+// hint: texto correcto para las pistas. La 1.ª pista dice cuántas letras tiene; la 2.ª, la primera letra.
+// Nunca se enseña más: la palabra la tiene que escribir la persona.
+// marks: añade ¿ y ¡ al teclado (dictado de frases).
+export function writeBox({ onCheck, hint, multiline = false, marks = false }) {
   const box = el("div", "write-box");
   const input = el(multiline ? "textarea" : "input", multiline ? "write-area" : "write-input");
   Object.assign(input, { id: "write-answer", autocomplete: "off", autocapitalize: "off", spellcheck: false, lang: "es" });
   input.dir = "ltr";
   if (!multiline) input.type = "text";
   else input.rows = 3;
+  input.enterKeyHint = "done";
   input.setAttribute("aria-label", ui("writeIt"));
+  // Letras del español que no están en muchos teclados (árabe, chino, ruso…).
   const keys = el("div", "es-keys");
-  // Los signos de apertura llevan nombre para los lectores de pantalla (un símbolo solo no se lee bien).
   const NAMES = { "¿": "abre interrogación", "¡": "abre exclamación" };
-  for (const k of ["á", "é", "í", "ó", "ú", "ñ", "ü", "¿", "¡"]) {
+  for (const k of ["á", "é", "í", "ó", "ú", "ñ", ...(marks ? ["¿", "¡"] : [])]) {
     const key = button("key", k, () => { input.setRangeText(k, input.selectionStart, input.selectionEnd, "end"); input.focus(); });
     if (NAMES[k]) { key.setAttribute("aria-label", NAMES[k]); key.lang = "es"; }
     keys.append(key);
   }
+  let level = 0;
   const check = () => {
     if (!input.value.trim()) return input.focus();
     input.disabled = true;
-    onCheck(input.value);
+    // Se cierra el teclado del móvil para que se vea la corrección.
+    input.blur();
+    onCheck(input.value, { hinted: level > 0 });
   };
-  if (!multiline) input.onkeydown = (e) => { if (e.key === "Enter") check(); };
+  // Intro (o «Enviar» en el teclado del móvil) comprueba; se cancela la acción por defecto
+  // para que esa misma pulsación no active el botón «Continuar» de la corrección.
+  if (!multiline) input.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); check(); } };
   box.append(input, keys);
   if (hint) {
-    // Cada pulsación descubre más letras; los espacios y signos se ven siempre.
-    let level = 0;
-    const shown = el("p", "hint-mask");
+    const shown = el("div", "hint-mask");
     shown.lang = "es";
     shown.dir = "ltr";
     shown.hidden = true;
     const hintBtn = button("link", "💡 " + ui("hint"), () => {
       level = Math.min(level + 1, 2);
-      const letters = [...hint];
-      const reveal = level === 1 ? 1 : Math.ceil(letters.filter((c) => /\p{L}/u.test(c)).length / 2);
-      let seen = 0;
-      shown.textContent = letters.map((c) => (/\p{L}|\p{N}/u.test(c) ? (seen++ < reveal ? c : "_") : c)).join(" ");
+      // Una casilla por letra; los espacios separan palabras. En la 2.ª pista, la primera letra.
+      shown.replaceChildren();
+      let first = true;
+      for (const c of hint) {
+        if (/\p{L}|\p{N}/u.test(c)) {
+          shown.append(el("span", "hint-box", level === 2 && first ? c : ""));
+          first = false;
+        } else if (c === " ") shown.append(el("span", "hint-gap"));
+      }
+      const count = [...hint].filter((c) => /\p{L}|\p{N}/u.test(c)).length;
+      shown.append(txt("span", "hint-count", ui("hintLetters", count), save.native));
       shown.hidden = false;
       if (level === 2) hintBtn.disabled = true;
     });

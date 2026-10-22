@@ -38,8 +38,10 @@ Un curso de español de A1 a A2, organizado por situaciones de la vida en Españ
 - Cada unidad empieza con un objetivo concreto: «Al terminar podrás pedir cita en el médico».
 - Cada unidad tiene lecciones cortas de 3 a 5 minutos (palabras, escuchar, frases y una práctica final de premio).
 - **Cada palabra se presenta antes de preguntarla** y se practica sobre todo **escribiéndola**: al dictado (se oye y se escribe) y desde su idioma. Reconocer entre opciones solo se usa justo después de presentar la palabra.
+- **Solo se usa un dibujo si representa la palabra sin dudas** (🍞 pan, 🚑 ambulancia). Las palabras abstractas o dudosas (adiós, por favor, perdón, alquiler…) no llevan dibujo, y los botones usan iconos con texto, no emojis.
 - **Nunca se pregunta solo con un dibujo**: un emoji se interpreta de muchas maneras (🥺 puede ser «por favor», «perdón» o «lo siento»). El dibujo acompaña a la palabra o a la traducción, nunca las sustituye. Quien tiene el español como idioma hace dictados en lugar de ejercicios de traducción.
 - La corrección marca **en qué letra está el fallo** (también las tildes), no solo si está bien o mal.
+- Las pistas nunca resuelven la palabra: primero dicen cuántas letras tiene y después la primera letra. Una palabra acertada con pista vuelve a Repasar.
 - Los errores vuelven al final de la lección y en la pestaña Practicar.
 
 ### Practicar (gratis)

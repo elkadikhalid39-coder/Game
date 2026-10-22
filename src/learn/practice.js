@@ -12,6 +12,7 @@ import { UNITS, doneIn } from "./course.js";
 import { startReview } from "./lesson.js";
 import { wordErrors, normalize } from "./answers.js";
 import { writeBox, diffView } from "./write-box.js";
+import { audioControls, playButton } from "../ui/audio-buttons.js";
 
 const SESSION = { words: 8, sentences: 5 };
 
@@ -37,11 +38,11 @@ function showPractice() {
 }
 
 // ---------- Dictado ----------
-// Elementos: { text (español), meaning (en su idioma), id? (palabra, para Repasar), emoji? }.
+// Elementos: { text (español), meaning (en su idioma), id? (palabra, para Repasar) }.
 function dictationItems(mode) {
   const units = openUnits();
   if (mode === "words") {
-    return shuffle(units.flatMap((u) => u.words.map((w) => ({ id: w.id, emoji: w.emoji, text: tr(w.id, G), meaning: tr(w.id, save.native) })))).slice(0, SESSION.words);
+    return shuffle(units.flatMap((u) => u.words.map((w) => ({ id: w.id, text: tr(w.id, G), meaning: tr(w.id, save.native) })))).slice(0, SESSION.words);
   }
   const ids = units.flatMap((u) => u.phrases.flatMap((p) => ["q_" + p.id, "a_" + p.id]));
   return shuffle(ids).slice(0, SESSION.sentences).map((id) => ({ text: tr(id, G), meaning: tr(id, save.native) }));
@@ -52,7 +53,7 @@ function dictation(mode) {
     // El dictado necesita oír: se ofrece volver a activar el audio.
     screen("main");
     app.append(button("back", "← " + ui("back"), () => go("review")), el("h1", "", "🎧 " + ui("dictationTitle")), speech(ui("dictNeedsAudio"), "talk"),
-      button("btn big", "🔊 " + ui("resumeAudio"), () => { save.noAudioUntil = 0; persist(); dictation(mode); }));
+      button("btn big", ui("resumeAudio"), () => { save.noAudioUntil = 0; persist(); dictation(mode); }));
     return;
   }
   const items = dictationItems(mode);
@@ -67,30 +68,26 @@ function dictation(mode) {
     fill.style.width = (i / items.length) * 100 + "%";
     bar.append(fill);
     head.append(closeButton(() => go("review")), bar);
-    const audio = el("div", "listen-pair");
-    const slow = button("listen big slow", "🐢", () => speak(it.text, G, { slow: true }));
-    slow.setAttribute("aria-label", ui("slow"));
-    const normal = button("listen big", "🔊", () => speak(it.text, G));
-    normal.setAttribute("aria-label", ui("play"));
-    audio.append(normal, slow);
+    const audio = audioControls(it.text, { size: "big" });
     const box = writeBox({
       hint: mode === "words" ? it.text : null,
       multiline: mode === "sentences",
-      onCheck: (value) => {
+      marks: mode === "sentences",
+      onCheck: (value, { hinted }) => {
         // En el dictado la ortografía es lo que se practica: no se aceptan erratas ni tildes de menos
         // (sí se ignoran mayúsculas, signos y el artículo inicial).
         const errors = mode === "words" ? (normalize(value) === normalize(it.text) ? 0 : 1) : wordErrors(value, it.text);
         const r = { ok: errors === 0 };
         results[i] = { value, errors };
-        if (it.id) noteWord(it.id, r.ok);
+        if (it.id) noteWord(it.id, r.ok && !hinted);
         beep(r.ok);
         speak(it.text, G);
         const extra = el("div", "sheet-extra");
         // La corrección se muestra siempre que no sea idéntica (también las tildes y los signos).
         if (normalize(value) !== normalize(it.text) || !r.ok) extra.append(diffView(value, it.text));
-        if (save.native !== G || it.emoji) extra.append(txt("p", "sheet-meaning", (it.emoji ? it.emoji + " " : "") + (save.native !== G ? it.meaning : ""), save.native));
-        const title = r.ok ? ui("great") : mode === "sentences" ? ui("wordErrorsN", errors) : ui("answer") + ":";
-        sheet(r.ok, title, r.ok ? "" : it.text, G, () => run(i + 1), extra);
+        if (save.native !== G) extra.append(txt("p", "sheet-meaning", "= " + it.meaning, save.native));
+        const title = r.ok ? (hinted ? ui("okWithHint") : ui("great")) : mode === "sentences" ? ui("wordErrorsN", errors) : ui("answer") + ":";
+        sheet(r.ok, title, "", G, () => run(i + 1), extra);
       },
     });
     box.el.dataset.text = it.text; // para las pruebas automáticas
@@ -154,12 +151,11 @@ function dictionary() {
       for (const w of rows) {
         shown++;
         const row = el("div", "dict-row");
-        const play = button("listen small", "🔊", () => speak(tr(w.id, G), G));
-        play.setAttribute("aria-label", ui("play") + ": " + tr(w.id, G));
+        const play = playButton(tr(w.id, G), ui("play") + ": " + tr(w.id, G));
         const words = el("div", "dict-words");
         words.append(txt("strong", "", tr(w.id, G), G));
         if (N !== G) words.append(txt("span", "", tr(w.id, N), N));
-        row.append(el("span", "dict-emoji", w.emoji), words);
+        row.append(el("span", "dict-emoji", w.emoji || ""), words);
         if (save.learned.includes(w.id)) row.append(el("span", "pill free", "✓"));
         row.append(play);
         list.append(row);

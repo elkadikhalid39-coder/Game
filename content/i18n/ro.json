@@ -251,7 +251,9 @@
     "dictionaryTitle": "Dicționar",
     "dictionaryDesc": "Toate cuvintele cursului, cu sunet",
     "searchWords": "Caută în spaniolă sau în limba ta",
-    "noResults": "Niciun rezultat"
+    "noResults": "Niciun rezultat",
+    "hintLetters": "{x} litere",
+    "okWithHint": "Corect, cu indiciu. O vei repeta mai târziu."
   },
   "t": {
     "hola": "Bună",

@@ -251,7 +251,9 @@
     "dictionaryTitle": "Diccionario",
     "dictionaryDesc": "Todas las palabras del curso, con audio",
     "searchWords": "Busca en español o en tu idioma",
-    "noResults": "No hay resultados"
+    "noResults": "No hay resultados",
+    "hintLetters": "{x} letras",
+    "okWithHint": "Bien, con pista. La repasarás más adelante."
   },
   "t": {
     "hola": "Hola",

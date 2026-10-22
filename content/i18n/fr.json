@@ -251,7 +251,9 @@
     "dictionaryTitle": "Dictionnaire",
     "dictionaryDesc": "Tous les mots du cours, avec le son",
     "searchWords": "Cherchez en espagnol ou dans votre langue",
-    "noResults": "Aucun résultat"
+    "noResults": "Aucun résultat",
+    "hintLetters": "{x} lettres",
+    "okWithHint": "Bien, avec un indice. Vous le réviserez plus tard."
   },
   "t": {
     "hola": "Bonjour",

@@ -252,7 +252,9 @@
     "dictionaryTitle": "القاموس",
     "dictionaryDesc": "كل كلمات الدورة مع الصوت",
     "searchWords": "ابحث بالإسبانية أو بلغتك",
-    "noResults": "لا توجد نتائج"
+    "noResults": "لا توجد نتائج",
+    "hintLetters": "{x} أحرف",
+    "okWithHint": "صحيح، بمساعدة تلميح. ستراجعها لاحقاً."
   },
   "t": {
     "hola": "مرحبا",

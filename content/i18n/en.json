@@ -251,7 +251,9 @@
     "dictionaryTitle": "Dictionary",
     "dictionaryDesc": "All the course words, with audio",
     "searchWords": "Search in Spanish or your language",
-    "noResults": "No results"
+    "noResults": "No results",
+    "hintLetters": "{x} letters",
+    "okWithHint": "Right, with a hint. You'll review it later."
   },
   "t": {
     "hola": "Hello",

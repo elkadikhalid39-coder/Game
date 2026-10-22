@@ -3,12 +3,12 @@
     "id": "saludos", "emoji": "👋", "color": "#c2410c",
     "words": [
       {"id":"hola","emoji":"👋"},
-      {"id":"adios","emoji":"🚪"},
-      {"id":"gracias","emoji":"🙏"},
-      {"id":"porfavor","emoji":"🥺"},
+      {"id":"adios"},
+      {"id":"gracias"},
+      {"id":"porfavor"},
       {"id":"si","emoji":"✅"},
       {"id":"no","emoji":"❌"},
-      {"id":"perdon","emoji":"😅"},
+      {"id":"perdon"},
       {"id":"buenasnoches","emoji":"🌙"}
     ],
     "phrases": [
@@ -99,7 +99,7 @@
       {"id":"ambulancia","emoji":"🚑"},
       {"id":"policia","emoji":"👮"},
       {"id":"ayuda","emoji":"🆘"},
-      {"id":"farmacia","emoji":"⚕️"}
+      {"id":"farmacia"}
     ],
     "phrases": [
       {"id":"pasa","wrong":["precio","nombre","donde"]},
@@ -109,13 +109,13 @@
   {
     "id": "trabajo", "emoji": "💼", "color": "#0b7285",
     "words": [
-      {"id":"contrato","emoji":"📝"},
-      {"id":"nomina","emoji":"🧾"},
-      {"id":"horario","emoji":"🕘"},
-      {"id":"jefe","emoji":"👔"},
+      {"id":"contrato"},
+      {"id":"nomina"},
+      {"id":"horario"},
+      {"id":"jefe"},
       {"id":"empresa","emoji":"🏢"},
-      {"id":"curriculum","emoji":"📄"},
-      {"id":"entrevista","emoji":"🤝"},
+      {"id":"curriculum"},
+      {"id":"entrevista"},
       {"id":"vacaciones","emoji":"🏖️"}
     ],
     "phrases": [
@@ -127,12 +127,12 @@
   {
     "id": "vivienda", "emoji": "🏠", "color": "#9c4f00",
     "words": [
-      {"id":"alquiler","emoji":"📃"},
+      {"id":"alquiler"},
       {"id":"llave","emoji":"🔑"},
       {"id":"habitacion","emoji":"🛏️"},
       {"id":"cocina","emoji":"🍳"},
       {"id":"bano","emoji":"🛁"},
-      {"id":"vecino","emoji":"🏘️"},
+      {"id":"vecino"},
       {"id":"luz","emoji":"💡"},
       {"id":"calefaccion","emoji":"🔥"}
     ],
@@ -146,13 +146,13 @@
     "id": "papeleo", "emoji": "📋", "color": "#364fc7",
     "words": [
       {"id":"cita","emoji":"📅"},
-      {"id":"padron","emoji":"📑"},
+      {"id":"padron"},
       {"id":"formulario","emoji":"📋"},
       {"id":"firma","emoji":"✍️"},
       {"id":"pasaporte","emoji":"🛂"},
       {"id":"documento","emoji":"🪪"},
       {"id":"ayuntamiento","emoji":"🏛️"},
-      {"id":"fotocopia","emoji":"📠"}
+      {"id":"fotocopia"}
     ],
     "phrases": [
       {"id":"cita","wrong":["alquiler","origen","averia"]},

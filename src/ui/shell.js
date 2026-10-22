@@ -16,9 +16,27 @@ export const setTab = (name) => { currentTab = name; };
 
 // Cada cambio de pantalla incrementa screenId; así una acción con retraso sabe si sigue en la misma pantalla.
 export let screenId = 0;
+
+// Protección contra toques que «atraviesan» a la pantalla nueva: el botón «Continuar» o «Saltar» de la
+// pantalla siguiente suele aparecer justo debajo del dedo. No cuenta un clic que:
+//   - viene de un toque que empezó antes del cambio (el mismo toque, repetido por el navegador);
+//   - es un segundo toque con el dedo muy seguido (menos de 0,35 s después del cambio);
+//   - lo genera el teclado (Intro) justo después del cambio, como el «Enviar» del teclado del móvil.
+let changedAt = 0, downAt = 0, downType = "";
+const markChange = () => { changedAt = performance.now(); };
+document.addEventListener("pointerdown", (e) => { downAt = performance.now(); downType = e.pointerType; }, true);
+document.addEventListener("click", (e) => {
+  if (!e.isTrusted || !changedAt) return;
+  const since = performance.now() - changedAt;
+  const fromKeyboard = e.detail === 0;
+  const stale = !fromKeyboard && downAt < changedAt && since < 1000;
+  const tooSoon = (fromKeyboard || downType === "touch") && since < 350;
+  if (stale || tooSoon) { e.preventDefault(); e.stopImmediatePropagation(); }
+}, true);
 // layout: "plain" (sin barras), "main" (barras superior e inferior), "lesson" (cabecera propia)
 export function screen(layout = "main", lang = save.native) {
   screenId++;
+  markChange();
   document.querySelector(".sheet")?.remove();
   app.replaceChildren();
   app.dir = lang ? dirOf(lang) : "ltr";
@@ -58,7 +76,8 @@ export function sheet(ok, title, detail, detailLang, onContinue, extra) {
   s.append(inner);
   s.dir = dirOf(save.native);
   document.body.append(s);
-  next.focus();
+  markChange();
+  next.focus({ preventScroll: true });
 }
 
 // Lluvia de emojis al terminar (se omite en modo calma o con movimiento reducido).

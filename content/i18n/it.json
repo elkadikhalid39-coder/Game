@@ -251,7 +251,9 @@
     "dictionaryTitle": "Dizionario",
     "dictionaryDesc": "Tutte le parole del corso, con audio",
     "searchWords": "Cerca in spagnolo o nella tua lingua",
-    "noResults": "Nessun risultato"
+    "noResults": "Nessun risultato",
+    "hintLetters": "{x} lettere",
+    "okWithHint": "Giusto, con un suggerimento. Lo ripasserai più avanti."
   },
   "t": {
     "hola": "Ciao",

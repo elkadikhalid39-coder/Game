@@ -176,7 +176,7 @@ test("saltar y pausar el audio", async () => {
   await page.click(".footer .btn"); // la siguiente palabra se presenta antes de escucharla
   // «No puedo escuchar ahora» convierte los ejercicios de escuchar en ejercicios de leer.
   await page.click('.exits .link:has-text("🔇")');
-  const noListen = !(await page.$(".listen-pair")) && !!(await page.$(".paused-note"));
+  const noListen = !(await page.$(".audio-controls.big")) && !!(await page.$(".paused-note"));
   const done = await playLesson(page);
   return [moved && noListen && done, errors];
 });
@@ -197,6 +197,60 @@ test("unidades nuevas (Papeleo, escrita en ruso)", async () => {
   await page.click(".node-wrap.current .node");
   const done = await playLesson(page);
   return [done, errors];
+});
+
+// ---------- Fallos que encontró el usuario en el móvil (22/10/2026) ----------
+test("Intro en el teclado muestra la corrección (no salta a la siguiente)", async () => {
+  const { page, errors } = await open({ native: "es" });
+  await page.click(".node-wrap.current .node");
+  await page.click(".footer .btn"); // presentación de la palabra
+  await page.fill("#write-answer", "xxxxx");
+  await page.press("#write-answer", "Enter");
+  await page.waitForTimeout(300);
+  const shown = !!(await page.$(".sheet.bad .diff"));
+  return [shown && !!(await page.$("#write-answer")), errors];
+});
+
+test("dos toques rápidos en «Continuar» no se saltan la palabra nueva", async () => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+  const { page, errors } = await open({ native: "fr" }, { context });
+  // Entre toques, una pausa como la de una persona (la app ignora toques a menos de 0,35 s de un cambio de pantalla).
+  const human = () => page.waitForTimeout(450);
+  await human();
+  await page.tap(".node-wrap.current .node");
+  await human();
+  await page.tap(".footer .btn"); // palabra 1
+  await human();
+  await page.tap('.opt[data-ok="1"]'); // la elige bien
+  await human();
+  // Dos toques seguidos donde está «Continuar»: el segundo cae sobre el «Continuar» de la palabra 2.
+  const box = await (await page.$(".sheet .btn")).boundingBox();
+  const x = box.x + box.width / 2, y = box.y + box.height / 2;
+  await page.touchscreen.tap(x, y);
+  await page.touchscreen.tap(x, y);
+  await page.waitForTimeout(200);
+  return [!!(await page.$(".card.intro")), errors];
+});
+
+test("las pistas no resuelven la palabra y no hay emojis dudosos", async () => {
+  const { page, errors } = await open({ native: "es" });
+  await page.click(".node-wrap.current .node");
+  // Adiós se presenta sin dibujo (un emoji de puerta no significa «adiós»).
+  let adios = null;
+  for (let g = 0; g < 12 && !adios; g++) {
+    if ((await page.$(".card.intro")) && (await page.innerText(".card.intro .bigword")) === "Adiós") adios = !(await page.$(".card.intro .bigemoji"));
+    if (await page.$(".footer .btn")) await page.click(".footer .btn"); else if (await page.$(".sheet .btn")) await page.click(".sheet .btn"); else await answerCurrent(page);
+  }
+  // En un dictado, dos pistas: casillas vacías y luego solo la primera letra.
+  while (!(await page.$("#write-answer"))) {
+    if (await page.$(".footer .btn")) await page.click(".footer .btn"); else if (await page.$(".sheet .btn")) await page.click(".sheet .btn"); else await answerCurrent(page);
+  }
+  await page.click('.write-box .link:has-text("Pista")');
+  const first = await page.$$eval(".hint-box", (b) => b.filter((x) => x.textContent).length);
+  await page.click('.write-box .link:has-text("Pista")');
+  const second = await page.$$eval(".hint-box", (b) => b.filter((x) => x.textContent).length);
+  const noTurtle = !(await page.content()).includes("🐢");
+  return [adios === true && first === 0 && second === 1 && noTurtle, errors];
 });
 
 // ---------- Practicar: dictado y diccionario ----------

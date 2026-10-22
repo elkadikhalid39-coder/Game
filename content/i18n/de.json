@@ -251,7 +251,9 @@
     "dictionaryTitle": "Wörterbuch",
     "dictionaryDesc": "Alle Wörter des Kurses, mit Ton",
     "searchWords": "Suche auf Spanisch oder in deiner Sprache",
-    "noResults": "Keine Ergebnisse"
+    "noResults": "Keine Ergebnisse",
+    "hintLetters": "{x} Buchstaben",
+    "okWithHint": "Richtig, mit Tipp. Du wiederholst es später."
   },
   "t": {
     "hola": "Hallo",
