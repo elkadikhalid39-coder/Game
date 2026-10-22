@@ -5,7 +5,7 @@ import { ui } from "../core/i18n.js";
 import { register, go } from "../core/router.js";
 import { pick } from "../core/util.js";
 import { beep } from "../core/audio.js";
-import { el, button } from "../ui/dom.js";
+import { el, button, closeButton } from "../ui/dom.js";
 import { mascot } from "../ui/mascot.js";
 import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { factNote } from "../ui/fact.js";
@@ -75,7 +75,7 @@ function startTest(id) {
   const timer = countdown(t.minutes, () => finish(true));
   const head = el("div", "lesson-head exam-head");
   const count = el("span", "q-meta");
-  head.append(button("icon-btn", "✕", () => go("pce-mocks")), el("strong", "", subjectName(id)), timer.el);
+  head.append(closeButton(() => go("pce-mocks")), el("strong", "", subjectName(id)), timer.el);
   const warn = el("p", "notice warn-many");
   const paint = () => {
     const n = answers.filter((a) => a !== null).length;
@@ -258,7 +258,7 @@ function spelling() {
     const q = list[s.i];
     screen("lesson");
     const head = el("div", "lesson-head");
-    head.append(button("icon-btn", "✕", () => go("pce-writing")), el("span", "q-meta", `${ui("spellingTitle")} · ${s.i + 1} / ${list.length}`));
+    head.append(closeButton(() => go("pce-writing")), el("span", "q-meta", `${ui("spellingTitle")} · ${s.i + 1} / ${list.length}`));
     const card = el("div", "card exam-q");
     card.append(el("p", "q-text", ui("whichCorrect")));
     const opts = el("div", "options");

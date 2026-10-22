@@ -61,7 +61,7 @@ function showRoute(a) {
     app.append(step("🏫", ui("stepEnroll"), ["pce.admision"]));
     app.append(step("🧮", ui("stepGrade"), ["pce.nota"], toCalc));
     if (a.resident === "no") {
-      const visa = step("✈️", ui("stepVisa"), ["pce.no_visado"]);
+      const visa = step("✈️", ui("stepVisa"), ["pce.no_visado", "pce.visado_requisitos"]);
       visa.classList.add("important");
       app.append(visa);
     }

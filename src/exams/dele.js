@@ -5,7 +5,7 @@ import exam from "../../content/exams/dele-a2.json";
 import { ui } from "../core/i18n.js";
 import { register, go } from "../core/router.js";
 import { speak, speakDialog } from "../core/audio.js";
-import { el, button } from "../ui/dom.js";
+import { el, button, closeButton } from "../ui/dom.js";
 import { mascot } from "../ui/mascot.js";
 import { app, screen, celebrate } from "../ui/shell.js";
 import { factNote } from "../ui/fact.js";
@@ -53,7 +53,7 @@ function examShell(title, minutes, onTimeUp) {
   screen("lesson");
   const timer = countdown(minutes, onTimeUp);
   const head = el("div", "lesson-head exam-head");
-  head.append(button("icon-btn", "✕", () => go("dele")), el("strong", "", title), timer.el);
+  head.append(closeButton(() => go("dele")), el("strong", "", title), timer.el);
   return { head, timer };
 }
 

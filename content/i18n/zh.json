@@ -230,7 +230,8 @@
     "calcMissing": "请输入高中成绩和至少一门 PCE 成绩（0 到 10）。",
     "accessGrade": "录取资格分",
     "admissionGrade": "录取分",
-    "calcBelow5": "录取资格分低于 5 分无法进入大学。"
+    "calcBelow5": "录取资格分低于 5 分无法进入大学。",
+    "close": "退出"
   },
   "t": {
     "hola": "你好",

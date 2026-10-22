@@ -230,7 +230,8 @@
     "calcMissing": "Scrie media de liceu și cel puțin o notă PCE (de la 0 la 10).",
     "accessGrade": "Nota de acces",
     "admissionGrade": "Nota de admitere",
-    "calcBelow5": "Cu o notă de acces sub 5 nu poți intra la universitate."
+    "calcBelow5": "Cu o notă de acces sub 5 nu poți intra la universitate.",
+    "close": "Ieșire"
   },
   "t": {
     "hola": "Bună",

@@ -230,7 +230,8 @@
     "calcMissing": "Saisissez votre note du baccalauréat et au moins une note des PCE (de 0 à 10).",
     "accessGrade": "Note d'accès",
     "admissionGrade": "Note d'admission",
-    "calcBelow5": "Avec une note d'accès inférieure à 5, on ne peut pas entrer à l'université."
+    "calcBelow5": "Avec une note d'accès inférieure à 5, on ne peut pas entrer à l'université.",
+    "close": "Quitter"
   },
   "t": {
     "hola": "Bonjour",

@@ -11,7 +11,7 @@ import { save, persist, TARGET as G } from "../core/state.js";
 import { go } from "../core/router.js";
 import { shuffle, pick } from "../core/util.js";
 import { speak, beep } from "../core/audio.js";
-import { el, txt, button } from "../ui/dom.js";
+import { el, txt, button, closeButton } from "../ui/dom.js";
 import { mascot, speech } from "../ui/mascot.js";
 import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { LESSON_TYPES, wordsOf, unitOfWord, unitOfPhrase, unitComplete } from "./course.js";
@@ -81,7 +81,9 @@ function audioButtons(text, cls = "") {
   const row = el("span", "audio-row " + cls);
   const slow = button("listen small slow", "🐢", () => speak(text, G, { slow: true }));
   slow.setAttribute("aria-label", ui("slow"));
-  row.append(button("listen small", "🔊", () => speak(text, G)), slow);
+  const normal = button("listen small", "🔊", () => speak(text, G));
+  normal.setAttribute("aria-label", ui("play"));
+  row.append(normal, slow);
   return row;
 }
 
@@ -99,7 +101,7 @@ function runLesson(s) {
   const fillBar = el("div");
   fillBar.style.width = (s.i / s.list.length) * 100 + "%";
   bar.append(fillBar);
-  head.append(button("icon-btn", "✕", () => go(s.review ? "review" : "path")), bar);
+  head.append(closeButton(() => go(s.review ? "review" : "path")), bar);
   app.append(head);
   const next = () => { s.i++; runLesson(s); };
   const say = (text) => { if (!audioPaused()) speak(text, G); };
@@ -165,7 +167,9 @@ function runLesson(s) {
     const big = el("div", "listen-pair");
     const slow = button("listen big slow", "🐢", () => speak(word, G, { slow: true }));
     slow.setAttribute("aria-label", ui("slow"));
-    big.append(button("listen big", "🔊", () => speak(word, G)), slow);
+    const normal = button("listen big", "🔊", () => speak(word, G));
+    normal.setAttribute("aria-label", ui("play"));
+    big.append(normal, slow);
     area.append(big);
     const opts = el("div", "options two");
     for (const o of ex.options) addOption(opts, N === G ? o.emoji : tr(o.id, N), N, o === ex.item, word);

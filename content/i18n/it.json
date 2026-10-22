@@ -230,7 +230,8 @@
     "calcMissing": "Inserisci il voto delle superiori e almeno un voto delle PCE (da 0 a 10).",
     "accessGrade": "Voto di accesso",
     "admissionGrade": "Voto di ammissione",
-    "calcBelow5": "Con un voto di accesso inferiore a 5 non si può entrare all'università."
+    "calcBelow5": "Con un voto di accesso inferiore a 5 non si può entrare all'università.",
+    "close": "Esci"
   },
   "t": {
     "hola": "Ciao",

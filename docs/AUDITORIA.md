@@ -37,6 +37,21 @@ Al cerrar cada fase, y siempre antes de publicar, se repasa esta lista y se anot
 
 ## Registro
 
+### 2026-10-22 (tarde): revisión de código y datos pendientes
+
+- **Visado de estudios:** pasa a *confirmado* con el Real Decreto 1155/2024 y la ficha consular de La Paz (06/06/2025). Nuevo dato `pce.visado_requisitos`.
+- **Web del Instituto Cervantes:** sigue dando error 500. El reparto 10-3-2-3-7 del CCSE sigue como fuente secundaria.
+- **Revisión de código (13 hallazgos), corregidos:**
+  - la cabecera de unidad quedaba 4 px bajo la barra superior;
+  - el contador de Repasar tenía un contraste de 2,8:1;
+  - las filas bloqueadas y los textos de la cabecera de unidad perdían contraste por la transparencia;
+  - los botones ✕ y 🔊 no tenían nombre para lectores de pantalla;
+  - la auditoría de accesibilidad ignoraba la transparencia, aceptaba símbolos como nombre y podía dejar el servidor abierto si fallaba;
+  - `npm run audit` no compilaba antes;
+  - `check-facts` fallaba con un dato sin `reviewDays`.
+- **Pendiente (no afecta a quien usa la app):** unificar el arranque del servidor de pruebas entre `smoke-test.js` y `a11y-audit.js`.
+
+
 ### 2026-10-22: fases 1 a 5 (versión para probar)
 
 **Resultado de la lista:**

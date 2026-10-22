@@ -230,7 +230,8 @@
     "calcMissing": "Escreve a tua nota do secundário e pelo menos uma nota das PCE (de 0 a 10).",
     "accessGrade": "Nota de acesso",
     "admissionGrade": "Nota de admissão",
-    "calcBelow5": "Com uma nota de acesso inferior a 5 não se pode entrar na universidade."
+    "calcBelow5": "Com uma nota de acesso inferior a 5 não se pode entrar na universidade.",
+    "close": "Sair"
   },
   "t": {
     "hola": "Olá",

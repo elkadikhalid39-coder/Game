@@ -1,6 +1,6 @@
 // Auditoría básica de accesibilidad en un navegador real: recorre las pantallas principales y comprueba
 // nombre accesible de controles, tamaño de los botones (mínimo 44 px de alto) y contraste del texto (4,5:1; 3:1 si es grande).
-// Uso: node tools/a11y-audit.js  (necesita dist/ compilado; PW_CHROMIUM=/ruta/a/chromium si hace falta)
+// Uso: node tools/a11y-audit.js  (necesita dist/ compilado: npm run audit compila antes; PW_CHROMIUM=/ruta/a/chromium si hace falta)
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { chromium } from "./playwright.js";
@@ -21,6 +21,8 @@ const TOURS = [
   ["lección", { native: "ar" }, [".current .node"]],
   ["respuesta incorrecta", { native: "es" }, [".current .node", "?.footer .btn", "?.footer .btn", "?.footer .btn", '.opt[data-ok="0"]']],
   ["perfil", { native: "es" }, ['.tab[data-tab="profile"]']],
+  // Con errores guardados aparece el contador rojo de la pestaña Repasar.
+  ["repasar", { native: "es", mistakes: [{ k: "w", id: "hola" }] }, ['.tab[data-tab="review"]']],
   ["exámenes", { native: "ur" }, ['.tab[data-tab="exams"]']],
   ["nacionalidad", { native: "es" }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(1)"]],
   ["ccse", { native: "es", passes: { nacionalidad: true } }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(1)", ".menu-row:nth-child(2)"]],
@@ -30,6 +32,7 @@ const TOURS = [
 ];
 
 const problems = [];
+try {
 for (const [name, data, clicks] of TOURS) {
   const page = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
   await page.addInitScript((s) => {
@@ -39,7 +42,10 @@ for (const [name, data, clicks] of TOURS) {
   await page.goto(`http://localhost:${PORT}/`);
   // Un selector con «?» delante es opcional: se pulsa solo si está en pantalla.
   for (const c of clicks) {
-    if (c.startsWith("?")) { if (await page.$(c.slice(1))) await page.click(c.slice(1)); continue; }
+    if (c.startsWith("?")) {
+      if (await page.$(c.slice(1))) await page.click(c.slice(1), { timeout: 5000 }).catch(() => problems.push(`${name}: no se pudo pulsar ${c}`));
+      continue;
+    }
     await page.click(c, { timeout: 5000 }).catch(() => problems.push(`${name}: no se pudo pulsar ${c}`));
   }
   await page.waitForTimeout(300);
@@ -58,12 +64,14 @@ for (const [name, data, clicks] of TOURS) {
       }
       return "rgb(255,255,255)";
     };
-    const label = (e) => e.innerText?.trim() || e.getAttribute("aria-label") || e.title || e.labels?.[0]?.innerText || e.placeholder;
+    // Nombre accesible: aria-label primero; un nombre hecho solo de símbolos («✕», «›») no sirve a un lector de pantalla.
+    const label = (e) => e.getAttribute("aria-label") || e.labels?.[0]?.innerText || e.innerText?.trim() || e.title || e.placeholder;
+    const named = (e) => /[\p{L}\p{N}]/u.test(label(e) || "");
     for (const e of document.querySelectorAll("button, a, input, select, textarea")) {
       const r = e.getBoundingClientRect();
       if (!r.width || getComputedStyle(e).visibility === "hidden") continue;
       const desc = (e.tagName + " «" + (label(e) || "").slice(0, 30) + "»");
-      if (!label(e)) out.push("sin nombre accesible: " + e.outerHTML.slice(0, 80));
+      if (!named(e)) out.push("sin nombre accesible: " + e.outerHTML.slice(0, 80));
       if (e.tagName === "BUTTON" && r.height < 44) out.push(`botón de ${Math.round(r.height)} px de alto: ${desc}`);
     }
     for (const e of document.querySelectorAll("body *")) {
@@ -71,7 +79,13 @@ for (const [name, data, clicks] of TOURS) {
       const own = [...e.childNodes].some((n) => n.nodeType === 3 && n.textContent.replace(/[\p{Extended_Pictographic}\uFE0F\u200D\s]/gu, ""));
       if (!own || !e.getBoundingClientRect().width) continue;
       const s = getComputedStyle(e);
-      const l1 = lum(s.color), l2 = lum(bg(e));
+      // La transparencia (opacity de la propia caja o de sus antepasados) aclara el texto hacia el fondo.
+      let alpha = 1;
+      for (let n = e; n; n = n.parentElement) alpha *= Number(getComputedStyle(n).opacity);
+      if (e.closest(":disabled")) continue; // los controles desactivados no tienen requisito de contraste (WCAG 1.4.3)
+      const back = bg(e).match(/[\d.]+/g).slice(0, 3).map(Number);
+      const fore = s.color.match(/[\d.]+/g).slice(0, 3).map(Number).map((v, i) => v * alpha + back[i] * (1 - alpha));
+      const l1 = lum(`rgb(${fore.join(",")})`), l2 = lum(`rgb(${back.join(",")})`);
       const ratio = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
       const large = parseFloat(s.fontSize) >= 24 || (parseFloat(s.fontSize) >= 18.66 && Number(s.fontWeight) >= 700);
       if (ratio < (large ? 3 : 4.5)) out.push(`contraste ${ratio.toFixed(2)}: «${e.textContent.trim().slice(0, 40)}»`);
@@ -81,8 +95,11 @@ for (const [name, data, clicks] of TOURS) {
   for (const f of found) problems.push(`${name}: ${f}`);
   await page.context().close();
 }
-await browser.close();
-try { process.kill(-server.pid); } catch { /* ya cerrado */ }
+} finally {
+  // Pase lo que pase, se cierran el navegador y el servidor (si no, el puerto queda ocupado para la próxima vez).
+  await browser.close().catch(() => {});
+  try { process.kill(-server.pid); } catch { /* ya cerrado */ }
+}
 if (problems.length) { console.error(problems.join("\n")); console.error(`\n${problems.length} avisos de accesibilidad`); process.exit(1); }
 console.log(`OK accesibilidad: ${TOURS.length} pantallas sin avisos.`);
 process.exit(0);

@@ -4,7 +4,7 @@ import { ui } from "../core/i18n.js";
 import { register, go } from "../core/router.js";
 import { shuffle, pick } from "../core/util.js";
 import { beep } from "../core/audio.js";
-import { el, button } from "../ui/dom.js";
+import { el, button, closeButton } from "../ui/dom.js";
 import { mascot } from "../ui/mascot.js";
 import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { factNote, extLink } from "../ui/fact.js";
@@ -76,7 +76,7 @@ function practice(task) {
     const q = s.list[s.i];
     screen("lesson");
     const head = el("div", "lesson-head");
-    head.append(button("icon-btn", "✕", () => go("ccse")), el("span", "q-meta", ui("ccseT" + task)));
+    head.append(closeButton(() => go("ccse")), el("span", "q-meta", ui("ccseT" + task)));
     app.append(head, questionCard(q, s.i + 1, s.list.length, null, (i, btn) => {
       const ok = i === q.answer;
       beep(ok);

@@ -17,6 +17,8 @@
   --mint-text: #0b6b4b;
   --mint-btn: #0f7a57; /* fondo de los botones principales: contraste 5,3:1 con el texto blanco */
   --mint-btn-dark: #0a5a40;
+  --coral-btn: #b3261e; /* botón de error y contador de Repasar: contraste 6,5:1 con el texto blanco */
+  --coral-btn-dark: #861b15;
   --coral: #ff6b57;
   --coral-dark: #d4493a;
   --coral-soft: #ffe3df;
@@ -54,7 +56,7 @@ h2 { font-size: 1.2rem; font-weight: 600; margin: 0 0 10px; }
 #topbar {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
   display: flex; align-items: center; gap: 10px; max-width: 600px; margin: 0 auto;
-  padding: 10px 0; background: var(--bg);
+  padding: 8px 0; background: var(--bg); /* 8 + 44 (botón de idioma) + 8 = 60 px: la cabecera de unidad se pega justo debajo */
 }
 #topbar:empty, #tabbar:empty { display: none; }
 #topbar .stat { font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -81,7 +83,7 @@ h2 { font-size: 1.2rem; font-weight: 600; margin: 0 0 10px; }
 .tab.active { color: var(--sky-dark); background: var(--sky-soft); border-color: #b9d6fb; }
 .badge {
   position: absolute; top: 2px; inset-inline-end: 22%; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px;
-  background: var(--coral); color: #fff; font-size: .75rem; font-weight: 800; display: grid; place-items: center;
+  background: var(--coral-btn); color: #fff; font-size: .75rem; font-weight: 800; display: grid; place-items: center;
 }
 
 #app { max-width: 600px; margin: 0 auto; padding: 8px 0 40px; }
@@ -112,7 +114,7 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 }
 .btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--mint-btn-dark); }
 .btn.big { font-size: 1.3rem; padding: 16px; }
-.btn.danger { background: var(--coral-text); box-shadow: 0 5px 0 #861b15; }
+.btn.danger { background: var(--coral-btn); box-shadow: 0 5px 0 var(--coral-btn-dark); }
 .btn.ghost { background: transparent; color: var(--sky-dark); box-shadow: none; text-decoration: underline; }
 .btn.ghost-dark { background: var(--paper); color: var(--ink); border: 2px solid var(--line); box-shadow: 0 4px 0 var(--line); }
 .back { background: none; border: 0; color: var(--sky-dark); font-weight: 700; font-size: 1rem; cursor: pointer; padding: 6px 0; min-height: 44px; }
@@ -145,9 +147,9 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
   box-shadow: 0 5px 0 rgba(0,0,0,.18);
 }
 .unit-text { display: grid; gap: 2px; min-width: 0; }
-.unit-kicker { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; opacity: .85; }
+.unit-kicker { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 .unit strong { font-size: 1.45rem; font-weight: 600; }
-.unit-goal { font-size: .92rem; opacity: .95; }
+.unit-goal { font-size: .92rem; }
 .unit-emoji { font-size: 2.6rem; flex: none; }
 .nodes { display: grid; justify-items: center; gap: 14px; }
 .node-wrap { position: relative; display: grid; justify-items: center; gap: 4px; transform: translateX(calc(var(--x) * 64px)); }
@@ -163,7 +165,6 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 .node-wrap.current { margin-top: 26px; }
 .current .node { outline: 6px solid color-mix(in srgb, var(--unit) 25%, transparent); outline-offset: 4px; }
 .node-label { font-size: .9rem; font-weight: 600; color: var(--ink-soft); }
-.locked .node-label { opacity: .6; }
 .start-tag {
   position: absolute; bottom: calc(100% - 2px); background: var(--paper); border: 2px solid var(--line); border-radius: 12px;
   padding: 4px 10px; font-family: var(--display); font-weight: 700; color: var(--sky-dark); white-space: nowrap;
@@ -317,7 +318,9 @@ h2.section { margin: 18px 0 10px; }
   display: flex; align-items: center; gap: 12px; width: 100%; text-align: start; cursor: pointer;
   background: var(--paper); border: 2px solid var(--line); border-radius: 18px; padding: 14px; box-shadow: 0 4px 0 var(--line);
 }
-.menu-row.locked { opacity: .65; }
+/* Bloqueado sin transparencia: el texto mantiene el contraste y se puede abrir para ver qué incluye. */
+.menu-row.locked { background: var(--soft); border-style: dashed; box-shadow: none; }
+.menu-row.locked .menu-icon { background: var(--locked); color: var(--ink-soft); }
 .menu-icon {
   width: 46px; height: 46px; flex: none; border-radius: 14px; background: var(--sky-soft); display: grid; place-items: center;
   font-family: var(--display); font-size: 1.4rem; font-weight: 700; color: var(--sky-dark);

@@ -230,7 +230,8 @@
     "calcMissing": "Escribe tu nota de bachillerato y al menos una nota de las PCE (de 0 a 10).",
     "accessGrade": "Nota de acceso",
     "admissionGrade": "Nota de admisión",
-    "calcBelow5": "Con una nota de acceso menor que 5 no se puede acceder a la universidad."
+    "calcBelow5": "Con una nota de acceso menor que 5 no se puede acceder a la universidad.",
+    "close": "Salir"
   },
   "t": {
     "hola": "Hola",

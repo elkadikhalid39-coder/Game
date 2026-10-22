@@ -230,7 +230,8 @@
     "calcMissing": "Enter your secondary-school grade and at least one PCE grade (0 to 10).",
     "accessGrade": "Access grade",
     "admissionGrade": "Admission grade",
-    "calcBelow5": "With an access grade below 5 you cannot get into university."
+    "calcBelow5": "With an access grade below 5 you cannot get into university.",
+    "close": "Exit"
   },
   "t": {
     "hola": "Hello",

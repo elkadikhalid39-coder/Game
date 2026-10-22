@@ -230,7 +230,8 @@
     "calcMissing": "Gib deine Schulnote und mindestens eine PCE-Note ein (0 bis 10).",
     "accessGrade": "Zugangsnote",
     "admissionGrade": "Zulassungsnote",
-    "calcBelow5": "Mit einer Zugangsnote unter 5 ist kein Studium möglich."
+    "calcBelow5": "Mit einer Zugangsnote unter 5 ist kein Studium möglich.",
+    "close": "Beenden"
   },
   "t": {
     "hola": "Hallo",

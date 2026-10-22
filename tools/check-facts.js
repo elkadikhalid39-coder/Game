@@ -30,7 +30,10 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
     if (f.status === "confirmado" && !f.sources?.some((s) => s.official)) errors.push(`${where}: «confirmado» sin fuente oficial`);
     // Precios y tasas nunca se escriben: se enlaza a la página oficial.
     if (/€|\beuros?\b/i.test(f.text + " " + (f.note || ""))) errors.push(`${where}: no se escriben precios ni tasas`);
-    if (f.checked) {
+    // Fecha real y plazo de revisión válidos antes de calcular cuándo toca revisarlo.
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(f.checked || "") || Number.isNaN(Date.parse(f.checked))) errors.push(`${where}: «checked» debe ser una fecha AAAA-MM-DD`);
+    else if (!(f.reviewDays > 0)) errors.push(`${where}: falta reviewDays`);
+    else {
       const due = new Date(Date.parse(f.checked) + f.reviewDays * 864e5).toISOString().slice(0, 10);
       if (due < today) (strict ? errors : warnings).push(`${where}: tocaba revisarlo el ${due}`);
     }

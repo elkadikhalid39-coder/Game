@@ -57,7 +57,8 @@ Cada fase termina con la prueba automática en verde, un enlace para probar y un
 - [x] Calculadora de nota de acceso y de admisión, marcada como estimación (la fórmula 60/40 es de fuente secundaria).
 - [ ] Fichas de las otras 20 materias (leer sus guías).
 - [ ] Simulacros de la parte de desarrollo (comentario de texto, temas, problemas) con rúbrica.
-- [ ] Confirmar en fuente oficial la fórmula de la nota de acceso con PCE y los requisitos actuales del visado de estudios.
+- [x] Visado de estudios confirmado el 22/10/2026 en el Real Decreto 1155/2024 (arts. 34 a 36, 53 y 54) y en una ficha consular de junio de 2025.
+- [ ] Confirmar en fuente oficial la fórmula de la nota de acceso con PCE (solo la publican universidades, como la UPM).
 
 ## Fase 5: calidad y lanzamiento (en curso)
 
@@ -89,4 +90,3 @@ Hecho el 22/10/2026: auditoría automática de accesibilidad (`tools/a11y-audit.
 | Duración y reglas de cada PCE (confirmadas solo en 5 materias) | Guía de cada materia en UNEDasiss |
 | Fórmula de la nota de acceso con PCE (60 % + 40 %) | Normativa de la UNED o del Ministerio de Universidades |
 | Plan Curricular A1–A2, manual CCSE 2026 completo y capítulo 4 de LASLLIAM | Instituto Cervantes y Consejo de Europa |
-| Visado de estudios (solo se encontró una ficha consular de 2020) | Ministerio de Asuntos Exteriores |

@@ -15,18 +15,42 @@
   },
   {
     "id": "pce.no_visado",
-    "text": "Aprobar las PCE da acceso a pedir plaza en la universidad, pero no es un visado ni un permiso de residencia. Si vienes de fuera de la Unión Europea a estudiar más de 90 días, el visado de estudios se pide aparte, en el consulado de España de tu país, después de ser admitido.",
-    "status": "sin_confirmar",
+    "text": "Aprobar las PCE da acceso a pedir plaza en la universidad, pero no es un visado ni un permiso de residencia. Si vienes de fuera de la UE a estudiar más de 90 días, necesitas un visado de estancia de larga duración por estudios. Se pide en el consulado de España que te corresponde, con la carta de admisión de la universidad y la matrícula pagada, al menos dos meses antes de empezar las clases.",
+    "status": "confirmado",
     "sources": [
       {
-        "name": "Embajada de España en La Paz: requisitos del visado de estudios (2020)",
-        "url": "https://www.exteriores.gob.es/Embajadas/lapaz/es/Documents/VISADOS/SLU%20-%20SSU%20-%20REQUISITOS%20ESTUDIOS.pdf",
+        "name": "Real Decreto 1155/2024 (Reglamento de extranjería), arts. 34 a 36, 53 y 54",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-24099",
+        "official": true
+      },
+      {
+        "name": "Embajada de España en La Paz: visado de estancia por estudios (actualizado el 06/06/2025)",
+        "url": "https://www.exteriores.gob.es/DocumentosAuxiliaresSC/Bolivia/LA%20PAZ%20(E)/SLU%20-%20SSU%20-%20VISADO%20DE%20ESTANCIA%20POR%20ESTUDIOS.pdf",
         "official": true
       }
     ],
     "checked": "2026-10-22",
-    "reviewDays": 60,
-    "note": "La única ficha oficial encontrada es de 2020. Comprueba los requisitos actuales en el consulado de España que te corresponda."
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.visado_requisitos",
+    "text": "Requisitos principales del visado de estudios: pasaporte con al menos un año de vigencia; admisión en el centro y matrícula pagada; dinero suficiente para vivir (como referencia, el 100 % del IPREM al mes, salvo que el alojamiento esté pagado); seguro de enfermedad con cobertura como la de la sanidad pública (no vale un seguro de viaje); certificado médico; y, si eres mayor de edad y la estancia supera seis meses, certificado de antecedentes penales de los últimos cinco años. Quien ya está en España de forma regular puede pedirlo en la oficina de extranjería.",
+    "note": "Cada consulado publica su lista de documentos y su forma de pedir cita: consulta la del consulado que te corresponde.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1155/2024 (Reglamento de extranjería), arts. 34 a 36, 53 y 54",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-24099",
+        "official": true
+      },
+      {
+        "name": "Embajada de España en La Paz: visado de estancia por estudios (actualizado el 06/06/2025)",
+        "url": "https://www.exteriores.gob.es/DocumentosAuxiliaresSC/Bolivia/LA%20PAZ%20(E)/SLU%20-%20SSU%20-%20VISADO%20DE%20ESTANCIA%20POR%20ESTUDIOS.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
   },
   {
     "id": "pce.marco_legal",
