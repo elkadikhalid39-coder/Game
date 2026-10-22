@@ -23,11 +23,15 @@ const fails = [];
 export const tests = [];
 const test = (name, fn) => tests.push([name, fn]);
 
+let lastPage; // para la captura cuando una prueba falla
 async function open(saveData, { url = URL_APP, context } = {}) {
   context ||= await browser.newContext({ viewport: { width: 390, height: 844 } });
   const page = await context.newPage();
+  lastPage = page;
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
+  // Los datos de prueba usan el formato actual (v3), salvo los de la prueba de migración (llevan «target»).
+  if (saveData && !saveData.v && !saveData.target) saveData = { v: 3, ...saveData };
   // Sin voz en el navegador de pruebas: la app usa una pausa corta en su lugar.
   await page.addInitScript((s) => {
     delete window.speechSynthesis;
@@ -37,13 +41,43 @@ async function open(saveData, { url = URL_APP, context } = {}) {
   return { page, errors, context };
 }
 
-// Responde la lección: bien siempre, o mal la primera vez que aparece el ejercicio número `wrongAt`.
+// Contenido para que la prueba sepa la respuesta de los ejercicios de escribir y ordenar.
+import { readFileSync } from "node:fs";
+const ES = JSON.parse(readFileSync(new URL("../content/i18n/es.json", import.meta.url), "utf8")).t;
+const UNITS = JSON.parse(readFileSync(new URL("../content/course/units.json", import.meta.url), "utf8"));
+const WORD_BY_EMOJI = Object.fromEntries(UNITS.flatMap((u) => u.words.map((w) => [w.emoji, ES[w.id]])));
+const sortedTokens = (s) => s.split(" ").sort().join(" ");
+
+const progressAt = (unitId, lessons) => {
+  const p = {};
+  for (const u of UNITS) { if (u.id === unitId) { p[u.id] = lessons; break; } p[u.id] = 4; }
+  return p;
+};
+
+// Responde el ejercicio que haya en pantalla: bien, o mal si wrong = true.
+async function answerCurrent(page, wrong = false) {
+  if (await page.$("#write-answer")) {
+    const emoji = await page.innerText(".exercise .bigemoji");
+    await page.fill("#write-answer", wrong ? "xxxxx" : WORD_BY_EMOJI[emoji]);
+    return page.click(".exercise .btn");
+  }
+  if (await page.$(".tray")) {
+    const tiles = await page.$$eval(".tray .tile", (ts) => ts.map((t) => t.textContent));
+    const sentence = Object.entries(ES).find(([k, v]) => k.startsWith("a_") && sortedTokens(v) === sortedTokens(tiles.join(" ")))[1];
+    const words = wrong ? [...sentence.split(" ")].reverse() : sentence.split(" ");
+    for (const w of words) await page.click(`.tray .tile:text-is("${w.replace(/"/g, '\\"')}")`);
+    return page.click(".exercise .btn");
+  }
+  return page.click(wrong ? '.opt[data-ok="0"]' : '.opt[data-ok="1"]');
+}
+
+// Responde toda la lección: bien siempre, o mal la primera vez que aparece el ejercicio número `wrongAt`.
 export async function playLesson(page, wrongAt = -1) {
   let seen = 0;
-  for (let g = 0; g < 60 && !(await page.$(".result-stats")); g++) {
+  for (let g = 0; g < 80 && !(await page.$(".result-stats")); g++) {
     if (await page.$(".sheet .btn")) { await page.click(".sheet .btn"); continue; }
     if (await page.$(".footer .btn")) { await page.click(".footer .btn"); continue; }
-    await page.click(seen++ === wrongAt ? '.opt[data-ok="0"]' : '.opt[data-ok="1"]');
+    await answerCurrent(page, seen++ === wrongAt);
   }
   return !!(await page.$(".result-stats"));
 }
@@ -68,8 +102,8 @@ for (const native of ["ar", "zh", "es"]) {
 test("error repetido y repaso", async () => {
   const { page, errors } = await open({ native: "fr" });
   await page.click(".node-wrap.current .node");
-  // El 2.º ejercicio es una palabra que no vuelve a salir en la lección (salvo su segunda oportunidad).
-  const notPerfect = (await playLesson(page, 1)) && !(await page.innerText(".result-stats")).includes("100%");
+  // El 4.º ejercicio es una palabra que no vuelve a salir en la lección (salvo su segunda oportunidad).
+  const notPerfect = (await playLesson(page, 3)) && !(await page.innerText(".result-stats")).includes("100%");
   await page.click(".btn");
   await page.click('.tab[data-tab="review"]');
   const listed = (await page.$$(".chip-item")).length === 1;
@@ -113,12 +147,63 @@ test("vista previa de un solo archivo", async () => {
   return [!!(await page.$(".node-wrap.current")), errors];
 });
 
+test("escribir sin tilde: se acepta y se avisa", async () => {
+  const { page, errors } = await open({ native: "en", progress: progressAt("salud", 1) });
+  // Lección de escuchar de Salud: termina con un ejercicio de escribir.
+  await page.click(".node-wrap.current .node");
+  for (let g = 0; g < 30 && !(await page.$("#write-answer")); g++) {
+    if (await page.$(".sheet .btn")) await page.click(".sheet .btn"); else await answerCurrent(page);
+  }
+  const emoji = await page.innerText(".exercise .bigemoji");
+  const word = WORD_BY_EMOJI[emoji];
+  const plain = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  await page.fill("#write-answer", plain);
+  await page.click(".exercise .btn");
+  const sheetText = await page.innerText(".sheet");
+  // Si la palabra no lleva tilde, basta con que se acepte.
+  const ok = (await page.$(".sheet.ok")) && (plain === word || sheetText.includes(word));
+  return [ok, errors];
+});
+
+test("saltar y pausar el audio", async () => {
+  const { page, errors } = await open({ native: "it", progress: { saludos: 1 } });
+  await page.click(".node-wrap.current .node"); // lección de escuchar
+  const before = await page.$$eval(".progress > div", (d) => d[0].style.width);
+  await page.click('.exits .link:has-text("→")');
+  const moved = before !== (await page.$$eval(".progress > div", (d) => d[0].style.width));
+  // «No puedo escuchar ahora» convierte los ejercicios de escuchar en ejercicios de leer.
+  await page.click('.exits .link:has-text("🔇")');
+  const noListen = !(await page.$(".listen-pair")) && !!(await page.$(".paused-note"));
+  const done = await playLesson(page);
+  return [moved && noListen && done, errors];
+});
+
+test("práctica final y objetivo conseguido", async () => {
+  const { page, errors } = await open({ native: "uk", progress: progressAt("saludos", 3) });
+  await page.click(".node-wrap.current .node");
+  const done = await playLesson(page);
+  const won = await page.$(".can-do-won");
+  await page.click(".btn");
+  await page.click('.tab[data-tab="profile"]');
+  const listed = (await page.$$("ul.can-do li.done")).length === 1;
+  return [done && won && listed, errors];
+});
+
+test("unidades nuevas (Papeleo, escrita en ruso)", async () => {
+  const { page, errors } = await open({ native: "ru", progress: progressAt("papeleo", 0) });
+  await page.click(".node-wrap.current .node");
+  const done = await playLesson(page);
+  return [done, errors];
+});
+
 // Los módulos de prueba de cada fase añaden sus casos aquí.
 for (const extra of process.argv.slice(2)) await import(new URL(extra, import.meta.url));
 
-for (const [name, fn] of tests) {
+// ONLY=texto ejecuta solo las pruebas cuyo nombre lo contiene; SHOTS=carpeta guarda una captura de cada fallo.
+for (const [name, fn] of tests.filter(([n]) => !process.env.ONLY || n.includes(process.env.ONLY))) {
   let ok = false, errors = [];
   try { [ok, errors = []] = await fn(); } catch (e) { errors = [e.message.split("\n")[0]]; }
+  if ((!ok || errors.length) && process.env.SHOTS && lastPage) await lastPage.screenshot({ path: `${process.env.SHOTS}/fallo-${name.replace(/\W+/g, "-")}.png` }).catch(() => {});
   console.log(`${ok && !errors.length ? "OK   " : "FALLO"} ${name}${errors.length ? " — " + errors.join(" | ") : ""}`);
   if (!ok || errors.length) fails.push(name);
 }

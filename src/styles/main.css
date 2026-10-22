@@ -133,23 +133,29 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 .lang-row .name { min-width: 0; }
 
 /* ---------- Camino de lecciones ---------- */
-.path { display: grid; justify-items: center; gap: 14px; padding-top: 4px; }
+.path { display: grid; gap: 26px; padding-top: 4px; }
+.unit-block { display: grid; justify-items: center; gap: 14px; }
+/* La cabecera de la unidad se queda fija bajo la barra superior mientras se recorre la unidad. */
 .unit {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 60px); z-index: 10;
   width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  background: var(--unit); color: #fff; border-radius: var(--radius); padding: 16px 18px; margin-top: 18px;
+  background: var(--unit); color: #fff; border-radius: var(--radius); padding: 14px 18px;
   box-shadow: 0 5px 0 rgba(0,0,0,.18);
 }
-.unit:first-child { margin-top: 0; }
-.unit-text { display: grid; }
+.unit-text { display: grid; gap: 2px; min-width: 0; }
 .unit-kicker { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; opacity: .85; }
 .unit strong { font-size: 1.45rem; font-weight: 600; }
-.unit-emoji { font-size: 2.6rem; }
+.unit-goal { font-size: .92rem; opacity: .95; }
+.unit-emoji { font-size: 2.6rem; flex: none; }
+.nodes { display: grid; justify-items: center; gap: 14px; }
 .node-wrap { position: relative; display: grid; justify-items: center; gap: 4px; transform: translateX(calc(var(--x) * 64px)); }
 .node {
   width: 76px; height: 76px; border-radius: 50%; border: 0; cursor: pointer; font-size: 2rem; color: #fff;
   background: var(--unit); box-shadow: 0 7px 0 rgba(0,0,0,.22); display: grid; place-items: center;
 }
 .node:active { transform: translateY(5px); box-shadow: 0 2px 0 rgba(0,0,0,.22); }
+.reward .node { width: 88px; height: 88px; font-size: 2.4rem; }
+.reward.done .node { background: var(--mint); color: #fff; box-shadow: 0 7px 0 var(--mint-dark); }
 .done .node { background: var(--sun); color: var(--ink); box-shadow: 0 7px 0 var(--sun-dark); font-weight: 800; }
 .locked .node { background: var(--locked); box-shadow: 0 7px 0 #c5cfdf; cursor: default; font-size: 1.5rem; }
 .node-wrap.current { margin-top: 26px; }
@@ -200,6 +206,58 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 .opt.correct { background: var(--mint-soft); border-color: var(--mint); box-shadow: 0 4px 0 var(--mint); color: var(--mint-text); }
 .opt.wrong { background: var(--coral-soft); border-color: var(--coral); box-shadow: 0 4px 0 var(--coral); color: var(--coral-text); }
 
+/* Audio normal y lento */
+.audio-row { display: inline-flex; gap: 8px; flex: none; }
+.audio-row.center { justify-content: center; }
+.listen.slow { background: var(--grape); box-shadow: 0 4px 0 #4f2fc0; }
+.listen-pair { display: flex; justify-content: center; gap: 14px; }
+.listen.big.slow { box-shadow: 0 6px 0 #4f2fc0; }
+.bigword.small { font-size: 1.5rem; color: var(--ink-soft); }
+.quote.plain { font-size: 1.2rem; font-weight: 500; }
+
+/* Escribir */
+.write-input {
+  width: 100%; font: inherit; font-size: 1.5rem; text-align: center; padding: 12px; border-radius: 16px;
+  border: 2px solid var(--line); background: var(--paper); color: var(--ink);
+}
+.write-input.right { border-color: var(--mint); background: var(--mint-soft); }
+.write-input.wrong { border-color: var(--coral); background: var(--coral-soft); }
+.es-keys { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.key {
+  min-width: 46px; min-height: 46px; border-radius: 12px; border: 2px solid var(--line); background: var(--paper);
+  box-shadow: 0 3px 0 var(--line); font-size: 1.2rem; font-weight: 600; cursor: pointer;
+}
+.exercise > .btn { margin-top: 4px; }
+
+/* Ordenar palabras */
+.built {
+  min-height: 64px; display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; padding: 10px;
+  border-bottom: 2px solid var(--line);
+}
+.built.right { border-color: var(--mint); }
+.built.wrong { border-color: var(--coral); }
+.tray { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; min-height: 52px; }
+.tile {
+  border: 2px solid var(--line); background: var(--paper); border-radius: 12px; box-shadow: 0 3px 0 var(--line);
+  padding: 10px 12px; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+}
+
+/* Salidas sin culpa */
+.exits { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-top: 18px; }
+.link { background: none; border: 0; padding: 8px 4px; color: var(--sky-dark); font-weight: 600; font-size: .95rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.paused-note { width: 100%; text-align: center; color: var(--ink-soft); font-size: .9rem; }
+
+/* Objetivos */
+.can-do-won {
+  display: grid; gap: 6px; text-align: center; margin: 14px 0; padding: 16px; border-radius: 20px;
+  background: var(--mint-soft); border: 2px solid var(--mint); color: var(--mint-text);
+}
+.can-do-won span { font-weight: 600; }
+.can-do-won strong { font-family: var(--display); font-size: 1.4rem; }
+ul.can-do { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 8px; }
+ul.can-do li { background: var(--paper); border: 2px solid var(--line); border-radius: 14px; padding: 10px 12px; color: var(--ink-soft); }
+ul.can-do li.done { color: var(--mint-text); border-color: var(--mint); background: var(--mint-soft); font-weight: 600; }
+
 /* Panel inferior de respuesta y pie fijo */
 .sheet, .footer {
   position: fixed; inset: auto 0 0 0; z-index: 30;
@@ -215,6 +273,7 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 .sheet-head { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-size: 1.4rem; }
 .sheet-icon { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--paper); font-weight: 800; }
 .sheet-detail { margin: 6px 0 0; font-size: 1.15rem; font-weight: 600; }
+.sheet .audio-row { margin-top: 10px; }
 
 /* Resultado */
 body[data-layout="plain"] #app > .mascot { display: block; width: max-content; margin: 24px auto 0; }

@@ -30,8 +30,8 @@ for (const [code, lang] of Object.entries(I18N)) {
 const ids = new Set(Object.keys(ref.t));
 const need = (id, where) => { if (!ids.has(id)) errors.push(`${where}: falta la traducción "${id}"`); };
 for (const u of UNITS) {
-  need("w_" + u.id, u.id);
-  for (const k of u.extraKeys || []) need(k, u.id);
+  need("w_" + u.id, u.id); // nombre de la unidad
+  need("c_" + u.id, u.id); // objetivo «Ya sé…»
   for (const { id } of u.words) need(id, u.id);
   for (const p of u.phrases) { need("q_" + p.id, u.id); need("a_" + p.id, u.id); for (const w of p.wrong) need("a_" + w, u.id); }
 }

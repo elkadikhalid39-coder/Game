@@ -17,17 +17,18 @@ Cada fase termina con la prueba automática en verde, un enlace para probar y un
 - [x] Registro de datos legales con fuente, estado y fecha de comprobación ([CONTENIDO.md](CONTENIDO.md)), más una comprobación automática que falla si falta algo.
 - [x] Migración del progreso guardado.
 
-## Fase 2: curso A1 (semanas 2 y 3)
+## Fase 2: curso A1 (hecha)
 
-- [ ] Motor de lecciones según los principios:
-  - botón lento;
-  - «No puedo escuchar ahora» y «Saltar»;
-  - ejercicio de escribir con corrección tolerante;
-  - práctica final de premio;
-  - cabecera fija con la unidad.
-- [ ] Objetivo «Ya sé…» en cada unidad y pantalla de progreso por objetivos.
-- [ ] Unidades nuevas: Trabajo, Vivienda y Papeleo.
-- [ ] Revisión de las unidades actuales con el Plan Curricular del Instituto Cervantes (pendiente de leer).
+- [x] Motor de lecciones según los principios:
+  - audio normal y lento en todo;
+  - «No puedo escuchar ahora» (15 minutos sin ejercicios de escuchar) y «Saltar»;
+  - ejercicio de escribir con corrección tolerante (tildes, artículos, una errata) y teclas con las letras del español;
+  - ejercicio de ordenar palabras;
+  - práctica final de premio en cada unidad;
+  - cabecera fija con la unidad y su objetivo.
+- [x] Objetivo «Ya sé…» en cada unidad, celebración al conseguirlo y lista en el perfil.
+- [x] Unidades nuevas: Trabajo, Vivienda y Papeleo (9 unidades, 36 lecciones).
+- [ ] Revisión de las unidades con el Plan Curricular del Instituto Cervantes. Pendiente: no se ha podido leer todavía.
 
 ## Fase 3: pase de Nacionalidad (semanas 3 a 5)
 
