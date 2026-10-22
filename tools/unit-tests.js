@@ -11,7 +11,7 @@ const cases = [
   ["medicp", "Médico", true, "typo"],
   ["pan", "Pan", true, null],
   ["pa", "Pan", false, null], // en palabras cortas no se aceptan erratas
-  ["bano", "Baño", false, null], // la ñ no es una tilde: «bano» es otra palabra
+  ["bano", "Baño", true, "accent"], // sin ñ en el teclado: se acepta y se enseña «Baño»
   ["baño", "Baño", true, null],
   ["cita previa", "Cita previa", true, null],
   ["", "Pan", false, null],
@@ -46,4 +46,6 @@ assert.equal(wordErrors("me llamo ana", "Me llamo Ana."), 0);
 assert.equal(wordErrors("me yamo ana", "Me llamo Ana."), 1);
 assert.equal(wordErrors("me llamo", "Me llamo Ana."), 1);
 assert.equal(wordErrors("tengo dos hijo", "Tengo dos hijos."), 1);
-console.log(`OK pruebas unitarias: ${cases.length + 14}`);
+assert.equal(wordErrors("si, tengo dos ninos", "Sí, tengo dos niños."), 2);
+assert.equal(wordErrors("si, tengo dos ninos", "Sí, tengo dos niños.", { accents: false }), 0);
+console.log(`OK pruebas unitarias: ${cases.length + 16}`);

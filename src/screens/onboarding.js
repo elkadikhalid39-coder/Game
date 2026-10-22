@@ -45,6 +45,14 @@ export function settingsCard() {
   box.onchange = () => { save.calm = box.checked; persist(); renderBars(); };
   calm.append(el("span", "icon", "🌙"), el("span", "", ui("calm")), box);
   card.append(calm);
+  const demo = el("label", "setting toggle");
+  const demoBox = el("input");
+  demoBox.type = "checkbox";
+  demoBox.id = "demo-mode";
+  demoBox.checked = save.demo;
+  demoBox.onchange = () => { save.demo = demoBox.checked; persist(); renderBars(); };
+  demo.append(el("span", "icon", "🔓"), el("span", "", ui("demoMode")), demoBox);
+  card.append(demo);
   return card;
 }
 

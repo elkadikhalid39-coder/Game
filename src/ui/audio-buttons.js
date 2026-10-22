@@ -7,7 +7,7 @@ import { el, button } from "./dom.js";
 
 const SVG = "http://www.w3.org/2000/svg";
 // Altavoz con ondas (onda doble en «escuchar», sencilla en «más despacio»).
-function speakerIcon(waves = 2) {
+export function speakerIcon(waves = 2) {
   const svg = document.createElementNS(SVG, "svg");
   svg.setAttribute("viewBox", "0 0 24 24");
   svg.setAttribute("aria-hidden", "true");

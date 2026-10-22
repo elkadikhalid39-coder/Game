@@ -288,19 +288,24 @@ function spelling() {
 function numberInput(id, label, value = "") {
   const row = el("label", "calc-row");
   const input = el("input");
-  input.type = "number";
+  // Texto con teclado numérico (no type="number"): así se acepta la coma decimal («7,5»), como se escribe en España.
+  input.type = "text";
   input.id = id;
-  input.min = "0";
-  input.max = "10";
-  input.step = "0.01";
   input.inputMode = "decimal";
+  input.autocomplete = "off";
   input.value = value;
   row.append(el("span", "", label), input);
   return { row, input };
 }
+// Nota de 0 a 10, con coma o punto decimal (también con cifras árabes: ٧٫٥). Vacío → null; no válida → NaN.
 const num = (input) => {
-  const v = parseFloat(String(input.value).replace(",", "."));
-  return v >= 0 && v <= 10 ? v : null;
+  const t = String(input.value).trim()
+    .replace(/[\u0660-\u0669]/g, (d) => d.charCodeAt(0) - 0x0660)
+    .replace(/[\u06f0-\u06f9]/g, (d) => d.charCodeAt(0) - 0x06f0)
+    .replace(/[,٫]/g, ".");
+  if (!t) return null;
+  if (!/^\d{1,2}(\.\d{1,3})?$/.test(t) || Number(t) > 10) return NaN;
+  return Number(t);
 };
 
 function showCalc() {
@@ -320,16 +325,21 @@ function showCalc() {
     const sel = el("select");
     sel.id = "calc-wsel-" + n;
     sel.setAttribute("aria-label", ui("weight"));
-    for (const w of ["0", "0.1", "0.2"]) sel.append(new Option(ui("weight") + " " + fmt(Number(w)), w));
+    // Opciones cortas («× 0,2») para que la nota y la ponderación quepan en la misma fila del móvil.
+    for (const w of ["0", "0.1", "0.2"]) sel.append(new Option("× " + fmt(Number(w)), w));
     g.row.append(sel);
     form.append(g.row);
     return { input: g.input, sel };
   });
   const out = el("div", "calc-out");
   form.append(button("btn big", ui("calculate"), () => {
+    out.replaceChildren();
+    // Una nota escrita que no se entiende no se ignora: se marca y se pide revisarla.
+    const fields = [bach.input, ...access.map((a) => a.input), ...weighted.map((x) => x.input)];
+    for (const f of fields) f.classList.toggle("wrong", Number.isNaN(num(f)));
+    if (fields.some((f) => Number.isNaN(num(f)))) { out.append(el("p", "notice", ui("calcInvalid"))); return; }
     const b = num(bach.input);
     const acc = access.map((a) => num(a.input)).filter((v) => v !== null);
-    out.replaceChildren();
     if (b === null || !acc.length) { out.append(el("p", "notice", ui("calcMissing"))); return; }
     const w = weighted.map((x) => [num(x.input), Number(x.sel.value)]).filter(([g]) => g !== null);
     const r = grades(b, acc, w);

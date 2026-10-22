@@ -37,6 +37,23 @@ Al cerrar cada fase, y siempre antes de publicar, se repasa esta lista y se anot
 
 ## Registro
 
+### 2026-10-22 (noche): revisión completa en el móvil
+
+Pedida por el usuario tras probar la demo. Se añadió `tools/walkthrough.js` (en `npm run audit`), que entra en **todas las pantallas** de la demo (las 36 lecciones, Practicar, los dos pases y Perfil) en varios idiomas. En cada una busca errores de la página, textos rotos, anchura mayor que el móvil y botones vacíos, y guarda capturas para revisarlas a mano.
+
+**Encontrado y corregido:**
+- Calculadora de nota: no aceptaba la coma decimal («7,5») ni las cifras árabes, y una nota mal escrita se ignoraba sin avisar.
+- Tarea 4 de la auditiva del DELE: la página era más ancha que el móvil.
+- Árabe y urdu: las flechas de «Volver», «Saltar» y «Continuar» apuntaban al revés, y las puntuaciones («6,9 / 10») se leían al revés.
+- Botón «Terminar» repetido en la última pregunta del simulacro CCSE.
+- Cronómetro en rojo desde el principio en el oral del DELE (tareas de 3 minutos).
+- Pregunta con audio mal colocada; al ordenar frases faltaba la pregunta a la que se responde (sin audio era imposible).
+- Modo demo: hacer una lección fuera de orden marcaba como hechas las anteriores.
+- Fila de letras (á é í ó ú ñ) retirada a petición del usuario. Como muchos teclados no tienen tildes ni ñ, si solo faltan esas letras la respuesta se da por buena, pero la corrección enseña la forma correcta.
+
+**Nuevo:** modo demo (todo desbloqueado; activado por defecto en la vista previa publicada y con interruptor en Perfil).
+
+
 ### 2026-10-22 (tarde): revisión de código y datos pendientes
 
 - **Visado de estudios:** pasa a *confirmado* con el Real Decreto 1155/2024 y la ficha consular de La Paz (06/06/2025). Nuevo dato `pce.visado_requisitos`.

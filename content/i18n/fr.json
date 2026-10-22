@@ -253,7 +253,10 @@
     "searchWords": "Cherchez en espagnol ou dans votre langue",
     "noResults": "Aucun résultat",
     "hintLetters": "{x} lettres",
-    "okWithHint": "Bien, avec un indice. Vous le réviserez plus tard."
+    "okWithHint": "Bien, avec un indice. Vous le réviserez plus tard.",
+    "demoMode": "Mode démo : tout est débloqué",
+    "demoTag": "DÉMO",
+    "calcInvalid": "Vérifiez les notes en rouge : écrivez des nombres de 0 à 10, par exemple 7,5."
   },
   "t": {
     "hola": "Bonjour",

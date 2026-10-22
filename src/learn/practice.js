@@ -72,11 +72,12 @@ function dictation(mode) {
     const box = writeBox({
       hint: mode === "words" ? it.text : null,
       multiline: mode === "sentences",
-      marks: mode === "sentences",
       onCheck: (value, { hinted }) => {
-        // En el dictado la ortografía es lo que se practica: no se aceptan erratas ni tildes de menos
-        // (sí se ignoran mayúsculas, signos y el artículo inicial).
-        const errors = mode === "words" ? (normalize(value) === normalize(it.text) ? 0 : 1) : wordErrors(value, it.text);
+        // En el dictado se practica la ortografía: no se aceptan erratas. Las tildes y la ñ que falten
+        // no cuentan como fallo (muchos teclados no las tienen), pero se avisa y se enseña la forma correcta.
+        const loose = { accents: false };
+        const errors = mode === "words" ? (normalize(value, loose) === normalize(it.text, loose) ? 0 : 1) : wordErrors(value, it.text, loose);
+        const accentNote = errors === 0 && (mode === "words" ? normalize(value) !== normalize(it.text) : wordErrors(value, it.text) > 0);
         const r = { ok: errors === 0 };
         results[i] = { value, errors };
         if (it.id) noteWord(it.id, r.ok && !hinted);
@@ -85,8 +86,8 @@ function dictation(mode) {
         const extra = el("div", "sheet-extra");
         // La corrección se muestra siempre que no sea idéntica (también las tildes y los signos).
         if (normalize(value) !== normalize(it.text) || !r.ok) extra.append(diffView(value, it.text));
-        if (save.native !== G) extra.append(txt("p", "sheet-meaning", "= " + it.meaning, save.native));
-        const title = r.ok ? (hinted ? ui("okWithHint") : ui("great")) : mode === "sentences" ? ui("wordErrorsN", errors) : ui("answer") + ":";
+        if (save.native !== G) extra.append(txt("p", "sheet-meaning", it.meaning, save.native));
+        const title = r.ok ? (accentNote ? ui("noteAccent", it.text) : hinted ? ui("okWithHint") : ui("great")) : mode === "sentences" ? ui("wordErrorsN", errors) : ui("answer") + ":";
         sheet(r.ok, title, "", G, () => run(i + 1), extra);
       },
     });

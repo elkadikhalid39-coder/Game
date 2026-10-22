@@ -158,7 +158,7 @@ function runLesson(s) {
     const showDiff = written !== undefined && (!ok || note);
     if (showDiff) extra.append(diffView(written, solution));
     // Al corregir una palabra se ve su significado en el idioma de la persona.
-    if (ex.item && N !== G) extra.append(txt("p", "sheet-meaning", "= " + tr(ex.item.id, N), N));
+    if (ex.item && N !== G) extra.append(txt("p", "sheet-meaning", tr(ex.item.id, N), N));
     extra.append(audioControls(solution));
     // Si se ve la comparación letra a letra, la solución ya está en ella: no se repite.
     sheet(ok, title, showDiff && !ok ? "" : detail, note ? N : G, next, extra);
@@ -219,10 +219,12 @@ function runLesson(s) {
     // Ordenar las palabras de la respuesta (en español) viendo su traducción.
     const sentence = tr("a_" + ex.id, G);
     app.append(speech(ui("orderIt"), "talk"));
-    // Se oye la frase (y se lee su traducción si la persona tiene otro idioma).
-    const prompt = el("div", "quote plain");
+    // Contexto: la pregunta a la que responde la frase (en español), su traducción si la persona tiene
+    // otro idioma y el audio de la respuesta. Sin la pregunta, quien no puede oír no sabría qué ordenar.
+    const prompt = el("div", "quote plain column");
+    prompt.append(txt("span", "context-q", tr("q_" + ex.id, G), G));
+    if (N !== G) prompt.append(txt("span", "hint", tr("a_" + ex.id, N), N));
     prompt.append(audioControls(sentence));
-    if (N !== G) prompt.append(txt("span", "", tr("a_" + ex.id, N), N));
     area.append(prompt);
     say(sentence);
     const built = el("div", "built");
@@ -253,8 +255,9 @@ function runLesson(s) {
     // Pregunta en español → elegir la respuesta.
     const q = tr("q_" + ex.id, G), a = "a_" + ex.id;
     app.append(speech(ui("chooseAnswer"), "talk"));
-    const quote = el("div", "quote");
-    quote.append(audioControls(q), txt("span", "", q, G));
+    // La pregunta arriba y, debajo, sus botones de audio.
+    const quote = el("div", "quote column");
+    quote.append(txt("span", "", q, G), audioControls(q));
     area.append(quote);
     if (N !== G) area.append(txt("p", "hint", tr("q_" + ex.id, N), N));
     const opts = el("div", "options");
@@ -284,7 +287,8 @@ function runLesson(s) {
 
 function showResult(s) {
   const wasComplete = s.unit && unitComplete(s.unit);
-  if (!s.review) save.progress[s.unit.id] = Math.max(save.progress[s.unit.id] || 0, s.li + 1);
+  // Solo avanza el progreso la lección que tocaba (en la demo se pueden abrir otras sin marcarlas hechas).
+  if (!s.review && s.li === (save.progress[s.unit.id] || 0)) save.progress[s.unit.id] = s.li + 1;
   persist();
   celebrate();
   screen("plain");

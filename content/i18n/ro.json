@@ -253,7 +253,10 @@
     "searchWords": "Caută în spaniolă sau în limba ta",
     "noResults": "Niciun rezultat",
     "hintLetters": "{x} litere",
-    "okWithHint": "Corect, cu indiciu. O vei repeta mai târziu."
+    "okWithHint": "Corect, cu indiciu. O vei repeta mai târziu.",
+    "demoMode": "Mod demo: totul deblocat",
+    "demoTag": "DEMO",
+    "calcInvalid": "Verifică notele marcate cu roșu: scrie numere de la 0 la 10, de exemplu 7,5."
   },
   "t": {
     "hola": "Bună",

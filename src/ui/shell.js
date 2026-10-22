@@ -52,7 +52,10 @@ export function renderBars() {
   if (document.body.dataset.layout !== "main" || !save.native) return;
   const lang = button("chip lang", "", () => go("profile"));
   lang.append(el("span", "code", save.native.toUpperCase()), txt("span", "", I18N[save.native].name, save.native));
-  topbar.append(lang, el("span", "stat", "📚 " + save.learned.length));
+  topbar.append(lang);
+  // Aviso visible de que es una demo con todo abierto.
+  if (save.demo) topbar.append(el("span", "pill demo", ui("demoTag")));
+  topbar.append(el("span", "stat", "📚 " + save.learned.length));
   for (const [name, icon, key] of TABS) {
     const b = button("tab" + (currentTab === name ? " active" : ""), "", () => go(name));
     b.dataset.tab = name;

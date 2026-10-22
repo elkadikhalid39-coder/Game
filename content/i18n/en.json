@@ -253,7 +253,10 @@
     "searchWords": "Search in Spanish or your language",
     "noResults": "No results",
     "hintLetters": "{x} letters",
-    "okWithHint": "Right, with a hint. You'll review it later."
+    "okWithHint": "Right, with a hint. You'll review it later.",
+    "demoMode": "Demo mode: everything unlocked",
+    "demoTag": "DEMO",
+    "calcInvalid": "Check the grades marked in red: write numbers from 0 to 10, for example 7.5."
   },
   "t": {
     "hola": "Hello",

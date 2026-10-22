@@ -3,7 +3,9 @@ import { ui } from "../core/i18n.js";
 import { save, persist } from "../core/state.js";
 import { el, button } from "../ui/dom.js";
 
-export const hasPass = (id) => !!save.passes[id];
+// En modo demo todos los pases están abiertos (sin pago y sin guardarlo como comprado).
+export const ownsPass = (id) => !!save.passes[id];
+export const hasPass = (id) => save.demo || ownsPass(id);
 export function unlockPass(id) { save.passes[id] = true; persist(); }
 
 // Aviso de contenido en borrador y de que la app no sustituye a los organismos oficiales.

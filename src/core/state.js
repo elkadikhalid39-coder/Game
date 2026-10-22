@@ -3,6 +3,8 @@
 export const TARGET = "es";
 const SAVE_KEY = "hola-espanol";
 const SAVE_VERSION = 3;
+// La vista previa publicada (compilación de un solo archivo) es una demo: arranca con todo desbloqueado.
+const DEMO_DEFAULT = import.meta.env?.MODE === "single";
 
 function load() {
   try { return JSON.parse(localStorage.getItem(SAVE_KEY)) || {}; } catch { return {}; }
@@ -23,6 +25,7 @@ export function migrate(old, known = () => true) {
     exams: (v3 && old.exams) || {}, // resultados de simulacros: { [examen]: [{ fecha, nota, apto }] }
     passes: (v3 && old.passes) || {}, // pases desbloqueados: { nacionalidad: true }
     noAudioUntil: (v3 && old.noAudioUntil) || 0,
+    demo: typeof old.demo === "boolean" ? old.demo : DEMO_DEFAULT, // modo demo: todas las lecciones y los pases abiertos
   };
 }
 

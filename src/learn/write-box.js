@@ -1,4 +1,4 @@
-// Piezas para escribir en español: campo con las letras que faltan en muchos teclados, pistas
+// Piezas para escribir en español: campo de escritura, pistas
 // y la corrección que marca en qué letras está el fallo.
 import { ui } from "../core/i18n.js";
 import { save } from "../core/state.js";
@@ -8,8 +8,8 @@ import { diffChars } from "./answers.js";
 // Campo de escritura. onCheck(texto, { hinted }) se llama al pulsar «Comprobar» o Intro con algo escrito.
 // hint: texto correcto para las pistas. La 1.ª pista dice cuántas letras tiene; la 2.ª, la primera letra.
 // Nunca se enseña más: la palabra la tiene que escribir la persona.
-// marks: añade ¿ y ¡ al teclado (dictado de frases).
-export function writeBox({ onCheck, hint, multiline = false, marks = false }) {
+// Se escribe con el teclado del propio móvil u ordenador (sin teclas añadidas: confundían).
+export function writeBox({ onCheck, hint, multiline = false }) {
   const box = el("div", "write-box");
   const input = el(multiline ? "textarea" : "input", multiline ? "write-area" : "write-input");
   Object.assign(input, { id: "write-answer", autocomplete: "off", autocapitalize: "off", spellcheck: false, lang: "es" });
@@ -18,14 +18,6 @@ export function writeBox({ onCheck, hint, multiline = false, marks = false }) {
   else input.rows = 3;
   input.enterKeyHint = "done";
   input.setAttribute("aria-label", ui("writeIt"));
-  // Letras del español que no están en muchos teclados (árabe, chino, ruso…).
-  const keys = el("div", "es-keys");
-  const NAMES = { "¿": "abre interrogación", "¡": "abre exclamación" };
-  for (const k of ["á", "é", "í", "ó", "ú", "ñ", ...(marks ? ["¿", "¡"] : [])]) {
-    const key = button("key", k, () => { input.setRangeText(k, input.selectionStart, input.selectionEnd, "end"); input.focus(); });
-    if (NAMES[k]) { key.setAttribute("aria-label", NAMES[k]); key.lang = "es"; }
-    keys.append(key);
-  }
   let level = 0;
   const check = () => {
     if (!input.value.trim()) return input.focus();
@@ -37,7 +29,7 @@ export function writeBox({ onCheck, hint, multiline = false, marks = false }) {
   // Intro (o «Enviar» en el teclado del móvil) comprueba; se cancela la acción por defecto
   // para que esa misma pulsación no active el botón «Continuar» de la corrección.
   if (!multiline) input.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); check(); } };
-  box.append(input, keys);
+  box.append(input);
   if (hint) {
     const shown = el("div", "hint-mask");
     shown.lang = "es";

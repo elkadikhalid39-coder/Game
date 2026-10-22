@@ -1,18 +1,22 @@
 // Pase de Nacionalidad: Mi trámite (gratis), CCSE y DELE A2, con todas las fuentes oficiales.
 import { ui } from "../core/i18n.js";
 import { register, go } from "../core/router.js";
+import { save } from "../core/state.js";
 import { FACTS } from "../core/facts.js";
 import { el, button } from "../ui/dom.js";
 import { app, screen } from "../ui/shell.js";
 import { factNote } from "../ui/fact.js";
-import { hasPass, unlockPass, draftBanner, menuRow } from "./common.js";
+import { hasPass, ownsPass, unlockPass, draftBanner, menuRow } from "./common.js";
 
 export const PASS = "nacionalidad";
 
 // Botón para desbloquear el pase. En esta versión no hay pago: sirve para probar el contenido completo.
 export function passCard(id, onUnlock) {
   const card = el("div", "card pass-card");
-  if (hasPass(id)) {
+  if (save.demo && !ownsPass(id)) {
+    // En la demo el pase está abierto, pero no comprado.
+    card.append(el("strong", "", "🔓 " + ui("demoMode")));
+  } else if (hasPass(id)) {
     card.append(el("strong", "", "✅ " + ui("passActive")));
   } else {
     card.append(button("btn", "🔓 " + ui("unlock"), () => { unlockPass(id); onUnlock(); }));

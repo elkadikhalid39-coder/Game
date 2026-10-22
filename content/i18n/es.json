@@ -253,7 +253,10 @@
     "searchWords": "Busca en español o en tu idioma",
     "noResults": "No hay resultados",
     "hintLetters": "{x} letras",
-    "okWithHint": "Bien, con pista. La repasarás más adelante."
+    "okWithHint": "Bien, con pista. La repasarás más adelante.",
+    "demoMode": "Modo demo: todo desbloqueado",
+    "demoTag": "DEMO",
+    "calcInvalid": "Revisa las notas marcadas en rojo: escribe números de 0 a 10, por ejemplo 7,5."
   },
   "t": {
     "hola": "Hola",

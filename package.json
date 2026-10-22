@@ -10,7 +10,8 @@
     "preview": "vite preview --port 4173",
     "check": "node tools/check-content.js && node tools/check-facts.js && node tools/check-exams.js && node tools/unit-tests.js",
     "test": "npm run check && npm run build && node tools/smoke-test.js && node tools/a11y-audit.js",
-    "audit": "npm run build && node tools/a11y-audit.js && node tools/check-facts.js --strict"
+    "audit": "npm run build && node tools/a11y-audit.js && node tools/walkthrough.js && node tools/check-facts.js --strict",
+    "walk": "node tools/walkthrough.js"
   },
   "devDependencies": {
     "vite": "8.3.3",

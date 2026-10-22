@@ -105,6 +105,8 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
   transform: rotate(45deg);
 }
 [dir="rtl"] .bubble::before { transform: rotate(-45deg); }
+.arrow { display: inline-block; }
+.arrow:dir(rtl) { transform: scaleX(-1); }
 
 /* ---------- Botones ---------- */
 .btn {
@@ -161,6 +163,7 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 .reward .node { width: 88px; height: 88px; font-size: 2.4rem; }
 .reward.done .node { background: var(--mint); color: #fff; box-shadow: 0 7px 0 var(--mint-dark); }
 .done .node { background: var(--sun); color: var(--ink); box-shadow: 0 7px 0 var(--sun-dark); font-weight: 800; }
+.pill.demo { background: var(--grape-soft); color: var(--grape); }
 .locked .node { background: var(--locked); box-shadow: 0 7px 0 #c5cfdf; cursor: default; font-size: 1.5rem; }
 .node-wrap.current { margin-top: 26px; }
 .current .node { outline: 6px solid color-mix(in srgb, var(--unit) 25%, transparent); outline-offset: 4px; }
@@ -205,6 +208,10 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 
 .bigword.small { font-size: 1.5rem; color: var(--ink-soft); }
 .quote.plain { font-size: 1.2rem; font-weight: 500; }
+.quote.column { flex-direction: column; align-items: stretch; }
+.context-q { color: var(--ink-soft); font-weight: 600; }
+.context-q::before { content: "— "; }
+.audio-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
 
 /* Escribir */
 .write-input {
@@ -213,11 +220,6 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 }
 .write-input.right { border-color: var(--mint); background: var(--mint-soft); }
 .write-input.wrong { border-color: var(--coral); background: var(--coral-soft); }
-.es-keys { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-.key {
-  min-width: 46px; min-height: 46px; border-radius: 12px; border: 2px solid var(--line); background: var(--paper);
-  box-shadow: 0 3px 0 var(--line); font-size: 1.2rem; font-weight: 600; cursor: pointer;
-}
 .exercise > .btn { margin-top: 4px; }
 
 /* Ordenar palabras */
@@ -286,7 +288,7 @@ body[data-layout="plain"] #app > .mascot { display: block; width: max-content; m
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 22px; }
 .stat-tile { border: 2px solid; border-radius: 18px; padding: 12px; display: grid; gap: 2px; font-size: .9rem; font-weight: 600; }
 .stat-tile .icon { font-size: 1.4rem; }
-.stat-tile strong { font-family: var(--display); font-size: 1.6rem; font-variant-numeric: tabular-nums; }
+.stat-tile strong { font-family: var(--display); font-size: 1.45rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 h2.section { margin: 18px 0 10px; }
 .settings { padding: 6px; display: grid; }
 .setting {
@@ -372,6 +374,8 @@ h2.section { margin: 18px 0 10px; }
 .result-row { display: flex; align-items: center; gap: 10px; background: var(--paper); border: 2px solid var(--line); border-radius: 12px; padding: 8px 12px; }
 .result-row > span:first-child { flex: 1; min-width: 0; }
 .result-row strong { font-variant-numeric: tabular-nums; }
+/* Las puntuaciones («6,9 / 10») se leen siempre de izquierda a derecha, también en árabe y urdu. */
+.result-row strong, .exam-result strong, .stat-tile strong, .result-stat strong { direction: ltr; unicode-bidi: isolate; }
 .review-item { border-radius: 14px; padding: 10px 12px; margin: 8px 0; border: 2px solid var(--line); background: var(--paper); }
 .review-item.ok { border-color: var(--mint); }
 .review-item.bad { border-color: var(--coral); }
@@ -382,8 +386,8 @@ h2.section { margin: 18px 0 10px; }
 .reading-text { background: var(--paper); border: 2px solid var(--line); border-radius: 16px; padding: 12px 14px; margin: 10px 0; line-height: 1.55; }
 .reading-text h3 { margin: 0 0 6px; font-size: 1rem; color: var(--ink-soft); }
 .reading-text p { margin: 0 0 8px; white-space: pre-line; }
-.match-row { display: grid; gap: 6px; padding: 8px 0; border-bottom: 1px solid var(--soft); }
-.match-row select { font: inherit; padding: 8px; border-radius: 10px; border: 2px solid var(--line); background: var(--paper); color: var(--ink); max-width: 100%; }
+.match-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 8px 0; border-bottom: 1px solid var(--soft); }
+.match-row select { width: 100%; font: inherit; padding: 8px; border-radius: 10px; border: 2px solid var(--line); background: var(--paper); color: var(--ink); max-width: 100%; }
 .statements { background: var(--paper); border-radius: 14px; padding: 10px 10px 10px 34px; border: 2px solid var(--line); }
 .audio-btn { margin-top: 0; }
 .write-area { width: 100%; font: inherit; font-size: 1.05rem; padding: 10px; border-radius: 14px; border: 2px solid var(--line); background: var(--paper); color: var(--ink); resize: vertical; }
@@ -418,6 +422,7 @@ h2.section { margin: 18px 0 10px; }
 .calc-row span { flex: 1 1 90px; }
 .calc-row input, .calc-row select { font: inherit; padding: 8px; border-radius: 10px; border: 2px solid var(--line); background: var(--paper); color: var(--ink); }
 .calc-row input { width: 6.5em; }
+.calc-row input.wrong { border-color: var(--coral); background: var(--coral-soft); }
 .calc-out { display: grid; gap: 6px; }
 
 /* ---------- Audio: escuchar y más despacio ---------- */
@@ -445,7 +450,7 @@ h2.section { margin: 18px 0 10px; }
 .sheet-extra { display: grid; gap: 6px; }
 .sheet-meaning { margin: 0; font-size: 1.05rem; font-weight: 600; }
 .diff { display: grid; gap: 4px; background: var(--paper); border: 2px solid var(--line); border-radius: 14px; padding: 8px 12px; color: var(--ink); }
-.diff-line { margin: 0; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.diff-line { margin: 0; display: grid; gap: 0; }
 .diff-label { flex: none; min-width: 4.5em; color: var(--ink-soft); font-size: .85rem; font-weight: 700; }
 .diff-text { font-size: 1.15rem; font-weight: 600; overflow-wrap: anywhere; }
 /* Letra de más o distinta: tachada en rojo. Letra que faltaba: subrayada en verde. */

@@ -253,6 +253,39 @@ test("las pistas no resuelven la palabra y no hay emojis dudosos", async () => {
   return [adios === true && first === 0 && second === 1 && noTurtle, errors];
 });
 
+test("modo demo: todo abierto sin marcar lecciones como hechas", async () => {
+  const { page, errors } = await open({ native: "es", demo: true });
+  const locked = (await page.$$(".node-wrap.locked")).length;
+  const demoTag = (await page.innerText("#topbar")).includes("DEMO");
+  // Se abre directamente la práctica final de la unidad 3 y se termina.
+  await (await page.$$(".node-wrap .node"))[2 * 4 + 3].click();
+  await playLesson(page);
+  await page.click(".btn");
+  const done = (await page.$$(".node-wrap.done")).length;
+  // Los dos pases, abiertos.
+  await page.click('.tab[data-tab="exams"]');
+  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(3)"); // DELE, que sin pase está cerrado
+  const deleOpen = (await page.$$(".menu-row")).length === 4;
+  return [locked === 0 && demoTag && done === 0 && deleOpen, errors];
+});
+
+test("calculadora: coma decimal y aviso si una nota no se entiende", async () => {
+  const { page, errors } = await open({ native: "es" });
+  await page.click('.tab[data-tab="exams"]');
+  await page.click(".menu-row:nth-child(2)");
+  await page.click(".menu-row:nth-child(5)");
+  await page.fill("#calc-bach", "7,5");
+  await page.fill("#calc-pce-1", "6");
+  await page.fill("#calc-pce-2", "seis");
+  await page.click(".calc .btn");
+  const warned = !!(await page.$("#calc-pce-2.wrong"));
+  await page.fill("#calc-pce-2", "٧٫٥"); // cifras árabes: 7,5
+  await page.click(".calc .btn");
+  // 0,6 · 7,5 + 0,4 · (6 + 7,5) / 2 = 4,5 + 2,7 = 7,2
+  return [warned && (await page.innerText(".calc-out")).includes("7,2 / 10"), errors];
+});
+
 // ---------- Practicar: dictado y diccionario ----------
 test("dictado de palabras: todo bien y una con fallo marcado", async () => {
   const { page, errors } = await open({ native: "fr", progress: { saludos: 1 } });

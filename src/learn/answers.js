@@ -4,8 +4,9 @@
 export function normalize(s, { accents = true } = {}) {
   let out = s.toLowerCase().replace(/[¿?¡!.,;:"'«»()]/g, " ").replace(/\s+/g, " ").trim();
   out = out.replace(/^(el|la|los|las|un|una|unos|unas) /, "");
-  // Sin tildes, pero la ñ es una letra distinta y se conserva.
-  if (!accents) out = out.replace(/ñ/g, "\u0001").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/\u0001/g, "ñ");
+  // Sin tildes ni virgulilla (ñ → n): muchos teclados (árabe, chino, ruso…) no tienen esas letras.
+  // Se acepta, pero la corrección enseña siempre la forma correcta.
+  if (!accents) out = out.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   return out;
 }
 
@@ -20,7 +21,7 @@ function distance(a, b) {
   return d[a.length][b.length];
 }
 
-// → { ok, note }: note = null (perfecto) | "accent" (solo faltan o sobran tildes) | "typo" (una letra de diferencia).
+// → { ok, note }: note = null (perfecto) | "accent" (solo faltan o sobran tildes o la ñ) | "typo" (una letra de diferencia).
 export function checkWritten(input, expected) {
   const given = normalize(input), want = normalize(expected);
   if (!given) return { ok: false, note: null };
@@ -63,9 +64,11 @@ export function diffChars(input, expected) {
   return { given, want };
 }
 
-// Número de palabras mal escritas, que faltan o que sobran (sin mayúsculas ni signos; las tildes cuentan).
-export function wordErrors(input, expected) {
-  const words = (s) => s.toLowerCase().replace(/[¿?¡!.,;:"'«»()]/g, " ").split(/\s+/).filter(Boolean);
+// Número de palabras mal escritas, que faltan o que sobran (sin mayúsculas ni signos).
+// accents: false → tampoco cuentan las tildes ni la ñ (para quien no las tiene en el teclado).
+export function wordErrors(input, expected, { accents = true } = {}) {
+  const fold = (s) => (accents ? s : s.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+  const words = (s) => fold(s.toLowerCase()).replace(/[¿?¡!.,;:"'«»()]/g, " ").split(/\s+/).filter(Boolean);
   const a = words(input), b = words(expected);
   const L = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
   for (let i = a.length - 1; i >= 0; i--)

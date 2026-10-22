@@ -13,8 +13,14 @@ export function txt(tag, cls, text, lang) {
   e.dir = dirOf(lang);
   return e;
 }
+// Las flechas de «← Volver» y «Continuar →» van en su propio elemento para girarlas en árabe y urdu
+// (se leen de derecha a izquierda: «volver» apunta a la derecha).
 export function button(cls, label, onclick) {
-  const b = el("button", cls, label);
+  const b = el("button", cls);
+  label = label == null ? "" : String(label);
+  if (label.startsWith("← ")) b.append(el("span", "arrow", "←"), " " + label.slice(2));
+  else if (label.endsWith(" →")) b.append(label.slice(0, -2) + " ", el("span", "arrow", "→"));
+  else b.textContent = label;
   b.type = "button";
   b.onclick = onclick;
   return b;

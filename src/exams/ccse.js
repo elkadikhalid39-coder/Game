@@ -117,7 +117,8 @@ function startMock() {
     nav.append(i < list.length - 1 ? button("btn", ui("next") + " →", () => { i++; render(); }) : button("btn", ui("finish"), () => finish(false)));
     app.append(head, questionCard(list[i], i + 1, list.length, answers[i], (k) => { answers[i] = k; render(); }), nav,
       el("p", "q-meta center", ui("answeredCount", `${answers.filter((a) => a !== null).length} / ${list.length}`)),
-      button("link", ui("finish"), () => finish(false)));
+      // «Terminar» antes de tiempo; en la última pregunta ya está en la barra de navegación.
+      i < list.length - 1 ? button("link", ui("finish"), () => finish(false)) : "");
   };
   const finish = (timeUp) => {
     timer.stop();

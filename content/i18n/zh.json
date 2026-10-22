@@ -253,7 +253,10 @@
     "searchWords": "用西班牙语或你的语言搜索",
     "noResults": "没有结果",
     "hintLetters": "{x} 个字母",
-    "okWithHint": "答对了，但用了提示。稍后会再复习。"
+    "okWithHint": "答对了，但用了提示。稍后会再复习。",
+    "demoMode": "演示模式：全部解锁",
+    "demoTag": "演示",
+    "calcInvalid": "请检查标红的分数：填写 0 到 10 的数字，例如 7,5。"
   },
   "t": {
     "hola": "你好",

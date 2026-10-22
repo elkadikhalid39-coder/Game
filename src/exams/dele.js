@@ -10,6 +10,7 @@ import { mascot } from "../ui/mascot.js";
 import { app, screen, celebrate } from "../ui/shell.js";
 import { factNote } from "../ui/fact.js";
 import { countdown } from "../ui/timer.js";
+import { speakerIcon } from "../ui/audio-buttons.js";
 import { hasPass, draftBanner, menuRow, saveResult, lastResult } from "./common.js";
 import { PASS, passCard } from "./nationality.js";
 
@@ -166,7 +167,10 @@ function audioButton(lines) {
     paint();
     speakDialog(lines);
   });
-  const paint = () => { b.textContent = `🔊 ${ui("play")} · ${ui("playsLeft", left)}`; b.disabled = !left; };
+  const paint = () => {
+    b.replaceChildren(speakerIcon(2), el("span", "", `${ui("play")} · ${ui("playsLeft", left)}`));
+    b.disabled = !left;
+  };
   paint();
   return b;
 }

@@ -253,7 +253,10 @@
     "searchWords": "Procura em espanhol ou na tua língua",
     "noResults": "Sem resultados",
     "hintLetters": "{x} letras",
-    "okWithHint": "Certo, com pista. Vais revê-la mais tarde."
+    "okWithHint": "Certo, com pista. Vais revê-la mais tarde.",
+    "demoMode": "Modo demo: tudo desbloqueado",
+    "demoTag": "DEMO",
+    "calcInvalid": "Revê as notas marcadas a vermelho: escreve números de 0 a 10, por exemplo 7,5."
   },
   "t": {
     "hola": "Olá",
