@@ -1,0 +1,1367 @@
+{
+  "status": "borrador",
+  "subjects": [
+    {
+      "name": "Alemán",
+      "modality": "Todas",
+      "type": "desarrollo",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaaleman20252026defv217diciembre.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/pcealemanmodeloexamen2026defv217diciembre.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Biología",
+      "modality": "Ciencia y Tecnología",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526biologia.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenpce202526biologia.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Ciencias Generales",
+      "modality": "General",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/modeloguiapcecienciasgenerales2025262.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodeexamencienciasgeneralesn20252026.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Dibujo Artístico",
+      "modality": "Artes Plásticas, Imagen y Diseño",
+      "type": "desarrollo",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiadibujoartistico20252026def.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodibujoartistico2026.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Dibujo Técnico",
+      "modality": "Ciencia y Tecnología",
+      "type": "desarrollo",
+      "guide": "https://unedasiss.uned.es/archivos_publicos/AccesoExtAsignaturasExamen/100713/guiapcedibujotecnico202526v23396.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/examenmodelodibujotecnicopce2526v2.pdf",
+      "guideDate": "2026-04-15"
+    },
+    {
+      "name": "Diseño",
+      "modality": "Artes Plásticas, Imagen y Diseño",
+      "type": "desarrollo",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526diseno.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodiseno2026.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Empresas y Diseño de Modelos de Negocio",
+      "modality": "Humanidades y Ciencias Sociales",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaempresaydisenodemodelosdenegocio20252026.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/16730/modeloempresa20252026.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Física",
+      "modality": "Ciencia y Tecnología",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcefisica202526.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/examenfisicapcemodelo202526.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Francés",
+      "modality": "Todas",
+      "type": "desarrollo",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcefrances202526.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelopcefrances202526def.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Fundamentos Artísticos",
+      "modality": "Artes Plásticas, Imagen y Diseño",
+      "type": "desarrollo",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiafundamentosartisticos20252026.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenfundamentosartisticos20252026.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Geografía",
+      "modality": "Humanidades y Ciencias Sociales",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526geografia.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamengeografia.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Geología y Ciencias Ambientales",
+      "modality": "Ciencia y Tecnología",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcegeologiayccamb202526final.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexgeologiayccamb202526final.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Historia de España",
+      "modality": "Todas",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526hdeespana.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodeexamenhdeespana1.pdf",
+      "guideDate": "2025-12-23",
+      "id": "historia"
+    },
+    {
+      "name": "Historia de la Filosofía",
+      "modality": "Todas",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/modeloguiafilosofiapce20252026.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenpcefilosofia.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Historia del Arte",
+      "modality": "Humanidades y Ciencias Sociales",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiahistoriadelartepce202526.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenhistoriadelarte202526.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Inglés",
+      "modality": "Todas",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapceingles202526.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/examenmodeloinglesdef.pdf",
+      "guideDate": "2025-12-23",
+      "id": "ingles"
+    },
+    {
+      "name": "Italiano",
+      "modality": "Todas",
+      "type": "desarrollo",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaitaliano2526def.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloitaliano2026def.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Latín",
+      "modality": "Humanidades y Ciencias Sociales",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guialatin2526.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelolatinpublicable26.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Lengua Castellana y Literatura",
+      "modality": "Todas",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guialenguacastellanayliteratura252663.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodeexamenlenguacastellanayliteratura2025202644.pdf",
+      "guideDate": "2025-12-23",
+      "id": "lengua"
+    },
+    {
+      "name": "Matemáticas",
+      "modality": "Ciencia y Tecnología",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiamatematicaspce202526.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/nuevomodelomatematicasv03.pdf",
+      "guideDate": "2025-12-23",
+      "id": "matematicas"
+    },
+    {
+      "name": "Matemáticas Aplicadas a las Ciencias Sociales",
+      "modality": "Ciencia y Tecnología; Humanidades y Ciencias Sociales",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526matematicasaplicadasccss.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/examenpce202627matematicasaplicadasccss.pdf",
+      "guideDate": "2025-12-23",
+      "id": "macs"
+    },
+    {
+      "name": "Movimientos Culturales y Artísticos",
+      "modality": "General",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiamovimientosculturalesyartisticospce202526.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamen20252026movimientosculturales.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Portugués",
+      "modality": "Todas",
+      "type": "desarrollo",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiaportuguespce2526.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modeloexamenportugues2526.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Química",
+      "modality": "Ciencia y Tecnología",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcequimica20252026publicada.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/modelodeexamenpcequimica20252026publicado.pdf",
+      "guideDate": "2025-12-23"
+    },
+    {
+      "name": "Tecnología e Ingeniería",
+      "modality": "Ciencia y Tecnología",
+      "type": "test",
+      "guide": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapcetecnologiaeingenieria202526v4.pdf",
+      "model": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163112/tecnologiaeingenieriamodeloexamenguiacurso20252026v4.pdf",
+      "guideDate": "2025-12-23"
+    }
+  ],
+  "details": {
+    "lengua": {
+      "fact": "pce.lengua",
+      "extra": [
+        "pce.lengua_errores"
+      ],
+      "program": [
+        "Bloque 1. Comprensión de un texto: resumen, tema e ideas secundarias, y texto argumentativo",
+        "Bloque 2. Reflexión sobre la lengua: preguntas semiabiertas de gramática, léxico y formación de palabras",
+        "Bloque 3. Literatura española: un tema a elegir entre dos"
+      ],
+      "tools": [
+        "writing"
+      ]
+    },
+    "historia": {
+      "fact": "pce.historia",
+      "program": [
+        "1. La Península Ibérica desde los primeros humanos hasta la monarquía visigoda (711)",
+        "2. La Edad Media: tres culturas y un mapa político en constante cambio (711-1474)",
+        "3. La formación de la Monarquía Hispánica y su expansión mundial (1474-1700)",
+        "4. El reformismo de los primeros Borbones (1700-1788)",
+        "5. La crisis del Antiguo Régimen (1788-1833)",
+        "6. La construcción del Estado liberal (1833-1874)",
+        "7. La Restauración borbónica (1874-1902)",
+        "8. Economía del siglo XIX",
+        "9. La crisis de la Restauración y la caída de la monarquía (1902-1931)",
+        "10. La Segunda República y la Guerra Civil (1931-1939)",
+        "11. La dictadura franquista (1939-1975)",
+        "12. La democracia y la integración en Europa (desde 1975)"
+      ],
+      "tools": [
+        "historia"
+      ]
+    },
+    "ingles": {
+      "fact": "pce.ingles",
+      "program": [
+        "Bloque A. Comprensión de un texto: vocabulario y resumen",
+        "Bloque B. Gramática y uso del inglés (opción múltiple)",
+        "Bloque C. Redacción de 150 a 180 palabras"
+      ],
+      "tools": [
+        "ingles"
+      ]
+    },
+    "matematicas": {
+      "fact": "pce.matematicas",
+      "program": [
+        "I. Procesos, métodos y actitudes (transversal)",
+        "II. Números y Álgebra: matrices, determinantes y sistemas",
+        "III. Análisis: límites, derivadas e integrales",
+        "IV. Geometría: vectores, rectas y planos en el espacio",
+        "V. Estadística y Probabilidad"
+      ],
+      "tools": [
+        "matematicas"
+      ]
+    },
+    "macs": {
+      "fact": "pce.macs",
+      "program": [
+        "A. Sentido numérico: matrices",
+        "B. Sentido de la medida: derivadas, integrales y probabilidad",
+        "C. Sentido algebraico: funciones, sistemas y programación lineal",
+        "D. Sentido estocástico: probabilidad, binomial, normal e inferencia",
+        "E. Sentido socioafectivo"
+      ],
+      "tools": [
+        "macs"
+      ]
+    }
+  },
+  "tests": {
+    "historia": {
+      "fact": "pce.historia",
+      "shown": 8,
+      "max": 6,
+      "right": 0.5,
+      "wrong": 0.2,
+      "points": 3,
+      "minutes": 20,
+      "minutesFrom": "app",
+      "bank": [
+        {
+          "id": "h1",
+          "q": "¿En qué año entraron en la península ibérica los musulmanes, lo que llevó al fin del reino visigodo?",
+          "options": [
+            "711",
+            "1492",
+            "476"
+          ],
+          "answer": 0,
+          "explain": "En 711 un ejército musulmán cruzó el estrecho y derrotó al rey visigodo Rodrigo (tema 1 del programa).",
+          "topic": "Tema 1",
+          "status": "borrador"
+        },
+        {
+          "id": "h2",
+          "q": "Según la tradición, ¿qué pueblo fundó Gadir, la actual Cádiz?",
+          "options": [
+            "Los griegos",
+            "Los romanos",
+            "Los fenicios"
+          ],
+          "answer": 2,
+          "explain": "Los fenicios fundaron Gadir como colonia comercial; la tradición la sitúa hacia el 1100 a. C. y la arqueología, algo después.",
+          "topic": "Tema 1",
+          "status": "borrador"
+        },
+        {
+          "id": "h3",
+          "q": "Las pinturas de la cueva de Altamira pertenecen al…",
+          "options": [
+            "Edad del Hierro",
+            "Paleolítico superior",
+            "Neolítico"
+          ],
+          "answer": 1,
+          "explain": "Altamira es arte rupestre de cazadores y recolectores del Paleolítico superior.",
+          "topic": "Tema 1",
+          "status": "borrador"
+        },
+        {
+          "id": "h4",
+          "q": "¿Qué lengua se extendió con la romanización y es el origen del castellano?",
+          "options": [
+            "El latín",
+            "El griego",
+            "El árabe"
+          ],
+          "answer": 0,
+          "explain": "El castellano es una lengua romance: procede del latín hablado.",
+          "topic": "Tema 1",
+          "status": "borrador"
+        },
+        {
+          "id": "h5",
+          "q": "¿Quién proclamó el califato de Córdoba en el año 929?",
+          "options": [
+            "Boabdil",
+            "Almanzor",
+            "Abderramán III"
+          ],
+          "answer": 2,
+          "explain": "Abderramán III se proclamó califa en 929 y rompió con la autoridad religiosa de Bagdad (tema 2).",
+          "topic": "Tema 2",
+          "status": "borrador"
+        },
+        {
+          "id": "h6",
+          "q": "¿Qué batalla de 1212 abrió a los reinos cristianos el camino hacia el valle del Guadalquivir?",
+          "options": [
+            "Lepanto",
+            "Las Navas de Tolosa",
+            "Covadonga"
+          ],
+          "answer": 1,
+          "explain": "En 1212 Castilla, Aragón y Navarra vencieron a los almohades en Las Navas de Tolosa.",
+          "topic": "Tema 2",
+          "status": "borrador"
+        },
+        {
+          "id": "h7",
+          "q": "En los reinos cristianos medievales, las Cortes eran…",
+          "options": [
+            "los tribunales de la Inquisición",
+            "asambleas del rey con representantes de la nobleza, el clero y las ciudades",
+            "los ejércitos de las órdenes militares"
+          ],
+          "answer": 1,
+          "explain": "Las Cortes reunían a los estamentos y votaban, sobre todo, los impuestos que pedía el rey.",
+          "topic": "Tema 2",
+          "status": "borrador"
+        },
+        {
+          "id": "h8",
+          "q": "¿Qué matrimonio de 1469 unió a los herederos de Castilla y de Aragón?",
+          "options": [
+            "Isabel y Fernando",
+            "Carlos I e Isabel de Portugal",
+            "Felipe y Juana"
+          ],
+          "answer": 0,
+          "explain": "El matrimonio de Isabel de Castilla y Fernando de Aragón dio lugar a la unión dinástica (tema 3).",
+          "topic": "Tema 3",
+          "status": "borrador"
+        },
+        {
+          "id": "h9",
+          "q": "¿Qué dos hechos ocurrieron en 1492?",
+          "options": [
+            "La Paz de Westfalia y la expulsión de los moriscos",
+            "La Guerra de Sucesión y los Decretos de Nueva Planta",
+            "La conquista de Granada y el primer viaje de Colón"
+          ],
+          "answer": 2,
+          "explain": "1492: fin del reino nazarí de Granada, expulsión de los judíos y llegada de Colón a América.",
+          "topic": "Tema 3",
+          "status": "borrador"
+        },
+        {
+          "id": "h10",
+          "q": "¿Qué tratado de 1494 repartió entre Castilla y Portugal las tierras por descubrir?",
+          "options": [
+            "La Paz de Westfalia",
+            "El Tratado de Tordesillas",
+            "El Tratado de Utrecht"
+          ],
+          "answer": 1,
+          "explain": "Tordesillas fijó una línea al oeste de Cabo Verde para repartir la expansión atlántica.",
+          "topic": "Tema 3",
+          "status": "borrador"
+        },
+        {
+          "id": "h11",
+          "q": "¿Qué rey heredó Castilla, Aragón, los Países Bajos y fue elegido emperador del Sacro Imperio?",
+          "options": [
+            "Felipe II",
+            "Felipe V",
+            "Carlos I"
+          ],
+          "answer": 2,
+          "explain": "Carlos I de España (Carlos V del Imperio) reunió la herencia de sus cuatro abuelos.",
+          "topic": "Tema 3",
+          "status": "borrador"
+        },
+        {
+          "id": "h12",
+          "q": "¿Qué rey estableció la corte en Madrid en 1561?",
+          "options": [
+            "Felipe II",
+            "Carlos II",
+            "Felipe IV"
+          ],
+          "answer": 0,
+          "explain": "Felipe II fijó la corte en Madrid en 1561.",
+          "topic": "Tema 3",
+          "status": "borrador"
+        },
+        {
+          "id": "h13",
+          "q": "¿Bajo qué rey se decretó la expulsión de los moriscos (1609)?",
+          "options": [
+            "Isabel I",
+            "Felipe III",
+            "Felipe II"
+          ],
+          "answer": 1,
+          "explain": "La expulsión se decretó en 1609, en el reinado de Felipe III y con el duque de Lerma como valido.",
+          "topic": "Tema 3",
+          "status": "borrador"
+        },
+        {
+          "id": "h14",
+          "q": "En el siglo XVII, un valido era…",
+          "options": [
+            "el presidente del Consejo de la Inquisición",
+            "el gobernador de un virreinato de América",
+            "una persona de confianza del rey que gobernaba en su nombre"
+          ],
+          "answer": 2,
+          "explain": "Lerma (Felipe III) y Olivares (Felipe IV) son los validos más conocidos.",
+          "topic": "Tema 3",
+          "status": "borrador"
+        },
+        {
+          "id": "h15",
+          "q": "¿Qué guerra llevó a la dinastía de los Borbones al trono de España a comienzos del siglo XVIII?",
+          "options": [
+            "La Guerra de Sucesión",
+            "La Guerra de los Treinta Años",
+            "La Guerra de la Independencia"
+          ],
+          "answer": 0,
+          "explain": "Tras la muerte sin hijos de Carlos II (1700), la Guerra de Sucesión dio el trono a Felipe V (tema 4).",
+          "topic": "Tema 4",
+          "status": "borrador"
+        },
+        {
+          "id": "h16",
+          "q": "¿Cómo se llaman los decretos de Felipe V que suprimieron los fueros de los reinos de la Corona de Aragón?",
+          "options": [
+            "Pragmática Sanción",
+            "Leyes Nuevas",
+            "Decretos de Nueva Planta"
+          ],
+          "answer": 2,
+          "explain": "Los Decretos de Nueva Planta (1707-1716) impusieron el modelo de Castilla, salvo en Navarra y las provincias vascas.",
+          "topic": "Tema 4",
+          "status": "borrador"
+        },
+        {
+          "id": "h17",
+          "q": "¿Qué rey ilustrado del siglo XVIII impulsó obras en Madrid como la Puerta de Alcalá?",
+          "options": [
+            "Carlos III",
+            "Fernando VII",
+            "Felipe V"
+          ],
+          "answer": 0,
+          "explain": "Carlos III (1759-1788) es el rey del reformismo ilustrado.",
+          "topic": "Tema 4",
+          "status": "borrador"
+        },
+        {
+          "id": "h18",
+          "q": "¿Qué institución crearon los Reyes Católicos para vigilar la ortodoxia religiosa?",
+          "options": [
+            "El Consejo de Indias",
+            "El Tribunal de la Inquisición",
+            "La Santa Hermandad"
+          ],
+          "answer": 1,
+          "explain": "La Inquisición se creó en 1478. La Santa Hermandad era una fuerza de orden público.",
+          "topic": "Tema 3",
+          "status": "borrador"
+        }
+      ]
+    },
+    "ingles": {
+      "fact": "pce.ingles",
+      "shown": 4,
+      "max": 4,
+      "right": 0.5,
+      "wrong": 0.15,
+      "points": 2,
+      "minutes": 15,
+      "minutesFrom": "guide",
+      "bank": [
+        {
+          "id": "i1",
+          "q": "If it ____ tomorrow, we will stay at home.",
+          "options": [
+            "rained",
+            "rains",
+            "will rain"
+          ],
+          "answer": 1,
+          "explain": "First conditional: if + present simple, will + verb.",
+          "topic": "Conditionals",
+          "status": "borrador"
+        },
+        {
+          "id": "i2",
+          "q": "She has lived in Madrid ____ 2019.",
+          "options": [
+            "since",
+            "for",
+            "from"
+          ],
+          "answer": 0,
+          "explain": "Since + a point in time; for + a period of time.",
+          "topic": "Present perfect",
+          "status": "borrador"
+        },
+        {
+          "id": "i3",
+          "q": "I'm not used to ____ up so early.",
+          "options": [
+            "get",
+            "got",
+            "getting"
+          ],
+          "answer": 2,
+          "explain": "Be used to + -ing form.",
+          "topic": "Gerunds",
+          "status": "borrador"
+        },
+        {
+          "id": "i4",
+          "q": "This is the book ____ I told you about.",
+          "options": [
+            "which",
+            "who",
+            "whose"
+          ],
+          "answer": 0,
+          "explain": "Which (or that) for things; who for people.",
+          "topic": "Relative clauses",
+          "status": "borrador"
+        },
+        {
+          "id": "i5",
+          "q": "They ____ dinner when the phone rang.",
+          "options": [
+            "have had",
+            "were having",
+            "had"
+          ],
+          "answer": 1,
+          "explain": "Past continuous for an action in progress, interrupted by a past simple action.",
+          "topic": "Past tenses",
+          "status": "borrador"
+        },
+        {
+          "id": "i6",
+          "q": "The report ____ by the manager yesterday.",
+          "options": [
+            "was wrote",
+            "has written",
+            "was written"
+          ],
+          "answer": 2,
+          "explain": "Past passive: was/were + past participle (written).",
+          "topic": "Passive voice",
+          "status": "borrador"
+        },
+        {
+          "id": "i7",
+          "q": "He asked me where ____.",
+          "options": [
+            "did I live",
+            "do I live",
+            "I lived"
+          ],
+          "answer": 2,
+          "explain": "Reported questions use statement word order and move the tense back.",
+          "topic": "Reported speech",
+          "status": "borrador"
+        },
+        {
+          "id": "i8",
+          "q": "You ____ smoke in the hospital: it's forbidden.",
+          "options": [
+            "don't have to",
+            "mustn't",
+            "needn't"
+          ],
+          "answer": 1,
+          "explain": "Mustn't = it is not allowed. Don't have to = it is not necessary.",
+          "topic": "Modal verbs",
+          "status": "borrador"
+        },
+        {
+          "id": "i9",
+          "q": "This exam was ____ than the last one.",
+          "options": [
+            "easier",
+            "more easy",
+            "the easiest"
+          ],
+          "answer": 0,
+          "explain": "Short adjectives ending in -y: easy → easier.",
+          "topic": "Comparatives",
+          "status": "borrador"
+        },
+        {
+          "id": "i10",
+          "q": "I wish I ____ more time to study.",
+          "options": [
+            "have",
+            "will have",
+            "had"
+          ],
+          "answer": 2,
+          "explain": "Wish + past simple for present situations we want to be different.",
+          "topic": "Wishes",
+          "status": "borrador"
+        },
+        {
+          "id": "i11",
+          "q": "By next June, she ____ her degree.",
+          "options": [
+            "finishes",
+            "will have finished",
+            "has finished"
+          ],
+          "answer": 1,
+          "explain": "Future perfect: an action completed before a point in the future.",
+          "topic": "Future forms",
+          "status": "borrador"
+        },
+        {
+          "id": "i12",
+          "q": "There isn't ____ milk left in the fridge.",
+          "options": [
+            "any",
+            "some",
+            "many"
+          ],
+          "answer": 0,
+          "explain": "Any in negative sentences; milk is uncountable, so not many.",
+          "topic": "Quantifiers",
+          "status": "borrador"
+        }
+      ]
+    },
+    "matematicas": {
+      "fact": "pce.matematicas",
+      "shown": 8,
+      "max": 5,
+      "right": 0.5,
+      "wrong": 0.2,
+      "points": 2.5,
+      "minutes": 25,
+      "minutesFrom": "app",
+      "bank": [
+        {
+          "id": "m1",
+          "q": "Si A es una matriz 2×3 y B es una matriz 3×4, el producto AB es una matriz…",
+          "options": [
+            "3×3",
+            "2×4",
+            "No se puede calcular"
+          ],
+          "answer": 1,
+          "explain": "El producto existe porque A tiene 3 columnas y B 3 filas; el resultado tiene las filas de A y las columnas de B.",
+          "topic": "Números y Álgebra",
+          "status": "borrador"
+        },
+        {
+          "id": "m2",
+          "q": "El determinante de la matriz de filas (2 1) y (4 3) es…",
+          "options": [
+            "2",
+            "10",
+            "−2"
+          ],
+          "answer": 0,
+          "explain": "2·3 − 1·4 = 6 − 4 = 2.",
+          "topic": "Números y Álgebra",
+          "status": "borrador"
+        },
+        {
+          "id": "m3",
+          "q": "La solución del sistema x + y = 3, x − y = 1 es…",
+          "options": [
+            "No tiene solución",
+            "x = 1, y = 2",
+            "x = 2, y = 1"
+          ],
+          "answer": 2,
+          "explain": "Sumando las ecuaciones: 2x = 4, x = 2; entonces y = 1.",
+          "topic": "Números y Álgebra",
+          "status": "borrador"
+        },
+        {
+          "id": "m4",
+          "q": "El rango de la matriz de filas (1 2) y (2 4) es…",
+          "options": [
+            "0",
+            "1",
+            "2"
+          ],
+          "answer": 1,
+          "explain": "La segunda fila es el doble de la primera y el determinante es 0: rango 1.",
+          "topic": "Números y Álgebra",
+          "status": "borrador"
+        },
+        {
+          "id": "m5",
+          "q": "El límite cuando x tiende a infinito de (3x² + 1)/(x² − 5) es…",
+          "options": [
+            "3",
+            "Infinito",
+            "0"
+          ],
+          "answer": 0,
+          "explain": "Mismo grado en numerador y denominador: cociente de los coeficientes principales, 3/1.",
+          "topic": "Análisis",
+          "status": "borrador"
+        },
+        {
+          "id": "m6",
+          "q": "La derivada de f(x) = x³ − 2x es…",
+          "options": [
+            "x² − 2",
+            "3x²",
+            "3x² − 2"
+          ],
+          "answer": 2,
+          "explain": "Derivada de x³: 3x²; derivada de −2x: −2.",
+          "topic": "Análisis",
+          "status": "borrador"
+        },
+        {
+          "id": "m7",
+          "q": "La integral definida de 2x entre 0 y 2 vale…",
+          "options": [
+            "8",
+            "4",
+            "2"
+          ],
+          "answer": 1,
+          "explain": "Una primitiva es x²; por la regla de Barrow: 2² − 0² = 4.",
+          "topic": "Análisis",
+          "status": "borrador"
+        },
+        {
+          "id": "m8",
+          "q": "La función f(x) = 1/(x − 2) tiene una asíntota vertical en…",
+          "options": [
+            "y = 2",
+            "x = −2",
+            "x = 2"
+          ],
+          "answer": 2,
+          "explain": "El denominador se anula en x = 2 y el numerador no.",
+          "topic": "Análisis",
+          "status": "borrador"
+        },
+        {
+          "id": "m9",
+          "q": "La función f(x) = x² − 4x + 1 tiene un mínimo en…",
+          "options": [
+            "x = 2",
+            "x = −2",
+            "x = 4"
+          ],
+          "answer": 0,
+          "explain": "f'(x) = 2x − 4 = 0 en x = 2, y f''(x) = 2 > 0.",
+          "topic": "Análisis",
+          "status": "borrador"
+        },
+        {
+          "id": "m10",
+          "q": "La derivada de f(x) = e^(2x) es…",
+          "options": [
+            "e^(2x)",
+            "2x·e^(2x−1)",
+            "2e^(2x)"
+          ],
+          "answer": 2,
+          "explain": "Regla de la cadena: la derivada del exponente (2) multiplica a e^(2x).",
+          "topic": "Análisis",
+          "status": "borrador"
+        },
+        {
+          "id": "m11",
+          "q": "El producto escalar de u = (1, 2, 3) y v = (2, 0, −1) es…",
+          "options": [
+            "5",
+            "−1",
+            "(2, 0, −3)"
+          ],
+          "answer": 1,
+          "explain": "1·2 + 2·0 + 3·(−1) = −1. El producto escalar es un número, no un vector.",
+          "topic": "Geometría",
+          "status": "borrador"
+        },
+        {
+          "id": "m12",
+          "q": "El módulo del vector v = (2, −1, 2) es…",
+          "options": [
+            "3",
+            "√5",
+            "9"
+          ],
+          "answer": 0,
+          "explain": "√(4 + 1 + 4) = √9 = 3.",
+          "topic": "Geometría",
+          "status": "borrador"
+        },
+        {
+          "id": "m13",
+          "q": "Los vectores u = (1, 2, −1) y v = (2, −1, 0) son…",
+          "options": [
+            "perpendiculares",
+            "iguales",
+            "paralelos"
+          ],
+          "answer": 0,
+          "explain": "Su producto escalar es 2 − 2 + 0 = 0, así que son perpendiculares.",
+          "topic": "Geometría",
+          "status": "borrador"
+        },
+        {
+          "id": "m14",
+          "q": "Se lanza un dado de seis caras. La probabilidad de obtener un número mayor que 4 es…",
+          "options": [
+            "1/2",
+            "1/3",
+            "2/3"
+          ],
+          "answer": 1,
+          "explain": "Casos favorables: 5 y 6. 2/6 = 1/3.",
+          "topic": "Estadística y Probabilidad",
+          "status": "borrador"
+        },
+        {
+          "id": "m15",
+          "q": "Si A y B son independientes, P(A) = 0,5 y P(B) = 0,4, entonces P(A ∪ B) es…",
+          "options": [
+            "0,9",
+            "0,2",
+            "0,7"
+          ],
+          "answer": 2,
+          "explain": "P(A ∩ B) = 0,5 · 0,4 = 0,2; P(A ∪ B) = 0,5 + 0,4 − 0,2 = 0,7.",
+          "topic": "Estadística y Probabilidad",
+          "status": "borrador"
+        },
+        {
+          "id": "m16",
+          "q": "Se lanza una moneda tres veces. La probabilidad de obtener tres caras es…",
+          "options": [
+            "1/8",
+            "3/8",
+            "1/3"
+          ],
+          "answer": 0,
+          "explain": "(1/2)³ = 1/8.",
+          "topic": "Estadística y Probabilidad",
+          "status": "borrador"
+        }
+      ]
+    },
+    "macs": {
+      "fact": "pce.macs",
+      "shown": 8,
+      "max": 5,
+      "right": 0.5,
+      "wrong": 0.2,
+      "points": 2.5,
+      "minutes": 25,
+      "minutesFrom": "app",
+      "bank": [
+        {
+          "id": "s1",
+          "q": "Si A es la matriz de filas (1 2) y (0 1), la matriz A² tiene filas…",
+          "options": [
+            "(2 4) y (0 2)",
+            "(1 4) y (0 2)",
+            "(1 4) y (0 1)"
+          ],
+          "answer": 2,
+          "explain": "A·A: primera fila (1·1 + 2·0, 1·2 + 2·1) = (1 4); segunda fila (0 1).",
+          "topic": "Sentido numérico",
+          "status": "borrador"
+        },
+        {
+          "id": "s2",
+          "q": "El sistema x + y = 2, 2x + 2y = 5 es…",
+          "options": [
+            "compatible indeterminado",
+            "incompatible",
+            "compatible determinado"
+          ],
+          "answer": 1,
+          "explain": "Si x + y = 2, entonces 2x + 2y = 4, nunca 5: no tiene solución.",
+          "topic": "Sentido algebraico",
+          "status": "borrador"
+        },
+        {
+          "id": "s3",
+          "q": "En un problema de programación lineal, el óptimo de la función objetivo, si existe, se alcanza…",
+          "options": [
+            "en un vértice de la región factible",
+            "en el centro de la región factible",
+            "siempre en el origen"
+          ],
+          "answer": 0,
+          "explain": "Propiedad básica de la programación lineal: se evalúa la función en los vértices.",
+          "topic": "Sentido algebraico",
+          "status": "borrador"
+        },
+        {
+          "id": "s4",
+          "q": "Una empresa tiene un beneficio B(x) = −x² + 10x − 16. El beneficio es máximo para x igual a…",
+          "options": [
+            "10",
+            "5",
+            "8"
+          ],
+          "answer": 1,
+          "explain": "B'(x) = −2x + 10 = 0 en x = 5, y B''(x) = −2 < 0.",
+          "topic": "Sentido de la medida",
+          "status": "borrador"
+        },
+        {
+          "id": "s5",
+          "q": "El coste de producir x unidades es C(x) = 2x + 50. El coste medio de 10 unidades es…",
+          "options": [
+            "7",
+            "5",
+            "70"
+          ],
+          "answer": 0,
+          "explain": "C(10) = 70; coste medio = 70/10 = 7.",
+          "topic": "Sentido algebraico",
+          "status": "borrador"
+        },
+        {
+          "id": "s6",
+          "q": "Los puntos críticos de f(x) = x³ − 3x son…",
+          "options": [
+            "x = 3",
+            "x = 0",
+            "x = 1 y x = −1"
+          ],
+          "answer": 2,
+          "explain": "f'(x) = 3x² − 3 = 0 cuando x² = 1.",
+          "topic": "Sentido de la medida",
+          "status": "borrador"
+        },
+        {
+          "id": "s7",
+          "q": "El área bajo f(x) = 3x² entre x = 0 y x = 2 es…",
+          "options": [
+            "6",
+            "8",
+            "12"
+          ],
+          "answer": 1,
+          "explain": "Una primitiva es x³: 2³ − 0³ = 8.",
+          "topic": "Sentido de la medida",
+          "status": "borrador"
+        },
+        {
+          "id": "s8",
+          "q": "El límite cuando x tiende a +∞ de (2x + 1)/(x + 3) es…",
+          "options": [
+            "1/3",
+            "+∞",
+            "2"
+          ],
+          "answer": 2,
+          "explain": "Mismo grado: cociente de los coeficientes principales, 2/1.",
+          "topic": "Sentido de la medida",
+          "status": "borrador"
+        },
+        {
+          "id": "s9",
+          "q": "Una población de 1000 personas crece un 10 % cada año. A los 2 años tendrá…",
+          "options": [
+            "1210 personas",
+            "1100 personas",
+            "1200 personas"
+          ],
+          "answer": 0,
+          "explain": "1000 · 1,1 · 1,1 = 1210. El crecimiento es exponencial, no lineal.",
+          "topic": "Sentido algebraico",
+          "status": "borrador"
+        },
+        {
+          "id": "s10",
+          "q": "El 60 % de una clase estudia inglés y el 30 % estudia inglés y francés. Si un alumno estudia inglés, la probabilidad de que estudie francés es…",
+          "options": [
+            "0,18",
+            "0,3",
+            "0,5"
+          ],
+          "answer": 2,
+          "explain": "Probabilidad condicionada: 0,30 / 0,60 = 0,5.",
+          "topic": "Sentido estocástico",
+          "status": "borrador"
+        },
+        {
+          "id": "s11",
+          "q": "La máquina A hace el 70 % de las piezas, con un 2 % defectuosas; la máquina B hace el 30 %, con un 5 % defectuosas. La probabilidad de que una pieza sea defectuosa es…",
+          "options": [
+            "0,035",
+            "0,029",
+            "0,07"
+          ],
+          "answer": 1,
+          "explain": "Probabilidad total: 0,7 · 0,02 + 0,3 · 0,05 = 0,014 + 0,015 = 0,029.",
+          "topic": "Sentido estocástico",
+          "status": "borrador"
+        },
+        {
+          "id": "s12",
+          "q": "Dos sucesos A y B son independientes si…",
+          "options": [
+            "P(A ∩ B) = P(A) · P(B)",
+            "P(A ∩ B) = 0",
+            "P(A ∪ B) = 1"
+          ],
+          "answer": 0,
+          "explain": "P(A ∩ B) = 0 significa que son incompatibles, que es otra cosa.",
+          "topic": "Sentido estocástico",
+          "status": "borrador"
+        },
+        {
+          "id": "s13",
+          "q": "Si Z sigue una distribución normal N(0, 1), P(Z < 0) es…",
+          "options": [
+            "0,5",
+            "0",
+            "1"
+          ],
+          "answer": 0,
+          "explain": "La normal tipificada es simétrica respecto a 0.",
+          "topic": "Sentido estocástico",
+          "status": "borrador"
+        },
+        {
+          "id": "s14",
+          "q": "Si X sigue una binomial B(20; 0,3), su media es…",
+          "options": [
+            "14",
+            "0,3",
+            "6"
+          ],
+          "answer": 2,
+          "explain": "Media de una binomial: n · p = 20 · 0,3 = 6.",
+          "topic": "Sentido estocástico",
+          "status": "borrador"
+        },
+        {
+          "id": "s15",
+          "q": "Si aumenta el tamaño de la muestra y se mantiene el nivel de confianza, el intervalo de confianza para la media…",
+          "options": [
+            "se hace más ancho",
+            "se hace más estrecho",
+            "no cambia"
+          ],
+          "answer": 1,
+          "explain": "El error máximo depende de 1/√n: con más datos, el intervalo es más preciso.",
+          "topic": "Sentido estocástico",
+          "status": "borrador"
+        },
+        {
+          "id": "s16",
+          "q": "La integral definida de 2 entre x = 1 y x = 3 vale…",
+          "options": [
+            "2",
+            "6",
+            "4"
+          ],
+          "answer": 2,
+          "explain": "Una primitiva es 2x: 6 − 2 = 4.",
+          "topic": "Sentido de la medida",
+          "status": "borrador"
+        }
+      ]
+    }
+  },
+  "writing": {
+    "texts": [
+      {
+        "id": "teletrabajo",
+        "title": "Trabajar desde casa",
+        "body": "Durante años, ir a la oficina fue la única forma de trabajar para millones de personas. Hoy, gracias a internet, muchas tareas se pueden hacer desde casa, y el teletrabajo ha dejado de ser una rareza para convertirse en una opción habitual en muchas empresas.\n\nSus defensores señalan ventajas claras. Quien teletrabaja ahorra el tiempo y el dinero del transporte, contamina menos y puede organizar mejor su jornada. Además, las empresas pueden contratar a personas que viven lejos de las grandes ciudades, lo que ayuda a que los pueblos no se queden vacíos.\n\nSin embargo, el trabajo a distancia también tiene problemas. Muchas personas dicen que les cuesta separar la vida personal de la laboral: el ordenador está siempre cerca y la jornada parece no terminar nunca. Otras echan de menos el contacto con sus compañeros, porque una videollamada no sustituye una conversación en el pasillo. Por otra parte, no todos los trabajos se pueden hacer a distancia: una enfermera, un cocinero o un conductor tienen que estar en su puesto.\n\nPor eso, muchos expertos creen que el futuro no será ni la oficina de siempre ni la casa, sino una combinación de las dos. El reto es que esta flexibilidad no aumente las desigualdades entre quienes pueden elegir dónde trabajar y quienes no tienen esa posibilidad.",
+        "summary": "El teletrabajo se ha extendido gracias a internet. Tiene ventajas, como el ahorro de tiempo y de dinero, la reducción de la contaminación y la posibilidad de vivir lejos de las ciudades, pero también inconvenientes: es difícil separar la vida personal de la laboral, se pierde el contacto con los compañeros y no sirve para todas las profesiones. Por ello, se prevé un modelo mixto que no debe aumentar las desigualdades.",
+        "theme": "Las ventajas y los inconvenientes del teletrabajo.",
+        "ideas": [
+          "El teletrabajo ahorra tiempo y dinero, y permite vivir fuera de las grandes ciudades.",
+          "Trabajar desde casa dificulta separar la vida personal de la laboral y reduce el contacto con los compañeros."
+        ],
+        "prompt": "«El teletrabajo mejora la vida de las personas». Escriba un texto argumentativo a favor o en contra de esta idea.",
+        "model": "En mi opinión, el teletrabajo puede mejorar la vida de las personas, pero solo si se organiza bien.\n\nEn primer lugar, trabajar desde casa ahorra mucho tiempo. Una persona que vive en las afueras de una gran ciudad puede pasar más de una hora al día en el transporte público. Ese tiempo se puede dedicar a la familia, al descanso o al estudio. Además, menos desplazamientos significan menos tráfico y menos contaminación, algo que beneficia a toda la sociedad.\n\nEn segundo lugar, el teletrabajo da más libertad para elegir dónde vivir. Muchas personas podrían quedarse en su pueblo o mudarse a una ciudad más barata sin perder su empleo. De este modo, la vivienda dejaría de concentrarse en unas pocas ciudades.\n\nNo obstante, el teletrabajo también tiene riesgos. Si la empresa no respeta el horario, el trabajador está siempre conectado y no descansa. Asimismo, la falta de contacto con los compañeros puede provocar aislamiento. Por tanto, es necesario que existan normas claras, como el derecho a desconectar, y que se combinen los días en casa con días en la oficina. Así se mantienen las ventajas sin perder la relación con el equipo.\n\nEn conclusión, el teletrabajo no es bueno ni malo por sí mismo. Mejora la vida de las personas cuando ofrece flexibilidad y respeta el descanso; en cambio, la empeora cuando se convierte en una jornada sin fin."
+      },
+      {
+        "id": "bibliotecas",
+        "title": "Las bibliotecas en la era digital",
+        "body": "Cuando casi todo se puede encontrar en internet, algunas personas se preguntan si las bibliotecas públicas siguen siendo necesarias. La pregunta parece lógica: un teléfono móvil da acceso a más información que cualquier edificio lleno de libros, y además está disponible a cualquier hora y en cualquier lugar.\n\nSin embargo, las bibliotecas actuales no se limitan a prestar libros. En muchos barrios son el único lugar donde se puede estudiar en silencio, conectarse a internet sin pagar o pedir ayuda para rellenar un formulario de la Administración. Para estudiantes que comparten piso, para personas mayores que no saben usar el ordenador o para recién llegados que todavía no tienen conexión en casa, la biblioteca es una herramienta básica.\n\nAdemás, las bibliotecas organizan actividades que crean comunidad: clubes de lectura, talleres para niños o clases de idiomas. En ellas se encuentran personas de edades, orígenes y situaciones económicas muy distintas, algo cada vez más difícil en otros espacios de la ciudad.\n\nEs cierto que deben cambiar. Necesitan más ordenadores, horarios más amplios y personal formado en competencias digitales. Pero su función principal sigue siendo la misma que hace un siglo, cuando se abrieron las primeras bibliotecas populares: garantizar que el acceso al conocimiento no dependa del dinero de cada uno.",
+        "summary": "Aunque internet ofrece mucha información, las bibliotecas públicas siguen siendo necesarias. Además de prestar libros, ofrecen un lugar para estudiar, conexión gratuita y ayuda con trámites, especialmente a quienes tienen menos recursos, y organizan actividades que unen a personas diferentes. Deben modernizarse, pero mantienen su misión: que el acceso al conocimiento no dependa del dinero.",
+        "theme": "La función actual de las bibliotecas públicas.",
+        "ideas": [
+          "Las bibliotecas dan servicios básicos (espacio de estudio, internet gratis, ayuda con trámites) a quienes más lo necesitan.",
+          "Las bibliotecas crean comunidad entre personas de edades y orígenes distintos."
+        ],
+        "prompt": "«Con internet, las bibliotecas públicas ya no son necesarias». Escriba un texto argumentativo a favor o en contra de esta idea.",
+        "model": "No estoy de acuerdo con la idea de que las bibliotecas públicas hayan dejado de ser necesarias. Al contrario, creo que hoy cumplen una función todavía más importante.\n\nEn primer lugar, no todo el mundo tiene las mismas oportunidades de acceso a internet. Muchas familias no pueden pagar una buena conexión o no tienen un ordenador en casa. Para ellas, la biblioteca es el lugar donde los hijos hacen los deberes y los adultos buscan empleo o piden una cita médica.\n\nEn segundo lugar, tener información no es lo mismo que saber usarla. En internet hay noticias falsas y datos sin contrastar. El personal de las bibliotecas ayuda a buscar fuentes fiables y enseña competencias digitales, algo que un buscador no hace.\n\nPor otra parte, la biblioteca es uno de los pocos espacios públicos y gratuitos donde se puede estar sin consumir. Allí coinciden estudiantes, personas mayores y familias recién llegadas, de modo que se crean relaciones que no surgirían en otros lugares.\n\nEs cierto que algunas bibliotecas tienen pocos usuarios porque sus horarios son reducidos o sus equipos están anticuados. Sin embargo, la solución no es cerrarlas, sino modernizarlas: ampliar los horarios, renovar los ordenadores y ofrecer más actividades para jóvenes.\n\nEn definitiva, internet no sustituye a las bibliotecas: las necesita para que el conocimiento llegue a todos por igual."
+      }
+    ],
+    "connectors": [
+      [
+        "Ordenar e introducir",
+        [
+          "En primer lugar",
+          "Para empezar",
+          "En segundo lugar",
+          "Por último"
+        ]
+      ],
+      [
+        "Añadir",
+        [
+          "Además",
+          "Asimismo",
+          "Por otra parte",
+          "También"
+        ]
+      ],
+      [
+        "Oponer o matizar",
+        [
+          "Sin embargo",
+          "No obstante",
+          "En cambio",
+          "Aunque",
+          "Es cierto que…, pero…"
+        ]
+      ],
+      [
+        "Causa",
+        [
+          "Porque",
+          "Ya que",
+          "Puesto que",
+          "Debido a"
+        ]
+      ],
+      [
+        "Consecuencia",
+        [
+          "Por tanto",
+          "Por consiguiente",
+          "Así pues",
+          "De este modo"
+        ]
+      ],
+      [
+        "Ejemplo",
+        [
+          "Por ejemplo",
+          "Así",
+          "Es el caso de"
+        ]
+      ],
+      [
+        "Opinión",
+        [
+          "En mi opinión",
+          "Considero que",
+          "No estoy de acuerdo con"
+        ]
+      ],
+      [
+        "Concluir",
+        [
+          "En conclusión",
+          "En definitiva",
+          "En resumen"
+        ]
+      ]
+    ],
+    "check": {
+      "summary": [
+        "Está entre 5 y 7 líneas.",
+        "Recoge solo las ideas principales, sin ejemplos ni detalles.",
+        "No copio frases enteras del texto: lo digo con mis palabras.",
+        "No doy mi opinión.",
+        "Uso la tercera persona («el autor explica…» o directamente las ideas)."
+      ],
+      "theme": [
+        "El tema es una frase corta, normalmente sin verbo conjugado («Las ventajas y los inconvenientes de…»).",
+        "Las dos ideas secundarias son frases completas y distintas entre sí.",
+        "En total, entre 3 y 6 líneas."
+      ],
+      "argument": [
+        "Mi postura (tesis) está clara en el primer párrafo.",
+        "Doy al menos dos argumentos, cada uno en su párrafo y con un ejemplo.",
+        "Respondo a un argumento contrario («Es cierto que…, sin embargo…»).",
+        "Uso conectores variados.",
+        "Termino con una conclusión que recoge la tesis.",
+        "No uso palabras coloquiales («guay», «un montón», «o sea»…).",
+        "Tiene entre 20 y 25 líneas."
+      ]
+    },
+    "wordsPerLine": 11,
+    "spelling": [
+      {
+        "id": "e1",
+        "options": [
+          "Además, el transporte público es más barato.",
+          "Ademas, el transporte publico es mas barato.",
+          "Además, el transporte publico es mas barato."
+        ],
+        "answer": 0,
+        "explain": "Llevan tilde además, público y más (comparativo)."
+      },
+      {
+        "id": "e2",
+        "options": [
+          "No sé porqué ha cambiado la ley.",
+          "No sé por qué ha cambiado la ley.",
+          "No se porque ha cambiado la ley."
+        ],
+        "answer": 1,
+        "explain": "Sé (verbo saber) lleva tilde; «por qué» se escribe separado y con tilde en preguntas indirectas."
+      },
+      {
+        "id": "e3",
+        "options": [
+          "Vamos a ver si hay plazas libres.",
+          "Vamos a haber si hay plazas libres.",
+          "Vamos haber si hay plazas libres."
+        ],
+        "answer": 0,
+        "explain": "«A ver» (preposición + verbo ver) no es «haber» (verbo auxiliar)."
+      },
+      {
+        "id": "e4",
+        "options": [
+          "Ha havido muchos cambios este año.",
+          "Ha habido muchos cambios este año.",
+          "A habido muchos cambios este año."
+        ],
+        "answer": 1,
+        "explain": "«Ha» es del verbo haber y se escribe con h; «habido», con b."
+      },
+      {
+        "id": "e5",
+        "options": [
+          "Los jóvenes, sin embargo prefieren vivir en la ciudad.",
+          "Los jóvenes sin embargo prefieren vivir en la ciudad.",
+          "Los jóvenes, sin embargo, prefieren vivir en la ciudad."
+        ],
+        "answer": 2,
+        "explain": "Los conectores en medio de la frase van entre comas."
+      },
+      {
+        "id": "e6",
+        "options": [
+          "El gobierno, aprobó la ley aunque muchos estaban en contra.",
+          "El gobierno aprobó la ley aunque, muchos estaban en contra.",
+          "El gobierno aprobó la ley, aunque muchos estaban en contra."
+        ],
+        "answer": 2,
+        "explain": "No se pone coma entre el sujeto y el verbo; la coma va antes de «aunque»."
+      },
+      {
+        "id": "e7",
+        "options": [
+          "Es importante que todos tendrán acceso a internet.",
+          "Es importante que todos tengan acceso a internet.",
+          "Es importante que todos tienen acceso a internet."
+        ],
+        "answer": 1,
+        "explain": "Después de «es importante que» se usa el subjuntivo (tengan)."
+      },
+      {
+        "id": "e8",
+        "options": [
+          "Si tuviera más tiempo, estudiaría por las tardes.",
+          "Si tuviera más tiempo, estudiara por las tardes.",
+          "Si tendría más tiempo, estudiaría por las tardes."
+        ],
+        "answer": 0,
+        "explain": "Condicional irreal: «si» + imperfecto de subjuntivo (tuviera) + condicional (estudiaría)."
+      },
+      {
+        "id": "e9",
+        "options": [
+          "Hay muchas personas que trabajan desde casa.",
+          "Hay muchas personas que trabaja desde casa.",
+          "Hay mucha personas que trabajan desde casa."
+        ],
+        "answer": 0,
+        "explain": "Concordancia: muchas personas (femenino plural) que trabajan (plural)."
+      },
+      {
+        "id": "e10",
+        "options": [
+          "Habían muchos problemas en la reunión.",
+          "Hubieron muchos problemas en la reunión.",
+          "Hubo muchos problemas en la reunión."
+        ],
+        "answer": 2,
+        "explain": "«Haber» con el sentido de «existir» es impersonal y va siempre en singular: hubo, había, ha habido."
+      }
+    ]
+  }
+}

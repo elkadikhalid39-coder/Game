@@ -33,15 +33,15 @@ for (const l of [0, 1, 2]) if (letters.filter((x) => x === l).length / letters.l
 // ---------- DELE A2 (formato de la guía oficial) ----------
 const dele = load("dele-a2.json");
 const words = (s) => (s.match(/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9]+/g) || []).length;
-const between = (n, [a, b], w) => { if (n < a || n > b) errors.push(`dele ${w}: ${n} palabras (debe tener ${a}-${b})`); };
+const between = (n, [a, b], w) => { if (n < a || n > b) errors.push(`${w}: ${n} palabras (debe tener ${a}-${b})`); };
 const R = dele.reading.tasks, A = dele.listening.tasks;
 if (R.reduce((n, t) => n + t.questions.length, 0) !== 25) errors.push("dele lectura: debe tener 25 preguntas");
 if (A[0].items.length + A[1].items.length + A[2].questions.length + A[3].items.length !== 25) errors.push("dele auditiva: debe tener 25 preguntas");
-between(words(R[0].texts[0].body), [250, 300], "lectura T1");
-R[1].texts.forEach((t, i) => between(words(t.body), [50, 80], `lectura T2 texto ${i + 1}`));
-R[2].texts.forEach((t, i) => between(words(t.body), [100, 120], `lectura T3 texto ${i + 1}`));
-between(words(R[3].texts[0].body), [375, 425], "lectura T4");
-between(A[2].dialog.reduce((n, [, x]) => n + words(x), 0), [225, 275], "auditiva T3");
+between(words(R[0].texts[0].body), [250, 300], "dele lectura T1");
+R[1].texts.forEach((t, i) => between(words(t.body), [50, 80], `dele lectura T2 texto ${i + 1}`));
+R[2].texts.forEach((t, i) => between(words(t.body), [100, 120], `dele lectura T3 texto ${i + 1}`));
+between(words(R[3].texts[0].body), [375, 425], "dele lectura T4");
+between(A[2].dialog.reduce((n, [, x]) => n + words(x), 0), [225, 275], "dele auditiva T3");
 for (const t of [...R, ...A]) for (const q of t.questions || t.items) {
   const max = (q.options || t.match || t.statements).length;
   if (!(q.answer >= 0 && q.answer < max)) errors.push(`dele ${t.id}: respuesta fuera de rango`);
@@ -49,5 +49,38 @@ for (const t of [...R, ...A]) for (const q of t.questions || t.items) {
 if (new Set(A[3].items.map((i) => i.answer)).size !== A[3].items.length) errors.push("dele auditiva T4: dos mensajes con la misma frase");
 for (const k of ["writing", "speaking"]) if (dele[k].rubric.task.length !== 4 || dele[k].rubric.language.length !== 4) errors.push(`dele ${k}: la rúbrica va de 0 a 3`);
 
+// ---------- PCE (UNEDasiss) ----------
+const pce = load("pce.json");
+const facts = new Set(JSON.parse(readFileSync(new URL("../content/facts/universidad.json", import.meta.url), "utf8")).map((f) => f.id));
+const needFact = (id, w) => { if (!facts.has(id)) errors.push(`pce ${w}: el dato "${id}" no existe`); };
+for (const s of pce.subjects) {
+  if (!["test", "desarrollo"].includes(s.type)) errors.push(`pce ${s.name}: tipo no válido`);
+  for (const k of ["guide", "model"]) if (!/^https:\/\//.test(s[k] || "")) errors.push(`pce ${s.name}: falta el enlace oficial (${k})`);
+  if (s.id && !pce.details[s.id]) errors.push(`pce ${s.name}: falta su ficha`);
+}
+for (const [id, d] of Object.entries(pce.details)) for (const f of [d.fact, ...(d.extra || [])]) needFact(f, id);
+for (const [id, t] of Object.entries(pce.tests)) {
+  needFact(t.fact, id);
+  // La puntuación máxima tiene que salir de las reglas: respuestas que cuentan × valor del acierto.
+  if (Math.abs(t.max * t.right - t.points) > 1e-9) errors.push(`pce ${id}: ${t.max} × ${t.right} no da ${t.points} puntos`);
+  if (t.bank.length < t.shown * 2) errors.push(`pce ${id}: el banco necesita al menos ${t.shown * 2} preguntas`);
+  const seen = new Set();
+  for (const q of t.bank) {
+    if (seen.has(q.id)) errors.push(`pce ${q.id}: id repetido`);
+    seen.add(q.id);
+    if (q.options.length !== 3 || new Set(q.options).size !== 3) errors.push(`pce ${q.id}: debe tener 3 opciones distintas`);
+    if (!(q.answer >= 0 && q.answer < 3)) errors.push(`pce ${q.id}: respuesta fuera de rango`);
+    if (!q.explain || !STATUS.includes(q.status)) errors.push(`pce ${q.id}: falta explicación o estado`);
+  }
+  for (const l of [0, 1, 2]) if (t.bank.filter((q) => q.answer === l).length / t.bank.length > 0.5) errors.push(`pce ${id}: más de la mitad de las respuestas son la opción ${"abc"[l]}`);
+}
+for (const t of pce.writing.texts) {
+  between(words(t.body), [200, 320], `pce texto «${t.title}»`);
+  // Modelo de resumen: 5-7 líneas; modelo argumentativo: 20-25 líneas (con las palabras por línea de la app).
+  const lines = (s) => words(s) / pce.writing.wordsPerLine;
+  if (lines(t.summary) < 5 || lines(t.summary) > 7) errors.push(`pce «${t.title}»: el resumen modelo tiene ${lines(t.summary).toFixed(1)} líneas`);
+  if (lines(t.model) < 20 || lines(t.model) > 25) errors.push(`pce «${t.title}»: el texto argumentativo modelo tiene ${lines(t.model).toFixed(1)} líneas`);
+}
+
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
-console.log(`OK exámenes: CCSE ${ccse.questions.length} preguntas; DELE A2 lectura y auditiva de 25 preguntas con el formato oficial.`);
+console.log(`OK exámenes: CCSE ${ccse.questions.length} preguntas; DELE A2 lectura y auditiva de 25 preguntas con el formato oficial; PCE ${pce.subjects.length} materias y ${Object.values(pce.tests).reduce((n, t) => n + t.bank.length, 0)} preguntas de test.`);

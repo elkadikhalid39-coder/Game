@@ -33,15 +33,16 @@ export function saveResult(key, score, max, pass) {
 }
 export const lastResult = (key) => save.exams[key]?.[0];
 
-export function resultsList(key) {
+// verdict: false oculta APTO / NO APTO (partes de examen sin nota mínima propia).
+export function resultsList(key, { verdict = true } = {}) {
   const list = save.exams[key] || [];
   if (!list.length) return null;
   const box = el("div", "results-list");
   box.append(el("h3", "", ui("lastResults")));
   for (const r of list.slice(0, 3)) {
     const row = el("div", "result-row " + (r.pass ? "pass" : "fail"));
-    row.append(el("span", "", r.date.split("-").reverse().join("/")), el("strong", "", `${r.score} / ${r.max}`),
-      el("span", "pill " + (r.pass ? "free" : "lock"), r.pass ? ui("apto") : ui("noApto")));
+    row.append(el("span", "", r.date.split("-").reverse().join("/")), el("strong", "", `${String(r.score).replace(".", ",")} / ${String(r.max).replace(".", ",")}`));
+    if (verdict) row.append(el("span", "pill " + (r.pass ? "free" : "lock"), r.pass ? ui("apto") : ui("noApto")));
     box.append(row);
   }
   return box;

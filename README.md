@@ -26,6 +26,7 @@ src/core/     estado guardado (con migraciones), idiomas, voz, navegación, regi
 src/ui/       piezas de interfaz: mascota, marco, panel de respuesta, nota de fuente
 src/screens/  bienvenida, idioma y ajustes
 src/learn/    curso: camino, lección, repaso y perfil
+src/exams/    pases: Nacionalidad (Mi trámite, CCSE, DELE A2) y Universidad (Mi ruta, materias PCE, tests, redacción, nota)
 src/styles/   identidad visual
 tools/        comprobaciones, prueba de humo, iconos y empaquetado
 ```

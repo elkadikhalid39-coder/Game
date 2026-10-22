@@ -403,6 +403,32 @@ h2.section { margin: 18px 0 10px; }
 .guide { margin: 6px 0; padding-inline-start: 20px; }
 .oral-option { margin: 8px 0; }
 
+/* Universidad */
+.notice.visa { display: block; background: var(--sky-soft); border: 2px solid var(--sky); color: var(--ink); font-weight: 600; }
+.pill.info { background: var(--grape-soft); color: var(--grape); }
+.subject-row { background: var(--paper); border: 2px solid var(--line); border-radius: 16px; padding: 10px 12px; margin: 8px 0; }
+.subject-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: space-between; }
+.subject-row .official-link { font-size: .9rem; overflow-wrap: anywhere; }
+.rules { display: grid; gap: 8px; margin-bottom: 12px; }
+.rules p { margin: 0; }
+.score-rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.score-rule { display: grid; justify-items: center; background: var(--soft); border-radius: 12px; padding: 8px 4px; font-size: .85rem; }
+.score-rule strong { font-family: var(--display); font-size: 1.3rem; }
+.score-rule.ok strong { color: var(--mint-text); }
+.score-rule.bad strong { color: var(--coral-text); }
+.warn-many { background: var(--coral-soft); border: 2px solid var(--coral); color: var(--coral-text); font-weight: 600; }
+.exam-q .link { justify-self: start; }
+.checklist { list-style: none; padding: 0; margin: 4px 0; display: grid; gap: 6px; }
+.checklist input { width: 20px; height: 20px; vertical-align: middle; accent-color: var(--mint); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: var(--paper); border: 2px solid var(--line); border-radius: 999px; padding: 4px 12px; font-weight: 600; }
+.calc { display: grid; gap: 8px; margin-bottom: 12px; }
+.calc-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.calc-row span { flex: 1 1 90px; }
+.calc-row input, .calc-row select { font: inherit; padding: 8px; border-radius: 10px; border: 2px solid var(--line); background: var(--paper); color: var(--ink); }
+.calc-row input { width: 6.5em; }
+.calc-out { display: grid; gap: 6px; }
+
 /* ---------- Animaciones ---------- */
 .shake { animation: shake .4s; }
 .pulse { animation: pulse 1s infinite; border-color: var(--mint); box-shadow: 0 4px 0 var(--mint); }

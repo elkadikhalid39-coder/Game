@@ -309,6 +309,89 @@ test("DELE: escritura y oral con autoevaluación", async () => {
   return [counted && writingOk && oralOk && groups.includes("/ 50") , errors];
 });
 
+// ---------- Pase de Universidad ----------
+const PCE = JSON.parse(readFileSync(new URL("../content/exams/pce.json", import.meta.url), "utf8"));
+const openUniversity = async (saveData) => {
+  const o = await open(saveData);
+  await o.page.click('.tab[data-tab="exams"]');
+  await o.page.click(".menu-row:nth-child(2)");
+  return o;
+};
+
+test("Universidad: Mi ruta desde fuera de la UE (visado aparte)", async () => {
+  const { page, errors } = await openUniversity({ native: "ur" });
+  await page.click(".menu-row:nth-child(1)");
+  await page.click(".options .opt:nth-child(4)"); // fuera de la UE
+  await page.click(".options .opt:nth-child(2)"); // sin residencia
+  await page.click(".options .opt:nth-child(3)"); // no sabe qué universidad
+  const steps = await page.$$eval(".step", (s) => s.length);
+  const visa = await page.innerText(".step.important");
+  return [steps === 10 && visa.includes("visado") && (await page.$(".step .fact")) !== null, errors];
+});
+
+// Responde un test de las PCE según el plan: true = bien, false = mal, null = en blanco.
+async function answerPce(page, id, plan, finish = true) {
+  const bank = PCE.tests[id].bank;
+  const cards = await page.$$(".exam-q");
+  for (let k = 0; k < cards.length; k++) {
+    if (plan[k] === null) continue;
+    const text = await (await cards[k].$(".q-text")).innerText();
+    const q = bank.find((x) => x.q === text);
+    await (await cards[k].$$(".opt"))[plan[k] ? q.answer : (q.answer + 1) % 3].click();
+  }
+  if (!finish) return null;
+  await page.click('.btn.big:has-text("Terminar")');
+  return page.innerText(".exam-result");
+}
+
+test("Universidad: test de Inglés gratis (+0,5 / −0,15)", async () => {
+  const { page, errors } = await openUniversity({ native: "es" });
+  await page.click(".menu-row:nth-child(3)");
+  await page.click(".menu-row:nth-child(2)"); // Inglés
+  await page.click(".btn.big");
+  const result = await answerPce(page, "ingles", [true, true, true, false]);
+  return [result.includes("1,35 / 2"), errors];
+});
+
+test("Universidad: Historia con el pase, respuestas de más", async () => {
+  const { page, errors } = await openUniversity({ native: "es", passes: { universidad: true } });
+  await page.click(".menu-row:nth-child(3)");
+  await page.click(".menu-row:nth-child(1)"); // Historia
+  await page.click(".btn.big");
+  // Responde las 8 bien: aparece el aviso y solo cuentan 6.
+  await answerPce(page, "historia", Array(8).fill(true), false);
+  const warned = await page.$eval(".warn-many", (w) => !w.hidden);
+  await page.click('.btn.big:has-text("Terminar")');
+  const result = await page.innerText(".exam-result");
+  const ignored = await page.$$eval(".review-item", (r) => r.filter((x) => x.innerText.includes("No cuenta")).length);
+  return [warned && result.includes("3 / 3") && ignored === 2, errors];
+});
+
+test("Universidad: redacción, ortografía y nota", async () => {
+  const { page, errors } = await openUniversity({ native: "fr" });
+  await page.click(".menu-row:nth-child(4)");
+  await page.click(".menu-row:nth-child(1)");
+  await page.fill("#pce-summary", "El teletrabajo se ha extendido gracias a internet y tiene ventajas e inconvenientes. ".repeat(5));
+  const counted = (await page.$$(".step .q-meta.ok")).length === 1;
+  await page.click(".back");
+  await page.click(".menu-row:nth-child(4)"); // ortografía
+  for (let k = 0; k < PCE.writing.spelling.length; k++) {
+    await page.click('.opt[data-ok="1"]');
+    await page.click(".sheet .btn");
+  }
+  const spelling = (await page.innerText("h1")).includes(`${PCE.writing.spelling.length} / ${PCE.writing.spelling.length}`);
+  await page.click(".btn.big");
+  await page.click(".back");
+  await page.click(".menu-row:nth-child(5)"); // nota
+  await page.fill("#calc-bach", "8");
+  await page.fill("#calc-pce-1", "7");
+  await page.fill("#calc-w-1", "9");
+  await page.selectOption("#calc-wsel-1", "0.2");
+  await page.click(".btn.big");
+  const out = await page.innerText(".calc-out");
+  return [counted && spelling && out.includes("7,6 / 10") && out.includes("9,4 / 14"), errors];
+});
+
 // Los módulos de prueba de cada fase añaden sus casos aquí.
 for (const extra of process.argv.slice(2)) await import(new URL(extra, import.meta.url));
 

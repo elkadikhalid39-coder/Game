@@ -21,6 +21,9 @@ import "./exams/nationality.js";
 import "./exams/tramite.js";
 import "./exams/ccse.js";
 import "./exams/dele.js";
+import "./exams/university.js";
+import "./exams/uni-route.js";
+import "./exams/pce.js";
 
 if (save.native && !I18N[save.native]) save.native = "";
 if (window.speechSynthesis) speechSynthesis.getVoices();

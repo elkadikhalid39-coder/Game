@@ -1,0 +1,358 @@
+[
+  {
+    "id": "pce.que_es",
+    "text": "UNEDasiss es el servicio de la UNED que evalúa los expedientes de estudiantes internacionales para que puedan pedir plaza en grados de universidades españolas. También organiza las Pruebas de Competencias Específicas (PCE).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "UNEDasiss (UNED)",
+        "url": "https://unedasiss.uned.es/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.no_visado",
+    "text": "Aprobar las PCE da acceso a pedir plaza en la universidad, pero no es un visado ni un permiso de residencia. Si vienes de fuera de la Unión Europea a estudiar más de 90 días, el visado de estudios se pide aparte, en el consulado de España de tu país, después de ser admitido.",
+    "status": "sin_confirmar",
+    "sources": [
+      {
+        "name": "Embajada de España en La Paz: requisitos del visado de estudios (2020)",
+        "url": "https://www.exteriores.gob.es/Embajadas/lapaz/es/Documents/VISADOS/SLU%20-%20SSU%20-%20REQUISITOS%20ESTUDIOS.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60,
+    "note": "La única ficha oficial encontrada es de 2020. Comprueba los requisitos actuales en el consulado de España que te corresponda."
+  },
+  {
+    "id": "pce.marco_legal",
+    "text": "La norma general de acceso a la universidad es el Real Decreto 534/2024. Para quienes tienen títulos de fuera de la UE sin convenio, remite a una norma futura; mientras tanto se siguen aplicando los artículos 3, 4, 9 y 10 del Real Decreto 412/2014. En la práctica, la UNED aplica este régimen con las PCE.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 534/2024 (texto consolidado)",
+        "url": "https://www.boe.es/buscar/pdf/2024/BOE-A-2024-11858-consolidado.pdf",
+        "official": true
+      },
+      {
+        "name": "Real Decreto 482/2025",
+        "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-12311",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.ue_sin_prueba",
+    "text": "Los estudiantes de sistemas de la UE o de países con convenio, y quienes tienen el Bachillerato Internacional o el Bachillerato Europeo, no tienen que hacer la prueba de acceso si cumplen los requisitos de su sistema. Pueden hacer PCE para subir la nota de admisión.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 534/2024 (texto consolidado)",
+        "url": "https://www.boe.es/buscar/pdf/2024/BOE-A-2024-11858-consolidado.pdf",
+        "official": true
+      },
+      {
+        "name": "UNEDasiss (UNED)",
+        "url": "https://unedasiss.uned.es/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.pau",
+    "text": "Quien tiene el Bachillerato español hace la PAU (antes EBAU): cuatro ejercicios de 90 minutos (Lengua Castellana y Literatura II, Historia de España o Historia de la Filosofía, Lengua Extranjera II y la materia obligatoria de su modalidad). La nota de acceso es 60 % bachillerato + 40 % prueba, con un mínimo de 5.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 534/2024 (texto consolidado)",
+        "url": "https://www.boe.es/buscar/pdf/2024/BOE-A-2024-11858-consolidado.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.reforma",
+    "text": "Un proyecto de real decreto del Ministerio de Educación (septiembre de 2024) prevé cambiar las PCE por una prueba de la UNED con Lengua española (nivel B2), lengua extranjera y dos materias. Todavía no está aprobado: hoy se aplican las PCE.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Ministerio de Educación: proyecto de real decreto (septiembre de 2024)",
+        "url": "https://educacionfpydeportes.gob.es/dam/jcr:9a3dd436-e580-4b08-be4e-c56c40f2de6d/20240911-prd-pau-36-.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60
+  },
+  {
+    "id": "pce.homologacion",
+    "text": "Si tu bachillerato es de un país de fuera de la UE sin convenio, primero se homologa al Bachillerato español ante el Ministerio de Educación. Los documentos van legalizados o apostillados y traducidos. Mientras se resuelve, se puede pedir un volante de inscripción condicional.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Ministerio de Educación: homologación del Bachillerato (Consejería en Marruecos)",
+        "url": "https://educacionfpydeportes.gob.es/marruecos/en/dam/jcr:12533b47-75fa-4013-aa47-f641588148c7/homologbachprocedimiento-esp.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120,
+    "note": "Ficha oficial del procedimiento para Marruecos; el trámite es del Ministerio de Educación para todos los países."
+  },
+  {
+    "id": "pce.fases",
+    "text": "Orden de los pasos: 1) acreditación UNEDasiss (solicitud, pago y documentos); 2) solicitud de las PCE en el plazo de la convocatoria; 3) resguardo con la fecha y el lugar del examen; 4) exámenes; 5) inscripción en la universidad, en sus propios plazos; 6) UNEDasiss resuelve la acreditación.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "UNEDasiss: fechas clave",
+        "url": "https://unedasiss.uned.es/fechas_clave",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.fechas",
+    "text": "Hay dos convocatorias de PCE al año. Las fechas de solicitud y de examen, y los precios, se consultan siempre en la web de UNEDasiss.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "UNEDasiss: fechas clave",
+        "url": "https://unedasiss.uned.es/fechas_clave",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60
+  },
+  {
+    "id": "pce.privadas",
+    "text": "Las universidades privadas pueden tener su propio sistema de admisión: consúltalo con cada una.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "UNEDasiss (UNED)",
+        "url": "https://unedasiss.uned.es/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.materias_numero",
+    "text": "Se pueden hacer PCE de un máximo de 6 materias. UNEDasiss recomienda: si vienes de la UE o de un país con convenio, 2 materias que den puntos extra según las tablas de ponderación; si vienes de fuera de la UE, al menos 4 según los requisitos de admisión, 2 de ellas que puedan dar puntos extra.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "UNEDasiss: oferta de asignaturas PCE 2026",
+        "url": "https://unedasiss.uned.es/oferta_asignaturas",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.idioma",
+    "text": "Los enunciados se entregan en español y en inglés. Se responde siempre en español, salvo en el examen de lengua extranjera.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "UNEDasiss: oferta de asignaturas PCE 2026",
+        "url": "https://unedasiss.uned.es/oferta_asignaturas",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.tipos",
+    "text": "Cada materia es de tipo «test + desarrollo» o solo «desarrollo» (idiomas distintos del inglés, dibujo, diseño y fundamentos artísticos). Cada materia publica una guía, un programa, una presentación y un modelo de examen.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "UNEDasiss: oferta de asignaturas PCE 2026",
+        "url": "https://unedasiss.uned.es/oferta_asignaturas",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.duracion",
+    "text": "Cada examen dura 90 minutos y no hay nota mínima por bloque. Confirmado en las guías de Lengua, Historia de España, Inglés, Matemáticas y Matemáticas Aplicadas a las CC. SS.; en las demás materias, consulta su guía.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Lengua Castellana y Literatura 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guialenguacastellanayliteratura252663.pdf",
+        "official": true
+      },
+      {
+        "name": "Guía PCE Historia de España 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526hdeespana.pdf",
+        "official": true
+      },
+      {
+        "name": "Guía PCE Inglés 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapceingles202526.pdf",
+        "official": true
+      },
+      {
+        "name": "Guía PCE Matemáticas 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiamatematicaspce202526.pdf",
+        "official": true
+      },
+      {
+        "name": "Guía PCE Matemáticas Aplicadas a las CC. SS. 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526matematicasaplicadasccss.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.normas",
+    "text": "El día del examen no se pueden usar ni tener en la mesa dispositivos electrónicos (móvil, reloj inteligente…), ni comunicarse con nadie. El material permitido (por ejemplo, el tipo de calculadora) está en la guía de cada materia: una calculadora no autorizada puede suponer la retirada del examen. Revisa tu resguardo antes: indica la fecha y el lugar.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "UNED: información exámenes PCE (Secretaría UNEDasiss)",
+        "url": "https://accesoextranjeros.uned.es/archivos_publicos/qweb_paginas/16748/20250513informacionexamenes2025.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.lengua",
+    "text": "Lengua Castellana y Literatura: 90 minutos, sin material. Bloque 1 (4 puntos): resumen de 5 a 7 líneas (1), tema y dos ideas secundarias (1) y texto argumentativo de 20 a 25 líneas (2). Bloque 2 (3 puntos): tres preguntas de lengua, cada una con dos opciones. Bloque 3 (3 puntos): una cuestión de literatura a elegir entre dos. Tiempo recomendado: hasta 40 minutos para el bloque 1 y hasta 30 para literatura. Se escribe con tinta azul o negra.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Lengua Castellana y Literatura 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guialenguacastellanayliteratura252663.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.lengua_errores",
+    "text": "En Lengua, los errores de acentuación, puntuación, ortografía, gramática o léxico se penalizan más que en las demás materias: de forma orientativa, 0,1 puntos por cada error no repetido, sin el tope de 2 puntos que se aplica en el resto de materias. Los errores graves y repetidos pueden anular el examen. También se penalizan los coloquialismos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Lengua Castellana y Literatura 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guialenguacastellanayliteratura252663.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.historia",
+    "text": "Historia de España: 90 minutos, sin material, se responde en español. Bloque 1 (3 puntos): comentario de un texto (uno del siglo XIX y otro del XX, a elegir). Bloque 2 (3 puntos): 8 preguntas de test de tres opciones sobre historia antigua, medieval y moderna, de las que se responden 6; acierto +0,5, error −0,2, en blanco 0; si se responden más de 6, se corrigen las 6 primeras. Bloque 3 (4 puntos): un tema de historia contemporánea a elegir entre dos (siglo XIX o XX).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Historia de España 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526hdeespana.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.ingles",
+    "text": "Inglés (nivel aproximado B1): 90 minutos, sin material. Bloque A (3 puntos, unos 20 minutos): dos preguntas de vocabulario (0,5 cada una) y un resumen en inglés de 20 a 25 palabras como máximo (2); copiar frases del texto da 0. Bloque B (2 puntos, unos 15 minutos): 4 preguntas de gramática de tres opciones; acierto +0,5, error −0,15, en blanco 0. Bloque C (5 puntos): redacción de 150 a 180 palabras sobre uno de dos temas; cada error resta entre 0,1 y 0,5.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Inglés 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapceingles202526.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.matematicas",
+    "text": "Matemáticas (Ciencia y Tecnología): 90 minutos, sin calculadora. Test (2,5 puntos): 8 preguntas de tres opciones, se marcan como máximo 5 (si se marcan más, cuentan las 5 primeras); acierto +0,5, error −0,2, en blanco 0, y la nota del test nunca baja de 0. Desarrollo (7,5 puntos): 3 problemas de 2,5 puntos (uno competencial sin opciones y dos con dos opciones a elegir).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Matemáticas 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiamatematicaspce202526.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120,
+    "note": "La guía dice en un punto «si se marcan más de 8»; por el resto del texto, se entiende que son las 5 primeras marcadas."
+  },
+  {
+    "id": "pce.macs",
+    "text": "Matemáticas Aplicadas a las CC. SS.: 90 minutos, solo calculadora básica (no científica, gráfica, programable ni con IA). Cuatro bloques de 2,5 puntos: A, un problema a elegir entre dos; B, un problema competencial a elegir entre dos; C, test de 8 preguntas en el que se responden como máximo 5 (si se responden más, cuentan las 5 primeras; acierto +0,5, error −0,2); D, un problema sin opciones. Si se resuelven los dos problemas de un bloque, solo cuenta el primero.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Guía PCE Matemáticas Aplicadas a las CC. SS. 2025-26 (UNED)",
+        "url": "https://qinnova-app.uned.es/archivos_publicos/qweb_paginas/1163111/guiapce202526matematicasaplicadasccss.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.admision",
+    "text": "La nota de admisión se calcula sumando a la nota de acceso las notas ponderadas de las materias que fija cada universidad (al menos dos), eligiendo las más favorables para cada estudiante. Las universidades públicas publican sus parámetros de ponderación al inicio de cada curso. La nota se expresa con tres decimales.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 534/2024 (texto consolidado)",
+        "url": "https://www.boe.es/buscar/pdf/2024/BOE-A-2024-11858-consolidado.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "pce.nota",
+    "text": "Cálculo orientativo: nota de acceso (sobre 10) = 60 % de la nota de bachillerato + 40 % de la media de las PCE. Nota de admisión (sobre 14) = nota de acceso + las dos mejores materias ponderadas por 0,1 o 0,2 según la carrera y la universidad.",
+    "status": "fuente_secundaria",
+    "sources": [
+      {
+        "name": "Universidad Politécnica de Madrid: acceso con estudios extranjeros (no es la norma)",
+        "url": "https://www.upm.es/sfs/Rectorado/Vicerrectorado%20de%20Alumnos/Informacion/Acceso/Documentos/EstudiosExtranjerosInformacionGeneral.pdf",
+        "official": false
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120,
+    "note": "Cada universidad publica sus tablas de ponderación. Comprueba el cálculo en la normativa y en la universidad de destino."
+  }
+]
