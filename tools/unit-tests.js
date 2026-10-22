@@ -38,14 +38,24 @@ assert.deepEqual(grades(8, [7], [[9, 0.2], [8, 0.1], [5, 0.1]]), { access: 7.6, 
 
 // Dictado: fallos marcados letra a letra.
 const flat = (segs) => segs.map((x) => `${x.k}:${x.t}`).join("|");
-assert.equal(flat(diffChars("hola", "Hola").given), "ok:hola");
-assert.equal(flat(diffChars("adios", "Adiós").want), "ok:Adi|miss:ó|ok:s");
-assert.equal(flat(diffChars("adios", "Adiós").given), "ok:adi|bad:o|ok:s");
-assert.equal(flat(diffChars("me llamo ana", "Me llamo Ana.").want), "ok:Me llamo Ana|soft:.");
+const W = { ignoreCase: true }; // palabras sueltas: la mayúscula no cuenta
+assert.equal(flat(diffChars("hola", "Hola", W).given), "ok:hola");
+assert.equal(flat(diffChars("adios", "Adiós", W).want), "ok:Adi|miss:ó|ok:s");
+assert.equal(flat(diffChars("adios", "Adiós", W).given), "ok:adi|bad:o|ok:s");
+assert.deepEqual(diffChars("adios", "Adiós", W).errors, { accent: 1 });
+// Cualquier tipo de error se detecta y se clasifica.
+assert.deepEqual(diffChars("por fa vor", "Por favor", W).errors, { extraSpace: 1 });
+assert.deepEqual(diffChars("porfavor", "Por favor", W).errors, { missingSpace: 1 });
+assert.deepEqual(diffChars("Hla", "Hola", W).errors, { missingLetter: 1 });
+assert.deepEqual(diffChars("Holaa", "Hola", W).errors, { extraLetter: 1 });
+assert.deepEqual(diffChars("Hora", "Hola", W).errors, { letter: 1 });
+assert.deepEqual(diffChars("bano", "Baño", W).errors, { accent: 1 });
+// En frases, las mayúsculas y los signos sí cuentan.
+assert.deepEqual(diffChars("me llamo ana", "Me llamo Ana.").errors, { case: 2, punct: 1 });
 assert.equal(wordErrors("me llamo ana", "Me llamo Ana."), 0);
 assert.equal(wordErrors("me yamo ana", "Me llamo Ana."), 1);
 assert.equal(wordErrors("me llamo", "Me llamo Ana."), 1);
 assert.equal(wordErrors("tengo dos hijo", "Tengo dos hijos."), 1);
 assert.equal(wordErrors("si, tengo dos ninos", "Sí, tengo dos niños."), 2);
 assert.equal(wordErrors("si, tengo dos ninos", "Sí, tengo dos niños.", { accents: false }), 0);
-console.log(`OK pruebas unitarias: ${cases.length + 16}`);
+console.log(`OK pruebas unitarias: ${cases.length + 24}`);

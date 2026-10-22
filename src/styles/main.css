@@ -463,6 +463,13 @@ h2.section { margin: 18px 0 10px; }
 .diff-text { font-size: 1.15rem; font-weight: 600; overflow-wrap: anywhere; }
 /* Letra de más o distinta: tachada en rojo. Letra que faltaba: subrayada en verde. */
 mark.diff-bad { background: var(--coral-soft); color: var(--coral-text); text-decoration: line-through; border-radius: 4px; }
+mark.diff-case { background: var(--sun-soft); color: #7a5600; border-radius: 4px; }
+.diff-errors { margin: 4px 0 0; padding-inline-start: 18px; font-size: .9rem; color: var(--ink); }
+.hint-sign { font-weight: 700; color: var(--ink-soft); }
+.example { display: grid; gap: 4px; margin-top: 14px; padding-top: 12px; border-top: 2px dashed var(--line); text-align: center; }
+.example-label { font-size: .8rem; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; }
+.example-text { margin: 0; font-size: 1.15rem; font-weight: 600; }
+.example-tr { margin: 0; color: var(--ink-soft); }
 mark.diff-miss { background: var(--mint-soft); color: var(--mint-text); text-decoration: underline 3px; text-underline-offset: 3px; border-radius: 4px; }
 
 /* Diccionario */

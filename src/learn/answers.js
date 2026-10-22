@@ -39,29 +39,56 @@ export const sameSentence = (a, b) => normalize(a, { accents: true }) === normal
 // ---------- Corrección de dictados: dónde están los fallos ----------
 const isLetter = (c) => /[\p{L}\p{N}]/u.test(c);
 
-// Compara lo escrito con lo correcto letra a letra (sin distinguir mayúsculas; una tilde distinta es un fallo).
-// → { given: [{ t, k }], want: [{ t, k }] }
-//   given: k = "ok" | "bad" (letra que sobra o es distinta)
-//   want:  k = "ok" | "miss" (letra que falta o es distinta) | "soft" (signo o espacio que falta: no cuenta)
-export function diffChars(input, expected) {
+const isSpace = (c) => /\s/.test(c);
+const base = (c) => c.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+// Compara lo escrito con lo correcto carácter a carácter (alineación de Levenshtein) y clasifica cada fallo.
+// → { given: [{ t, k }], want: [{ t, k }], errors: { [tipo]: número } }
+//   k en given: ok | bad (sobra o está cambiado) | case (solo cambia la mayúscula)
+//   k en want:  ok | miss (falta o estaba cambiado) | case
+//   tipos: letter (letra cambiada), accent (tilde o ñ), extraLetter, missingLetter, extraSpace, missingSpace,
+//          case (mayúscula), punct (signo de puntuación que sobra o falta)
+// Los espacios que sobran o faltan se muestran como «␣» para que se vean.
+// ignoreCase: no cuenta las mayúsculas (palabras sueltas: «por favor» y «Por favor» están bien).
+export function diffChars(input, expected, { ignoreCase = false } = {}) {
   const a = [...input.trim()], b = [...expected.trim()];
-  const eq = (x, y) => x.toLowerCase() === y.toLowerCase();
-  // Subsecuencia común más larga.
-  const L = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
-  for (let i = a.length - 1; i >= 0; i--)
-    for (let j = b.length - 1; j >= 0; j--) L[i][j] = eq(a[i], b[j]) ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
-  const given = [], want = [];
+  // Coste: igual = 0; solo mayúscula = 0,1; tilde = 0,5; resto = 1.
+  const cost = (x, y) => (x === y ? 0 : x.toLowerCase() === y.toLowerCase() ? 0.1 : base(x) === base(y) ? 0.5 : 1);
+  const D = Array.from({ length: a.length + 1 }, (_, i) => [i, ...new Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) D[0][j] = j;
+  for (let i = 1; i <= a.length; i++)
+    for (let j = 1; j <= b.length; j++) D[i][j] = Math.min(D[i - 1][j] + 1, D[i][j - 1] + 1, D[i - 1][j - 1] + cost(a[i - 1], b[j - 1]));
+  const ops = [];
+  let i = a.length, j = b.length;
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && D[i][j] === D[i - 1][j - 1] + cost(a[i - 1], b[j - 1])) { ops.push(["sub", a[--i], b[--j]]); }
+    else if (i > 0 && D[i][j] === D[i - 1][j] + 1) { ops.push(["extra", a[--i], null]); }
+    else { ops.push(["missing", null, b[--j]]); }
+  }
+  ops.reverse();
+  const given = [], want = [], errors = {};
   const push = (list, t, k) => {
     const last = list[list.length - 1];
     if (last && last.k === k) last.t += t; else list.push({ t, k });
   };
-  let i = 0, j = 0;
-  while (i < a.length || j < b.length) {
-    if (i < a.length && j < b.length && eq(a[i], b[j])) { push(given, a[i++], "ok"); push(want, b[j++], "ok"); }
-    else if (j < b.length && (i >= a.length || L[i][j + 1] >= L[i + 1][j])) { push(want, b[j], isLetter(b[j]) ? "miss" : "soft"); j++; }
-    else { push(given, a[i], isLetter(a[i]) ? "bad" : "ok"); i++; }
+  const err = (type) => { errors[type] = (errors[type] || 0) + 1; };
+  for (const [op, x, y] of ops) {
+    if (op === "sub") {
+      if (x === y) { push(given, x, "ok"); push(want, y, "ok"); }
+      else if (x.toLowerCase() === y.toLowerCase()) {
+        if (ignoreCase) { push(given, x, "ok"); push(want, y, "ok"); }
+        else { push(given, x, "case"); push(want, y, "case"); err("case"); }
+      }
+      else { push(given, x, "bad"); push(want, y, "miss"); err(base(x) === base(y) ? "accent" : isLetter(x) && isLetter(y) ? "letter" : "punct"); }
+    } else if (op === "extra") {
+      push(given, isSpace(x) ? "␣" : x, "bad");
+      err(isSpace(x) ? "extraSpace" : isLetter(x) ? "extraLetter" : "punct");
+    } else {
+      push(want, isSpace(y) ? "␣" : y, "miss");
+      err(isSpace(y) ? "missingSpace" : isLetter(y) ? "missingLetter" : "punct");
+    }
   }
-  return { given, want };
+  return { given, want, errors };
 }
 
 // Número de palabras mal escritas, que faltan o que sobran (sin mayúsculas ni signos).

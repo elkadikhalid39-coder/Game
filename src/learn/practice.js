@@ -10,7 +10,7 @@ import { app, screen, sheet, setTab, celebrate } from "../ui/shell.js";
 import { menuRow } from "../exams/common.js";
 import { UNITS, doneIn } from "./course.js";
 import { startReview } from "./lesson.js";
-import { wordErrors, normalize } from "./answers.js";
+import { wordErrors, normalize, diffChars } from "./answers.js";
 import { writeBox, diffView } from "./write-box.js";
 import { audioControls, playButton } from "../ui/audio-buttons.js";
 
@@ -85,7 +85,9 @@ function dictation(mode) {
         speak(it.text, G);
         const extra = el("div", "sheet-extra");
         // La corrección se muestra siempre que no sea idéntica (también las tildes y los signos).
-        if (normalize(value) !== normalize(it.text) || !r.ok) extra.append(diffView(value, it.text));
+        // La corrección aparece con cualquier diferencia: letras, tildes, espacios, mayúsculas o signos.
+        const look = { ignoreCase: mode === "words" };
+        if (Object.keys(diffChars(value, it.text, look).errors).length) extra.append(diffView(value, it.text, look));
         if (save.native !== G) extra.append(txt("p", "sheet-meaning", it.meaning, save.native));
         const title = r.ok ? (accentNote ? ui("noteAccent", it.text) : hinted ? ui("okWithHint") : ui("great")) : mode === "sentences" ? ui("wordErrorsN", errors) : ui("answer") + ":";
         sheet(r.ok, title, "", G, () => run(i + 1), extra);
@@ -123,7 +125,7 @@ function summary(mode, items, results) {
     const r = results[i];
     if (!r || r.errors === 0) return;
     const item = el("div", "review-item bad");
-    item.append(r.errors === null ? txt("p", "q-text", it.text, G) : diffView(r.value, it.text));
+    item.append(r.errors === null ? txt("p", "q-text", it.text, G) : diffView(r.value, it.text, { ignoreCase: mode === "words" }));
     app.append(item);
   });
   app.append(button("btn big", "↺ " + ui("again"), () => dictation(mode)), button("btn ghost-dark", ui("next"), () => go("review")));

@@ -59,13 +59,14 @@ function makeLesson(unit, li) {
 }
 
 // Ajusta un ejercicio a la persona: sin traducción (idioma español) o con el audio en pausa.
-// Devuelve null si no se puede hacer (se salta sin contar).
 function adapt(ex) {
   const sameLang = save.native === G;
   if (sameLang && ["pick", "hear", "write"].includes(ex.type)) ex = { ...ex, type: "dictation" };
   if (audioPaused()) {
     if (ex.type === "hear") ex = { ...ex, type: "pick" };
-    if (ex.type === "dictation") ex = sameLang ? null : { ...ex, type: "write" };
+    // Sin audio, el dictado se hace desde su idioma. Quien tiene el español como idioma no tiene traducción:
+    // su dictado se mantiene y se le ofrece volver a activar el audio (nunca se salta sin avisar).
+    if (ex.type === "dictation" && !sameLang) ex = { ...ex, type: "write" };
   }
   return ex;
 }
@@ -99,7 +100,6 @@ function noteResult(ex, ok) {
 function runLesson(s) {
   if (s.i >= s.list.length) return showResult(s);
   const ex = adapt(s.list[s.i]);
-  if (!ex) { s.i++; return runLesson(s); }
   const N = save.native;
   screen("lesson");
 
@@ -121,6 +121,13 @@ function runLesson(s) {
     card.append(txt("div", "bigword", word, G));
     if (N !== G) card.append(txt("p", "hint", tr(ex.item.id, N), N));
     card.append(audioControls(word, { cls: "center" }));
+    // Una frase de ejemplo, con audio y traducción: así se entiende para qué sirve la palabra.
+    const example = tr("e_" + ex.item.id, G);
+    const ex1 = el("div", "example");
+    ex1.append(txt("span", "example-label", ui("example"), N), txt("p", "example-text", example, G));
+    if (N !== G) ex1.append(txt("p", "example-tr", tr("e_" + ex.item.id, N), N));
+    ex1.append(audioControls(example, { cls: "center" }));
+    card.append(ex1);
     app.append(speech(ui("newWord"), "talk"), card, el("div", "footer-space"));
     const foot = el("div", "footer");
     foot.append(button("btn", ui("next"), next));
@@ -156,7 +163,7 @@ function runLesson(s) {
     const detail = ok ? (note ? ui(note === "accent" ? "noteAccent" : "noteTypo", solution) : "") : solution;
     const extra = el("div", "sheet-extra");
     const showDiff = written !== undefined && (!ok || note);
-    if (showDiff) extra.append(diffView(written, solution));
+    if (showDiff) extra.append(diffView(written, solution, { ignoreCase: true }));
     // Al corregir una palabra se ve su significado en el idioma de la persona.
     if (ex.item && N !== G) extra.append(txt("p", "sheet-meaning", tr(ex.item.id, N), N));
     extra.append(audioControls(solution));
@@ -204,6 +211,15 @@ function runLesson(s) {
     if (ex.type === "dictation") {
       // Dictado: solo se oye; el dibujo y el significado se ven al corregir.
       app.append(speech(ui("dictationPrompt"), "talk"));
+      if (audioPaused()) {
+        const paused = el("div", "notice draft");
+        paused.append(el("span", "", ui("dictNeedsAudio")), button("btn", ui("resumeAudio"), () => {
+          save.noAudioUntil = 0;
+          persist();
+          runLesson(s); // el mismo ejercicio, ya con audio
+        }));
+        area.append(paused);
+      }
       area.append(audioControls(word, { size: "big" }));
       say(word);
     } else {

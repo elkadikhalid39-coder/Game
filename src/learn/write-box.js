@@ -6,8 +6,7 @@ import { el, txt, button } from "../ui/dom.js";
 import { diffChars } from "./answers.js";
 
 // Campo de escritura. onCheck(texto, { hinted }) se llama al pulsar «Comprobar» o Intro con algo escrito.
-// hint: texto correcto para las pistas. La 1.ª pista dice cuántas letras tiene; la 2.ª, la primera letra.
-// Nunca se enseña más: la palabra la tiene que escribir la persona.
+// hint: texto correcto para las pistas (ver abajo: nunca se enseña más de la mitad de las letras).
 // Se escribe con el teclado del propio móvil u ordenador (sin teclas añadidas: confundían).
 export function writeBox({ onCheck, hint, multiline = false }) {
   const box = el("div", "write-box");
@@ -31,25 +30,32 @@ export function writeBox({ onCheck, hint, multiline = false }) {
   if (!multiline) input.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); check(); } };
   box.append(input);
   if (hint) {
+    // Pistas en proporción a lo que hay que escribir: 1.ª, las casillas y el número de letras;
+    // 2.ª, un 25 % de las letras; 3.ª, un 50 %. Primero la inicial de cada palabra y luego repartidas.
     const shown = el("div", "hint-mask");
     shown.lang = "es";
     shown.dir = "ltr";
     shown.hidden = true;
+    const chars = [...hint];
+    const letterIdx = chars.map((c, i) => (/\p{L}|\p{N}/u.test(c) ? i : -1)).filter((i) => i >= 0);
+    const firsts = letterIdx.filter((i) => i === 0 || !/\p{L}|\p{N}/u.test(chars[i - 1]));
+    const rest = letterIdx.filter((i) => !firsts.includes(i));
+    // Las demás, repartidas por toda la palabra o frase (no seguidas).
+    const spread = [...rest.filter((_, k) => k % 2 === 1), ...rest.filter((_, k) => k % 2 === 0)];
+    const order = [...firsts, ...spread];
+    const LEVELS = [0, 0.25, 0.5];
     const hintBtn = button("link", "💡 " + ui("hint"), () => {
-      level = Math.min(level + 1, 2);
-      // Una casilla por letra; los espacios separan palabras. En la 2.ª pista, la primera letra.
+      level = Math.min(level + 1, LEVELS.length);
+      const reveal = new Set(order.slice(0, Math.ceil(letterIdx.length * LEVELS[level - 1])));
       shown.replaceChildren();
-      let first = true;
-      for (const c of hint) {
-        if (/\p{L}|\p{N}/u.test(c)) {
-          shown.append(el("span", "hint-box", level === 2 && first ? c : ""));
-          first = false;
-        } else if (c === " ") shown.append(el("span", "hint-gap"));
-      }
-      const count = [...hint].filter((c) => /\p{L}|\p{N}/u.test(c)).length;
-      shown.append(txt("span", "hint-count", ui("hintLetters", count), save.native));
+      chars.forEach((c, i) => {
+        if (/\p{L}|\p{N}/u.test(c)) shown.append(el("span", "hint-box", reveal.has(i) ? c : ""));
+        else if (c === " ") shown.append(el("span", "hint-gap"));
+        else shown.append(el("span", "hint-sign", c));
+      });
+      shown.append(txt("span", "hint-count", ui("hintLetters", letterIdx.length), save.native));
       shown.hidden = false;
-      if (level === 2) hintBtn.disabled = true;
+      if (level === LEVELS.length) hintBtn.disabled = true;
     });
     box.append(shown, hintBtn);
   }
@@ -59,8 +65,8 @@ export function writeBox({ onCheck, hint, multiline = false }) {
 
 // Corrección visible: lo que escribió la persona (letras de más o distintas en rojo)
 // y la forma correcta (letras que faltaban subrayadas).
-export function diffView(input, expected) {
-  const { given, want } = diffChars(input, expected);
+export function diffView(input, expected, { ignoreCase = false } = {}) {
+  const { given, want, errors } = diffChars(input, expected, { ignoreCase });
   const box = el("div", "diff");
   box.lang = "es";
   box.dir = "ltr";
@@ -68,10 +74,14 @@ export function diffView(input, expected) {
     const p = el("p", "diff-line " + cls);
     p.append(txt("span", "diff-label", label, save.native));
     const text = el("span", "diff-text");
-    for (const s of segs) text.append(s.k === "ok" || s.k === "soft" ? document.createTextNode(s.t) : el("mark", "diff-" + s.k, s.t));
+    for (const s of segs) text.append(s.k === "ok" ? document.createTextNode(s.t) : el("mark", "diff-" + s.k, s.t));
     p.append(text);
     return p;
   };
   box.append(line(ui("yourAnswer"), given, "given"), line(ui("rightAnswer"), want, "want"));
+  // Qué tipo de fallo es cada uno, en el idioma de la persona.
+  const list = el("ul", "diff-errors");
+  for (const [type, n] of Object.entries(errors)) list.append(txt("li", "", ui("err_" + type, n), save.native));
+  if (list.children.length) box.append(list);
   return box;
 }

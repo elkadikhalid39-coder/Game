@@ -241,16 +241,20 @@ test("las pistas no resuelven la palabra y no hay emojis dudosos", async () => {
     if ((await page.$(".card.intro")) && (await page.innerText(".card.intro .bigword")) === "Adiós") adios = !(await page.$(".card.intro .bigemoji"));
     if (await page.$(".footer .btn")) await page.click(".footer .btn"); else if (await page.$(".sheet .btn")) await page.click(".sheet .btn"); else await answerCurrent(page);
   }
-  // En un dictado, dos pistas: casillas vacías y luego solo la primera letra.
+  // Pistas en proporción: casillas vacías, luego un 25 % de las letras y luego un 50 %.
   while (!(await page.$("#write-answer"))) {
     if (await page.$(".footer .btn")) await page.click(".footer .btn"); else if (await page.$(".sheet .btn")) await page.click(".sheet .btn"); else await answerCurrent(page);
   }
+  const shown = () => page.$$eval(".hint-box", (b) => [b.filter((x) => x.textContent).length, b.length]);
   await page.click('.write-box .link:has-text("Pista")');
-  const first = await page.$$eval(".hint-box", (b) => b.filter((x) => x.textContent).length);
+  const [first] = await shown();
   await page.click('.write-box .link:has-text("Pista")');
-  const second = await page.$$eval(".hint-box", (b) => b.filter((x) => x.textContent).length);
+  const [second, total] = await shown();
+  await page.click('.write-box .link:has-text("Pista")');
+  const [third] = await shown();
   const noTurtle = !(await page.content()).includes("🐢");
-  return [adios === true && first === 0 && second === 1 && noTurtle, errors];
+  const okHints = first === 0 && second === Math.ceil(total * 0.25) && third === Math.ceil(total * 0.5) && third < total;
+  return [adios === true && okHints && noTurtle, errors];
 });
 
 test("modo demo: todo abierto sin marcar lecciones como hechas", async () => {
@@ -284,6 +288,24 @@ test("calculadora: coma decimal y aviso si una nota no se entiende", async () =>
   await page.click(".calc .btn");
   // 0,6 · 7,5 + 0,4 · (6 + 7,5) / 2 = 4,5 + 2,7 = 7,2
   return [warned && (await page.innerText(".calc-out")).includes("7,2 / 10"), errors];
+});
+
+test("con el audio en pausa, el dictado no se salta (idioma español)", async () => {
+  const { page, errors } = await open({ native: "es", noAudioUntil: Date.now() + 10 * 60 * 1000 });
+  await page.click(".node-wrap.current .node");
+  await page.click(".footer .btn"); // presentación de la primera palabra
+  const write = !!(await page.$("#write-answer"));
+  const offer = !!(await page.$('.notice .btn'));
+  await page.click(".notice .btn"); // activar el audio
+  const resumed = !(await page.$(".notice .btn")) && !!(await page.$("#write-answer"));
+  return [write && offer && resumed, errors];
+});
+
+test("la palabra nueva trae una frase de ejemplo traducida", async () => {
+  const { page, errors } = await open({ native: "fr" });
+  await page.click(".node-wrap.current .node");
+  const ex = await page.innerText(".card.intro .example");
+  return [ex.includes(ES["e_hola"]) && ex.includes("Bonjour, je m'appelle Ana."), errors];
 });
 
 // ---------- Practicar: dictado y diccionario ----------
