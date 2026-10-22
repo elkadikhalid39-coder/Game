@@ -56,6 +56,10 @@ const progressAt = (unitId, lessons) => {
 
 // Responde el ejercicio que haya en pantalla: bien, o mal si wrong = true.
 async function answerCurrent(page, wrong = false) {
+  if (await page.$("#compose-answer")) {
+    await page.fill("#compose-answer", wrong ? "Hola." : await page.getAttribute("#compose-answer", "data-model"));
+    return page.click(".compose .btn");
+  }
   if (await page.$("#write-answer")) {
     const id = await page.getAttribute(".write-box", "data-word");
     const text = id ? ES[id] : await page.getAttribute(".write-box", "data-text");
@@ -261,8 +265,36 @@ test("práctica final y objetivo conseguido", async () => {
   const won = await page.$(".can-do-won");
   await page.click(".btn");
   await page.click('.tab[data-tab="profile"]');
-  const listed = (await page.$$("ul.can-do li.done")).length === 1;
+  // Saludos y las tres unidades anteriores.
+  const listed = (await page.$$("ul.can-do li.done")).length === 4;
   return [done && won && listed, errors];
+});
+
+test("diálogo con escritura: lista que se marca sola (Ciudad, en árabe)", async () => {
+  const { page, errors } = await open({ native: "ar", progress: progressAt("ciudad", 3) });
+  await page.click(".node-wrap.current .node");
+  const scene = (await page.innerText(".dialog-scene")).includes("القميص");
+  let checklist = null;
+  for (let g = 0; g < 40 && !(await page.$(".result-stats")); g++) {
+    if (checklist === null && (await page.$("#compose-answer"))) {
+      await page.fill("#compose-answer", "Compré una camisa.\nEs pequeña porque sí.");
+      await page.click(".compose .btn");
+      // Faltan líneas y «pero»: no deja seguir y la lista lo marca.
+      checklist = (await page.$$(".checklist li.ok")).length === 1 && !(await page.$(".compose-model"));
+    }
+    if (await page.$(".sheet .btn")) { await page.click(".sheet .btn"); continue; }
+    if (await page.$(".footer .btn")) { await page.click(".footer .btn"); continue; }
+    await answerCurrent(page);
+  }
+  return [scene && checklist && !!(await page.$(".can-do-won")), errors];
+});
+
+test("progreso antiguo: las unidades nuevas del principio no bloquean", async () => {
+  // Quien había terminado Saludos y Números antes de que existieran las unidades 1 y 3.
+  const { page, errors } = await open({ native: "es", progress: { saludos: 4, numeros: 4 } });
+  const current = await page.$eval(".node-wrap.current", (n) => n.closest(".unit-block").querySelector(".unit-text strong").textContent);
+  const card = await page.innerText(".continue-card");
+  return [current === "Comida" && card.includes("Unidad 5"), errors];
 });
 
 test("unidades nuevas (Papeleo, escrita en ruso)", async () => {
@@ -306,7 +338,7 @@ test("dos toques rápidos en «Continuar» no se saltan la palabra nueva", async
 });
 
 test("las pistas no resuelven la palabra y no hay emojis dudosos", async () => {
-  const { page, errors } = await open({ native: "es" });
+  const { page, errors } = await open({ native: "es", progress: progressAt("saludos", 0) });
   await page.click(".node-wrap.current .node");
   // Adiós se presenta sin dibujo (un emoji de puerta no significa «adiós»).
   let adios = null;
@@ -376,7 +408,7 @@ test("con el audio en pausa, el dictado no se salta (idioma español)", async ()
 });
 
 test("la palabra nueva trae una frase de ejemplo traducida", async () => {
-  const { page, errors } = await open({ native: "fr" });
+  const { page, errors } = await open({ native: "fr", progress: progressAt("saludos", 0) });
   await page.click(".node-wrap.current .node");
   const ex = await page.innerText(".card.intro .example");
   return [ex.includes(ES["e_hola"]) && ex.includes("Bonjour, je m'appelle Ana."), errors];

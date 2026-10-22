@@ -34,6 +34,16 @@ for (const u of UNITS) {
   need("c_" + u.id, u.id); // objetivo «Ya sé…»
   for (const { id } of u.words) need(id, u.id);
   for (const p of u.phrases) { need("q_" + p.id, u.id); need("a_" + p.id, u.id); for (const w of p.wrong) need("a_" + w, u.id); }
+  // Diálogo de cierre: escena, cada línea, la frase clave del dictado y, si hay, el enunciado de escribir.
+  const d = u.dialog;
+  if (!d) { errors.push(`${u.id}: sin diálogo de cierre`); continue; }
+  need("gs_" + u.id, u.id);
+  d.lines.forEach((l, k) => {
+    need(`g_${u.id}_${k + 1}`, u.id);
+    if (l.w === "t" && (l.wrong?.length !== 2 || l.wrong.includes(ref.t[`g_${u.id}_${k + 1}`]))) errors.push(`${u.id}: la línea ${k + 1} necesita dos frases incorrectas distintas de la buena`);
+  });
+  if (!d.lines[d.key]) errors.push(`${u.id}: la frase clave ${d.key} no existe`);
+  if (d.compose) need("gw_" + u.id, u.id);
 }
 
 // Audio pregrabado: cada palabra y frase del curso tiene que estar en la voz neutra
@@ -41,10 +51,15 @@ for (const u of UNITS) {
 const fnv = (t) => { let h = 0x811c9dc5; for (const b of Buffer.from(t.trim(), "utf8")) h = Math.imul(h ^ b, 0x01000193) >>> 0; return h.toString(16).padStart(8, "0"); };
 const neutral = JSON.parse(readFileSync(new URL("../public/audio/neutra.json", import.meta.url), "utf8"));
 const es = JSON.parse(readFileSync(new URL("../content/i18n/es.json", import.meta.url), "utf8")).t;
+// Lo que falta se avisa sin parar: los paquetes de audio no se regeneran sin permiso, y mientras tanto
+// la app usa la voz del dispositivo para esas frases.
+const noAudio = [];
 for (const u of UNITS) {
-  const texts = [...u.words.flatMap(({ id }) => [es[id], es["e_" + id]]), ...u.phrases.flatMap((p) => [es["q_" + p.id], es["a_" + p.id]])];
-  for (const t of texts) if (t && !neutral[fnv(t)]) errors.push(`${u.id}: sin audio grabado «${t}» (regenerar con tools/audio/generate.py)`);
+  const dialog = (u.dialog?.lines || []).map((l, k) => es[`g_${u.id}_${k + 1}`]);
+  const texts = [...u.words.flatMap(({ id }) => [es[id], es["e_" + id]]), ...u.phrases.flatMap((p) => [es["q_" + p.id], es["a_" + p.id]]), ...dialog];
+  for (const t of texts) if (t && !neutral[fnv(t)]) noAudio.push(`${u.id}: «${t}»`);
 }
+if (noAudio.length) console.warn(`AVISO: ${noAudio.length} textos del curso sin audio grabado (usan la voz del dispositivo hasta regenerar con tools/audio/generate.py).`);
 
 // Lo que se lee en los exámenes también va grabado: las preguntas de conducir (voz neutra)
 // y los diálogos de la auditiva del DELE (las dos voces de España).

@@ -1,21 +1,32 @@
 [
   {
-    "id": "saludos", "emoji": "👋", "color": "#c2410c",
+    "id": "reparar", "emoji": "👂", "color": "#862e9c",
     "words": [
-      {"id":"hola","emoji":"👋"},
-      {"id":"adios"},
-      {"id":"gracias"},
-      {"id":"porfavor"},
-      {"id":"si","emoji":"✅"},
-      {"id":"no","emoji":"❌"},
-      {"id":"perdon"},
-      {"id":"buenasnoches","emoji":"🌙"}
+      {"id":"repetir"},
+      {"id":"despacio"},
+      {"id":"escribe"},
+      {"id":"entiendo"},
+      {"id":"hablopoco"},
+      {"id":"significa"},
+      {"id":"momento"},
+      {"id":"otravez"}
     ],
     "phrases": [
-      {"id":"nombre","wrong":["edad","donde","hijos"]},
-      {"id":"estar","wrong":["nombre","precio","donde"]},
-      {"id":"origen","wrong":["hambre","quien","precio"]}
-    ]
+      {"id":"repitehora","wrong":["nombre","precio","edad"]},
+      {"id":"ayudaform","wrong":["precio","donde","hijos"]},
+      {"id":"entiende","wrong":["edad","origen","hambre"]}
+    ],
+    "dialog": {
+      "key": 3,
+      "lines": [
+        {"w":"o"},
+        {"w":"t","wrong":["Buenas noches. Me llamo Ana.","Sí, cuesta dos euros."]},
+        {"w":"o"},
+        {"w":"t","wrong":["No, gracias, estoy bien.","Es la una y media."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Me llamo Ana, gracias.","No, no tengo hambre."]}
+      ]
+    }
   },
   {
     "id": "numeros", "emoji": "🔢", "color": "#1f6fd1",
@@ -34,7 +45,77 @@
     "phrases": [
       {"id":"precio","wrong":["estar","quien","origen"]},
       {"id":"edad","wrong":["origen","donde","estar"]}
-    ]
+    ],
+    "dialog": {
+      "key": 3,
+      "lines": [
+        {"w":"o"},
+        {"w":"t","wrong":["Me llamo Ana, gracias.","Está a la derecha."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Sí, tengo treinta años.","¿De dónde eres?"]},
+        {"w":"o"},
+        {"w":"t","wrong":["Son las cinco y media.","Tengo cinco hijos."]}
+      ]
+    }
+  },
+  {
+    "id": "horas", "emoji": "🕒", "color": "#495057",
+    "words": [
+      {"id":"veinte"},
+      {"id":"cincuenta"},
+      {"id":"cien"},
+      {"id":"launa"},
+      {"id":"enpunto"},
+      {"id":"ycuarto"},
+      {"id":"ymedia"},
+      {"id":"hoy"},
+      {"id":"manana"},
+      {"id":"ayer"}
+    ],
+    "phrases": [
+      {"id":"hora","wrong":["precio","edad","origen"]},
+      {"id":"cuando","wrong":["edad","nombre","hijos"]},
+      {"id":"dia","wrong":["hora","precio","estar"]}
+    ],
+    "dialog": {
+      "key": 1,
+      "lines": [
+        {"w":"t","wrong":["Perdone, ¿cuánto cuesta el pan?","Perdone, ¿de dónde es usted?"]},
+        {"w":"o"},
+        {"w":"t","wrong":["¿Y cuántos años tienes?","¿Y dónde está el hospital?"]},
+        {"w":"o"},
+        {"w":"t","wrong":["Sí, tengo veinte años.","No, no quiero café."]}
+      ]
+    }
+  },
+  {
+    "id": "saludos", "emoji": "👋", "color": "#c2410c",
+    "words": [
+      {"id":"hola","emoji":"👋"},
+      {"id":"adios"},
+      {"id":"gracias"},
+      {"id":"porfavor"},
+      {"id":"si","emoji":"✅"},
+      {"id":"no","emoji":"❌"},
+      {"id":"perdon"},
+      {"id":"buenasnoches","emoji":"🌙"}
+    ],
+    "phrases": [
+      {"id":"nombre","wrong":["edad","donde","hijos"]},
+      {"id":"estar","wrong":["nombre","precio","donde"]},
+      {"id":"origen","wrong":["hambre","quien","precio"]}
+    ],
+    "dialog": {
+      "key": 3,
+      "lines": [
+        {"w":"o"},
+        {"w":"t","wrong":["Adiós, Lucía. Tengo dos hijos.","Sí, cuesta dos euros."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Estoy bien, gracias. ¿Y tú?","Tengo treinta años."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Perdón, no tengo cita.","Buenas noches, me duele la cabeza."]}
+      ]
+    }
   },
   {
     "id": "comida", "emoji": "🍞", "color": "#0b7a5a",
@@ -53,7 +134,18 @@
     "phrases": [
       {"id":"querer","wrong":["edad","hijos","origen"]},
       {"id":"hambre","wrong":["origen","precio","quien"]}
-    ]
+    ],
+    "dialog": {
+      "key": 1,
+      "lines": [
+        {"w":"o"},
+        {"w":"t","wrong":["Me duele la cabeza, por favor.","Tengo cita a las diez."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Por la mañana.","Soy de Marruecos."]},
+        {"w":"o"},
+        {"w":"t","wrong":["¿Me da la llave, por favor?","¿Me da el pasaporte, por favor?"]}
+      ]
+    }
   },
   {
     "id": "familia", "emoji": "👨‍👩‍👧", "color": "#c2255c",
@@ -70,7 +162,18 @@
     "phrases": [
       {"id":"hijos","wrong":["donde","precio","nombre"]},
       {"id":"quien","wrong":["precio","edad","donde"]}
-    ]
+    ],
+    "dialog": {
+      "key": 1,
+      "lines": [
+        {"w":"o"},
+        {"w":"t","wrong":["Sí, tengo cita a las diez.","No, no funciona la calefacción."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Mi hijo trabaja de nueve a cinco.","Son las seis y media."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Está a la derecha, gracias.","Quiero un café, por favor."]}
+      ]
+    }
   },
   {
     "id": "ciudad", "emoji": "🏙️", "color": "#7048e8",
@@ -87,7 +190,20 @@
     "phrases": [
       {"id":"donde","wrong":["nombre","hambre","edad"]},
       {"id":"ayuda","wrong":["precio","quien","nombre"]}
-    ]
+    ],
+    "dialog": {
+      "key": 0,
+      "lines": [
+        {"w":"t","wrong":["Hola. Tengo cita previa a las diez.","Hola. Necesito una ambulancia."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Me duele la cabeza.","Es mi madre."]},
+        {"w":"o"},
+        {"w":"t","wrong":["No, no tengo hambre.","Sí, tengo dos hijos."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Otro autobús, por favor.","A las diez y media, por favor."]}
+      ],
+      "compose": {"words":["porque","pero"],"model":"Compré una camisa el lunes.\nQuiero devolverla porque es pequeña.\nMe gusta el color, pero no es mi talla.\n¿Puedo cambiarla por una mediana?"}
+    }
   },
   {
     "id": "salud", "emoji": "🩺", "color": "#c92a2a",
@@ -104,7 +220,19 @@
     "phrases": [
       {"id":"pasa","wrong":["precio","nombre","donde"]},
       {"id":"emerg","wrong":["precio","estar","nombre"]}
-    ]
+    ],
+    "dialog": {
+      "key": 1,
+      "lines": [
+        {"w":"o"},
+        {"w":"t","wrong":["Trabajo en un restaurante.","Son seiscientos euros al mes."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Hasta mañana.","Desde Marruecos."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Sí, tengo dos hijos.","No, no tengo cita."]},
+        {"w":"o"}
+      ]
+    }
   },
   {
     "id": "trabajo", "emoji": "💼", "color": "#0b7285",
@@ -122,7 +250,18 @@
       {"id":"trabajas","wrong":["edad","alquiler","firma"]},
       {"id":"horario","wrong":["nombre","habitaciones","documentos"]},
       {"id":"experiencia","wrong":["donde","averia","cita"]}
-    ]
+    ],
+    "dialog": {
+      "key": 3,
+      "lines": [
+        {"w":"o"},
+        {"w":"t","wrong":["Bien. Soy de Marruecos.","Bien. Me duele la cabeza."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Tengo dos hijos y una hija.","Cuesta siete euros."]},
+        {"w":"o"},
+        {"w":"t","wrong":["No, no tengo hambre.","Sí, vivo en el segundo."]}
+      ]
+    }
   },
   {
     "id": "vivienda", "emoji": "🏠", "color": "#9c4f00",
@@ -140,7 +279,18 @@
       {"id":"alquiler","wrong":["trabajas","estar","firma"]},
       {"id":"averia","wrong":["nombre","experiencia","precio"]},
       {"id":"habitaciones","wrong":["horario","origen","firma"]}
-    ]
+    ],
+    "dialog": {
+      "key": 3,
+      "lines": [
+        {"w":"o"},
+        {"w":"t","wrong":["Hola, quiero un café con leche.","Hola, tengo treinta años."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Cuesta seiscientos euros al mes.","Mi cita es a las once."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Sí, estoy bien, gracias.","No, no tengo hijos."]}
+      ]
+    }
   },
   {
     "id": "papeleo", "emoji": "📋", "color": "#364fc7",
@@ -158,6 +308,18 @@
       {"id":"cita","wrong":["alquiler","origen","averia"]},
       {"id":"documentos","wrong":["trabajas","hambre","horario"]},
       {"id":"firma","wrong":["averia","edad","experiencia"]}
-    ]
+    ],
+    "dialog": {
+      "key": 5,
+      "examples": ["usted: ¿Puede…? · ¿Tiene…?", "tú: ¿Puedes…? · ¿Tienes…?"],
+      "lines": [
+        {"w":"o"},
+        {"w":"t","wrong":["Sí, tengo dos hijos y una hija.","No, quiero un café, por favor."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Aquí tiene un kilo de manzanas.","Me duele la garganta."]},
+        {"w":"o"},
+        {"w":"t","wrong":["Oye, dame una cita para el lunes.","¿Cuántos años tienes?"]}
+      ]
+    }
   }
 ]

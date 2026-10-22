@@ -8,10 +8,15 @@
 //   phrase    pregunta en español → elegir la respuesta
 //   order     escuchar y leer la traducción → ordenar las palabras de la respuesta
 //   sentence  escuchar una frase entera (ejemplo de una palabra o de un diálogo) → escribirla
+// Diálogo (guion) que cierra cada unidad:
+//   scene     la situación, en su idioma
+//   line      lo que dice la otra persona: escucharlo y leerlo
+//   reply     su turno: elegir qué decir entre tres frases en español
+//   compose   escribir unas líneas con una lista de lo que tienen que llevar
 // Lo que se pide depende del nivel que dice tener (ver makeLesson): de cero, palabras paso a paso;
 // con más nivel, menos presentaciones y repeticiones y más frases completas.
 // Quien tiene el español como idioma no tiene traducción que ver: sus ejercicios de palabras son dictados.
-import { ui, tr } from "../core/i18n.js";
+import { ui, tr, I18N } from "../core/i18n.js";
 import { save, persist, setResume, clearResume, TARGET as G } from "../core/state.js";
 import { go } from "../core/router.js";
 import { shuffle, pick } from "../core/util.js";
@@ -74,14 +79,31 @@ function makeLesson(unit, li) {
     if (L === 2) return [...phrases.map((id) => phraseExercise(id, "order")), ...phrases.map((id) => phraseSentence(id)), phraseSentence(phrases[0], "q")];
     return phrases.flatMap((id) => [phraseSentence(id, "q"), phraseSentence(id)]);
   }
-  // Práctica final: sobre todo escribir.
-  if (L === 0) {
-    return shuffle([...produce(words.slice(0, 6)), wordExercise(words[6], "hear"), ...phrases.map((id) => phraseExercise(id)),
-      phraseExercise(phrases[0], "order"), phraseExercise(phrases[1], "order")]);
-  }
-  if (L === 1) return shuffle([...produce(words.slice(0, 4)), ...words.slice(4, 6).map(wordSentence), ...phrases.map((id) => phraseExercise(id)), phraseExercise(phrases[0], "order")]);
-  return shuffle([...words.slice(0, 3).map((w) => wordExercise(w, "write")), ...words.slice(3, 7).map(wordSentence), ...phrases.map((id) => phraseSentence(id)),
-    L === 2 ? phraseExercise(phrases[0], "order") : phraseSentence(phrases[0], "q")]);
+  return dialogLesson(unit);
+}
+
+// Diálogo al final de la unidad: la escena, el diálogo línea a línea, el dictado de su frase clave
+// y, si la unidad lo pide, escribir unas líneas. Nada de esto va a Repasar (dialog: true).
+function dialogLesson(unit) {
+  const d = unit.dialog;
+  const lines = d.lines.map((l, k) => ({ ...l, key: `g_${unit.id}_${k + 1}` }));
+  const scene = "gs_" + unit.id;
+  const list = [{ type: "scene", unit, dialog: true }];
+  lines.forEach((l, k) => {
+    const before = lines.slice(0, k);
+    list.push(l.w === "o" ? { type: "line", key: l.key, before, dialog: true } : { type: "reply", key: l.key, wrong: l.wrong, before, scene, dialog: true });
+  });
+  list.push({ type: "sentence", key: lines[d.key].key, dialog: true });
+  if (d.compose) list.push({ type: "compose", unit, dialog: true });
+  return list;
+}
+
+// Lo último que se ha dicho en el diálogo, para no perder el hilo.
+function dialogLog(before) {
+  const log = el("div", "dialog-log");
+  log.dir = "ltr";
+  for (const l of before.slice(-3)) log.append(txt("p", "dlg-line " + l.w, tr(l.key, G), G));
+  return log;
 }
 
 // Ajusta un ejercicio a la persona: sin traducción (idioma español) o con el audio en pausa.
@@ -115,6 +137,7 @@ export function startReview() {
 }
 
 function noteResult(ex, ok) {
+  if (ex.dialog) return;
   const key = ex.item ? { k: "w", id: ex.item.id } : { k: "p", id: ex.id };
   const at = save.mistakes.findIndex((m) => m.k === key.k && m.id === key.id);
   if (!ok && at < 0) save.mistakes.push(key);
@@ -139,6 +162,74 @@ function runLesson(s) {
   app.append(head);
   const next = () => { s.i++; runLesson(s); };
   const say = (text) => { if (!audioPaused()) speak(text, G); };
+  const nextFooter = () => {
+    const foot = el("div", "footer");
+    foot.append(button("btn", ui("next"), next));
+    app.append(el("div", "footer-space"), foot);
+  };
+
+  if (ex.type === "scene") {
+    const id = ex.unit.id;
+    const card = el("div", "card dialog-scene");
+    card.append(txt("span", "example-label", ui("dialogScene"), N), txt("p", "scene-text", tr("gs_" + id, N), N));
+    if (I18N[G].t["gn_" + id]) {
+      // Nota de uso (tú / usted) y, aparte, los ejemplos en español, que se leen de izquierda a derecha.
+      const note = el("div", "notice draft dialog-note");
+      note.append(txt("p", "", "💡 " + tr("gn_" + id, N), N));
+      if (ex.unit.dialog.examples) for (const e of ex.unit.dialog.examples) note.append(txt("p", "note-es", e, G));
+      card.append(note);
+    }
+    app.append(speech(ui("lessonDialog"), "talk"), card);
+    nextFooter();
+    return;
+  }
+  if (ex.type === "line") {
+    const text = tr(ex.key, G);
+    const card = el("div", "card dialog-line");
+    card.append(txt("p", "dlg-text", text, G));
+    if (N !== G) card.append(txt("p", "hint", tr(ex.key, N), N));
+    card.append(audioControls(text, { cls: "center" }));
+    app.append(speech(ui("dialogListen"), "talk"), dialogLog(ex.before), card);
+    nextFooter();
+    say(text);
+    return;
+  }
+  if (ex.type === "compose") {
+    // Escribir unas líneas: la lista dice qué tienen que llevar y se marca sola (✓) al cumplirse.
+    const c = ex.unit.dialog.compose;
+    const card = el("div", "card compose");
+    card.append(txt("p", "lead", tr("gw_" + ex.unit.id, N), N));
+    const input = el("textarea", "compose-input");
+    input.id = "compose-answer";
+    input.lang = G;
+    input.dir = "ltr";
+    input.rows = 5;
+    input.dataset.model = c.model; // para las pruebas automáticas
+    input.setAttribute("aria-label", ui("composeTitle"));
+    const checks = [[ui("composeLines"), (v) => v.split("\n").filter((x) => x.trim()).length >= 4],
+      ...c.words.map((w) => [ui("composeUses", w), (v) => new RegExp(`(^|[^a-záéíóúñ])${w}([^a-záéíóúñ]|$)`, "i").test(v)])];
+    const list = el("ul", "checklist");
+    const items = checks.map(([label]) => { const li = txt("li", "", label, N); list.append(li); return li; });
+    const refresh = () => checks.forEach(([, test], k) => items[k].classList.toggle("ok", test(input.value)));
+    input.oninput = refresh;
+    const msg = el("p", "hint");
+    msg.setAttribute("role", "status");
+    const check = button("btn", ui("check"), () => {
+      refresh();
+      if (!checks.every(([, test]) => test(input.value))) { msg.textContent = ui("composeMissing"); return; }
+      check.remove();
+      msg.textContent = "";
+      input.readOnly = true;
+      const model = el("div", "example");
+      model.append(txt("span", "example-label", ui("composeModel"), N), txt("p", "example-text compose-model", c.model, G));
+      card.append(model);
+      nextFooter();
+    });
+    card.append(input, list, msg, check);
+    app.append(speech(ui("composeTitle"), "talk"), card);
+    input.focus();
+    return;
+  }
 
   if (ex.type === "intro") {
     const word = tr(ex.item.id, G);
@@ -283,6 +374,15 @@ function runLesson(s) {
     area.append(box.el);
     say(text);
     box.focus();
+  } else if (ex.type === "reply") {
+    // Su turno en el diálogo: elegir qué decir. Si es la primera línea, se recuerda la escena.
+    const text = tr(ex.key, G);
+    app.append(speech(ui("dialogYourTurn"), "talk"));
+    if (ex.before.length) area.append(dialogLog(ex.before));
+    else area.append(txt("p", "hint", tr(ex.scene, N), N));
+    const opts = el("div", "options");
+    for (const o of shuffle([text, ...ex.wrong])) addOption(opts, o, G, o === text, text);
+    area.append(opts);
   } else if (ex.type === "order") {
     // Ordenar las palabras de la respuesta (en español) viendo su traducción.
     const sentence = tr("a_" + ex.id, G);

@@ -588,3 +588,25 @@ body.tramite .fact-source { display: inline-flex; flex-wrap: wrap; gap: 4px; bac
 .sign-card { border: 2px dashed var(--line); border-radius: 16px; padding: 10px 14px; margin: 0 0 10px; background: var(--soft); }
 .sign-card p { margin: 4px 0 0; font-weight: 600; }
 .sign-code { font-size: .8rem; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .05em; }
+
+/* ---------- Diálogo (guion) al final de cada unidad ---------- */
+.dialog-scene { display: grid; gap: 8px; text-align: center; }
+.scene-text { margin: 0; font-size: 1.15rem; font-weight: 600; }
+.dialog-log { display: grid; gap: 6px; margin: 0 0 12px; }
+.dlg-line { margin: 0; max-width: 85%; padding: 8px 12px; border: 2px solid var(--line); border-radius: 16px; background: var(--paper); font-size: .95rem; }
+.dlg-line.o { justify-self: start; border-end-start-radius: 4px; }
+.dlg-line.t { justify-self: end; border-end-end-radius: 4px; background: var(--mint-soft); }
+.dialog-line { display: grid; gap: 8px; text-align: center; }
+.dlg-text { margin: 0; font-size: 1.2rem; font-weight: 600; }
+.compose { display: grid; gap: 10px; }
+.compose .lead { margin: 0; }
+.compose-input { width: 100%; box-sizing: border-box; min-height: 140px; padding: 12px; border: 2px solid var(--line); border-radius: 14px; font: inherit; font-size: 1.05rem; color: var(--ink); background: var(--paper); resize: vertical; }
+.compose-model { white-space: pre-line; text-align: start; }
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.checklist li { display: flex; gap: 8px; align-items: center; color: var(--ink-soft); }
+.checklist li::before { content: "○"; font-weight: 700; }
+.checklist li.ok { color: var(--ink); }
+.checklist li.ok::before { content: "✓"; color: var(--mint-btn); }
+.dialog-note { display: grid; gap: 4px; }
+.dialog-note p { margin: 0; }
+.note-es { font-weight: 600; }

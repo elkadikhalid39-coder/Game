@@ -5,7 +5,7 @@ import { register } from "../core/router.js";
 import { el, txt, button } from "../ui/dom.js";
 import { app, screen, setTab } from "../ui/shell.js";
 import { go } from "../core/router.js";
-import { UNITS, LESSON_TYPES, doneIn, unitComplete } from "./course.js";
+import { UNITS, LESSON_TYPES, doneIn, unitComplete, currentUnitIndex, reachable } from "./course.js";
 import { startLesson } from "./lesson.js";
 
 // Desplazamiento en zigzag de los nodos dentro de cada unidad.
@@ -16,9 +16,8 @@ function showPath() {
   screen("main");
   app.append(continueCard());
   const path = el("div", "path");
-  let foundCurrent = false;
   // La unidad con la lección que toca se ve entera; las demás, en una línea que se despliega al tocarla.
-  const currentUnit = UNITS.findIndex((u) => !unitComplete(u));
+  const currentUnit = currentUnitIndex();
   UNITS.forEach((u, n) => {
     // Cada unidad es un bloque; su cabecera se queda fija arriba mientras se recorre.
     const compact = n !== currentUnit;
@@ -40,16 +39,17 @@ function showPath() {
     const nodes = el("div", "nodes");
     LESSON_TYPES.forEach((lt, li) => {
       const done = doneIn(u) > li;
-      const current = !done && !foundCurrent;
-      if (current) foundCurrent = true;
+      const next = li === doneIn(u);
+      const current = n === currentUnit && next;
       // En modo demo, o con nivel «me defiendo» o más, se puede abrir cualquier lección sin haber hecho las anteriores.
-      const state = done ? "done" : current ? "current" : save.demo || save.level >= 2 ? "open" : "locked";
-      const node = el("div", "node-wrap " + state + (lt.type === "practice" ? " reward" : ""));
+      const open = (next && reachable(n)) || save.demo || save.level >= 2;
+      const state = done ? "done" : current ? "current" : open ? "open" : "locked";
+      const node = el("div", "node-wrap " + state + (lt.type === "dialog" ? " reward" : ""));
       node.style.setProperty("--x", ZIGZAG[li] * (n % 2 ? -1 : 1));
       const b = el("button", "node");
       b.type = "button";
       b.style.setProperty("--unit", u.color);
-      b.append(el("span", "", state === "locked" ? "🔒" : done && lt.type !== "practice" ? "✓" : lt.icon));
+      b.append(el("span", "", state === "locked" ? "🔒" : done && lt.type !== "dialog" ? "✓" : lt.icon));
       b.setAttribute("aria-label", ui(lt.key) + (state === "locked" ? " 🔒" : ""));
       b.disabled = state === "locked";
       b.onclick = () => startLesson(u, li);
@@ -79,7 +79,7 @@ function continueCard() {
     title = ui(r.key) + (r.sub ? " · " + r.sub : "");
     run = () => go(r.route, r.arg);
   } else {
-    const n = UNITS.findIndex((u) => !unitComplete(u));
+    const n = currentUnitIndex();
     if (n < 0) return "";
     const li = doneIn(UNITS[n]);
     title = `${ui("continueLesson", n + 1)} · ${ui(LESSON_TYPES[li].key)}`;

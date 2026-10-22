@@ -38,6 +38,9 @@ for u in units:
         course |= {es[w["id"]], es["e_" + w["id"]]}
     for p in u["phrases"]:
         course |= {es["q_" + p["id"]], es["a_" + p["id"]]}
+    # Diálogo de cierre: cada línea (las frases incorrectas solo se leen).
+    for k in range(1, len(u.get("dialog", {}).get("lines", [])) + 1):
+        course.add(es[f"g_{u['id']}_{k}"])
 
 drive = load("content/exams/conducir.json")
 # Igual que en src/exams/driving.js: pregunta y opciones leídas seguidas.
