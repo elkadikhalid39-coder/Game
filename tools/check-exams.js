@@ -1,6 +1,7 @@
 // Comprueba los contenidos de examen (content/exams): formato oficial, respuestas válidas, fuentes y estado.
 // Uso: node tools/check-exams.js
 import { readFileSync } from "node:fs";
+import { SIGN_CODES } from "../src/ui/signs.js";
 
 const load = (f) => JSON.parse(readFileSync(new URL("../content/exams/" + f, import.meta.url), "utf8"));
 const errors = [];
@@ -103,6 +104,9 @@ if (dgt.questions.length < dgt.mock.questions * 2) errors.push(`conducir: el ban
 for (const l of [0, 1, 2]) if (dgt.questions.filter((q) => q.answer === l).length / dgt.questions.length > 0.5) errors.push(`conducir: más de la mitad de las respuestas son la opción ${"abc"[l]}`);
 const langs = JSON.parse(readFileSync(new URL("../content/i18n/_order.json", import.meta.url), "utf8")).filter((l) => l !== "es");
 for (const w of dgt.words) for (const l of langs) if (!w.tr[l]) errors.push(`conducir vocabulario «${w.es}»: falta la traducción (${l})`);
+
+// Señales dibujadas: solo códigos que la app sabe dibujar (src/ui/signs.js).
+for (const q of dgt.questions) if (q.sign && !SIGN_CODES.includes(q.sign.split(":")[0])) errors.push(`conducir ${q.id}: señal «${q.sign}» sin dibujo`);
 
 // Revisión: una pregunta solo deja de ser «borrador» con nombre y fecha de quien la revisó (tools/review.js).
 const reviewed = (node, where) => {

@@ -376,6 +376,7 @@ h2.section { margin: 18px 0 10px; }
 .q-meta.ok { color: var(--mint-text); }
 .q-text { font-size: 1.12rem; font-weight: 600; margin: 0; }
 .explain { font-size: .95rem; margin-top: 10px; }
+.road-sign { display: block; width: 104px; height: 104px; margin: 4px auto 10px; }
 .link.report { font-size: .85rem; margin-top: 6px; color: var(--ink-soft); }
 .fact-stale { display: block; color: #9a3412; font-weight: 600; margin-top: 4px; }
 .exam-head { position: sticky; top: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 5; }

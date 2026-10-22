@@ -12,13 +12,14 @@ import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { factNote, sourceLine, extLink } from "../ui/fact.js";
 import { countdown } from "../ui/timer.js";
 import { playButton } from "../ui/audio-buttons.js";
+import { signSvg } from "../ui/signs.js";
 import { hasPass, draftBanner, menuRow, saveResult, resultsList, reportButton } from "./common.js";
 import { passCard } from "./nationality.js";
 
 export const PASS = "conducir";
 const QUESTIONS = bank.questions;
 const MOCK = bank.mock; // 30 preguntas, 30 minutos, apto con 3 fallos como máximo (datos «dgt.examen_b»)
-const FREE_TOPIC = "permiso"; // muestra gratuita: el primer tema
+const FREE_TOPIC = "permiso"; // muestra gratuita: documentación y permisos (lo que más se consulta)
 const SEDE_CANJE = "https://sede.dgt.gob.es/es/permisos-de-conducir/canjes-de-permisos/canjes-de-permisos-extranjeros/";
 const DGT_TEST = "https://www.dgt.es/nuestros-servicios/permisos-de-conducir/obtener-un-nuevo-permiso-de-conducir/";
 const byTopic = (t) => QUESTIONS.filter((q) => q.topic === t);
@@ -146,7 +147,9 @@ function questionCard(q, meta, chosen, onPick) {
   const head = el("div", "q-head");
   head.append(el("p", "q-meta", meta + (q.status !== "publicado" ? " · borrador" : "")),
     playButton([q.q, ...q.options.map((o, i) => "abc"[i] + ". " + o)].join(". "), ui("readAloud")));
-  card.append(head, el("p", "q-text", q.q));
+  card.append(head);
+  if (q.sign) card.append(signSvg(q.sign, ui("roadSign")));
+  card.append(el("p", "q-text", q.q));
   const opts = el("div", "options");
   q.options.forEach((o, i) => {
     const b = button("opt left" + (chosen === i ? " selected" : ""), "abc"[i] + ") " + o, () => onPick(i, b));
@@ -225,7 +228,7 @@ function mockIntro() {
 
 // Preguntas de todos los temas, repartidas: primero una de cada tema y el resto al azar.
 function mockQuestions() {
-  const first = bank.topics.flatMap((t) => pick(byTopic(t.id), 3));
+  const first = bank.topics.flatMap((t) => pick(byTopic(t.id), 1));
   const rest = pick(QUESTIONS.filter((q) => !first.includes(q)), MOCK.questions - first.length);
   return shuffle([...first, ...rest]).slice(0, MOCK.questions);
 }

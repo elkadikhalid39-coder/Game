@@ -436,6 +436,1734 @@
       "status": "borrador"
     },
     {
+      "id": "ccse-t1-025",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué cámara es la de representación territorial?",
+      "options": [
+        "El Senado",
+        "El Congreso de los Diputados",
+        "El Consejo de Estado"
+      ],
+      "answer": 0,
+      "explain": "El Senado es la cámara de representación territorial.",
+      "source": {
+        "name": "Constitución española, art. 69.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-026",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuántos senadores elige cada provincia, como regla general?",
+      "options": [
+        "Dos",
+        "Cuatro",
+        "Seis"
+      ],
+      "answer": 1,
+      "explain": "En cada provincia se eligen cuatro senadores (con excepciones en las islas, Ceuta y Melilla).",
+      "source": {
+        "name": "Constitución española, art. 69.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-027",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuántos diputados tiene el Congreso de los Diputados?",
+      "options": [
+        "300",
+        "400",
+        "350"
+      ],
+      "answer": 2,
+      "explain": "La ley electoral fija el Congreso en 350 diputados (la Constitución permite entre 300 y 400).",
+      "source": {
+        "name": "Ley Orgánica 5/1985 del Régimen Electoral General, art. 162.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-028",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuál es la circunscripción electoral para elegir el Congreso?",
+      "options": [
+        "La provincia",
+        "La comunidad autónoma",
+        "El municipio"
+      ],
+      "answer": 0,
+      "explain": "La circunscripción electoral es la provincia; Ceuta y Melilla eligen un diputado cada una.",
+      "source": {
+        "name": "Constitución española, art. 68.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-029",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuántos diputados eligen Ceuta y Melilla?",
+      "options": [
+        "Dos cada una",
+        "Uno cada una",
+        "Ninguno"
+      ],
+      "answer": 1,
+      "explain": "Las ciudades de Ceuta y Melilla están representadas cada una por un diputado.",
+      "source": {
+        "name": "Constitución española, art. 68.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-030",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo es el sufragio para elegir a los diputados?",
+      "options": [
+        "Solo para quien paga impuestos",
+        "Público y a mano alzada",
+        "Universal, libre, igual, directo y secreto"
+      ],
+      "answer": 2,
+      "explain": "El Congreso se elige por sufragio universal, libre, igual, directo y secreto.",
+      "source": {
+        "name": "Constitución española, art. 68.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-031",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Con qué criterio se reparten los escaños del Congreso en cada circunscripción?",
+      "options": [
+        "Representación proporcional",
+        "Mayoría simple: todos para el más votado",
+        "Sorteo"
+      ],
+      "answer": 0,
+      "explain": "La elección se verifica en cada circunscripción atendiendo a criterios de representación proporcional.",
+      "source": {
+        "name": "Constitución española, art. 68.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-032",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Por cuántos años se elige a los senadores?",
+      "options": [
+        "Por cinco años",
+        "Por cuatro años",
+        "Por seis años"
+      ],
+      "answer": 1,
+      "explain": "El Senado es elegido por cuatro años.",
+      "source": {
+        "name": "Constitución española, art. 69.6",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-033",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué cámara otorga la confianza al candidato a presidente del Gobierno?",
+      "options": [
+        "El Senado",
+        "El Tribunal Constitucional",
+        "El Congreso de los Diputados"
+      ],
+      "answer": 2,
+      "explain": "El candidato expone su programa ante el Congreso, que vota la confianza.",
+      "source": {
+        "name": "Constitución española, art. 99.2 y 99.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-034",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué mayoría necesita el candidato a presidente del Gobierno en la primera votación de investidura?",
+      "options": [
+        "La mayoría absoluta del Congreso",
+        "La mayoría simple del Senado",
+        "Dos tercios de las Cortes"
+      ],
+      "answer": 0,
+      "explain": "En la primera votación hace falta la mayoría absoluta; en la segunda, 48 horas después, basta la mayoría simple.",
+      "source": {
+        "name": "Constitución española, art. 99.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-035",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo puede el Congreso exigir la responsabilidad política del Gobierno?",
+      "options": [
+        "Con un referéndum",
+        "Con una moción de censura",
+        "Con una sentencia"
+      ],
+      "answer": 1,
+      "explain": "El Congreso puede exigir la responsabilidad política del Gobierno mediante la moción de censura.",
+      "source": {
+        "name": "Constitución española, art. 113.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-036",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué debe incluir una moción de censura?",
+      "options": [
+        "La disolución del Senado",
+        "Una reforma de la Constitución",
+        "Un candidato a presidente del Gobierno"
+      ],
+      "answer": 2,
+      "explain": "La moción de censura debe incluir un candidato a la Presidencia del Gobierno.",
+      "source": {
+        "name": "Constitución española, art. 113.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-037",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Ante quién plantea el presidente del Gobierno la cuestión de confianza?",
+      "options": [
+        "Ante el Congreso de los Diputados",
+        "Ante el Rey",
+        "Ante el Senado"
+      ],
+      "answer": 0,
+      "explain": "El presidente, previa deliberación del Consejo de Ministros, puede plantear ante el Congreso la cuestión de confianza.",
+      "source": {
+        "name": "Constitución española, art. 112",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-038",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quiénes componen el Gobierno?",
+      "options": [
+        "El Rey y los presidentes autonómicos",
+        "El presidente, los vicepresidentes, en su caso, y los ministros",
+        "Los diputados y los senadores"
+      ],
+      "answer": 1,
+      "explain": "El Gobierno se compone del presidente, de los vicepresidentes, en su caso, de los ministros y de los demás miembros que establezca la ley.",
+      "source": {
+        "name": "Constitución española, art. 98.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-039",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién dirige la acción del Gobierno y coordina las funciones de sus miembros?",
+      "options": [
+        "El Rey",
+        "El presidente del Congreso",
+        "El presidente del Gobierno"
+      ],
+      "answer": 2,
+      "explain": "El presidente dirige la acción del Gobierno y coordina las funciones de los demás miembros.",
+      "source": {
+        "name": "Constitución española, art. 98.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-040",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuándo cesa el Gobierno?",
+      "options": [
+        "Tras la celebración de elecciones generales",
+        "Cada año, el 1 de enero",
+        "Cuando lo decide el Senado"
+      ],
+      "answer": 0,
+      "explain": "El Gobierno cesa tras las elecciones generales, por pérdida de la confianza parlamentaria o por dimisión o fallecimiento de su presidente.",
+      "source": {
+        "name": "Constitución española, art. 101.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-041",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién sanciona y promulga las leyes?",
+      "options": [
+        "El presidente del Gobierno",
+        "El Rey",
+        "El Tribunal Supremo"
+      ],
+      "answer": 1,
+      "explain": "Corresponde al Rey sancionar y promulgar las leyes.",
+      "source": {
+        "name": "Constitución española, art. 62.a",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-042",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién convoca elecciones y disuelve las Cortes Generales en los términos de la Constitución?",
+      "options": [
+        "El presidente del Senado",
+        "El Defensor del Pueblo",
+        "El Rey"
+      ],
+      "answer": 2,
+      "explain": "Corresponde al Rey convocar y disolver las Cortes Generales y convocar elecciones.",
+      "source": {
+        "name": "Constitución española, art. 62.b",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-043",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién tiene el mando supremo de las Fuerzas Armadas?",
+      "options": [
+        "El Rey",
+        "El ministro del Interior",
+        "El presidente del Congreso"
+      ],
+      "answer": 0,
+      "explain": "Corresponde al Rey el mando supremo de las Fuerzas Armadas.",
+      "source": {
+        "name": "Constitución española, art. 62.h",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-044",
+      "task": 1,
+      "type": "mc3",
+      "q": "Según la Constitución, ¿la persona del Rey está sujeta a responsabilidad?",
+      "options": [
+        "Sí, responde ante el Congreso",
+        "No: es inviolable y no está sujeta a responsabilidad",
+        "Sí, responde ante el Gobierno"
+      ],
+      "answer": 1,
+      "explain": "La persona del Rey es inviolable y no está sujeta a responsabilidad; sus actos van refrendados.",
+      "source": {
+        "name": "Constitución española, art. 56.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-045",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué título tiene el heredero de la Corona?",
+      "options": [
+        "Príncipe o princesa de Castilla",
+        "Duque o duquesa de Madrid",
+        "Príncipe o princesa de Asturias"
+      ],
+      "answer": 2,
+      "explain": "El heredero de la Corona tiene la dignidad de Príncipe de Asturias.",
+      "source": {
+        "name": "Constitución española, art. 57.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-046",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién es el Rey de España actualmente?",
+      "options": [
+        "Felipe VI",
+        "Juan Carlos I",
+        "Alfonso XIII"
+      ],
+      "answer": 0,
+      "explain": "Felipe VI es Rey de España desde 2014.",
+      "source": {
+        "name": "Casa de S. M. el Rey",
+        "url": "https://www.casareal.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-047",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Ante quién es proclamado el Rey y jura la Constitución?",
+      "options": [
+        "Ante el Tribunal Constitucional",
+        "Ante las Cortes Generales",
+        "Ante el Consejo de Ministros"
+      ],
+      "answer": 1,
+      "explain": "El Rey, al ser proclamado ante las Cortes Generales, presta juramento de guardar y hacer guardar la Constitución.",
+      "source": {
+        "name": "Constitución española, art. 61.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-048",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quiénes pueden presentar proyectos o proposiciones de ley?",
+      "options": [
+        "Solo el Rey",
+        "Solo los jueces",
+        "El Gobierno, el Congreso y el Senado"
+      ],
+      "answer": 2,
+      "explain": "La iniciativa legislativa corresponde al Gobierno, al Congreso y al Senado, y también a las asambleas autonómicas y a los ciudadanos.",
+      "source": {
+        "name": "Constitución española, art. 87",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-049",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuántas firmas hacen falta, como mínimo, para una iniciativa legislativa popular?",
+      "options": [
+        "500.000",
+        "50.000",
+        "1.000.000"
+      ],
+      "answer": 0,
+      "explain": "La iniciativa legislativa popular exige no menos de 500.000 firmas acreditadas.",
+      "source": {
+        "name": "Constitución española, art. 87.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-050",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿En qué materia NO cabe la iniciativa legislativa popular?",
+      "options": [
+        "En materias de vivienda",
+        "En materias tributarias",
+        "En materias de transporte"
+      ],
+      "answer": 1,
+      "explain": "No procede en materias propias de ley orgánica, tributarias, de carácter internacional ni en lo relativo a la prerrogativa de gracia.",
+      "source": {
+        "name": "Constitución española, art. 87.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-051",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué mayoría necesita una ley orgánica en la votación final del Congreso?",
+      "options": [
+        "La mayoría simple",
+        "La unanimidad",
+        "La mayoría absoluta"
+      ],
+      "answer": 2,
+      "explain": "La aprobación de las leyes orgánicas exige mayoría absoluta del Congreso en una votación final sobre el conjunto del proyecto.",
+      "source": {
+        "name": "Constitución española, art. 81.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-052",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué tipo de ley regula los derechos fundamentales y el régimen electoral general?",
+      "options": [
+        "La ley orgánica",
+        "El decreto-ley",
+        "La ordenanza municipal"
+      ],
+      "answer": 0,
+      "explain": "Son leyes orgánicas las de desarrollo de los derechos fundamentales, los estatutos de autonomía y el régimen electoral general.",
+      "source": {
+        "name": "Constitución española, art. 81.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-053",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién puede dictar decretos-leyes en caso de extraordinaria y urgente necesidad?",
+      "options": [
+        "El Senado",
+        "El Gobierno",
+        "Los ayuntamientos"
+      ],
+      "answer": 1,
+      "explain": "En caso de extraordinaria y urgente necesidad, el Gobierno puede dictar disposiciones provisionales en forma de decretos-leyes.",
+      "source": {
+        "name": "Constitución española, art. 86.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-054",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿En qué plazo debe el Congreso convalidar o derogar un decreto-ley?",
+      "options": [
+        "En un año",
+        "En una semana",
+        "En los 30 días siguientes a su promulgación"
+      ],
+      "answer": 2,
+      "explain": "Los decretos-leyes se someten a debate y votación del Congreso en el plazo de los treinta días siguientes a su promulgación.",
+      "source": {
+        "name": "Constitución española, art. 86.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-055",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿De cuánto tiempo dispone el Senado para vetar o enmendar un proyecto de ley ordinario?",
+      "options": [
+        "Dos meses",
+        "Seis meses",
+        "Quince días"
+      ],
+      "answer": 0,
+      "explain": "El Senado, en el plazo de dos meses, puede oponer su veto o introducir enmiendas.",
+      "source": {
+        "name": "Constitución española, art. 90.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-056",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿En qué plazo sanciona el Rey las leyes aprobadas por las Cortes?",
+      "options": [
+        "En 3 meses",
+        "En 15 días",
+        "En 1 año"
+      ],
+      "answer": 1,
+      "explain": "El Rey sanciona en el plazo de quince días las leyes aprobadas por las Cortes Generales.",
+      "source": {
+        "name": "Constitución española, art. 91",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-057",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién convoca un referéndum consultivo?",
+      "options": [
+        "El presidente del Senado",
+        "Los partidos políticos",
+        "El Rey, a propuesta del presidente del Gobierno y con autorización del Congreso"
+      ],
+      "answer": 2,
+      "explain": "El referéndum lo convoca el Rey, mediante propuesta del presidente del Gobierno, previamente autorizada por el Congreso.",
+      "source": {
+        "name": "Constitución española, art. 92.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-058",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién elabora los Presupuestos Generales del Estado?",
+      "options": [
+        "El Gobierno",
+        "El Senado",
+        "El Banco de España"
+      ],
+      "answer": 0,
+      "explain": "Corresponde al Gobierno la elaboración de los Presupuestos y a las Cortes su examen, enmienda y aprobación.",
+      "source": {
+        "name": "Constitución española, art. 134.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-059",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién aprueba los Presupuestos Generales del Estado?",
+      "options": [
+        "El Rey",
+        "Las Cortes Generales",
+        "El Tribunal de Cuentas"
+      ],
+      "answer": 1,
+      "explain": "Las Cortes Generales examinan, enmiendan y aprueban los Presupuestos.",
+      "source": {
+        "name": "Constitución española, art. 134.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-060",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué órgano fiscaliza las cuentas y la gestión económica del Estado?",
+      "options": [
+        "El Tribunal Supremo",
+        "El Consejo de Estado",
+        "El Tribunal de Cuentas"
+      ],
+      "answer": 2,
+      "explain": "El Tribunal de Cuentas es el supremo órgano fiscalizador de las cuentas y de la gestión económica del Estado.",
+      "source": {
+        "name": "Constitución española, art. 136.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-061",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuál es el supremo órgano consultivo del Gobierno?",
+      "options": [
+        "El Consejo de Estado",
+        "El Consejo General del Poder Judicial",
+        "El Senado"
+      ],
+      "answer": 0,
+      "explain": "El Consejo de Estado es el supremo órgano consultivo del Gobierno.",
+      "source": {
+        "name": "Constitución española, art. 107",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-062",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuántos miembros tiene el Tribunal Constitucional?",
+      "options": [
+        "9",
+        "12",
+        "20"
+      ],
+      "answer": 1,
+      "explain": "El Tribunal Constitucional se compone de 12 miembros nombrados por el Rey.",
+      "source": {
+        "name": "Constitución española, art. 159.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-063",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Por cuántos años se designa a los miembros del Tribunal Constitucional?",
+      "options": [
+        "Por cuatro años",
+        "De por vida",
+        "Por nueve años"
+      ],
+      "answer": 2,
+      "explain": "Los miembros del Tribunal Constitucional son designados por un período de nueve años y se renuevan por terceras partes cada tres.",
+      "source": {
+        "name": "Constitución española, art. 159.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-064",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Ante qué tribunal se presenta el recurso de amparo por violación de derechos fundamentales?",
+      "options": [
+        "Ante el Tribunal Constitucional",
+        "Ante el Tribunal de Cuentas",
+        "Ante el Consejo de Estado"
+      ],
+      "answer": 0,
+      "explain": "El Tribunal Constitucional conoce del recurso de amparo por violación de derechos y libertades.",
+      "source": {
+        "name": "Constitución española, art. 53.2 y 161.1.b",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-065",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿De quién es alto comisionado el Defensor del Pueblo?",
+      "options": [
+        "Del Gobierno",
+        "De las Cortes Generales",
+        "Del Rey"
+      ],
+      "answer": 1,
+      "explain": "El Defensor del Pueblo es alto comisionado de las Cortes Generales para la defensa de los derechos del Título I.",
+      "source": {
+        "name": "Constitución española, art. 54",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-066",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué función tiene el Ministerio Fiscal?",
+      "options": [
+        "Recaudar impuestos",
+        "Elaborar las leyes",
+        "Promover la acción de la justicia en defensa de la legalidad"
+      ],
+      "answer": 2,
+      "explain": "El Ministerio Fiscal promueve la acción de la justicia en defensa de la legalidad, los derechos de los ciudadanos y el interés público.",
+      "source": {
+        "name": "Constitución española, art. 124.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-067",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién nombra al Fiscal General del Estado?",
+      "options": [
+        "El Rey, a propuesta del Gobierno",
+        "El Congreso, por votación",
+        "Los jueces, por sorteo"
+      ],
+      "answer": 0,
+      "explain": "El Fiscal General del Estado es nombrado por el Rey, a propuesta del Gobierno, oído el Consejo General del Poder Judicial.",
+      "source": {
+        "name": "Constitución española, art. 124.4",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-068",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿De dónde emana la justicia, según la Constitución?",
+      "options": [
+        "Del Gobierno",
+        "Del pueblo",
+        "De la Iglesia"
+      ],
+      "answer": 1,
+      "explain": "La justicia emana del pueblo y se administra en nombre del Rey por jueces y magistrados.",
+      "source": {
+        "name": "Constitución española, art. 117.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-069",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo son los jueces y magistrados según la Constitución?",
+      "options": [
+        "Elegidos por los partidos",
+        "Nombrados por los alcaldes",
+        "Independientes, inamovibles y responsables"
+      ],
+      "answer": 2,
+      "explain": "Los jueces y magistrados son independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley.",
+      "source": {
+        "name": "Constitución española, art. 117.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-070",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Mediante qué institución pueden los ciudadanos participar en la Administración de Justicia?",
+      "options": [
+        "El jurado",
+        "El Senado",
+        "El padrón"
+      ],
+      "answer": 0,
+      "explain": "Los ciudadanos pueden participar en la Administración de Justicia mediante la institución del jurado.",
+      "source": {
+        "name": "Constitución española, art. 125",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-071",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Para quién es gratuita la justicia?",
+      "options": [
+        "Para todas las empresas",
+        "Para quienes acrediten insuficiencia de recursos para litigar",
+        "Solo para los funcionarios"
+      ],
+      "answer": 1,
+      "explain": "La justicia es gratuita cuando así lo disponga la ley y, en todo caso, para quienes acrediten insuficiencia de recursos.",
+      "source": {
+        "name": "Constitución española, art. 119",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-072",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo son, como regla general, las actuaciones judiciales?",
+      "options": [
+        "Secretas",
+        "Solo por escrito y sin testigos",
+        "Públicas"
+      ],
+      "answer": 2,
+      "explain": "Las actuaciones judiciales serán públicas, con las excepciones que prevean las leyes de procedimiento.",
+      "source": {
+        "name": "Constitución española, art. 120.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-073",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién preside el Consejo General del Poder Judicial?",
+      "options": [
+        "El presidente del Tribunal Supremo",
+        "El ministro de Justicia",
+        "El Rey"
+      ],
+      "answer": 0,
+      "explain": "El Consejo General del Poder Judicial está integrado por el presidente del Tribunal Supremo, que lo preside, y veinte miembros.",
+      "source": {
+        "name": "Constitución española, art. 122.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-074",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién declara el estado de alarma?",
+      "options": [
+        "El Senado",
+        "El Gobierno, mediante decreto acordado en Consejo de Ministros",
+        "Los ayuntamientos"
+      ],
+      "answer": 1,
+      "explain": "El estado de alarma lo declara el Gobierno por un plazo máximo de 15 días; para prorrogarlo hace falta autorización del Congreso.",
+      "source": {
+        "name": "Constitución española, art. 116.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-075",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuánto dura como máximo el estado de alarma sin autorización del Congreso para prorrogarlo?",
+      "options": [
+        "30 días",
+        "6 meses",
+        "15 días"
+      ],
+      "answer": 2,
+      "explain": "El Gobierno declara el estado de alarma por un plazo máximo de quince días; la prórroga requiere autorización del Congreso.",
+      "source": {
+        "name": "Constitución española, art. 116.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-076",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué misión tienen las Fuerzas Armadas según la Constitución?",
+      "options": [
+        "Garantizar la soberanía e independencia de España y defender su integridad territorial",
+        "Recaudar impuestos",
+        "Juzgar delitos"
+      ],
+      "answer": 0,
+      "explain": "Las Fuerzas Armadas tienen como misión garantizar la soberanía e independencia de España y defender su integridad territorial y el ordenamiento constitucional.",
+      "source": {
+        "name": "Constitución española, art. 8.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-077",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué tres ejércitos forman las Fuerzas Armadas?",
+      "options": [
+        "La Policía Nacional, la Guardia Civil y la Policía Local",
+        "El Ejército de Tierra, la Armada y el Ejército del Aire",
+        "El Ejército de Tierra, la Guardia Civil y Protección Civil"
+      ],
+      "answer": 1,
+      "explain": "Las Fuerzas Armadas están constituidas por el Ejército de Tierra, la Armada y el Ejército del Aire.",
+      "source": {
+        "name": "Constitución española, art. 8.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-078",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuándo entran en vigor las leyes si ellas mismas no dicen otra cosa?",
+      "options": [
+        "El mismo día que se aprueban",
+        "Un año después de publicarse",
+        "A los 20 días de su completa publicación en el BOE"
+      ],
+      "answer": 2,
+      "explain": "Las leyes entran en vigor a los veinte días de su completa publicación en el Boletín Oficial del Estado, si en ellas no se dispone otra cosa.",
+      "source": {
+        "name": "Código Civil, art. 2.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-079",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Dónde se publican oficialmente las leyes del Estado?",
+      "options": [
+        "En el Boletín Oficial del Estado (BOE)",
+        "En los periódicos privados",
+        "En la web de los partidos"
+      ],
+      "answer": 0,
+      "explain": "Las leyes se publican en el Boletín Oficial del Estado y entran en vigor según lo que dispongan.",
+      "source": {
+        "name": "Código Civil, art. 2.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-080",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Excusa la ignorancia de las leyes de su cumplimiento?",
+      "options": [
+        "Sí, siempre",
+        "No, la ignorancia de las leyes no excusa de su cumplimiento",
+        "Sí, si la persona es extranjera"
+      ],
+      "answer": 1,
+      "explain": "La ignorancia de las leyes no excusa de su cumplimiento.",
+      "source": {
+        "name": "Código Civil, art. 6.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-081",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿A quién representan las Cortes Generales?",
+      "options": [
+        "Al Gobierno",
+        "A los partidos políticos",
+        "Al pueblo español"
+      ],
+      "answer": 2,
+      "explain": "Las Cortes Generales representan al pueblo español.",
+      "source": {
+        "name": "Constitución española, art. 66.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-082",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Se puede ser a la vez diputado y senador?",
+      "options": [
+        "No, nadie puede ser miembro de las dos cámaras a la vez",
+        "Sí, siempre",
+        "Sí, si lo autoriza el Rey"
+      ],
+      "answer": 0,
+      "explain": "Nadie puede ser miembro de las dos cámaras simultáneamente.",
+      "source": {
+        "name": "Constitución española, art. 67.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-083",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Por qué no pueden ser perseguidos los diputados y senadores?",
+      "options": [
+        "Por ningún delito",
+        "Por las opiniones que manifiesten en el ejercicio de sus funciones",
+        "Por no pagar impuestos"
+      ],
+      "answer": 1,
+      "explain": "Diputados y senadores gozan de inviolabilidad por las opiniones manifestadas en el ejercicio de sus funciones.",
+      "source": {
+        "name": "Constitución española, art. 71.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-084",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo son, como regla general, las sesiones plenarias del Congreso y del Senado?",
+      "options": [
+        "Secretas",
+        "Solo para periodistas",
+        "Públicas"
+      ],
+      "answer": 2,
+      "explain": "Las sesiones plenarias de las Cámaras serán públicas, salvo acuerdo en contrario.",
+      "source": {
+        "name": "Constitución española, art. 80",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-085",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuántos períodos ordinarios de sesiones tienen las Cámaras al año?",
+      "options": [
+        "Dos",
+        "Uno",
+        "Cuatro"
+      ],
+      "answer": 0,
+      "explain": "Las Cámaras se reúnen anualmente en dos períodos ordinarios de sesiones: de septiembre a diciembre y de febrero a junio.",
+      "source": {
+        "name": "Constitución española, art. 73.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-086",
+      "task": 1,
+      "type": "mc3",
+      "q": "Tras terminar el mandato del Congreso, ¿en qué plazo se celebran las elecciones?",
+      "options": [
+        "Entre 6 meses y 1 año",
+        "Entre 30 y 60 días",
+        "Al día siguiente"
+      ],
+      "answer": 1,
+      "explain": "Las elecciones tendrán lugar entre los treinta y sesenta días desde la terminación del mandato.",
+      "source": {
+        "name": "Constitución española, art. 68.6",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-087",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo se llama la norma institucional básica de cada comunidad autónoma?",
+      "options": [
+        "Constitución autonómica",
+        "Ordenanza regional",
+        "Estatuto de autonomía"
+      ],
+      "answer": 2,
+      "explain": "Los estatutos de autonomía son la norma institucional básica de cada comunidad autónoma.",
+      "source": {
+        "name": "Constitución española, art. 147.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-088",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué autoridad dirige la Administración del Estado en el territorio de una comunidad autónoma?",
+      "options": [
+        "El delegado del Gobierno",
+        "El alcalde",
+        "El presidente autonómico"
+      ],
+      "answer": 0,
+      "explain": "Un delegado nombrado por el Gobierno dirige la Administración del Estado en el territorio de la comunidad autónoma.",
+      "source": {
+        "name": "Constitución española, art. 154",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-089",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿A quién corresponde el gobierno y la administración de las provincias?",
+      "options": [
+        "A los ministerios",
+        "A las diputaciones u otras corporaciones de carácter representativo",
+        "A los jueces de paz"
+      ],
+      "answer": 1,
+      "explain": "El gobierno y la administración autónoma de las provincias están encomendados a diputaciones u otras corporaciones representativas.",
+      "source": {
+        "name": "Constitución española, art. 141.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-090",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué órganos administran cada isla en los archipiélagos?",
+      "options": [
+        "Las diputaciones forales",
+        "Las delegaciones de Hacienda",
+        "Los cabildos o consejos insulares"
+      ],
+      "answer": 2,
+      "explain": "En los archipiélagos, las islas tienen su administración propia en forma de cabildos o consejos.",
+      "source": {
+        "name": "Constitución española, art. 141.4",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-091",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién elige a los concejales de un ayuntamiento?",
+      "options": [
+        "Los vecinos del municipio, por sufragio universal",
+        "El Gobierno central",
+        "El presidente autonómico"
+      ],
+      "answer": 0,
+      "explain": "Los concejales son elegidos por los vecinos del municipio mediante sufragio universal, igual, libre, directo y secreto.",
+      "source": {
+        "name": "Constitución española, art. 140",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-092",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quiénes eligen al alcalde?",
+      "options": [
+        "El Rey",
+        "Los concejales o los vecinos",
+        "El delegado del Gobierno"
+      ],
+      "answer": 1,
+      "explain": "Los alcaldes son elegidos por los concejales o por los vecinos.",
+      "source": {
+        "name": "Constitución española, art. 140",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-093",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué mayoría se necesita para aprobar una reforma ordinaria de la Constitución?",
+      "options": [
+        "La mitad más uno del Senado",
+        "La unanimidad del Congreso",
+        "Tres quintos de cada cámara"
+      ],
+      "answer": 2,
+      "explain": "Los proyectos de reforma constitucional deben aprobarse por una mayoría de tres quintos de cada una de las Cámaras.",
+      "source": {
+        "name": "Constitución española, art. 167.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-094",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué hace falta, además de ser mayor de edad, para votar?",
+      "options": [
+        "Estar inscrito en el censo electoral",
+        "Tener una vivienda en propiedad",
+        "Tener un trabajo"
+      ],
+      "answer": 0,
+      "explain": "Para el ejercicio del derecho de sufragio es indispensable la inscripción en el censo electoral vigente.",
+      "source": {
+        "name": "Ley Orgánica 5/1985 del Régimen Electoral General, art. 2.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-095",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quiénes forman la mesa electoral?",
+      "options": [
+        "Un juez y un policía",
+        "Un presidente y dos vocales",
+        "Cinco concejales"
+      ],
+      "answer": 1,
+      "explain": "La mesa electoral está formada por un presidente y dos vocales.",
+      "source": {
+        "name": "Ley Orgánica 5/1985 del Régimen Electoral General, art. 25.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-096",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo se elige a los miembros de las mesas electorales?",
+      "options": [
+        "Por votación en el Congreso",
+        "Se presentan voluntarios y elige el alcalde",
+        "Por sorteo público"
+      ],
+      "answer": 2,
+      "explain": "El presidente y los vocales de cada mesa se designan por sorteo público entre las personas censadas en la sección.",
+      "source": {
+        "name": "Ley Orgánica 5/1985 del Régimen Electoral General, art. 26.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-097",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Es voluntario ser presidente o vocal de una mesa electoral?",
+      "options": [
+        "No, es obligatorio",
+        "Sí, se puede rechazar sin motivo",
+        "Solo es obligatorio para los funcionarios"
+      ],
+      "answer": 0,
+      "explain": "Los cargos de presidente y vocal de las mesas electorales son obligatorios.",
+      "source": {
+        "name": "Ley Orgánica 5/1985 del Régimen Electoral General, art. 27.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-098",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Se puede votar sin ir al colegio electoral el día de la votación?",
+      "options": [
+        "No, nunca",
+        "Sí, votando por correo",
+        "Sí, votando por teléfono"
+      ],
+      "answer": 1,
+      "explain": "Los electores que prevean que no podrán votar en persona pueden emitir su voto por correo, previa solicitud.",
+      "source": {
+        "name": "Ley Orgánica 5/1985 del Régimen Electoral General, art. 72",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-099",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuántos días dura la campaña electoral?",
+      "options": [
+        "30 días",
+        "3 días",
+        "15 días"
+      ],
+      "answer": 2,
+      "explain": "La campaña electoral dura quince días y termina a las cero horas del día inmediatamente anterior a la votación.",
+      "source": {
+        "name": "Ley Orgánica 5/1985 del Régimen Electoral General, art. 51.2 y 51.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-100",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo es la creación de partidos políticos?",
+      "options": [
+        "Libre, dentro del respeto a la Constitución y a la ley",
+        "Necesita permiso del Rey",
+        "Está prohibida"
+      ],
+      "answer": 0,
+      "explain": "La creación de partidos políticos y el ejercicio de su actividad son libres dentro del respeto a la Constitución y a la ley.",
+      "source": {
+        "name": "Constitución española, art. 6",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-101",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo debe ser la estructura interna de los partidos políticos?",
+      "options": [
+        "Militar",
+        "Democrática",
+        "Hereditaria"
+      ],
+      "answer": 1,
+      "explain": "La estructura interna y el funcionamiento de los partidos deberán ser democráticos.",
+      "source": {
+        "name": "Constitución española, art. 6",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-102",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿A quién corresponde promover la participación de todos los ciudadanos en la vida política, económica, cultural y social?",
+      "options": [
+        "Solo a las empresas",
+        "Solo a las asociaciones privadas",
+        "A los poderes públicos"
+      ],
+      "answer": 2,
+      "explain": "Corresponde a los poderes públicos facilitar la participación de todos los ciudadanos en la vida política, económica, cultural y social.",
+      "source": {
+        "name": "Constitución española, art. 9.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-103",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Pueden participar los ciudadanos en los asuntos públicos?",
+      "options": [
+        "Sí, directamente o por medio de representantes elegidos",
+        "No, solo los funcionarios",
+        "Solo si tienen estudios universitarios"
+      ],
+      "answer": 0,
+      "explain": "Los ciudadanos tienen derecho a participar en los asuntos públicos, directamente o por medio de representantes libremente elegidos.",
+      "source": {
+        "name": "Constitución española, art. 23.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-104",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo se accede a las funciones y cargos públicos?",
+      "options": [
+        "Por herencia familiar",
+        "En condiciones de igualdad, con los requisitos de las leyes",
+        "Solo por recomendación"
+      ],
+      "answer": 1,
+      "explain": "Los ciudadanos tienen derecho a acceder en condiciones de igualdad a las funciones y cargos públicos.",
+      "source": {
+        "name": "Constitución española, art. 23.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-105",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo debe servir la Administración pública a los intereses generales?",
+      "options": [
+        "Según la ideología del ministro",
+        "Solo a quien paga más",
+        "Con objetividad"
+      ],
+      "answer": 2,
+      "explain": "La Administración pública sirve con objetividad los intereses generales.",
+      "source": {
+        "name": "Constitución española, art. 103.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-106",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cuántos años de residencia legal hacen falta, como regla general, para pedir la nacionalidad española por residencia?",
+      "options": [
+        "10 años",
+        "2 años",
+        "20 años"
+      ],
+      "answer": 0,
+      "explain": "La regla general son diez años; hay plazos más cortos (cinco, dos y un año) para casos concretos.",
+      "source": {
+        "name": "Código Civil, art. 22.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-107",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Con qué países puede concertar España tratados de doble nacionalidad, según la Constitución?",
+      "options": [
+        "Solo con países de Asia",
+        "Con los países iberoamericanos o que hayan tenido o tengan una especial vinculación con España",
+        "Con ningún país"
+      ],
+      "answer": 1,
+      "explain": "El Estado puede concertar tratados de doble nacionalidad con los países iberoamericanos o con los que hayan tenido o tengan una particular vinculación con España.",
+      "source": {
+        "name": "Constitución española, art. 11.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-108",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Puede un español de origen ser privado de su nacionalidad?",
+      "options": [
+        "Sí, por decisión del alcalde",
+        "Sí, si vive fuera de España un año",
+        "No, ningún español de origen puede ser privado de su nacionalidad"
+      ],
+      "answer": 2,
+      "explain": "Ningún español de origen podrá ser privado de su nacionalidad.",
+      "source": {
+        "name": "Constitución española, art. 11.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-109",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Desde qué año forma parte España de la Unión Europea (entonces Comunidades Europeas)?",
+      "options": [
+        "Desde 1986",
+        "Desde 1978",
+        "Desde 2002"
+      ],
+      "answer": 0,
+      "explain": "España es miembro desde el 1 de enero de 1986.",
+      "source": {
+        "name": "Unión Europea: España",
+        "url": "https://european-union.europa.eu/principles-countries-history/eu-countries/spain_es"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-110",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Cómo se llama la sede de la Presidencia del Gobierno?",
+      "options": [
+        "El Palacio Real",
+        "El Palacio de la Moncloa",
+        "El Palacio de la Zarzuela"
+      ],
+      "answer": 1,
+      "explain": "La Moncloa es la sede de la Presidencia del Gobierno.",
+      "source": {
+        "name": "La Moncloa (Presidencia del Gobierno)",
+        "url": "https://www.lamoncloa.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-111",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué pueden hacer las comunidades autónomas con sus banderas y enseñas?",
+      "options": [
+        "Sustituir a la bandera de España",
+        "No pueden tener bandera propia",
+        "Usarlas junto a la bandera de España en sus edificios y actos oficiales"
+      ],
+      "answer": 2,
+      "explain": "Los estatutos pueden reconocer banderas propias, que se usan junto a la bandera de España en edificios y actos oficiales.",
+      "source": {
+        "name": "Constitución española, art. 4.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-112",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Son oficiales las demás lenguas de España además del castellano?",
+      "options": [
+        "Sí, en sus comunidades autónomas, según sus estatutos",
+        "No, solo el castellano es oficial",
+        "Sí, en toda España"
+      ],
+      "answer": 0,
+      "explain": "Las demás lenguas españolas serán también oficiales en las respectivas comunidades autónomas de acuerdo con sus estatutos.",
+      "source": {
+        "name": "Constitución española, art. 3.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-113",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué deber tienen todos los españoles respecto al castellano?",
+      "options": [
+        "El deber de enseñarlo",
+        "El deber de conocerlo",
+        "Ningún deber"
+      ],
+      "answer": 1,
+      "explain": "Todos los españoles tienen el deber de conocer el castellano y el derecho a usarlo.",
+      "source": {
+        "name": "Constitución española, art. 3.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-114",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Quién tiene la iniciativa de la reforma constitucional?",
+      "options": [
+        "Solo el Rey",
+        "Solo el Tribunal Constitucional",
+        "El Gobierno, el Congreso, el Senado y las asambleas de las comunidades autónomas"
+      ],
+      "answer": 2,
+      "explain": "La iniciativa de reforma constitucional se ejerce en los términos del artículo 87 (Gobierno, Congreso, Senado y asambleas autonómicas).",
+      "source": {
+        "name": "Constitución española, art. 166",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-115",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿En qué tipo de elecciones pueden votar los ciudadanos de la Unión Europea que residen en España?",
+      "options": [
+        "En las municipales y en las europeas",
+        "En las generales",
+        "En ninguna"
+      ],
+      "answer": 0,
+      "explain": "Los ciudadanos de la UE residentes pueden votar en las elecciones municipales y en las del Parlamento Europeo.",
+      "source": {
+        "name": "Ley Orgánica 5/1985 del Régimen Electoral General, art. 176 y 210",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-116",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Qué órgano colegiado forman el presidente, los vicepresidentes y los ministros?",
+      "options": [
+        "El Consejo de Estado",
+        "El Consejo de Ministros",
+        "La Mesa del Congreso"
+      ],
+      "answer": 1,
+      "explain": "El presidente, los vicepresidentes y los ministros se reúnen en Consejo de Ministros.",
+      "source": {
+        "name": "Ley 50/1997 del Gobierno, art. 1.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1997-25336"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-117",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Dónde se presentan los escritos dirigidos a la Administración?",
+      "options": [
+        "Solo en el Ministerio de la capital",
+        "Solo en una notaría",
+        "En el registro de cualquier Administración o por vía electrónica"
+      ],
+      "answer": 2,
+      "explain": "Los documentos pueden presentarse en el registro electrónico o en las oficinas de asistencia en materia de registros de cualquier Administración.",
+      "source": {
+        "name": "Ley 39/2015 del Procedimiento Administrativo Común, art. 16.4",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-118",
+      "task": 1,
+      "type": "mc3",
+      "q": "Si una norma no fija otro plazo, ¿en cuánto tiempo debe resolver la Administración un procedimiento?",
+      "options": [
+        "En tres meses",
+        "En un año",
+        "En una semana"
+      ],
+      "answer": 0,
+      "explain": "Cuando las normas no fijan el plazo máximo, este será de tres meses.",
+      "source": {
+        "name": "Ley 39/2015 del Procedimiento Administrativo Común, art. 21.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-119",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿De qué plazo se dispone para presentar un recurso de alzada contra un acto expreso?",
+      "options": [
+        "Un año",
+        "Un mes",
+        "Tres días"
+      ],
+      "answer": 1,
+      "explain": "El plazo para interponer el recurso de alzada contra un acto expreso es de un mes.",
+      "source": {
+        "name": "Ley 39/2015 del Procedimiento Administrativo Común, art. 122.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t1-120",
+      "task": 1,
+      "type": "mc3",
+      "q": "¿Pueden las personas físicas elegir cómo relacionarse con la Administración (en papel o por internet)?",
+      "options": [
+        "No, siempre deben ir en persona",
+        "No, siempre por internet",
+        "Sí, salvo que estén obligadas a hacerlo por medios electrónicos"
+      ],
+      "answer": 2,
+      "explain": "Las personas físicas pueden elegir en todo momento si se comunican con las Administraciones por medios electrónicos o no, salvo que estén obligadas.",
+      "source": {
+        "name": "Ley 39/2015 del Procedimiento Administrativo Común, art. 14.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565"
+      },
+      "status": "borrador"
+    },
+    {
       "id": "ccse-t2-001",
       "task": 2,
       "type": "vf",
@@ -555,6 +2283,499 @@
       "status": "borrador"
     },
     {
+      "id": "ccse-t2-008",
+      "task": 2,
+      "type": "vf",
+      "q": "En España está abolida la pena de muerte.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Queda abolida la pena de muerte. La Constitución dejaba una excepción para tiempos de guerra, que la Ley Orgánica 11/1995 suprimió.",
+      "source": {
+        "name": "Constitución española, art. 15",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-009",
+      "task": 2,
+      "type": "vf",
+      "q": "La Constitución permite la tortura en casos muy graves.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 1,
+      "explain": "En ningún caso se puede someter a nadie a tortura ni a penas o tratos inhumanos o degradantes.",
+      "source": {
+        "name": "Constitución española, art. 15",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-010",
+      "task": 2,
+      "type": "vf",
+      "q": "Nadie puede ser obligado a declarar sobre su ideología, religión o creencias.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "La Constitución lo garantiza expresamente.",
+      "source": {
+        "name": "Constitución española, art. 16.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-011",
+      "task": 2,
+      "type": "vf",
+      "q": "La detención preventiva puede durar, como máximo, 72 horas antes de que la persona quede libre o a disposición del juez.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "La detención preventiva no puede durar más del tiempo estrictamente necesario y, en todo caso, como máximo 72 horas.",
+      "source": {
+        "name": "Constitución española, art. 17.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-012",
+      "task": 2,
+      "type": "vf",
+      "q": "Una persona detenida está obligada a declarar ante la policía.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 1,
+      "explain": "Toda persona detenida debe ser informada de sus derechos y no puede ser obligada a declarar; tiene derecho a abogado.",
+      "source": {
+        "name": "Constitución española, art. 17.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-013",
+      "task": 2,
+      "type": "vf",
+      "q": "Se garantiza el secreto de las comunicaciones, salvo resolución judicial.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "El secreto de las comunicaciones solo puede levantarse por resolución judicial.",
+      "source": {
+        "name": "Constitución española, art. 18.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-014",
+      "task": 2,
+      "type": "vf",
+      "q": "Los españoles tienen derecho a elegir libremente su residencia y a circular por el territorio nacional.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Es el derecho a la libertad de residencia y de circulación.",
+      "source": {
+        "name": "Constitución española, art. 19",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-015",
+      "task": 2,
+      "type": "vf",
+      "q": "La Constitución permite la censura previa de libros y periódicos.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 1,
+      "explain": "El ejercicio de la libertad de expresión no puede restringirse mediante ningún tipo de censura previa.",
+      "source": {
+        "name": "Constitución española, art. 20.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-016",
+      "task": 2,
+      "type": "vf",
+      "q": "Para hacer una reunión pacífica hace falta autorización previa.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 1,
+      "explain": "El derecho de reunión no necesita autorización previa; las manifestaciones en lugares públicos se comunican antes a la autoridad.",
+      "source": {
+        "name": "Constitución española, art. 21",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-017",
+      "task": 2,
+      "type": "vf",
+      "q": "Las manifestaciones en lugares de tránsito público deben comunicarse antes a la autoridad.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Se da comunicación previa a la autoridad, que solo puede prohibirlas por razones fundadas de alteración del orden público.",
+      "source": {
+        "name": "Constitución española, art. 21.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-018",
+      "task": 2,
+      "type": "vf",
+      "q": "Están prohibidas las asociaciones secretas y las de carácter paramilitar.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "La Constitución prohíbe expresamente las asociaciones secretas y las paramilitares.",
+      "source": {
+        "name": "Constitución española, art. 22.5",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-019",
+      "task": 2,
+      "type": "vf",
+      "q": "Toda persona es inocente mientras no se demuestre lo contrario.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Todos tienen derecho a la presunción de inocencia.",
+      "source": {
+        "name": "Constitución española, art. 24.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-020",
+      "task": 2,
+      "type": "vf",
+      "q": "Todas las personas tienen derecho a acudir a los jueces para defender sus derechos.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Es el derecho a obtener la tutela efectiva de jueces y tribunales.",
+      "source": {
+        "name": "Constitución española, art. 24.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-021",
+      "task": 2,
+      "type": "vf",
+      "q": "Los padres pueden elegir que sus hijos reciban la formación religiosa y moral que esté de acuerdo con sus convicciones.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Los poderes públicos garantizan ese derecho de los padres.",
+      "source": {
+        "name": "Constitución española, art. 27.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-022",
+      "task": 2,
+      "type": "vf",
+      "q": "Para trabajar en España es obligatorio afiliarse a un sindicato.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 1,
+      "explain": "Nadie puede ser obligado a afiliarse a un sindicato.",
+      "source": {
+        "name": "Constitución española, art. 28.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-023",
+      "task": 2,
+      "type": "vf",
+      "q": "Todos los españoles tienen derecho de petición, individual y colectiva, por escrito.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Es el derecho de petición, que se regula por ley.",
+      "source": {
+        "name": "Constitución española, art. 29.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-024",
+      "task": 2,
+      "type": "vf",
+      "q": "Los españoles tienen el derecho y el deber de defender a España.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "La Constitución lo establece en el artículo 30.",
+      "source": {
+        "name": "Constitución española, art. 30.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-025",
+      "task": 2,
+      "type": "vf",
+      "q": "El hombre y la mujer tienen derecho a contraer matrimonio con plena igualdad jurídica.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "La Constitución reconoce ese derecho con plena igualdad jurídica.",
+      "source": {
+        "name": "Constitución española, art. 32.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-026",
+      "task": 2,
+      "type": "vf",
+      "q": "La Constitución no reconoce el derecho a la propiedad privada.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 1,
+      "explain": "Se reconoce el derecho a la propiedad privada y a la herencia.",
+      "source": {
+        "name": "Constitución española, art. 33.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-027",
+      "task": 2,
+      "type": "vf",
+      "q": "Todos los españoles tienen el deber de trabajar y el derecho al trabajo.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Así lo dice el artículo 35, que también prohíbe la discriminación salarial por razón de sexo.",
+      "source": {
+        "name": "Constitución española, art. 35.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-028",
+      "task": 2,
+      "type": "vf",
+      "q": "Una mujer puede cobrar menos que un hombre por el mismo trabajo si así lo decide la empresa.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 1,
+      "explain": "La Constitución prohíbe la discriminación por razón de sexo en la remuneración.",
+      "source": {
+        "name": "Constitución española, art. 35.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-029",
+      "task": 2,
+      "type": "vf",
+      "q": "Los hijos son iguales ante la ley con independencia de su filiación.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Los poderes públicos aseguran la protección integral de los hijos, iguales ante la ley con independencia de su filiación.",
+      "source": {
+        "name": "Constitución española, art. 39.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-030",
+      "task": 2,
+      "type": "vf",
+      "q": "Los padres deben prestar asistencia de todo orden a sus hijos menores de edad.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Es un deber de los padres según la Constitución.",
+      "source": {
+        "name": "Constitución española, art. 39.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-031",
+      "task": 2,
+      "type": "vf",
+      "q": "Se reconoce el derecho a la protección de la salud.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Los poderes públicos organizan y tutelan la salud pública.",
+      "source": {
+        "name": "Constitución española, art. 43.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-032",
+      "task": 2,
+      "type": "vf",
+      "q": "Todos tienen el derecho a disfrutar de un medio ambiente adecuado y el deber de conservarlo.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Es un derecho y un deber a la vez.",
+      "source": {
+        "name": "Constitución española, art. 45.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-033",
+      "task": 2,
+      "type": "vf",
+      "q": "Todos los españoles tienen derecho a disfrutar de una vivienda digna y adecuada.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "Los poderes públicos deben promover las condiciones para hacerlo efectivo.",
+      "source": {
+        "name": "Constitución española, art. 47",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-034",
+      "task": 2,
+      "type": "vf",
+      "q": "Los extranjeros no tienen ninguna de las libertades públicas que reconoce la Constitución.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 1,
+      "explain": "Los extranjeros gozan en España de las libertades públicas del Título I en los términos de los tratados y la ley.",
+      "source": {
+        "name": "Constitución española, art. 13.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-035",
+      "task": 2,
+      "type": "vf",
+      "q": "La ley limita el uso de la informática para proteger el honor y la intimidad de las personas.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "La Constitución lo establece para garantizar el honor, la intimidad y el pleno ejercicio de los derechos.",
+      "source": {
+        "name": "Constitución española, art. 18.4",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t2-036",
+      "task": 2,
+      "type": "vf",
+      "q": "Los menores extranjeros de menos de 16 años tienen el derecho y el deber de recibir la educación básica, obligatoria y gratuita.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explain": "La Ley de extranjería lo reconoce; los menores de 18 años también tienen derecho a la enseñanza posobligatoria.",
+      "source": {
+        "name": "Ley Orgánica 4/2000 de derechos y libertades de los extranjeros, art. 9.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2000-544"
+      },
+      "status": "borrador"
+    },
+    {
       "id": "ccse-t3-001",
       "task": 3,
       "type": "mc3",
@@ -641,6 +2862,348 @@
       "source": {
         "name": "Estatuto de Autonomía de Galicia, art. 5",
         "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1981-9564"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-006",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Qué comunidad autónoma tiene más provincias?",
+      "options": [
+        "Castilla y León",
+        "Andalucía",
+        "Cataluña"
+      ],
+      "answer": 0,
+      "explain": "Castilla y León tiene nueve provincias; Andalucía, ocho.",
+      "source": {
+        "name": "INE: relación de provincias",
+        "url": "https://www.ine.es/daco/daco42/codmun/cod_provincia.htm"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-007",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Cuántas provincias tiene Andalucía?",
+      "options": [
+        "4",
+        "8",
+        "9"
+      ],
+      "answer": 1,
+      "explain": "Almería, Cádiz, Córdoba, Granada, Huelva, Jaén, Málaga y Sevilla.",
+      "source": {
+        "name": "INE: relación de provincias",
+        "url": "https://www.ine.es/daco/daco42/codmun/cod_provincia.htm"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-008",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Cuál de estas comunidades autónomas tiene una sola provincia?",
+      "options": [
+        "Galicia",
+        "Aragón",
+        "La Rioja"
+      ],
+      "answer": 2,
+      "explain": "Son uniprovinciales Asturias, Cantabria, La Rioja, Madrid, Murcia, Navarra y las Illes Balears.",
+      "source": {
+        "name": "INE: relación de provincias",
+        "url": "https://www.ine.es/daco/daco42/codmun/cod_provincia.htm"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-009",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿A qué comunidad autónoma pertenece la provincia de Cáceres?",
+      "options": [
+        "Extremadura",
+        "Castilla-La Mancha",
+        "Andalucía"
+      ],
+      "answer": 0,
+      "explain": "Extremadura tiene dos provincias: Badajoz y Cáceres.",
+      "source": {
+        "name": "INE: relación de provincias",
+        "url": "https://www.ine.es/daco/daco42/codmun/cod_provincia.htm"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-010",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿A qué comunidad autónoma pertenece Toledo?",
+      "options": [
+        "Madrid",
+        "Castilla-La Mancha",
+        "Castilla y León"
+      ],
+      "answer": 1,
+      "explain": "Toledo es una de las cinco provincias de Castilla-La Mancha.",
+      "source": {
+        "name": "INE: relación de provincias",
+        "url": "https://www.ine.es/daco/daco42/codmun/cod_provincia.htm"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-011",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Qué comunidad autónoma es un archipiélago situado en el océano Atlántico, frente a la costa de África?",
+      "options": [
+        "Illes Balears",
+        "Galicia",
+        "Canarias"
+      ],
+      "answer": 2,
+      "explain": "Las islas Canarias están en el Atlántico, al oeste de la costa africana.",
+      "source": {
+        "name": "INE: relación de comunidades y ciudades autónomas",
+        "url": "https://www.ine.es/daco/daco42/codmun/cod_ccaa.htm"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-012",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Qué ciudades comparten la capitalidad de Canarias?",
+      "options": [
+        "Santa Cruz de Tenerife y Las Palmas de Gran Canaria",
+        "Arrecife y Puerto del Rosario",
+        "La Laguna y Santa Cruz de La Palma"
+      ],
+      "answer": 0,
+      "explain": "El Estatuto fija la capitalidad de Canarias de forma compartida en esas dos ciudades.",
+      "source": {
+        "name": "Estatuto de Autonomía de Canarias (Ley Orgánica 1/2018)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-15138"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-013",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Cuál es la capital de Andalucía?",
+      "options": [
+        "Málaga",
+        "Sevilla",
+        "Granada"
+      ],
+      "answer": 1,
+      "explain": "El Estatuto de Autonomía fija la capital de Andalucía en Sevilla.",
+      "source": {
+        "name": "Estatuto de Autonomía de Andalucía (Ley Orgánica 2/2007), art. 4",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-5825"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-014",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Cuál es la capital de Cataluña?",
+      "options": [
+        "Tarragona",
+        "Girona",
+        "Barcelona"
+      ],
+      "answer": 2,
+      "explain": "El Estatuto de Autonomía de Cataluña fija la capital en Barcelona.",
+      "source": {
+        "name": "Estatuto de Autonomía de Cataluña (Ley Orgánica 6/2006), art. 10",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-13087"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-015",
+      "task": 3,
+      "type": "mc3",
+      "q": "Además del castellano, ¿qué lengua es oficial en el País Vasco?",
+      "options": [
+        "El euskera",
+        "El gallego",
+        "El catalán"
+      ],
+      "answer": 0,
+      "explain": "El euskera tiene, como el castellano, el carácter de lengua oficial en Euskadi.",
+      "source": {
+        "name": "Estatuto de Autonomía del País Vasco (Ley Orgánica 3/1979), art. 6",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1979-30177"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-016",
+      "task": 3,
+      "type": "mc3",
+      "q": "Además del castellano, ¿qué lengua es oficial en Cataluña?",
+      "options": [
+        "El euskera",
+        "El catalán (y el occitano, denominado aranés en Arán)",
+        "El gallego"
+      ],
+      "answer": 1,
+      "explain": "El Estatuto reconoce el catalán como lengua oficial, y el occitano (aranés) en Arán.",
+      "source": {
+        "name": "Estatuto de Autonomía de Cataluña (Ley Orgánica 6/2006), art. 6",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-13087"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-017",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Qué comunidad autónoma se denomina «Comunidad Foral»?",
+      "options": [
+        "La Rioja",
+        "Murcia",
+        "Navarra"
+      ],
+      "answer": 2,
+      "explain": "Navarra es una Comunidad Foral con régimen, autonomía e instituciones propias.",
+      "source": {
+        "name": "Ley Orgánica 13/1982 de Reintegración y Amejoramiento del Régimen Foral de Navarra, art. 1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1982-20824"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-018",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Qué montañas separan España de Francia?",
+      "options": [
+        "Los Pirineos",
+        "Los Picos de Europa",
+        "Sierra Nevada"
+      ],
+      "answer": 0,
+      "explain": "La cordillera de los Pirineos forma la frontera con Francia (y Andorra).",
+      "source": {
+        "name": "Instituto Geográfico Nacional",
+        "url": "https://www.ign.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-019",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Cuál es el pico más alto de España?",
+      "options": [
+        "El Mulhacén, en Granada",
+        "El Teide, en Tenerife",
+        "El Aneto, en Huesca"
+      ],
+      "answer": 1,
+      "explain": "El Teide (3.715 m) es la cumbre más alta; en la Península, el Mulhacén.",
+      "source": {
+        "name": "Instituto Geográfico Nacional",
+        "url": "https://www.ign.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-020",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Qué estrecho separa España de África?",
+      "options": [
+        "El estrecho de Messina",
+        "El estrecho del Bósforo",
+        "El estrecho de Gibraltar"
+      ],
+      "answer": 2,
+      "explain": "El estrecho de Gibraltar une el Atlántico y el Mediterráneo y separa Europa de África.",
+      "source": {
+        "name": "Instituto Geográfico Nacional",
+        "url": "https://www.ign.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-021",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Qué mar baña la costa norte de España?",
+      "options": [
+        "El mar Cantábrico",
+        "El mar Mediterráneo",
+        "El mar de Alborán"
+      ],
+      "answer": 0,
+      "explain": "El Cantábrico baña Galicia, Asturias, Cantabria y el País Vasco.",
+      "source": {
+        "name": "Instituto Geográfico Nacional",
+        "url": "https://www.ign.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-022",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Con qué país limita España por el oeste?",
+      "options": [
+        "Francia",
+        "Portugal",
+        "Marruecos"
+      ],
+      "answer": 1,
+      "explain": "Portugal ocupa el oeste de la península ibérica.",
+      "source": {
+        "name": "Instituto Geográfico Nacional",
+        "url": "https://www.ign.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-023",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Qué islas forman parte de las Illes Balears?",
+      "options": [
+        "Tenerife, Gran Canaria y Lanzarote",
+        "Ons, Cíes y Arousa",
+        "Mallorca, Menorca, Ibiza y Formentera"
+      ],
+      "answer": 2,
+      "explain": "Son las cuatro islas principales del archipiélago balear, en el Mediterráneo.",
+      "source": {
+        "name": "INE: relación de comunidades y ciudades autónomas",
+        "url": "https://www.ine.es/daco/daco42/codmun/cod_ccaa.htm"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t3-024",
+      "task": 3,
+      "type": "mc3",
+      "q": "¿Cuál es el municipio con más habitantes de España?",
+      "options": [
+        "Madrid",
+        "Barcelona",
+        "Valencia"
+      ],
+      "answer": 0,
+      "explain": "Madrid es el municipio más poblado, seguido de Barcelona.",
+      "source": {
+        "name": "Instituto Nacional de Estadística (INE)",
+        "url": "https://www.ine.es/"
       },
       "status": "borrador"
     },
@@ -767,6 +3330,528 @@
       "source": {
         "name": "Real Decreto 2001/1983, art. 45 (fiestas laborales de ámbito nacional)",
         "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1983-20906"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-008",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Entre qué años tuvo lugar la Guerra Civil española?",
+      "options": [
+        "Entre 1914 y 1918",
+        "Entre 1936 y 1939",
+        "Entre 1898 y 1902"
+      ],
+      "answer": 1,
+      "explain": "La Guerra Civil empezó en julio de 1936 y terminó en abril de 1939.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-009",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿En qué año murió el dictador Francisco Franco, lo que abrió la Transición a la democracia?",
+      "options": [
+        "En 1939",
+        "En 1986",
+        "En 1975"
+      ],
+      "answer": 2,
+      "explain": "Franco murió el 20 de noviembre de 1975.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-010",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿En qué año se celebraron las primeras elecciones generales democráticas después de la dictadura?",
+      "options": [
+        "En 1977",
+        "En 1975",
+        "En 1982"
+      ],
+      "answer": 0,
+      "explain": "Las primeras elecciones democráticas fueron el 15 de junio de 1977.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-011",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué ocurrió el 23 de febrero de 1981 en el Congreso de los Diputados?",
+      "options": [
+        "La aprobación de la Constitución",
+        "Un intento de golpe de Estado que fracasó",
+        "La entrada en la Unión Europea"
+      ],
+      "answer": 1,
+      "explain": "Un grupo de guardias civiles asaltó el Congreso; el golpe fracasó.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-012",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué ciudad española organizó los Juegos Olímpicos de 1992?",
+      "options": [
+        "Madrid",
+        "Sevilla",
+        "Barcelona"
+      ],
+      "answer": 2,
+      "explain": "Barcelona organizó los Juegos Olímpicos de 1992; ese mismo año Sevilla acogió la Exposición Universal.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-013",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué ciudad acogió la Exposición Universal de 1992?",
+      "options": [
+        "Sevilla",
+        "Valencia",
+        "Zaragoza"
+      ],
+      "answer": 0,
+      "explain": "La Expo 92 se celebró en Sevilla.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-014",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Cómo se conoce a la reina Isabel I de Castilla y al rey Fernando II de Aragón?",
+      "options": [
+        "Los Reyes Magos",
+        "Los Reyes Católicos",
+        "Los Austrias"
+      ],
+      "answer": 1,
+      "explain": "Su matrimonio unió las coronas de Castilla y Aragón.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-015",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué reino musulmán conquistaron los Reyes Católicos en 1492?",
+      "options": [
+        "El reino de Navarra",
+        "El reino de Portugal",
+        "El reino de Granada"
+      ],
+      "answer": 2,
+      "explain": "Con la toma de Granada en 1492 terminó el último reino musulmán de la Península.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-016",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿En qué año llegaron los musulmanes a la península ibérica?",
+      "options": [
+        "En 711",
+        "En 1492",
+        "En 1212"
+      ],
+      "answer": 0,
+      "explain": "En 711 empezó la presencia musulmana en la Península (al-Ándalus).",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-017",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Cómo se llamaba el territorio de la península ibérica bajo dominio musulmán?",
+      "options": [
+        "Hispania",
+        "Al-Ándalus",
+        "Castilla"
+      ],
+      "answer": 1,
+      "explain": "Al-Ándalus es el nombre del territorio peninsular bajo poder musulmán (711-1492).",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-018",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿En qué ciudad está la Alhambra?",
+      "options": [
+        "En Córdoba",
+        "En Toledo",
+        "En Granada"
+      ],
+      "answer": 2,
+      "explain": "La Alhambra de Granada es Patrimonio Mundial de la UNESCO.",
+      "source": {
+        "name": "UNESCO: Patrimonio Mundial en España",
+        "url": "https://whc.unesco.org/es/statesparties/es"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-019",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿En qué ciudad está la Mezquita-Catedral declarada Patrimonio Mundial?",
+      "options": [
+        "En Córdoba",
+        "En Sevilla",
+        "En Valencia"
+      ],
+      "answer": 0,
+      "explain": "El centro histórico de Córdoba, con su Mezquita, es Patrimonio Mundial.",
+      "source": {
+        "name": "UNESCO: Patrimonio Mundial en España",
+        "url": "https://whc.unesco.org/es/statesparties/es"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-020",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué arquitecto diseñó la Sagrada Familia de Barcelona?",
+      "options": [
+        "Santiago Calatrava",
+        "Antoni Gaudí",
+        "Juan de Herrera"
+      ],
+      "answer": 1,
+      "explain": "Las obras de Antoni Gaudí, entre ellas la Sagrada Familia, son Patrimonio Mundial.",
+      "source": {
+        "name": "UNESCO: Patrimonio Mundial en España",
+        "url": "https://whc.unesco.org/es/statesparties/es"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-021",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué construcción romana se conserva en Segovia?",
+      "options": [
+        "El anfiteatro",
+        "La muralla de Lugo",
+        "El acueducto"
+      ],
+      "answer": 2,
+      "explain": "La ciudad vieja de Segovia y su acueducto romano son Patrimonio Mundial.",
+      "source": {
+        "name": "UNESCO: Patrimonio Mundial en España",
+        "url": "https://whc.unesco.org/es/statesparties/es"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-022",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Dónde están las cuevas con pinturas prehistóricas de Altamira?",
+      "options": [
+        "En Cantabria",
+        "En Andalucía",
+        "En Galicia"
+      ],
+      "answer": 0,
+      "explain": "La cueva de Altamira, en Santillana del Mar (Cantabria), es Patrimonio Mundial.",
+      "source": {
+        "name": "UNESCO: Patrimonio Mundial en España",
+        "url": "https://whc.unesco.org/es/statesparties/es"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-023",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿En qué ciudad termina el Camino de Santiago?",
+      "options": [
+        "En Oviedo",
+        "En Santiago de Compostela",
+        "En Burgos"
+      ],
+      "answer": 1,
+      "explain": "Los caminos de Santiago llevan hasta la catedral de Santiago de Compostela.",
+      "source": {
+        "name": "UNESCO: Patrimonio Mundial en España",
+        "url": "https://whc.unesco.org/es/statesparties/es"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-024",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué museo nacional de Madrid guarda «Las meninas» y muchas obras de Goya?",
+      "options": [
+        "El Museo Guggenheim",
+        "El Museo Picasso",
+        "El Museo del Prado"
+      ],
+      "answer": 2,
+      "explain": "El Museo Nacional del Prado tiene la mayor colección de Velázquez y Goya.",
+      "source": {
+        "name": "Museo Nacional del Prado",
+        "url": "https://www.museodelprado.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-025",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué pintor es autor de «El 3 de mayo en Madrid» (Los fusilamientos)?",
+      "options": [
+        "Francisco de Goya",
+        "El Greco",
+        "Joaquín Sorolla"
+      ],
+      "answer": 0,
+      "explain": "Goya pintó en 1814 esta obra sobre la guerra contra Napoleón; está en el Prado.",
+      "source": {
+        "name": "Museo Nacional del Prado",
+        "url": "https://www.museodelprado.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-026",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿A qué movimiento artístico pertenece el pintor Salvador Dalí?",
+      "options": [
+        "Al impresionismo",
+        "Al surrealismo",
+        "Al gótico"
+      ],
+      "answer": 1,
+      "explain": "Dalí es uno de los grandes pintores del surrealismo.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-027",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Cuál es el premio más importante de la literatura en lengua española, que concede el Ministerio de Cultura?",
+      "options": [
+        "El Premio Goya",
+        "El Premio Princesa de Asturias del Deporte",
+        "El Premio Cervantes"
+      ],
+      "answer": 2,
+      "explain": "El Premio Miguel de Cervantes reconoce cada año la obra de un escritor en lengua española.",
+      "source": {
+        "name": "Ministerio de Cultura: Premio de Literatura en Lengua Castellana Miguel de Cervantes",
+        "url": "https://www.cultura.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-028",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿En qué ciudad se entregan los Premios Princesa de Asturias?",
+      "options": [
+        "En Oviedo",
+        "En Madrid",
+        "En Gijón"
+      ],
+      "answer": 0,
+      "explain": "Los Premios Princesa de Asturias se entregan cada año en Oviedo.",
+      "source": {
+        "name": "Casa de S. M. el Rey",
+        "url": "https://www.casareal.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-029",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué arte, Patrimonio Cultural Inmaterial de la UNESCO desde 2010, une cante, toque y baile?",
+      "options": [
+        "La sardana",
+        "El flamenco",
+        "La jota"
+      ],
+      "answer": 1,
+      "explain": "El flamenco fue inscrito por la UNESCO en 2010.",
+      "source": {
+        "name": "UNESCO: Patrimonio Cultural Inmaterial de España",
+        "url": "https://ich.unesco.org/es/estado/espana-ES"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-030",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿En qué ciudad se celebran las Fallas, fiesta Patrimonio Cultural Inmaterial?",
+      "options": [
+        "En Pamplona",
+        "En Cádiz",
+        "En Valencia"
+      ],
+      "answer": 2,
+      "explain": "La fiesta de las Fallas de Valencia fue inscrita por la UNESCO en 2016.",
+      "source": {
+        "name": "UNESCO: Patrimonio Cultural Inmaterial de España",
+        "url": "https://ich.unesco.org/es/estado/espana-ES"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-031",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿En qué ciudad se celebran los Sanfermines?",
+      "options": [
+        "En Pamplona",
+        "En Bilbao",
+        "En Burgos"
+      ],
+      "answer": 0,
+      "explain": "Las fiestas de San Fermín se celebran en Pamplona en julio.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-032",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué escritor español recibió el Premio Nobel de Literatura en 1989?",
+      "options": [
+        "Miguel de Unamuno",
+        "Camilo José Cela",
+        "Benito Pérez Galdós"
+      ],
+      "answer": 1,
+      "explain": "Cela, autor de «La familia de Pascual Duarte», recibió el Nobel en 1989.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-033",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué autor del Siglo de Oro es conocido por su enorme producción de teatro?",
+      "options": [
+        "Antonio Machado",
+        "Rosalía de Castro",
+        "Lope de Vega"
+      ],
+      "answer": 2,
+      "explain": "Lope de Vega escribió cientos de comedias en el Siglo de Oro.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-034",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué Constitución, aprobada en Cádiz en 1812, se conoce como «La Pepa»?",
+      "options": [
+        "La Constitución de 1812",
+        "La Constitución de 1978",
+        "La Constitución de 1931"
+      ],
+      "answer": 0,
+      "explain": "Se aprobó el 19 de marzo de 1812, día de San José; de ahí el nombre de «La Pepa».",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-035",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué institución, fundada en 1713, se ocupa de la lengua española y publica su diccionario?",
+      "options": [
+        "El Instituto Cervantes",
+        "La Real Academia Española",
+        "La Biblioteca Nacional"
+      ],
+      "answer": 1,
+      "explain": "La RAE se fundó en 1713 y publica el Diccionario de la lengua española.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t4-036",
+      "task": 4,
+      "type": "mc3",
+      "q": "¿Qué selección ganó la Copa del Mundo de fútbol de 2010?",
+      "options": [
+        "Italia",
+        "Brasil",
+        "España"
+      ],
+      "answer": 2,
+      "explain": "España ganó el Mundial de Sudáfrica en 2010.",
+      "source": {
+        "name": "Manual CCSE (Instituto Cervantes): temario de la tarea",
+        "url": "https://examenes.cervantes.es/sites/default/files/manual-ccse-2026-def.pdf"
       },
       "status": "borrador"
     },
@@ -1073,6 +4158,1212 @@
       "source": {
         "name": "Ley 46/1998 sobre introducción del euro",
         "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1998-29117"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-018",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿A partir de qué edad es obligatorio el DNI para las personas españolas?",
+      "options": [
+        "A partir de los 14 años",
+        "A partir de los 18 años",
+        "Desde el nacimiento"
+      ],
+      "answer": 0,
+      "explain": "El DNI es obligatorio para los españoles mayores de 14 años.",
+      "source": {
+        "name": "Real Decreto 1553/2005 (Documento Nacional de Identidad), art. 2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2005-21163"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-019",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué documento acredita oficialmente dónde vives?",
+      "options": [
+        "La factura del teléfono",
+        "El certificado de empadronamiento",
+        "El contrato de trabajo"
+      ],
+      "answer": 1,
+      "explain": "Las certificaciones del padrón son documento público y prueban la residencia en el municipio.",
+      "source": {
+        "name": "Ley 7/1985 de Bases del Régimen Local, art. 16.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-020",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué número de teléfono es el de la Policía Nacional?",
+      "options": [
+        "062",
+        "016",
+        "091"
+      ],
+      "answer": 2,
+      "explain": "El 091 es el teléfono de la Policía Nacional; el 062, el de la Guardia Civil.",
+      "source": {
+        "name": "Ministerio del Interior",
+        "url": "https://www.interior.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-021",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué número de teléfono es el de la Guardia Civil?",
+      "options": [
+        "062",
+        "091",
+        "010"
+      ],
+      "answer": 0,
+      "explain": "El 062 es el teléfono de la Guardia Civil.",
+      "source": {
+        "name": "Ministerio del Interior",
+        "url": "https://www.interior.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-022",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué teléfono atiende a las víctimas de violencia de género?",
+      "options": [
+        "El 112",
+        "El 016",
+        "El 091"
+      ],
+      "answer": 1,
+      "explain": "El 016 es gratuito, funciona las 24 horas en muchos idiomas y no deja rastro en la factura.",
+      "source": {
+        "name": "Ministerio de Igualdad: 016, atención a víctimas de violencia de género",
+        "url": "https://violenciagenero.igualdad.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-023",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué etapa educativa es voluntaria y va de los 0 a los 6 años?",
+      "options": [
+        "La Educación Primaria",
+        "El Bachillerato",
+        "La Educación Infantil"
+      ],
+      "answer": 2,
+      "explain": "La Educación Infantil tiene carácter voluntario y atiende a niños desde el nacimiento hasta los seis años.",
+      "source": {
+        "name": "Ley Orgánica 2/2006 de Educación, art. 12",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-024",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Cuántos cursos tiene la Educación Primaria?",
+      "options": [
+        "Seis cursos, de los 6 a los 12 años",
+        "Cuatro cursos, de los 12 a los 16 años",
+        "Dos cursos, de los 16 a los 18 años"
+      ],
+      "answer": 0,
+      "explain": "La Educación Primaria comprende seis cursos y se cursa, en general, entre los seis y los doce años.",
+      "source": {
+        "name": "Ley Orgánica 2/2006 de Educación, art. 16",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-025",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué etapa obligatoria se estudia, en general, entre los 12 y los 16 años?",
+      "options": [
+        "El Bachillerato",
+        "La Educación Secundaria Obligatoria (ESO)",
+        "La Educación Infantil"
+      ],
+      "answer": 1,
+      "explain": "La ESO comprende cuatro cursos, en general entre los doce y los dieciséis años.",
+      "source": {
+        "name": "Ley Orgánica 2/2006 de Educación, art. 22",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-026",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué título se obtiene al terminar con éxito la ESO?",
+      "options": [
+        "El título de Bachiller",
+        "El título de Grado universitario",
+        "El título de Graduado en Educación Secundaria Obligatoria"
+      ],
+      "answer": 2,
+      "explain": "Al terminar la ESO se obtiene el título de Graduado en ESO.",
+      "source": {
+        "name": "Ley Orgánica 2/2006 de Educación, art. 31",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-027",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Cuántos cursos tiene el Bachillerato?",
+      "options": [
+        "Dos",
+        "Cuatro",
+        "Seis"
+      ],
+      "answer": 0,
+      "explain": "El Bachillerato comprende dos cursos.",
+      "source": {
+        "name": "Ley Orgánica 2/2006 de Educación, art. 32",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-028",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Con qué se financia principalmente la sanidad pública?",
+      "options": [
+        "Con el pago de cada consulta",
+        "Con impuestos",
+        "Con donaciones privadas"
+      ],
+      "answer": 1,
+      "explain": "El Sistema Nacional de Salud es público y se financia con impuestos.",
+      "source": {
+        "name": "Ministerio de Sanidad",
+        "url": "https://www.sanidad.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-029",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿A qué servicio se acude primero para una consulta médica que no es urgente?",
+      "options": [
+        "A urgencias del hospital",
+        "Al 112",
+        "Al centro de salud (médico de familia)"
+      ],
+      "answer": 2,
+      "explain": "La atención primaria, en el centro de salud, es la puerta de entrada al sistema sanitario.",
+      "source": {
+        "name": "Ministerio de Sanidad",
+        "url": "https://www.sanidad.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-030",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué impuesto se paga al comprar la mayoría de productos y servicios?",
+      "options": [
+        "El IVA",
+        "El IBI",
+        "El IRPF"
+      ],
+      "answer": 0,
+      "explain": "El Impuesto sobre el Valor Añadido grava las entregas de bienes y prestaciones de servicios.",
+      "source": {
+        "name": "Ley 37/1992 del Impuesto sobre el Valor Añadido, art. 1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-031",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué impuesto municipal pagan los propietarios de viviendas y otros inmuebles?",
+      "options": [
+        "El IVA",
+        "El IBI (impuesto sobre bienes inmuebles)",
+        "La tasa de basuras"
+      ],
+      "answer": 1,
+      "explain": "El IBI es un impuesto que gravan los ayuntamientos sobre el valor de los inmuebles.",
+      "source": {
+        "name": "Real Decreto Legislativo 2/2004, Ley Reguladora de las Haciendas Locales, art. 60",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-032",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué es la declaración de la renta?",
+      "options": [
+        "Un contrato de alquiler",
+        "Un certificado del banco",
+        "La declaración anual del IRPF ante la Agencia Tributaria"
+      ],
+      "answer": 2,
+      "explain": "Cada año, en primavera, se presenta la declaración del IRPF de los ingresos del año anterior.",
+      "source": {
+        "name": "Agencia Tributaria",
+        "url": "https://sede.agenciatributaria.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-033",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Cuántas pagas extraordinarias al año reconoce como mínimo el Estatuto de los Trabajadores?",
+      "options": [
+        "Dos",
+        "Una",
+        "Cuatro"
+      ],
+      "answer": 0,
+      "explain": "Hay dos gratificaciones extraordinarias al año, una de ellas en Navidad.",
+      "source": {
+        "name": "Estatuto de los Trabajadores, art. 31",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-034",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Cómo se llama el documento que entrega la empresa con el salario y los descuentos de cada mes?",
+      "options": [
+        "El finiquito",
+        "La nómina (recibo de salarios)",
+        "La vida laboral"
+      ],
+      "answer": 1,
+      "explain": "La empresa entrega un recibo individual de salarios: la nómina.",
+      "source": {
+        "name": "Estatuto de los Trabajadores, art. 29.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-035",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Cuál es el descanso semanal mínimo de una persona trabajadora?",
+      "options": [
+        "Medio día",
+        "Tres días",
+        "Día y medio ininterrumpido"
+      ],
+      "answer": 2,
+      "explain": "El descanso mínimo semanal es de día y medio ininterrumpido, en general la tarde del sábado o la mañana del lunes y el día completo del domingo.",
+      "source": {
+        "name": "Estatuto de los Trabajadores, art. 37.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-036",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Quién fija cada año el salario mínimo interprofesional?",
+      "options": [
+        "El Gobierno",
+        "Cada empresa",
+        "Los ayuntamientos"
+      ],
+      "answer": 0,
+      "explain": "El Gobierno fija anualmente el salario mínimo interprofesional, previa consulta con sindicatos y empresarios.",
+      "source": {
+        "name": "Estatuto de los Trabajadores, art. 27.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-037",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué organismo gestiona las prestaciones por desempleo (el paro)?",
+      "options": [
+        "La DGT",
+        "El SEPE",
+        "El INE"
+      ],
+      "answer": 1,
+      "explain": "El Servicio Público de Empleo Estatal gestiona las prestaciones por desempleo.",
+      "source": {
+        "name": "Servicio Público de Empleo Estatal (SEPE)",
+        "url": "https://www.sepe.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-038",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué documento de la Seguridad Social muestra las empresas en las que has trabajado y cuánto tiempo?",
+      "options": [
+        "El certificado de empadronamiento",
+        "La tarjeta sanitaria",
+        "El informe de vida laboral"
+      ],
+      "answer": 2,
+      "explain": "La vida laboral recoge todas las altas y bajas en la Seguridad Social.",
+      "source": {
+        "name": "Seguridad Social",
+        "url": "https://www.seg-social.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-039",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Cómo debe pactarse el período de prueba en un contrato de trabajo?",
+      "options": [
+        "Por escrito",
+        "De palabra, sin papeles",
+        "Ante notario"
+      ],
+      "answer": 0,
+      "explain": "Se puede concertar por escrito un período de prueba, con los límites del convenio y del Estatuto.",
+      "source": {
+        "name": "Estatuto de los Trabajadores, art. 14.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-040",
+      "task": 5,
+      "type": "mc3",
+      "q": "En un contrato de alquiler de vivienda, ¿cuánto es la fianza obligatoria en metálico?",
+      "options": [
+        "Seis mensualidades",
+        "Una mensualidad de renta",
+        "No hay fianza"
+      ],
+      "answer": 1,
+      "explain": "En el alquiler de vivienda, la fianza legal es una mensualidad de renta.",
+      "source": {
+        "name": "Ley 29/1994 de Arrendamientos Urbanos, art. 36.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-041",
+      "task": 5,
+      "type": "mc3",
+      "q": "Si el casero es una persona física, ¿hasta cuántos años puede el inquilino prorrogar el alquiler de vivienda?",
+      "options": [
+        "Hasta 1 año",
+        "Hasta 20 años",
+        "Hasta 5 años"
+      ],
+      "answer": 2,
+      "explain": "Si el arrendador es persona física, el contrato se prorroga hasta cinco años si el inquilino quiere (siete si es una empresa).",
+      "source": {
+        "name": "Ley 29/1994 de Arrendamientos Urbanos, art. 9.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-042",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Pueden casarse en España dos personas del mismo sexo?",
+      "options": [
+        "Sí, desde 2005",
+        "No",
+        "Solo en algunas comunidades autónomas"
+      ],
+      "answer": 0,
+      "explain": "La Ley 13/2005 estableció que el matrimonio tiene los mismos requisitos y efectos con independencia del sexo de los contrayentes.",
+      "source": {
+        "name": "Ley 13/2005 (matrimonio)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2005-11364"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-043",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Se puede fumar en el interior de bares y restaurantes?",
+      "options": [
+        "Sí, siempre",
+        "No, está prohibido",
+        "Sí, si el dueño lo permite"
+      ],
+      "answer": 1,
+      "explain": "Desde 2011 está prohibido fumar en espacios cerrados de uso público, incluidos bares y restaurantes.",
+      "source": {
+        "name": "Ley 28/2005 de medidas sanitarias frente al tabaquismo (modificada por la Ley 42/2010), art. 7",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2005-21261"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-044",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué ley busca hacer efectiva la igualdad entre mujeres y hombres?",
+      "options": [
+        "La Ley de Arrendamientos Urbanos",
+        "La Ley del IVA",
+        "La Ley Orgánica 3/2007"
+      ],
+      "answer": 2,
+      "explain": "La Ley Orgánica 3/2007 regula la igualdad efectiva de mujeres y hombres.",
+      "source": {
+        "name": "Ley Orgánica 3/2007 para la igualdad efectiva de mujeres y hombres, art. 1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-045",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué inspección periódica deben pasar los coches para circular?",
+      "options": [
+        "La ITV (inspección técnica de vehículos)",
+        "El examen teórico",
+        "La declaración de la renta"
+      ],
+      "answer": 0,
+      "explain": "Los vehículos deben pasar la ITV con la periodicidad que marca la normativa.",
+      "source": {
+        "name": "Dirección General de Tráfico (DGT)",
+        "url": "https://www.dgt.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-046",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Es obligatorio tener un seguro para circular con un coche?",
+      "options": [
+        "No, es voluntario",
+        "Sí, el seguro obligatorio de responsabilidad civil",
+        "Solo para camiones"
+      ],
+      "answer": 1,
+      "explain": "Todo vehículo a motor debe tener un seguro obligatorio de responsabilidad civil.",
+      "source": {
+        "name": "Dirección General de Tráfico (DGT)",
+        "url": "https://www.dgt.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-047",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué organismo expide el permiso de conducir en España?",
+      "options": [
+        "El ayuntamiento",
+        "La Seguridad Social",
+        "La Dirección General de Tráfico (DGT)"
+      ],
+      "answer": 2,
+      "explain": "La DGT expide los permisos y gestiona los exámenes de conducir.",
+      "source": {
+        "name": "Dirección General de Tráfico (DGT)",
+        "url": "https://www.dgt.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-048",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué sistema permite identificarse por internet ante las Administraciones públicas?",
+      "options": [
+        "Cl@ve",
+        "El IBAN",
+        "El código postal"
+      ],
+      "answer": 0,
+      "explain": "Cl@ve es el sistema común de identificación electrónica de las Administraciones.",
+      "source": {
+        "name": "Cl@ve, identificación electrónica de las Administraciones",
+        "url": "https://clave.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-049",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué hay que pedir muchas veces antes de ir a una oficina pública?",
+      "options": [
+        "Un certificado médico",
+        "Cita previa",
+        "Un aval bancario"
+      ],
+      "answer": 1,
+      "explain": "Muchos trámites (extranjería, Seguridad Social, DNI) se hacen con cita previa.",
+      "source": {
+        "name": "Ministerio del Interior",
+        "url": "https://www.interior.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-050",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué puede pedir un consumidor en un comercio para presentar una queja?",
+      "options": [
+        "El libro de familia",
+        "El certificado de empadronamiento",
+        "La hoja de reclamaciones"
+      ],
+      "answer": 2,
+      "explain": "Los comercios deben tener hojas de reclamaciones a disposición de los consumidores.",
+      "source": {
+        "name": "Ministerio de Consumo",
+        "url": "https://www.consumo.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-051",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué país es líder mundial en donación y trasplante de órganos desde hace décadas?",
+      "options": [
+        "España",
+        "Francia",
+        "Alemania"
+      ],
+      "answer": 0,
+      "explain": "España lidera desde hace décadas las tasas de donación, coordinadas por la ONT.",
+      "source": {
+        "name": "Organización Nacional de Trasplantes",
+        "url": "https://www.ont.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-052",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué día se celebra el sorteo extraordinario de la Lotería de Navidad?",
+      "options": [
+        "El 6 de enero",
+        "El 22 de diciembre",
+        "El 31 de diciembre"
+      ],
+      "answer": 1,
+      "explain": "El Sorteo Extraordinario de Navidad se celebra el 22 de diciembre.",
+      "source": {
+        "name": "Loterías y Apuestas del Estado",
+        "url": "https://www.selae.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-053",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué fiesta nacional se celebra el 6 de enero?",
+      "options": [
+        "La Fiesta del Trabajo",
+        "El Día de la Constitución",
+        "La Epifanía del Señor (Reyes)"
+      ],
+      "answer": 2,
+      "explain": "El 6 de enero, Epifanía del Señor, es una de las fiestas laborales de ámbito nacional.",
+      "source": {
+        "name": "Real Decreto 2001/1983, art. 45 (fiestas laborales de ámbito nacional)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1983-20906"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-054",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué se celebra el 1 de noviembre, festivo nacional?",
+      "options": [
+        "Todos los Santos",
+        "La Hispanidad",
+        "La Asunción"
+      ],
+      "answer": 0,
+      "explain": "El 1 de noviembre, Todos los Santos, es fiesta laboral nacional.",
+      "source": {
+        "name": "Real Decreto 2001/1983, art. 45 (fiestas laborales de ámbito nacional)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1983-20906"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-055",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué día es festivo nacional por la Asunción de la Virgen?",
+      "options": [
+        "El 8 de diciembre",
+        "El 15 de agosto",
+        "El 1 de mayo"
+      ],
+      "answer": 1,
+      "explain": "El 15 de agosto es fiesta laboral de ámbito nacional.",
+      "source": {
+        "name": "Real Decreto 2001/1983, art. 45 (fiestas laborales de ámbito nacional)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1983-20906"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-056",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué día es festivo nacional por la Inmaculada Concepción?",
+      "options": [
+        "El 6 de diciembre",
+        "El 12 de octubre",
+        "El 8 de diciembre"
+      ],
+      "answer": 2,
+      "explain": "El 8 de diciembre es fiesta laboral de ámbito nacional.",
+      "source": {
+        "name": "Real Decreto 2001/1983, art. 45 (fiestas laborales de ámbito nacional)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1983-20906"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-057",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué día del año es festivo en toda España por el Año Nuevo?",
+      "options": [
+        "El 1 de enero",
+        "El 31 de diciembre",
+        "El 6 de enero"
+      ],
+      "answer": 0,
+      "explain": "El 1 de enero, Año Nuevo, es fiesta laboral nacional.",
+      "source": {
+        "name": "Real Decreto 2001/1983, art. 45 (fiestas laborales de ámbito nacional)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1983-20906"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-058",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿En qué contenedor se tiran, en general, los envases de plástico, latas y briks?",
+      "options": [
+        "En el verde",
+        "En el amarillo",
+        "En el azul"
+      ],
+      "answer": 1,
+      "explain": "El contenedor amarillo es para envases ligeros; el azul, para papel y cartón; el verde, para vidrio.",
+      "source": {
+        "name": "Ministerio para la Transición Ecológica: residuos",
+        "url": "https://www.miteco.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-059",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿En qué contenedor se tira, en general, el vidrio?",
+      "options": [
+        "En el amarillo",
+        "En el azul",
+        "En el verde"
+      ],
+      "answer": 2,
+      "explain": "El vidrio va al contenedor verde.",
+      "source": {
+        "name": "Ministerio para la Transición Ecológica: residuos",
+        "url": "https://www.miteco.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-060",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿En qué contenedor se tiran, en general, el papel y el cartón?",
+      "options": [
+        "En el azul",
+        "En el amarillo",
+        "En el verde"
+      ],
+      "answer": 0,
+      "explain": "El papel y el cartón van al contenedor azul.",
+      "source": {
+        "name": "Ministerio para la Transición Ecológica: residuos",
+        "url": "https://www.miteco.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-061",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué organismo publica las estadísticas oficiales de población de España?",
+      "options": [
+        "El Banco de España",
+        "El Instituto Nacional de Estadística (INE)",
+        "La DGT"
+      ],
+      "answer": 1,
+      "explain": "El INE elabora las estadísticas oficiales, como las cifras de población.",
+      "source": {
+        "name": "Instituto Nacional de Estadística (INE)",
+        "url": "https://www.ine.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-062",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué deben hacer los padres respecto a la escolarización de sus hijos de 6 a 16 años?",
+      "options": [
+        "Nada, es voluntaria",
+        "Solo si viven en una ciudad",
+        "Escolarizarlos: la enseñanza básica es obligatoria"
+      ],
+      "answer": 2,
+      "explain": "La enseñanza básica es obligatoria y gratuita para todas las personas de 6 a 16 años.",
+      "source": {
+        "name": "Ley Orgánica 2/2006 de Educación, art. 4",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-063",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué etapa permite obtener una formación profesional para un oficio después de la ESO?",
+      "options": [
+        "La Formación Profesional de grado medio",
+        "La Educación Infantil",
+        "La Educación Primaria"
+      ],
+      "answer": 0,
+      "explain": "Tras la ESO se puede estudiar Bachillerato o Formación Profesional de grado medio.",
+      "source": {
+        "name": "Ley Orgánica 2/2006 de Educación, art. 3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-064",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Quién gestiona las pensiones de jubilación de la Seguridad Social?",
+      "options": [
+        "El SEPE",
+        "El Instituto Nacional de la Seguridad Social (INSS)",
+        "La Agencia Tributaria"
+      ],
+      "answer": 1,
+      "explain": "El INSS gestiona y reconoce las pensiones contributivas, como la de jubilación.",
+      "source": {
+        "name": "Seguridad Social",
+        "url": "https://www.seg-social.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-065",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Dónde se inscriben los nacimientos, matrimonios y defunciones?",
+      "options": [
+        "En el padrón municipal",
+        "En la Seguridad Social",
+        "En el Registro Civil"
+      ],
+      "answer": 2,
+      "explain": "El Registro Civil hace constar oficialmente los hechos y actos de estado civil.",
+      "source": {
+        "name": "Código Civil, art. 325",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-066",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué tarjeta permite recibir asistencia sanitaria en otros países de la Unión Europea durante una estancia temporal?",
+      "options": [
+        "La Tarjeta Sanitaria Europea",
+        "La TIE",
+        "La tarjeta de crédito"
+      ],
+      "answer": 0,
+      "explain": "La Tarjeta Sanitaria Europea la expide la Seguridad Social para estancias temporales en la UE.",
+      "source": {
+        "name": "Seguridad Social",
+        "url": "https://www.seg-social.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-067",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Quién organiza los servicios sociales de atención primaria más cercanos a los vecinos?",
+      "options": [
+        "El Ministerio de Defensa",
+        "Los ayuntamientos",
+        "Los bancos"
+      ],
+      "answer": 1,
+      "explain": "Los municipios ejercen competencias de evaluación e información de situaciones de necesidad social y atención a personas en riesgo de exclusión.",
+      "source": {
+        "name": "Ley 7/1985 de Bases del Régimen Local, art. 25.2.e",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-068",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Pueden los menores de 16 años trabajar, como regla general?",
+      "options": [
+        "Sí, a partir de los 12 años",
+        "Sí, si lo deciden ellos",
+        "No"
+      ],
+      "answer": 2,
+      "explain": "Se prohíbe la admisión al trabajo a los menores de dieciséis años (salvo espectáculos públicos con autorización).",
+      "source": {
+        "name": "Estatuto de los Trabajadores, art. 6.1",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-069",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Pueden los menores de 18 años hacer horas extraordinarias?",
+      "options": [
+        "No",
+        "Sí, sin límite",
+        "Sí, solo de noche"
+      ],
+      "answer": 0,
+      "explain": "Los trabajadores menores de dieciocho años no pueden realizar horas extraordinarias ni trabajos nocturnos.",
+      "source": {
+        "name": "Estatuto de los Trabajadores, art. 6.2 y 6.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-070",
+      "task": 5,
+      "type": "mc3",
+      "q": "Si una persona trabajadora se casa, ¿cuántos días de permiso retribuido tiene?",
+      "options": [
+        "2 días",
+        "15 días naturales",
+        "1 mes"
+      ],
+      "answer": 1,
+      "explain": "El trabajador tiene derecho a quince días naturales de permiso retribuido por matrimonio o registro de pareja de hecho.",
+      "source": {
+        "name": "Estatuto de los Trabajadores, art. 37.3.a",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-071",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué tipo de servicio es Correos?",
+      "options": [
+        "Una entidad bancaria privada",
+        "Un servicio de urgencias",
+        "El servicio postal público que reparte cartas y paquetes"
+      ],
+      "answer": 2,
+      "explain": "Correos presta el servicio postal universal en España.",
+      "source": {
+        "name": "Correos (Sociedad Estatal Correos y Telégrafos)",
+        "url": "https://www.correos.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-072",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué organismo recauda las cotizaciones y paga las prestaciones del sistema público de protección social?",
+      "options": [
+        "La Seguridad Social",
+        "El ayuntamiento",
+        "La DGT"
+      ],
+      "answer": 0,
+      "explain": "La Seguridad Social gestiona cotizaciones, pensiones y otras prestaciones.",
+      "source": {
+        "name": "Seguridad Social",
+        "url": "https://www.seg-social.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-073",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Cómo se llama la etapa de estudios que da acceso a la universidad tras la ESO?",
+      "options": [
+        "La Educación Infantil",
+        "El Bachillerato",
+        "El Graduado Escolar"
+      ],
+      "answer": 1,
+      "explain": "El Bachillerato prepara para la universidad y la Formación Profesional de grado superior.",
+      "source": {
+        "name": "Ley Orgánica 2/2006 de Educación, art. 32",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-074",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué prueba hacen los estudiantes de Bachillerato para entrar en la universidad pública?",
+      "options": [
+        "El examen de conducir",
+        "El DELE",
+        "La prueba de acceso a la universidad (PAU)"
+      ],
+      "answer": 2,
+      "explain": "La prueba de acceso a la universidad (antes EBAU o selectividad) da acceso a los estudios de grado.",
+      "source": {
+        "name": "Ley Orgánica 2/2006 de Educación, art. 38",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-7899"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-075",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué es el NIE?",
+      "options": [
+        "El número de identidad de extranjero",
+        "Un impuesto municipal",
+        "Un tipo de contrato"
+      ],
+      "answer": 0,
+      "explain": "El NIE es el número personal y exclusivo que identifica a cada extranjero en España.",
+      "source": {
+        "name": "Real Decreto 1155/2024, Reglamento de extranjería",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-24099"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-076",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Cómo se paga, en general, el alquiler de una vivienda según la ley si no se pacta otra cosa?",
+      "options": [
+        "Una vez al año",
+        "Por meses, en los siete primeros días del mes",
+        "Al final del contrato"
+      ],
+      "answer": 1,
+      "explain": "Salvo pacto, el pago de la renta es mensual y se hace dentro de los siete primeros días del mes.",
+      "source": {
+        "name": "Ley 29/1994 de Arrendamientos Urbanos, art. 17.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-077",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué teléfono da información general sobre la Administración del Estado?",
+      "options": [
+        "El 091",
+        "El 016",
+        "El 060"
+      ],
+      "answer": 2,
+      "explain": "El 060 es el teléfono de información de la Administración General del Estado.",
+      "source": {
+        "name": "Punto de Acceso General de la Administración (060)",
+        "url": "https://administracion.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-078",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué organismo vigila que las empresas cumplan las normas laborales y de Seguridad Social?",
+      "options": [
+        "La Inspección de Trabajo y Seguridad Social",
+        "La Guardia Civil",
+        "El Defensor del Pueblo"
+      ],
+      "answer": 0,
+      "explain": "La Inspección de Trabajo controla el cumplimiento de las normas laborales y de Seguridad Social.",
+      "source": {
+        "name": "Inspección de Trabajo y Seguridad Social",
+        "url": "https://www.mites.gob.es/itss/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-079",
+      "task": 5,
+      "type": "mc3",
+      "q": "Al terminar un contrato de trabajo, ¿qué documento recoge las cantidades que la empresa debe pagar?",
+      "options": [
+        "La nómina de enero",
+        "El finiquito (documento de liquidación)",
+        "El contrato de alquiler"
+      ],
+      "answer": 1,
+      "explain": "Con el preaviso de extinción, la empresa entrega una propuesta del documento de liquidación de las cantidades adeudadas.",
+      "source": {
+        "name": "Estatuto de los Trabajadores, art. 49.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-080",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué servicios deben prestar todos los municipios?",
+      "options": [
+        "Universidades y aeropuertos",
+        "Bancos y seguros",
+        "Alumbrado público, recogida de residuos, limpieza viaria y agua potable, entre otros"
+      ],
+      "answer": 2,
+      "explain": "Todos los municipios deben prestar, entre otros, alumbrado público, cementerio, recogida de residuos, limpieza viaria y abastecimiento de agua potable.",
+      "source": {
+        "name": "Ley 7/1985 de Bases del Régimen Local, art. 26.1.a",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-081",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿A partir de cuántos habitantes debe tener biblioteca pública un municipio?",
+      "options": [
+        "A partir de 5.000 habitantes",
+        "A partir de 500 habitantes",
+        "A partir de 100.000 habitantes"
+      ],
+      "answer": 0,
+      "explain": "Los municipios con población superior a 5.000 habitantes deben prestar, además, el servicio de biblioteca pública, entre otros.",
+      "source": {
+        "name": "Ley 7/1985 de Bases del Régimen Local, art. 26.1.b",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-082",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Quién preside el pleno del ayuntamiento?",
+      "options": [
+        "El delegado del Gobierno",
+        "El alcalde",
+        "El secretario municipal"
+      ],
+      "answer": 1,
+      "explain": "El alcalde convoca y preside las sesiones del pleno.",
+      "source": {
+        "name": "Ley 7/1985 de Bases del Régimen Local, art. 21.1.c",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-083",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Qué es una farmacia de guardia?",
+      "options": [
+        "Una farmacia del ejército",
+        "Una farmacia que solo vende a hospitales",
+        "Una farmacia que abre fuera del horario normal para urgencias"
+      ],
+      "answer": 2,
+      "explain": "Las farmacias se turnan para atender fuera del horario habitual; el turno se publica en cada farmacia.",
+      "source": {
+        "name": "Ministerio de Sanidad",
+        "url": "https://www.sanidad.gob.es/"
+      },
+      "status": "borrador"
+    },
+    {
+      "id": "ccse-t5-084",
+      "task": 5,
+      "type": "mc3",
+      "q": "¿Cómo se llama el conjunto de servicios de salud públicos del Estado y de las comunidades autónomas?",
+      "options": [
+        "La Seguridad Vial",
+        "El Sistema Nacional de Salud",
+        "El Servicio Público de Empleo"
+      ],
+      "answer": 1,
+      "explain": "El Sistema Nacional de Salud reúne los servicios de salud de la Administración del Estado y de las comunidades autónomas.",
+      "source": {
+        "name": "Ley 16/2003 de cohesión y calidad del Sistema Nacional de Salud",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-10715"
       },
       "status": "borrador"
     }

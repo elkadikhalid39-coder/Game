@@ -470,5 +470,342 @@
     ],
     "checked": "2026-10-22",
     "reviewDays": 120
+  },
+  {
+    "id": "dgt.definiciones",
+    "text": "Calzada: la parte de la carretera por la que circulan los vehículos; se divide en carriles. Arcén: la franja junto a la calzada que no es para automóviles, salvo en casos excepcionales. Acera: la zona para peatones. Travesía: el tramo de carretera que pasa por un poblado. Vía urbana: la que está dentro de poblado (salvo las travesías); vía interurbana: la que está fuera. Turismo: automóvil para personas con un máximo de ocho plazas además de la del conductor.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto Legislativo 6/2015, Ley sobre Tráfico y Seguridad Vial (texto consolidado), anexo I",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.parada_def",
+    "text": "Parada: inmovilizar el vehículo menos de dos minutos sin que el conductor lo abandone. Estacionamiento: cualquier otra inmovilización que no sea una detención (por emergencia o por necesidades del tráfico) ni una parada.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto Legislativo 6/2015, Ley sobre Tráfico y Seguridad Vial (texto consolidado), anexo I, puntos 80 a 82",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.documentos",
+    "text": "Quien conduce debe llevar consigo y enseñar a los agentes si se lo piden: su permiso o licencia de conducción, el permiso de circulación del vehículo y la tarjeta de inspección técnica (ITV).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto Legislativo 6/2015, Ley sobre Tráfico y Seguridad Vial (texto consolidado), art. 59.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.peatones",
+    "text": "Los peatones, sobre todo niños, mayores y personas con discapacidad, tienen prioridad de paso y estancia en los términos del reglamento. Fuera de poblado, si no hay zona peatonal, el peatón va por el arcén izquierdo (de frente a los coches). De noche o con poca visibilidad, el peatón que va por la calzada o el arcén en vía interurbana debe llevar un elemento luminoso o reflectante visible a 150 metros. Donde hay paso de peatones hay que cruzar por él.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), arts. 121 a 124",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.auxilio",
+    "text": "Quien esté implicado en un accidente, lo presencie o sepa de él debe auxiliar a las víctimas o pedir auxilio, evitar mayores peligros y colaborar para aclarar los hechos. Si hay heridos graves o muertos, no se deben mover las cosas ni las huellas salvo para proteger a los heridos o la circulación.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), art. 129",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.velocidad_adecuada",
+    "text": "Además de respetar los límites, hay que adecuar la velocidad al propio estado, a la vía, al vehículo, al tiempo y al tráfico, para poder detenerse siempre dentro del campo de visión. Hay que moderar la velocidad, y parar si hace falta, cuando hay peatones (sobre todo niños o mayores), ciclistas, animales, un autobús parado (sobre todo escolar), pavimento deslizante o cerca de colegios y mercados.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), arts. 45 y 46",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.senales_orden",
+    "text": "Orden de preferencia de las señales: 1.º las órdenes de los agentes; 2.º la señalización circunstancial y el balizamiento (por ejemplo, de obras); 3.º los semáforos; 4.º las señales verticales; 5.º las marcas viales. Si dos señales del mismo tipo se contradicen, vale la más restrictiva.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), art. 133",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.semaforos",
+    "text": "Semáforo circular: la luz roja fija prohíbe pasar; la amarilla fija obliga a detenerse como con la roja, salvo si al encenderse ya no se puede parar con seguridad; la amarilla intermitente obliga a extremar la precaución y, en su caso, ceder el paso; la verde permite pasar. Una flecha verde encendida permite seguir esa dirección aunque haya otra luz encendida.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), anexo I, apartado 4.2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.marcas_viales",
+    "text": "Una línea longitudinal continua no se puede pisar ni atravesar (salvo la de borde de calzada en una emergencia). Si una continua va junto a una discontinua, cuenta la del lado por el que circulas. Una línea transversal continua es la línea de detención (stop, semáforo, paso de peatones). Una zona de franjas oblicuas (cebreado) no se puede invadir.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), anexo I",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.senales_tipos",
+    "text": "Señales de advertencia de peligro: avisan de un peligro difícil de ver a tiempo. Señales de reglamentación: indican obligaciones, limitaciones o prohibiciones (de prioridad, de prohibición de entrada, de restricción, de obligación y de fin de prohibición). Señales de indicación: dan informaciones útiles (orientación, servicios, carriles).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), arts. 144 a 146",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.carriles",
+    "text": "Se circula por la derecha y lo más cerca posible del borde de la calzada. Fuera de poblado, con varios carriles en el mismo sentido, se circula normalmente por el de la derecha. Está prohibido circular por autopistas y autovías con bicicletas (salvo mayores de 14 años por el arcén de las autovías), ciclomotores, vehículos de tracción animal y vehículos de movilidad personal.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), arts. 29, 31 y 38",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.maniobras",
+    "text": "Antes de girar hay que avisar con antelación y asegurarse de que se puede hacer sin peligro; cambiar de carril exige respetar la prioridad de quien va por él. El cambio de sentido está prohibido en pasos a nivel, túneles, autopistas y autovías (salvo lugares habilitados) y donde está prohibido adelantar. La marcha atrás está prohibida en autopistas y autovías y, como maniobra complementaria, no puede superar 15 metros ni invadir un cruce.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), arts. 74, 78, 79 y 80",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.adelantar_velocidad",
+    "text": "Fuera de poblado, al adelantar a ciclistas, peatones, ciclomotores, animales o vehículos de movilidad personal, hay que reducir la velocidad al menos 20 km/h por debajo del límite de la vía antes y durante el adelantamiento. Un grupo de ciclistas se considera una única unidad.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), art. 85.4",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.estacionar",
+    "text": "Se para y se estaciona en paralelo al borde de la calzada (salvo que la vía aconseje otra colocación). Si el conductor deja su puesto: parar el motor, poner el freno de estacionamiento y, con cambio manual, dejar metida la primera en subida y la marcha atrás en bajada.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), art. 92",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.carga",
+    "text": "No se pueden llevar más personas que plazas autorizadas, ni en un lugar distinto del destinado a ellas. La carga debe ir sujeta para que no caiga, no desestabilice el vehículo ni tape luces o placas. En un turismo, la carga puede sobresalir por detrás hasta un 10 % de la longitud del vehículo (un 15 % si es indivisible).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), arts. 9, 10, 14 y 15",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.moto",
+    "text": "En moto y ciclomotor, conductor y pasajero deben llevar casco homologado abrochado en todas las vías, guantes de protección en vías interurbanas y calzado cerrado. Puede ir un pasajero mayor de 12 años (o de 7 si conduce su padre, madre, tutor o un adulto autorizado), sentado a horcajadas detrás del conductor.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), arts. 12 y 118",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.claxon",
+    "text": "El claxon solo se usa excepcionalmente: para evitar un accidente, para avisar fuera de poblado de que vas a adelantar o para advertir tu presencia. Está prohibido usarlo sin motivo o de forma exagerada.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), art. 110",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.motor",
+    "text": "Hay que parar el motor para repostar combustible y siempre que el vehículo esté detenido en un túnel o lugar cerrado más de dos minutos (dejando las luces de posición encendidas).",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), art. 115",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.visibilidad_vehiculo",
+    "text": "Los cristales deben permitir al conductor ver la vía con claridad, sin láminas ni adhesivos. Solo se permiten láminas o cortinillas en las ventanillas traseras si el vehículo lleva los dos espejos retrovisores exteriores. Los cristales tintados no homologados están prohibidos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), art. 19",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.neumaticos",
+    "text": "Los neumáticos de turismos y furgonetas ligeras deben tener, durante todo su uso, una profundidad mínima de dibujo de 1,6 mm en las ranuras principales.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 2822/1998, Reglamento General de Vehículos, anexo VII (texto consolidado), punto 2",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1999-1826",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.itv",
+    "text": "ITV de los turismos: exentos hasta los 4 años; de 4 a 10 años, cada dos años; con más de 10 años, cada año.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 920/2017, inspección técnica de vehículos, art. 6",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12841",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.distancia_pesados",
+    "text": "Fuera de poblado, en vías de un carril por sentido, los vehículos de más de 3.500 kg o de más de 10 metros que no van a adelantar deben dejar al menos 50 metros con el de delante, para que otros puedan adelantarlos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), art. 54.2 y 54.3",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.stop_ceda",
+    "text": "En un cruce con señal de ceda el paso o de stop hay que ceder el paso a todos los vehículos que circulan por la vía preferente, vengan por la derecha o por la izquierda. Con stop hay que detenerse siempre por completo.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado, con las reformas de 2025 y 2026), art. 56.5",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180
+  },
+  {
+    "id": "dgt.senales_basicas",
+    "text": "Ceda el paso (R-1): ceder el paso a los vehículos de la vía a la que te acercas, deteniéndote si hace falta. Detención obligatoria o STOP (R-2): detenerse siempre ante la línea de detención y ceder el paso. Entrada prohibida (R-101): prohíbe el acceso a toda clase de vehículos. Velocidad máxima (R-301): nadie debe superar la cifra indicada. Velocidad mínima (R-411): obliga a circular al menos a esa velocidad si las condiciones lo permiten. Las señales de advertencia de peligro (P-1 a P-50) avisan de un peligro próximo.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación, art. 56.5, arts. 144 y 145 y anexo I (texto consolidado, con las reformas de 2025 y 2026)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 180,
+    "note": "Los dibujos de la app son propios y simplificados; el diseño oficial está en el Catálogo oficial de señales de circulación."
   }
 ]

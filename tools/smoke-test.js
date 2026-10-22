@@ -641,7 +641,7 @@ test("Conducir: sin permiso → requisitos, teórico y práctico", async () => {
 test("Conducir: tema gratis, fallo a «Mis fallos» y simulacro con el pase", async () => {
   const { page, errors } = await openDriving({ native: "fr" });
   await page.click(".menu-row:nth-child(2)");
-  await page.click(".menu-row:nth-child(1)"); // tema gratuito
+  await page.click(".menu-row:not(.locked)"); // el único tema abierto sin pase (documentación y permisos)
   await page.click(".btn.big");
   // Primera pregunta mal; el resto, bien.
   const n = DGT.questions.filter((q) => q.topic === "permiso").length;
