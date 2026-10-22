@@ -1,6 +1,6 @@
 [
   {
-    "id": "saludos", "emoji": "👋", "color": "#e8590c",
+    "id": "saludos", "emoji": "👋", "color": "#c2410c",
     "words": [
       {"id":"hola","emoji":"👋"},
       {"id":"adios","emoji":"🚪"},
@@ -37,7 +37,7 @@
     ]
   },
   {
-    "id": "comida", "emoji": "🍞", "color": "#0f8f6a",
+    "id": "comida", "emoji": "🍞", "color": "#0b7a5a",
     "words": [
       {"id":"pan","emoji":"🍞"},
       {"id":"agua","emoji":"💧"},

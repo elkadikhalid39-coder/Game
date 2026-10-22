@@ -237,7 +237,7 @@ function showConnectors() {
     box.dir = "ltr";
     box.append(el("h2", "", group));
     const chips = el("div", "chips");
-    for (const i of items) chips.append(el("span", "chip", i));
+    for (const i of items) chips.append(el("span", "chip-item", i));
     box.append(chips);
     app.append(box);
   }

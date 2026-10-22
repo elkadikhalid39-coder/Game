@@ -9,7 +9,8 @@ Cómo se añade contenido a la app sin romper las reglas de [PRODUCTO.md](PRODUC
 | `content/i18n/<idioma>.json` | Textos de interfaz (`ui`) y traducciones del curso (`t`) de cada idioma de apoyo. `es.json` es la referencia. `_order.json` fija el orden en pantalla. |
 | `content/course/units.json` | Unidades del curso: palabras (id + dibujo), frases (id + respuestas incorrectas) y objetivo. |
 | `content/facts/*.json` | Datos legales y de examen con su fuente (ver abajo). |
-| `content/exams/…` | Preguntas y simulacros de los pases (fases 3 y 4). |
+| `content/exams/ccse.json`, `dele-a2.json` | Pase de Nacionalidad: banco CCSE y simulacro DELE A2. |
+| `content/exams/pce.json` | Pase de Universidad: las 25 materias PCE (guía, modelo, tipo), fichas, bancos de test con la puntuación de cada guía y redacción académica. Lo comprueba `tools/check-exams.js` (la puntuación máxima debe salir de las reglas y los textos modelo deben cumplir las líneas de la guía). |
 
 ## Datos oficiales (`content/facts/*.json`)
 
@@ -49,5 +50,6 @@ En la app, `factNote(id)` muestra el dato con su estado, su fuente y la fecha de
 
 ```
 npm run check     # textos completos en los 12 idiomas y registro de datos válido
-npm test          # lo anterior + compilar + prueba de humo en navegador (incluye sin conexión)
+npm test          # lo anterior + compilar + prueba de humo en navegador (incluye sin conexión) + accesibilidad
+npm run audit     # antes de publicar: accesibilidad y datos caducados (falla si alguno ha superado su revisión)
 ```

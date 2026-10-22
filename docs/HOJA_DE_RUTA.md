@@ -59,12 +59,16 @@ Cada fase termina con la prueba automática en verde, un enlace para probar y un
 - [ ] Simulacros de la parte de desarrollo (comentario de texto, temas, problemas) con rúbrica.
 - [ ] Confirmar en fuente oficial la fórmula de la nota de acceso con PCE y los requisitos actuales del visado de estudios.
 
-## Fase 5: calidad y lanzamiento (semanas 7 y 8)
+## Fase 5: calidad y lanzamiento (en curso)
+
+Hecho el 22/10/2026: auditoría automática de accesibilidad (`tools/a11y-audit.js`, incluida en `npm test`) y corrección de contraste y tamaños, revisión de datos caducados (`npm run audit`) y registro en [AUDITORIA.md](AUDITORIA.md). Lo que sigue necesita personas o cuentas externas:
+
 
 - [ ] Revisión por especialistas (profesor de español acreditado y profesional jurídico) y paso de *borrador* a *publicado*.
 - [ ] Voces de calidad para todo el contenido.
 - [ ] Revisión de traducciones por nativos.
-- [ ] Accesibilidad y privacidad (edad mínima confirmada en la norma).
+- [x] Accesibilidad automática y privacidad (edad mínima de 14 años confirmada en la LO 3/2018, art. 7).
+- [ ] Prueba con lector de pantalla (TalkBack y VoiceOver) y en móviles reales.
 - [ ] Empaquetado para Android e iOS y pagos.
 - [ ] Beta cerrada con usuarios reales (una ONG o una escuela de adultos).
 

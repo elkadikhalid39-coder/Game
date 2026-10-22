@@ -15,6 +15,8 @@
   --mint-dark: #138a63;
   --mint-soft: #dbf7ec;
   --mint-text: #0b6b4b;
+  --mint-btn: #0f7a57; /* fondo de los botones principales: contraste 5,3:1 con el texto blanco */
+  --mint-btn-dark: #0a5a40;
   --coral: #ff6b57;
   --coral-dark: #d4493a;
   --coral-soft: #ffe3df;
@@ -59,7 +61,7 @@ h2 { font-size: 1.2rem; font-weight: 600; margin: 0 0 10px; }
 #topbar .stat:first-of-type { margin-inline-start: auto; }
 .chip {
   display: inline-flex; align-items: center; gap: 8px; background: var(--paper); border: 2px solid var(--line);
-  border-radius: 14px; padding: 6px 12px; font-weight: 700; font-size: .95rem; cursor: pointer;
+  border-radius: 14px; padding: 6px 12px; font-weight: 700; font-size: .95rem; cursor: pointer; min-height: 44px;
 }
 .code {
   display: inline-grid; place-items: center; min-width: 34px; height: 26px; padding: 0 6px; border-radius: 8px;
@@ -105,16 +107,16 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 /* ---------- Botones ---------- */
 .btn {
   display: block; width: 100%; margin-top: 16px; border: 0; border-radius: 16px; padding: 14px 16px;
-  font-size: 1.15rem; font-weight: 600; letter-spacing: .02em; color: #fff; background: var(--mint);
-  box-shadow: 0 5px 0 var(--mint-dark); cursor: pointer; transition: transform .08s;
+  font-size: 1.15rem; font-weight: 600; letter-spacing: .02em; color: #fff; background: var(--mint-btn);
+  box-shadow: 0 5px 0 var(--mint-btn-dark); cursor: pointer; transition: transform .08s;
 }
-.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--mint-dark); }
+.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--mint-btn-dark); }
 .btn.big { font-size: 1.3rem; padding: 16px; }
-.btn.danger { background: var(--coral); box-shadow: 0 5px 0 var(--coral-dark); }
+.btn.danger { background: var(--coral-text); box-shadow: 0 5px 0 #861b15; }
 .btn.ghost { background: transparent; color: var(--sky-dark); box-shadow: none; text-decoration: underline; }
 .btn.ghost-dark { background: var(--paper); color: var(--ink); border: 2px solid var(--line); box-shadow: 0 4px 0 var(--line); }
-.back { background: none; border: 0; color: var(--sky-dark); font-weight: 700; font-size: 1rem; cursor: pointer; padding: 6px 0; }
-.icon-btn { background: none; border: 0; font-size: 1.5rem; color: var(--ink-soft); cursor: pointer; padding: 4px 8px; }
+.back { background: none; border: 0; color: var(--sky-dark); font-weight: 700; font-size: 1rem; cursor: pointer; padding: 6px 0; min-height: 44px; }
+.icon-btn { background: none; border: 0; font-size: 1.5rem; color: var(--ink-soft); cursor: pointer; padding: 4px 8px; min-width: 44px; min-height: 44px; }
 
 /* ---------- Bienvenida e idiomas ---------- */
 .welcome { display: grid; justify-items: center; text-align: center; padding: 36px 0 12px; }
@@ -244,7 +246,7 @@ body[data-layout="main"] #app { padding-bottom: calc(var(--tabbar-h) + 40px); }
 
 /* Salidas sin culpa */
 .exits { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-top: 18px; }
-.link { background: none; border: 0; padding: 8px 4px; color: var(--sky-dark); font-weight: 600; font-size: .95rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.link { background: none; border: 0; padding: 8px 4px; min-height: 44px; color: var(--sky-dark); font-weight: 600; font-size: .95rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 .paused-note { width: 100%; text-align: center; color: var(--ink-soft); font-size: .9rem; }
 
 /* Objetivos */
@@ -420,8 +422,6 @@ h2.section { margin: 18px 0 10px; }
 .exam-q .link { justify-self: start; }
 .checklist { list-style: none; padding: 0; margin: 4px 0; display: grid; gap: 6px; }
 .checklist input { width: 20px; height: 20px; vertical-align: middle; accent-color: var(--mint); }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { background: var(--paper); border: 2px solid var(--line); border-radius: 999px; padding: 4px 12px; font-weight: 600; }
 .calc { display: grid; gap: 8px; margin-bottom: 12px; }
 .calc-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .calc-row span { flex: 1 1 90px; }
