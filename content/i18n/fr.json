@@ -318,7 +318,22 @@
     "lvl3": "Je parle assez bien",
     "lvl3d": "Uniquement des phrases en dictée, sans indices, et les accents comptent comme des fautes.",
     "myLevel": "Mon niveau",
-    "accentsCount": "À ton niveau, les accents et le ñ comptent."
+    "accentsCount": "À ton niveau, les accents et le ñ comptent.",
+    "voiceTitle": "Voix et accent",
+    "voiceSub": "Choisis comment tu veux entendre l'espagnol. Les voix fonctionnent hors ligne.",
+    "voiceNeutral": "Neutre",
+    "accES": "Espagne",
+    "accMX": "Mexique",
+    "genF": "voix de femme",
+    "genM": "voix d'homme",
+    "voiceDevice": "Voix du téléphone",
+    "voiceDeviceDesc": "Celle de ton téléphone. Elle dépend du modèle.",
+    "rhythmTitle": "Façon de parler",
+    "rhySlow": "Posée",
+    "rhyNormal": "Normale",
+    "rhyFast": "Rapide, comme dans la rue",
+    "myVoice": "Voix",
+    "listenSample": "Écouter un extrait"
   },
   "t": {
     "hola": "Bonjour",

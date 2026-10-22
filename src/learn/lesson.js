@@ -15,7 +15,7 @@ import { ui, tr } from "../core/i18n.js";
 import { save, persist, TARGET as G } from "../core/state.js";
 import { go } from "../core/router.js";
 import { shuffle, pick } from "../core/util.js";
-import { speak, beep } from "../core/audio.js";
+import { speak, beep, stopAudio } from "../core/audio.js";
 import { el, txt, button, closeButton } from "../ui/dom.js";
 import { writeBox, diffView } from "./write-box.js";
 import { audioControls } from "../ui/audio-buttons.js";
@@ -344,7 +344,7 @@ function runLesson(s) {
     exits.append(button("link", "🔇 " + ui("cantListen"), () => {
       save.noAudioUntil = Date.now() + AUDIO_PAUSE_MS;
       persist();
-      window.speechSynthesis?.cancel();
+      stopAudio();
       runLesson(s); // el mismo ejercicio, ahora de leer
     }));
   }

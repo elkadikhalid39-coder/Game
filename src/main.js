@@ -12,6 +12,7 @@ import "./styles/main.css";
 import { I18N } from "./core/i18n.js";
 import { save } from "./core/state.js";
 import { go } from "./core/router.js";
+import { preloadVoice } from "./core/audio.js";
 // Cada módulo registra sus pantallas.
 import "./screens/onboarding.js";
 import "./learn/path.js";
@@ -29,4 +30,5 @@ import "./exams/driving.js";
 
 if (save.native && !I18N[save.native]) save.native = "";
 if (window.speechSynthesis) speechSynthesis.getVoices();
+preloadVoice();
 go("home");

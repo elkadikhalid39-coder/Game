@@ -318,7 +318,22 @@
     "lvl3": "Hablo bastante bien",
     "lvl3d": "Solo frases al dictado, sin pistas, y las tildes cuentan como fallo.",
     "myLevel": "Mi nivel",
-    "accentsCount": "En tu nivel, las tildes y la ñ cuentan."
+    "accentsCount": "En tu nivel, las tildes y la ñ cuentan.",
+    "voiceTitle": "Voz y acento",
+    "voiceSub": "Elige cómo quieres oír el español. Las voces funcionan sin conexión.",
+    "voiceNeutral": "Neutra",
+    "accES": "España",
+    "accMX": "México",
+    "genF": "voz de mujer",
+    "genM": "voz de hombre",
+    "voiceDevice": "Voz del móvil",
+    "voiceDeviceDesc": "La que trae tu teléfono. Cambia según el modelo.",
+    "rhythmTitle": "Manera de hablar",
+    "rhySlow": "Pausada",
+    "rhyNormal": "Normal",
+    "rhyFast": "Ágil, como en la calle",
+    "myVoice": "Voz",
+    "listenSample": "Escuchar muestra"
   },
   "t": {
     "hola": "Hola",

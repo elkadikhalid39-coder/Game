@@ -18,7 +18,13 @@ export default defineConfig(({ mode }) => {
       VitePWA({
         registerType: "autoUpdate",
         injectRegister: "auto",
-        workbox: { globPatterns: ["**/*.{js,css,html,woff2,png,svg}"] },
+        // La voz neutra y las dos de España (diálogos del DELE) van en la caché desde el principio;
+        // las demás voces se guardan la primera vez que se usan.
+        workbox: {
+          globPatterns: ["**/*.{js,css,html,woff2,png,svg}", "audio/neutra.*", "audio/es-f.*", "audio/es-m.*"],
+          maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
+          runtimeCaching: [{ urlPattern: /\/audio\/.*\.(bin|json)$/, handler: "CacheFirst", options: { cacheName: "voces" } }],
+        },
         manifest: {
           name: "Hola, Español",
           short_name: "Hola, Español",

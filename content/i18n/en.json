@@ -318,7 +318,22 @@
     "lvl3": "I speak quite well",
     "lvl3d": "Only sentence dictation, no hints, and missing accents count as mistakes.",
     "myLevel": "My level",
-    "accentsCount": "At your level, accents and ñ count."
+    "accentsCount": "At your level, accents and ñ count.",
+    "voiceTitle": "Voice and accent",
+    "voiceSub": "Choose how you want to hear Spanish. The voices work offline.",
+    "voiceNeutral": "Neutral",
+    "accES": "Spain",
+    "accMX": "Mexico",
+    "genF": "female voice",
+    "genM": "male voice",
+    "voiceDevice": "Phone's voice",
+    "voiceDeviceDesc": "The one built into your phone. It depends on the model.",
+    "rhythmTitle": "Speaking style",
+    "rhySlow": "Calm",
+    "rhyNormal": "Normal",
+    "rhyFast": "Brisk, like on the street",
+    "myVoice": "Voice",
+    "listenSample": "Listen to a sample"
   },
   "t": {
     "hola": "Hello",

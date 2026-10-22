@@ -318,7 +318,22 @@
     "lvl3": "Parlo abbastanza bene",
     "lvl3d": "Solo frasi sotto dettatura, senza suggerimenti, e gli accenti mancanti contano come errore.",
     "myLevel": "Il mio livello",
-    "accentsCount": "Al tuo livello, gli accenti e la ñ contano."
+    "accentsCount": "Al tuo livello, gli accenti e la ñ contano.",
+    "voiceTitle": "Voce e accento",
+    "voiceSub": "Scegli come vuoi sentire lo spagnolo. Le voci funzionano senza connessione.",
+    "voiceNeutral": "Neutra",
+    "accES": "Spagna",
+    "accMX": "Messico",
+    "genF": "voce femminile",
+    "genM": "voce maschile",
+    "voiceDevice": "Voce del telefono",
+    "voiceDeviceDesc": "Quella del tuo telefono. Dipende dal modello.",
+    "rhythmTitle": "Modo di parlare",
+    "rhySlow": "Calma",
+    "rhyNormal": "Normale",
+    "rhyFast": "Svelta, come per strada",
+    "myVoice": "Voce",
+    "listenSample": "Ascolta un esempio"
   },
   "t": {
     "hola": "Ciao",

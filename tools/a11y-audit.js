@@ -22,6 +22,7 @@ const TOURS = [
   ["respuesta incorrecta", { native: "fr" }, [".current .node", "?.footer .btn", "?.footer .btn", "?.footer .btn", '.opt[data-ok="0"]']],
   ["perfil", { native: "es" }, ['.tab[data-tab="profile"]']],
   ["nivel", { native: "ar", level: null }, []],
+  ["voces", { native: "ur" }, ['.tab[data-tab="profile"]', ".setting:nth-child(3)"]],
   ["dictado", { native: "ar" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(2)", "?#write-answer", ".write-box .btn"]],
   ["diccionario", { native: "zh" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(4)"]],
   // Con errores guardados aparece el contador rojo de la pestaña Repasar.

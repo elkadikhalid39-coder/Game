@@ -1,0 +1,13 @@
+{
+  "note": "Voces de la app. source: recorded (audio generado con Piper, en public/audio) o device (voz sintética del móvil). tier: free o premium (aún no se cobra nada; sirve para decidirlo más adelante). Licencias de los modelos en tools/audio/README.md.",
+  "default": "neutra",
+  "voices": [
+    { "id": "neutra", "accent": "es-ES", "gender": "m", "source": "recorded", "model": "es_ES-davefx-medium", "tier": "free" },
+    { "id": "es-f", "accent": "es-ES", "gender": "f", "source": "recorded", "model": "es_ES-sharvard-medium", "speaker": 1, "tier": "premium" },
+    { "id": "es-m", "accent": "es-ES", "gender": "m", "source": "recorded", "model": "es_ES-sharvard-medium", "speaker": 0, "tier": "premium" },
+    { "id": "mx-f", "accent": "es-MX", "gender": "f", "source": "recorded", "model": "es_MX-claude-high", "tier": "premium" },
+    { "id": "mx-m", "accent": "es-MX", "gender": "m", "source": "recorded", "model": "es_MX-ald-medium", "tier": "premium" },
+    { "id": "device", "accent": "es-ES", "source": "device", "tier": "free" }
+  ],
+  "rhythms": { "slow": 0.85, "normal": 1, "fast": 1.15 }
+}

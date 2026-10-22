@@ -179,6 +179,23 @@ test("la pregunta del nivel aparece tras el idioma y se cambia en el perfil", as
   return [asked && label.includes("Me defiendo") && locked, errors];
 });
 
+test("voces: se elige acento y manera de hablar, y suena el audio grabado", async () => {
+  const { page, errors } = await open({ native: "es" });
+  // El audio no suena en el navegador de pruebas: se anota qué se reproduce.
+  await page.evaluate(() => {
+    window.__played = [];
+    HTMLMediaElement.prototype.play = function () { window.__played.push([this.src.slice(0, 5), this.playbackRate]); setTimeout(() => this.onended?.(), 30); return Promise.resolve(); };
+  });
+  await page.click('.tab[data-tab="profile"]');
+  await page.click('.setting:has-text("Voz")');
+  await page.click('[data-voice="mx-m"]');
+  await page.click('[data-rhythm="slow"]');
+  await page.waitForTimeout(600);
+  const played = await page.evaluate(() => window.__played);
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("hola-espanol")));
+  return [played.length >= 2 && played.every(([src]) => src === "blob:") && played.at(-1)[1] === 0.85 && saved.voice === "mx-m" && saved.rhythm === "slow", errors];
+});
+
 test("funciona sin conexión", async () => {
   const { page, errors, context } = await open({ native: "de" });
   await page.evaluate(() => navigator.serviceWorker.ready);

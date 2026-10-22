@@ -318,7 +318,22 @@
     "lvl3": "Ich spreche ziemlich gut",
     "lvl3d": "Nur Satzdiktate, keine Hinweise, und fehlende Akzente zählen als Fehler.",
     "myLevel": "Mein Niveau",
-    "accentsCount": "Auf deinem Niveau zählen Akzente und ñ."
+    "accentsCount": "Auf deinem Niveau zählen Akzente und ñ.",
+    "voiceTitle": "Stimme und Akzent",
+    "voiceSub": "Wähle, wie du Spanisch hören möchtest. Die Stimmen funktionieren offline.",
+    "voiceNeutral": "Neutral",
+    "accES": "Spanien",
+    "accMX": "Mexiko",
+    "genF": "Frauenstimme",
+    "genM": "Männerstimme",
+    "voiceDevice": "Stimme des Handys",
+    "voiceDeviceDesc": "Die Stimme deines Handys. Sie hängt vom Modell ab.",
+    "rhythmTitle": "Sprechweise",
+    "rhySlow": "Ruhig",
+    "rhyNormal": "Normal",
+    "rhyFast": "Zügig, wie auf der Straße",
+    "myVoice": "Stimme",
+    "listenSample": "Hörprobe"
   },
   "t": {
     "hola": "Hallo",

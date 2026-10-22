@@ -318,7 +318,22 @@
     "lvl3": "Falo bastante bem",
     "lvl3d": "Só frases em ditado, sem dicas, e os acentos que faltarem contam como erro.",
     "myLevel": "Meu nível",
-    "accentsCount": "No seu nível, os acentos e o ñ contam."
+    "accentsCount": "No seu nível, os acentos e o ñ contam.",
+    "voiceTitle": "Voz e sotaque",
+    "voiceSub": "Escolha como quer ouvir o espanhol. As vozes funcionam sem internet.",
+    "voiceNeutral": "Neutra",
+    "accES": "Espanha",
+    "accMX": "México",
+    "genF": "voz feminina",
+    "genM": "voz masculina",
+    "voiceDevice": "Voz do celular",
+    "voiceDeviceDesc": "A que vem no seu celular. Muda conforme o modelo.",
+    "rhythmTitle": "Jeito de falar",
+    "rhySlow": "Pausada",
+    "rhyNormal": "Normal",
+    "rhyFast": "Rápida, como na rua",
+    "myVoice": "Voz",
+    "listenSample": "Ouvir amostra"
   },
   "t": {
     "hola": "Olá",

@@ -318,7 +318,22 @@
     "lvl3": "Vorbesc destul de bine",
     "lvl3d": "Doar propoziții la dictare, fără indicii, iar accentele lipsă contează ca greșeli.",
     "myLevel": "Nivelul meu",
-    "accentsCount": "La nivelul tău, accentele și ñ contează."
+    "accentsCount": "La nivelul tău, accentele și ñ contează.",
+    "voiceTitle": "Voce și accent",
+    "voiceSub": "Alege cum vrei să auzi spaniola. Vocile funcționează fără internet.",
+    "voiceNeutral": "Neutră",
+    "accES": "Spania",
+    "accMX": "Mexic",
+    "genF": "voce de femeie",
+    "genM": "voce de bărbat",
+    "voiceDevice": "Vocea telefonului",
+    "voiceDeviceDesc": "Cea din telefonul tău. Diferă în funcție de model.",
+    "rhythmTitle": "Modul de a vorbi",
+    "rhySlow": "Rară",
+    "rhyNormal": "Normală",
+    "rhyFast": "Alertă, ca pe stradă",
+    "myVoice": "Voce",
+    "listenSample": "Ascultă o mostră"
   },
   "t": {
     "hola": "Bună",

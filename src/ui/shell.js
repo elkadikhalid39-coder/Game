@@ -1,6 +1,7 @@
 // Marco de la app: cambio de pantalla, barras superior e inferior, panel de respuesta y celebración.
 import { I18N, ui, dirOf } from "../core/i18n.js";
 import { save } from "../core/state.js";
+import { stopAudio } from "../core/audio.js";
 import { go } from "../core/router.js";
 import { pick, rand } from "../core/util.js";
 import { el, txt, button } from "./dom.js";
@@ -37,6 +38,7 @@ document.addEventListener("click", (e) => {
 export function screen(layout = "main", lang = save.native) {
   screenId++;
   markChange();
+  stopAudio(); // al cambiar de pantalla se corta el audio que estuviera sonando
   document.querySelector(".sheet")?.remove();
   app.replaceChildren();
   app.dir = lang ? dirOf(lang) : "ltr";

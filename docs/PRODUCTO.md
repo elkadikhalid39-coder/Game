@@ -131,9 +131,9 @@ Preparación profesional de los exámenes que se exigen en España. Cada examen 
 | **Solo se aprende español** (las otras 11 lenguas son de apoyo) | Todo el contenido (trabajo, trámites, exámenes) es de España. Enseñar varios idiomas dispersaba el producto. |
 | **Fuera el modo niños** | Mezclar alfabetización infantil con exámenes oficiales confunde a ambos públicos. Puede ser otra app en el futuro. |
 | **Sin vidas, rachas ni puntos** | Bloquear por errores o presionar con rachas no ayuda a quien estudia después de trabajar. |
-| **Español de España** en el audio | Los exámenes, los trámites y la vida diaria del usuario son en España. |
+| **Audio**: voz neutra de España por defecto; se puede elegir otra voz (España mujer u hombre, México mujer u hombre, o la del móvil) y la manera de hablar (pausada, normal, ágil) | Los exámenes y trámites son en España, pero en la calle se oyen muchos acentos. Qué voces serán de pago se decide más adelante (campo `tier` en `content/voices.json`). |
 | **Portugués de Brasil** como variante del portugués (antes había una mezcla con el de Portugal) | La mayoría de quienes hablan portugués y necesitan la app son brasileños (por ejemplo, les bastan 2 años de residencia para la nacionalidad). Los portugueses son ciudadanos de la UE y no hacen los exámenes de nacionalidad. |
-| **Voces**: sintéticas del móvil en desarrollo; generadas con calidad y revisadas antes de lanzar los pases | La auditiva del DELE necesita audio natural, igual en todos los móviles y sin conexión. |
+| **Voces**: audio pregrabado con voces neuronales libres (Piper), generado sin conexión y guardado en la app; la voz del móvil solo como respaldo | Suena igual en todos los móviles y funciona sin conexión. A largo plazo, locutores para la auditiva del DELE. Ver `tools/audio/README.md`. |
 | **Micrófono**: fuera hasta después del lanzamiento | Privacidad y complejidad; no es imprescindible para aprobar. |
 | **Escribir antes que elegir** (dictado y escritura como ejercicios principales; nunca preguntas con solo un dibujo) | Recordar y escribir una palabra fija el aprendizaje mucho más que reconocerla entre opciones, y los dibujos solos son ambiguos. |
 | **Pestañas**: Aprender · Practicar · Exámenes · Perfil | «Repasar» pasa a ser un apartado de Practicar, junto al dictado, el diccionario y las funciones futuras. |

@@ -19,6 +19,8 @@ export function migrate(old, known = () => true) {
     v: SAVE_VERSION,
     native: old.native && known(old.native) ? old.native : "",
     calm: !!old.calm,
+    voice: (v3 && old.voice) || "neutra", // voz del audio en español (content/voices.json)
+    rhythm: (v3 && old.rhythm) || "normal", // manera de hablar: slow | normal | fast
     // Nivel de español que dice tener (0 de cero · 1 un poco · 2 me defiendo · 3 bastante bien); null: aún no se ha preguntado.
     level: [0, 1, 2, 3].includes(old.level) ? old.level : null,
     progress: pick("progress", {}), // { [unidad]: lecciones completadas }

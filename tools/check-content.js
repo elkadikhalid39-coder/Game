@@ -36,5 +36,15 @@ for (const u of UNITS) {
   for (const p of u.phrases) { need("q_" + p.id, u.id); need("a_" + p.id, u.id); for (const w of p.wrong) need("a_" + w, u.id); }
 }
 
+// Audio pregrabado: cada palabra y frase del curso tiene que estar en la voz neutra
+// (si no, hay que volver a generar el audio: tools/audio/README.md).
+const fnv = (t) => { let h = 0x811c9dc5; for (const b of Buffer.from(t.trim(), "utf8")) h = Math.imul(h ^ b, 0x01000193) >>> 0; return h.toString(16).padStart(8, "0"); };
+const neutral = JSON.parse(readFileSync(new URL("../public/audio/neutra.json", import.meta.url), "utf8"));
+const es = JSON.parse(readFileSync(new URL("../content/i18n/es.json", import.meta.url), "utf8")).t;
+for (const u of UNITS) {
+  const texts = [...u.words.flatMap(({ id }) => [es[id], es["e_" + id]]), ...u.phrases.flatMap((p) => [es["q_" + p.id], es["a_" + p.id]])];
+  for (const t of texts) if (t && !neutral[fnv(t)]) errors.push(`${u.id}: sin audio grabado «${t}» (regenerar con tools/audio/generate.py)`);
+}
+
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 console.log(`OK contenido: ${order.length} idiomas, ${Object.keys(ref.ui).length} textos de interfaz y ${ids.size} de contenido cada uno; ${UNITS.length} unidades.`);

@@ -5,6 +5,8 @@ import { register, go } from "../core/router.js";
 import { el, txt, button } from "../ui/dom.js";
 import { mascot, speech } from "../ui/mascot.js";
 import { app, screen, renderBars } from "../ui/shell.js";
+import { VOICE_LIST, voiceOf, sample } from "../core/audio.js";
+import { speakerIcon } from "../ui/audio-buttons.js";
 
 function showWelcome() {
   screen("plain", "");
@@ -49,6 +51,43 @@ function showLevel() {
   app.append(list);
 }
 
+// Voz del español: acento, voz de hombre o de mujer y manera de hablar.
+// La frase de muestra está grabada en todas las voces.
+const SAMPLE = "Hola, me llamo Ana.";
+export const voiceName = (v) =>
+  v.source === "device" ? ui("voiceDevice") : `${ui(v.accent === "es-MX" ? "accMX" : "accES")} · ${ui(v.gender === "f" ? "genF" : "genM")}${v.id === "neutra" ? " · " + ui("voiceNeutral") : ""}`;
+
+function showVoice() {
+  screen("main");
+  app.append(button("back", "← " + ui("back"), () => go("profile")), el("h1", "", ui("voiceTitle")), el("p", "lead", ui("voiceSub")));
+  const list = el("div", "levels");
+  for (const v of VOICE_LIST) {
+    const row = el("div", "voice-row" + (v.id === save.voice ? " selected" : ""));
+    const pickBtn = el("button", "voice-pick");
+    pickBtn.type = "button";
+    pickBtn.dataset.voice = v.id;
+    pickBtn.setAttribute("aria-pressed", String(v.id === save.voice));
+    pickBtn.append(el("strong", "", voiceName(v)));
+    if (v.source === "device") pickBtn.append(el("span", "", ui("voiceDeviceDesc")));
+    pickBtn.onclick = () => { save.voice = v.id; persist(); showVoice(); sample(v.id, SAMPLE); };
+    const play = button("audio-btn-play icon", "", () => sample(v.id, SAMPLE));
+    play.append(speakerIcon(2));
+    play.setAttribute("aria-label", ui("listenSample") + ": " + voiceName(v));
+    row.append(pickBtn, play);
+    list.append(row);
+  }
+  app.append(list, el("h2", "section", ui("rhythmTitle")));
+  const rhythms = el("div", "chips");
+  for (const [id, key] of [["slow", "rhySlow"], ["normal", "rhyNormal"], ["fast", "rhyFast"]]) {
+    const b = button("rhythm-chip" + (save.rhythm === id ? " selected" : ""), ui(key), () => { save.rhythm = id; persist(); showVoice(); sample(save.voice, SAMPLE); });
+    b.dataset.rhythm = id;
+    b.setAttribute("aria-pressed", String(save.rhythm === id));
+    rhythms.append(b);
+  }
+  // Créditos de los modelos de voz (la licencia CC BY del corpus Sharvard pide citarlo).
+  app.append(rhythms, el("p", "credits", "Voces generadas con Piper. Modelos: davefx (CC0); Sharvard Corpus, Aubanel, García Lecumberri y Cooke, 2014 (CC BY 3.0); claude (Apache 2.0); ald (Unlicense)."));
+}
+
 export function settingsCard() {
   const card = el("div", "card settings");
   const row = button("setting", "", () => go("language"));
@@ -57,6 +96,9 @@ export function settingsCard() {
   const lvl = button("setting", "", () => go("level"));
   lvl.append(el("span", "icon", "📶"), el("span", "", ui("myLevel") + ": " + ui("lvl" + (save.level ?? 0))), el("span", "chev", "›"));
   card.append(lvl);
+  const voice = button("setting", "", () => go("voice"));
+  voice.append(el("span", "icon", "🔊"), el("span", "", ui("myVoice") + ": " + voiceName(voiceOf())), el("span", "chev", "›"));
+  card.append(voice);
   const calm = el("label", "setting toggle");
   const box = el("input");
   box.type = "checkbox";
@@ -79,4 +121,5 @@ export function settingsCard() {
 register("welcome", showWelcome);
 register("language", showLanguage);
 register("level", showLevel);
+register("voice", showVoice);
 register("home", () => go(!save.native ? "welcome" : save.level === null ? "level" : "path"));
