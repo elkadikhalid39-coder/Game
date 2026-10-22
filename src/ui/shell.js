@@ -10,7 +10,7 @@ const topbar = document.getElementById("topbar");
 const tabbar = document.getElementById("tabbar");
 
 // Pestañas de la barra inferior: [nombre de ruta, icono, texto].
-const TABS = [["path", "🗺️", "tabLearn"], ["exams", "🎓", "tabExams"], ["review", "🔁", "tabReview"], ["profile", "👤", "tabProfile"]];
+const TABS = [["path", "🗺️", "tabLearn"], ["exams", "🎓", "tabExams"], ["review", "✍️", "tabPractice"], ["profile", "👤", "tabProfile"]];
 let currentTab = "path";
 export const setTab = (name) => { currentTab = name; };
 

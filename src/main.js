@@ -16,6 +16,7 @@ import { go } from "./core/router.js";
 import "./screens/onboarding.js";
 import "./learn/path.js";
 import "./learn/review.js";
+import "./learn/practice.js";
 import "./exams/hub.js";
 import "./exams/nationality.js";
 import "./exams/tramite.js";

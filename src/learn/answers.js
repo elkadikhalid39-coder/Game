@@ -34,3 +34,42 @@ export function checkWritten(input, expected) {
 
 // Frase ordenada por fichas: se compara sin mayúsculas ni signos.
 export const sameSentence = (a, b) => normalize(a, { accents: true }) === normalize(b, { accents: true });
+
+// ---------- Corrección de dictados: dónde están los fallos ----------
+const isLetter = (c) => /[\p{L}\p{N}]/u.test(c);
+
+// Compara lo escrito con lo correcto letra a letra (sin distinguir mayúsculas; una tilde distinta es un fallo).
+// → { given: [{ t, k }], want: [{ t, k }] }
+//   given: k = "ok" | "bad" (letra que sobra o es distinta)
+//   want:  k = "ok" | "miss" (letra que falta o es distinta) | "soft" (signo o espacio que falta: no cuenta)
+export function diffChars(input, expected) {
+  const a = [...input.trim()], b = [...expected.trim()];
+  const eq = (x, y) => x.toLowerCase() === y.toLowerCase();
+  // Subsecuencia común más larga.
+  const L = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
+  for (let i = a.length - 1; i >= 0; i--)
+    for (let j = b.length - 1; j >= 0; j--) L[i][j] = eq(a[i], b[j]) ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const given = [], want = [];
+  const push = (list, t, k) => {
+    const last = list[list.length - 1];
+    if (last && last.k === k) last.t += t; else list.push({ t, k });
+  };
+  let i = 0, j = 0;
+  while (i < a.length || j < b.length) {
+    if (i < a.length && j < b.length && eq(a[i], b[j])) { push(given, a[i++], "ok"); push(want, b[j++], "ok"); }
+    else if (j < b.length && (i >= a.length || L[i][j + 1] >= L[i + 1][j])) { push(want, b[j], isLetter(b[j]) ? "miss" : "soft"); j++; }
+    else { push(given, a[i], isLetter(a[i]) ? "bad" : "ok"); i++; }
+  }
+  return { given, want };
+}
+
+// Número de palabras mal escritas, que faltan o que sobran (sin mayúsculas ni signos; las tildes cuentan).
+export function wordErrors(input, expected) {
+  const words = (s) => s.toLowerCase().replace(/[¿?¡!.,;:"'«»()]/g, " ").split(/\s+/).filter(Boolean);
+  const a = words(input), b = words(expected);
+  const L = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
+  for (let i = a.length - 1; i >= 0; i--)
+    for (let j = b.length - 1; j >= 0; j--) L[i][j] = a[i] === b[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  // Una palabra cambiada cuenta como un error, no como «falta una y sobra otra».
+  return Math.max(a.length, b.length) - L[0][0];
+}

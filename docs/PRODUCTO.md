@@ -37,7 +37,31 @@ Un curso de español de A1 a A2, organizado por situaciones de la vida en Españ
 
 - Cada unidad empieza con un objetivo concreto: «Al terminar podrás pedir cita en el médico».
 - Cada unidad tiene lecciones cortas de 3 a 5 minutos (palabras, escuchar, frases y una práctica final de premio).
-- Los errores vuelven al final de la lección y en la pestaña Repasar.
+- **Cada palabra se presenta antes de preguntarla** y se practica sobre todo **escribiéndola**: al dictado (se oye y se escribe) y desde su idioma. Reconocer entre opciones solo se usa justo después de presentar la palabra.
+- **Nunca se pregunta solo con un dibujo**: un emoji se interpreta de muchas maneras (🥺 puede ser «por favor», «perdón» o «lo siento»). El dibujo acompaña a la palabra o a la traducción, nunca las sustituye. Quien tiene el español como idioma hace dictados en lugar de ejercicios de traducción.
+- La corrección marca **en qué letra está el fallo** (también las tildes), no solo si está bien o mal.
+- Los errores vuelven al final de la lección y en la pestaña Practicar.
+
+### Practicar (gratis)
+
+| Apartado | Estado |
+|---|---|
+| **Mis errores**: lo que se ha fallado, para repasarlo | Hecho |
+| **Dictado** de palabras y de frases, con la corrección letra a letra | Hecho |
+| **Diccionario** de las palabras del curso, con audio y búsqueda en español o en su idioma | Hecho |
+| **Escribir un texto** (unas 10 líneas) y recibir la corrección de los fallos | Necesita IA (ver abajo) |
+| **Cámara**: hacer una foto a un objeto y saber cómo se dice en español | Necesita IA (ver abajo) |
+| **Tutor con IA**: preguntar dudas y practicar conversaciones | Necesita IA (ver abajo) |
+
+### Funciones con IA (planificadas)
+
+La corrección de textos libres, la cámara y el tutor necesitan un modelo de IA. Antes de construirlas hay que decidir:
+
+1. **Servidor propio.** La clave de la IA no puede ir dentro de la app. Hace falta un pequeño servidor que reciba la petición y llame a la IA.
+2. **Coste.** Cada corrección o foto cuesta dinero. Propuesta: incluirlas en los pases de pago, o un número limitado de usos gratis al día.
+3. **Privacidad.** Los textos y las fotos salen del móvil. Hace falta consentimiento explícito, no guardar nada en el servidor, avisar de no fotografiar a personas ni documentos, y, para menores de 14 años, consentimiento de los padres.
+4. **Sin conexión.** Estas funciones solo van con internet; el resto de la app sigue funcionando sin conexión.
+5. **Calidad.** La IA corrige, pero puede equivocarse: la app lo dice y no la usa para datos legales ni de examen oficiales.
 - No hay vidas, ligas, rachas, anuncios ni registro obligatorio.
 
 ### Exámenes oficiales (de pago)
@@ -96,6 +120,8 @@ Preparación profesional de los exámenes que se exigen en España. Cada examen 
 | **Español de España** en el audio | Los exámenes, los trámites y la vida diaria del usuario son en España. |
 | **Voces**: sintéticas del móvil en desarrollo; generadas con calidad y revisadas antes de lanzar los pases | La auditiva del DELE necesita audio natural, igual en todos los móviles y sin conexión. |
 | **Micrófono**: fuera hasta después del lanzamiento | Privacidad y complejidad; no es imprescindible para aprobar. |
+| **Escribir antes que elegir** (dictado y escritura como ejercicios principales; nunca preguntas con solo un dibujo) | Recordar y escribir una palabra fija el aprendizaje mucho más que reconocerla entre opciones, y los dibujos solos son ambiguos. |
+| **Pestañas**: Aprender · Practicar · Exámenes · Perfil | «Repasar» pasa a ser un apartado de Practicar, junto al dictado, el diccionario y las funciones futuras. |
 | **Nivel 0 de alfabetización**: después del lanzamiento | Necesita el capítulo 4 de LASLLIAM y un especialista. Es importante y queda en la hoja de ruta. |
 | **Modelo de negocio**: Aprender gratis; un pase de pago por examen; licencias para entidades más adelante | El examen se prepara una vez. Lo esencial para vivir debe ser gratis. |
 | **Nombre**: se mantiene «Hola, Español» | Ahora la app enseña solo español y el nombre describe bien lo que hace. |

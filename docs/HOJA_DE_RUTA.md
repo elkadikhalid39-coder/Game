@@ -73,6 +73,15 @@ Hecho el 22/10/2026: auditoría automática de accesibilidad (`tools/a11y-audit.
 - [ ] Empaquetado para Android e iOS y pagos.
 - [ ] Beta cerrada con usuarios reales (una ONG o una escuela de adultos).
 
+## Fase 6: aprender escribiendo (en curso)
+
+- [x] Lecciones rehechas: cada palabra se presenta antes de preguntarla, el ejercicio principal es el dictado y nunca se pregunta solo con un dibujo.
+- [x] Corrección letra a letra (también las tildes) en lecciones y dictados.
+- [x] Pestaña Practicar: mis errores, dictado de palabras y de frases, y diccionario con búsqueda y audio.
+- [ ] Revisar cada apartado de la app con el mismo criterio (lo pidió el usuario el 22/10/2026).
+- [ ] Más frases de dictado por unidad (ahora son las preguntas y respuestas del curso).
+- [ ] Funciones con IA (corrección de textos de 10 líneas, cámara, tutor): ver las decisiones pendientes en [PRODUCTO.md](PRODUCTO.md).
+
 ## Después del lanzamiento
 
 - Nivel 0 de alfabetización (LASLLIAM).

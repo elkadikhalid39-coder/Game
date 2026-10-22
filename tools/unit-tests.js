@@ -1,6 +1,6 @@
 // Pruebas de las funciones puras (sin navegador). Uso: node tools/unit-tests.js
 import assert from "node:assert/strict";
-import { checkWritten, normalize } from "../src/learn/answers.js";
+import { checkWritten, normalize, diffChars, wordErrors } from "../src/learn/answers.js";
 import { scoreTest, grades } from "../src/exams/pce-score.js";
 
 const cases = [
@@ -35,4 +35,15 @@ assert.deepEqual(extra.marks.slice(6), ["ignored", "ignored"]);
 assert.equal(scoreTest(H, qs, [1, 1, 1, null, null, null, null, null]).score, 0);
 // Nota: 0,6 · 8 + 0,4 · 7 = 7,6; admisión con 9 · 0,2 y 8 · 0,1 (la tercera materia no cuenta).
 assert.deepEqual(grades(8, [7], [[9, 0.2], [8, 0.1], [5, 0.1]]), { access: 7.6, admission: 10.2 });
-console.log(`OK pruebas unitarias: ${cases.length + 6}`);
+
+// Dictado: fallos marcados letra a letra.
+const flat = (segs) => segs.map((x) => `${x.k}:${x.t}`).join("|");
+assert.equal(flat(diffChars("hola", "Hola").given), "ok:hola");
+assert.equal(flat(diffChars("adios", "Adiós").want), "ok:Adi|miss:ó|ok:s");
+assert.equal(flat(diffChars("adios", "Adiós").given), "ok:adi|bad:o|ok:s");
+assert.equal(flat(diffChars("me llamo ana", "Me llamo Ana.").want), "ok:Me llamo Ana|soft:.");
+assert.equal(wordErrors("me llamo ana", "Me llamo Ana."), 0);
+assert.equal(wordErrors("me yamo ana", "Me llamo Ana."), 1);
+assert.equal(wordErrors("me llamo", "Me llamo Ana."), 1);
+assert.equal(wordErrors("tengo dos hijo", "Tengo dos hijos."), 1);
+console.log(`OK pruebas unitarias: ${cases.length + 14}`);

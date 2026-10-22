@@ -19,8 +19,10 @@ const TOURS = [
   ["bienvenida", null, []],
   ["camino", { native: "ar" }, []],
   ["lección", { native: "ar" }, [".current .node"]],
-  ["respuesta incorrecta", { native: "es" }, [".current .node", "?.footer .btn", "?.footer .btn", "?.footer .btn", '.opt[data-ok="0"]']],
+  ["respuesta incorrecta", { native: "fr" }, [".current .node", "?.footer .btn", "?.footer .btn", "?.footer .btn", '.opt[data-ok="0"]']],
   ["perfil", { native: "es" }, ['.tab[data-tab="profile"]']],
+  ["dictado", { native: "ar" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(2)", "?#write-answer", ".write-box .btn"]],
+  ["diccionario", { native: "zh" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(4)"]],
   // Con errores guardados aparece el contador rojo de la pestaña Repasar.
   ["repasar", { native: "es", mistakes: [{ k: "w", id: "hola" }] }, ['.tab[data-tab="review"]']],
   ["exámenes", { native: "ur" }, ['.tab[data-tab="exams"]']],

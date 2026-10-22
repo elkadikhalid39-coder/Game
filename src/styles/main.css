@@ -432,6 +432,32 @@ h2.section { margin: 18px 0 10px; }
 .calc-row input { width: 6.5em; }
 .calc-out { display: grid; gap: 6px; }
 
+/* ---------- Escribir y dictado ---------- */
+.write-box { display: grid; gap: 8px; }
+.write-box .btn { margin-top: 4px; }
+.write-box .link { justify-self: center; }
+.hint-mask { margin: 0; text-align: center; font-size: 1.3rem; font-weight: 700; letter-spacing: .08em; color: var(--sky-dark); }
+.prompt-word { display: grid; justify-items: center; gap: 4px; margin: 8px 0 14px; }
+.midemoji { font-size: 2.6rem; line-height: 1; }
+.sheet-extra { display: grid; gap: 6px; }
+.sheet-meaning { margin: 0; font-size: 1.05rem; font-weight: 600; }
+.diff { display: grid; gap: 4px; background: var(--paper); border: 2px solid var(--line); border-radius: 14px; padding: 8px 12px; color: var(--ink); }
+.diff-line { margin: 0; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.diff-label { flex: none; min-width: 4.5em; color: var(--ink-soft); font-size: .85rem; font-weight: 700; }
+.diff-text { font-size: 1.15rem; font-weight: 600; overflow-wrap: anywhere; }
+/* Letra de más o distinta: tachada en rojo. Letra que faltaba: subrayada en verde. */
+mark.diff-bad { background: var(--coral-soft); color: var(--coral-text); text-decoration: line-through; border-radius: 4px; }
+mark.diff-miss { background: var(--mint-soft); color: var(--mint-text); text-decoration: underline 3px; text-underline-offset: 3px; border-radius: 4px; }
+
+/* Diccionario */
+.search { width: 100%; font: inherit; font-size: 1.05rem; padding: 12px 14px; min-height: 48px; border-radius: 14px; border: 2px solid var(--line); background: var(--paper); color: var(--ink); margin-bottom: 8px; }
+.dict-list { display: grid; gap: 8px; }
+.dict-list h2 { margin-top: 12px; }
+.dict-row { display: flex; align-items: center; gap: 10px; background: var(--paper); border: 2px solid var(--line); border-radius: 14px; padding: 6px 10px; }
+.dict-emoji { font-size: 1.8rem; flex: none; }
+.dict-words { display: grid; flex: 1; min-width: 0; }
+.dict-words span { color: var(--ink-soft); font-size: .92rem; }
+
 /* ---------- Animaciones ---------- */
 .shake { animation: shake .4s; }
 .pulse { animation: pulse 1s infinite; border-color: var(--mint); box-shadow: 0 4px 0 var(--mint); }

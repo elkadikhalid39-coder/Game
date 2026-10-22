@@ -1,17 +1,20 @@
 // Lección: ejercicios, corrección en panel inferior, salidas sin culpa y segunda oportunidad al final.
-// Tipos de ejercicio:
-//   intro   palabra nueva con dibujo, traducción y audio
-//   see     la palabra en su idioma (o el dibujo) → elegir en español
-//   hear    escuchar en español → elegir el significado
-//   write   escribir la palabra en español (corrección tolerante)
-//   phrase  pregunta en español → elegir la respuesta
-//   order   ordenar las palabras de una respuesta
+// Tipos de ejercicio (nunca se pregunta solo con un dibujo: cada uno se interpreta a su manera):
+//   intro     palabra nueva con dibujo, traducción y audio
+//   pick      la palabra en su idioma → elegir en español
+//   hear      escuchar en español → elegir el significado en su idioma
+//   dictation escuchar en español → escribirla (marca en qué letras está el fallo)
+//   write     la palabra en su idioma → escribirla en español
+//   phrase    pregunta en español → elegir la respuesta
+//   order     escuchar y leer la traducción → ordenar las palabras de la respuesta
+// Quien tiene el español como idioma no tiene traducción que ver: sus ejercicios de palabras son dictados.
 import { ui, tr } from "../core/i18n.js";
 import { save, persist, TARGET as G } from "../core/state.js";
 import { go } from "../core/router.js";
 import { shuffle, pick } from "../core/util.js";
 import { speak, beep } from "../core/audio.js";
 import { el, txt, button, closeButton } from "../ui/dom.js";
+import { writeBox, diffView } from "./write-box.js";
 import { mascot, speech } from "../ui/mascot.js";
 import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { LESSON_TYPES, wordsOf, unitOfWord, unitOfPhrase, unitComplete } from "./course.js";
@@ -30,32 +33,47 @@ function phraseExercise(id, type = "phrase") {
   return { type, id, wrong };
 }
 
+// Las palabras de la unidad se reparten entre las dos primeras lecciones, en orden:
+// cada palabra se presenta antes de preguntarla.
 function makeLesson(unit, li) {
-  const words = shuffle(wordsOf(unit));
+  const all = wordsOf(unit);
+  const half = Math.ceil(all.length / 2);
   const phrases = shuffle(unit.phrases.map((p) => p.id));
-  switch (LESSON_TYPES[li].type) {
-    case "words": {
-      // Tres palabras nuevas: primero se presentan y luego se practican.
-      const fresh = words.slice(0, 3);
-      return [...fresh.flatMap((w) => [{ type: "intro", item: w }, wordExercise(w, "see")]),
-        wordExercise(words[3], "see"), wordExercise(fresh[0], "hear"), wordExercise(fresh[1], "write")];
-    }
-    case "listen":
-      return [...words.slice(0, 6).map((w) => wordExercise(w, "hear")), wordExercise(words[6], "see"), wordExercise(words[7], "write")];
-    case "phrases":
-      return [...phrases.map((id) => phraseExercise(id)), ...phrases.slice(0, 2).map((id) => phraseExercise(id, "order")),
-        wordExercise(words[0], "see"), wordExercise(words[1], "hear")];
-    default: // Práctica final: un poco de todo.
-      return shuffle([...words.slice(0, 3).map((w) => wordExercise(w, "write")), wordExercise(words[3], "hear"), wordExercise(words[4], "hear"),
-        wordExercise(words[5], "see"), ...phrases.map((id) => phraseExercise(id)), phraseExercise(phrases[0], "order"), phraseExercise(phrases[1], "order")]);
+  const type = LESSON_TYPES[li].type;
+  if (type === "words" || type === "listen") {
+    const fresh = type === "words" ? all.slice(0, half) : all.slice(half);
+    // Presentar y reconocer cada palabra; después, escribirlas al dictado y desde su idioma.
+    const first = type === "words" ? "pick" : "hear";
+    return [...fresh.flatMap((w) => [{ type: "intro", item: w }, wordExercise(w, first)]),
+      ...shuffle(fresh).map((w) => wordExercise(w, "dictation")), ...pick(fresh, 2).map((w) => wordExercise(w, "write"))];
   }
+  const words = shuffle(all);
+  if (type === "phrases") {
+    return [...phrases.map((id) => phraseExercise(id)), ...phrases.slice(0, 2).map((id) => phraseExercise(id, "order")),
+      wordExercise(words[0], "dictation"), wordExercise(words[1], "dictation")];
+  }
+  // Práctica final: sobre todo escribir.
+  return shuffle([...words.slice(0, 4).map((w) => wordExercise(w, "dictation")), ...words.slice(4, 6).map((w) => wordExercise(w, "write")),
+    wordExercise(words[6], "hear"), ...phrases.map((id) => phraseExercise(id)), phraseExercise(phrases[0], "order"), phraseExercise(phrases[1], "order")]);
+}
+
+// Ajusta un ejercicio a la persona: sin traducción (idioma español) o con el audio en pausa.
+// Devuelve null si no se puede hacer (se salta sin contar).
+function adapt(ex) {
+  const sameLang = save.native === G;
+  if (sameLang && ["pick", "hear", "write"].includes(ex.type)) ex = { ...ex, type: "dictation" };
+  if (audioPaused()) {
+    if (ex.type === "hear") ex = { ...ex, type: "pick" };
+    if (ex.type === "dictation") ex = sameLang ? null : { ...ex, type: "write" };
+  }
+  return ex;
 }
 
 function makeReview() {
   return pick(save.mistakes, 8).map((m) => {
     if (m.k === "p") return phraseExercise(m.id, Math.random() < 0.5 ? "phrase" : "order");
     const item = wordsOf(unitOfWord(m.id)).find((x) => x.id === m.id);
-    return wordExercise(item, pick(["see", "hear", "write"], 1)[0]);
+    return wordExercise(item, pick(["dictation", "dictation", "write", "hear"], 1)[0]);
   });
 }
 
@@ -90,9 +108,8 @@ function audioButtons(text, cls = "") {
 // ---------- Lección ----------
 function runLesson(s) {
   if (s.i >= s.list.length) return showResult(s);
-  let ex = s.list[s.i];
-  // Con el audio en pausa, los ejercicios de escuchar pasan a ser de leer.
-  if (ex.type === "hear" && audioPaused()) ex = { ...ex, type: "see" };
+  const ex = adapt(s.list[s.i]);
+  if (!ex) { s.i++; return runLesson(s); }
   const N = save.native;
   screen("lesson");
 
@@ -123,7 +140,8 @@ function runLesson(s) {
   let answered = false;
   const area = el("div", "exercise");
   // ok: acierto; solution: texto correcto en español; note: aviso (tilde o errata) cuando se acepta con un matiz.
-  const answer = (ok, solution, { btn, note } = {}) => {
+  // written: lo que escribió la persona, para marcar en qué letras está el fallo.
+  const answer = (ok, solution, { btn, note, written } = {}) => {
     if (answered) return;
     answered = true;
     beep(ok);
@@ -143,7 +161,12 @@ function runLesson(s) {
     say(solution);
     const title = ok ? ui("great") : ui("answer") + ":";
     const detail = ok ? (note ? ui(note === "accent" ? "noteAccent" : "noteTypo", solution) : "") : solution;
-    sheet(ok, title, detail, note ? N : G, next, audioButtons(solution));
+    const extra = el("div", "sheet-extra");
+    if (written !== undefined && (!ok || note)) extra.append(diffView(written, solution));
+    // Al corregir una palabra se ve también su dibujo y su significado.
+    if (ex.item) extra.append(txt("p", "sheet-meaning", ex.item.emoji + (N !== G ? " " + tr(ex.item.id, N) : ""), N));
+    extra.append(audioButtons(solution));
+    sheet(ok, title, detail, note ? N : G, next, extra);
   };
   const addOption = (parent, label, lang, isOk, solution) => {
     const b = txt("button", "opt", label, lang);
@@ -153,10 +176,12 @@ function runLesson(s) {
     parent.append(b);
   };
 
-  if (ex.type === "see") {
-    // La palabra en el idioma de la persona (o el dibujo si es el mismo idioma); se elige en español.
+  if (ex.type === "pick") {
+    // La palabra en su idioma (con el dibujo de apoyo) → elegir en español.
     app.append(speech(ui("howSay"), "talk"));
-    area.append(N === G ? el("div", "bigemoji", ex.item.emoji) : txt("div", "bigword", tr(ex.item.id, N), N));
+    const prompt = el("div", "prompt-word");
+    prompt.append(el("span", "midemoji", ex.item.emoji), txt("span", "bigword", tr(ex.item.id, N), N));
+    area.append(prompt);
     const opts = el("div", "options two");
     for (const o of ex.options) addOption(opts, tr(o.id, G), G, o === ex.item, tr(ex.item.id, G));
     area.append(opts);
@@ -172,37 +197,49 @@ function runLesson(s) {
     big.append(normal, slow);
     area.append(big);
     const opts = el("div", "options two");
-    for (const o of ex.options) addOption(opts, N === G ? o.emoji : tr(o.id, N), N, o === ex.item, word);
+    for (const o of ex.options) addOption(opts, tr(o.id, N), N, o === ex.item, word);
     area.append(opts);
     say(word);
-  } else if (ex.type === "write") {
+  } else if (ex.type === "dictation" || ex.type === "write") {
     const word = tr(ex.item.id, G);
-    app.append(speech(ui("writeIt"), "talk"));
-    area.append(el("div", "bigemoji", ex.item.emoji));
-    if (N !== G) area.append(txt("div", "bigword small", tr(ex.item.id, N), N));
-    const input = el("input", "write-input");
-    Object.assign(input, { id: "write-answer", type: "text", autocomplete: "off", autocapitalize: "off", spellcheck: false, lang: "es" });
-    input.setAttribute("aria-label", ui("writeIt"));
-    // Teclas con las letras del español que faltan en muchos teclados.
-    const keys = el("div", "es-keys");
-    for (const k of ["á", "é", "í", "ó", "ú", "ñ", "ü"]) {
-      keys.append(button("key", k, () => { input.setRangeText(k, input.selectionStart, input.selectionEnd, "end"); input.focus(); }));
+    const box = writeBox({
+      hint: word,
+      onCheck: (value) => {
+        const r = checkWritten(value, word);
+        box.input.classList.add(r.ok ? "right" : "wrong");
+        answer(r.ok, word, { note: r.note, written: value });
+      },
+    });
+    box.el.dataset.word = ex.item.id; // para las pruebas automáticas
+    if (ex.type === "dictation") {
+      // Dictado: solo se oye; el dibujo y el significado se ven al corregir.
+      app.append(speech(ui("dictationPrompt"), "talk"));
+      const big = el("div", "listen-pair");
+      const slow = button("listen big slow", "🐢", () => speak(word, G, { slow: true }));
+      slow.setAttribute("aria-label", ui("slow"));
+      const normal = button("listen big", "🔊", () => speak(word, G));
+      normal.setAttribute("aria-label", ui("play"));
+      big.append(normal, slow);
+      area.append(big);
+      say(word);
+    } else {
+      app.append(speech(ui("writeIt"), "talk"));
+      const prompt = el("div", "prompt-word");
+      prompt.append(el("span", "midemoji", ex.item.emoji), txt("span", "bigword", tr(ex.item.id, N), N));
+      area.append(prompt);
     }
-    const check = () => {
-      if (!input.value.trim()) return input.focus();
-      const r = checkWritten(input.value, word);
-      input.disabled = true;
-      input.classList.add(r.ok ? "right" : "wrong");
-      answer(r.ok, word, { note: r.note });
-    };
-    input.onkeydown = (e) => { if (e.key === "Enter") check(); };
-    area.append(input, keys, button("btn", ui("check"), check));
-    setTimeout(() => input.focus(), 50);
+    area.append(box.el);
+    box.focus();
   } else if (ex.type === "order") {
     // Ordenar las palabras de la respuesta (en español) viendo su traducción.
     const sentence = tr("a_" + ex.id, G);
     app.append(speech(ui("orderIt"), "talk"));
-    if (N !== G) area.append(txt("div", "quote plain", tr("a_" + ex.id, N), N));
+    // Se oye la frase (y se lee su traducción si la persona tiene otro idioma).
+    const prompt = el("div", "quote plain");
+    prompt.append(audioButtons(sentence));
+    if (N !== G) prompt.append(txt("span", "", tr("a_" + ex.id, N), N));
+    area.append(prompt);
+    say(sentence);
     const built = el("div", "built");
     built.lang = "es";
     const tray = el("div", "tray");

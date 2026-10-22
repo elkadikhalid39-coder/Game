@@ -45,7 +45,6 @@ async function open(saveData, { url = URL_APP, context } = {}) {
 import { readFileSync } from "node:fs";
 const ES = JSON.parse(readFileSync(new URL("../content/i18n/es.json", import.meta.url), "utf8")).t;
 const UNITS = JSON.parse(readFileSync(new URL("../content/course/units.json", import.meta.url), "utf8"));
-const WORD_BY_EMOJI = Object.fromEntries(UNITS.flatMap((u) => u.words.map((w) => [w.emoji, ES[w.id]])));
 const sortedTokens = (s) => s.split(" ").sort().join(" ");
 
 const progressAt = (unitId, lessons) => {
@@ -57,9 +56,9 @@ const progressAt = (unitId, lessons) => {
 // Responde el ejercicio que haya en pantalla: bien, o mal si wrong = true.
 async function answerCurrent(page, wrong = false) {
   if (await page.$("#write-answer")) {
-    const emoji = await page.innerText(".exercise .bigemoji");
-    await page.fill("#write-answer", wrong ? "xxxxx" : WORD_BY_EMOJI[emoji]);
-    return page.click(".exercise .btn");
+    const id = await page.getAttribute(".write-box", "data-word");
+    await page.fill("#write-answer", wrong ? "xxxxx" : ES[id]);
+    return page.click(".write-box .btn");
   }
   if (await page.$(".tray")) {
     const tiles = await page.$$eval(".tray .tile", (ts) => ts.map((t) => t.textContent));
@@ -86,7 +85,7 @@ test("primera vez (árabe)", async () => {
   const { page, errors } = await open(null);
   await page.click(".welcome ~ .btn");
   await page.click('.lang-row:has(.name[lang="ar"])');
-  return [(await page.$(".node-wrap.current")) && (await page.innerText("#tabbar")).includes("مراجعة"), errors];
+  return [(await page.$(".node-wrap.current")) && (await page.innerText("#tabbar")).includes("تدرّب"), errors];
 });
 
 for (const native of ["ar", "zh", "es"]) {
@@ -102,15 +101,16 @@ for (const native of ["ar", "zh", "es"]) {
 test("error repetido y repaso", async () => {
   const { page, errors } = await open({ native: "fr" });
   await page.click(".node-wrap.current .node");
-  // El 4.º ejercicio es una palabra que no vuelve a salir en la lección (salvo su segunda oportunidad).
-  const notPerfect = (await playLesson(page, 3)) && !(await page.innerText(".result-stats")).includes("100%");
+  // Se falla el último ejercicio (el 10.º): solo vuelve como segunda oportunidad, que no lo saca de Repasar.
+  const notPerfect = (await playLesson(page, 9)) && !(await page.innerText(".result-stats")).includes("100%");
   await page.click(".btn");
   await page.click('.tab[data-tab="review"]');
-  const listed = (await page.$$(".chip-item")).length === 1;
-  await page.click(".btn.big");
+  const mine = ".menu-row:first-child";
+  const listed = !(await page.$eval(mine, (r) => r.classList.contains("locked"))) && (await page.innerText(mine)).includes("1");
+  await page.click(mine);
   await playLesson(page);
   await page.click(".btn");
-  return [notPerfect && listed && !(await page.$(".chip-item")), errors];
+  return [notPerfect && listed && (await page.$eval(mine, (r) => r.classList.contains("locked"))), errors];
 });
 
 test("migración del progreso antiguo", async () => {
@@ -125,7 +125,7 @@ test("perfil y cambio de idioma", async () => {
   await page.click('.tab[data-tab="profile"]');
   await page.click(".setting:first-child");
   await page.click('.lang-row:has(.name[lang="uk"])');
-  return [(await page.innerText("#tabbar")).includes("Повторення"), errors];
+  return [(await page.innerText("#tabbar")).includes("Практика"), errors];
 });
 
 test("funciona sin conexión", async () => {
@@ -135,7 +135,7 @@ test("funciona sin conexión", async () => {
   await page.waitForFunction(() => navigator.serviceWorker.controller);
   await context.setOffline(true);
   await page.reload();
-  const ok = (await page.innerText("#tabbar")).includes("Wiederholen");
+  const ok = (await page.innerText("#tabbar")).includes("Üben");
   const fontsLoaded = await page.evaluate(() => document.fonts.check("600 16px Fredoka"));
   return [ok && fontsLoaded, errors];
 });
@@ -152,13 +152,14 @@ test("escribir sin tilde: se acepta y se avisa", async () => {
   // Lección de escuchar de Salud: termina con un ejercicio de escribir.
   await page.click(".node-wrap.current .node");
   for (let g = 0; g < 30 && !(await page.$("#write-answer")); g++) {
-    if (await page.$(".sheet .btn")) await page.click(".sheet .btn"); else await answerCurrent(page);
+    if (await page.$(".sheet .btn")) await page.click(".sheet .btn");
+    else if (await page.$(".footer .btn")) await page.click(".footer .btn");
+    else await answerCurrent(page);
   }
-  const emoji = await page.innerText(".exercise .bigemoji");
-  const word = WORD_BY_EMOJI[emoji];
+  const word = ES[await page.getAttribute(".write-box", "data-word")];
   const plain = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   await page.fill("#write-answer", plain);
-  await page.click(".exercise .btn");
+  await page.click(".write-box .btn");
   const sheetText = await page.innerText(".sheet");
   // Si la palabra no lleva tilde, basta con que se acepte.
   const ok = (await page.$(".sheet.ok")) && (plain === word || sheetText.includes(word));
@@ -167,10 +168,12 @@ test("escribir sin tilde: se acepta y se avisa", async () => {
 
 test("saltar y pausar el audio", async () => {
   const { page, errors } = await open({ native: "it", progress: { saludos: 1 } });
-  await page.click(".node-wrap.current .node"); // lección de escuchar
+  await page.click(".node-wrap.current .node"); // lección de escuchar: empieza presentando una palabra
+  await page.click(".footer .btn");
   const before = await page.$$eval(".progress > div", (d) => d[0].style.width);
   await page.click('.exits .link:has-text("→")');
   const moved = before !== (await page.$$eval(".progress > div", (d) => d[0].style.width));
+  await page.click(".footer .btn"); // la siguiente palabra se presenta antes de escucharla
   // «No puedo escuchar ahora» convierte los ejercicios de escuchar en ejercicios de leer.
   await page.click('.exits .link:has-text("🔇")');
   const noListen = !(await page.$(".listen-pair")) && !!(await page.$(".paused-note"));
@@ -194,6 +197,40 @@ test("unidades nuevas (Papeleo, escrita en ruso)", async () => {
   await page.click(".node-wrap.current .node");
   const done = await playLesson(page);
   return [done, errors];
+});
+
+// ---------- Practicar: dictado y diccionario ----------
+test("dictado de palabras: todo bien y una con fallo marcado", async () => {
+  const { page, errors } = await open({ native: "fr", progress: { saludos: 1 } });
+  await page.click('.tab[data-tab="review"]');
+  await page.click(".menu-row:nth-child(2)");
+  let marked = false;
+  for (let k = 0; k < 8; k++) {
+    const text = await page.getAttribute(".write-box", "data-text");
+    // La primera se escribe sin la última letra: la corrección debe marcar la letra que falta.
+    await page.fill("#write-answer", k === 0 ? text.slice(0, -1) : text);
+    await page.click(".write-box .btn");
+    if (k === 0) marked = !!(await page.$(".sheet mark.diff-miss"));
+    await page.click(".sheet .btn");
+  }
+  const title = await page.innerText("h1");
+  return [marked && title.includes("7 / 8"), errors];
+});
+
+test("dictado de frases y diccionario", async () => {
+  const { page, errors } = await open({ native: "es" });
+  await page.click('.tab[data-tab="review"]');
+  await page.click(".menu-row:nth-child(3)");
+  const text = await page.getAttribute(".write-box", "data-text");
+  await page.fill("#write-answer", text.toLowerCase().replace(/[¿?¡!.,]/g, ""));
+  await page.click(".write-box .btn");
+  const accepted = !!(await page.$(".sheet.ok"));
+  await page.click(".sheet .btn");
+  await page.click(".lesson-head .icon-btn");
+  await page.click(".menu-row:nth-child(4)");
+  await page.fill("#dict-search", "cafe");
+  const found = (await page.$$(".dict-row")).length === 1 && (await page.innerText(".dict-list")).includes("Café");
+  return [accepted && found, errors];
 });
 
 // ---------- Pase de Nacionalidad ----------
