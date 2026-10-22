@@ -42,9 +42,9 @@
     "noteTypo": "Quase. Escreve-se assim: {x}",
     "orderIt": "Coloque as palavras em ordem",
     "clear": "Apagar",
-    "lessonPractice": "Prática final",
+    "lessonPractice": "Missão final",
     "goal": "Ao terminar, você vai conseguir:",
-    "unitDone": "Unidade concluída! Agora você sabe:",
+    "unitDone": "Missão cumprida! Carimbo conquistado. Agora você sabe:",
     "canDoTitle": "Eu sei…",
     "tabExams": "Exames",
     "examsTitle": "Exames oficiais",
@@ -353,7 +353,12 @@
     "branchScience": "Ciências, saúde ou engenharia",
     "branchSocial": "Ciências sociais ou humanas (direito, economia, educação…)",
     "branchArts": "Artes, imagem ou design",
-    "branchSubjects": "Matérias PCE da sua área segundo a oferta oficial (além das comuns). Cada universidade decide quais matérias contam para cada curso: consulte o site dela."
+    "branchSubjects": "Matérias PCE da sua área segundo a oferta oficial (além das comuns). Cada universidade decide quais matérias contam para cada curso: consulte o site dela.",
+    "barrioTitle": "Seu bairro",
+    "barrioIntro": "Cada lugar é uma situação real. Complete a missão e ganhe o carimbo.",
+    "placeN": "Lugar {x}",
+    "missionLabel": "Missão:",
+    "passport": "Meu passaporte do bairro"
   },
   "t": {
     "hola": "Olá",

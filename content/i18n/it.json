@@ -42,9 +42,9 @@
     "noteTypo": "Quasi. Si scrive: {x}",
     "orderIt": "Metti le parole in ordine",
     "clear": "Cancella",
-    "lessonPractice": "Pratica finale",
+    "lessonPractice": "Missione finale",
     "goal": "Alla fine saprai:",
-    "unitDone": "Unità completata! Ora sai:",
+    "unitDone": "Missione compiuta! Timbro ottenuto. Ora sai:",
     "canDoTitle": "So…",
     "tabExams": "Esami",
     "examsTitle": "Esami ufficiali",
@@ -353,7 +353,12 @@
     "branchScience": "Scienze, salute o ingegneria",
     "branchSocial": "Scienze sociali o umanistiche (giurisprudenza, economia, educazione…)",
     "branchArts": "Arti, immagine o design",
-    "branchSubjects": "Materie PCE del tuo ambito secondo l'offerta ufficiale (oltre a quelle comuni). Quali materie contano lo decide ogni università: consulta il suo sito."
+    "branchSubjects": "Materie PCE del tuo ambito secondo l'offerta ufficiale (oltre a quelle comuni). Quali materie contano lo decide ogni università: consulta il suo sito.",
+    "barrioTitle": "Il tuo quartiere",
+    "barrioIntro": "Ogni luogo è una situazione reale. Completa la missione e prendi il timbro.",
+    "placeN": "Luogo {x}",
+    "missionLabel": "Missione:",
+    "passport": "Il mio passaporto di quartiere"
   },
   "t": {
     "hola": "Ciao",

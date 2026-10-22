@@ -42,9 +42,9 @@
     "noteTypo": "差不多。正确拼写：{x}",
     "orderIt": "把词语排好顺序",
     "clear": "清除",
-    "lessonPractice": "综合练习",
+    "lessonPractice": "最终任务",
     "goal": "学完后你将能够：",
-    "unitDone": "单元完成！你现在会：",
+    "unitDone": "任务完成！获得印章。你现在会：",
     "canDoTitle": "我会…",
     "tabExams": "考试",
     "examsTitle": "官方考试",
@@ -353,7 +353,12 @@
     "branchScience": "理科、医学或工程",
     "branchSocial": "社会科学或人文学科（法律、经济、教育……）",
     "branchArts": "艺术、影像或设计",
-    "branchSubjects": "按官方科目表列出的你所选方向的 PCE 科目（另有通用科目）。每所大学决定各专业计入哪些科目：请查看其网站。"
+    "branchSubjects": "按官方科目表列出的你所选方向的 PCE 科目（另有通用科目）。每所大学决定各专业计入哪些科目：请查看其网站。",
+    "barrioTitle": "你的街区",
+    "barrioIntro": "每个地点都是真实的生活场景。完成任务，就能获得这个地点的印章。",
+    "placeN": "地点 {x}",
+    "missionLabel": "任务：",
+    "passport": "我的街区护照"
   },
   "t": {
     "hola": "你好",

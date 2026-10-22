@@ -42,9 +42,9 @@
     "noteTypo": "Almost. It's spelled: {x}",
     "orderIt": "Put the words in order",
     "clear": "Clear",
-    "lessonPractice": "Final practice",
+    "lessonPractice": "Final mission",
     "goal": "When you finish you'll be able to:",
-    "unitDone": "Unit complete! Now you can:",
+    "unitDone": "Mission complete! Stamp earned. Now you can:",
     "canDoTitle": "I can…",
     "tabExams": "Exams",
     "examsTitle": "Official exams",
@@ -353,7 +353,12 @@
     "branchScience": "Science, health or engineering",
     "branchSocial": "Social sciences or humanities (law, economics, education…)",
     "branchArts": "Arts, image or design",
-    "branchSubjects": "PCE subjects in your field according to the official list (plus the common ones). Each university decides which subjects count for each degree: check its website."
+    "branchSubjects": "PCE subjects in your field according to the official list (plus the common ones). Each university decides which subjects count for each degree: check its website.",
+    "barrioTitle": "Your neighbourhood",
+    "barrioIntro": "Each place is a real situation. Complete its mission and earn its stamp.",
+    "placeN": "Place {x}",
+    "missionLabel": "Mission:",
+    "passport": "My neighbourhood passport"
   },
   "t": {
     "hola": "Hello",

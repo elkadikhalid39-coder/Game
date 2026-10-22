@@ -4,9 +4,9 @@ import "@fontsource/lexend/latin-500.css";
 import "@fontsource/lexend/latin-600.css";
 import "@fontsource/lexend/latin-ext-400.css";
 import "@fontsource/lexend/latin-ext-600.css";
-import "@fontsource/fredoka/latin-500.css";
-import "@fontsource/fredoka/latin-600.css";
-import "@fontsource/fredoka/latin-700.css";
+import "@fontsource/fraunces/latin-600.css";
+import "@fontsource/fraunces/latin-700.css";
+import "@fontsource/fraunces/latin-ext-600.css";
 import "./styles/main.css";
 
 import { I18N } from "./core/i18n.js";

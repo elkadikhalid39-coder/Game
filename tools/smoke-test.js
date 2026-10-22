@@ -204,7 +204,7 @@ test("funciona sin conexión", async () => {
   await context.setOffline(true);
   await page.reload();
   const ok = (await page.innerText("#tabbar")).includes("Üben");
-  const fontsLoaded = await page.evaluate(() => document.fonts.check("600 16px Fredoka"));
+  const fontsLoaded = await page.evaluate(() => document.fonts.check("600 16px Fraunces"));
   return [ok && fontsLoaded, errors];
 });
 

@@ -42,9 +42,9 @@
     "noteTypo": "Aproape. Se scrie: {x}",
     "orderIt": "Pune cuvintele în ordine",
     "clear": "Șterge",
-    "lessonPractice": "Exercițiu final",
+    "lessonPractice": "Misiunea finală",
     "goal": "La final vei putea:",
-    "unitDone": "Unitate terminată! Acum știi:",
+    "unitDone": "Misiune îndeplinită! Ai primit ștampila. Acum știi:",
     "canDoTitle": "Știu să…",
     "tabExams": "Examene",
     "examsTitle": "Examene oficiale",
@@ -353,7 +353,12 @@
     "branchScience": "Științe, sănătate sau inginerie",
     "branchSocial": "Științe sociale sau umaniste (drept, economie, educație…)",
     "branchArts": "Arte, imagine sau design",
-    "branchSubjects": "Materiile PCE din domeniul tău conform ofertei oficiale (pe lângă cele comune). Fiecare universitate decide ce materii contează pentru fiecare specializare: verifică pe site-ul ei."
+    "branchSubjects": "Materiile PCE din domeniul tău conform ofertei oficiale (pe lângă cele comune). Fiecare universitate decide ce materii contează pentru fiecare specializare: verifică pe site-ul ei.",
+    "barrioTitle": "Cartierul tău",
+    "barrioIntro": "Fiecare loc e o situație reală. Termină misiunea și primești ștampila.",
+    "placeN": "Locul {x}",
+    "missionLabel": "Misiune:",
+    "passport": "Pașaportul meu de cartier"
   },
   "t": {
     "hola": "Bună",

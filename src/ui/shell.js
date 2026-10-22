@@ -3,8 +3,8 @@ import { I18N, ui, dirOf } from "../core/i18n.js";
 import { save } from "../core/state.js";
 import { stopAudio } from "../core/audio.js";
 import { go } from "../core/router.js";
-import { pick, rand } from "../core/util.js";
 import { el, txt, button } from "./dom.js";
+import { mascot } from "./mascot.js";
 
 export const app = document.getElementById("app");
 const topbar = document.getElementById("topbar");
@@ -85,14 +85,12 @@ export function sheet(ok, title, detail, detailLang, onContinue, extra) {
   next.focus({ preventScroll: true });
 }
 
-// Lluvia de emojis al terminar (se omite en modo calma o con movimiento reducido).
+// Al terminar: un sello que se estampa en la pantalla (se omite en modo calma o con movimiento reducido).
 export function celebrate() {
   if (save.calm || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  for (let i = 0; i < 14; i++) {
-    const c = el("span", "confetti", pick(["⭐", "🎉", "✨", "🌟", "🎈"], 1)[0]);
-    c.style.left = rand(5, 95) + "vw";
-    c.style.animationDelay = Math.random() * 0.3 + "s";
-    document.body.append(c);
-    setTimeout(() => c.remove(), 1600);
-  }
+  const s = el("div", "stamp-drop");
+  s.setAttribute("aria-hidden", "true");
+  s.append(mascot("cheer", 150));
+  document.body.append(s);
+  setTimeout(() => s.remove(), 1300);
 }
