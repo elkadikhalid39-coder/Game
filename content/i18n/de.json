@@ -42,9 +42,9 @@
     "noteTypo": "Fast. Man schreibt: {x}",
     "orderIt": "Bring die Wörter in die richtige Reihenfolge",
     "clear": "Löschen",
-    "lessonPractice": "Abschlussmission",
+    "lessonPractice": "Abschlussübung",
     "goal": "Am Ende kannst du:",
-    "unitDone": "Mission erfüllt! Stempel erhalten. Jetzt kannst du:",
+    "unitDone": "Einheit geschafft! Jetzt kannst du:",
     "canDoTitle": "Ich kann…",
     "tabExams": "Prüfungen",
     "examsTitle": "Offizielle Prüfungen",
@@ -353,12 +353,7 @@
     "branchScience": "Naturwissenschaften, Gesundheit oder Technik",
     "branchSocial": "Sozial- oder Geisteswissenschaften (Jura, Wirtschaft, Pädagogik…)",
     "branchArts": "Kunst, Bild oder Design",
-    "branchSubjects": "PCE-Fächer deiner Fachrichtung laut offiziellem Angebot (zusätzlich zu den gemeinsamen). Welche Fächer zählen, entscheidet jede Universität: sieh auf ihrer Website nach.",
-    "barrioTitle": "Dein Viertel",
-    "barrioIntro": "Jeder Ort ist eine echte Situation. Erfülle die Mission und hol dir den Stempel.",
-    "placeN": "Ort {x}",
-    "missionLabel": "Mission:",
-    "passport": "Mein Viertel-Pass"
+    "branchSubjects": "PCE-Fächer deiner Fachrichtung laut offiziellem Angebot (zusätzlich zu den gemeinsamen). Welche Fächer zählen, entscheidet jede Universität: sieh auf ihrer Website nach."
   },
   "t": {
     "hola": "Hallo",

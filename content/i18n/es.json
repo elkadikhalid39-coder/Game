@@ -42,9 +42,9 @@
     "noteTypo": "Casi. Se escribe: {x}",
     "orderIt": "Ordena las palabras",
     "clear": "Borrar",
-    "lessonPractice": "Misión final",
+    "lessonPractice": "Práctica final",
     "goal": "Al terminar podrás:",
-    "unitDone": "¡Misión cumplida! Sello conseguido. Ya sabes:",
+    "unitDone": "¡Unidad completada! Ya sabes:",
     "canDoTitle": "Ya sé…",
     "tabExams": "Exámenes",
     "examsTitle": "Exámenes oficiales",
@@ -353,12 +353,7 @@
     "branchScience": "Ciencias, salud o ingeniería",
     "branchSocial": "Ciencias sociales o humanidades (derecho, economía, educación…)",
     "branchArts": "Artes, imagen o diseño",
-    "branchSubjects": "Materias PCE de tu rama según la oferta oficial (además de las comunes a todas). Qué materias pondera tu carrera lo decide cada universidad: consúltalo en su web.",
-    "barrioTitle": "Tu barrio",
-    "barrioIntro": "Cada lugar es una situación real. Completa su misión y llévate su sello.",
-    "placeN": "Lugar {x}",
-    "missionLabel": "Misión:",
-    "passport": "Mi pasaporte del barrio"
+    "branchSubjects": "Materias PCE de tu rama según la oferta oficial (además de las comunes a todas). Qué materias pondera tu carrera lo decide cada universidad: consúltalo en su web."
   },
   "t": {
     "hola": "Hola",

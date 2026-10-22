@@ -30,14 +30,7 @@ function showProfile() {
     const li = txt("li", unitComplete(u) ? "done" : "", (unitComplete(u) ? "✓ " : "○ ") + tr("c_" + u.id, save.native), save.native);
     goals.append(li);
   }
-  // Pasaporte del barrio: un sello por cada lugar con la misión cumplida; los demás, en blanco.
-  const passport = el("div", "passport");
-  for (const u of UNITS) {
-    const slot = el("div", "passport-slot" + (unitComplete(u) ? " stamped" : ""));
-    slot.append(unitComplete(u) ? mascot("cheer", 54) : el("span", "passport-empty", u.emoji), txt("span", "", tr("w_" + u.id, save.native), save.native));
-    passport.append(slot);
-  }
-  app.append(head, grid, el("h2", "section", "🛂 " + ui("passport")), passport, el("h2", "section", "🎯 " + ui("canDoTitle")), goals, el("h2", "section", "⚙️ " + ui("settings")), settingsCard());
+  app.append(head, grid, el("h2", "section", "🎯 " + ui("canDoTitle")), goals, el("h2", "section", "⚙️ " + ui("settings")), settingsCard());
 }
 
 register("profile", showProfile);

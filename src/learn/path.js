@@ -1,59 +1,56 @@
-// Pestaña Aprender: «El barrio». Cada unidad es un lugar (centro de salud, trabajo, ayuntamiento…)
-// con una misión de cuatro pasos. Al terminarla, el lugar recibe su sello en el pasaporte.
+// Pestaña Aprender: el camino de lecciones por unidades, cada una con su objetivo «Ya sé…».
 import { ui, tr } from "../core/i18n.js";
 import { save } from "../core/state.js";
 import { register } from "../core/router.js";
 import { el, txt } from "../ui/dom.js";
-import { mascot } from "../ui/mascot.js";
 import { app, screen, setTab } from "../ui/shell.js";
 import { UNITS, LESSON_TYPES, doneIn, unitComplete } from "./course.js";
 import { startLesson } from "./lesson.js";
 
+// Desplazamiento en zigzag de los nodos dentro de cada unidad.
+const ZIGZAG = [0, 1, 0, -1];
+
 function showPath() {
   setTab("path");
   screen("main");
-  app.append(el("h1", "", ui("barrioTitle")), el("p", "lead center", ui("barrioIntro")));
-  const map = el("div", "barrio");
+  const path = el("div", "path");
   let foundCurrent = false;
   UNITS.forEach((u, n) => {
-    const complete = unitComplete(u);
-    const hasCurrent = !complete && !foundCurrent;
-    const place = el("section", "place" + (complete ? " complete" : "") + (hasCurrent ? " here" : ""));
-    place.style.setProperty("--unit", u.color);
-    // Cabecera: dibujo del lugar, nombre y misión; el sello si ya está completa.
-    const head = el("div", "place-head");
-    const text = el("div", "place-text");
-    text.append(el("span", "place-kicker", ui("placeN", n + 1)), txt("strong", "place-name", tr("w_" + u.id, save.native), save.native),
-      txt("span", "place-goal", ui("missionLabel") + " " + tr("c_" + u.id, save.native), save.native));
-    head.append(el("span", "place-icon", u.emoji), text);
-    if (complete) head.append(mascot("cheer", 58));
-    place.append(head);
-    // Itinerario de la misión: cuatro pasos unidos por una línea.
-    const steps = el("ol", "nodes itinerary");
+    // Cada unidad es un bloque; su cabecera se queda fija arriba mientras se recorre.
+    const block = el("section", "unit-block");
+    const banner = el("div", "unit" + (unitComplete(u) ? " complete" : ""));
+    banner.style.setProperty("--unit", u.color);
+    const text = el("div", "unit-text");
+    text.append(el("span", "unit-kicker", ui("unit") + " " + (n + 1)), txt("strong", "", tr("w_" + u.id, save.native), save.native),
+      txt("span", "unit-goal", (unitComplete(u) ? "✓ " : "🎯 ") + tr("c_" + u.id, save.native), save.native));
+    banner.append(text, el("span", "unit-emoji", u.emoji));
+    block.append(banner);
+    const nodes = el("div", "nodes");
     LESSON_TYPES.forEach((lt, li) => {
       const done = doneIn(u) > li;
       const current = !done && !foundCurrent;
       if (current) foundCurrent = true;
-      // En modo demo, o con nivel «me defiendo» o más, se puede abrir cualquier paso sin haber hecho los anteriores.
+      // En modo demo, o con nivel «me defiendo» o más, se puede abrir cualquier lección sin haber hecho las anteriores.
       const state = done ? "done" : current ? "current" : save.demo || save.level >= 2 ? "open" : "locked";
-      const step = el("li", "node-wrap " + state + (lt.type === "practice" ? " reward" : ""));
+      const node = el("div", "node-wrap " + state + (lt.type === "practice" ? " reward" : ""));
+      node.style.setProperty("--x", ZIGZAG[li] * (n % 2 ? -1 : 1));
       const b = el("button", "node");
       b.type = "button";
-      b.append(el("span", "step-mark", state === "locked" ? "🔒" : done ? "✓" : String(li + 1)));
-      b.append(el("span", "node-label", ui(lt.key)));
+      b.style.setProperty("--unit", u.color);
+      b.append(el("span", "", state === "locked" ? "🔒" : done && lt.type !== "practice" ? "✓" : lt.icon));
       b.setAttribute("aria-label", ui(lt.key) + (state === "locked" ? " 🔒" : ""));
       b.disabled = state === "locked";
       b.onclick = () => startLesson(u, li);
-      step.append(b);
-      if (current) step.append(el("span", "start-tag", ui("start") + " →"));
-      steps.append(step);
+      if (current) node.append(el("span", "start-tag", ui("start")));
+      node.append(b, el("span", "node-label", ui(lt.key)));
+      nodes.append(node);
     });
-    place.append(steps);
-    map.append(place);
+    block.append(nodes);
+    path.append(block);
   });
-  app.append(map);
-  // Baja hasta el lugar donde toca seguir.
-  const current = app.querySelector(".place.here");
+  app.append(path);
+  // Baja hasta la lección que toca (después de que el navegador coloque la página).
+  const current = app.querySelector(".node-wrap.current");
   if (current) requestAnimationFrame(() => current.scrollIntoView({ block: "center" }));
 }
 

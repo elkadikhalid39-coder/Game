@@ -1,548 +1,163 @@
 [
   {
-    "id": "saludos",
-    "emoji": "👋",
-    "color": "#b4441f",
+    "id": "saludos", "emoji": "👋", "color": "#c2410c",
     "words": [
-      {
-        "id": "hola",
-        "emoji": "👋"
-      },
-      {
-        "id": "adios"
-      },
-      {
-        "id": "gracias"
-      },
-      {
-        "id": "porfavor"
-      },
-      {
-        "id": "si",
-        "emoji": "✅"
-      },
-      {
-        "id": "no",
-        "emoji": "❌"
-      },
-      {
-        "id": "perdon"
-      },
-      {
-        "id": "buenasnoches",
-        "emoji": "🌙"
-      }
+      {"id":"hola","emoji":"👋"},
+      {"id":"adios"},
+      {"id":"gracias"},
+      {"id":"porfavor"},
+      {"id":"si","emoji":"✅"},
+      {"id":"no","emoji":"❌"},
+      {"id":"perdon"},
+      {"id":"buenasnoches","emoji":"🌙"}
     ],
     "phrases": [
-      {
-        "id": "nombre",
-        "wrong": [
-          "edad",
-          "donde",
-          "hijos"
-        ]
-      },
-      {
-        "id": "estar",
-        "wrong": [
-          "nombre",
-          "precio",
-          "donde"
-        ]
-      },
-      {
-        "id": "origen",
-        "wrong": [
-          "hambre",
-          "quien",
-          "precio"
-        ]
-      }
+      {"id":"nombre","wrong":["edad","donde","hijos"]},
+      {"id":"estar","wrong":["nombre","precio","donde"]},
+      {"id":"origen","wrong":["hambre","quien","precio"]}
     ]
   },
   {
-    "id": "numeros",
-    "emoji": "🔢",
-    "color": "#1f5f66",
+    "id": "numeros", "emoji": "🔢", "color": "#1f6fd1",
     "words": [
-      {
-        "id": "n1",
-        "emoji": "1️⃣"
-      },
-      {
-        "id": "n2",
-        "emoji": "2️⃣"
-      },
-      {
-        "id": "n3",
-        "emoji": "3️⃣"
-      },
-      {
-        "id": "n4",
-        "emoji": "4️⃣"
-      },
-      {
-        "id": "n5",
-        "emoji": "5️⃣"
-      },
-      {
-        "id": "n6",
-        "emoji": "6️⃣"
-      },
-      {
-        "id": "n7",
-        "emoji": "7️⃣"
-      },
-      {
-        "id": "n8",
-        "emoji": "8️⃣"
-      },
-      {
-        "id": "n9",
-        "emoji": "9️⃣"
-      },
-      {
-        "id": "n10",
-        "emoji": "🔟"
-      }
+      {"id":"n1","emoji":"1️⃣"},
+      {"id":"n2","emoji":"2️⃣"},
+      {"id":"n3","emoji":"3️⃣"},
+      {"id":"n4","emoji":"4️⃣"},
+      {"id":"n5","emoji":"5️⃣"},
+      {"id":"n6","emoji":"6️⃣"},
+      {"id":"n7","emoji":"7️⃣"},
+      {"id":"n8","emoji":"8️⃣"},
+      {"id":"n9","emoji":"9️⃣"},
+      {"id":"n10","emoji":"🔟"}
     ],
     "phrases": [
-      {
-        "id": "precio",
-        "wrong": [
-          "estar",
-          "quien",
-          "origen"
-        ]
-      },
-      {
-        "id": "edad",
-        "wrong": [
-          "origen",
-          "donde",
-          "estar"
-        ]
-      }
+      {"id":"precio","wrong":["estar","quien","origen"]},
+      {"id":"edad","wrong":["origen","donde","estar"]}
     ]
   },
   {
-    "id": "comida",
-    "emoji": "🍞",
-    "color": "#5f7a2e",
+    "id": "comida", "emoji": "🍞", "color": "#0b7a5a",
     "words": [
-      {
-        "id": "pan",
-        "emoji": "🍞"
-      },
-      {
-        "id": "agua",
-        "emoji": "💧"
-      },
-      {
-        "id": "leche",
-        "emoji": "🥛"
-      },
-      {
-        "id": "manzana",
-        "emoji": "🍎"
-      },
-      {
-        "id": "arroz",
-        "emoji": "🍚"
-      },
-      {
-        "id": "pollo",
-        "emoji": "🍗"
-      },
-      {
-        "id": "huevo",
-        "emoji": "🥚"
-      },
-      {
-        "id": "queso",
-        "emoji": "🧀"
-      },
-      {
-        "id": "pescado",
-        "emoji": "🐟"
-      },
-      {
-        "id": "cafe",
-        "emoji": "☕"
-      }
+      {"id":"pan","emoji":"🍞"},
+      {"id":"agua","emoji":"💧"},
+      {"id":"leche","emoji":"🥛"},
+      {"id":"manzana","emoji":"🍎"},
+      {"id":"arroz","emoji":"🍚"},
+      {"id":"pollo","emoji":"🍗"},
+      {"id":"huevo","emoji":"🥚"},
+      {"id":"queso","emoji":"🧀"},
+      {"id":"pescado","emoji":"🐟"},
+      {"id":"cafe","emoji":"☕"}
     ],
     "phrases": [
-      {
-        "id": "querer",
-        "wrong": [
-          "edad",
-          "hijos",
-          "origen"
-        ]
-      },
-      {
-        "id": "hambre",
-        "wrong": [
-          "origen",
-          "precio",
-          "quien"
-        ]
-      }
+      {"id":"querer","wrong":["edad","hijos","origen"]},
+      {"id":"hambre","wrong":["origen","precio","quien"]}
     ]
   },
   {
-    "id": "familia",
-    "emoji": "👨‍👩‍👧",
-    "color": "#7d3c5a",
+    "id": "familia", "emoji": "👨‍👩‍👧", "color": "#c2255c",
     "words": [
-      {
-        "id": "madre",
-        "emoji": "👩"
-      },
-      {
-        "id": "padre",
-        "emoji": "👨"
-      },
-      {
-        "id": "hijo",
-        "emoji": "👦"
-      },
-      {
-        "id": "hija",
-        "emoji": "👧"
-      },
-      {
-        "id": "bebe",
-        "emoji": "👶"
-      },
-      {
-        "id": "abuela",
-        "emoji": "👵"
-      },
-      {
-        "id": "abuelo",
-        "emoji": "👴"
-      },
-      {
-        "id": "familia",
-        "emoji": "👨‍👩‍👧‍👦"
-      }
+      {"id":"madre","emoji":"👩"},
+      {"id":"padre","emoji":"👨"},
+      {"id":"hijo","emoji":"👦"},
+      {"id":"hija","emoji":"👧"},
+      {"id":"bebe","emoji":"👶"},
+      {"id":"abuela","emoji":"👵"},
+      {"id":"abuelo","emoji":"👴"},
+      {"id":"familia","emoji":"👨‍👩‍👧‍👦"}
     ],
     "phrases": [
-      {
-        "id": "hijos",
-        "wrong": [
-          "donde",
-          "precio",
-          "nombre"
-        ]
-      },
-      {
-        "id": "quien",
-        "wrong": [
-          "precio",
-          "edad",
-          "donde"
-        ]
-      }
+      {"id":"hijos","wrong":["donde","precio","nombre"]},
+      {"id":"quien","wrong":["precio","edad","donde"]}
     ]
   },
   {
-    "id": "ciudad",
-    "emoji": "🏙️",
-    "color": "#a8741a",
+    "id": "ciudad", "emoji": "🏙️", "color": "#7048e8",
     "words": [
-      {
-        "id": "casa",
-        "emoji": "🏠"
-      },
-      {
-        "id": "escuela",
-        "emoji": "🏫"
-      },
-      {
-        "id": "hospital",
-        "emoji": "🏥"
-      },
-      {
-        "id": "autobus",
-        "emoji": "🚌"
-      },
-      {
-        "id": "tienda",
-        "emoji": "🏪"
-      },
-      {
-        "id": "trabajo",
-        "emoji": "💼"
-      },
-      {
-        "id": "dinero",
-        "emoji": "💶"
-      },
-      {
-        "id": "telefono",
-        "emoji": "📱"
-      }
+      {"id":"casa","emoji":"🏠"},
+      {"id":"escuela","emoji":"🏫"},
+      {"id":"hospital","emoji":"🏥"},
+      {"id":"autobus","emoji":"🚌"},
+      {"id":"tienda","emoji":"🏪"},
+      {"id":"trabajo","emoji":"💼"},
+      {"id":"dinero","emoji":"💶"},
+      {"id":"telefono","emoji":"📱"}
     ],
     "phrases": [
-      {
-        "id": "donde",
-        "wrong": [
-          "nombre",
-          "hambre",
-          "edad"
-        ]
-      },
-      {
-        "id": "ayuda",
-        "wrong": [
-          "precio",
-          "quien",
-          "nombre"
-        ]
-      }
+      {"id":"donde","wrong":["nombre","hambre","edad"]},
+      {"id":"ayuda","wrong":["precio","quien","nombre"]}
     ]
   },
   {
-    "id": "salud",
-    "emoji": "🩺",
-    "color": "#8f3519",
+    "id": "salud", "emoji": "🩺", "color": "#c92a2a",
     "words": [
-      {
-        "id": "medico",
-        "emoji": "🧑‍⚕️"
-      },
-      {
-        "id": "medicina",
-        "emoji": "💊"
-      },
-      {
-        "id": "dolor",
-        "emoji": "🤕"
-      },
-      {
-        "id": "fiebre",
-        "emoji": "🤒"
-      },
-      {
-        "id": "ambulancia",
-        "emoji": "🚑"
-      },
-      {
-        "id": "policia",
-        "emoji": "👮"
-      },
-      {
-        "id": "ayuda",
-        "emoji": "🆘"
-      },
-      {
-        "id": "farmacia"
-      }
+      {"id":"medico","emoji":"🧑‍⚕️"},
+      {"id":"medicina","emoji":"💊"},
+      {"id":"dolor","emoji":"🤕"},
+      {"id":"fiebre","emoji":"🤒"},
+      {"id":"ambulancia","emoji":"🚑"},
+      {"id":"policia","emoji":"👮"},
+      {"id":"ayuda","emoji":"🆘"},
+      {"id":"farmacia"}
     ],
     "phrases": [
-      {
-        "id": "pasa",
-        "wrong": [
-          "precio",
-          "nombre",
-          "donde"
-        ]
-      },
-      {
-        "id": "emerg",
-        "wrong": [
-          "precio",
-          "estar",
-          "nombre"
-        ]
-      }
+      {"id":"pasa","wrong":["precio","nombre","donde"]},
+      {"id":"emerg","wrong":["precio","estar","nombre"]}
     ]
   },
   {
-    "id": "trabajo",
-    "emoji": "💼",
-    "color": "#2a6f86",
+    "id": "trabajo", "emoji": "💼", "color": "#0b7285",
     "words": [
-      {
-        "id": "contrato"
-      },
-      {
-        "id": "nomina"
-      },
-      {
-        "id": "horario"
-      },
-      {
-        "id": "jefe"
-      },
-      {
-        "id": "empresa",
-        "emoji": "🏢"
-      },
-      {
-        "id": "curriculum"
-      },
-      {
-        "id": "entrevista"
-      },
-      {
-        "id": "vacaciones",
-        "emoji": "🏖️"
-      }
+      {"id":"contrato"},
+      {"id":"nomina"},
+      {"id":"horario"},
+      {"id":"jefe"},
+      {"id":"empresa","emoji":"🏢"},
+      {"id":"curriculum"},
+      {"id":"entrevista"},
+      {"id":"vacaciones","emoji":"🏖️"}
     ],
     "phrases": [
-      {
-        "id": "trabajas",
-        "wrong": [
-          "edad",
-          "alquiler",
-          "firma"
-        ]
-      },
-      {
-        "id": "horario",
-        "wrong": [
-          "nombre",
-          "habitaciones",
-          "documentos"
-        ]
-      },
-      {
-        "id": "experiencia",
-        "wrong": [
-          "donde",
-          "averia",
-          "cita"
-        ]
-      }
+      {"id":"trabajas","wrong":["edad","alquiler","firma"]},
+      {"id":"horario","wrong":["nombre","habitaciones","documentos"]},
+      {"id":"experiencia","wrong":["donde","averia","cita"]}
     ]
   },
   {
-    "id": "vivienda",
-    "emoji": "🏠",
-    "color": "#7a5c3e",
+    "id": "vivienda", "emoji": "🏠", "color": "#9c4f00",
     "words": [
-      {
-        "id": "alquiler"
-      },
-      {
-        "id": "llave",
-        "emoji": "🔑"
-      },
-      {
-        "id": "habitacion",
-        "emoji": "🛏️"
-      },
-      {
-        "id": "cocina",
-        "emoji": "🍳"
-      },
-      {
-        "id": "bano",
-        "emoji": "🛁"
-      },
-      {
-        "id": "vecino"
-      },
-      {
-        "id": "luz",
-        "emoji": "💡"
-      },
-      {
-        "id": "calefaccion",
-        "emoji": "🔥"
-      }
+      {"id":"alquiler"},
+      {"id":"llave","emoji":"🔑"},
+      {"id":"habitacion","emoji":"🛏️"},
+      {"id":"cocina","emoji":"🍳"},
+      {"id":"bano","emoji":"🛁"},
+      {"id":"vecino"},
+      {"id":"luz","emoji":"💡"},
+      {"id":"calefaccion","emoji":"🔥"}
     ],
     "phrases": [
-      {
-        "id": "alquiler",
-        "wrong": [
-          "trabajas",
-          "estar",
-          "firma"
-        ]
-      },
-      {
-        "id": "averia",
-        "wrong": [
-          "nombre",
-          "experiencia",
-          "precio"
-        ]
-      },
-      {
-        "id": "habitaciones",
-        "wrong": [
-          "horario",
-          "origen",
-          "firma"
-        ]
-      }
+      {"id":"alquiler","wrong":["trabajas","estar","firma"]},
+      {"id":"averia","wrong":["nombre","experiencia","precio"]},
+      {"id":"habitaciones","wrong":["horario","origen","firma"]}
     ]
   },
   {
-    "id": "papeleo",
-    "emoji": "📋",
-    "color": "#475a7a",
+    "id": "papeleo", "emoji": "📋", "color": "#364fc7",
     "words": [
-      {
-        "id": "cita",
-        "emoji": "📅"
-      },
-      {
-        "id": "padron"
-      },
-      {
-        "id": "formulario",
-        "emoji": "📋"
-      },
-      {
-        "id": "firma",
-        "emoji": "✍️"
-      },
-      {
-        "id": "pasaporte",
-        "emoji": "🛂"
-      },
-      {
-        "id": "documento",
-        "emoji": "🪪"
-      },
-      {
-        "id": "ayuntamiento",
-        "emoji": "🏛️"
-      },
-      {
-        "id": "fotocopia"
-      }
+      {"id":"cita","emoji":"📅"},
+      {"id":"padron"},
+      {"id":"formulario","emoji":"📋"},
+      {"id":"firma","emoji":"✍️"},
+      {"id":"pasaporte","emoji":"🛂"},
+      {"id":"documento","emoji":"🪪"},
+      {"id":"ayuntamiento","emoji":"🏛️"},
+      {"id":"fotocopia"}
     ],
     "phrases": [
-      {
-        "id": "cita",
-        "wrong": [
-          "alquiler",
-          "origen",
-          "averia"
-        ]
-      },
-      {
-        "id": "documentos",
-        "wrong": [
-          "trabajas",
-          "hambre",
-          "horario"
-        ]
-      },
-      {
-        "id": "firma",
-        "wrong": [
-          "averia",
-          "edad",
-          "experiencia"
-        ]
-      }
+      {"id":"cita","wrong":["alquiler","origen","averia"]},
+      {"id":"documentos","wrong":["trabajas","hambre","horario"]},
+      {"id":"firma","wrong":["averia","edad","experiencia"]}
     ]
   }
 ]
