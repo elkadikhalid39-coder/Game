@@ -383,7 +383,8 @@
     "composeLines": "4 أسطر على الأقل",
     "composeUses": "استخدم «{x}»",
     "composeMissing": "ينقصك بند من القائمة.",
-    "composeModel": "مثال"
+    "composeModel": "مثال",
+    "practiceVersion": "نسخة للتدريب: في الامتحان تكون الخيارات صورًا، وهنا أيقونات مع نص."
   },
   "t": {
     "hola": "مرحبا",

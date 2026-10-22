@@ -382,7 +382,8 @@
     "composeLines": "至少4行",
     "composeUses": "用上«{x}»",
     "composeMissing": "清单上还有一项没完成。",
-    "composeModel": "范例"
+    "composeModel": "范例",
+    "practiceVersion": "练习版：考试中的选项是照片，这里用图标加文字。"
   },
   "t": {
     "hola": "你好",

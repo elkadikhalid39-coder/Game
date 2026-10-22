@@ -382,7 +382,8 @@
     "composeLines": "Cel puțin 4 rânduri",
     "composeUses": "Folosește «{x}»",
     "composeMissing": "Îți lipsește un punct din listă.",
-    "composeModel": "Un exemplu"
+    "composeModel": "Un exemplu",
+    "practiceVersion": "Versiune de exersare: la examen opțiunile sunt fotografii; aici, pictograme cu text."
   },
   "t": {
     "hola": "Bună",

@@ -81,7 +81,12 @@ h2 { font-size: 1.2rem; font-weight: 600; margin: 0 0 10px; }
 }
 .tab .icon { font-size: 1.5rem; }
 /* Etiquetas largas (alemán, ruso, árabe…): parten línea en vez de desbordar la barra. */
-.tab > span:last-child { text-align: center; line-height: 1.15; overflow-wrap: anywhere; hyphens: auto; }
+.tab > span:last-child { text-align: center; line-height: 1.15; overflow-wrap: break-word; hyphens: auto; }
+/* En móviles estrechos, menos márgenes y letra algo menor para que «Prüfungen» o «Экзамены» quepan enteras. */
+@media (max-width: 420px) {
+  #tabbar { gap: 2px; padding-inline: max(8px, env(safe-area-inset-left, 0px)) max(8px, env(safe-area-inset-right, 0px)); }
+  .tab { padding: 6px 2px; font-size: .75rem; }
+}
 .tab.active { color: var(--sky-dark); background: var(--sky-soft); border-color: #b9d6fb; }
 .badge {
   position: absolute; top: 2px; inset-inline-end: 22%; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px;

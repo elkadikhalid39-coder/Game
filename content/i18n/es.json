@@ -382,7 +382,8 @@
     "composeLines": "Al menos 4 líneas",
     "composeUses": "Usa «{x}»",
     "composeMissing": "Te falta un punto de la lista.",
-    "composeModel": "Un ejemplo"
+    "composeModel": "Un ejemplo",
+    "practiceVersion": "Versión de práctica: en el examen las opciones son fotos; aquí, iconos con texto."
   },
   "t": {
     "hola": "Hola",

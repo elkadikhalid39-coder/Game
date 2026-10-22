@@ -382,7 +382,8 @@
     "composeLines": "Mindestens 4 Zeilen",
     "composeUses": "Verwende «{x}»",
     "composeMissing": "Ein Punkt der Liste fehlt.",
-    "composeModel": "Ein Beispiel"
+    "composeModel": "Ein Beispiel",
+    "practiceVersion": "Übungsversion: In der Prüfung sind die Optionen Fotos; hier Symbole mit Text."
   },
   "t": {
     "hola": "Hallo",

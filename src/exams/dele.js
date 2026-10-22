@@ -143,7 +143,10 @@ function comprehension(part, data, title, renderTask, solutions) {
     app.replaceChildren(shell.head);
     window.scrollTo(0, 0);
     const t = data.tasks[i];
-    app.append(el("h2", "section", `${t.title} · ${i + 1} / ${data.tasks.length}`), el("p", "instructions", t.instructions), ...renderTask(t, answers));
+    app.append(el("h2", "section", `${t.title} · ${i + 1} / ${data.tasks.length}`), el("p", "instructions", t.instructions));
+    // Opciones con iconos en lugar de las fotos del examen: se avisa de que es una versión de práctica.
+    if (t.items?.some((it) => it.options?.some((o) => /\p{Extended_Pictographic}/u.test(o)))) app.append(el("p", "notice draft", ui("practiceVersion")));
+    app.append(...renderTask(t, answers));
     const nav = el("div", "exam-nav");
     nav.append(button("btn ghost-dark", "← " + ui("prev"), () => { if (i > 0) { i--; render(); } }));
     nav.append(i < data.tasks.length - 1 ? button("btn", ui("next") + " →", () => { i++; render(); }) : button("btn", ui("finish"), finish));

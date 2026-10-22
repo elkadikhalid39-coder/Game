@@ -383,7 +383,8 @@
     "composeLines": "کم از کم 4 سطریں",
     "composeUses": "«{x}» استعمال کریں",
     "composeMissing": "فہرست کا ایک نکتہ رہ گیا ہے۔",
-    "composeModel": "ایک مثال"
+    "composeModel": "ایک مثال",
+    "practiceVersion": "مشق کا ورژن: امتحان میں اختیارات تصویریں ہوتے ہیں؛ یہاں آئیکن اور متن۔"
   },
   "t": {
     "hola": "سلام",
