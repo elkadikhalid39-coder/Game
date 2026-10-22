@@ -82,5 +82,27 @@ for (const t of pce.writing.texts) {
   if (lines(t.model) < 20 || lines(t.model) > 25) errors.push(`pce «${t.title}»: el texto argumentativo modelo tiene ${lines(t.model).toFixed(1)} líneas`);
 }
 
+// ---------- Conducir (DGT) ----------
+const dgt = load("conducir.json");
+const dgtFacts = new Set(JSON.parse(readFileSync(new URL("../content/facts/conducir.json", import.meta.url), "utf8")).map((f) => f.id));
+const dgtIds = new Set();
+for (const q of dgt.questions) {
+  const w = `conducir ${q.id}`;
+  if (dgtIds.has(q.id)) errors.push(`${w}: id repetido`);
+  dgtIds.add(q.id);
+  if (q.options.length !== 3 || new Set(q.options).size !== 3) errors.push(`${w}: debe tener 3 opciones distintas`);
+  if (!(q.answer >= 0 && q.answer < 3)) errors.push(`${w}: respuesta fuera de rango`);
+  if (!q.explain || !dgtFacts.has(q.fact)) errors.push(`${w}: falta la explicación o el dato oficial «${q.fact}»`);
+  if (!STATUS.includes(q.status)) errors.push(`${w}: estado no válido`);
+}
+for (const t of dgt.topics) {
+  if (dgt.questions.filter((q) => q.topic === t.id).length < 3) errors.push(`conducir ${t.id}: el simulacro necesita al menos 3 preguntas del tema`);
+  for (const f of t.study) if (!dgtFacts.has(f)) errors.push(`conducir ${t.id}: el dato «${f}» no existe`);
+}
+if (dgt.questions.length < dgt.mock.questions * 2) errors.push(`conducir: el banco necesita al menos ${dgt.mock.questions * 2} preguntas`);
+for (const l of [0, 1, 2]) if (dgt.questions.filter((q) => q.answer === l).length / dgt.questions.length > 0.5) errors.push(`conducir: más de la mitad de las respuestas son la opción ${"abc"[l]}`);
+const langs = JSON.parse(readFileSync(new URL("../content/i18n/_order.json", import.meta.url), "utf8")).filter((l) => l !== "es");
+for (const w of dgt.words) for (const l of langs) if (!w.tr[l]) errors.push(`conducir vocabulario «${w.es}»: falta la traducción (${l})`);
+
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
-console.log(`OK exámenes: CCSE ${ccse.questions.length} preguntas; DELE A2 lectura y auditiva de 25 preguntas con el formato oficial; PCE ${pce.subjects.length} materias y ${Object.values(pce.tests).reduce((n, t) => n + t.bank.length, 0)} preguntas de test.`);
+console.log(`OK exámenes: CCSE ${ccse.questions.length} preguntas; DELE A2 lectura y auditiva de 25 preguntas con el formato oficial; PCE ${pce.subjects.length} materias y ${Object.values(pce.tests).reduce((n, t) => n + t.bank.length, 0)} preguntas de test; conducir ${dgt.questions.length} preguntas y ${dgt.words.length} palabras.`);

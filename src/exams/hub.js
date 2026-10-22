@@ -1,4 +1,4 @@
-// Pestaña Exámenes: los pases de pago (Nacionalidad y Universidad).
+// Pestaña Exámenes: los pases de pago (Nacionalidad, Universidad y Conducir).
 import { ui } from "../core/i18n.js";
 import { register, go } from "../core/router.js";
 import { el } from "../ui/dom.js";
@@ -14,6 +14,7 @@ function showExams() {
   list.append(
     menuRow("🏛️", ui("passNat"), ui("passNatDesc"), () => go("nationality"), { badge: hasPass("nacionalidad") ? ui("passActive") : ui("free") + " · " + ui("locked") }),
     menuRow("🎓", ui("passUni"), ui("passUniDesc"), () => go("university"), { badge: hasPass("universidad") ? ui("passActive") : ui("free") + " · " + ui("locked") }),
+    menuRow("🚗", ui("passDrive"), ui("passDriveDesc"), () => go("driving"), { badge: hasPass("conducir") ? ui("passActive") : ui("free") + " · " + ui("locked") }),
   );
   app.append(list, el("p", "small-print", ui("disclaimer")));
 }

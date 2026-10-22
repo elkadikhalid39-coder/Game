@@ -42,7 +42,10 @@ function showNationality() {
 function showSources(from) {
   screen("main");
   app.append(button("back", "← " + ui("back"), () => go(from)), el("h1", "", "📚 " + ui("officialSources")));
-  const groups = from === "university" ? [["pce.", "🎓 " + ui("passUni")]] : [["nac.", "🗂️ " + ui("myCase")], ["ccse.", "📘 " + ui("ccseTitle")], ["dele.", "🗣️ " + ui("deleTitle")]];
+  const groups = {
+    university: [["pce.", "🎓 " + ui("passUni")]],
+    driving: [["dgt.", "🚗 " + ui("passDrive")]],
+  }[from] || [["nac.", "🗂️ " + ui("myCase")], ["ccse.", "📘 " + ui("ccseTitle")], ["dele.", "🗣️ " + ui("deleTitle")]];
   for (const [prefix, title] of groups) {
     app.append(el("h2", "section", title));
     for (const id of Object.keys(FACTS).filter((k) => k.startsWith(prefix))) app.append(factNote(id));

@@ -425,6 +425,14 @@ h2.section { margin: 18px 0 10px; }
 .calc-row input.wrong { border-color: var(--coral); background: var(--coral-soft); }
 .calc-out { display: grid; gap: 6px; }
 
+/* Conducir */
+.q-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.word-row { background: var(--paper); border: 2px solid var(--line); border-radius: 16px; padding: 10px 12px; margin: 8px 0; }
+.word-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.word-head strong { font-family: var(--display); font-size: 1.25rem; }
+.word-def { margin: 4px 0 0; color: var(--ink-soft); }
+.word-tr { margin: 4px 0 0; font-weight: 700; color: var(--sky-dark); }
+
 /* ---------- Audio: escuchar y más despacio ---------- */
 .audio-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .audio-controls.center, .audio-controls.big { justify-content: center; }

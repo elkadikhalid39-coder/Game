@@ -25,6 +25,7 @@ import "./exams/dele.js";
 import "./exams/university.js";
 import "./exams/uni-route.js";
 import "./exams/pce.js";
+import "./exams/driving.js";
 
 if (save.native && !I18N[save.native]) save.native = "";
 if (window.speechSynthesis) speechSynthesis.getVoices();

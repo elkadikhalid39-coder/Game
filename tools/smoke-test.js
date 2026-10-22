@@ -516,6 +516,67 @@ test("Universidad: redacción, ortografía y nota", async () => {
   return [counted && spelling && out.includes("7,6 / 10") && out.includes("9,4 / 14"), errors];
 });
 
+// ---------- Pase de Conducir ----------
+const DGT = JSON.parse(readFileSync(new URL("../content/exams/conducir.json", import.meta.url), "utf8"));
+const openDriving = async (saveData) => {
+  const o = await open(saveData);
+  await o.page.click('.tab[data-tab="exams"]');
+  await o.page.click(".menu-row:nth-child(3)");
+  return o;
+};
+
+test("Conducir: Mi caso con permiso de Marruecos (canje sin examen)", async () => {
+  const { page, errors } = await openDriving({ native: "ar" });
+  await page.click(".menu-row:nth-child(1)");
+  await page.click(".options .opt:nth-child(1)"); // sí tengo permiso
+  await page.click(".options .opt:nth-child(2)"); // de un país con convenio
+  await page.click(".options .opt:nth-child(1)"); // no lo saqué siendo residente
+  const text = await page.innerText("#app");
+  const urgent = !!(await page.$(".step.important"));
+  return [urgent && text.includes("Marruecos") && text.includes("seis meses"), errors];
+});
+
+test("Conducir: sin permiso → requisitos, teórico y práctico", async () => {
+  const { page, errors } = await openDriving({ native: "es" });
+  await page.click(".menu-row:nth-child(1)");
+  await page.click(".options .opt:nth-child(2)"); // no tengo permiso
+  const steps = await page.$$eval(".step", (s) => s.length);
+  return [steps === 4 && (await page.innerText("#app")).includes("30 preguntas"), errors];
+});
+
+test("Conducir: tema gratis, fallo a «Mis fallos» y simulacro con el pase", async () => {
+  const { page, errors } = await openDriving({ native: "fr" });
+  await page.click(".menu-row:nth-child(2)");
+  await page.click(".menu-row:nth-child(1)"); // tema gratuito
+  await page.click(".btn.big");
+  // Primera pregunta mal; el resto, bien.
+  const n = DGT.questions.filter((q) => q.topic === "permiso").length;
+  for (let k = 0; k < n; k++) {
+    await page.click(k === 0 ? '.opt[data-ok="0"] >> nth=0' : '.opt[data-ok="1"]');
+    await page.click(".sheet .btn");
+  }
+  const practiced = (await page.innerText("h1")).includes(`${n - 1} / ${n}`);
+  await page.click(".btn.big");
+  await page.click(".back");
+  await page.click(".back");
+  const failsListed = (await page.innerText(".menu-row:nth-child(4)")).includes("1");
+  // Con el pase: simulacro completo, todo bien → APTO.
+  await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("hola-espanol")); s.passes = { conducir: true }; localStorage.setItem("hola-espanol", JSON.stringify(s)); });
+  await page.reload();
+  await page.click('.tab[data-tab="exams"]');
+  await page.click(".menu-row:nth-child(3)");
+  await page.click(".menu-row:nth-child(3)");
+  await page.click(".btn.big");
+  for (let k = 0; k < DGT.mock.questions; k++) {
+    await page.click('.exam-q .opt[data-ok="1"]');
+    if (k < DGT.mock.questions - 1) await page.click('.exam-nav .btn:has-text("→")');
+  }
+  await page.click('.exam-nav .btn >> nth=1');
+  const result = await page.innerText(".exam-result");
+  const passed = !!(await page.$(".exam-result.pass"));
+  return [practiced && failsListed && passed && result.includes("0 / 30"), errors];
+});
+
 // Los módulos de prueba de cada fase añaden sus casos aquí.
 for (const extra of process.argv.slice(2)) await import(new URL(extra, import.meta.url));
 

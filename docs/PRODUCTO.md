@@ -74,6 +74,7 @@ Preparación profesional de los exámenes que se exigen en España. Cada examen 
 |---|---|
 | **Nacionalidad española** | «Mi trámite» (lista de comprobación personalizada) · CCSE (temario por tareas, banco de preguntas, simulacro) · DELE A2 (las cuatro pruebas, simulacros, rúbricas, día del examen) |
 | **Universidad en España** | «Mi ruta a la universidad» (homologación, UNEDasiss, PCE, inscripción) · fichas por materia · redacción académica en español · simulacros |
+| **Permiso de conducir** | «Mi caso» (canje del permiso extranjero o examen) · temario por temas con test y explicación · simulacro de 30 preguntas · repaso de fallos · vocabulario del examen traducido a los 12 idiomas |
 
 **Por ser de pago, este contenido tiene que ser oficial, correcto y estar actualizado.** Las reglas del apartado 6 son obligatorias.
 
@@ -92,8 +93,8 @@ Preparación profesional de los exámenes que se exigen en España. Cada examen 
 ## 6. Reglas de contenido y fuentes (obligatorias)
 
 1. **Jerarquía de fuentes**:
-   - Primero, la normativa y los organismos oficiales: BOE, Ministerio de Justicia, Instituto Cervantes, UNED/UNEDasiss, Ministerio de Educación y Ministerio de Asuntos Exteriores.
-   - Todo lo demás (academias, abogados, vídeos, blogs) es información complementaria y se marca como tal.
+   - Primero, la normativa y los organismos oficiales: BOE, Ministerio de Justicia, Instituto Cervantes, UNED/UNEDasiss, Ministerio de Educación, Ministerio de Asuntos Exteriores y Dirección General de Tráfico (DGT).
+   - Todo lo demás (academias, autoescuelas, abogados, vídeos, blogs) es información complementaria y se marca como tal. Webs de test como Todotest o cursos de YouTube se usan solo como referencia de método, nunca se copian sus preguntas.
 2. **Cada dato legal o de examen** se guarda con:
    - su fuente (nombre y enlace);
    - la fecha de comprobación;
@@ -120,6 +121,7 @@ Preparación profesional de los exámenes que se exigen en España. Cada examen 
 | **Fuera el modo niños** | Mezclar alfabetización infantil con exámenes oficiales confunde a ambos públicos. Puede ser otra app en el futuro. |
 | **Sin vidas, rachas ni puntos** | Bloquear por errores o presionar con rachas no ayuda a quien estudia después de trabajar. |
 | **Español de España** en el audio | Los exámenes, los trámites y la vida diaria del usuario son en España. |
+| **Portugués de Brasil** como variante del portugués (antes había una mezcla con el de Portugal) | La mayoría de quienes hablan portugués y necesitan la app son brasileños (por ejemplo, les bastan 2 años de residencia para la nacionalidad). Los portugueses son ciudadanos de la UE y no hacen los exámenes de nacionalidad. |
 | **Voces**: sintéticas del móvil en desarrollo; generadas con calidad y revisadas antes de lanzar los pases | La auditiva del DELE necesita audio natural, igual en todos los móviles y sin conexión. |
 | **Micrófono**: fuera hasta después del lanzamiento | Privacidad y complejidad; no es imprescindible para aprobar. |
 | **Escribir antes que elegir** (dictado y escritura como ejercicios principales; nunca preguntas con solo un dibujo) | Recordar y escribir una palabra fija el aprendizaje mucho más que reconocerla entre opciones, y los dibujos solos son ambiguos. |

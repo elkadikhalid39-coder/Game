@@ -82,6 +82,18 @@ Hecho el 22/10/2026: auditoría automática de accesibilidad (`tools/a11y-audit.
 - [ ] Más frases de dictado por unidad (ahora son las preguntas y respuestas del curso).
 - [ ] Funciones con IA (corrección de textos de 10 líneas, cámara, tutor): ver las decisiones pendientes en [PRODUCTO.md](PRODUCTO.md).
 
+## Fase 7: pase de Conducir (hecha, en estado «borrador»)
+
+- [x] 31 datos oficiales verificados el 22/10/2026: Reglamento General de Conductores (RD 818/2009), Reglamento General de Circulación (RD 1428/2003), Ley de Tráfico (RDL 6/2015) y sede de la DGT (canjes, lista de países con convenio actualizada el 26/06/2026, examen, lectura fácil).
+- [x] «Mi caso»: ¿canje o examen? Permiso de la UE (canje voluntario), de un país con convenio (canje sin examen para coche o moto, con el aviso de los 6 meses) o de otro país / sin permiso (requisitos, teórico, práctico).
+- [x] 8 temas con ficha de datos oficiales y test con explicación y fuente (64 preguntas originales), botón para escuchar cada pregunta, «Mis fallos» y simulacro de 30 preguntas en 30 minutos (apto con 3 fallos).
+- [x] Vocabulario del examen (16 palabras) con definición y traducción orientativa a los 12 idiomas.
+- [ ] Señales de tráfico con dibujos (el examen real usa imágenes y vídeos).
+- [ ] Ampliar el banco de preguntas y revisar con un profesor de autoescuela.
+- [ ] Confirmar en fuente oficial los idiomas del examen y el formato exacto (tres opciones).
+
+**Referencias analizadas (solo método, no contenido):** Todotest (test por temas, explicación inmediata, registro de fallos, simulacros con formato DGT) y el intensivo de teórica del canal «Aprueba con Igor» (repaso por bloques para reducir fallos). No se pudo ver el vídeo desde el entorno de trabajo.
+
 ## Después del lanzamiento
 
 - Nivel 0 de alfabetización (LASLLIAM).

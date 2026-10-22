@@ -25,6 +25,7 @@ export function migrate(old, known = () => true) {
     exams: (v3 && old.exams) || {}, // resultados de simulacros: { [examen]: [{ fecha, nota, apto }] }
     passes: (v3 && old.passes) || {}, // pases desbloqueados: { nacionalidad: true }
     noAudioUntil: (v3 && old.noAudioUntil) || 0,
+    drivingFails: (v3 && old.drivingFails) || [], // preguntas falladas del test de conducir, para repasarlas
     demo: typeof old.demo === "boolean" ? old.demo : DEMO_DEFAULT, // modo demo: todas las lecciones y los pases abiertos
   };
 }

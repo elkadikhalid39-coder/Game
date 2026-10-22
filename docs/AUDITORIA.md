@@ -37,6 +37,14 @@ Al cerrar cada fase, y siempre antes de publicar, se repasa esta lista y se anot
 
 ## Registro
 
+### 2026-10-22 (noche, 2): pase de Conducir y revisión de los tres exámenes
+
+- **Nacionalidad:** las 60 respuestas del CCSE son correctas. Se corrigieron 5 fuentes mal citadas: la TIE citaba la orden del CCSE (ahora el Reglamento de extranjería, RD 1155/2024) y las fiestas nacionales (6 de diciembre, 1 de mayo, 25 de diciembre) citaban un «preámbulo» de la Constitución (ahora el RD 2001/1983, art. 45, comprobado en el BOE). Los 44 datos de nacionalidad, CCSE y DELE siguen vigentes.
+- **Universidad:** datos verificados hoy; las preguntas de test y los textos se revisaron de nuevo.
+- **Conducir:** nuevo pase con datos del BOE y de la DGT. Una pregunta sobre el móvil «parado en un atasco» se cambió porque esa interpretación no aparece literalmente en el Reglamento.
+- El recorrido completo (`tools/walkthrough.js`) incluye ahora el pase de Conducir.
+
+
 ### 2026-10-22 (noche): revisión completa en el móvil
 
 Pedida por el usuario tras probar la demo. Se añadió `tools/walkthrough.js` (en `npm run audit`), que entra en **todas las pantallas** de la demo (las 36 lecciones, Practicar, los dos pases y Perfil) en varios idiomas. En cada una busca errores de la página, textos rotos, anchura mayor que el móvil y botones vacíos, y guarda capturas para revisarlas a mano.

@@ -1,0 +1,474 @@
+[
+  {
+    "id": "dgt.requisitos",
+    "text": "Para sacar el permiso de conducir en España hay que: residir en España (los estudiantes de fuera de la UE, al menos seis meses seguidos); tener la edad mínima; superar el reconocimiento de aptitudes psicofísicas en un Centro de Reconocimiento de Conductores; no estar privado del derecho a conducir; y aprobar las pruebas teórica y práctica en la Jefatura Provincial de Tráfico.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "DGT: requisitos, preparación y presentación a examen",
+        "url": "https://www.dgt.es/nuestros-servicios/permisos-de-conducir/obtener-un-nuevo-permiso-de-conducir/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.edad_b",
+    "text": "La edad mínima para el permiso B (coche) es de 18 años. El examen teórico se puede hacer desde tres meses antes de cumplirlos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 818/2009, Reglamento General de Conductores (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2009-9481",
+        "official": true
+      },
+      {
+        "name": "DGT: requisitos, preparación y presentación a examen",
+        "url": "https://www.dgt.es/nuestros-servicios/permisos-de-conducir/obtener-un-nuevo-permiso-de-conducir/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.examen_teorico",
+    "text": "Según el Reglamento General de Conductores, la prueba teórica común tiene entre 30 y 50 preguntas, se dispone de 1 minuto por pregunta y se aprueba con un 10 % de errores como máximo (redondeando hacia arriba). Algunas preguntas pueden ir precedidas de un vídeo.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 818/2009, Reglamento General de Conductores (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2009-9481",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.examen_b",
+    "text": "En la práctica, el examen teórico del permiso B tiene 30 preguntas con tres respuestas posibles (una correcta), dura 30 minutos y se aprueba con 3 fallos como máximo. La DGT ofrece en su web test de práctica con el mismo formato.",
+    "status": "fuente_secundaria",
+    "sources": [
+      {
+        "name": "DGT: requisitos, preparación y presentación a examen",
+        "url": "https://www.dgt.es/nuestros-servicios/permisos-de-conducir/obtener-un-nuevo-permiso-de-conducir/",
+        "official": true
+      },
+      {
+        "name": "Motorpasión: idiomas del examen teórico de la DGT (no es la norma)",
+        "url": "https://www.motorpasion.com/seguridad/estos-idiomas-que-dgt-te-permite-hacer-examen-carnet-conducir-aparte-espanol",
+        "official": false
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120,
+    "note": "El número de preguntas, el tiempo y los fallos coinciden con el Reglamento (30 preguntas × 1 minuto, 10 % de errores). Las tres opciones las indican autoescuelas y prensa especializada."
+  },
+  {
+    "id": "dgt.convocatorias",
+    "text": "El aprobado de cada prueba vale dos años. Las pruebas son eliminatorias: sin aprobar la teórica no se puede hacer la práctica. Cada solicitud da derecho a dos convocatorias; si se suspende la segunda, hay que esperar al menos 10 días para la siguiente.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 818/2009, Reglamento General de Conductores (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2009-9481",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.practico",
+    "text": "El examen práctico del permiso B se hace circulando por vías abiertas al tráfico, durante al menos 25 minutos de conducción.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 818/2009, Reglamento General de Conductores (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2009-9481",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.idiomas",
+    "text": "El examen teórico del permiso B se puede hacer en español, en las lenguas cooficiales y también en inglés, francés y alemán.",
+    "status": "fuente_secundaria",
+    "sources": [
+      {
+        "name": "Motorpasión: idiomas del examen teórico de la DGT (no es la norma)",
+        "url": "https://www.motorpasion.com/seguridad/estos-idiomas-que-dgt-te-permite-hacer-examen-carnet-conducir-aparte-espanol",
+        "official": false
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60,
+    "note": "No se ha encontrado una página oficial de la DGT con la lista de idiomas: confírmalo en tu Jefatura de Tráfico o en tu autoescuela."
+  },
+  {
+    "id": "dgt.lectura_facil",
+    "text": "Quien tiene dificultades de comprensión lectora puede pedir el examen teórico en «lectura fácil» (textos e imágenes sencillos) y la ayuda de auriculares para escuchar las preguntas y las respuestas. Se solicita antes, a través de la autoescuela o de la Jefatura de Tráfico.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "DGT: nota de prensa sobre exámenes teóricos accesibles (26/09/2024)",
+        "url": "https://www.dgt.es/export/sites/web-DGT/.galleries/downloads/nota_prensa/20240926-La-DGT-hace-mas-accesibles-los-examenes-teoricos/NP-MEDIDAS-ACCESIBILIDAD-EXAMENES-TEORICOS-DGT.pdf",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120,
+    "note": "La nota de prensa indica que el audio estaba disponible al principio solo en castellano."
+  },
+  {
+    "id": "dgt.tasas",
+    "text": "La DGT cobra una tasa por el examen y otra por el canje. Los importes se consultan siempre en la web oficial de la DGT.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "DGT (sede electrónica): canjes de permisos extranjeros",
+        "url": "https://sede.dgt.gob.es/es/permisos-de-conducir/canjes-de-permisos/canjes-de-permisos-extranjeros/",
+        "official": true
+      },
+      {
+        "name": "DGT: requisitos, preparación y presentación a examen",
+        "url": "https://www.dgt.es/nuestros-servicios/permisos-de-conducir/obtener-un-nuevo-permiso-de-conducir/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 60
+  },
+  {
+    "id": "dgt.canje_ue",
+    "text": "Los permisos de la Unión Europea y del Espacio Económico Europeo (Islandia, Liechtenstein y Noruega) valen en España mientras estén en vigor. Canjearlos es voluntario.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "DGT (sede electrónica): canjes de permisos extranjeros",
+        "url": "https://sede.dgt.gob.es/es/permisos-de-conducir/canjes-de-permisos/canjes-de-permisos-extranjeros/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.canje_6meses",
+    "text": "Un permiso de fuera de la UE y del EEE solo vale en España durante seis meses desde que adquieres la residencia normal. Después, para seguir conduciendo, tienes que canjearlo (si tu país tiene convenio) o sacar el permiso español.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "DGT (sede electrónica): canjes de permisos extranjeros",
+        "url": "https://sede.dgt.gob.es/es/permisos-de-conducir/canjes-de-permisos/canjes-de-permisos-extranjeros/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.canje_convenio",
+    "text": "Países con convenio de canje con España: Andorra, Argelia, Argentina, Bolivia, Brasil, Chile, Colombia, Corea del Sur, Costa Rica, Ecuador, El Salvador, Filipinas, Georgia, Guatemala, Honduras, Japón, Macedonia del Norte, Marruecos, Moldavia, Mónaco, Nicaragua, Nueva Zelanda, Panamá, Paraguay, Perú, Reino Unido, República Dominicana, Serbia, Suiza, Túnez, Turquía, Ucrania, Uruguay. Para coche o moto, el canje no exige examen. Para camión o autobús suele haber pruebas.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "DGT: países con convenio de canjes (actualizado el 26/06/2026)",
+        "url": "https://www.dgt.es/nuestros-servicios/permisos-de-conducir/permisos-extranjeros-y-de-fuerzas-y-cuerpos-de-seguridad/canjes-de-permisos/paises-con-convenio-de-canjes/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 90
+  },
+  {
+    "id": "dgt.canje_limite",
+    "text": "No se puede canjear un permiso obtenido en tu país cuando ya eras residente legal en España (salvo Corea del Sur). Si tu país no tiene convenio, hay que sacar el permiso español con sus exámenes.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "DGT (sede electrónica): canjes de permisos extranjeros",
+        "url": "https://sede.dgt.gob.es/es/permisos-de-conducir/canjes-de-permisos/canjes-de-permisos-extranjeros/",
+        "official": true
+      },
+      {
+        "name": "DGT: países con convenio de canjes (actualizado el 26/06/2026)",
+        "url": "https://www.dgt.es/nuestros-servicios/permisos-de-conducir/permisos-extranjeros-y-de-fuerzas-y-cuerpos-de-seguridad/canjes-de-permisos/paises-con-convenio-de-canjes/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.puntos",
+    "text": "Un permiso nuevo empieza con 8 puntos; tras dos años sin sanciones que quiten puntos, pasa a 12. Sin perder puntos se ganan bonificaciones hasta un máximo de 15. Los puntos son los mismos para todos tus permisos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto Legislativo 6/2015, Ley sobre Tráfico y Seguridad Vial (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.velocidad",
+    "text": "Velocidades máximas genéricas para turismos y motos: 120 km/h en autopista y autovía; 90 km/h en carretera convencional; en ciudad, 50 km/h con dos o más carriles por sentido, 30 km/h con un solo carril por sentido y 20 km/h en calles de plataforma única (calzada y acera al mismo nivel). En travesías, 50 km/h.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.alcohol",
+    "text": "Tasa máxima de alcohol: 0,5 g/l en sangre o 0,25 mg/l en aire espirado. Para conductores con menos de dos años de permiso y conductores profesionales: 0,3 g/l en sangre o 0,15 mg/l en aire. Todos los conductores están obligados a hacer la prueba de alcohol si se la piden los agentes.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.prioridad",
+    "text": "Sin señales, se cede el paso a los vehículos que vienen por la derecha. Excepciones: tiene prioridad quien va por vía pavimentada frente a una sin pavimentar, los vehículos sobre raíles, quien ya circula dentro de una glorieta y quien circula por autopista o autovía frente a quien quiere entrar.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.adelantar",
+    "text": "Al adelantar a ciclistas, peatones o ciclomotores hay que dejar al menos 1,5 metros de separación lateral (o cambiar de carril si hay más de uno por sentido). Está prohibido adelantar en curvas y cambios de rasante sin visibilidad, en pasos de peatones señalizados, en pasos a nivel y en túneles señalizados.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.distancia",
+    "text": "Hay que dejar con el vehículo de delante una distancia que permita detenerse en caso de frenado brusco sin chocar, teniendo en cuenta la velocidad y el estado de la vía. No mantener la distancia de seguridad quita 4 puntos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      },
+      {
+        "name": "Real Decreto Legislativo 6/2015, Ley sobre Tráfico y Seguridad Vial (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.retencion",
+    "text": "Conductor y pasajeros deben llevar el cinturón abrochado, en ciudad y en carretera. Los menores de 135 cm o menos deben usar un sistema de retención infantil homologado y, como norma general, ir en los asientos traseros. Una silla orientada hacia atrás en el asiento delantero solo se permite con el airbag frontal desactivado.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.movil",
+    "text": "Está prohibido usar el móvil mientras se conduce, salvo sin usar las manos y sin cascos ni auriculares. Usarlo sujetándolo con la mano quita 6 puntos. Conducir con cascos o auriculares de audio quita 3 puntos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      },
+      {
+        "name": "Real Decreto Legislativo 6/2015, Ley sobre Tráfico y Seguridad Vial (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.averia",
+    "text": "Si el coche queda inmovilizado por avería o accidente, hay que encender la luz de emergencia, usar el dispositivo de preseñalización de peligro reglamentario y, si hay un lugar seguro, salir del vehículo por el lado contrario al tráfico. El parte amistoso nunca se rellena en la calzada.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.alumbrado",
+    "text": "Entre la puesta y la salida del sol, y en túneles, hay que llevar las luces encendidas. La luz larga se cambia por la de cruce en cuanto puede deslumbrar a otros. La antiniebla trasera solo se usa con niebla espesa, lluvia muy intensa, nevada fuerte o nubes densas de polvo o humo.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.parada",
+    "text": "Está prohibido parar, entre otros sitios, en curvas y cambios de rasante sin visibilidad, en pasos de peatones, de ciclistas y a nivel, en carriles reservados al transporte público o a las bicicletas, y en autopistas y autovías fuera de las zonas habilitadas. Donde no se puede parar, tampoco se puede estacionar.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.no_asesoria",
+    "text": "Esta información resume la normativa oficial para ayudarte a preparar el examen. Para tu caso concreto, consulta en la DGT (060) o en tu Jefatura Provincial de Tráfico.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "DGT: requisitos, preparación y presentación a examen",
+        "url": "https://www.dgt.es/nuestros-servicios/permisos-de-conducir/obtener-un-nuevo-permiso-de-conducir/",
+        "official": true
+      },
+      {
+        "name": "DGT (sede electrónica): canjes de permisos extranjeros",
+        "url": "https://sede.dgt.gob.es/es/permisos-de-conducir/canjes-de-permisos/canjes-de-permisos-extranjeros/",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.puntos_infracciones",
+    "text": "Algunas infracciones y los puntos que quitan: alcohol por encima de la tasa, 4 puntos (6 si se supera mucho: más de 0,50 mg/l en general o de 0,30 mg/l en noveles y profesionales); drogas, negarse a las pruebas, móvil en la mano o adelantar a ciclistas sin 1,5 metros, 6 puntos; saltarse un stop, un ceda el paso o un semáforo en rojo, no guardar la distancia de seguridad, no llevar cinturón o sistema de retención infantil y la marcha atrás en autopista, 4 puntos; conducir con auriculares, 3 puntos.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto Legislativo 6/2015, Ley sobre Tráfico y Seguridad Vial, anexo II (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.ceder",
+    "text": "Quien debe ceder el paso no puede empezar ni seguir la maniobra si con ello obliga a quien tiene prioridad a cambiar bruscamente su trayectoria o su velocidad, y debe mostrar con antelación, reduciendo poco a poco la velocidad, que va a cederlo.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.adelantar_maniobra",
+    "text": "Al adelantar hay que ir a una velocidad claramente superior, dejar una separación lateral suficiente y volver al carril en cuanto sea posible, de forma gradual y señalizándolo. Si la maniobra se complica, hay que reducir la marcha, volver al carril y advertirlo.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.distracciones",
+    "text": "El conductor debe mantener la atención permanente. Con el vehículo en marcha no puede usar pantallas con internet ni reproductores de vídeo (sí el GPS y las cámaras de maniobra). Están prohibidos los inhibidores y los detectores de radares; los avisadores que informan de dónde están los controles sí se permiten.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.deslumbramiento",
+    "text": "Quien sufre un deslumbramiento debe reducir la velocidad lo necesario, incluso hasta parar. La luz larga está prohibida con el vehículo parado o estacionado. Las motocicletas llevan la luz de cruce encendida también de día. Una vía está insuficientemente iluminada si no se puede leer una matrícula a 10 metros o no se distingue un coche oscuro a 50 metros.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  },
+  {
+    "id": "dgt.averia_marcha",
+    "text": "Si tras una avería o un accidente el vehículo puede seguir pero necesita auxilio, hay que abandonar cuanto antes los carriles y dirigirse a la primera salida por el arcén derecho; si no es posible, detenerse en el arcén derecho o donde menos estorbe.",
+    "status": "confirmado",
+    "sources": [
+      {
+        "name": "Real Decreto 1428/2003, Reglamento General de Circulación (texto consolidado)",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514",
+        "official": true
+      }
+    ],
+    "checked": "2026-10-22",
+    "reviewDays": 120
+  }
+]

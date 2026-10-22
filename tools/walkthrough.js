@@ -12,6 +12,7 @@ const load = (p) => JSON.parse(readFileSync(new URL("../content/" + p, import.me
 const ES = load("i18n/es.json").t;
 const UNITS = load("course/units.json");
 const PCE = load("exams/pce.json");
+const DGT = load("exams/conducir.json");
 const DELE = load("exams/dele-a2.json");
 const LANGS = (process.env.LANGS || "es,fr,ar").split(",");
 const SHOTS = process.env.SHOTS;
@@ -262,6 +263,47 @@ for (const native of LANGS) {
   await click(page, ".back");
   await click(page, ".menu-row:nth-child(6)");
   await inspect(page, native, "fuentes universidad");
+
+  // ---------- Exámenes: Conducir ----------
+  await backToTab(page, "exams");
+  await click(page, ".menu-row:nth-child(3)");
+  await inspect(page, native, "conducir");
+  for (const path of [[2], [1, 1], [1, 2, 1], [1, 2, 2], [1, 3]]) {
+    await click(page, ".menu-row:nth-child(1)");
+    for (const opt of path) if (await page.$(".options .opt")) await click(page, `.options .opt:nth-child(${opt})`);
+    await inspect(page, native, "conducir mi caso " + path.join(""));
+    await click(page, ".back");
+  }
+  await click(page, ".menu-row:nth-child(2)");
+  await inspect(page, native, "conducir temas");
+  for (let k = 1; k <= DGT.topics.length; k++) {
+    await click(page, `.menu-row:nth-child(${k})`);
+    if (k === 1) await inspect(page, native, "conducir ficha");
+    await click(page, ".btn.big");
+    for (let g = 0; g < 12 && !(await page.$(".btn.big")); g++) {
+      await click(page, '.opt[data-ok="1"]');
+      if (g === 0 && k === 1) await inspect(page, native, "conducir pregunta");
+      await click(page, ".sheet .btn");
+    }
+    await click(page, ".btn.big");
+    await click(page, ".back");
+  }
+  await click(page, ".back");
+  await click(page, ".menu-row:nth-child(3)");
+  await click(page, ".btn.big");
+  for (let k = 0; k < DGT.mock.questions; k++) {
+    await page.click('.exam-q .opt[data-ok="1"]');
+    if (k < DGT.mock.questions - 1) await click(page, '.exam-nav .btn:has-text("→")');
+  }
+  await inspect(page, native, "conducir simulacro");
+  await click(page, ".exam-nav .btn >> nth=1");
+  await inspect(page, native, "conducir resultado");
+  await click(page, ".btn.big");
+  await click(page, ".menu-row:nth-child(5)");
+  await inspect(page, native, "conducir vocabulario");
+  await click(page, ".back");
+  await click(page, ".menu-row:nth-child(6)");
+  await inspect(page, native, "fuentes conducir");
 
   // ---------- Perfil ----------
   await backToTab(page, "profile");

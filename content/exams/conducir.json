@@ -1,0 +1,1244 @@
+{
+  "status": "borrador",
+  "mock": {
+    "questions": 30,
+    "minutes": 30,
+    "maxErrors": 3
+  },
+  "topics": [
+    {
+      "id": "permiso",
+      "study": [
+        "dgt.requisitos",
+        "dgt.edad_b",
+        "dgt.examen_teorico",
+        "dgt.convocatorias",
+        "dgt.puntos",
+        "dgt.canje_6meses"
+      ]
+    },
+    {
+      "id": "velocidad",
+      "study": [
+        "dgt.velocidad"
+      ]
+    },
+    {
+      "id": "alcohol",
+      "study": [
+        "dgt.alcohol",
+        "dgt.puntos_infracciones"
+      ]
+    },
+    {
+      "id": "prioridad",
+      "study": [
+        "dgt.prioridad",
+        "dgt.ceder"
+      ]
+    },
+    {
+      "id": "adelantar",
+      "study": [
+        "dgt.adelantar",
+        "dgt.adelantar_maniobra",
+        "dgt.distancia"
+      ]
+    },
+    {
+      "id": "seguridad",
+      "study": [
+        "dgt.retencion",
+        "dgt.movil",
+        "dgt.distracciones"
+      ]
+    },
+    {
+      "id": "alumbrado",
+      "study": [
+        "dgt.alumbrado",
+        "dgt.deslumbramiento"
+      ]
+    },
+    {
+      "id": "averia",
+      "study": [
+        "dgt.averia",
+        "dgt.averia_marcha",
+        "dgt.parada"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "permiso-1",
+      "topic": "permiso",
+      "q": "¿Qué edad mínima hay que tener para obtener el permiso de la clase B?",
+      "options": [
+        "16 años",
+        "17 años",
+        "18 años"
+      ],
+      "answer": 2,
+      "explain": "El permiso B se obtiene con 18 años cumplidos. El teórico se puede hacer desde tres meses antes.",
+      "fact": "dgt.edad_b",
+      "status": "borrador"
+    },
+    {
+      "id": "permiso-2",
+      "topic": "permiso",
+      "q": "¿Con cuántos puntos empieza un permiso de conducir recién obtenido?",
+      "options": [
+        "8 puntos",
+        "15 puntos",
+        "12 puntos"
+      ],
+      "answer": 0,
+      "explain": "Los permisos con menos de tres años de antigüedad empiezan con 8 puntos.",
+      "fact": "dgt.puntos",
+      "status": "borrador"
+    },
+    {
+      "id": "permiso-3",
+      "topic": "permiso",
+      "q": "Un conductor novel pasa dos años sin ninguna sanción que le quite puntos. ¿Cuántos puntos tendrá?",
+      "options": [
+        "15 puntos",
+        "12 puntos",
+        "8 puntos"
+      ],
+      "answer": 1,
+      "explain": "Tras dos años sin sanciones que quiten puntos, se pasa a 12.",
+      "fact": "dgt.puntos",
+      "status": "borrador"
+    },
+    {
+      "id": "permiso-4",
+      "topic": "permiso",
+      "q": "¿Cuánto tiempo vale el aprobado del examen teórico?",
+      "options": [
+        "Para siempre",
+        "Seis meses",
+        "Dos años"
+      ],
+      "answer": 2,
+      "explain": "La declaración de apto en una prueba vale dos años.",
+      "fact": "dgt.convocatorias",
+      "status": "borrador"
+    },
+    {
+      "id": "permiso-5",
+      "topic": "permiso",
+      "q": "¿Se puede hacer el examen práctico sin haber aprobado el teórico?",
+      "options": [
+        "No, las pruebas son eliminatorias",
+        "Sí, si se paga una tasa extra",
+        "Sí, en cualquier orden"
+      ],
+      "answer": 0,
+      "explain": "Quien no aprueba la prueba teórica no puede hacer la práctica.",
+      "fact": "dgt.convocatorias",
+      "status": "borrador"
+    },
+    {
+      "id": "permiso-6",
+      "topic": "permiso",
+      "q": "Vives en España y tienes un permiso de un país de fuera de la UE. ¿Durante cuánto tiempo puedes conducir con él?",
+      "options": [
+        "Mientras esté en vigor",
+        "Seis meses desde que adquieres la residencia normal",
+        "Un año desde que entras en España"
+      ],
+      "answer": 1,
+      "explain": "Después de esos seis meses hay que canjearlo (si hay convenio) o sacar el permiso español.",
+      "fact": "dgt.canje_6meses",
+      "status": "borrador"
+    },
+    {
+      "id": "permiso-7",
+      "topic": "permiso",
+      "q": "Una persona residente en España tiene el permiso de coche de Marruecos, obtenido antes de llegar. ¿Qué necesita para conducir con un permiso español?",
+      "options": [
+        "Nada: su permiso vale siempre en España",
+        "Aprobar el teórico y el práctico",
+        "Pedir el canje; para coche no hace falta examen"
+      ],
+      "answer": 2,
+      "explain": "Marruecos tiene convenio de canje con España. Para coche o moto, el canje no exige examen.",
+      "fact": "dgt.canje_convenio",
+      "status": "borrador"
+    },
+    {
+      "id": "permiso-8",
+      "topic": "permiso",
+      "q": "¿Dónde se comprueban las aptitudes psicofísicas para conducir?",
+      "options": [
+        "En un Centro de Reconocimiento de Conductores",
+        "En la autoescuela",
+        "En la comisaría de policía"
+      ],
+      "answer": 0,
+      "explain": "Es uno de los requisitos para obtener el permiso.",
+      "fact": "dgt.requisitos",
+      "status": "borrador"
+    },
+    {
+      "id": "velocidad-1",
+      "topic": "velocidad",
+      "q": "¿Cuál es la velocidad máxima de un turismo en autopista y autovía?",
+      "options": [
+        "130 km/h",
+        "120 km/h",
+        "100 km/h"
+      ],
+      "answer": 1,
+      "explain": "Es la velocidad máxima genérica para turismos y motos en autopista y autovía.",
+      "fact": "dgt.velocidad",
+      "status": "borrador"
+    },
+    {
+      "id": "velocidad-2",
+      "topic": "velocidad",
+      "q": "¿Cuál es la velocidad máxima de un turismo en una carretera convencional?",
+      "options": [
+        "80 km/h",
+        "90 km/h",
+        "100 km/h"
+      ],
+      "answer": 1,
+      "explain": "En carretera convencional, el límite genérico para turismos y motos es 90 km/h.",
+      "fact": "dgt.velocidad",
+      "status": "borrador"
+    },
+    {
+      "id": "velocidad-3",
+      "topic": "velocidad",
+      "q": "En ciudad, ¿a qué velocidad máxima se circula por una calle con un solo carril por sentido?",
+      "options": [
+        "30 km/h",
+        "50 km/h",
+        "40 km/h"
+      ],
+      "answer": 0,
+      "explain": "Calles de un único carril por sentido: 30 km/h, salvo señal que diga otra cosa.",
+      "fact": "dgt.velocidad",
+      "status": "borrador"
+    },
+    {
+      "id": "velocidad-4",
+      "topic": "velocidad",
+      "q": "¿Cuál es el límite en una calle de plataforma única, con calzada y acera al mismo nivel?",
+      "options": [
+        "10 km/h",
+        "30 km/h",
+        "20 km/h"
+      ],
+      "answer": 2,
+      "explain": "En las calles de plataforma única el límite genérico es 20 km/h.",
+      "fact": "dgt.velocidad",
+      "status": "borrador"
+    },
+    {
+      "id": "velocidad-5",
+      "topic": "velocidad",
+      "q": "En ciudad, en una vía con dos o más carriles por sentido, ¿cuál es el límite genérico?",
+      "options": [
+        "60 km/h",
+        "50 km/h",
+        "40 km/h"
+      ],
+      "answer": 1,
+      "explain": "Con dos o más carriles por sentido el límite genérico urbano es 50 km/h.",
+      "fact": "dgt.velocidad",
+      "status": "borrador"
+    },
+    {
+      "id": "velocidad-6",
+      "topic": "velocidad",
+      "q": "¿Cuál es el límite genérico de velocidad en una travesía?",
+      "options": [
+        "60 km/h",
+        "30 km/h",
+        "50 km/h"
+      ],
+      "answer": 2,
+      "explain": "Una travesía es el tramo de carretera que pasa por un pueblo: 50 km/h para todos los vehículos.",
+      "fact": "dgt.velocidad",
+      "status": "borrador"
+    },
+    {
+      "id": "velocidad-7",
+      "topic": "velocidad",
+      "q": "En una carretera convencional con separación física entre los dos sentidos, ¿qué límite puede fijar el titular de la vía para los turismos?",
+      "options": [
+        "Hasta 100 km/h",
+        "Hasta 110 km/h",
+        "Hasta 120 km/h"
+      ],
+      "answer": 0,
+      "explain": "El Reglamento permite fijar hasta 100 km/h en esas carreteras.",
+      "fact": "dgt.velocidad",
+      "status": "borrador"
+    },
+    {
+      "id": "velocidad-8",
+      "topic": "velocidad",
+      "q": "¿Puede un ayuntamiento bajar los límites de velocidad en sus calles?",
+      "options": [
+        "Solo durante la noche",
+        "Sí, con señales específicas",
+        "No, nunca"
+      ],
+      "answer": 1,
+      "explain": "Las velocidades genéricas urbanas pueden rebajarse con señalización específica de la autoridad municipal.",
+      "fact": "dgt.velocidad",
+      "status": "borrador"
+    },
+    {
+      "id": "alcohol-1",
+      "topic": "alcohol",
+      "q": "¿Cuál es la tasa máxima de alcohol en aire espirado para un conductor en general?",
+      "options": [
+        "0,25 mg/l",
+        "0,50 mg/l",
+        "0,15 mg/l"
+      ],
+      "answer": 0,
+      "explain": "La tasa general es 0,25 mg/l en aire espirado (0,5 g/l en sangre).",
+      "fact": "dgt.alcohol",
+      "status": "borrador"
+    },
+    {
+      "id": "alcohol-2",
+      "topic": "alcohol",
+      "q": "¿Cuál es la tasa máxima de alcohol en sangre para un conductor en general?",
+      "options": [
+        "0,8 g/l",
+        "0,3 g/l",
+        "0,5 g/l"
+      ],
+      "answer": 2,
+      "explain": "La tasa general es 0,5 g/l en sangre (0,25 mg/l en aire espirado).",
+      "fact": "dgt.alcohol",
+      "status": "borrador"
+    },
+    {
+      "id": "alcohol-3",
+      "topic": "alcohol",
+      "q": "¿Qué tasa máxima en aire espirado tiene un conductor con menos de dos años de permiso?",
+      "options": [
+        "0,30 mg/l",
+        "0,25 mg/l",
+        "0,15 mg/l"
+      ],
+      "answer": 2,
+      "explain": "Durante los dos primeros años la tasa es más baja: 0,15 mg/l en aire espirado.",
+      "fact": "dgt.alcohol",
+      "status": "borrador"
+    },
+    {
+      "id": "alcohol-4",
+      "topic": "alcohol",
+      "q": "¿Qué tasa máxima en sangre tiene un conductor con menos de dos años de permiso?",
+      "options": [
+        "0,3 g/l",
+        "0,1 g/l",
+        "0,5 g/l"
+      ],
+      "answer": 0,
+      "explain": "Durante los dos primeros años: 0,3 g/l en sangre.",
+      "fact": "dgt.alcohol",
+      "status": "borrador"
+    },
+    {
+      "id": "alcohol-5",
+      "topic": "alcohol",
+      "q": "¿Quién está obligado a someterse a las pruebas de alcohol cuando lo piden los agentes?",
+      "options": [
+        "Solo los conductores profesionales",
+        "Todos los conductores, también los de bicicleta",
+        "Solo quien ha tenido un accidente"
+      ],
+      "answer": 1,
+      "explain": "Todos los conductores de vehículos y de bicicletas están obligados.",
+      "fact": "dgt.alcohol",
+      "status": "borrador"
+    },
+    {
+      "id": "alcohol-6",
+      "topic": "alcohol",
+      "q": "¿Cuántos puntos se pierden por negarse a hacer la prueba de alcohol?",
+      "options": [
+        "6 puntos",
+        "3 puntos",
+        "Ninguno"
+      ],
+      "answer": 0,
+      "explain": "Negarse a la prueba de alcohol o drogas quita 6 puntos.",
+      "fact": "dgt.puntos_infracciones",
+      "status": "borrador"
+    },
+    {
+      "id": "alcohol-7",
+      "topic": "alcohol",
+      "q": "¿Cuántos puntos se pierden por conducir con presencia de drogas en el organismo?",
+      "options": [
+        "4 puntos",
+        "6 puntos",
+        "2 puntos"
+      ],
+      "answer": 1,
+      "explain": "Conducir con presencia de drogas quita 6 puntos.",
+      "fact": "dgt.puntos_infracciones",
+      "status": "borrador"
+    },
+    {
+      "id": "alcohol-8",
+      "topic": "alcohol",
+      "q": "Un conductor en general da 0,40 mg/l en aire espirado. ¿Cuántos puntos pierde?",
+      "options": [
+        "6 puntos",
+        "2 puntos",
+        "4 puntos"
+      ],
+      "answer": 2,
+      "explain": "Más de 0,25 y hasta 0,50 mg/l: 4 puntos. Más de 0,50 mg/l: 6 puntos.",
+      "fact": "dgt.puntos_infracciones",
+      "status": "borrador"
+    },
+    {
+      "id": "prioridad-1",
+      "topic": "prioridad",
+      "q": "En un cruce sin señales, ¿a quién debes ceder el paso?",
+      "options": [
+        "A los vehículos más grandes",
+        "A los que se acercan por tu izquierda",
+        "A los vehículos que se acercan por tu derecha"
+      ],
+      "answer": 2,
+      "explain": "Sin señales, la regla general es ceder el paso a quien viene por la derecha.",
+      "fact": "dgt.prioridad",
+      "status": "borrador"
+    },
+    {
+      "id": "prioridad-2",
+      "topic": "prioridad",
+      "q": "En una glorieta sin señales, ¿quién tiene preferencia?",
+      "options": [
+        "Quien ya circula dentro de la glorieta",
+        "Quien viene por la derecha",
+        "Quien quiere entrar"
+      ],
+      "answer": 0,
+      "explain": "En las glorietas, quien está dentro tiene preferencia sobre quien quiere entrar.",
+      "fact": "dgt.prioridad",
+      "status": "borrador"
+    },
+    {
+      "id": "prioridad-3",
+      "topic": "prioridad",
+      "q": "Llegas a un cruce sin señales por un camino de tierra. Por la vía asfaltada se acerca un coche por tu izquierda. ¿Quién pasa primero?",
+      "options": [
+        "Tú, porque vienes por su derecha",
+        "El coche de la vía asfaltada",
+        "El que llegue antes"
+      ],
+      "answer": 1,
+      "explain": "La vía pavimentada tiene preferencia sobre la que no lo está, aunque el otro venga por la izquierda.",
+      "fact": "dgt.prioridad",
+      "status": "borrador"
+    },
+    {
+      "id": "prioridad-4",
+      "topic": "prioridad",
+      "q": "En un cruce sin señales con un tranvía, ¿quién tiene preferencia?",
+      "options": [
+        "El tranvía",
+        "El vehículo que viene por la derecha",
+        "El coche"
+      ],
+      "answer": 0,
+      "explain": "Los vehículos que circulan sobre raíles tienen prioridad.",
+      "fact": "dgt.prioridad",
+      "status": "borrador"
+    },
+    {
+      "id": "prioridad-5",
+      "topic": "prioridad",
+      "q": "Quieres entrar en una autovía desde un carril de incorporación. ¿Quién tiene preferencia?",
+      "options": [
+        "Tú, porque te incorporas",
+        "Los vehículos que ya circulan por la autovía",
+        "Quien viene por la derecha"
+      ],
+      "answer": 1,
+      "explain": "Quien circula por la autopista o autovía tiene preferencia sobre quien quiere entrar.",
+      "fact": "dgt.prioridad",
+      "status": "borrador"
+    },
+    {
+      "id": "prioridad-6",
+      "topic": "prioridad",
+      "q": "¿Qué significa ceder el paso correctamente?",
+      "options": [
+        "Tocar el claxon antes de pasar",
+        "Detenerse siempre del todo",
+        "No obligar a quien tiene prioridad a frenar o desviarse bruscamente"
+      ],
+      "answer": 2,
+      "explain": "Quien cede el paso no debe forzar al otro a cambiar bruscamente su trayectoria o su velocidad, y debe mostrar que va a ceder.",
+      "fact": "dgt.ceder",
+      "status": "borrador"
+    },
+    {
+      "id": "prioridad-7",
+      "topic": "prioridad",
+      "q": "¿Cuántos puntos se pierden por no detenerse en un stop o en un semáforo en rojo?",
+      "options": [
+        "2 puntos",
+        "6 puntos",
+        "4 puntos"
+      ],
+      "answer": 2,
+      "explain": "Incumplir la preferencia de paso, el stop, el ceda el paso o el semáforo en rojo quita 4 puntos.",
+      "fact": "dgt.puntos_infracciones",
+      "status": "borrador"
+    },
+    {
+      "id": "prioridad-8",
+      "topic": "prioridad",
+      "q": "¿Cuántos puntos se pierden por no respetar una señal de ceda el paso?",
+      "options": [
+        "Ninguno: solo hay multa",
+        "4 puntos",
+        "3 puntos"
+      ],
+      "answer": 1,
+      "explain": "Las infracciones de preferencia de paso quitan 4 puntos.",
+      "fact": "dgt.puntos_infracciones",
+      "status": "borrador"
+    },
+    {
+      "id": "adelantar-1",
+      "topic": "adelantar",
+      "q": "Al adelantar a un ciclista en una carretera con un solo carril por sentido, ¿qué separación lateral mínima debes dejar?",
+      "options": [
+        "1,5 metros",
+        "1 metro",
+        "50 centímetros"
+      ],
+      "answer": 0,
+      "explain": "Hay que dejar al menos 1,5 metros, ocupando parte o todo el carril contrario.",
+      "fact": "dgt.adelantar",
+      "status": "borrador"
+    },
+    {
+      "id": "adelantar-2",
+      "topic": "adelantar",
+      "q": "Vas a adelantar a un ciclista en una vía con dos carriles en tu sentido. ¿Qué debes hacer?",
+      "options": [
+        "Dejar 1,5 metros sin cambiar de carril",
+        "Tocar el claxon y pasar",
+        "Cambiar completamente de carril"
+      ],
+      "answer": 2,
+      "explain": "Si la calzada tiene más de un carril por sentido, es obligatorio el cambio completo de carril.",
+      "fact": "dgt.adelantar",
+      "status": "borrador"
+    },
+    {
+      "id": "adelantar-3",
+      "topic": "adelantar",
+      "q": "¿En cuál de estos lugares está prohibido adelantar?",
+      "options": [
+        "En un paso para peatones señalizado",
+        "En una recta con buena visibilidad y línea discontinua",
+        "A un ciclista en una recta despejada, dejando 1,5 metros"
+      ],
+      "answer": 0,
+      "explain": "Está prohibido adelantar en los pasos para peatones señalizados y en sus proximidades.",
+      "fact": "dgt.adelantar",
+      "status": "borrador"
+    },
+    {
+      "id": "adelantar-4",
+      "topic": "adelantar",
+      "q": "¿Se puede adelantar en una curva de visibilidad reducida?",
+      "options": [
+        "Sí, si se hace con rapidez",
+        "No, salvo que los dos sentidos estén claramente separados y no se invada el contrario",
+        "Sí, avisando con el claxon"
+      ],
+      "answer": 1,
+      "explain": "En curvas y cambios de rasante sin visibilidad suficiente está prohibido adelantar, con esa única excepción.",
+      "fact": "dgt.adelantar",
+      "status": "borrador"
+    },
+    {
+      "id": "adelantar-5",
+      "topic": "adelantar",
+      "q": "Después de adelantar, ¿cómo vuelves a tu carril?",
+      "options": [
+        "Tan pronto como sea posible y de forma gradual, señalizándolo",
+        "Frenando delante del vehículo adelantado",
+        "Me quedo en el carril de la izquierda"
+      ],
+      "answer": 0,
+      "explain": "Hay que volver al carril sin obligar a otros a cambiar su trayectoria o su velocidad.",
+      "fact": "dgt.adelantar_maniobra",
+      "status": "borrador"
+    },
+    {
+      "id": "adelantar-6",
+      "topic": "adelantar",
+      "q": "Has empezado a adelantar y ves que la maniobra se vuelve peligrosa. ¿Qué haces?",
+      "options": [
+        "Sigo adelantando y toco el claxon",
+        "Reduzco la velocidad, vuelvo a mi carril y lo señalizo",
+        "Acelero todo lo posible"
+      ],
+      "answer": 1,
+      "explain": "Si el adelantamiento se complica, hay que desistir: reducir la marcha y volver al carril.",
+      "fact": "dgt.adelantar_maniobra",
+      "status": "borrador"
+    },
+    {
+      "id": "adelantar-7",
+      "topic": "adelantar",
+      "q": "¿Qué distancia hay que dejar con el vehículo de delante?",
+      "options": [
+        "Siempre 2 metros",
+        "La longitud de un coche",
+        "La que permita detenerse sin chocar si frena bruscamente"
+      ],
+      "answer": 2,
+      "explain": "La distancia depende de la velocidad y de las condiciones de adherencia y frenado.",
+      "fact": "dgt.distancia",
+      "status": "borrador"
+    },
+    {
+      "id": "adelantar-8",
+      "topic": "adelantar",
+      "q": "¿Cuántos puntos se pierden por no mantener la distancia de seguridad?",
+      "options": [
+        "2 puntos",
+        "6 puntos",
+        "4 puntos"
+      ],
+      "answer": 2,
+      "explain": "No mantener la distancia de seguridad quita 4 puntos.",
+      "fact": "dgt.puntos_infracciones",
+      "status": "borrador"
+    },
+    {
+      "id": "seguridad-1",
+      "topic": "seguridad",
+      "q": "¿Es obligatorio el cinturón de seguridad en ciudad?",
+      "options": [
+        "Sí, en ciudad y en carretera",
+        "No, solo en carretera",
+        "Solo en los asientos delanteros"
+      ],
+      "answer": 0,
+      "explain": "Conductor y pasajeros deben llevarlo abrochado en vías urbanas e interurbanas.",
+      "fact": "dgt.retencion",
+      "status": "borrador"
+    },
+    {
+      "id": "seguridad-2",
+      "topic": "seguridad",
+      "q": "Un niño mide 1,30 metros. ¿Cómo debe viajar en un turismo?",
+      "options": [
+        "Con el cinturón normal",
+        "Con un sistema de retención infantil homologado adecuado a su talla y peso",
+        "En brazos de un adulto"
+      ],
+      "answer": 1,
+      "explain": "Los menores de 135 cm o menos deben usar un sistema de retención infantil homologado.",
+      "fact": "dgt.retencion",
+      "status": "borrador"
+    },
+    {
+      "id": "seguridad-3",
+      "topic": "seguridad",
+      "q": "Como norma general, ¿en qué asientos deben viajar los niños de 135 cm o menos?",
+      "options": [
+        "En los asientos traseros",
+        "En cualquiera",
+        "En el asiento delantero"
+      ],
+      "answer": 0,
+      "explain": "Solo pueden ir delante en casos excepcionales: sin asientos traseros, con todos ocupados por otros niños o sin sitio para las sillas.",
+      "fact": "dgt.retencion",
+      "status": "borrador"
+    },
+    {
+      "id": "seguridad-4",
+      "topic": "seguridad",
+      "q": "¿Cuándo se puede llevar una silla infantil orientada hacia atrás en el asiento delantero con airbag frontal?",
+      "options": [
+        "Nunca",
+        "Solo si el airbag está desactivado",
+        "Siempre"
+      ],
+      "answer": 1,
+      "explain": "Con airbag frontal, la silla orientada hacia atrás solo se permite si el airbag se ha desactivado.",
+      "fact": "dgt.retencion",
+      "status": "borrador"
+    },
+    {
+      "id": "seguridad-5",
+      "topic": "seguridad",
+      "q": "¿Cuántos puntos se pierden por usar el móvil sujetándolo con la mano mientras conduces?",
+      "options": [
+        "3 puntos",
+        "4 puntos",
+        "6 puntos"
+      ],
+      "answer": 2,
+      "explain": "Usar el móvil con la mano mientras se conduce quita 6 puntos.",
+      "fact": "dgt.movil",
+      "status": "borrador"
+    },
+    {
+      "id": "seguridad-6",
+      "topic": "seguridad",
+      "q": "¿Cuándo se puede hablar por el móvil mientras se conduce?",
+      "options": [
+        "Con la mano, si se circula despacio",
+        "Solo si no se usan las manos ni cascos ni auriculares",
+        "Con la mano, si es una llamada corta"
+      ],
+      "answer": 1,
+      "explain": "Durante la conducción, la comunicación solo se permite sin usar las manos y sin cascos ni auriculares.",
+      "fact": "dgt.movil",
+      "status": "borrador"
+    },
+    {
+      "id": "seguridad-7",
+      "topic": "seguridad",
+      "q": "¿Se puede conducir con un solo auricular puesto para escuchar música?",
+      "options": [
+        "Sí, si es en ciudad",
+        "Sí, si el volumen es bajo",
+        "No: está prohibido conducir con cascos o auriculares"
+      ],
+      "answer": 2,
+      "explain": "Está prohibido conducir con cualquier tipo de auricular conectado a un reproductor. Quita 3 puntos.",
+      "fact": "dgt.movil",
+      "status": "borrador"
+    },
+    {
+      "id": "seguridad-8",
+      "topic": "seguridad",
+      "q": "¿Se puede llevar en el coche un detector de radares?",
+      "options": [
+        "No; los avisadores que solo informan de dónde están los radares sí se permiten",
+        "Sí, si está apagado",
+        "Sí, en autopista"
+      ],
+      "answer": 0,
+      "explain": "Los detectores de radares están prohibidos. Los avisadores de la posición de los controles están permitidos.",
+      "fact": "dgt.distracciones",
+      "status": "borrador"
+    },
+    {
+      "id": "alumbrado-1",
+      "topic": "alumbrado",
+      "q": "¿Hay que llevar las luces encendidas en un túnel de día?",
+      "options": [
+        "No, solo de noche",
+        "Sí, a cualquier hora",
+        "Solo si es largo"
+      ],
+      "answer": 1,
+      "explain": "En túneles y tramos con la señal de túnel hay que llevar el alumbrado encendido a cualquier hora.",
+      "fact": "dgt.alumbrado",
+      "status": "borrador"
+    },
+    {
+      "id": "alumbrado-2",
+      "topic": "alumbrado",
+      "q": "¿Cuándo hay que cambiar la luz larga por la de cruce?",
+      "options": [
+        "Solo cuando viene un coche de frente",
+        "Nunca en autopista",
+        "En cuanto pueda deslumbrar a otros, también a quien circula delante"
+      ],
+      "answer": 2,
+      "explain": "Hay que evitar deslumbrar a quien viene de frente y a quien circula delante y te ve por el retrovisor.",
+      "fact": "dgt.alumbrado",
+      "status": "borrador"
+    },
+    {
+      "id": "alumbrado-3",
+      "topic": "alumbrado",
+      "q": "Te deslumbra un coche que viene de frente. ¿Qué haces?",
+      "options": [
+        "Reducir la velocidad lo necesario, incluso hasta detenerme",
+        "Acelerar para pasarlo antes",
+        "Poner yo también las luces largas"
+      ],
+      "answer": 0,
+      "explain": "Quien sufre un deslumbramiento debe reducir la velocidad, incluso hasta parar.",
+      "fact": "dgt.deslumbramiento",
+      "status": "borrador"
+    },
+    {
+      "id": "alumbrado-4",
+      "topic": "alumbrado",
+      "q": "¿Cuándo se debe usar la luz antiniebla trasera?",
+      "options": [
+        "Siempre de noche",
+        "Con lluvia ligera",
+        "Con niebla espesa, lluvia muy intensa o nevada fuerte"
+      ],
+      "answer": 2,
+      "explain": "La antiniebla trasera solo con condiciones especialmente desfavorables: deslumbra mucho a quien va detrás.",
+      "fact": "dgt.alumbrado",
+      "status": "borrador"
+    },
+    {
+      "id": "alumbrado-5",
+      "topic": "alumbrado",
+      "q": "¿Se puede usar la luz larga con el vehículo parado o estacionado?",
+      "options": [
+        "Sí, para iluminar la zona",
+        "No, está prohibido",
+        "Sí, siempre"
+      ],
+      "answer": 1,
+      "explain": "Se prohíbe la luz larga con el vehículo parado o estacionado.",
+      "fact": "dgt.deslumbramiento",
+      "status": "borrador"
+    },
+    {
+      "id": "alumbrado-6",
+      "topic": "alumbrado",
+      "q": "¿Deben las motocicletas llevar la luz de cruce encendida durante el día?",
+      "options": [
+        "Sí, en cualquier vía",
+        "No, solo de noche",
+        "Solo en autopista"
+      ],
+      "answer": 0,
+      "explain": "Las motocicletas llevan siempre encendida la luz de cruce, también de día.",
+      "fact": "dgt.deslumbramiento",
+      "status": "borrador"
+    },
+    {
+      "id": "alumbrado-7",
+      "topic": "alumbrado",
+      "q": "¿Cuándo se considera que una vía está insuficientemente iluminada?",
+      "options": [
+        "Cuando no se puede leer una matrícula a 10 metros o no se distingue un coche oscuro a 50 metros",
+        "Cuando no hay farolas",
+        "Siempre que es de noche"
+      ],
+      "answer": 0,
+      "explain": "Es la definición del Reglamento General de Circulación.",
+      "fact": "dgt.deslumbramiento",
+      "status": "borrador"
+    },
+    {
+      "id": "alumbrado-8",
+      "topic": "alumbrado",
+      "q": "Con niebla que reduce mucho la visibilidad, ¿qué luces delanteras puedes usar?",
+      "options": [
+        "Solo las de posición",
+        "La antiniebla delantera, la de cruce o la larga",
+        "Ninguna, para no deslumbrar"
+      ],
+      "answer": 1,
+      "explain": "Con niebla, lluvia intensa o nevada se usa la antiniebla delantera o la luz de corto o largo alcance.",
+      "fact": "dgt.alumbrado",
+      "status": "borrador"
+    },
+    {
+      "id": "averia-1",
+      "topic": "averia",
+      "q": "Tu coche se queda inmovilizado en la carretera por una avería. ¿Qué haces primero?",
+      "options": [
+        "Rellenar el parte en la calzada",
+        "Quedarme dentro sin hacer nada",
+        "Encender la luz de emergencia y usar el dispositivo de preseñalización de peligro"
+      ],
+      "answer": 2,
+      "explain": "Hay que señalizar el vehículo inmovilizado y retirarlo de la calzada lo antes posible.",
+      "fact": "dgt.averia",
+      "status": "borrador"
+    },
+    {
+      "id": "averia-2",
+      "topic": "averia",
+      "q": "Si tienes que salir del coche inmovilizado, ¿por qué lado sales?",
+      "options": [
+        "Por el que esté más cerca",
+        "Por el lado contrario al tráfico, si hay un lugar seguro",
+        "Por el lado del tráfico"
+      ],
+      "answer": 1,
+      "explain": "Se sale por el lado contrario al flujo de tráfico y sin quedarse en los carriles ni en el arcén.",
+      "fact": "dgt.averia",
+      "status": "borrador"
+    },
+    {
+      "id": "averia-3",
+      "topic": "averia",
+      "q": "Si no hay un lugar seguro fuera de la vía para salir del coche averiado, ¿qué haces?",
+      "options": [
+        "Caminar por la calzada a pedir ayuda",
+        "Salir y esperar en el arcén",
+        "Quedarme dentro con el cinturón abrochado"
+      ],
+      "answer": 2,
+      "explain": "Si no se puede salir con seguridad, los ocupantes se quedan dentro con el cinturón abrochado.",
+      "fact": "dgt.averia",
+      "status": "borrador"
+    },
+    {
+      "id": "averia-4",
+      "topic": "averia",
+      "q": "Después de un accidente leve, ¿dónde se rellena el parte amistoso?",
+      "options": [
+        "En un lugar seguro fuera de la vía",
+        "En el arcén",
+        "En la calzada, junto a los coches"
+      ],
+      "answer": 0,
+      "explain": "Está prohibido rellenar el parte en la plataforma de circulación.",
+      "fact": "dgt.averia",
+      "status": "borrador"
+    },
+    {
+      "id": "averia-5",
+      "topic": "averia",
+      "q": "Tu coche tiene una avería pero puede seguir y necesitas auxilio. ¿Qué haces en una autovía?",
+      "options": [
+        "Parar en el carril izquierdo",
+        "Dar marcha atrás hasta la última salida",
+        "Salir de los carriles y buscar la primera salida usando el arcén derecho"
+      ],
+      "answer": 2,
+      "explain": "Si puedes moverte, abandona los carriles y dirígete a la primera salida por el arcén derecho.",
+      "fact": "dgt.averia_marcha",
+      "status": "borrador"
+    },
+    {
+      "id": "averia-6",
+      "topic": "averia",
+      "q": "¿Se puede parar un momento en un paso de peatones?",
+      "options": [
+        "Sí, durante dos minutos",
+        "No, está prohibido parar",
+        "Sí, con las luces de emergencia"
+      ],
+      "answer": 1,
+      "explain": "Está prohibido parar en pasos para peatones, para ciclistas y a nivel.",
+      "fact": "dgt.parada",
+      "status": "borrador"
+    },
+    {
+      "id": "averia-7",
+      "topic": "averia",
+      "q": "¿Se puede parar en un carril reservado al autobús?",
+      "options": [
+        "No, está prohibido",
+        "Sí, por la noche",
+        "Sí, si no viene ningún autobús"
+      ],
+      "answer": 0,
+      "explain": "Está prohibido parar en carriles reservados al transporte público o a las bicicletas.",
+      "fact": "dgt.parada",
+      "status": "borrador"
+    },
+    {
+      "id": "averia-8",
+      "topic": "averia",
+      "q": "¿Cuántos puntos se pierden por hacer marcha atrás en una autopista o autovía?",
+      "options": [
+        "2 puntos",
+        "Ninguno",
+        "4 puntos"
+      ],
+      "answer": 2,
+      "explain": "La marcha atrás en autopistas y autovías quita 4 puntos.",
+      "fact": "dgt.puntos_infracciones",
+      "status": "borrador"
+    }
+  ],
+  "words": [
+    {
+      "es": "calzada",
+      "def": "La parte de la vía por donde circulan los vehículos.",
+      "tr": {
+        "en": "roadway",
+        "fr": "chaussée",
+        "ar": "الطريق المعبّد (مسار السيارات)",
+        "ro": "carosabil",
+        "uk": "проїзна частина",
+        "ru": "проезжая часть",
+        "pt": "pista de rolamento",
+        "zh": "车行道",
+        "ur": "سڑک کا گاڑیوں والا حصہ",
+        "de": "Fahrbahn",
+        "it": "carreggiata"
+      }
+    },
+    {
+      "es": "arcén",
+      "def": "La franja a la derecha de la calzada, fuera de los carriles. No es para circular normalmente.",
+      "tr": {
+        "en": "hard shoulder",
+        "fr": "accotement",
+        "ar": "حافة الطريق",
+        "ro": "acostament",
+        "uk": "узбіччя",
+        "ru": "обочина",
+        "pt": "acostamento",
+        "zh": "路肩",
+        "ur": "سڑک کا کنارہ",
+        "de": "Seitenstreifen",
+        "it": "banchina"
+      }
+    },
+    {
+      "es": "carril",
+      "def": "Cada una de las franjas de la calzada para una fila de vehículos.",
+      "tr": {
+        "en": "lane",
+        "fr": "voie",
+        "ar": "مسار",
+        "ro": "bandă",
+        "uk": "смуга руху",
+        "ru": "полоса движения",
+        "pt": "faixa",
+        "zh": "车道",
+        "ur": "لین",
+        "de": "Fahrstreifen",
+        "it": "corsia"
+      }
+    },
+    {
+      "es": "acera",
+      "def": "La parte de la calle reservada a los peatones.",
+      "tr": {
+        "en": "pavement / sidewalk",
+        "fr": "trottoir",
+        "ar": "رصيف",
+        "ro": "trotuar",
+        "uk": "тротуар",
+        "ru": "тротуар",
+        "pt": "calçada",
+        "zh": "人行道",
+        "ur": "فٹ پاتھ",
+        "de": "Gehweg",
+        "it": "marciapiede"
+      }
+    },
+    {
+      "es": "glorieta",
+      "def": "Cruce en forma de círculo; se circula alrededor de una isla central.",
+      "tr": {
+        "en": "roundabout",
+        "fr": "rond-point",
+        "ar": "دوّار",
+        "ro": "sens giratoriu",
+        "uk": "кільце (круговий рух)",
+        "ru": "круговой перекрёсток",
+        "pt": "rotatória",
+        "zh": "环岛",
+        "ur": "گول چکر",
+        "de": "Kreisverkehr",
+        "it": "rotatoria"
+      }
+    },
+    {
+      "es": "intersección",
+      "def": "Lugar donde se cruzan o se juntan dos o más vías.",
+      "tr": {
+        "en": "junction",
+        "fr": "intersection",
+        "ar": "تقاطع",
+        "ro": "intersecție",
+        "uk": "перехрестя",
+        "ru": "перекрёсток",
+        "pt": "cruzamento",
+        "zh": "交叉路口",
+        "ur": "چوراہا",
+        "de": "Kreuzung",
+        "it": "incrocio"
+      }
+    },
+    {
+      "es": "paso de peatones",
+      "def": "Zona marcada con rayas blancas donde los peatones cruzan la calzada.",
+      "tr": {
+        "en": "pedestrian crossing",
+        "fr": "passage piéton",
+        "ar": "ممر المشاة",
+        "ro": "trecere de pietoni",
+        "uk": "пішохідний перехід",
+        "ru": "пешеходный переход",
+        "pt": "faixa de pedestres",
+        "zh": "人行横道",
+        "ur": "پیدل گزرگاہ",
+        "de": "Zebrastreifen",
+        "it": "strisce pedonali"
+      }
+    },
+    {
+      "es": "ceder el paso",
+      "def": "Dejar pasar primero a otro vehículo o a un peatón.",
+      "tr": {
+        "en": "give way",
+        "fr": "céder le passage",
+        "ar": "إعطاء الأولوية",
+        "ro": "a ceda trecerea",
+        "uk": "дати дорогу",
+        "ru": "уступить дорогу",
+        "pt": "dar a preferência",
+        "zh": "让行",
+        "ur": "راستہ دینا",
+        "de": "Vorfahrt gewähren",
+        "it": "dare la precedenza"
+      }
+    },
+    {
+      "es": "adelantar",
+      "def": "Pasar a otro vehículo que va en tu mismo sentido.",
+      "tr": {
+        "en": "overtake",
+        "fr": "dépasser",
+        "ar": "تجاوز",
+        "ro": "a depăși",
+        "uk": "обганяти",
+        "ru": "обгонять",
+        "pt": "ultrapassar",
+        "zh": "超车",
+        "ur": "اوورٹیک کرنا",
+        "de": "überholen",
+        "it": "sorpassare"
+      }
+    },
+    {
+      "es": "turismo",
+      "def": "Coche para transportar personas (hasta 9 plazas con el conductor).",
+      "tr": {
+        "en": "passenger car",
+        "fr": "voiture particulière",
+        "ar": "سيارة سياحية (خاصة)",
+        "ro": "autoturism",
+        "uk": "легковий автомобіль",
+        "ru": "легковой автомобиль",
+        "pt": "carro de passeio",
+        "zh": "小汽车",
+        "ur": "مسافر کار",
+        "de": "Pkw",
+        "it": "autovettura"
+      }
+    },
+    {
+      "es": "travesía",
+      "def": "Tramo de una carretera que pasa por dentro de un pueblo.",
+      "tr": {
+        "en": "road through a town",
+        "fr": "traversée d'agglomération",
+        "ar": "طريق يعبر بلدة",
+        "ro": "traversare de localitate",
+        "uk": "ділянка дороги в населеному пункті",
+        "ru": "участок дороги в населённом пункте",
+        "pt": "trecho de estrada dentro de uma cidade",
+        "zh": "穿过城镇的路段",
+        "ur": "قصبے سے گزرتی سڑک",
+        "de": "Ortsdurchfahrt",
+        "it": "attraversamento di centro abitato"
+      }
+    },
+    {
+      "es": "cambio de rasante",
+      "def": "Punto alto de la carretera (una subida que termina) donde no se ve lo que viene detrás.",
+      "tr": {
+        "en": "blind summit",
+        "fr": "sommet de côte",
+        "ar": "قمة مرتفع (بلا رؤية)",
+        "ro": "schimbare de pantă",
+        "uk": "перелом поздовжнього профілю (вершина підйому)",
+        "ru": "переломный пункт продольного профиля (вершина подъёма)",
+        "pt": "topo de subida (sem visibilidade)",
+        "zh": "坡顶",
+        "ur": "چڑھائی کی چوٹی",
+        "de": "Kuppe",
+        "it": "dosso"
+      }
+    },
+    {
+      "es": "deslumbrar",
+      "def": "Molestar la vista de otro conductor con una luz muy fuerte.",
+      "tr": {
+        "en": "dazzle",
+        "fr": "éblouir",
+        "ar": "إبهار (بالضوء)",
+        "ro": "a orbi",
+        "uk": "засліплювати",
+        "ru": "ослеплять",
+        "pt": "ofuscar",
+        "zh": "使目眩（强光晃眼）",
+        "ur": "آنکھیں چندھیانا",
+        "de": "blenden",
+        "it": "abbagliare"
+      }
+    },
+    {
+      "es": "parar",
+      "def": "Detener el vehículo menos de dos minutos, sin que el conductor lo deje.",
+      "tr": {
+        "en": "stop (briefly)",
+        "fr": "s'arrêter",
+        "ar": "التوقف (لفترة قصيرة)",
+        "ro": "a opri",
+        "uk": "зупинитися (ненадовго)",
+        "ru": "остановиться (ненадолго)",
+        "pt": "parar",
+        "zh": "临时停车",
+        "ur": "رکنا (مختصر)",
+        "de": "halten",
+        "it": "fermarsi"
+      }
+    },
+    {
+      "es": "estacionar",
+      "def": "Dejar el vehículo inmovilizado más tiempo que una parada.",
+      "tr": {
+        "en": "park",
+        "fr": "stationner",
+        "ar": "ركن السيارة",
+        "ro": "a parca",
+        "uk": "паркуватися",
+        "ru": "парковаться",
+        "pt": "estacionar",
+        "zh": "停车",
+        "ur": "پارک کرنا",
+        "de": "parken",
+        "it": "parcheggiare"
+      }
+    },
+    {
+      "es": "sistema de retención infantil",
+      "def": "Silla o elevador homologado para que los niños viajen seguros.",
+      "tr": {
+        "en": "child restraint system",
+        "fr": "dispositif de retenue pour enfants",
+        "ar": "مقعد أمان للأطفال",
+        "ro": "sistem de reținere pentru copii",
+        "uk": "дитяче утримувальне крісло",
+        "ru": "детское удерживающее устройство",
+        "pt": "cadeirinha infantil",
+        "zh": "儿童安全座椅",
+        "ur": "بچوں کی حفاظتی سیٹ",
+        "de": "Kinderrückhaltesystem",
+        "it": "seggiolino per bambini"
+      }
+    }
+  ]
+}
