@@ -14,7 +14,7 @@ function showProfile() {
   const head = el("div", "profile-head");
   const names = el("div", "");
   names.append(el("strong", "", "Hola, Español"), el("span", "", ui("tagline")));
-  head.append(mascot("happy", 84), names);
+  head.append(mascot("brand", 84), names);
   const tile = (icon, value, label, cls) => {
     const d = el("div", "stat-tile " + cls);
     d.append(el("span", "icon", icon), el("strong", "", String(value)), el("span", "", label));

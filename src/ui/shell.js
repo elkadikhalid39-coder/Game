@@ -3,7 +3,6 @@ import { I18N, ui, dirOf } from "../core/i18n.js";
 import { save } from "../core/state.js";
 import { stopAudio } from "../core/audio.js";
 import { go } from "../core/router.js";
-import { pick, rand } from "../core/util.js";
 import { el, txt, button } from "./dom.js";
 
 export const app = document.getElementById("app");
@@ -89,11 +88,9 @@ export function sheet(ok, title, detail, detailLang, onContinue, extra) {
 // Lluvia de emojis al terminar (se omite en modo calma o con movimiento reducido).
 export function celebrate() {
   if (document.body.classList.contains("tramite") || save.calm || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  for (let i = 0; i < 14; i++) {
-    const c = el("span", "confetti", pick(["⭐", "🎉", "✨", "🌟", "🎈"], 1)[0]);
-    c.style.left = rand(5, 95) + "vw";
-    c.style.animationDelay = Math.random() * 0.3 + "s";
-    document.body.append(c);
-    setTimeout(() => c.remove(), 1600);
-  }
+  // «Llegada»: una franja verde recorre la parte de arriba, como el tren que entra en la estación.
+  const bar = el("span", "arrive");
+  bar.setAttribute("aria-hidden", "true");
+  document.body.append(bar);
+  setTimeout(() => bar.remove(), 1300);
 }

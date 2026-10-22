@@ -8,9 +8,6 @@ import { go } from "../core/router.js";
 import { UNITS, LESSON_TYPES, doneIn, unitComplete, currentUnitIndex, reachable } from "./course.js";
 import { startLesson } from "./lesson.js";
 
-// Desplazamiento en zigzag de los nodos dentro de cada unidad.
-const ZIGZAG = [0, 1, 0, -1];
-
 function showPath() {
   setTab("path");
   screen("main");
@@ -22,8 +19,8 @@ function showPath() {
     // Cada unidad es un bloque; su cabecera se queda fija arriba mientras se recorre.
     const compact = n !== currentUnit;
     const block = el("section", "unit-block" + (compact ? " compact" : ""));
+    block.style.setProperty("--unit", u.color); // color de la línea: cabecera, estaciones y trazo
     const banner = el("div", "unit" + (unitComplete(u) ? " complete" : ""));
-    banner.style.setProperty("--unit", u.color);
     const text = el("div", "unit-text");
     text.append(el("span", "unit-kicker", ui("unit") + " " + (n + 1)), txt("strong", "", tr("w_" + u.id, save.native), save.native),
       txt("span", "unit-goal", (unitComplete(u) ? "✓ " : "🎯 ") + tr("c_" + u.id, save.native), save.native));
@@ -45,10 +42,8 @@ function showPath() {
       const open = (next && reachable(n)) || save.demo || save.level >= 2;
       const state = done ? "done" : current ? "current" : open ? "open" : "locked";
       const node = el("div", "node-wrap " + state + (lt.type === "dialog" ? " reward" : ""));
-      node.style.setProperty("--x", ZIGZAG[li] * (n % 2 ? -1 : 1));
       const b = el("button", "node");
       b.type = "button";
-      b.style.setProperty("--unit", u.color);
       b.append(el("span", "", state === "locked" ? "🔒" : done && lt.type !== "dialog" ? "✓" : lt.icon));
       b.setAttribute("aria-label", ui(lt.key) + (state === "locked" ? " 🔒" : ""));
       b.disabled = state === "locked";

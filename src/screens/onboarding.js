@@ -12,7 +12,7 @@ function showWelcome() {
   screen("plain", "");
   const hero = el("section", "welcome");
   hero.append(
-    mascot("cheer", 140),
+    mascot("brand", 140),
     el("h1", "wordmark", "Hola, Español"),
     // Antes de elegir idioma: una sola frase, en español y en inglés.
     el("p", "greetings", "Español para vivir y trabajar en España · Spanish for living and working in Spain"),

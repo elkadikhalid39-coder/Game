@@ -1,12 +1,11 @@
 // Arranque de la app.
-import "@fontsource/lexend/latin-400.css";
-import "@fontsource/lexend/latin-500.css";
-import "@fontsource/lexend/latin-600.css";
-import "@fontsource/lexend/latin-ext-400.css";
-import "@fontsource/lexend/latin-ext-600.css";
-import "@fontsource/fredoka/latin-500.css";
-import "@fontsource/fredoka/latin-600.css";
-import "@fontsource/fredoka/latin-700.css";
+// Overpass: letra basada en la de las señales de carretera (Highway Gothic), con alfabeto cirílico (licencia OFL).
+import "@fontsource/overpass/latin-400.css";
+import "@fontsource/overpass/latin-700.css";
+import "@fontsource/overpass/latin-ext-400.css";
+import "@fontsource/overpass/latin-ext-700.css";
+import "@fontsource/overpass/cyrillic-400.css";
+import "@fontsource/overpass/cyrillic-700.css";
 import "./styles/main.css";
 
 import { I18N } from "./core/i18n.js";
