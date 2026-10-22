@@ -2,12 +2,54 @@
 import { ui } from "../core/i18n.js";
 import { save, persist } from "../core/state.js";
 import { el, button } from "../ui/dom.js";
+import { screen } from "../ui/shell.js";
 import APP from "../../content/app.json";
 
 // En modo demo todos los pases están abiertos (sin pago y sin guardarlo como comprado).
 export const ownsPass = (id) => !!save.passes[id];
 export const hasPass = (id) => save.demo || ownsPass(id);
 export function unlockPass(id) { save.passes[id] = true; persist(); }
+
+// Pantallas de trámite (exámenes, «Mi caso», universidad): el mismo color, pero más plano y serio:
+// sin mascota, sin confeti y con botones sin relieve (estilos en body.tramite).
+export function tscreen(layout = "main") {
+  screen(layout);
+  document.body.classList.add("tramite");
+}
+
+// Opción de respuesta: letra A, B, C… y texto, a todo el ancho. El estado elegido se marca con icono, no solo con color.
+export function optionButton(text, i, onPick, { selected = false, ok = false } = {}) {
+  const b = button("opt left choice" + (selected ? " selected" : ""), "", () => onPick(i, b));
+  b.append(el("span", "opt-letter", "ABCDEFGH"[i]), el("span", "opt-text", text));
+  b.dataset.ok = ok ? "1" : "0";
+  b.setAttribute("aria-pressed", String(selected));
+  return b;
+}
+
+// Corrección dentro de la página, debajo de la pregunta (no en un panel encima del dedo):
+// acierto o fallo, la respuesta correcta, la explicación con su fuente y el botón para seguir.
+export function answerFeedback(card, ok, answerText, explanation, onNext) {
+  for (const b of card.querySelectorAll(".opt")) {
+    b.disabled = true;
+    if (b.dataset.ok === "1") b.classList.add("correct");
+  }
+  const box = el("div", "feedback " + (ok ? "ok" : "bad"));
+  box.setAttribute("role", "status");
+  box.append(el("strong", "feedback-title", (ok ? "✓ " : "✕ ") + (ok ? ui("great") : ui("answer") + ": " + answerText)));
+  if (explanation) box.append(explanation);
+  const next = button("btn", ui("next") + " →", onNext);
+  box.append(next);
+  card.append(box);
+  next.focus({ preventScroll: true });
+  box.scrollIntoView({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+}
+
+// Acciones secundarias de un trámite: enlaces discretos debajo de las tres principales.
+export function secondaryActions(items) {
+  const row = el("div", "secondary-actions");
+  for (const [label, fn] of items) row.append(button("link", label, fn));
+  return row;
+}
 
 // Aviso de contenido en borrador y de que la app no sustituye a los organismos oficiales.
 export function draftBanner() {

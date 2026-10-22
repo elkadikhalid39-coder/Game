@@ -12,7 +12,7 @@
 // con más nivel, menos presentaciones y repeticiones y más frases completas.
 // Quien tiene el español como idioma no tiene traducción que ver: sus ejercicios de palabras son dictados.
 import { ui, tr } from "../core/i18n.js";
-import { save, persist, TARGET as G } from "../core/state.js";
+import { save, persist, setResume, clearResume, TARGET as G } from "../core/state.js";
 import { go } from "../core/router.js";
 import { shuffle, pick } from "../core/util.js";
 import { speak, beep, stopAudio } from "../core/audio.js";
@@ -106,6 +106,7 @@ function makeReview() {
 }
 
 export function startLesson(unit, li) {
+  setResume({ kind: "lesson", unit: unit.id, li });
   runLesson({ unit, li, list: makeLesson(unit, li), i: 0, correct: 0, graded: 0 });
 }
 export function startReview() {
@@ -356,6 +357,7 @@ function showResult(s) {
   const wasComplete = s.unit && unitComplete(s.unit);
   // Solo avanza el progreso la lección que tocaba (en la demo se pueden abrir otras sin marcarlas hechas).
   if (!s.review && s.li === (save.progress[s.unit.id] || 0)) save.progress[s.unit.id] = s.li + 1;
+  if (!s.review) clearResume("lesson");
   persist();
   celebrate();
   screen("plain");

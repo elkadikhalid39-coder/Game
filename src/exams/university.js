@@ -6,7 +6,7 @@ import { register, go } from "../core/router.js";
 import { el, button } from "../ui/dom.js";
 import { app, screen } from "../ui/shell.js";
 import { factNote, extLink } from "../ui/fact.js";
-import { hasPass, draftBanner, menuRow } from "./common.js";
+import { hasPass, draftBanner, menuRow, tscreen, secondaryActions } from "./common.js";
 import { passCard } from "./nationality.js";
 
 export const PASS = "universidad";
@@ -18,22 +18,25 @@ export const FREE_TESTS = ["ingles"];
 export const fmt = (n, digits = 2) => n.toLocaleString("es-ES", { maximumFractionDigits: digits });
 
 function showUniversity() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("exams")), el("h1", "", "🎓 " + ui("passUni")), draftBanner());
   const visa = el("p", "notice visa");
   visa.append("✈️ ", ui("noVisaNotice"));
   app.append(visa);
   const locked = !hasPass(PASS);
   const menu = el("div", "menu");
+  // Tres acciones principales (practicar por materia, simulacro, mi caso); el resto, enlaces secundarios.
   menu.append(
-    menuRow("🧭", ui("uniRoute"), ui("uniRouteDesc"), () => go("uni-route"), { badge: ui("free") }),
     menuRow("📑", ui("subjectsTitle"), ui("subjectsDesc"), () => go("pce-subjects"), { badge: ui("free") }),
     menuRow("⏱", ui("pceMocks"), ui("pceMocksDesc"), () => go("pce-mocks"), { badge: locked ? ui("free") + " · " + ui("locked") : null }),
-    menuRow("✍️", ui("academicWriting"), ui("academicWritingDesc"), () => go("pce-writing"), { badge: locked ? ui("free") + " · " + ui("locked") : null }),
-    menuRow("🧮", ui("gradeCalc"), ui("gradeCalcDesc"), () => go("pce-calc"), { badge: ui("free") }),
-    menuRow("📚", ui("officialSources"), "BOE · UNED · Ministerio de Educación", () => go("sources", "university")),
+    menuRow("🧭", ui("uniRoute"), ui("uniRouteDesc"), () => go("uni-route"), { badge: ui("free") }),
   );
-  app.append(menu, passCard(PASS, showUniversity));
+  app.append(menu, secondaryActions([
+    ["✍️ " + ui("academicWriting"), () => go("pce-writing")],
+    ["🧮 " + ui("gradeCalc"), () => go("pce-calc")],
+    ["📚 " + ui("officialSources"), () => go("sources", "university")],
+    ["🗣️ " + ui("practiceSpanish"), () => go("path")],
+  ]), passCard(PASS, showUniversity));
 }
 
 // ---------- Materias ----------
@@ -54,7 +57,7 @@ function officialLinks(s) {
 }
 
 function showSubjects() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("university")), el("h1", "", "📑 " + ui("subjectsTitle")),
     factNote("pce.materias_numero"), factNote("pce.idioma"), factNote("pce.tipos"));
   app.append(el("h2", "section", "✅ " + ui("verifiedSubjects")));
@@ -80,7 +83,7 @@ function showSubjects() {
 function showSubject(id) {
   const s = byId(id);
   const d = pce.details[id];
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("pce-subjects")), el("h1", "", "📘 " + s.name), factNote(d.fact));
   for (const f of d.extra || []) app.append(factNote(f));
   app.append(factNote("pce.normas"), el("h2", "section", ui("program")));

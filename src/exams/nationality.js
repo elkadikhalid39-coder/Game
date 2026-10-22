@@ -6,7 +6,7 @@ import { FACTS } from "../core/facts.js";
 import { el, button } from "../ui/dom.js";
 import { app, screen } from "../ui/shell.js";
 import { factNote } from "../ui/fact.js";
-import { hasPass, ownsPass, unlockPass, draftBanner, menuRow } from "./common.js";
+import { hasPass, ownsPass, unlockPass, draftBanner, menuRow, tscreen, secondaryActions } from "./common.js";
 
 export const PASS = "nacionalidad";
 
@@ -25,22 +25,25 @@ export function passCard(id, onUnlock) {
 }
 
 function showNationality() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("exams")), el("h1", "", "🏛️ " + ui("passNat")), draftBanner());
   const locked = !hasPass(PASS);
   const menu = el("div", "menu");
+  // Tres acciones principales; las fuentes y el curso de español, como enlaces secundarios.
   menu.append(
-    menuRow("🗂️", ui("myCase"), ui("myCaseDesc"), () => go("tramite"), { badge: ui("free") }),
     menuRow("📘", ui("ccseTitle"), ui("ccseDesc"), () => go("ccse"), { badge: locked ? ui("free") + " · " + ui("locked") : null }),
     menuRow("🗣️", ui("deleTitle"), ui("deleDesc"), () => go("dele"), { badge: locked ? ui("locked") : null, locked }),
-    menuRow("📚", ui("officialSources"), "BOE · Ministerio de Justicia · Instituto Cervantes", () => go("sources", "nationality")),
+    menuRow("🗂️", ui("myCase"), ui("myCaseDesc"), () => go("tramite"), { badge: ui("free") }),
   );
-  app.append(menu, passCard(PASS, showNationality));
+  app.append(menu, secondaryActions([
+    ["📚 " + ui("officialSources"), () => go("sources", "nationality")],
+    ["🗣️ " + ui("practiceSpanish"), () => go("path")],
+  ]), passCard(PASS, showNationality));
 }
 
 // Todas las fuentes de un pase, agrupadas.
 function showSources(from) {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go(from)), el("h1", "", "📚 " + ui("officialSources")));
   const groups = {
     university: [["pce.", "🎓 " + ui("passUni")]],

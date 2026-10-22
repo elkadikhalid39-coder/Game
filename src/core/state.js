@@ -11,10 +11,12 @@ function load() {
 }
 
 // v1 (modo niños, varios idiomas de aprendizaje) y v2 → v3. Se conserva lo aprendido en español.
+export const GOALS = ["daily", "nat", "drive", "uni", "unknown"];
 export function migrate(old, known = () => true) {
   const v3 = old.v >= 3;
   // Hasta la v2, el progreso estaba agrupado por idioma de aprendizaje: { es: {...}, en: {...} }.
   const pick = (key, empty) => (v3 ? old[key] : old[key]?.[TARGET]) ?? empty;
+  const hadProgress = Object.keys(pick("progress", {})).length > 0 || pick("learned", []).length > 0;
   return {
     v: SAVE_VERSION,
     native: old.native && known(old.native) ? old.native : "",
@@ -22,7 +24,12 @@ export function migrate(old, known = () => true) {
     voice: (v3 && old.voice) || "neutra", // voz del audio en español (content/voices.json)
     rhythm: (v3 && old.rhythm) || "normal", // manera de hablar: slow | normal | fast
     // Nivel de español que dice tener (0 de cero · 1 un poco · 2 me defiendo · 3 bastante bien); null: aún no se ha preguntado.
-    level: [0, 1, 2, 3].includes(old.level) ? old.level : null,
+    // Quien ya tenía progreso no vuelve a ver las preguntas iniciales: nivel 0 y entra al camino.
+    level: [0, 1, 2, 3].includes(old.level) ? old.level : hadProgress ? 0 : null,
+    // Qué necesita ahora: daily | nat | drive | uni | unknown; null: no se ha preguntado (se abre el camino).
+    goal: GOALS.includes(old.goal) ? old.goal : null,
+    // Lo último que dejó a medias, para la tarjeta «Continuar»: { kind: "lesson", unit, li } o { kind: "exam", route, arg }.
+    resume: (v3 && old.resume) || null,
     progress: pick("progress", {}), // { [unidad]: lecciones completadas }
     mistakes: pick("mistakes", []), // [{ k: "w" | "p", id }]
     learned: pick("learned", []), // [ids de palabras acertadas]
@@ -37,6 +44,10 @@ export function migrate(old, known = () => true) {
 }
 
 export const save = migrate(load());
+
+// Lo último empezado y no terminado (tarjeta «Continuar»). Se borra al terminarlo.
+export function setResume(r) { save.resume = r; persist(); }
+export function clearResume(kind) { if (save.resume?.kind === kind) { save.resume = null; persist(); } }
 
 export function persist() {
   try { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); } catch { /* sin almacenamiento */ }

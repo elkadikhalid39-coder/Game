@@ -88,7 +88,10 @@ test("primera vez (árabe)", async () => {
   await page.click(".welcome ~ .btn");
   await page.click('.lang-row:has(.name[lang="ar"])');
   await page.click('.level-row[data-level="0"]');
-  return [(await page.$(".node-wrap.current")) && (await page.innerText("#tabbar")).includes("تدرّب"), errors];
+  // Tras el nivel se pregunta qué necesita ahora; «día a día» lleva al camino.
+  const goals = (await page.$$(".level-row[data-goal]")).length === 5;
+  await page.click('.level-row[data-goal="daily"]');
+  return [goals && (await page.$(".node-wrap.current")) && (await page.innerText("#tabbar")).includes("تدرّب"), errors];
 });
 
 for (const native of ["ar", "zh", "es"]) {
@@ -120,8 +123,7 @@ test("migración del progreso antiguo", async () => {
   const old = { native: "ro", target: "en", mode: "kids", age: "3-5", stickers: ["🦄"], xp: 90,
     progress: { es: { saludos: 3 }, en: { saludos: 1 } }, learned: { es: ["hola", "adios"] } };
   const { page, errors } = await open(old);
-  // A quien ya usaba la app se le pregunta una vez su nivel.
-  await page.click('.level-row[data-level="1"]');
+  // Quien ya tenía progreso entra directamente al camino (nivel «empiezo de cero», sin objetivo).
   return [(await page.$$(".node-wrap.done")).length === 3 && (await page.innerText("#topbar")).includes("📚 2"), errors];
 });
 
@@ -171,6 +173,7 @@ test("la pregunta del nivel aparece tras el idioma y se cambia en el perfil", as
   await page.click('.lang-row:has(.name[lang="es"])');
   const asked = (await page.$$(".level-row")).length === 4;
   await page.click('.level-row[data-level="2"]');
+  await page.click('.level-row[data-goal="daily"]');
   await page.click('.tab[data-tab="profile"]');
   const label = await page.innerText(".settings");
   await page.click('.setting:has-text("Mi nivel")');
@@ -213,6 +216,7 @@ test("vista previa de un solo archivo", async () => {
   await page.click(".welcome ~ .btn");
   await page.click('.lang-row:has(.name[lang="pt"])');
   await page.click('.level-row[data-level="0"]');
+  await page.click('.level-row[data-goal="unknown"]');
   return [!!(await page.$(".node-wrap.current")), errors];
 });
 
@@ -331,6 +335,7 @@ test("modo demo: todo abierto sin marcar lecciones como hechas", async () => {
   const locked = (await page.$$(".node-wrap.locked")).length;
   const demoTag = (await page.innerText("#topbar")).includes("DEMO");
   // Se abre directamente la práctica final de la unidad 3 y se termina.
+  await page.click(".unit-block:nth-child(3) .unit-toggle");
   await (await page.$$(".node-wrap .node"))[2 * 4 + 3].click();
   await playLesson(page);
   await page.click(".btn");
@@ -338,7 +343,7 @@ test("modo demo: todo abierto sin marcar lecciones como hechas", async () => {
   // Los dos pases, abiertos.
   await page.click('.tab[data-tab="exams"]');
   await page.click(".menu-row:nth-child(1)");
-  await page.click(".menu-row:nth-child(3)"); // DELE, que sin pase está cerrado
+  await page.click(".menu-row:nth-child(2)"); // DELE, que sin pase está cerrado
   const deleOpen = (await page.$$(".menu-row")).length === 4;
   return [locked === 0 && demoTag && done === 0 && deleOpen, errors];
 });
@@ -347,7 +352,7 @@ test("calculadora: coma decimal y aviso si una nota no se entiende", async () =>
   const { page, errors } = await open({ native: "es" });
   await page.click('.tab[data-tab="exams"]');
   await page.click(".menu-row:nth-child(2)");
-  await page.click(".menu-row:nth-child(5)");
+  await page.click(".secondary-actions .link:nth-child(2)");
   await page.fill("#calc-bach", "7,5");
   await page.fill("#calc-pce-1", "6");
   await page.fill("#calc-pce-2", "seis");
@@ -382,6 +387,7 @@ test("dictado de palabras: todo bien y una con fallo marcado", async () => {
   const { page, errors } = await open({ native: "fr", progress: { saludos: 1 } });
   await page.click('.tab[data-tab="review"]');
   await page.click(".menu-row:nth-child(2)");
+  await page.click(".menu-row:nth-child(1)");
   let marked = false;
   for (let k = 0; k < 8; k++) {
     const text = await page.getAttribute(".write-box", "data-text");
@@ -398,14 +404,15 @@ test("dictado de palabras: todo bien y una con fallo marcado", async () => {
 test("dictado de frases y diccionario", async () => {
   const { page, errors } = await open({ native: "es" });
   await page.click('.tab[data-tab="review"]');
-  await page.click(".menu-row:nth-child(3)");
+  await page.click(".menu-row:nth-child(2)");
+  await page.click(".menu-row:nth-child(2)");
   const text = await page.getAttribute(".write-box", "data-text");
   await page.fill("#write-answer", text.toLowerCase().replace(/[¿?¡!.,]/g, ""));
   await page.click(".write-box .btn");
   const accepted = !!(await page.$(".sheet.ok"));
   await page.click(".sheet .btn");
   await page.click(".lesson-head .icon-btn");
-  await page.click(".menu-row:nth-child(4)");
+  await page.click(".menu-row:nth-child(3)");
   await page.fill("#dict-search", "cafe");
   const found = (await page.$$(".dict-row")).length === 1 && (await page.innerText(".dict-list")).includes("Café");
   return [accepted && found, errors];
@@ -420,7 +427,7 @@ test("Mi trámite: adulto que necesita dispensa", async () => {
   const { page, errors } = await open({ native: "es" });
   await page.click('.tab[data-tab="exams"]');
   await page.click(".menu-row:nth-child(1)"); // Nacionalidad
-  await page.click(".menu-row:nth-child(1)"); // Mi trámite
+  await page.click(".menu-row:nth-child(3)"); // Mi caso
   for (const answer of ["18 o más", "Ninguna de estas", "No", "No", "No", "Sí"]) await clickText(page, answer);
   const text = await page.innerText("#app");
   const ok = text.includes("10 años") && text.includes("Necesitas aprobar el DELE A2") && !!(await page.$(".step.important"))
@@ -432,7 +439,7 @@ test("Mi trámite: menor de 14 años", async () => {
   const { page, errors } = await open({ native: "fr" });
   await page.click('.tab[data-tab="exams"]');
   await page.click(".menu-row:nth-child(1)");
-  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(3)");
   await clickText(page, "Moins de 14 ans");
   await clickText(page, "Aucune de ces situations");
   const text = await page.innerText("#app");
@@ -443,26 +450,31 @@ test("CCSE: muestra gratis sin pase", async () => {
   const { page, errors } = await open({ native: "en" });
   await page.click('.tab[data-tab="exams"]');
   await page.click(".menu-row:nth-child(1)");
-  await page.click(".menu-row:nth-child(2)"); // CCSE
-  const lockedRows = (await page.$$(".menu-row.locked")).length; // tareas 2-5, simulacro y «Mis fallos» (vacío)
-  await page.click(".menu-row:nth-child(1)"); // práctica tarea 1
+  await page.click(".menu-row:nth-child(1)"); // CCSE
+  const lockedRows = (await page.$$(".menu-row.locked")).length; // simulacro y «Mis fallos» (vacío)
+  await page.click(".menu-row:nth-child(1)"); // practicar por tarea
+  const lockedTasks = (await page.$$(".menu-row.locked")).length; // tareas 2-5
+  await page.click(".menu-row:nth-child(1)"); // tarea 1
+  // Primero los hechos, luego las preguntas.
+  const facts = (await page.$$(".fact-cards .fact")).length === 5;
+  await page.click(".btn.big");
   let n = 0;
   let report = false;
   for (; n < 10 && !(await page.$("h1")); n++) {
     await page.click('.opt[data-ok="1"]');
-    // Cada corrección permite avisar de un error en esa pregunta (con su identificador).
-    report ||= /^ccse ccse-t1-/.test((await page.getAttribute(".sheet .link.report", "data-ref")) || "");
-    await page.click(".sheet .btn");
+    // La corrección aparece debajo y permite avisar de un error en esa pregunta (con su identificador).
+    report ||= /^ccse ccse-t1-/.test((await page.getAttribute(".feedback .link.report", "data-ref")) || "");
+    await page.click(".feedback .btn");
   }
-  return [report && lockedRows === 6 && n === 5 && (await page.innerText("h1")).includes("5 / 5"), errors];
+  return [report && facts && lockedRows === 2 && lockedTasks === 4 && n === 5 && (await page.innerText("h1")).includes("5 / 5"), errors];
 });
 
 test("CCSE: simulacro completo con el pase", async () => {
   const { page, errors } = await open({ native: "es", passes: { nacionalidad: true } });
   await page.click('.tab[data-tab="exams"]');
   await page.click(".menu-row:nth-child(1)");
-  await page.click(".menu-row:nth-child(2)");
-  await page.click(".menu-row:nth-child(6)"); // simulacro
+  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(2)"); // simulacro
   await page.click(".btn.big");
   const timer = await page.innerText(".timer");
   // Todas bien menos la primera: apto con 24 y esa pregunta pasa a «Mis fallos».
@@ -473,7 +485,7 @@ test("CCSE: simulacro completo con el pase", async () => {
   await page.click('.exam-nav .btn:has-text("Terminar")');
   const ok = (await page.innerText(".exam-result")).includes("APTO") && (await page.innerText(".exam-result")).includes("24 / 25");
   await page.click(".btn.big");
-  const fails = await page.innerText(".menu-row:nth-child(7)");
+  const fails = await page.innerText(".menu-row:nth-child(3)");
   return [ok && fails.includes("1") && (timer.includes("45:00") || timer.includes("44:5")), errors];
 });
 
@@ -499,7 +511,7 @@ for (const [part, data, model] of [["reading", DELE.reading, 0], ["listening", D
     const { page, errors } = await open({ native: "es", passes: { nacionalidad: true } });
     await page.click('.tab[data-tab="exams"]');
     await page.click(".menu-row:nth-child(1)");
-    await page.click(".menu-row:nth-child(3)"); // DELE
+    await page.click(".menu-row:nth-child(2)"); // DELE
     await page.click(`[data-model="${model}"]`);
     await page.click(`.menu-row:nth-child(${part === "reading" ? 1 : 2})`);
     await answerComprehension(page, data);
@@ -511,7 +523,7 @@ test("DELE: escritura y oral con autoevaluación", async () => {
   const { page, errors } = await open({ native: "es", passes: { nacionalidad: true } });
   await page.click('.tab[data-tab="exams"]');
   await page.click(".menu-row:nth-child(1)");
-  await page.click(".menu-row:nth-child(3)");
+  await page.click(".menu-row:nth-child(2)");
   await page.click(".menu-row:nth-child(3)"); // escritura
   await page.fill("#write-E1", "Hola, Irene: gracias por la invitación. ".repeat(7));
   await page.fill("#write-E2", "Vivo en un barrio tranquilo con parques y tiendas. ".repeat(8));
@@ -543,7 +555,7 @@ const openUniversity = async (saveData) => {
 
 test("Universidad: Mi ruta desde fuera de la UE (visado aparte)", async () => {
   const { page, errors } = await openUniversity({ native: "ur" });
-  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(3)");
   await page.click(".options .opt:nth-child(4)"); // fuera de la UE
   await page.click(".options .opt:nth-child(2)"); // sin residencia
   await page.click(".options .opt:nth-child(1)"); // rama de ciencias
@@ -573,7 +585,7 @@ async function answerPce(page, id, plan, finish = true) {
 
 test("Universidad: test de Inglés gratis (+0,5 / −0,15)", async () => {
   const { page, errors } = await openUniversity({ native: "es" });
-  await page.click(".menu-row:nth-child(3)");
+  await page.click(".menu-row:nth-child(2)");
   await page.click(".menu-row:nth-child(2)"); // Inglés
   await page.click(".btn.big");
   const result = await answerPce(page, "ingles", [true, true, true, false]);
@@ -582,7 +594,7 @@ test("Universidad: test de Inglés gratis (+0,5 / −0,15)", async () => {
 
 test("Universidad: Historia con el pase, respuestas de más", async () => {
   const { page, errors } = await openUniversity({ native: "es", passes: { universidad: true } });
-  await page.click(".menu-row:nth-child(3)");
+  await page.click(".menu-row:nth-child(2)");
   await page.click(".menu-row:nth-child(1)"); // Historia
   await page.click(".btn.big");
   // Responde las 8 bien: aparece el aviso y solo cuentan 6.
@@ -596,7 +608,7 @@ test("Universidad: Historia con el pase, respuestas de más", async () => {
 
 test("Universidad: redacción, ortografía y nota", async () => {
   const { page, errors } = await openUniversity({ native: "fr" });
-  await page.click(".menu-row:nth-child(4)");
+  await page.click(".secondary-actions .link:nth-child(1)");
   await page.click(".menu-row:nth-child(1)");
   await page.fill("#pce-summary", "El teletrabajo se ha extendido gracias a internet y tiene ventajas e inconvenientes. ".repeat(5));
   const counted = (await page.$$(".step .q-meta.ok")).length === 1;
@@ -609,7 +621,7 @@ test("Universidad: redacción, ortografía y nota", async () => {
   const spelling = (await page.innerText("h1")).includes(`${PCE.writing.spelling.length} / ${PCE.writing.spelling.length}`);
   await page.click(".btn.big");
   await page.click(".back");
-  await page.click(".menu-row:nth-child(5)"); // nota
+  await page.click(".secondary-actions .link:nth-child(2)"); // nota
   await page.fill("#calc-bach", "8");
   await page.fill("#calc-pce-1", "7");
   await page.fill("#calc-w-1", "9");
@@ -630,7 +642,7 @@ const openDriving = async (saveData) => {
 
 test("Conducir: Mi caso con permiso de Marruecos (canje sin examen)", async () => {
   const { page, errors } = await openDriving({ native: "ar" });
-  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(3)");
   await page.click(".options .opt:nth-child(1)"); // sí tengo permiso
   await page.click(".options .opt:nth-child(2)"); // de un país con convenio
   await page.click(".options .opt:nth-child(1)"); // no lo saqué siendo residente
@@ -641,7 +653,7 @@ test("Conducir: Mi caso con permiso de Marruecos (canje sin examen)", async () =
 
 test("Conducir: sin permiso → requisitos, teórico y práctico", async () => {
   const { page, errors } = await openDriving({ native: "es" });
-  await page.click(".menu-row:nth-child(1)");
+  await page.click(".menu-row:nth-child(3)");
   await page.click(".options .opt:nth-child(2)"); // no tengo permiso
   const steps = await page.$$eval(".step", (s) => s.length);
   return [steps === 4 && (await page.innerText("#app")).includes("30 preguntas"), errors];
@@ -649,26 +661,26 @@ test("Conducir: sin permiso → requisitos, teórico y práctico", async () => {
 
 test("Conducir: tema gratis, fallo a «Mis fallos» y simulacro con el pase", async () => {
   const { page, errors } = await openDriving({ native: "fr" });
-  await page.click(".menu-row:nth-child(2)");
+  await page.click(".menu-row:nth-child(1)");
   await page.click(".menu-row:not(.locked)"); // el único tema abierto sin pase (documentación y permisos)
   await page.click(".btn.big");
   // Primera pregunta mal; el resto, bien.
   const n = DGT.questions.filter((q) => q.topic === "permiso").length;
   for (let k = 0; k < n; k++) {
     await page.click(k === 0 ? '.opt[data-ok="0"] >> nth=0' : '.opt[data-ok="1"]');
-    await page.click(".sheet .btn");
+    await page.click(".feedback .btn");
   }
   const practiced = (await page.innerText("h1")).includes(`${n - 1} / ${n}`);
   await page.click(".btn.big");
   await page.click(".back");
   await page.click(".back");
-  const failsListed = (await page.innerText(".menu-row:nth-child(4)")).includes("1");
+  const failsListed = (await page.innerText(".secondary-actions .link:nth-child(1)")).includes("1");
   // Con el pase: simulacro completo, todo bien → APTO.
   await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("hola-espanol")); s.passes = { conducir: true }; localStorage.setItem("hola-espanol", JSON.stringify(s)); });
   await page.reload();
   await page.click('.tab[data-tab="exams"]');
   await page.click(".menu-row:nth-child(3)");
-  await page.click(".menu-row:nth-child(3)");
+  await page.click(".menu-row:nth-child(2)");
   await page.click(".btn.big");
   for (let k = 0; k < DGT.mock.questions; k++) {
     await page.click('.exam-q .opt[data-ok="1"]');

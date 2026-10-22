@@ -4,7 +4,7 @@
 import model1 from "../../content/exams/dele-a2.json";
 import model2 from "../../content/exams/dele-a2-2.json";
 import { ui } from "../core/i18n.js";
-import { save, persist } from "../core/state.js";
+import { save, persist, setResume, clearResume } from "../core/state.js";
 import { register, go } from "../core/router.js";
 import { speak, speakDialog, preloadExamAudio } from "../core/audio.js";
 import { el, button, closeButton } from "../ui/dom.js";
@@ -13,7 +13,7 @@ import { app, screen, celebrate } from "../ui/shell.js";
 import { factNote } from "../ui/fact.js";
 import { countdown } from "../ui/timer.js";
 import { speakerIcon } from "../ui/audio-buttons.js";
-import { hasPass, draftBanner, menuRow, saveResult, lastResult } from "./common.js";
+import { hasPass, draftBanner, menuRow, saveResult, lastResult, tscreen } from "./common.js";
 import { PASS, passCard } from "./nationality.js";
 
 const PARTS = [
@@ -30,7 +30,7 @@ const key = (part) => (model() ? `dele${model() + 1}-` : "dele-") + part;
 const GROUP_PASS = 30; // de 50 en cada grupo (dato «dele.a2_calificacion»)
 
 function showDele() {
-  screen("main");
+  tscreen("main");
   preloadExamAudio({ dialogs: true });
   app.append(button("back", "← " + ui("back"), () => go("nationality")), el("h1", "", "🗣️ " + ui("deleTitle")), draftBanner());
   if (!hasPass(PASS)) {
@@ -67,7 +67,7 @@ function showDele() {
 
 // ---------- Utilidades del simulacro ----------
 function examShell(title, minutes, onTimeUp) {
-  screen("lesson");
+  tscreen("lesson");
   const timer = countdown(minutes, onTimeUp);
   const head = el("div", "lesson-head exam-head");
   head.append(closeButton(() => go("dele")), el("strong", "", title), timer.el);
@@ -126,9 +126,9 @@ function comprehension(part, data, title, renderTask, solutions) {
     const sol = solutions();
     const score = sol.filter(([id, ans]) => answers[id] === ans).length;
     saveResult(key(part), score, sol.length, score >= 15);
-    screen("main");
-    if (score >= 15) celebrate();
-    app.append(mascot(score >= 15 ? "cheer" : "oops", 110), el("h1", "", ui("pointsOf25", score)), el("p", "lead center", ui("groupNeed")));
+    clearResume("exam");
+    tscreen("main");
+    app.append(el("h1", "", ui("pointsOf25", score)), el("p", "lead center", ui("groupNeed")));
     const table = el("div", "per-task");
     for (const t of data.tasks) {
       const ids = sol.filter(([id]) => id.startsWith(t.id + "-"));
@@ -154,6 +154,7 @@ function comprehension(part, data, title, renderTask, solutions) {
 
 // ---------- Comprensión de lectura ----------
 function reading() {
+  setResume({ kind: "exam", route: "dele-reading", key: "deleTitle", sub: ui("reading") });
   const data = exam.reading;
   comprehension("reading", data, ui("reading"), (t, answers) => {
     const nodes = [];
@@ -192,6 +193,7 @@ function audioButton(lines) {
 }
 
 function listening() {
+  setResume({ kind: "exam", route: "dele-listening", key: "deleTitle", sub: ui("listeningTest") });
   const data = exam.listening;
   comprehension("listening", data, ui("listeningTest"), (t, answers) => {
     const nodes = [];
@@ -245,7 +247,7 @@ const estimate = (marks, n) => Math.round((Object.values(marks).reduce((a, b) =>
 
 function selfAssessment(part, tasks, renderTask) {
   const RUBRIC = exam[part].rubric;
-  screen("main");
+  tscreen("main");
   const marks = {};
   app.append(el("h1", "", "📝 " + ui("selfAssess")), el("p", "lead", ui("selfAssessHelp")));
   tasks.forEach((t, k) => {
@@ -258,13 +260,15 @@ function selfAssessment(part, tasks, renderTask) {
     if (Object.keys(marks).length < tasks.length * 2) return;
     const score = estimate(marks, tasks.length);
     saveResult(key(part), score, 25, score >= 15);
-    screen("main");
-    app.append(mascot("cheer", 110), el("h1", "", ui("estimate") + ": " + ui("pointsOf25", score)), factNote("dele.a2_expresion"), button("btn big", ui("next"), () => go("dele")));
+    clearResume("exam");
+    tscreen("main");
+    app.append(el("h1", "", ui("estimate") + ": " + ui("pointsOf25", score)), factNote("dele.a2_expresion"), button("btn big", ui("next"), () => go("dele")));
   }));
 }
 
 // ---------- Expresión escrita ----------
 function writing() {
+  setResume({ kind: "exam", route: "dele-writing", key: "deleTitle", sub: ui("writing") });
   const data = exam.writing;
   const texts = {};
   const choice = { E2: 0 };
@@ -325,6 +329,7 @@ function writing() {
 
 // ---------- Expresión oral ----------
 function speaking() {
+  setResume({ kind: "exam", route: "dele-speaking", key: "deleTitle", sub: ui("speaking") });
   const data = exam.speaking;
   const notes = el("textarea", "write-area");
   notes.id = "oral-notes";

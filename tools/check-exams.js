@@ -1,7 +1,6 @@
 // Comprueba los contenidos de examen (content/exams): formato oficial, respuestas válidas, fuentes y estado.
 // Uso: node tools/check-exams.js
 import { readFileSync } from "node:fs";
-import { SIGN_CODES } from "../src/ui/signs.js";
 
 const load = (f) => JSON.parse(readFileSync(new URL("../content/exams/" + f, import.meta.url), "utf8"));
 const errors = [];
@@ -114,8 +113,9 @@ for (const l of [0, 1, 2]) if (dgt.questions.filter((q) => q.answer === l).lengt
 const langs = JSON.parse(readFileSync(new URL("../content/i18n/_order.json", import.meta.url), "utf8")).filter((l) => l !== "es");
 for (const w of dgt.words) for (const l of langs) if (!w.tr[l]) errors.push(`conducir vocabulario «${w.es}»: falta la traducción (${l})`);
 
-// Señales dibujadas: solo códigos que la app sabe dibujar (src/ui/signs.js).
-for (const q of dgt.questions) if (q.sign && !SIGN_CODES.includes(q.sign.split(":")[0])) errors.push(`conducir ${q.id}: señal «${q.sign}» sin dibujo`);
+// Señales: solo códigos que tienen descripción (content/exams/senales.json).
+const SIGN_CODES = Object.keys(load("senales.json").signs);
+for (const q of dgt.questions) if (q.sign && !SIGN_CODES.includes(q.sign.split(":")[0])) errors.push(`conducir ${q.id}: señal «${q.sign}» sin descripción`);
 
 // Revisión: una pregunta solo deja de ser «borrador» con nombre y fecha de quien la revisó (tools/review.js).
 const reviewed = (node, where) => {

@@ -14,7 +14,8 @@ function showWelcome() {
   hero.append(
     mascot("cheer", 140),
     el("h1", "wordmark", "Hola, Español"),
-    el("p", "greetings", "Hola · Hello · Bonjour · مرحبا · Salut · Привіт · 你好 · سلام"),
+    // Antes de elegir idioma: una sola frase, en español y en inglés.
+    el("p", "greetings", "Español para vivir y trabajar en España · Spanish for living and working in Spain"),
   );
   app.append(hero, button("btn big", "Empezar · Start · ابدأ", () => go("language")));
 }
@@ -45,11 +46,29 @@ function showLevel() {
     b.type = "button";
     b.dataset.level = n;
     b.append(el("span", "level-bars", "▮".repeat(n + 1) + "▯".repeat(3 - n)), el("strong", "", ui("lvl" + n)), el("span", "", ui("lvl" + n + "d")));
-    b.onclick = () => { save.level = n; persist(); go("home"); };
+    // La primera vez sigue la pregunta del objetivo; si ya estaba elegido (cambio desde el Perfil), se vuelve.
+    b.onclick = () => { const first = save.goal === null; save.level = n; persist(); go(first ? "goal" : "home"); };
     list.append(b);
   }
   app.append(list);
 }
+
+// Qué necesita ahora la persona: decide por dónde se abre la app.
+export const GOAL_KEYS = { daily: "goalDaily", nat: "goalNat", drive: "goalDrive", uni: "goalUni", unknown: "goalUnknown" };
+function showGoal() {
+  screen("plain");
+  app.append(speech(ui("goalTitle"), "talk"), el("p", "lead center", ui("goalSub")));
+  const list = el("div", "levels");
+  for (const [g, key] of Object.entries(GOAL_KEYS)) {
+    const b = button("level-row" + (g === save.goal ? " selected" : ""), "", () => { save.goal = g; persist(); go("home"); });
+    b.dataset.goal = g;
+    b.append(el("strong", "", ui(key)));
+    list.append(b);
+  }
+  app.append(list);
+}
+// Pantalla de inicio según el objetivo: el camino o el examen que necesita.
+const GOAL_ROUTE = { nat: "nationality", drive: "driving", uni: "university" };
 
 // Voz del español: acento, voz de hombre o de mujer y manera de hablar.
 // La frase de muestra está grabada en todas las voces.
@@ -99,6 +118,9 @@ export function settingsCard() {
   const voice = button("setting", "", () => go("voice"));
   voice.append(el("span", "icon", "🔊"), el("span", "", ui("myVoice") + ": " + voiceName(voiceOf())), el("span", "chev", "›"));
   card.append(voice);
+  const goal = button("setting", "", () => go("goal"));
+  goal.append(el("span", "icon", "🧭"), el("span", "", ui("myGoal") + ": " + ui(GOAL_KEYS[save.goal ?? "unknown"])), el("span", "chev", "›"));
+  card.append(goal);
   const calm = el("label", "setting toggle");
   const box = el("input");
   box.type = "checkbox";
@@ -107,6 +129,8 @@ export function settingsCard() {
   box.onchange = () => { save.calm = box.checked; persist(); renderBars(); };
   calm.append(el("span", "icon", "🌙"), el("span", "", ui("calm")), box);
   card.append(calm);
+  // El interruptor de demostración solo existe en la vista previa publicada (compilación de un solo archivo).
+  if (import.meta.env?.MODE !== "single") return card;
   const demo = el("label", "setting toggle");
   const demoBox = el("input");
   demoBox.type = "checkbox";
@@ -122,4 +146,5 @@ register("welcome", showWelcome);
 register("language", showLanguage);
 register("level", showLevel);
 register("voice", showVoice);
-register("home", () => go(!save.native ? "welcome" : save.level === null ? "level" : "path"));
+register("goal", showGoal);
+register("home", () => go(!save.native ? "welcome" : save.level === null ? "level" : GOAL_ROUTE[save.goal] || "path"));

@@ -5,7 +5,7 @@ import { el, button } from "../ui/dom.js";
 import { speech } from "../ui/mascot.js";
 import { app, screen } from "../ui/shell.js";
 import { factNote, extLink } from "../ui/fact.js";
-import { draftBanner } from "./common.js";
+import { draftBanner, tscreen } from "./common.js";
 import { UNEDASISS } from "./university.js";
 import pce from "../../content/exams/pce.json";
 
@@ -29,7 +29,7 @@ const QUESTIONS = [
 function ask(answers) {
   const q = QUESTIONS.find((x) => !(x.id in answers) && (!x.when || x.when(answers)));
   if (!q) return showRoute(answers);
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("university")), el("h1", "", "🧭 " + ui("uniRoute")));
   if (!Object.keys(answers).length) app.append(el("p", "lead", ui("uniRouteDesc")));
   app.append(speech(ui(q.key), "talk"));
@@ -53,7 +53,7 @@ const link = (label, url) => {
 };
 
 function showRoute(a) {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("university")), el("h1", "", "✅ " + ui("yourResult")), draftBanner());
   const toSubjects = button("btn ghost-dark", "📑 " + ui("subjectsTitle") + " →", () => go("pce-subjects"));
   const toCalc = button("btn ghost-dark", "🧮 " + ui("gradeCalc") + " →", () => go("pce-calc"));

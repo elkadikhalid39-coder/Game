@@ -1,0 +1,617 @@
+{
+  "note": "Glosario propio de palabras difíciles de las preguntas CCSE, traducidas al idioma de la persona. El enunciado se queda en español. No es el glosario oficial del Instituto Cervantes.",
+  "terms": [
+    {
+      "es": "sufragio",
+      "match": "sufragio",
+      "tr": {
+        "en": "vote, suffrage",
+        "fr": "suffrage, vote",
+        "ar": "الاقتراع، التصويت",
+        "ro": "sufragiu, vot",
+        "uk": "виборче право, голосування",
+        "ru": "избирательное право, голосование",
+        "pt": "sufrágio, voto",
+        "zh": "选举权；投票",
+        "ur": "حقِ رائے دہی، ووٹ",
+        "de": "Wahlrecht, Stimmabgabe",
+        "it": "suffragio, voto"
+      }
+    },
+    {
+      "es": "soberanía",
+      "match": "soberan",
+      "tr": {
+        "en": "sovereignty",
+        "fr": "souveraineté",
+        "ar": "السيادة",
+        "ro": "suveranitate",
+        "uk": "суверенітет",
+        "ru": "суверенитет",
+        "pt": "soberania",
+        "zh": "主权",
+        "ur": "خودمختاری",
+        "de": "Souveränität",
+        "it": "sovranità"
+      }
+    },
+    {
+      "es": "Cortes Generales",
+      "match": "cortes generales",
+      "tr": {
+        "en": "Spanish Parliament (both chambers)",
+        "fr": "Parlement espagnol (deux chambres)",
+        "ar": "البرلمان الإسباني (المجلسان)",
+        "ro": "Parlamentul Spaniei (ambele camere)",
+        "uk": "парламент Іспанії (обидві палати)",
+        "ru": "парламент Испании (обе палаты)",
+        "pt": "Parlamento espanhol (as duas câmaras)",
+        "zh": "西班牙议会（两院）",
+        "ur": "ہسپانوی پارلیمنٹ (دونوں ایوان)",
+        "de": "spanisches Parlament (beide Kammern)",
+        "it": "Parlamento spagnolo (le due camere)"
+      }
+    },
+    {
+      "es": "investidura",
+      "match": "investidura",
+      "tr": {
+        "en": "vote to appoint the Prime Minister",
+        "fr": "investiture",
+        "ar": "تصويت الثقة لتنصيب رئيس الحكومة",
+        "ro": "învestitură",
+        "uk": "голосування за призначення прем'єра",
+        "ru": "голосование об утверждении премьера",
+        "pt": "investidura",
+        "zh": "首相任命投票",
+        "ur": "وزیرِ اعظم کی تقرری کا ووٹ",
+        "de": "Wahl des Regierungschefs",
+        "it": "investitura"
+      }
+    },
+    {
+      "es": "moción de censura",
+      "match": "moción de censura",
+      "tr": {
+        "en": "motion of no confidence",
+        "fr": "motion de censure",
+        "ar": "اقتراح حجب الثقة",
+        "ro": "moțiune de cenzură",
+        "uk": "вотум недовіри",
+        "ru": "вотум недоверия",
+        "pt": "moção de censura",
+        "zh": "不信任动议",
+        "ur": "تحریکِ عدم اعتماد",
+        "de": "Misstrauensantrag",
+        "it": "mozione di sfiducia"
+      }
+    },
+    {
+      "es": "cuestión de confianza",
+      "match": "cuestión de confianza",
+      "tr": {
+        "en": "vote of confidence",
+        "fr": "question de confiance",
+        "ar": "طلب الثقة",
+        "ro": "vot de încredere",
+        "uk": "питання про довіру",
+        "ru": "вопрос о доверии",
+        "pt": "questão de confiança",
+        "zh": "信任投票",
+        "ur": "اعتماد کا ووٹ",
+        "de": "Vertrauensfrage",
+        "it": "questione di fiducia"
+      }
+    },
+    {
+      "es": "decreto-ley",
+      "match": "decretos?-leyes?",
+      "tr": {
+        "en": "emergency law issued by the Government",
+        "fr": "décret-loi",
+        "ar": "مرسوم بقانون",
+        "ro": "decret-lege",
+        "uk": "декрет-закон",
+        "ru": "декрет-закон",
+        "pt": "decreto-lei",
+        "zh": "法令（政府紧急立法）",
+        "ur": "حکومتی ہنگامی قانون (ڈیکری)",
+        "de": "Gesetzesdekret",
+        "it": "decreto-legge"
+      }
+    },
+    {
+      "es": "ley orgánica",
+      "match": "leye?s? orgánicas?",
+      "tr": {
+        "en": "organic law (needs absolute majority)",
+        "fr": "loi organique",
+        "ar": "قانون أساسي (عضوي)",
+        "ro": "lege organică",
+        "uk": "органічний закон",
+        "ru": "органический закон",
+        "pt": "lei orgânica",
+        "zh": "组织法",
+        "ur": "بنیادی (آرگینک) قانون",
+        "de": "Organgesetz",
+        "it": "legge organica"
+      }
+    },
+    {
+      "es": "promulgar",
+      "match": "promulga",
+      "tr": {
+        "en": "to promulgate (make a law official)",
+        "fr": "promulguer",
+        "ar": "إصدار القانون",
+        "ro": "a promulga",
+        "uk": "оприлюднювати закон",
+        "ru": "промульгировать (обнародовать закон)",
+        "pt": "promulgar",
+        "zh": "颁布",
+        "ur": "قانون نافذ کرنا",
+        "de": "verkünden (ein Gesetz)",
+        "it": "promulgare"
+      }
+    },
+    {
+      "es": "sancionar (una ley)",
+      "match": "\\bsanciona",
+      "tr": {
+        "en": "to give royal assent to a law",
+        "fr": "sanctionner (une loi)",
+        "ar": "المصادقة على القانون",
+        "ro": "a sancționa (o lege)",
+        "uk": "затверджувати закон",
+        "ru": "утверждать закон",
+        "pt": "sancionar (uma lei)",
+        "zh": "批准（法律）",
+        "ur": "قانون کی منظوری دینا",
+        "de": "(ein Gesetz) ausfertigen",
+        "it": "sanzionare (una legge)"
+      }
+    },
+    {
+      "es": "iniciativa legislativa",
+      "match": "iniciativa legislativa",
+      "tr": {
+        "en": "right to propose laws",
+        "fr": "initiative législative",
+        "ar": "المبادرة التشريعية",
+        "ro": "inițiativă legislativă",
+        "uk": "законодавча ініціатива",
+        "ru": "законодательная инициатива",
+        "pt": "iniciativa legislativa",
+        "zh": "立法提案权",
+        "ur": "قانون سازی کی تجویز کا حق",
+        "de": "Gesetzesinitiative",
+        "it": "iniziativa legislativa"
+      }
+    },
+    {
+      "es": "circunscripción",
+      "match": "circunscripci",
+      "tr": {
+        "en": "electoral district",
+        "fr": "circonscription",
+        "ar": "الدائرة الانتخابية",
+        "ro": "circumscripție",
+        "uk": "виборчий округ",
+        "ru": "избирательный округ",
+        "pt": "circunscrição eleitoral",
+        "zh": "选区",
+        "ur": "انتخابی حلقہ",
+        "de": "Wahlkreis",
+        "it": "circoscrizione"
+      }
+    },
+    {
+      "es": "escaño",
+      "match": "escaño",
+      "tr": {
+        "en": "seat in parliament",
+        "fr": "siège (au parlement)",
+        "ar": "مقعد برلماني",
+        "ro": "loc în parlament",
+        "uk": "депутатське місце",
+        "ru": "депутатское место",
+        "pt": "cadeira parlamentar",
+        "zh": "议席",
+        "ur": "پارلیمانی نشست",
+        "de": "Parlamentssitz",
+        "it": "seggio"
+      }
+    },
+    {
+      "es": "concejal",
+      "match": "concejal",
+      "tr": {
+        "en": "town councillor",
+        "fr": "conseiller municipal",
+        "ar": "عضو المجلس البلدي",
+        "ro": "consilier local",
+        "uk": "депутат міської ради",
+        "ru": "член муниципального совета",
+        "pt": "vereador",
+        "zh": "市议员",
+        "ur": "بلدیاتی کونسلر",
+        "de": "Gemeinderat (Person)",
+        "it": "consigliere comunale"
+      }
+    },
+    {
+      "es": "padrón",
+      "match": "padrón|empadron",
+      "tr": {
+        "en": "municipal register of residents",
+        "fr": "registre municipal des habitants",
+        "ar": "سجل السكان البلدي",
+        "ro": "registrul municipal al locuitorilor",
+        "uk": "муніципальний реєстр мешканців",
+        "ru": "муниципальный реестр жителей",
+        "pt": "registro municipal de moradores",
+        "zh": "市政户籍登记",
+        "ur": "میونسپل رہائشی رجسٹر",
+        "de": "Einwohnermelderegister",
+        "it": "anagrafe comunale"
+      }
+    },
+    {
+      "es": "recurso",
+      "match": "\\brecurso",
+      "tr": {
+        "en": "appeal (legal)",
+        "fr": "recours",
+        "ar": "طعن، استئناف",
+        "ro": "recurs, contestație",
+        "uk": "оскарження",
+        "ru": "обжалование",
+        "pt": "recurso",
+        "zh": "上诉；申诉",
+        "ur": "اپیل",
+        "de": "Rechtsmittel, Einspruch",
+        "it": "ricorso"
+      }
+    },
+    {
+      "es": "Ministerio Fiscal",
+      "match": "fiscal",
+      "tr": {
+        "en": "Public Prosecutor's Office",
+        "fr": "ministère public",
+        "ar": "النيابة العامة",
+        "ro": "Ministerul Public (procuratura)",
+        "uk": "прокуратура",
+        "ru": "прокуратура",
+        "pt": "Ministério Público",
+        "zh": "检察院",
+        "ur": "سرکاری استغاثہ",
+        "de": "Staatsanwaltschaft",
+        "it": "pubblico ministero"
+      }
+    },
+    {
+      "es": "mesa electoral",
+      "match": "mesas? electoral",
+      "tr": {
+        "en": "polling station officials",
+        "fr": "bureau de vote",
+        "ar": "لجنة مكتب الاقتراع",
+        "ro": "secție de votare (comisia)",
+        "uk": "дільнична виборча комісія",
+        "ru": "участковая избирательная комиссия",
+        "pt": "mesa eleitoral",
+        "zh": "投票站工作组",
+        "ur": "پولنگ اسٹیشن کا عملہ",
+        "de": "Wahlvorstand",
+        "it": "seggio elettorale"
+      }
+    },
+    {
+      "es": "referéndum",
+      "match": "referéndum",
+      "tr": {
+        "en": "referendum",
+        "fr": "référendum",
+        "ar": "استفتاء",
+        "ro": "referendum",
+        "uk": "референдум",
+        "ru": "референдум",
+        "pt": "referendo",
+        "zh": "全民公投",
+        "ur": "ریفرنڈم",
+        "de": "Volksabstimmung",
+        "it": "referendum"
+      }
+    },
+    {
+      "es": "sindicato",
+      "match": "sindicato",
+      "tr": {
+        "en": "trade union",
+        "fr": "syndicat",
+        "ar": "نقابة",
+        "ro": "sindicat",
+        "uk": "профспілка",
+        "ru": "профсоюз",
+        "pt": "sindicato",
+        "zh": "工会",
+        "ur": "مزدور یونین",
+        "de": "Gewerkschaft",
+        "it": "sindacato"
+      }
+    },
+    {
+      "es": "huelga",
+      "match": "huelga",
+      "tr": {
+        "en": "strike",
+        "fr": "grève",
+        "ar": "إضراب",
+        "ro": "grevă",
+        "uk": "страйк",
+        "ru": "забастовка",
+        "pt": "greve",
+        "zh": "罢工",
+        "ur": "ہڑتال",
+        "de": "Streik",
+        "it": "sciopero"
+      }
+    },
+    {
+      "es": "filiación",
+      "match": "filiación",
+      "tr": {
+        "en": "parentage (who your parents are)",
+        "fr": "filiation",
+        "ar": "النسب",
+        "ro": "filiație",
+        "uk": "походження (від батьків)",
+        "ru": "происхождение (от родителей)",
+        "pt": "filiação",
+        "zh": "亲子关系",
+        "ur": "ولدیت، نسب",
+        "de": "Abstammung",
+        "it": "filiazione"
+      }
+    },
+    {
+      "es": "fianza",
+      "match": "fianza",
+      "tr": {
+        "en": "deposit (rent)",
+        "fr": "caution (dépôt de garantie)",
+        "ar": "تأمين (وديعة الإيجار)",
+        "ro": "garanție (chirie)",
+        "uk": "застава (за оренду)",
+        "ru": "залог (за аренду)",
+        "pt": "caução, depósito",
+        "zh": "押金",
+        "ur": "زرِ ضمانت (کرایہ)",
+        "de": "Kaution",
+        "it": "cauzione"
+      }
+    },
+    {
+      "es": "poder legislativo",
+      "match": "legislativo",
+      "tr": {
+        "en": "legislative power (making laws)",
+        "fr": "pouvoir législatif",
+        "ar": "السلطة التشريعية",
+        "ro": "puterea legislativă",
+        "uk": "законодавча влада",
+        "ru": "законодательная власть",
+        "pt": "poder legislativo",
+        "zh": "立法权",
+        "ur": "مقننہ (قانون سازی کی طاقت)",
+        "de": "Legislative",
+        "it": "potere legislativo"
+      }
+    },
+    {
+      "es": "poder judicial",
+      "match": "judicial",
+      "tr": {
+        "en": "the courts, judicial power",
+        "fr": "pouvoir judiciaire",
+        "ar": "السلطة القضائية",
+        "ro": "puterea judecătorească",
+        "uk": "судова влада",
+        "ru": "судебная власть",
+        "pt": "poder judiciário",
+        "zh": "司法权",
+        "ur": "عدلیہ",
+        "de": "Judikative, Gerichte",
+        "it": "potere giudiziario"
+      }
+    },
+    {
+      "es": "magistrado",
+      "match": "magistrad",
+      "tr": {
+        "en": "senior judge",
+        "fr": "magistrat",
+        "ar": "قاضٍ (مستشار)",
+        "ro": "magistrat",
+        "uk": "суддя (магістрат)",
+        "ru": "судья (магистрат)",
+        "pt": "magistrado",
+        "zh": "法官",
+        "ur": "جج (مجسٹریٹ)",
+        "de": "Richter",
+        "it": "magistrato"
+      }
+    },
+    {
+      "es": "Defensor del Pueblo",
+      "match": "defensor del pueblo",
+      "tr": {
+        "en": "Ombudsman",
+        "fr": "Défenseur des droits (médiateur)",
+        "ar": "أمين المظالم",
+        "ro": "Avocatul Poporului",
+        "uk": "омбудсмен",
+        "ru": "омбудсмен",
+        "pt": "Provedor de Justiça (ouvidor)",
+        "zh": "监察专员",
+        "ur": "محتسب",
+        "de": "Bürgerbeauftragter",
+        "it": "difensore civico"
+      }
+    },
+    {
+      "es": "detención",
+      "match": "detenci|detenid",
+      "tr": {
+        "en": "arrest, detention",
+        "fr": "détention, arrestation",
+        "ar": "الاحتجاز، الاعتقال",
+        "ro": "reținere, arestare",
+        "uk": "затримання",
+        "ru": "задержание",
+        "pt": "detenção",
+        "zh": "拘留",
+        "ur": "گرفتاری، حراست",
+        "de": "Festnahme",
+        "it": "arresto, fermo"
+      }
+    },
+    {
+      "es": "censura previa",
+      "match": "censura previa",
+      "tr": {
+        "en": "censorship before publication",
+        "fr": "censure préalable",
+        "ar": "الرقابة المسبقة",
+        "ro": "cenzură prealabilă",
+        "uk": "попередня цензура",
+        "ru": "предварительная цензура",
+        "pt": "censura prévia",
+        "zh": "事先审查",
+        "ur": "پیشگی سنسر شپ",
+        "de": "Vorzensur",
+        "it": "censura preventiva"
+      }
+    },
+    {
+      "es": "convalidar",
+      "match": "convalida",
+      "tr": {
+        "en": "to approve, confirm",
+        "fr": "valider, ratifier",
+        "ar": "المصادقة، الإقرار",
+        "ro": "a valida",
+        "uk": "затверджувати",
+        "ru": "утверждать",
+        "pt": "convalidar",
+        "zh": "认可，确认",
+        "ur": "توثیق کرنا",
+        "de": "bestätigen",
+        "it": "convalidare"
+      }
+    },
+    {
+      "es": "tratado",
+      "match": "tratados?\\b",
+      "tr": {
+        "en": "(international) treaty",
+        "fr": "traité",
+        "ar": "معاهدة",
+        "ro": "tratat",
+        "uk": "договір (міжнародний)",
+        "ru": "договор (международный)",
+        "pt": "tratado",
+        "zh": "条约",
+        "ur": "معاہدہ",
+        "de": "Vertrag (international)",
+        "it": "trattato"
+      }
+    },
+    {
+      "es": "cotizar",
+      "match": "cotiza",
+      "tr": {
+        "en": "to pay social security contributions",
+        "fr": "cotiser",
+        "ar": "دفع اشتراكات الضمان الاجتماعي",
+        "ro": "a contribui (la asigurări sociale)",
+        "uk": "сплачувати соціальні внески",
+        "ru": "платить социальные взносы",
+        "pt": "contribuir (para a previdência)",
+        "zh": "缴纳社保",
+        "ur": "سوشل سیکیورٹی میں حصہ ڈالنا",
+        "de": "Beiträge zahlen",
+        "it": "versare i contributi"
+      }
+    },
+    {
+      "es": "desempleo",
+      "match": "desempleo",
+      "tr": {
+        "en": "unemployment",
+        "fr": "chômage",
+        "ar": "البطالة",
+        "ro": "șomaj",
+        "uk": "безробіття",
+        "ru": "безработица",
+        "pt": "desemprego",
+        "zh": "失业",
+        "ur": "بے روزگاری",
+        "de": "Arbeitslosigkeit",
+        "it": "disoccupazione"
+      }
+    },
+    {
+      "es": "jubilación",
+      "match": "jubilaci",
+      "tr": {
+        "en": "retirement (pension)",
+        "fr": "retraite",
+        "ar": "التقاعد",
+        "ro": "pensionare",
+        "uk": "пенсія (вихід на пенсію)",
+        "ru": "пенсия (выход на пенсию)",
+        "pt": "aposentadoria",
+        "zh": "退休",
+        "ur": "ریٹائرمنٹ",
+        "de": "Ruhestand, Rente",
+        "it": "pensionamento"
+      }
+    },
+    {
+      "es": "plazo",
+      "match": "\\bplazos?\\b",
+      "tr": {
+        "en": "time limit, deadline",
+        "fr": "délai",
+        "ar": "المهلة",
+        "ro": "termen",
+        "uk": "строк",
+        "ru": "срок",
+        "pt": "prazo",
+        "zh": "期限",
+        "ur": "مدت، آخری تاریخ",
+        "de": "Frist",
+        "it": "termine, scadenza"
+      }
+    },
+    {
+      "es": "vocal",
+      "match": "\\bvocales?\\b",
+      "tr": {
+        "en": "member (of a board)",
+        "fr": "assesseur",
+        "ar": "عضو (في لجنة)",
+        "ro": "membru (al comisiei)",
+        "uk": "член (комісії)",
+        "ru": "член (комиссии)",
+        "pt": "vogal (membro da mesa)",
+        "zh": "成员（委员）",
+        "ur": "رکن (کمیٹی کا)",
+        "de": "Beisitzer",
+        "it": "scrutatore"
+      }
+    }
+  ]
+}

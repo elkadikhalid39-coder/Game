@@ -40,6 +40,7 @@ export function screen(layout = "main", lang = save.native) {
   markChange();
   stopAudio(); // al cambiar de pantalla se corta el audio que estuviera sonando
   document.querySelector(".sheet")?.remove();
+  document.body.classList.remove("tramite"); // cada pantalla de examen lo vuelve a poner (ver tscreen en exams/common.js)
   app.replaceChildren();
   app.dir = lang ? dirOf(lang) : "ltr";
   document.body.dataset.layout = layout;
@@ -87,7 +88,7 @@ export function sheet(ok, title, detail, detailLang, onContinue, extra) {
 
 // Lluvia de emojis al terminar (se omite en modo calma o con movimiento reducido).
 export function celebrate() {
-  if (save.calm || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (document.body.classList.contains("tramite") || save.calm || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   for (let i = 0; i < 14; i++) {
     const c = el("span", "confetti", pick(["⭐", "🎉", "✨", "🌟", "🎈"], 1)[0]);
     c.style.left = rand(5, 95) + "vw";

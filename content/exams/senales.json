@@ -1,0 +1,11 @@
+{
+  "note": "Descripción con palabras de las señales que citan las preguntas de conducir. La app no tiene los pictogramas oficiales y no dibuja señales aproximadas. Diseño oficial: Catálogo oficial de señales de circulación.",
+  "signs": {
+    "R-1": "Triángulo con un vértice hacia abajo, fondo blanco y borde rojo.",
+    "R-2": "Octógono rojo con la palabra STOP en blanco.",
+    "R-101": "Círculo rojo con una franja blanca horizontal.",
+    "R-301": "Círculo blanco con borde rojo y una cifra en negro: {n}.",
+    "R-411": "Círculo azul con una cifra en blanco: {n}.",
+    "P": "Triángulo con un vértice hacia arriba, fondo blanco y borde rojo."
+  }
+}

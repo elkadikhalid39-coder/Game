@@ -6,7 +6,7 @@ import { el, button } from "../ui/dom.js";
 import { speech } from "../ui/mascot.js";
 import { app, screen } from "../ui/shell.js";
 import { factNote, extLink } from "../ui/fact.js";
-import { draftBanner } from "./common.js";
+import { draftBanner, tscreen } from "./common.js";
 
 const HISPANIC = "Argentina, Bolivia, Chile, Colombia, Costa Rica, Cuba, Ecuador, El Salvador, Guatemala, Guinea Ecuatorial, Honduras, México, Nicaragua, Panamá, Paraguay, Perú, Puerto Rico, República Dominicana, Uruguay, Venezuela";
 const SEDE = "https://sede.mjusticia.gob.es/tramites/nacionalidad-espanola";
@@ -24,7 +24,7 @@ const QUESTIONS = [
 function ask(answers) {
   const q = QUESTIONS.find((x) => !(x.id in answers) && (!x.when || x.when(answers)));
   if (!q) return showChecklist(answers);
-  screen("main");
+  tscreen("main");
   const done = QUESTIONS.filter((x) => x.id in answers).length;
   app.append(button("back", "← " + ui("back"), () => go("nationality")), el("h1", "", "🗂️ " + ui("myCase")));
   if (!done) app.append(el("p", "lead", ui("myCaseDesc")));
@@ -47,7 +47,7 @@ function step(icon, title, ids, extra) {
 }
 
 function showChecklist(a) {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("nationality")), el("h1", "", "✅ " + ui("yourResult")), draftBanner());
   const years = { one: 1, two: 2, refugee: 5, general: 10 }[a.case];
   const yearsFact = { one: "nac.residencia_un_ano", two: "nac.residencia_dos_anos", refugee: "nac.residencia_refugiados", general: "nac.residencia_general" }[a.case];

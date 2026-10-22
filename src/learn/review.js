@@ -30,7 +30,9 @@ function showProfile() {
     const li = txt("li", unitComplete(u) ? "done" : "", (unitComplete(u) ? "✓ " : "○ ") + tr("c_" + u.id, save.native), save.native);
     goals.append(li);
   }
-  app.append(head, grid, el("h2", "section", "🎯 " + ui("canDoTitle")), goals, el("h2", "section", "⚙️ " + ui("settings")), settingsCard());
+  app.append(head, grid, el("h2", "section", "🎯 " + ui("canDoTitle")), goals, el("h2", "section", "⚙️ " + ui("settings")), settingsCard(),
+    // Aviso fijo: no se puede ocultar.
+    el("p", "notice draft prototype", "🛠️ " + ui("prototypeNotice")));
 }
 
 register("profile", showProfile);

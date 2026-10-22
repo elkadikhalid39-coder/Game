@@ -22,17 +22,20 @@ const TOURS = [
   ["respuesta incorrecta", { native: "fr" }, [".current .node", "?.footer .btn", "?.footer .btn", "?.footer .btn", '.opt[data-ok="0"]']],
   ["perfil", { native: "es" }, ['.tab[data-tab="profile"]']],
   ["nivel", { native: "ar", level: null }, []],
-  ["voces", { native: "ur" }, ['.tab[data-tab="profile"]', ".setting:nth-child(3)"]],
-  ["dictado", { native: "ar" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(2)", "?#write-answer", ".write-box .btn"]],
-  ["diccionario", { native: "zh" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(4)"]],
+  ["objetivo", { native: "ar" }, ['.tab[data-tab="profile"]', '.setting:has-text("🧭")']],
+  ["voces", { native: "ur" }, ['.tab[data-tab="profile"]', '.setting:has-text("🔊")']],
+  ["dictado", { native: "ar" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(2)", ".menu-row:nth-child(1)", "?#write-answer", ".write-box .btn"]],
+  ["diccionario", { native: "zh" }, ['.tab[data-tab="review"]', ".menu-row:nth-child(3)"]],
   // Con errores guardados aparece el contador rojo de la pestaña Repasar.
   ["repasar", { native: "es", mistakes: [{ k: "w", id: "hola" }] }, ['.tab[data-tab="review"]']],
   ["exámenes", { native: "ur" }, ['.tab[data-tab="exams"]']],
   ["nacionalidad", { native: "es" }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(1)"]],
-  ["ccse", { native: "es", passes: { nacionalidad: true } }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(1)", ".menu-row:nth-child(2)"]],
+  ["ccse", { native: "es", passes: { nacionalidad: true } }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(1)", ".menu-row:nth-child(1)"]],
+  ["pregunta CCSE", { native: "ar", passes: { nacionalidad: true } }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(1)", ".menu-row:nth-child(1)", ".menu-row:nth-child(1)", ".menu-row:nth-child(1)", ".btn.big", '.opt[data-ok="0"] >> nth=0']],
+  ["conducir", { native: "ar" }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(3)"]],
   ["universidad", { native: "fr" }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(2)"]],
-  ["test PCE", { native: "es" }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(2)", ".menu-row:nth-child(3)", ".menu-row:nth-child(2)", ".btn.big"]],
-  ["nota PCE", { native: "ar" }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(2)", ".menu-row:nth-child(5)"]],
+  ["test PCE", { native: "es" }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(2)", ".menu-row:nth-child(2)", ".menu-row:nth-child(2)", ".btn.big"]],
+  ["nota PCE", { native: "ar" }, ['.tab[data-tab="exams"]', ".menu-row:nth-child(2)", ".secondary-actions .link:nth-child(2)"]],
 ];
 
 const problems = [];

@@ -4,11 +4,11 @@ import { register, go } from "../core/router.js";
 import { el } from "../ui/dom.js";
 import { speech } from "../ui/mascot.js";
 import { app, screen, setTab } from "../ui/shell.js";
-import { hasPass, menuRow } from "./common.js";
+import { hasPass, menuRow, tscreen } from "./common.js";
 
 function showExams() {
   setTab("exams");
-  screen("main");
+  tscreen("main");
   app.append(el("h1", "", "🎓 " + ui("examsTitle")), speech(ui("examsIntro"), "talk"));
   const list = el("div", "menu");
   list.append(

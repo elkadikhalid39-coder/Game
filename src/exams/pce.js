@@ -10,7 +10,7 @@ import { mascot } from "../ui/mascot.js";
 import { app, screen, sheet, celebrate } from "../ui/shell.js";
 import { factNote } from "../ui/fact.js";
 import { countdown } from "../ui/timer.js";
-import { hasPass, draftBanner, menuRow, saveResult, lastResult, resultsList, reportButton } from "./common.js";
+import { hasPass, draftBanner, menuRow, saveResult, lastResult, resultsList, reportButton, tscreen } from "./common.js";
 import { passCard } from "./nationality.js";
 import { PASS, FREE_TESTS, fmt } from "./university.js";
 import { scoreTest, grades } from "./pce-score.js";
@@ -24,7 +24,7 @@ const qLang = (id) => (id === "ingles" ? "en" : "es");
 
 // ---------- Simulacros de test ----------
 function showMocks() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("university")), el("h1", "", "⏱ " + ui("pceMocks")), draftBanner(),
     el("p", "lead", ui("pceMocksDesc")));
   const menu = el("div", "menu");
@@ -56,7 +56,7 @@ function rules(t) {
 
 function testIntro(id) {
   const t = TESTS[id];
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("pce-mocks")), el("h1", "", "⏱ " + subjectName(id)), draftBanner());
   if (!canUse(id)) {
     app.append(factNote(t.fact), passCard(PASS, () => testIntro(id)));
@@ -71,7 +71,7 @@ function startTest(id) {
   const t = TESTS[id];
   const list = pick(t.bank, t.shown);
   const answers = Array(list.length).fill(null);
-  screen("lesson");
+  tscreen("lesson");
   const timer = countdown(t.minutes, () => finish(true));
   const head = el("div", "lesson-head exam-head");
   const count = el("span", "q-meta");
@@ -116,7 +116,7 @@ function startTest(id) {
     const { score, marks } = scoreTest(t, list, answers);
     const pass = score >= t.points / 2; // solo para el color: en las PCE no hay nota mínima por bloque
     saveResult("pce-" + id, score, t.points, pass);
-    screen("main");
+    tscreen("main");
     if (pass) celebrate();
     app.append(mascot(pass ? "cheer" : "oops", 110));
     if (timeUp) app.append(el("p", "lead center", "⏱ " + ui("timeUp")));
@@ -152,7 +152,7 @@ const PARTS = [
 ];
 
 function showWriting() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("university")), el("h1", "", "✍️ " + ui("academicWriting")), draftBanner(),
     factNote("pce.lengua"), factNote("pce.lengua_errores"));
   const menu = el("div", "menu");
@@ -170,7 +170,7 @@ function showWriting() {
 function showText(k) {
   const t = W.texts[k];
   if (k > 0 && !hasPass(PASS)) return go("pce-writing");
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("pce-writing")), el("h1", "", "📰 " + t.title));
   const art = el("article", "reading-text");
   art.lang = "es";
@@ -229,7 +229,7 @@ function showText(k) {
 }
 
 function showConnectors() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("pce-writing")), el("h1", "", "🔗 " + ui("connectorsTitle")), el("p", "lead", ui("connectorsDesc")));
   for (const [group, items] of W.connectors) {
     const box = el("section", "step");
@@ -249,14 +249,14 @@ function spelling() {
   const s = { i: 0, correct: 0 };
   const run = () => {
     if (s.i >= list.length) {
-      screen("main");
+      tscreen("main");
       app.append(mascot("cheer", 120), el("h1", "", ui("correctOf", `${s.correct} / ${list.length}`)), factNote("pce.lengua_errores"),
         button("btn big", ui("next"), () => go("pce-writing")));
       celebrate();
       return;
     }
     const q = list[s.i];
-    screen("lesson");
+    tscreen("lesson");
     const head = el("div", "lesson-head");
     head.append(closeButton(() => go("pce-writing")), el("span", "q-meta", `${ui("spellingTitle")} · ${s.i + 1} / ${list.length}`));
     const card = el("div", "card exam-q");
@@ -309,7 +309,7 @@ const num = (input) => {
 };
 
 function showCalc() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("university")), el("h1", "", "🧮 " + ui("gradeCalc")));
   const warn = el("div", "notice draft");
   warn.append(el("strong", "", "⚠️ " + ui("calcWarnTitle")), el("span", "", ui("calcWarning")));

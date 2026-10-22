@@ -29,10 +29,21 @@ function showPractice() {
   const menu = el("div", "menu");
   const n = save.mistakes.length;
   menu.append(
-    menuRow("🔁", ui("mistakesTitle"), n ? ui("reviewCount", n) : ui("reviewEmpty"), () => (n ? startReview() : null), { badge: n ? ui("reviewStart") : null, locked: !n }),
-    menuRow("🎧", ui("dictationTitle") + " · " + ui("dictWords"), ui("dictationDesc"), () => go("dictation", "words")),
-    menuRow("📝", ui("dictationTitle") + " · " + ui("dictSentences"), ui("dictSentencesDesc"), () => go("dictation", "sentences")),
+    // Tres entradas: mis fallos (con número), dictado (palabras o frases) y diccionario.
+    menuRow("🔁", ui("mistakesTitle"), n ? ui("reviewCount", n) : ui("reviewEmpty"), () => (n ? startReview() : null), { badge: n ? String(n) : null, locked: !n }),
+    menuRow("🎧", ui("dictationTitle"), ui("dictationDesc"), () => go("dictation-choose")),
     menuRow("📖", ui("dictionaryTitle"), ui("dictionaryDesc"), () => go("dictionary")),
+  );
+  app.append(menu);
+}
+
+function chooseDictation() {
+  screen("main");
+  app.append(button("back", "← " + ui("back"), () => go("review")), el("h1", "", "🎧 " + ui("dictationTitle")), speech(ui("dictationChoose"), "talk"));
+  const menu = el("div", "menu");
+  menu.append(
+    menuRow("🔤", ui("dictWords"), ui("dictationDesc"), () => go("dictation", "words")),
+    menuRow("📝", ui("dictSentences"), ui("dictSentencesDesc"), () => go("dictation", "sentences")),
   );
   app.append(menu);
 }
@@ -53,7 +64,7 @@ function dictation(mode) {
   if (Date.now() < save.noAudioUntil) {
     // El dictado necesita oír: se ofrece volver a activar el audio.
     screen("main");
-    app.append(button("back", "← " + ui("back"), () => go("review")), el("h1", "", "🎧 " + ui("dictationTitle")), speech(ui("dictNeedsAudio"), "talk"),
+    app.append(button("back", "← " + ui("back"), () => go("dictation-choose")), el("h1", "", "🎧 " + ui("dictationTitle")), speech(ui("dictNeedsAudio"), "talk"),
       button("btn big", ui("resumeAudio"), () => { save.noAudioUntil = 0; persist(); dictation(mode); }));
     return;
   }
@@ -178,4 +189,5 @@ function dictionary() {
 
 register("review", showPractice);
 register("dictation", dictation);
+register("dictation-choose", chooseDictation);
 register("dictionary", dictionary);

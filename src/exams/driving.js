@@ -2,19 +2,19 @@
 // simulacro con el formato del examen, repaso de fallos y vocabulario del examen en el idioma de la persona.
 import bank from "../../content/exams/conducir.json";
 import { ui } from "../core/i18n.js";
-import { save, persist, TARGET as G } from "../core/state.js";
+import { save, persist, setResume, clearResume, TARGET as G } from "../core/state.js";
 import { register, go } from "../core/router.js";
 import { shuffle, pick } from "../core/util.js";
 import { speak, beep } from "../core/audio.js";
 import { el, txt, button, closeButton } from "../ui/dom.js";
 import { mascot, speech } from "../ui/mascot.js";
-import { app, screen, sheet, celebrate } from "../ui/shell.js";
+import { app } from "../ui/shell.js";
 import { factNote, sourceLine, extLink } from "../ui/fact.js";
 import { countdown } from "../ui/timer.js";
 import { playButton } from "../ui/audio-buttons.js";
-import { signSvg } from "../ui/signs.js";
+import { signCard } from "../ui/signs.js";
 import { preloadExamAudio } from "../core/audio.js";
-import { hasPass, draftBanner, menuRow, saveResult, resultsList, reportButton } from "./common.js";
+import { hasPass, draftBanner, menuRow, saveResult, resultsList, reportButton, tscreen, optionButton, answerFeedback, secondaryActions } from "./common.js";
 import { passCard } from "./nationality.js";
 
 export const PASS = "conducir";
@@ -28,21 +28,24 @@ const topicName = (t) => ui("topic_" + t);
 const canStudy = (t) => hasPass(PASS) || t === FREE_TOPIC;
 
 function showDriving() {
-  screen("main");
+  tscreen("main");
   preloadExamAudio();
   app.append(button("back", "← " + ui("back"), () => go("exams")), el("h1", "", "🚗 " + ui("passDrive")), draftBanner());
   const locked = !hasPass(PASS);
   const fails = save.drivingFails.length;
+  // Tres acciones principales; el resto, enlaces secundarios.
   const menu = el("div", "menu");
   menu.append(
-    menuRow("🗂️", ui("driveCase"), ui("driveCaseDesc"), () => go("driving-case"), { badge: ui("free") }),
     menuRow("📚", ui("driveTopics"), ui("driveTopicsDesc"), () => go("driving-topics"), { badge: locked ? ui("free") + " · " + ui("locked") : null }),
     menuRow("⏱", ui("driveMock"), ui("driveMockDesc"), () => go("driving-mock"), { badge: locked ? ui("locked") : null, locked }),
-    menuRow("❌", ui("driveFails"), fails ? ui("reviewCount", fails) : ui("driveFailsEmpty"), () => (fails ? practice(null) : null), { locked: !fails }),
-    menuRow("🔤", ui("driveWords"), ui("driveWordsDesc"), () => go("driving-words"), { badge: ui("free") }),
-    menuRow("📚", ui("officialSources"), "BOE · DGT", () => go("sources", "driving")),
+    menuRow("🗂️", ui("driveCase"), ui("driveCaseDesc"), () => go("driving-case"), { badge: ui("free") }),
   );
-  app.append(menu);
+  app.append(menu, secondaryActions([
+    [`❌ ${ui("driveFails")}${fails ? ` (${fails})` : ""}`, () => (fails ? practice(null) : null)],
+    ["🔤 " + ui("driveWords"), () => go("driving-words")],
+    ["📚 " + ui("officialSources"), () => go("sources", "driving")],
+    ["🗣️ " + ui("practiceSpanish"), () => go("path")],
+  ]));
   const results = resultsList("conducir");
   if (results) app.append(results);
   app.append(passCard(PASS, showDriving));
@@ -58,7 +61,7 @@ const CASE_QUESTIONS = [
 function askCase(answers) {
   const q = CASE_QUESTIONS.find((x) => !(x.id in answers) && (!x.when || x.when(answers)));
   if (!q) return showCase(answers);
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("driving")), el("h1", "", "🗂️ " + ui("driveCase")));
   app.append(speech(ui(q.key), "talk"));
   // En la pregunta del país se enseña la lista oficial de países con convenio.
@@ -89,7 +92,7 @@ const officialLink = (label, url) => {
 };
 
 function showCase(a) {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("driving")), el("h1", "", "✅ " + ui("yourResult")), draftBanner());
   const canExchange = a.from === "eu" || (a.from === "conv" && a.resident === "no");
   if (a.from === "eu") {
@@ -116,7 +119,7 @@ function showCase(a) {
 
 // ---------- Temario por temas ----------
 function showTopics() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("driving")), el("h1", "", "📚 " + ui("driveTopics")), el("p", "lead", ui("driveTopicsHelp")));
   const menu = el("div", "menu");
   bank.topics.forEach((t, n) => {
@@ -130,7 +133,7 @@ function showTopics() {
 // Ficha del tema: lo que hay que saber (datos oficiales) y, después, el test del tema.
 function showTopic(id) {
   const t = bank.topics.find((x) => x.id === id);
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("driving-topics")), el("h1", "", topicName(id)));
   if (!canStudy(id)) {
     app.append(passCard(PASS, () => showTopic(id)));
@@ -150,14 +153,11 @@ function questionCard(q, meta, chosen, onPick) {
   head.append(el("p", "q-meta", meta + (q.status !== "publicado" ? " · borrador" : "")),
     playButton([q.q, ...q.options.map((o, i) => "abc"[i] + ". " + o)].join(". "), ui("readAloud")));
   card.append(head);
-  if (q.sign) card.append(signSvg(q.sign, ui("roadSign")));
+  // Sin el pictograma oficial no se dibuja una señal aproximada: se describe con palabras.
+  if (q.sign) card.append(signCard(q.sign));
   card.append(el("p", "q-text", q.q));
   const opts = el("div", "options");
-  q.options.forEach((o, i) => {
-    const b = button("opt left" + (chosen === i ? " selected" : ""), "abc"[i] + ") " + o, () => onPick(i, b));
-    b.dataset.ok = i === q.answer ? "1" : "0";
-    opts.append(b);
-  });
+  q.options.forEach((o, i) => opts.append(optionButton(o, i, onPick, { selected: chosen === i, ok: i === q.answer })));
   card.append(opts);
   return card;
 }
@@ -181,42 +181,43 @@ function noteFail(q, ok) {
 
 // Práctica con corrección inmediata: de un tema (topic) o de las preguntas falladas (topic = null).
 function practice(topic) {
+  if (topic) setResume({ kind: "exam", route: "driving-topic", arg: topic, key: "passDrive", sub: topicName(topic) });
   const list = topic ? shuffle(byTopic(topic)) : shuffle(QUESTIONS.filter((q) => save.drivingFails.includes(q.id)));
   const back = topic ? () => go("driving-topic", topic) : () => go("driving");
   const s = { i: 0, correct: 0 };
   const run = () => {
     if (s.i >= list.length) {
-      screen("main");
-      app.append(mascot(s.correct === list.length ? "cheer" : "happy", 120), el("h1", "", ui("correctOf", `${s.correct} / ${list.length}`)));
+      clearResume("exam");
+      tscreen("main");
+      app.append(el("h1", "", ui("correctOf", `${s.correct} / ${list.length}`)));
       if (save.drivingFails.length) app.append(el("p", "lead center", ui("reviewCount", save.drivingFails.length)));
       app.append(button("btn big", ui("next"), back));
-      if (s.correct === list.length) celebrate();
       return;
     }
     const q = list[s.i];
-    screen("lesson");
+    tscreen("lesson");
     const head = el("div", "lesson-head");
     const bar = el("div", "progress");
     const fill = el("div");
     fill.style.width = (s.i / list.length) * 100 + "%";
     bar.append(fill);
     head.append(closeButton(back), bar);
-    app.append(head, questionCard(q, `${topicName(q.topic)} · ${s.i + 1} / ${list.length}`, null, (i, btn) => {
+    const card = questionCard(q, `${topicName(q.topic)} · ${s.i + 1} / ${list.length}`, null, (i, btn) => {
       const ok = i === q.answer;
       beep(ok);
       if (ok) s.correct++;
       noteFail(q, ok);
-      for (const b of app.querySelectorAll(".opt")) { b.disabled = true; if (b.dataset.ok === "1") b.classList.add("correct"); }
       if (!ok) btn.classList.add("wrong");
-      sheet(ok, ok ? ui("great") : ui("answer") + ": " + q.options[q.answer], "", "es", () => { s.i++; run(); }, explanation(q));
-    }));
+      answerFeedback(card, ok, q.options[q.answer], explanation(q), () => { s.i++; run(); });
+    });
+    app.append(head, card);
   };
   run();
 }
 
 // ---------- Simulacro con el formato del examen ----------
 function mockIntro() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("driving")), el("h1", "", "⏱ " + ui("driveMock")), draftBanner());
   if (!hasPass(PASS)) {
     app.append(factNote("dgt.examen_b"), passCard(PASS, mockIntro));
@@ -236,10 +237,11 @@ function mockQuestions() {
 }
 
 function startMock() {
+  setResume({ kind: "exam", route: "driving-mock", key: "passDrive", sub: ui("driveMock") });
   const list = mockQuestions();
   const answers = Array(list.length).fill(null);
   let i = 0;
-  screen("lesson");
+  tscreen("lesson");
   const timer = countdown(MOCK.minutes, () => finish(true));
   const render = () => {
     app.replaceChildren();
@@ -264,13 +266,26 @@ function startMock() {
     const pass = errors <= MOCK.maxErrors;
     list.forEach((q, k) => noteFail(q, answers[k] === q.answer));
     saveResult("conducir", list.length - errors, list.length, pass);
-    screen("main");
-    if (pass) celebrate();
-    app.append(mascot(pass ? "cheer" : "oops", 110));
+    clearResume("exam");
+    tscreen("main");
     if (timeUp) app.append(el("p", "lead center", "⏱ " + ui("timeUp")));
     const result = el("div", "exam-result " + (pass ? "pass" : "fail"));
     result.append(el("strong", "", pass ? ui("apto") : ui("noApto")), el("span", "", ui("errorsOf", `${errors} / ${list.length}`)));
-    app.append(result, el("p", "lead center", ui("driveMockRules", MOCK.maxErrors)), el("h2", "section", ui("reviewAnswers")));
+    app.append(result, el("p", "lead center", ui("driveMockRules", MOCK.maxErrors)));
+    // Los temas con más fallos, con un botón para practicar solo ese tema.
+    const bad = {};
+    list.forEach((q, k) => { if (answers[k] !== q.answer) bad[q.topic] = (bad[q.topic] || 0) + 1; });
+    const weak = Object.entries(bad).sort((x, y) => y[1] - x[1]).slice(0, 3);
+    if (weak.length) {
+      const box = el("div", "weak-list");
+      for (const [t, n] of weak) {
+        const row = el("div", "weak-row");
+        row.append(el("span", "", `${topicName(t)} (✕ ${n})`), button("btn", ui("practiceThis"), () => practice(t)));
+        box.append(row);
+      }
+      app.append(el("h2", "section", ui("weakAreas")), box);
+    }
+    app.append(el("h2", "section", ui("reviewAnswers")));
     list.forEach((q, k) => {
       const ok = answers[k] === q.answer;
       const item = el("div", "review-item " + (ok ? "ok" : "bad"));
@@ -286,7 +301,7 @@ function startMock() {
 
 // ---------- Vocabulario del examen ----------
 function showWords() {
-  screen("main");
+  tscreen("main");
   app.append(button("back", "← " + ui("back"), () => go("driving")), el("h1", "", "🔤 " + ui("driveWords")), el("p", "lead", ui("driveWordsHelp")));
   const N = save.native;
   for (const w of bank.words) {
